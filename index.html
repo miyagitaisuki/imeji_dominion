@@ -562,6 +562,14 @@
                 toast.classList.add('translate-y-20', 'opacity-0');
             }, 2500);
         }
+        <button id="btnConfig">Cấu Hình Đường Dẫn File</button>
+
+<script>
+const isAdmin = localStorage.getItem("isAdmin") === "true";
+
+if (!isAdmin) {
+    document.getElementById("btnConfig").style.display = "none";
+}
     </script>
 </body>
 </html>
