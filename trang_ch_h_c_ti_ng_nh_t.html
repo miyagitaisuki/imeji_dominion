@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Tiếng Nhật - Minna no Nihongo & Sơ Cấp</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Noto Sans JP -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        sakura: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        },
+                        jpblue: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .japanese-font {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .card-hover {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(225, 29, 72, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+
+    <!-- Header Navbar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-500 to-rose-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-rose-200">
+                    日
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-slate-900">Nihongo Portal</h1>
+                    <p class="text-xs text-slate-500">Minna no Nihongo & Sơ Cấp Nhập Môn</p>
+                </div>
+            </div>
+
+            <!-- Quick Stats Header -->
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-2 bg-rose-50 border border-rose-100 px-3 py-1.5 rounded-full text-xs font-semibold text-rose-700">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Tiến độ: <strong id="headerProgressText">0 / 58</strong> bài</span>
+                </div>
+                <button onclick="toggleSettingsModal()" class="p-2 text-slate-500 hover:text-slate-800 rounded-lg hover:bg-slate-100 transition" title="Cấu hình đường dẫn">
+                    <i class="fa-solid fa-gear text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="bg-gradient-to-b from-rose-500 via-rose-600 to-rose-700 text-white py-12 px-4 sm:px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium tracking-wide uppercase mb-3">
+                🌸 Lộ trình học Tiếng Nhật từ Zero đến N4
+            </span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 japanese-font">
+                日本語を楽しく学ぼう！
+            </h2>
+            <p class="text-rose-100 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-normal">
+                Tổng hợp đầy đủ 8 Bài Sơ Cấp Nhập Môn chữ cái & ngữ pháp nền tảng cùng 50 bài học Minna no Nihongo chuẩn mực.
+            </p>
+
+            <!-- Search & Filter Bar -->
+            <div class="max-w-2xl mx-auto relative">
+                <div class="relative flex items-center">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400"></i>
+                    <input type="text" id="searchInput" oninput="filterLessons()" 
+                        placeholder="Tìm theo số bài (ví dụ: 1, 15, nhập môn 2) hoặc chủ đề..." 
+                        class="w-full pl-11 pr-12 py-3.5 rounded-2xl bg-white text-slate-800 placeholder-slate-400 font-medium shadow-xl focus:outline-none focus:ring-4 focus:ring-rose-300 text-sm sm:text-base">
+                    <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-4 text-slate-400 hover:text-slate-600">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1">
+
+        <!-- Progress Bar Widget -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-chart-line text-rose-500"></i>
+                    <h3 class="font-bold text-slate-800 text-sm">Tiến Độ Hoàn Thành Lộ Trình</h3>
+                </div>
+                <div class="text-xs text-slate-500 flex items-center gap-4">
+                    <span><i class="fa-solid fa-circle text-rose-500 text-[10px] mr-1"></i>Đã học: <strong id="completedCount" class="text-slate-700">0</strong></span>
+                    <span><i class="fa-solid fa-circle text-slate-200 text-[10px] mr-1"></i>Còn lại: <strong id="remainingCount" class="text-slate-700">58</strong></span>
+                    <button onclick="resetProgress()" class="text-rose-600 hover:underline text-xs font-medium ml-2">Đặt lại</button>
+                </div>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
+                <div id="progressBar" class="bg-gradient-to-r from-rose-500 to-rose-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Filter Navigation Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar border-b border-slate-200">
+            <button onclick="setActiveTab('all')" id="tab-all" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-rose-600 text-white shadow-sm">
+                Tất cả (58)
+            </button>
+            <button onclick="setActiveTab('intro')" id="tab-intro" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                🌱 8 Bài Nhập Môn
+            </button>
+            <button onclick="setActiveTab('minna1')" id="tab-minna1" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                📘 Minna Sơ Cấp I (Bài 1 - 25)
+            </button>
+            <button onclick="setActiveTab('minna2')" id="tab-minna2" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                📙 Minna Sơ Cấp II (Bài 26 - 50)
+            </button>
+            <button onclick="setActiveTab('completed')" id="tab-completed" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                ✅ Đã hoàn thành
+            </button>
+        </div>
+
+        <!-- Section 1: 8 Bài Nhập Môn -->
+        <section id="section-intro" class="mb-12">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 bg-emerald-100 text-emerald-700 rounded-lg text-sm"><i class="fa-solid fa-seedling"></i></span>
+                    <h3 class="text-xl font-bold text-slate-900">8 Bài Nhập Môn Chữ Cái & Ngữ Pháp Nền Tảng</h3>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full">Kinh nghiệm 0 - N5</span>
+            </div>
+            <div id="grid-intro" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Javascript will inject intro lesson cards -->
+            </div>
+        </section>
+
+        <!-- Section 2: Minna no Nihongo Sơ Cấp I (1-25) -->
+        <section id="section-minna1" class="mb-12">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 bg-sky-100 text-sky-700 rounded-lg text-sm"><i class="fa-solid fa-book"></i></span>
+                    <h3 class="text-xl font-bold text-slate-900">Minna no Nihongo - Sơ Cấp I (Bài 1 đến Bài 25)</h3>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-sky-50 text-sky-700 border border-sky-200 rounded-full">Trình độ JLPT N5</span>
+            </div>
+            <div id="grid-minna1" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Javascript will inject Minna 1-25 cards -->
+            </div>
+        </section>
+
+        <!-- Section 3: Minna no Nihongo Sơ Cấp II (26-50) -->
+        <section id="section-minna2" class="mb-12">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm"><i class="fa-solid fa-book-bookmark"></i></span>
+                    <h3 class="text-xl font-bold text-slate-900">Minna no Nihongo - Sơ Cấp II (Bài 26 đến Bài 50)</h3>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full">Trình độ JLPT N4</span>
+            </div>
+            <div id="grid-minna2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Javascript will inject Minna 26-50 cards -->
+            </div>
+        </section>
+
+        <!-- No Results Found State -->
+        <div id="noResults" class="hidden text-center py-16">
+            <div class="w-16 h-16 mx-auto mb-4 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-2xl">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-700 mb-1">Không tìm thấy bài học phù hợp</h4>
+            <p class="text-slate-500 text-sm">Thử từ khóa khác hoặc chuyển sang tab tất cả bài học.</p>
+        </div>
+
+    </main>
+
+    <!-- Settings Modal for Custom Link Structure -->
+    <div id="settingsModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-lg text-slate-900"><i class="fa-solid fa-gear text-rose-500 mr-2"></i>Cấu Hình Tên Đường Dẫn File</h3>
+                <button onclick="toggleSettingsModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">
+                Tùy chỉnh định dạng tên tệp tin để trùng khớp với cấu trúc tệp HTML của bạn trên GitHub repository.
+            </p>
+
+            <div class="space-y-4 text-sm">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Đường dẫn 8 Bài Nhập Môn:</label>
+                    <input type="text" id="introPathPattern" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono focus:ring-2 focus:ring-rose-500 focus:outline-none" value="nhap-mon/{id}.html">
+                    <span class="text-[10px] text-slate-400">Ví dụ: nhap-mon/1.html hoặc nhap-mon-1.html</span>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Đường dẫn 50 Bài Minna:</label>
+                    <input type="text" id="minnaPathPattern" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono focus:ring-2 focus:ring-rose-500 focus:outline-none" value="bai-{id}.html">
+                    <span class="text-[10px] text-slate-400">Ví dụ: bai-1.html hoặc minna/bai-1.html</span>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-end gap-2">
+                <button onclick="toggleSettingsModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-medium">Hủy</button>
+                <button onclick="saveSettings()" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-medium">Lưu Cấu Hình</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 text-sm z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toastMsg">Đã cập nhật trạng thái!</span>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">🌸 Trang chính quản lý lộ trình học Minna no Nihongo & Sơ Cấp Tiếng Nhật</p>
+            <p class="text-slate-400">Tự do chỉnh sửa và lưu trữ miễn phí trên GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        // 8 Bài Sơ Cấp Nhập Môn
+        const introLessons = [
+            { id: 1, title: "Bài Nhập Môn 1", jp: "ひらがな", desc: "Bảng chữ cái Hiragana (Bảng chữ mềm) & Quy tắc viết nét" },
+            { id: 2, title: "Bài Nhập Môn 2", jp: "カタカナ", desc: "Bảng chữ cái Katakana (Bảng chữ cứng) & Từ mượn ngoại nhập" },
+            { id: 3, title: "Bài Nhập Môn 3", jp: "発音の âm", desc: "Quy tắc phát âm: Trường âm, Xúc âm, Biến âm & Bán biến âm" },
+            { id: 4, title: "Bài Nhập Môn 4", jp: "挨拶 (Aisatsu)", desc: "Câu chào hỏi thông dụng & Ngôn ngữ giao tiếp trong lớp học" },
+            { id: 5, title: "Bài Nhập Môn 5", jp: "数字と時間", desc: "Hệ thống số đếm, xem giờ, ngày tháng & Đơn vị đếm cơ bản" },
+            { id: 6, title: "Bài Nhập Môn 6", jp: "漢字の Khái niệm", desc: "Nhập môn Chữ Hán (Kanji): Cấu tạo Bộ thủ & Quy tắc nét" },
+            { id: 7, title: "Bài Nhập Môn 7", jp: "文法構造", desc: "Cấu trúc câu Tiếng Nhật (SOV) & Trợ từ nhập môn (は, が, を...)" },
+            { id: 8, title: "Bài Nhập Môn 8", jp: "自己紹介", desc: "Giới thiệu bản thân (Jikoshoukai) & Mẫu câu giao tiếp cơ bản" }
+        ];
+
+        // 50 Bài Minna no Nihongo
+        const minnaLessons = [
+            { id: 1, title: "Bài 1", jp: "はじめまして", desc: "Giới thiệu tên, tuổi, quốc tịch, nghề nghiệp (～は～です)" },
+            { id: 2, title: "Bài 2", jp: "これ・それ・あれ", desc: "Chỉ thị từ chỉ vật (Đây, đó, kia) & Đồng ý/phủ định" },
+            { id: 3, title: "Bài 3", jp: "ここ・そこ・あそこ", desc: "Chỉ thị từ chỉ địa điểm, nơi chốn & Tầng số, giá tiền" },
+            { id: 4, title: "Bài 4", jp: "時間・動詞", desc: "Hỏi giờ, thời gian làm việc & Động từ thì Hiện tại/Quá khứ" },
+            { id: 5, title: "Bài 5", jp: "行きます・来ます", desc: "Di chuyển: Đi, đến, về & Phương tiện giao thông (Trợ từ へ, で)" },
+            { id: 6, title: "Bài 6", jp: "～をします", desc: "Hành động tác động đến đối tượng, ăn uống (Trợ từ を, で)" },
+            { id: 7, title: "Bài 7", jp: "あげます・もらいます", desc: "Cho, nhận đồ vật & Công cụ, phương tiện thực hiện" },
+            { id: 8, title: "Bài 8", jp: "形容詞 (Tính từ)", desc: "Tính từ đuôi い và Tính từ đuôi な trong câu bổ nghĩa" },
+            { id: 9, title: "Bài 9", jp: "好き・上手・わかります", desc: "Sở thích, năng lực, sự hiểu biết & Chỉ lý do (から)" },
+            { id: 10, title: "Bài 10", jp: "います・あります", desc: "Sự tồn tại của người, động vật (います) và vật (あります)" },
+            { id: 11, title: "Bài 11", jp: "助数詞 (Số lượng)", desc: "Số lượng, đơn vị đếm vật thể, người & Khoảng thời gian" },
+            { id: 12, title: "Bài 12", jp: "Thì của tính từ & So sánh", desc: "Quá khứ của tính từ & So sánh hơn, so sánh nhất" },
+            { id: 13, title: "Bài 13", jp: "～たい・～ほしい", desc: "Thể hiện mong muốn cá nhân (Muốn có, muốn làm gì)" },
+            { id: 14, title: "Bài 14", jp: "動詞 て形 (Thể て)", desc: "Cách chia thể て & Sai khiến, nhờ vả lịch sự (～てください)" },
+            { id: 15, title: "Bài 15", jp: "～てもいいです", desc: "Xin phép làm gì & Cấm đoán (～てはいけません)" },
+            { id: 16, title: "Bài 16", jp: "Nối câu thể て", desc: "Liệt kê hành động theo thứ tự thời gian & Nối tính từ" },
+            { id: 17, title: "Bài 17", jp: "動詞 ない形 (Thể ない)", desc: "Cách chia thể ない & Lời khuyên không nên (～ないでください)" },
+            { id: 18, title: "Bài 18", jp: "辞書形 (Thể Nguyên dạng)", desc: "Thể từ điển & Khả năng (～ meo ことができます) / Sở thích" },
+            { id: 19, title: "Bài 19", jp: "動詞 た形 (Thể た)", desc: "Thể た & Trải nghiệm kinh nghiệm (～たことがあります)" },
+            { id: 20, title: "Bài 20", jp: "普通形 (Thể Thông thường)", desc: "Văn phong thân mật, nói chuyện bạn bè, người thân" },
+            { id: 21, title: "Bài 21", jp: "～と思います", desc: "Trích dẫn ý kiến (Tôi nghĩ là...) & Phát ngôn (Nói rằng...)" },
+            { id: 22, title: "Bài 22", jp: "名詞修飾 (Bổ nghĩa danh từ)", desc: "Định ngữ: Dùng mệnh đề để bổ nghĩa cho danh từ" },
+            { id: 23, title: "Bài 23", jp: "～とき・～と", desc: "Khi làm gì (～とき) & Giả định hễ... thì... (～と)" },
+            { id: 24, title: "Bài 24", jp: "くれ・あげる・いただく", desc: "Hành động tặng nhận dịch vụ / Cho và nhận cho ai đó" },
+            { id: 25, title: "Bài 25", jp: "～たら・～ても", desc: "Điều kiện giả định (Nếu... thì...) & Dù cho... thì vẫn..." },
+            { id: 26, title: "Bài 26", jp: "～んです", desc: "Nhấn mạnh lý do, giải thích tình huống hoặc yêu cầu" },
+            { id: 27, title: "Bài 27", jp: "可能形 (Thể Khả năng)", desc: "Động từ thể khả năng (Có thể làm gì, nhìn thấy, nghe thấy)" },
+            { id: 28, title: "Bài 28", jp: "～ながら・～し", desc: "Vừa làm A vừa làm B & Liệt kê lý do song song" },
+            { id: 29, title: "Bài 29", jp: "自動詞 (Tự động từ)", desc: "Diễn tả trạng thái kết quả tự nhiên & Lỡ làm gì (～てしまいました)" },
+            { id: 30, title: "Bài 30", jp: "他動詞 (Tha động từ)", desc: "Trạng thái do con người tạo ra (～てあります) & Chuẩn bị trước" },
+            { id: 31, title: "Bài 31", jp: "意向形 (Thể Ý định)", desc: "Bày tỏ ý định (～ようと思います) & Bối cảnh dự định" },
+            { id: 32, title: "Bài 32", jp: "～ほうがいいです", desc: "Lời khuyên nên / không nên & Khuyên bảo, dự đoán" },
+            { id: 33, title: "Bài 33", jp: "命令形・禁止形", desc: "Thể Mệnh lệnh & Cấm đoán (Dùng trong khẩn cấp, thể thao)" },
+            { id: 34, title: "Bài 34", jp: "～とおりに・～あとで", desc: "Làm theo như chỉ dẫn & Sau khi thực hiện hành động" },
+            { id: 35, title: "Bài 35", jp: "条件形 (Thể Điều kiện)", desc: "Thể điều kiện (～ば, ～なら) - Nếu... thì..." },
+            { id: 36, title: "Bài 36", jp: "～ようにします", desc: "Cố gắng tạo thói quen & Biến đổi trạng thái (～ meo 💡 ように)" },
+            { id: 37, title: "Bài 37", jp: "受動形 (Thể Bị động)", desc: "Thể bị động: Bị, được ai đó làm gì tác động" },
+            { id: 38, title: "Bài 38", jp: "Danh từ hóa câu", desc: "Sử dụng trợ từ の để biến một mệnh đề thành danh từ" },
+            { id: 39, title: "Bài 39", jp: "～ので・～て", desc: "Chỉ nguyên nhân, lý do tự nhiên khách quan" },
+            { id: 40, title: "Bài 40", jp: "Lồng câu hỏi", desc: "Lồng câu hỏi có nghi vấn từ hoặc Có/Không (～かどうか)" },
+            { id: 41, title: "Bài 41", jp: "Trao nhận kính ngữ", desc: "Kính ngữ trong hành động cho và nhận (くださいます, いただきます)" },
+            { id: 42, title: "Bài 42", jp: "～ために・～のに", desc: "Mục đích thực hiện (Để làm gì, dùng cho việc gì)" },
+            { id: 43, title: "Bài 43", jp: "～そうです (Dường như)", desc: "Dự đoán nhìn từ thị giác (Sắp sửa, trông có vẻ)" },
+            { id: 44, title: "Bài 44", jp: "～ meo すぎます", desc: "Làm gì quá đà (Quá...) & Dễ / Khó làm (やすい, にくい)" },
+            { id: 45, title: "Bài 45", jp: "～場合 (Trường hợp)", desc: "Trong trường hợp... (Dùng cho thông báo, tình huống cụ thể)" },
+            { id: 46, title: "Bài 46", jp: "～ところ・～たばかり", desc: "Các giai đoạn thời điểm hành động (Sắp, đang, vừa mới)" },
+            { id: 47, title: "Bài 47", jp: "～そうです (Nghe nói)", desc: "Trích dẫn thông tin nghe kể lại & Hình như (～ようです)" },
+            { id: 48, title: "Bài 48", jp: "使役形 (Thể Sai khiến)", desc: "Cho phép hoặc bắt ai đó làm gì (～させます)" },
+            { id: 49, title: "Bài 49", jp: "尊敬語 (Tôn kính ngữ)", desc: "Kính ngữ tôn vinh hành động của đối phương / khách hàng" },
+            { id: 50, title: "Bài 50", jp: "謙譲語 (Khiêm nhường ngữ)", desc: "Kính ngữ hạ thấp hành động bản thân để thể hiện sự khiêm tốn" }
+        ];
+
+        let completedLessons = JSON.parse(localStorage.getItem('nihongo_completed') || '[]');
+        let currentTab = 'all';
+        let introPathPattern = localStorage.getItem('introPathPattern') || 'nhap-mon/{id}.html';
+        let minnaPathPattern = localStorage.getItem('minnaPathPattern') || 'bai-{id}.html';
+
+        // Initialize UI
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('introPathPattern').value = introPathPattern;
+            document.getElementById('minnaPathPattern').value = minnaPathPattern;
+            renderAllGrids();
+            updateProgressUI();
+        });
+
+        function createCardHtml(lesson, type) {
+            const isIntro = type === 'intro';
+            const uniqueKey = isIntro ? `intro_${lesson.id}` : `minna_${lesson.id}`;
+            const isDone = completedLessons.includes(uniqueKey);
+            
+            // Build URL based on pattern
+            let href = isIntro 
+                ? introPathPattern.replace('{id}', lesson.id) 
+                : minnaPathPattern.replace('{id}', lesson.id);
+
+            const badgeColor = isIntro 
+                ? 'bg-emerald-50 text-emerald-600 border-emerald-200' 
+                : (lesson.id <= 25 ? 'bg-sky-50 text-sky-600 border-sky-200' : 'bg-indigo-50 text-indigo-600 border-indigo-200');
+
+            return `
+                <div class="lesson-card glass-card rounded-2xl border ${isDone ? 'border-emerald-300 bg-emerald-50/20' : 'border-slate-200'} p-5 flex flex-col justify-between card-hover relative group">
+                    <div>
+                        <div class="flex items-start justify-between gap-2 mb-2">
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-lg border ${badgeColor}">
+                                ${isIntro ? 'Nhập môn ' + lesson.id : 'Bài ' + lesson.id}
+                            </span>
+                            <button onclick="toggleComplete('${uniqueKey}', event)" 
+                                class="w-8 h-8 rounded-full flex items-center justify-center transition-all ${isDone ? 'bg-emerald-500 text-white' : 'bg-slate-100 text-slate-300 hover:text-slate-400 hover:bg-slate-200'}"
+                                title="${isDone ? 'Đánh dấu chưa học' : 'Đánh dấu đã hoàn thành'}">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </button>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base mb-1 group-hover:text-rose-600 transition-colors">
+                            ${lesson.title}
+                        </h4>
+                        <div class="text-xs font-medium text-rose-500 japanese-font mb-2">${lesson.jp}</div>
+                        <p class="text-xs text-slate-500 line-clamp-2 mb-4 leading-relaxed">${lesson.desc}</p>
+                    </div>
+
+                    <a href="${href}" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-rose-600 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
+                        <span>Học bài này</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            `;
+        }
+
+        function renderAllGrids() {
+            const introContainer = document.getElementById('grid-intro');
+            const minna1Container = document.getElementById('grid-minna1');
+            const minna2Container = document.getElementById('grid-minna2');
+
+            introContainer.innerHTML = introLessons.map(l => createCardHtml(l, 'intro')).join('');
+            minna1Container.innerHTML = minnaLessons.slice(0, 25).map(l => createCardHtml(l, 'minna')).join('');
+            minna2Container.innerHTML = minnaLessons.slice(25, 50).map(l => createCardHtml(l, 'minna')).join('');
+        }
+
+        function filterLessons() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const clearBtn = document.getElementById('clearSearchBtn');
+            clearBtn.classList.toggle('hidden', query === '');
+
+            let hasResults = false;
+
+            // Search logic for items
+            const filterCard = (lesson, type) => {
+                const uniqueKey = type === 'intro' ? `intro_${lesson.id}` : `minna_${lesson.id}`;
+                const isDone = completedLessons.includes(uniqueKey);
+
+                if (currentTab === 'completed' && !isDone) return false;
+                if (query === '') return true;
+
+                const searchTarget = `${lesson.title} ${lesson.jp} ${lesson.desc} bài ${lesson.id} nhập môn ${lesson.id}`.toLowerCase();
+                return searchTarget.includes(query);
+            };
+
+            // Filter each section
+            const visibleIntro = introLessons.filter(l => filterCard(l, 'intro'));
+            const visibleMinna1 = minnaLessons.slice(0, 25).filter(l => filterCard(l, 'minna'));
+            const visibleMinna2 = minnaLessons.slice(25, 50).filter(l => filterCard(l, 'minna'));
+
+            // Section Visibility based on Tab & Search
+            const secIntro = document.getElementById('section-intro');
+            const secMinna1 = document.getElementById('section-minna1');
+            const secMinna2 = document.getElementById('section-minna2');
+
+            const showIntro = (currentTab === 'all' || currentTab === 'intro' || currentTab === 'completed') && visibleIntro.length > 0;
+            const showMinna1 = (currentTab === 'all' || currentTab === 'minna1' || currentTab === 'completed') && visibleMinna1.length > 0;
+            const showMinna2 = (currentTab === 'all' || currentTab === 'minna2' || currentTab === 'completed') && visibleMinna2.length > 0;
+
+            secIntro.style.display = showIntro ? 'block' : 'none';
+            secMinna1.style.display = showMinna1 ? 'block' : 'none';
+            secMinna2.style.display = showMinna2 ? 'block' : 'none';
+
+            document.getElementById('grid-intro').innerHTML = visibleIntro.map(l => createCardHtml(l, 'intro')).join('');
+            document.getElementById('grid-minna1').innerHTML = visibleMinna1.map(l => createCardHtml(l, 'minna')).join('');
+            document.getElementById('grid-minna2').innerHTML = visibleMinna2.map(l => createCardHtml(l, 'minna')).join('');
+
+            hasResults = showIntro || showMinna1 || showMinna2;
+            document.getElementById('noResults').classList.toggle('hidden', hasResults);
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            filterLessons();
+        }
+
+        function setActiveTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = 'tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200';
+            });
+
+            const activeBtn = document.getElementById(`tab-${tab}`);
+            if (activeBtn) {
+                activeBtn.className = 'tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-rose-600 text-white shadow-sm';
+            }
+
+            filterLessons();
+        }
+
+        function toggleComplete(key, event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const index = completedLessons.indexOf(key);
+            if (index > -1) {
+                completedLessons.splice(index, 1);
+                showToast('Đã đánh dấu chưa hoàn thành bài học');
+            } else {
+                completedLessons.push(key);
+                showToast('🎉 Tuyệt vời! Đã hoàn thành bài học');
+            }
+
+            localStorage.setItem('nihongo_completed', JSON.stringify(completedLessons));
+            updateProgressUI();
+            filterLessons();
+        }
+
+        function updateProgressUI() {
+            const total = 58;
+            const count = completedLessons.length;
+            const percentage = Math.round((count / total) * 100);
+
+            document.getElementById('completedCount').innerText = count;
+            document.getElementById('remainingCount').innerText = total - count;
+            document.getElementById('headerProgressText').innerText = `${count} / ${total}`;
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+        }
+
+        function resetProgress() {
+            if (completedLessons.length === 0) return;
+            completedLessons = [];
+            localStorage.setItem('nihongo_completed', JSON.stringify(completedLessons));
+            updateProgressUI();
+            filterLessons();
+            showToast('Đã đặt lại tiến độ học tập!');
+        }
+
+        function toggleSettingsModal() {
+            const modal = document.getElementById('settingsModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function saveSettings() {
+            introPathPattern = document.getElementById('introPathPattern').value.trim() || 'nhap-mon/{id}.html';
+            minnaPathPattern = document.getElementById('minnaPathPattern').value.trim() || 'bai-{id}.html';
+
+            localStorage.setItem('introPathPattern', introPathPattern);
+            localStorage.setItem('minnaPathPattern', minnaPathPattern);
+
+            toggleSettingsModal();
+            filterLessons();
+            showToast('Đã lưu cài đặt đường dẫn tệp!');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
