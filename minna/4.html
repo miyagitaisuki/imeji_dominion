@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- MNN TEMPLATE v1.0: chỉ được sửa giữa "DATA ZONE START" và "DATA ZONE END" trong <script>. Mọi thứ khác là KHÓA. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo – Bài 4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Modern reset & Accessibility */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0F172A;
+            font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+            color: #3C3C3C;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Focus styles for keyboard accessibility */
+        button:focus-visible, a:focus-visible, [tabindex="0"]:focus-visible {
+            outline: 3px solid #1CB0F6 !important;
+            outline-offset: 3px !important;
+        }
+
+        .select-none {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        ruby {
+            ruby-position: over;
+            font-size: inherit;
+        }
+        rt {
+            font-size: 0.55em;
+            font-weight: 700;
+            color: #475569;
+            line-height: 1;
+        }
+
+        /* Responsive typography with clamp */
+        .jp-text-lg {
+            font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .jp-text-xl {
+            font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* 3D Button Effects */
+        .btn-3d {
+            transition: all 0.1s ease;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .btn-3d:active:not(:disabled) {
+            transform: translateY(3px);
+            box-shadow: none !important;
+        }
+        
+        .btn-green {
+            background-color: #58CC02;
+            border-bottom: 4px solid #46A302;
+            color: #FFFFFF;
+        }
+        .btn-green:hover:not(:disabled) {
+            background-color: #61E002;
+        }
+        .btn-green:disabled {
+            background-color: #E5E5E5;
+            border-bottom-color: #CECECE;
+            color: #AFB5C0;
+            cursor: not-allowed;
+        }
+
+        .btn-blue {
+            background-color: #1CB0F6;
+            border-bottom: 4px solid #1899D6;
+            color: #FFFFFF;
+        }
+        .btn-blue:hover:not(:disabled) {
+            background-color: #24BDFF;
+        }
+
+        .btn-purple {
+            background-color: #A855F7;
+            border-bottom: 4px solid #7E22CE;
+            color: #FFFFFF;
+        }
+        .btn-purple:hover:not(:disabled) {
+            background-color: #B666FF;
+        }
+
+        .btn-amber {
+            background-color: #F59E0B;
+            border-bottom: 4px solid #D97706;
+            color: #FFFFFF;
+        }
+        .btn-amber:hover:not(:disabled) {
+            background-color: #FBBF24;
+        }
+
+        .btn-gray {
+            background-color: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-bottom: 4px solid #CBD5E1;
+            color: #334155;
+        }
+        .btn-gray:hover:not(:disabled) {
+            background-color: #F8FAFC;
+        }
+        .btn-gray.selected {
+            background-color: #E0F2FE;
+            border-color: #38BDF8;
+            border-bottom-color: #0284C7;
+            color: #0369A1;
+        }
+
+        /* Feedback states for options */
+        .btn-option-correct {
+            background-color: #D7FFB8 !important;
+            border-color: #58CC02 !important;
+            border-bottom-color: #46A302 !important;
+            color: #2B6600 !important;
+        }
+        .btn-option-wrong {
+            background-color: #FFDFE0 !important;
+            border-color: #FF4B4B !important;
+            border-bottom-color: #EA2B2B !important;
+            color: #A30000 !important;
+        }
+
+        /* Near completion progress bar pulse */
+        @keyframes pulse-gold {
+            0%, 100% { background-color: #F59E0B; }
+            50% { background-color: #FBBF24; }
+        }
+        .progress-near-finish {
+            animation: pulse-gold 1.5s infinite ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+        }
+        .anim-pop { animation: pop 0.25s ease-in-out; }
+        .anim-shake { animation: shake 0.35s ease-in-out; }
+
+        /* Toast notification */
+        #toast {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-800 flex flex-col justify-between min-h-screen">
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-amber-500 text-white font-extrabold px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 text-base md:text-lg opacity-0 pointer-events-none transform -translate-y-4">
+        <span>⚠️</span> <span id="toast-message">Vui lòng chọn đáp án</span>
+    </div>
+
+    <!-- 2. Tích cực hóa Modal Hết Tim -->
+    <div id="hearts-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl border-4 border-amber-200 anim-pop">
+            <div class="text-6xl mb-3">🎯</div>
+            <h2 class="text-2xl md:text-3xl font-black text-amber-600 mb-2">Còn vài điểm cần luyện thêm!</h2>
+            <p class="text-base text-gray-600 font-bold mb-6">Mỗi lần vấp ngã là một bước tiến gần hơn tới JLPT <span id="modal-jlpt">N5</span>. Hãy rèn luyện lại nhé!</p>
+            <div class="flex flex-col gap-3">
+                <button id="btn-modal-review" onclick="practiceCurrentWrongList()" class="btn-3d btn-blue py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider hidden">
+                    🎯 Ôn lại câu vừa sai
+                </button>
+                <button onclick="retryCurrentGame()" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
+                    🔄 Thử lại lượt này
+                </button>
+                <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-gray-700">
+                    🏠 Về Menu chính
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div id="app-root" class="w-full max-w-5xl mx-auto bg-white min-h-screen flex flex-col justify-between shadow-2xl overflow-hidden relative">
+
+        <!-- Header tối ưu hóa cho Mobile -->
+        <header id="top-bar" class="px-4 md:px-8 py-3.5 border-b-2 border-slate-100 flex items-center justify-between bg-white shrink-0 hidden select-none">
+            <!-- Back Button -->
+            <button id="btn-back" onclick="showMainMenu()" aria-label="Quay lại" class="btn-3d min-w-[44px] min-h-[44px] p-2.5 rounded-2xl border-2 border-slate-200 hover:bg-slate-100 flex items-center justify-center text-slate-500 shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Progress Bar with Near Completion Effect -->
+            <div class="flex-1 max-w-md mx-3 md:mx-6">
+                <div class="flex justify-between items-center mb-1 text-xs md:text-sm font-extrabold text-slate-500">
+                    <span id="progress-text">Câu 1 / 5</span>
+                    <span id="level-badge" class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md text-xs uppercase font-black">N5</span>
+                </div>
+                <div class="w-full bg-slate-100 h-3.5 md:h-4 rounded-full overflow-hidden p-0.5 border border-slate-200">
+                    <div id="progress-inner" class="bg-[#58CC02] h-full rounded-full transition-all duration-300 w-0"></div>
+                </div>
+            </div>
+
+            <!-- Stats Header -->
+            <div class="flex items-center gap-2 md:gap-5 text-base md:text-xl font-black shrink-0">
+                <div class="hidden md:flex items-center gap-1 text-orange-500" title="Chuỗi đúng">
+                    <span>🔥</span>
+                    <span id="stat-streak">0</span>
+                </div>
+                <div class="flex items-center gap-1 text-red-500" title="Số tim còn lại">
+                    <span>❤️</span>
+                    <span id="stat-hearts">5</span>
+                </div>
+                <div class="flex items-center gap-1 text-amber-500" title="Điểm số">
+                    <span>⭐</span>
+                    <span id="stat-score">0</span>
+                </div>
+                <button id="btn-sound" onclick="toggleSound()" aria-label="Âm thanh" class="min-w-[44px] min-h-[44px] p-2 hover:bg-slate-100 rounded-xl text-xl select-none flex items-center justify-center">
+                    🔊
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Game Interactive Content Body -->
+        <main id="game-container" class="flex-1 p-4 md:p-8 flex flex-col items-center justify-center relative bg-white">
+            <!-- Dynamic game screens rendered here -->
+        </main>
+
+        <!-- Bottom Footer Feedback Bar -->
+        <footer id="bottom-bar" class="border-t-2 border-slate-200 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 transition-colors duration-300 bg-white shrink-0 hidden">
+            <!-- Feedback Content Box -->
+            <div id="feedback-content" class="flex flex-col md:flex-row items-start md:items-center gap-3 max-w-3xl w-full">
+                <div class="flex items-center gap-3">
+                    <div id="feedback-icon" class="text-3xl md:text-4xl hidden select-none"></div>
+                    <div>
+                        <div id="feedback-title" class="text-lg md:text-xl font-black"></div>
+                        <div id="feedback-diff" class="text-sm font-bold"></div>
+                    </div>
+                </div>
+
+                <!-- Collapsible explanation toggle -->
+                <div id="explanation-wrapper" class="hidden w-full md:w-auto md:ml-2">
+                    <button id="btn-toggle-exp" onclick="toggleExplanationDetails()" class="text-xs md:text-sm font-extrabold text-slate-600 bg-white/80 hover:bg-white border border-slate-300 px-3 py-1.5 rounded-xl flex items-center gap-1">
+                        💡 Giải thích <span id="exp-arrow">▼</span>
+                    </button>
+                    <div id="feedback-explanation" class="hidden mt-2 p-3 bg-white/90 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-700 font-semibold max-h-36 overflow-y-auto shadow-sm"></div>
+                </div>
+            </div>
+
+            <!-- Action Check / Next Button -->
+            <button id="btn-action" onclick="handleActionButton()" disabled class="btn-3d btn-green text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto">
+                KIỂM TRA
+            </button>
+        </footer>
+
+    </div>
+
+    <script>
+        // Fisher-Yates Shuffle Algorithm
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // =====================================================================
+        // ===== DATA ZONE START — CHỈ ĐƯỢC SỬA TRONG VÙNG NÀY =====================
+        // =====================================================================
+        const LESSON_CONFIG = {
+            lessonNo: 4,
+            title: "Minna no Nihongo – Bài 4",
+            jlpt: "N5",
+            storagePrefix: "mnn_l04"
+        };
+
+        const GAME1_DATA = [
+            {
+                "id": "l04_v001",
+                "level": "easy",
+                "context": "Hành động mở mắt, thức dậy vào buổi sáng để bắt đầu ngày mới.",
+                "answer": "おきます",
+                "kanji": "{起|お}きます",
+                "distractors": ["ねます", "はたらきます", "やすみます"],
+                "distractorsKanji": ["{寝|ね}ます", "{働|はたら}きます", "{休|やす}みます"],
+                "explanation": {
+                    "correct": "起きます (おきます) nghĩa là thức dậy.",
+                    "pitfalls": "Tránh nhầm với 寝ます (ngủ) hay 休みます (nghỉ ngơi).",
+                    "tip": "Khởi đầu ngày mới bằng việc 起 (Khởi) dậy."
+                }
+            },
+            {
+                "id": "l04_v002",
+                "level": "easy",
+                "context": "Trạng thái nhắm mắt, chìm vào giấc ngủ ban đêm sau một ngày dài.",
+                "answer": "ねます",
+                "kanji": "{寝|ね}ます",
+                "distractors": ["おきます", "おわります", "べんきょうします"],
+                "distractorsKanji": ["{起|お}きます", "{終|お}わります", "{勉|べん}{強|きょう}します"],
+                "explanation": {
+                    "correct": "寝ます (ねます) nghĩa là ngủ.",
+                    "pitfalls": "Tránh nhầm với 起きます (thức dậy) hay 終わります (kết thúc).",
+                    "tip": "Tối đến mệt mỏi thì đi 寝 (Tẩm = ngủ)."
+                }
+            },
+            {
+                "id": "l04_v003",
+                "level": "easy",
+                "context": "Thực hiện công việc chuyên môn hoặc nhiệm vụ tại công ty, cơ quan.",
+                "answer": "はたらきます",
+                "kanji": "{働|はたら}きます",
+                "distractors": ["やすみます", "べんきょうします", "おわります"],
+                "distractorsKanji": ["{休|やす}みます", "{勉|べん}{強|きょう}します", "{終|お}わります"],
+                "explanation": {
+                    "correct": "働きます (はたらきます) nghĩa là làm việc.",
+                    "pitfalls": "Phân biệt với 勉強します (học tập) và 休みます (nghỉ ngơi).",
+                    "tip": "働 (ĐỘNG) gồm người (人) lao động dùng sức mạnh (力)."
+                }
+            },
+            {
+                "id": "l04_v004",
+                "level": "easy",
+                "context": "Hoạt động đọc sách, tiếp thu kiến thức hoặc luyện tập bài học.",
+                "answer": "べんきょうします",
+                "kanji": "{勉|べん}{強|きょう}します",
+                "distractors": ["はたらきます", "おわります", "おきます"],
+                "distractorsKanji": ["{働|はたら}きます", "{終|お}わります", "{起|お}きます"],
+                "explanation": {
+                    "correct": "勉強します (べんきょうします) nghĩa là học, học tập.",
+                    "pitfalls": "Đừng nhầm với 働きます (làm việc tại công ty).",
+                    "tip": "勉 (MIỄN) + 強 (CƯỜNG) = nỗ lực rèn luyện kiến thức."
+                }
+            },
+            {
+                "id": "l04_v005",
+                "level": "easy",
+                "context": "Địa điểm chuyên thực hiện các giao dịch gửi tiền, rút tiền và tài chính.",
+                "answer": "ぎんこう",
+                "kanji": "{銀|ぎん}{行|こう}",
+                "distractors": ["ゆうびんきょく", "としょかん", "びじゅつかん"],
+                "distractorsKanji": ["{郵|ゆう}{便|びん}{局|きょく}", "{図|と}{書|しょ}{館|かん}", "{美|び}{術|じゅつ}{館|かん}"],
+                "explanation": {
+                    "correct": "銀行 (ぎんこう) nghĩa là ngân hàng.",
+                    "pitfalls": "Phân biệt với 郵便局 (bưu điện) và 図書館 (thư viện).",
+                    "tip": "銀 (NGÂN = tiền) + 行 (HÀNH = nơi giao dịch) = Ngân hàng."
+                }
+            },
+            {
+                "id": "l04_v006",
+                "level": "easy",
+                "context": "Cơ quan, tổ chức nơi bạn đến để gửi thư từ, chuyển phát bưu phẩm.",
+                "answer": "ゆうびんきょく",
+                "kanji": "{郵|ゆう}{便|びん}{局|きょく}",
+                "distractors": ["ぎんこう", "デパート", "としょかん"],
+                "distractorsKanji": ["{銀|ぎん}{行|こう}", "デパート", "{図|と}{書|しょ}{館|かん}"],
+                "explanation": {
+                    "correct": "郵便局 (ゆうびんきょく) nghĩa là bưu điện.",
+                    "pitfalls": "Đừng nhầm với 銀行 (ngân hàng).",
+                    "tip": "郵 (BƯU) + 便 (TIỆN = thư) + 局 (CỤC = cơ quan)."
+                }
+            },
+            {
+                "id": "l04_v007",
+                "level": "easy",
+                "context": "Nơi lưu trữ rất nhiều sách báo để độc giả đến mượn hoặc ngồi đọc.",
+                "answer": "としょかん",
+                "kanji": "{図|と}{書|しょ}{館|かん}",
+                "distractors": ["びじゅつかん", "デパート", "ぎんこう"],
+                "distractorsKanji": ["{美|び}{術|じゅつ}{館|かん}", "デパート", "{銀|ぎん}{行|こう}"],
+                "explanation": {
+                    "correct": "図書館 (としょかん) nghĩa là thư viện.",
+                    "pitfalls": "Tránh nhầm với 美術館 (bảo tàng mỹ thuật).",
+                    "tip": "図 (ĐỒ) + 書 (THƯ = sách) + 館 (QUÁN = tòa nhà)."
+                }
+            },
+            {
+                "id": "l04_v008",
+                "level": "easy",
+                "context": "Tòa nhà trưng bày các tác phẩm nghệ thuật như tranh vẽ, tượng điêu khắc.",
+                "answer": "びじゅつかん",
+                "kanji": "{美|び}{術|じゅつ}{館|かん}",
+                "distractors": ["としょかん", "ぎんこう", "ゆうびんきょく"],
+                "distractorsKanji": ["{図|と}{書|しょ}{館|かん}", "{銀|ぎん}{行|こう}", "{郵|ゆう}{便|びん}{局|きょく}"],
+                "explanation": {
+                    "correct": "美術館 (びじゅつかん) nghĩa là bảo tàng mỹ thuật.",
+                    "pitfalls": "Khác với 図書館 (thư viện đọc sách).",
+                    "tip": "美 (MỸ) + 術 (THUẬT) + 館 (QUÁN) = nơi ngắm nghệ thuật."
+                }
+            },
+            {
+                "id": "l04_v009",
+                "level": "medium",
+                "context": "Trung tâm mua sắm lớn nhiều tầng với đủ loại cửa hàng quần áo, đồ dùng.",
+                "answer": "デパート",
+                "kanji": "デパート",
+                "distractors": ["としょかん", "ぎんこう", "びじゅつかん"],
+                "distractorsKanji": ["{図|と}{書|しょ}{館|かん}", "{銀|ぎん}{行|こう}", "{美|び}{術|じゅつ}{館|かん}"],
+                "explanation": {
+                    "correct": "デパート nghĩa là bách hóa / trung tâm thương mại.",
+                    "pitfalls": "Từ Katakana mượn từ Department store trong tiếng Anh.",
+                    "tip": "Department store ngắn gọn thành デパート."
+                }
+            },
+            {
+                "id": "l04_v010",
+                "level": "medium",
+                "context": "Khái niệm thời gian chỉ khoảng thời gian hiện tại, thời điểm ngay lúc này.",
+                "answer": "いま",
+                "kanji": "{今|いま}",
+                "distractors": ["あさ", "ひる", "ばん"],
+                "distractorsKanji": ["{朝|あさ}", "{昼|ひる}", "{晩|ばん}"],
+                "explanation": {
+                    "correct": "今 (いま) nghĩa là bây giờ, hiện tại.",
+                    "pitfalls": "Phân biệt với các từ chỉ buổi như 朝 (sáng), 昼 (trưa), 晩 (tối).",
+                    "tip": "今 (KIM) = ngay bây giờ."
+                }
+            },
+            {
+                "id": "l04_v011",
+                "level": "medium",
+                "context": "Khoảng thời gian tính từ nửa đêm 0 giờ cho đến 12 giờ trưa.",
+                "answer": "ごぜん",
+                "kanji": "{午|ご}{前|ぜん}",
+                "distractors": ["ごご", "ひる", "ばん"],
+                "distractorsKanji": ["{午|ご}{後|ご}", "{昼|ひる}", "{晩|ばん}"],
+                "explanation": {
+                    "correct": "午前 (ごぜん) nghĩa là buổi sáng (AM).",
+                    "pitfalls": "Tránh nhầm với 午後 (buổi chiều / PM).",
+                    "tip": "午 (NGỌ = 12h trưa) + 前 (TIỀN = trước) = trước 12h trưa."
+                }
+            },
+            {
+                "id": "l04_v012",
+                "level": "medium",
+                "context": "Khoảng thời gian tính từ 12 giờ trưa cho đến 12 giờ đêm.",
+                "answer": "ごご",
+                "kanji": "{午|ご}{後|ご}",
+                "distractors": ["ごぜん", "あさ", "けさ"],
+                "distractorsKanji": ["{午|ご}{前|ぜん}", "{朝|あさ}", "けさ"],
+                "explanation": {
+                    "correct": "午後 (ごご) nghĩa là buổi chiều / tối (PM).",
+                    "pitfalls": "Đối lập hoàn toàn với 午前 (AM).",
+                    "tip": "午 (NGỌ = 12h trưa) + 後 (HẬU = sau) = sau 12h trưa."
+                }
+            },
+            {
+                "id": "l04_v013",
+                "level": "medium",
+                "context": "Mọi buổi sáng diễn ra đều đặn không bỏ sót ngày nào.",
+                "answer": "まいあさ",
+                "kanji": "{毎|まい}{朝|あさ}",
+                "distractors": ["まいばん", "まいにち", "けさ"],
+                "distractorsKanji": ["{毎|まい}{晩|ばん}", "{毎|まい}{日|にち}", "けさ"],
+                "explanation": {
+                    "correct": "毎朝 (まいあさ) nghĩa là mỗi sáng / sáng nào cũng.",
+                    "pitfalls": "Phân biệt với 毎晩 (mỗi tối) và けさ (sáng nay).",
+                    "tip": "毎 (MỖI) + 朝 (TRIỀU = sáng) = mỗi buổi sáng."
+                }
+            },
+            {
+                "id": "l04_v014",
+                "level": "medium",
+                "context": "Mọi buổi tối lặp đi lặp lại đều đặn mỗi ngày.",
+                "answer": "まいばん",
+                "kanji": "{毎|まい}{晩|ばん}",
+                "distractors": ["まいあさ", "まいにち", "こんばん"],
+                "distractorsKanji": ["{毎|まい}{朝|あさ}", "{毎|まい}{日|にち}", "{今|こん}{晩|ばん}"],
+                "explanation": {
+                    "correct": "毎晩 (まいばん) nghĩa là mỗi tối / tối nào cũng.",
+                    "pitfalls": "Khác với 今晩 (tối nay).",
+                    "tip": "毎 (MỖI) + 晩 (VÃN = tối) = mỗi buổi tối."
+                }
+            },
+            {
+                "id": "l04_v015",
+                "level": "medium",
+                "context": "Khoảng thời gian nghỉ ngắn giữa ngày làm việc hoặc học tập để ăn trưa.",
+                "answer": "ひるやすみ",
+                "kanji": "{昼|ひる}{休|やす}み",
+                "distractors": ["やすみ", "ひる", "あさ"],
+                "distractorsKanji": ["{休|やす}み", "{昼|ひる}", "{朝|あさ}"],
+                "explanation": {
+                    "correct": "昼休み (ひるやすみ) nghĩa là nghỉ trưa.",
+                    "pitfalls": "Tránh nhầm với 休み (ngày nghỉ / kỳ nghỉ nói chung).",
+                    "tip": "昼 (TRƯA) + 休み (NGHỈ) = nghỉ trưa."
+                }
+            },
+            {
+                "id": "l04_v016",
+                "level": "medium",
+                "context": "Từ nghi vấn dùng khi muốn hỏi về một ngày trong tuần (từ Thứ Hai đến Chủ Nhật).",
+                "answer": "なんようび",
+                "kanji": "{何|なん}{曜|よう}{日|び}",
+                "distractors": ["なんじ", "なんぶん", "なんばん"],
+                "distractorsKanji": ["{何|なん}{時|じ}", "{何|なん}{分|ぶん}", "{何|なん}{番|ばん}"],
+                "explanation": {
+                    "correct": "何曜日 (なんようび) nghĩa là thứ mấy.",
+                    "pitfalls": "Phân biệt với 何時 (mấy giờ) hay 何番 (số mấy).",
+                    "tip": "何 (MẤY) + 曜日 (THỨ) = thứ mấy."
+                }
+            },
+            {
+                "id": "l04_v017",
+                "level": "hard",
+                "context": "Ngày lùi về trước ngày hôm qua đúng hai ngày.",
+                "answer": "おとtoi",
+                "kanji": "おととい",
+                "distractors": ["きのう", "あした", "あさって"],
+                "distractorsKanji": ["きのう", "あした", "あさって"],
+                "explanation": {
+                    "correct": "おととい nghĩa là hôm kia (2 ngày trước).",
+                    "pitfalls": "Trục thời gian quá khứ: おとtoi (hôm kia) -> きのう (hôm qua) -> きょう (hôm nay).",
+                    "tip": "Lùi 2 ngày về quá khứ là おととい."
+                }
+            },
+            {
+                "id": "l04_v018",
+                "level": "hard",
+                "context": "Ngày tiếp theo ngay sau ngày mai (hai ngày tính từ hôm nay).",
+                "answer": "あさって",
+                "kanji": "あさって",
+                "distractors": ["あした", "きのう", "おとtoi"],
+                "distractorsKanji": ["あした", "きのう", "おととい"],
+                "explanation": {
+                    "correct": "あさって nghĩa là ngày mốt / ngày kia (2 ngày sau).",
+                    "pitfalls": "Tránh nhầm với あした (ngày mai).",
+                    "tip": "Trục thời gian tương lai: きょう -> あした -> あさって."
+                }
+            },
+            {
+                "id": "l04_v019",
+                "level": "hard",
+                "context": "Cụm từ thể hiện sự cảm thông, chia sẻ khi nghe ai đó làm việc hoặc học tập vất vả.",
+                "answer": "たいへんですね",
+                "kanji": "{大|たい}{変|へん}ですね",
+                "distractors": ["おねがいします", "かしこまりました", "おつかれさまでした"],
+                "distractorsKanji": ["お{願|ねが}いします", "かしこまりました", "お{疲|つ}れ{様|さま}でした"],
+                "explanation": {
+                    "correct": "大変ですね (たいへんですね) nghĩa là Vất vả nhỉ / Khổ nhỉ.",
+                    "pitfalls": "Khác với お疲れ様でした (Anh/chị đã vất vả rồi - dùng khi kết thúc công việc).",
+                    "tip": "大 (ĐẠI) + 変 (BIẾN) = vất vả, khó khăn."
+                }
+            },
+            {
+                "id": "l04_v020",
+                "level": "hard",
+                "context": "Khoảng thời gian buổi sáng của chính ngày hôm nay.",
+                "answer": "けさ",
+                "kanji": "けさ",
+                "distractors": ["こんばん", "まいあさ", "あさ"],
+                "distractorsKanji": ["{今|こん}{晩|ばん}", "{毎|まい}{朝|あさ}", "{朝|あさ}"],
+                "explanation": {
+                    "correct": "けさ (今朝) nghĩa là sáng nay.",
+                    "pitfalls": "Phân biệt với 毎朝 (mỗi sáng) và 今晩 (tối nay).",
+                    "tip": "けさ = buổi sáng của ngày hôm nay."
+                }
+            }
+        ];
+
+        const GAME2_DATA = [
+            {
+                "id": "l04_g001",
+                "level": "easy",
+                "sentence": "{今|いま} 7＿です。",
+                "translation": "Bây giờ là 7 giờ.",
+                "options": [
+                    { "text": "じ", "kanji": "{時|じ}" },
+                    { "text": "ふん", "kanji": "{分|ふん}" },
+                    { "text": "はん", "kanji": "{半|はん}" },
+                    { "text": "から", "kanji": "から" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "~時 (じ) dùng để chỉ giờ trong tiếng Nhật.",
+                    "pitfalls": "Tránh nhầm với 分 (phút) hoặc 半 (rưỡi).",
+                    "tip": "Số đếm + 時 (じ) = ~ giờ."
+                }
+            },
+            {
+                "id": "l04_g002",
+                "level": "easy",
+                "sentence": "わたしは {毎朝|まいあさ} 6じ＿ {起|お}きます。",
+                "translation": "Mỗi sáng tôi thức dậy vào lúc 6 giờ.",
+                "options": [
+                    { "text": "に", "kanji": "に" },
+                    { "text": "は", "kanji": "は" },
+                    { "text": "で", "kanji": "で" },
+                    { "text": "を", "kanji": "を" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Trợ từ に đứng sau mốc thời gian có con số cụ thể để chỉ thời điểm thực hiện hành động.",
+                    "pitfalls": "Tránh dùng trợ từ で (chỉ nơi chốn) hay は (chỉ chủ đề) sau con số chỉ giờ.",
+                    "tip": "Mốc thời gian con số + に + Động từ."
+                }
+            },
+            {
+                "id": "l04_g003",
+                "level": "easy",
+                "sentence": "{毎日|まいにち} 9じから 5じまで ＿。",
+                "translation": "Hằng ngày tôi làm việc từ 9 giờ đến 5 giờ.",
+                "options": [
+                    { "text": "はたらきます", "kanji": "{働|はたら}きます" },
+                    { "text": "はたらきました", "kanji": "{働|はたら}きました" },
+                    { "text": "はたらきません", "kanji": "{働|はたら}きません" },
+                    { "text": "はたらきませんでした", "kanji": "{働|はたら}きませんでした" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "毎日 (hằng ngày) diễn tả thói quen ở hiện tại/tương lai nên dùng dạng khẳng định ~ます.",
+                    "pitfalls": "Tránh dùng thể quá khứ ~ました vì 毎日 là hành động lặp đi lặp lại.",
+                    "tip": "Thói quen hằng ngày (毎日) -> dùng ~ます."
+                }
+            },
+            {
+                "id": "l04_g004",
+                "level": "easy",
+                "sentence": "きのう {勉強|べんきょう}＿。",
+                "translation": "Hôm qua tôi đã học bài.",
+                "options": [
+                    { "text": "しました", "kanji": "しました" },
+                    { "text": "します", "kanji": "します" },
+                    { "text": "しません", "kanji": "しません" },
+                    { "text": "しませんでした", "kanji": "しませんでした" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "きのう (hôm qua) là mốc thời gian quá khứ, câu khẳng định dùng đuôi ~ました.",
+                    "pitfalls": "Không dùng ~します (hiện tại/tương lai) khi câu có từ chỉ quá khứ.",
+                    "tip": "Quá khứ khẳng định = Động từ đuôi ~ました."
+                }
+            },
+            {
+                "id": "l04_g005",
+                "level": "easy",
+                "sentence": "{銀行|ぎんこう}は 9じ＿ 3じまでです。",
+                "translation": "Ngân hàng mở cửa từ 9 giờ đến 3 giờ.",
+                "options": [
+                    { "text": "から", "kanji": "から" },
+                    { "text": "まで", "kanji": "まで" },
+                    { "text": "に", "kanji": "に" },
+                    { "text": "と", "kanji": "と" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Trợ từ から chỉ điểm bắt đầu của thời gian (từ ~ giờ).",
+                    "pitfalls": "Tránh nhầm với まで (đến ~) là điểm kết thúc.",
+                    "tip": "Cặp trợ từ: N1 から N2 まで (từ N1 đến N2)."
+                }
+            },
+            {
+                "id": "l04_g006",
+                "level": "easy",
+                "sentence": "{今|いま} ＿ですか。",
+                "translation": "Bây giờ là mấy giờ?",
+                "options": [
+                    { "text": "なんじ", "kanji": "{何時|なんじ}" },
+                    { "text": "なんようび", "kanji": "{何曜日|なんようび}" },
+                    { "text": "なんばん", "kanji": "{何番|なんばん}" },
+                    { "text": "なんぶん", "kanji": "{何分|なんぶん}" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "何時 (なんじ) là từ nghi vấn dùng để hỏi giờ hiện tại.",
+                    "pitfalls": "Tránh nhầm với 何曜日 (hỏi thứ) hay 何番 (hỏi số điện thoại).",
+                    "tip": "Hỏi giờ = 今 何時ですか (いま なんじですか)."
+                }
+            },
+            {
+                "id": "l04_g007",
+                "level": "easy",
+                "sentence": "{休み|やすみ}は {土曜日|どようび}＿ {日曜日|にちようび}です。",
+                "translation": "Ngày nghỉ là thứ Bảy và Chủ Nhật.",
+                "options": [
+                    { "text": "と", "kanji": "と" },
+                    { "text": "から", "kanji": "から" },
+                    { "text": "まで", "kanji": "まで" },
+                    { "text": "に", "kanji": "に" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Trợ từ と dùng để nối hai danh từ (thứ Bảy và Chủ Nhật).",
+                    "pitfalls": "Tránh dùng から/まで vì hai thứ này liệt kê song song chứ không phải khoảng thời gian liên tục.",
+                    "tip": "N1 と N2 = N1 và N2."
+                }
+            },
+            {
+                "id": "l04_g008",
+                "level": "easy",
+                "sentence": "{昼休み|ひるやす}みは 12じ＿です。",
+                "translation": "Nghỉ trưa là 12 giờ rưỡi.",
+                "options": [
+                    { "text": "はん", "kanji": "{半|はん}" },
+                    { "text": "ふん", "kanji": "{分|ふん}" },
+                    { "text": "じ", "kanji": "{時|じ}" },
+                    { "text": "から", "kanji": "から" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "半 (はん) đứng sau con số chỉ giờ mang nghĩa là 30 phút / rưỡi.",
+                    "pitfalls": "Không dùng thêm 分 sau 半 (không nói 半分 khi chỉ giờ rưỡi).",
+                    "tip": "~時半 (じはん) = ~ giờ rưỡi (30 phút)."
+                }
+            },
+            {
+                "id": "l04_g009",
+                "level": "medium",
+                "sentence": "きのうのばん 11じ＿ {寝|ね}ました。",
+                "translation": "Tối qua tôi đã ngủ lúc 11 giờ.",
+                "options": [
+                    { "text": "に", "kanji": "に" },
+                    { "text": "から", "kanji": "から" },
+                    { "text": "まで", "kanji": "まで" },
+                    { "text": "と", "kanji": "と" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Trợ từ に đi kèm mốc con số chỉ thời điểm 11 giờ.",
+                    "pitfalls": "Mặc dù có きのうのばん ở đầu câu, nhưng đuôi đi liền con số 11時 nên vẫn phải có に.",
+                    "tip": "Có con số cụ thể (11時) -> bắt buộc chọn に."
+                }
+            },
+            {
+                "id": "l04_g010",
+                "level": "medium",
+                "sentence": "きのう {勉強|べんきょう}＿。",
+                "translation": "Hôm qua tôi đã không học bài.",
+                "options": [
+                    { "text": "しませんでした", "kanji": "しませんでした" },
+                    { "text": "しません", "kanji": "しません" },
+                    { "text": "しました", "kanji": "しました" },
+                    { "text": "します", "kanji": "します" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "~ませんでした là dạng phủ định của quá khứ (đã không làm).",
+                    "pitfalls": "Tránh chọn ~しません (phủ định hiện tại/tương lai).",
+                    "tip": "Quá khứ + Không làm = ~ませんでした."
+                }
+            },
+            {
+                "id": "l04_g011",
+                "level": "medium",
+                "sentence": "{図書館|としょかん}の {休み|やすみ}は ＿ですか。",
+                "translation": "Ngày nghỉ của thư viện là thứ mấy?",
+                "options": [
+                    { "text": "なんようび", "kanji": "{何曜日|なんようび}" },
+                    { "text": "なんじ", "kanji": "{何時|なんじ}" },
+                    { "text": "なんばん", "kanji": "{何番|なんばん}" },
+                    { "text": "いつ", "kanji": "いつ" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "何曜日 (なんようび) hỏi cụ thể về ngày trong tuần (Thứ Hai - Chủ Nhật).",
+                    "pitfalls": "Tránh nhầm với 何時 (mấy giờ) hoặc 何番 (số mấy).",
+                    "tip": "Hỏi thứ trong tuần = 何曜日 (なんようび)."
+                }
+            },
+            {
+                "id": "l04_g012",
+                "level": "medium",
+                "sentence": "{郵便局|ゆうびんきょく}は 9じから 5じ＿です。",
+                "translation": "Bưu điện mở cửa từ 9 giờ đến 5 giờ.",
+                "options": [
+                    { "text": "まで", "kanji": "まで" },
+                    { "text": "から", "kanji": "から" },
+                    { "text": "に", "kanji": "に" },
+                    { "text": "と", "kanji": "と" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Trợ từ まで đánh dấu thời điểm kết thúc (đến ~ giờ).",
+                    "pitfalls": "Đã có から phía trước thì vị trí sau 5じ phải là まで.",
+                    "tip": "~から ~まで (từ ~ đến ~)."
+                }
+            },
+            {
+                "id": "l04_g013",
+                "level": "medium",
+                "sentence": "{今|いま} ＿です。",
+                "translation": "Bây giờ là 4 giờ.",
+                "options": [
+                    { "text": "よじ", "kanji": "4{時|じ}" },
+                    { "text": "よんじ", "kanji": "4{時|じ} (よんじ)" },
+                    { "text": "しじ", "kanji": "4{時|じ} (しじ)" },
+                    { "text": "よっじ", "kanji": "4{時|じ} (よっじ)" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "4 giờ đọc là よじ (không đọc là よんじ hay しじ).",
+                    "pitfalls": "Học sinh rất dễ đọc sai phát âm đặc biệt của 4 giờ thành よんじ.",
+                    "tip": "Phát âm biến thể: 4時 = よじ, 7時 = しちじ, 9時 = くじ."
+                }
+            },
+            {
+                "id": "l04_g014",
+                "level": "medium",
+                "sentence": "{今|いま} 2じ 10＿です。",
+                "translation": "Bây giờ là 2 giờ 10 phút.",
+                "options": [
+                    { "text": "ぷん", "kanji": "{分|ぷん}" },
+                    { "text": "ふん", "kanji": "{分|ふん}" },
+                    { "text": "じ", "kanji": "{時|じ}" },
+                    { "text": "はん", "kanji": "{半|はん}" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "10 phút phát âm biến âm âm bật じゅっぷん (bắt đầu bằng âm ぷん).",
+                    "pitfalls": "Tránh chọn ふん (10 phút không đọc là じゅうふん).",
+                    "tip": "Số đuôi 1, 3, 4, 6, 8, 10 + 分 đọc là ぷん (có bán đục ゜)."
+                }
+            },
+            {
+                "id": "l04_g015",
+                "level": "medium",
+                "sentence": "{毎晩|まいばん} 12じまで {勉強|べんきょう}します。……{大変|たいへん}です＿。",
+                "translation": "Mỗi tối tôi học đến 12 giờ. ...... Vất vả nhỉ.",
+                "options": [
+                    { "text": "ね", "kanji": "ね" },
+                    { "text": "か", "kanji": "か" },
+                    { "text": "よ", "kanji": "よ" },
+                    { "text": "の", "kanji": "の" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Trợ từ ね đứng cuối câu biểu thị thái độ cảm thông, kỳ vọng người nghe đồng tán thành.",
+                    "pitfalls": "Không dùng か (hỏi) vì người nói đang bày tỏ sự chia sẻ, không phải nghi vấn.",
+                    "tip": "Đồng cảm, cảm thông = ~ですね."
+                }
+            },
+            {
+                "id": "l04_g016",
+                "level": "medium",
+                "sentence": "{銀行|ぎんこう}の {電話番号|でんわばんごう}は ＿ですか。",
+                "translation": "Số điện thoại của ngân hàng là số mấy?",
+                "options": [
+                    { "text": "なんばん", "kanji": "{何番|なんばん}" },
+                    { "text": "なんじ", "kanji": "{何時|なんじ}" },
+                    { "text": "なんようび", "kanji": "{何曜日|なんようび}" },
+                    { "text": "なんぶん", "kanji": "{何分|なんぶん}" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "何番 (なんばん) dùng để hỏi số điện thoại hoặc mã số.",
+                    "pitfalls": "Tránh nhầm với 何時 (hỏi giờ) hay 何曜日 (hỏi thứ).",
+                    "tip": "Hỏi số điện thoại = 電話番号は 何番ですか."
+                }
+            },
+            {
+                "id": "l04_g017",
+                "level": "hard",
+                "sentence": "わたしは おととい {銀行|ぎんこう}で ＿。",
+                "translation": "Hôm kia tôi đã làm việc ở ngân hàng.",
+                "options": [
+                    { "text": "はたらきました", "kanji": "{働|はたら}きました" },
+                    { "text": "はたらきます", "kanji": "{働|はたら}きます" },
+                    { "text": "はたらきません", "kanji": "{働|はたら}きません" },
+                    { "text": "はたらきましたか", "kanji": "{働|はたら}きましたか" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "おととい (hôm kia) thuộc quá khứ nên chia động từ sang khẳng định quá khứ ~ました.",
+                    "pitfalls": "Không dùng thể hiện tại ~きます và cũng không thêm か ở cuối vì đây là câu kể.",
+                    "tip": "Trạng từ おととい (hôm kia) -> Quá khứ ~ました."
+                }
+            },
+            {
+                "id": "l04_g018",
+                "level": "hard",
+                "sentence": "{毎朝|まいあさ} ＿ {勉強|べんきょう}しますか。……7じから 8じまで {勉強|べんきょう}します。",
+                "translation": "Mỗi sáng bạn học từ mấy giờ đến mấy giờ? ...... Tôi học từ 7 giờ đến 8 giờ.",
+                "options": [
+                    { "text": "なんじから なんじまで", "kanji": "{何時|なんじ}から {何時|なんじ}まで" },
+                    { "text": "なんじに", "kanji": "{何時|なんじ}に" },
+                    { "text": "なんようびから", "kanji": "{何曜日|なんようび}から" },
+                    { "text": "なんばんまで", "kanji": "{何番|なんばん}まで" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Để hỏi khoảng thời gian, dùng cấu trúc 何時から 何時まで (từ mấy giờ đến mấy giờ).",
+                    "pitfalls": "Tránh dùng 何時に (vào lúc mấy giờ - chỉ điểm thời gian đơn lẻ).",
+                    "tip": "Trả lời ~から ~まで -> Câu hỏi dùng 何時から 何時まで."
+                }
+            },
+            {
+                "id": "l04_g019",
+                "level": "hard",
+                "sentence": "ミラーさんは けさ 7じはん＿ {起|お}きました。",
+                "translation": "Anh Miller đã thức dậy lúc 7 giờ rưỡi sáng nay.",
+                "options": [
+                    { "text": "に", "kanji": "に" },
+                    { "text": "から", "kanji": "から" },
+                    { "text": "まで", "kanji": "まで" },
+                    { "text": "と", "kanji": "と" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Dù câu có けさ (không đi với に), nhưng mốc đứng ngay trước vị trí trống là 7時半 (mốc giờ cụ thể) nên bắt buộc đi với に.",
+                    "pitfalls": "Thấy けさ ở đầu câu dễ khiến học sinh tưởng không dùng に.",
+                    "tip": "Xét vị trí ngay trước ô trống: có con số thời gian cụ thể -> chọn に."
+                }
+            },
+            {
+                "id": "l04_g020",
+                "level": "hard",
+                "sentence": "きのうのばん {勉強|べんきょう}しましたか。……いいえ、＿。",
+                "translation": "Tối qua bạn đã học bài à? ...... Không, tôi đã không học.",
+                "options": [
+                    { "text": "べんきょうしませんでした", "kanji": "{勉|べん}{強|きょう}しませんでした" },
+                    { "text": "べんきょうしません", "kanji": "{勉|べん}{強|きょう}しません" },
+                    { "text": "べんきょうしました", "kanji": "{勉|べん}{強|きょう}しました" },
+                    { "text": "べんきょうします", "kanji": "{勉|べん}{強|きょう}します" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Trả lời いいえ cho câu hỏi quá khứ ~しましたか phải dùng phủ định quá khứ ~ませんでした.",
+                    "pitfalls": "Tránh nhầm giữa いいえ、~しません (phủ định hiện tại) và いいえ、~ませんでした (phủ định quá khứ).",
+                    "tip": "Hỏi ましたか + Trả lời いいえ -> ~ませんでした."
+                }
+            }
+        ];
+
+        const GAME3_DATA = [
+            {
+                "id": "l04_s001",
+                "level": "easy",
+                "vietnamese": "Bây giờ là 4 giờ 5 phút.",
+                "acceptableOrders": [
+                    ["いま", "よじ", "ごふんです"]
+                ],
+                "blocks": [
+                    { "text": "いま", "kanji": "{今|いま}" },
+                    { "text": "よじ", "kanji": "4{時|じ}" },
+                    { "text": "ごふんです", "kanji": "5{分|ふん}です" },
+                    { "text": "なんじです", "kanji": "{何時|なんじ}です" }
+                ],
+                "explanation": {
+                    "correct": "Cấu trúc chỉ thời gian hiện tại: 今 [Số giờ]時 [Số phút]分 です.",
+                    "pitfalls": "4 giờ đọc đặc biệt là よじ, tránh nhầm với よんじ hay なんじ.",
+                    "tip": "4時 = よじ, 5分 = ごふん."
+                }
+            },
+            {
+                "id": "l04_s002",
+                "level": "easy",
+                "vietnamese": "Mỗi sáng tôi thức dậy vào lúc 6 giờ.",
+                "acceptableOrders": [
+                    ["わたしは", "まいあさ", "6じに", "おきます"],
+                    ["まいあさ", "わたしは", "6じに", "おきます"]
+                ],
+                "blocks": [
+                    { "text": "わたしは", "kanji": "{私|わたし}は" },
+                    { "text": "まいあさ", "kanji": "{毎朝|まいあさ}" },
+                    { "text": "6じに", "kanji": "6{時|じ}に" },
+                    { "text": "おきます", "kanji": "{起|お}きます" },
+                    { "text": "ねます", "kanji": "{寝|ね}ます" }
+                ],
+                "explanation": {
+                    "correct": "Trợ từ に đứng sau con số thời gian cụ thể (6時に) chỉ thời điểm thực hiện hành động.",
+                    "pitfalls": "Tránh dùng 寝ます (ngủ) thay cho 起きます (thức dậy).",
+                    "tip": "Mốc thời gian con số + に + Động từ."
+                }
+            },
+            {
+                "id": "l04_s003",
+                "level": "easy",
+                "vietnamese": "Tối qua tôi đã học bài.",
+                "acceptableOrders": [
+                    ["きのうのばん", "べんきょうしました"]
+                ],
+                "blocks": [
+                    { "text": "きのうのばん", "kanji": "きのうの{晩|ばん}" },
+                    { "text": "べんきょうしました", "kanji": "{勉|べん}{強|きょう}しました" },
+                    { "text": "べんきょうします", "kanji": "{勉|べん}{強|きょう}します" },
+                    { "text": "はたらきました", "kanji": "{働|はたら}きました" }
+                ],
+                "explanation": {
+                    "correct": "Trạng từ quá khứ (きのうの晩) đi với động từ thể quá khứ khẳng định ~しました.",
+                    "pitfalls": "Không dùng thể hiện tại ~します khi thời gian ở quá khứ.",
+                    "tip": "Hôm qua (きのう) -> Động từ đuôi ~ました."
+                }
+            },
+            {
+                "id": "l04_s004",
+                "level": "easy",
+                "vietnamese": "Thư viện mở cửa từ 9 giờ đến 6 giờ.",
+                "acceptableOrders": [
+                    ["としょかんは", "9じから", "6じまでです"]
+                ],
+                "blocks": [
+                    { "text": "としょかんは", "kanji": "{図|と}{書|しょ}{館|かん}は" },
+                    { "text": "9じから", "kanji": "9{時|じ}から" },
+                    { "text": "6じまでです", "kanji": "6{時|じ}までです" },
+                    { "text": "ぎんこうは", "kanji": "{銀|ぎん}{行|こう}は" }
+                ],
+                "explanation": {
+                    "correct": "Mẫu câu danh từ chỉ khoảng thời gian: N は [Thờigian1]から [Thờigian2]までです.",
+                    "pitfalls": "Đề bài yêu cầu 'Thư viện' (図書館), tránh chọn 銀行 (Ngân hàng).",
+                    "tip": "~から (từ ~) ... ~まで (đến ~)."
+                }
+            },
+            {
+                "id": "l04_s005",
+                "level": "easy",
+                "vietnamese": "Ngày nghỉ là thứ Bảy và Chủ Nhật.",
+                "acceptableOrders": [
+                    ["やすみは", "どようびと", "にちようびです"]
+                ],
+                "blocks": [
+                    { "text": "やすみは", "kanji": "{休|やす}みは" },
+                    { "text": "どようびと", "kanji": "{土曜日|どようび}と" },
+                    { "text": "にちようびです", "kanji": "{日曜日|にちようび}です" },
+                    { "text": "なんようびです", "kanji": "{何曜日|なんようび}です" }
+                ],
+                "explanation": {
+                    "correct": "Trợ từ と dùng để nối hai danh từ chỉ ngày trong tuần (thứ Bảy và Chủ Nhật).",
+                    "pitfalls": "Tránh dùng từ nghi vấn 何曜日 trong câu khẳng định.",
+                    "tip": "N1 と N2 = N1 và N2."
+                }
+            },
+            {
+                "id": "l04_s006",
+                "level": "medium",
+                "vietnamese": "Hằng ngày bạn học từ mấy giờ đến mấy giờ?",
+                "acceptableOrders": [
+                    ["まいにち", "なんじから", "なんじまで", "べんきょうしますか"],
+                    ["なんじから", "なんじまで", "まいにち", "べんきょうしますか"]
+                ],
+                "blocks": [
+                    { "text": "まいにち", "kanji": "{毎|まい}{日|にち}" },
+                    { "text": "なんじから", "kanji": "{何時|なんじ}から" },
+                    { "text": "なんじまで", "kanji": "{何時|なんじ}まで" },
+                    { "text": "べんきょうしますか", "kanji": "{勉|べん}{強|きょう}しますか" },
+                    { "text": "はたらきますか", "kanji": "{働|はたら}きますか" }
+                ],
+                "explanation": {
+                    "correct": "Cấu trúc hỏi khoảng thời gian: 何時から 何時まで [Động từ]か.",
+                    "pitfalls": "Chú ý động từ học tập (勉強しますか) khác với làm việc (働きますか).",
+                    "tip": "Hỏi khoảng thời gian = 何時から 何時まで."
+                }
+            },
+            {
+                "id": "l04_s007",
+                "level": "medium",
+                "vietnamese": "Hôm nay ngân hàng làm việc đến 3 giờ.",
+                "acceptableOrders": [
+                    ["きょう", "ぎんこうは", "3じまで", "はたらきます"],
+                    ["ぎんこうは", "きょう", "3じまで", "はたらきます"]
+                ],
+                "blocks": [
+                    { "text": "きょう", "kanji": "きょう" },
+                    { "text": "ぎんこうは", "kanji": "{銀|ぎん}{行|こう}は" },
+                    { "text": "3じまで", "kanji": "3{時|じ}まで" },
+                    { "text": "はたらきます", "kanji": "{働|はたら}きます" },
+                    { "text": "はたらきました", "kanji": "{働|はたら}きました" }
+                ],
+                "explanation": {
+                    "correct": "Trạng từ きょう (hôm nay) đi với động từ thì hiện tại/tương lai ~ます.",
+                    "pitfalls": "Tránh dùng đuôi quá khứ ~ました cho hành động của ngày hôm nay.",
+                    "tip": "Hôm nay (きょう) -> dùng ~ます."
+                }
+            },
+            {
+                "id": "l04_s008",
+                "level": "medium",
+                "vietnamese": "Bảo tàng mỹ thuật nghỉ vào thứ mấy?",
+                "acceptableOrders": [
+                    ["びじゅつかんの", "やすみは", "なんようびですか"]
+                ],
+                "blocks": [
+                    { "text": "びじゅつかんの", "kanji": "{美|び}{術|じゅつ}{館|かん}の" },
+                    { "text": "やすみは", "kanji": "{休|やす}みは" },
+                    { "text": "なんようびですか", "kanji": "{何曜日|なんようび}ですか" },
+                    { "text": "なんじですか", "kanji": "{何時|なんじ}ですか" }
+                ],
+                "explanation": {
+                    "correct": "Dùng の để nối danh từ (Bảo tàng mỹ thuật) với ngày nghỉ (休み) và 何曜日 để hỏi thứ.",
+                    "pitfalls": "Tránh chọn 何時ですか (hỏi mấy giờ) vì đề hỏi 'thứ mấy'.",
+                    "tip": "N1 の N2 = N2 của N1."
+                }
+            },
+            {
+                "id": "l04_s009",
+                "level": "medium",
+                "vietnamese": "Hôm qua tôi đã không làm việc.",
+                "acceptableOrders": [
+                    ["わたしは", "きのう", "はたらきませんでした"],
+                    ["きのう", "わたしは", "はたらきませんでした"]
+                ],
+                "blocks": [
+                    { "text": "わたしは", "kanji": "{私|わたし}は" },
+                    { "text": "きのう", "kanji": "きのう" },
+                    { "text": "はたらきませんでした", "kanji": "{働|はたら}きませんでした" },
+                    { "text": "はたらきません", "kanji": "{働|はたら}きません" },
+                    { "text": "やすみませんでした", "kanji": "{休|やす}みませんでした" }
+                ],
+                "explanation": {
+                    "correct": "Chỉ hành động không làm trong quá khứ dùng phủ định quá khứ ~ませんでした.",
+                    "pitfalls": "Phân biệt 働きませんでした (đã không làm việc) với 休みませんでした (đã không nghỉ).",
+                    "tip": "Quá khứ + Phủ định = ~ませんでした."
+                }
+            },
+            {
+                "id": "l04_s010",
+                "level": "medium",
+                "vietnamese": "Bưu điện làm việc từ 9 giờ sáng đến 5 giờ chiều.",
+                "acceptableOrders": [
+                    ["ゆうびんきょくは", "ごぜん9じから", "ごご5じまで", "はたらきます"],
+                    ["ごぜん9じから", "ごご5じまで", "ゆうびんきょくは", "はたらきます"]
+                ],
+                "blocks": [
+                    { "text": "ゆうびんきょくは", "kanji": "{郵|ゆう}{便|びん}{局|きょく}は" },
+                    { "text": "ごぜん9じから", "kanji": "{午|ご}{前|ぜん}9{時|じ}から" },
+                    { "text": "ごご5じまで", "kanji": "{午|ご}{後|ご}5{時|じ}まで" },
+                    { "text": "はたらきます", "kanji": "{働|はたら}きます" },
+                    { "text": "ごご9じから", "kanji": "{午|ご}{後|ご}9{時|じ}から" }
+                ],
+                "explanation": {
+                    "correct": "午前 (sáng - AM) đặt trước 9時 và 午後 (chiều - PM) đặt trước 5時.",
+                    "pitfalls": "Tránh nhầm vị trí 午前 (AM) và 午後 (PM).",
+                    "tip": "午前 = AM (sáng), 午後 = PM (chiều)."
+                }
+            },
+            {
+                "id": "l04_s011",
+                "level": "hard",
+                "vietnamese": "Mỗi tối tôi học bài đến 12 giờ. Vất vả nhỉ.",
+                "acceptableOrders": [
+                    ["まいばん", "12じまで", "べんきょうします", "たいへんですね"],
+                    ["12じまで", "まいばん", "べんきょうします", "たいへんですね"]
+                ],
+                "blocks": [
+                    { "text": "まいばん", "kanji": "{毎晩|まいばん}" },
+                    { "text": "12じまで", "kanji": "12{時|じ}まで" },
+                    { "text": "べんきょうします", "kanji": "{勉|べん}{強|きょう}します" },
+                    { "text": "たいへんですね", "kanji": "{大|たい}{変|へん}ですね" },
+                    { "text": "まいあさ", "kanji": "{毎朝|まいあさ}" },
+                    { "text": "おつかれさまでした", "kanji": "お{疲|つ}れ{様|さま}でした" }
+                ],
+                "explanation": {
+                    "correct": "毎晩 (mỗi tối) ghép với 12時まで (đến 12 giờ) và câu cảm thông 大変ですね (Vất vả nhỉ).",
+                    "pitfalls": "Tránh nhầm 毎晩 (mỗi tối) với 毎朝 (mỗi sáng) hoặc お疲れ様でした (dùng khi kết thúc công việc).",
+                    "tip": "Cảm thông với sự vất vả của đối phương = 大変ですね."
+                }
+            },
+            {
+                "id": "l04_s012",
+                "level": "hard",
+                "vietnamese": "Hôm kia anh Miller đã ngủ lúc 11 giờ rưỡi.",
+                "acceptableOrders": [
+                    ["おととい", "ミラーさんは", "11じはんに", "ねました"],
+                    ["ミラーさんは", "おとtoi", "11じはんに", "ねました"]
+                ],
+                "blocks": [
+                    { "text": "おとtoi", "kanji": "おととい" },
+                    { "text": "ミラーさんは", "kanji": "ミラーさんは" },
+                    { "text": "11じはんに", "kanji": "11{時|じ}{半|はん}に" },
+                    { "text": "ねました", "kanji": "{寝|ね}ました" },
+                    { "text": "あさって", "kanji": "あさって" },
+                    { "text": "ねます", "kanji": "{寝|ね}ます" }
+                ],
+                "explanation": {
+                    "correct": "Trạng từ おとtoi (hôm kia) đi với động trị quá khứ khẳng định 寝ました.",
+                    "pitfalls": "Không dùng あさって (ngày mốt) hoặc động từ thể hiện tại/tương lai 寝ます.",
+                    "tip": "Hôm kia (おととい) -> Đã ngủ (寝ました)."
+                }
+            }
+        ];
+
+        const GAME4_DATA = [
+            {
+                "id": "l04_c001",
+                "level": "easy",
+                "speaker": "👤 ミラーさん",
+                "question": "「すみません、{今|いま} {何時|なんじ}ですか。」",
+                "questionAudioText": "すみません、いま なんじですか。",
+                "options": [
+                    { "text": "2じ 10ふんです。", "kanji": "2{時|じ} 10{分|ふん}です。" },
+                    { "text": "あしたです。", "kanji": "あしたです。" },
+                    { "text": "いいえ、ちがいます。", "kanji": "いいえ、ちがいます。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Hỏi giờ dùng 何時ですか (mấy giờ), câu trả lời khớp là chỉ số giờ + phút.",
+                    "pitfalls": "Tránh nhầm với từ chỉ ngày (あした) hoặc câu trả lời khẳng định/phủ định.",
+                    "tip": "Hỏi 何時ですか → Trả lời [Số giờ]時 [Số phút]分です."
+                }
+            },
+            {
+                "id": "l04_c002",
+                "level": "easy",
+                "speaker": "🏪 {店|みせ}の{人|ひと}",
+                "question": "「はい、アップル{銀行|ぎんこう}です。」",
+                "questionAudioText": "はい、アップルぎんこうです。",
+                "options": [
+                    { "text": "すみません。そちらは なんじまでですか。", "kanji": "すみません。そちらは {何時|なんじ}までですか。" },
+                    { "text": "いいえ、がくせいじゃ ありません。", "kanji": "いいえ、{学生|がくせい}じゃ ありません。" },
+                    { "text": "はじめまして。どうぞ よろしく。", "kanji": "はじめまして。どうぞ よろしく。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Khi đối phương xưng tên cơ quan/ngân hàng qua điện thoại, câu hỏi tự nhiên tiếp theo là hỏi giờ đóng cửa/mở cửa (そちらは何時までですか).",
+                    "pitfalls": "Tránh dùng câu giới thiệu bản thân hoặc phủ định nghề nghiệp không liên quan.",
+                    "tip": "Giao tiếp điện thoại: Nhận cuộc gọi → Hỏi thông tin giờ giấc/ngày nghỉ."
+                }
+            },
+            {
+                "id": "l04_c003",
+                "level": "easy",
+                "speaker": "👩 佐藤さん",
+                "question": "「{銀行|ぎんこう}の {休み|やすみ}は {何曜日|なんようび}ですか。」",
+                "questionAudioText": "ぎんこうの やすみは なんようびですか。",
+                "options": [
+                    { "text": "どようびと にちようびです。", "kanji": "{土曜日|どようび}と {日曜日|にちようび}です。" },
+                    { "text": "9じから 3じまでです。", "kanji": "9{時|じ}から 3{時|じ}までです。" },
+                    { "text": "5275の 2725です。", "kanji": "5275の 2725です。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Hỏi 何曜日 (thứ mấy) nên đáp án phải trả lời bằng các ngày trong tuần (thứ Bảy và Chủ Nhật).",
+                    "pitfalls": "Tránh nhầm với câu trả lời số giờ (9時から3時まで) hay số điện thoại.",
+                    "tip": "Hỏi 何曜日ですか → Trả lời tên các thứ (~曜日)."
+                }
+            },
+            {
+                "id": "l04_c004",
+                "level": "easy",
+                "speaker": "👤 ミラーさん",
+                "question": "「{毎晩|まいばん} {何時|なんじ}に {寝|ね}ますか。」",
+                "questionAudioText": "まいばん なんじに ねますか。",
+                "options": [
+                    { "text": "11じに ねます。", "kanji": "11{時|じ}に {寝|ね}ます。" },
+                    { "text": "きのう ねました。", "kanji": "きのう {寝|ね}ました。" },
+                    { "text": "いいえ、ねません。", "kanji": "いいえ、{寝|ね}ません。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Hỏi 毎晩 (mỗi tối - thói quen) + 何時に (vào mấy giờ) -> Trả lời con số giờ cụ thể + に 寝ます.",
+                    "pitfalls": "Không dùng thì quá khứ (きのう寝ました) vì câu hỏi thói quen hiện tại.",
+                    "tip": "Hỏi 何時に寝ますか → Trả lời [Mốc giờ]時に 寝ます."
+                }
+            },
+            {
+                "id": "l04_c005",
+                "level": "easy",
+                "speaker": "👩 佐藤さん",
+                "question": "「あすかの {電話番号|でんわばんごう}は {何番|なんばん}ですか。」",
+                "questionAudioText": "あすかの でんわばんごうは なんばんですか。",
+                "options": [
+                    { "text": "5275の 2725です。", "kanji": "5275の 2725です。" },
+                    { "text": "9じから 5じまでです。", "kanji": "9{時|じ}から 5{時|じ}までです。" },
+                    { "text": "はい、そうです。", "kanji": "はい、そうです。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Hỏi 電話番号 (số điện thoại) + 何番 (số mấy) -> Trả lời dãy số điện thoại với trợ từ の nối các nhóm số.",
+                    "pitfalls": "Tránh nhầm với khoảng thời gian (9時から5時まで).",
+                    "tip": "Hỏi 何番ですか → Trả lời dãy số điện thoại."
+                }
+            },
+            {
+                "id": "l04_c006",
+                "level": "medium",
+                "speaker": "👤 ミラーさん",
+                "question": "「{毎日|まいにち} {朝|あさ} 9じから {午後|ごご} 3じまで {勉強|べんきょう}します。」",
+                "questionAudioText": "まいにち あさ 9じから ごご 3じまで べんきょうします。",
+                "options": [
+                    { "text": "たいへんですね。", "kanji": "{大|たい}{変|へん}ですね。" },
+                    { "text": "おつかれさまでした。", "kanji": "お{疲|つ}れ{様|さま}でした。" },
+                    { "text": "どういたしまして。", "kanji": "どういたしまして。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Khi nghe đối phương trình bày lịch học tập/làm việc dài vất vả, dùng 大変ですね (Vất vả nhỉ) để biểu thị sự cảm thông.",
+                    "pitfalls": "Tránh dùng お疲れ様でした (dùng khi kết thúc công việc trong ngày).",
+                    "tip": "Bày tỏ sự chia sẻ vất vả = 大変ですね."
+                }
+            },
+            {
+                "id": "l04_c007",
+                "level": "medium",
+                "speaker": "👨 山田さん",
+                "question": "「きのう {勉強|べんきょう}しましたか。」",
+                "questionAudioText": "きのう べんきょうしましたか。",
+                "options": [
+                    { "text": "いいえ、べんきょうしませんでした。", "kanji": "いいえ、{勉|べん}{強|きょう}しませんでした。" },
+                    { "text": "はい、べんきょうします。", "kanji": "はい、{勉|べん}{強|きょう}します。" },
+                    { "text": "いいえ、べんきょうしません。", "kanji": "いいえ、{勉|べん}{強|きょう}しません。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Câu hỏi ở quá khứ (~しましたか), nếu phủ định (いいえ) phải đi với phủ định quá khứ (~ませんでした).",
+                    "pitfalls": "Tránh phối hợp sai giữa はい/いいえ và thì động từ hiện tại/quá khứ.",
+                    "tip": "Hỏi ましたか → Trả lời はい、~ました / いいえ、~ませんでした."
+                }
+            },
+            {
+                "id": "l04_c008",
+                "level": "medium",
+                "speaker": "👤 ミラーさん",
+                "question": "「デパートは {何時|なんじ}から {何時|なんじ}までですか。」",
+                "questionAudioText": "デパートは なんじから なんじまでですか。",
+                "options": [
+                    { "text": "10じから 8じまでです。", "kanji": "10{時|じ}から 8{時|じ}までです。" },
+                    { "text": "すいようびです。", "kanji": "{水曜日|すいようび}です。" },
+                    { "text": "はい、10じまでです。", "kanji": "はい、10{時|じ}までです。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Hỏi 何時から 何時まで (từ mấy giờ đến mấy giờ) -> Trả lời khoảng thời gian con số tương ứng.",
+                    "pitfalls": "Không trả lời はい/いいえ cho câu hỏi có từ nghi vấn 何時.",
+                    "tip": "Câu hỏi có từ nghi vấn (何時) → Không dùng はい/いいえ ở đầu câu."
+                }
+            },
+            {
+                "id": "l04_c009",
+                "level": "medium",
+                "speaker": "👩 佐藤さん",
+                "question": "「{土曜日|どようび} {働|はたら}きますか。」",
+                "questionAudioText": "どようび はたらきますか。",
+                "options": [
+                    { "text": "いいえ、はたらきません。", "kanji": "いいえ、{働|はたら}きません。" },
+                    { "text": "いいえ、はたらきませんでした。", "kanji": "いいえ、{働|はたら}きませんでした。" },
+                    { "text": "はい、はたらきました。", "kanji": "はい、{働|はたら}きました。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Hỏi thói quen hoặc lịch trình tương lai (働きますか) -> Trả lời phủ định ở hiện tại/tương lai (いいえ、働きません).",
+                    "pitfalls": "Tránh chia động từ sang quá khứ 働きました / 働きませんでした vì câu hỏi là 働きますか.",
+                    "tip": "Hỏi ~ますか → Trả lời ~ます / ~ません."
+                }
+            },
+            {
+                "id": "l04_c010",
+                "level": "medium",
+                "speaker": "🏪 {店|みせ}の{人|ひと}",
+                "question": "「10じまでです。」",
+                "questionAudioText": "10じまでです。",
+                "options": [
+                    { "text": "そちらは なんじまでですか。", "kanji": "そちらは {何時|なんじ}までですか。" },
+                    { "text": "なんじに おきますか。", "kanji": "{何時|なんじ}に {起|お}きますか。" },
+                    { "text": "でんわばんごうは なんばんですか。", "kanji": "{電話番号|でんわばんごう}は {何番|なんばん}ですか。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Để nhận câu trả lời 'Đến 10 giờ' (10時までです), người hỏi phải đặt câu hỏi về mốc thời gian kết thúc (そちらは何時までですか).",
+                    "pitfalls": "Hỏi 何時に起きますか là hỏi giờ thức dậy của cá nhân, không hợp ngữ cảnh cửa hàng.",
+                    "tip": "Trả lời ~までです ← Câu hỏi 何時までですか."
+                }
+            },
+            {
+                "id": "l04_c011",
+                "level": "hard",
+                "speaker": "👨 山田さん",
+                "question": "「けさ {何時|なんじ}に {起|お}きましたか。」",
+                "questionAudioText": "けさ なんじに おきましたか。",
+                "options": [
+                    { "text": "6じに おきました。", "kanji": "6{時|じ}に {起|お}きました。" },
+                    { "text": "6じに おきます。", "kanji": "6{時|じ}に {起|お}きます。" },
+                    { "text": "6じから 7じまでです。", "kanji": "6{時|じ}から 7{時|じ}までです。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Hỏi về hành động sáng nay (けさ) đã xảy ra -> Câu hỏi dùng 起きましたか, trả lời dùng khẳng định quá khứ 6時に 起きました.",
+                    "pitfalls": "Dù có に đứng sau số giờ, nhưng cần chọn thì quá khứ 起きました thay vì hiện tại 起きます.",
+                    "tip": "Sáng nay (けさ) là mốc đã qua → Động từ dùng ~ました."
+                }
+            },
+            {
+                "id": "l04_c012",
+                "level": "hard",
+                "speaker": "👤 ミラーさん",
+                "question": "「どうも ありがとうございます。」",
+                "questionAudioText": "どうも ありがとうございます。",
+                "options": [
+                    { "text": "いいえ、どういたしまして。", "kanji": "いいえ、どういたしまして。" },
+                    { "text": "はい、そうです。", "kanji": "はい、そうです。" },
+                    { "text": "たいへんですね。", "kanji": "{大|たい}{変|へん}ですね。" }
+                ],
+                "correctIndex": 0,
+                "explanation": {
+                    "correct": "Đáp lại lời cảm ơn ありがとうございます là câu đáp lịch sự 'Không có gì' (いいえ、どういたしまして).",
+                    "pitfalls": "Tránh dùng はい、そうです (đáp lại câu hỏi khẳng định) hay 大変ですね (cảm thông sự vất vả).",
+                    "tip": "Đáp lại Cảm ơn (ありがとうございます) → いいえ、どういたしまして."
+                }
+            }
+        ];
+        // ===== DATA ZONE END =================================================
+
+        // ===== ENGINE (KHÓA — KHÔNG SỬA TỪ ĐÂY TRỜ XUỐNG) =====
+        const KEY_HIGH = LESSON_CONFIG.storagePrefix + '_highscore';
+        const KEY_MISTAKES = LESSON_CONFIG.storagePrefix + '_mistakes';
+        const _memStore = {};
+        function safeGet(k) { try { return localStorage.getItem(k); } catch (e) { return (k in _memStore) ? _memStore[k] : null; } }
+        function safeSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { _memStore[k] = v; } }
+
+        // {漢字|かんじ} -> <ruby>漢字<rt>かんじ</rt></ruby>
+        function furi(s) {
+            return String(s == null ? '' : s).replace(/\{([^|{}]+)\|([^{}]+)\}/g, '<ruby>$1<rt>$2</rt></ruby>');
+        }
+
+        (function normalizeData() {
+            GAME1_DATA.forEach(q => {
+                q.kanji = furi(q.kanji || q.answer);
+                q.distractorsKanji = q.distractors.map((d, i) => furi((q.distractorsKanji || [])[i] || d));
+            });
+            GAME2_DATA.forEach(q => {
+                q.sentence = furi(q.sentence);
+                q.options.forEach(o => { o.kanji = furi(o.kanji || o.text); });
+            });
+            GAME3_DATA.forEach(q => q.blocks.forEach(b => { b.kanji = furi(b.kanji || b.text); }));
+            GAME4_DATA.forEach(q => {
+                q.question = furi(q.question);
+                q.options.forEach(o => { o.kanji = furi(o.kanji || o.text); });
+            });
+        })();
+
+        // Shuffle đáp án mỗi lượt chơi (Game 1 xáo lại; Game 2 & 4 xáo và tính lại correctIndex)
+        function prepareQuestion(q) {
+            if (q.context) {
+                q.shuffledOptions = null;
+            } else if (q.sentence || q.question) {
+                if (!q._baseOptions) { q._baseOptions = q.options; q._baseCorrect = q.correctIndex; }
+                const correct = q._baseOptions[q._baseCorrect];
+                q.options = shuffleArray(q._baseOptions);
+                q.correctIndex = q.options.indexOf(correct);
+            }
+            return q;
+        }
+
+        // Cảnh báo lỗi dữ liệu trong Console (F12) để dễ kiểm tra
+        function validateData() {
+            const warn = (m) => console.warn('[DATA]', m);
+            const ids = new Set();
+            [...GAME1_DATA, ...GAME2_DATA, ...GAME3_DATA, ...GAME4_DATA].forEach(q => {
+                if (!q.id) warn('Thiếu id');
+                else if (ids.has(q.id)) warn('Trùng id: ' + q.id);
+                ids.add(q.id);
+                if (!['easy', 'medium', 'hard'].includes(q.level)) warn('level sai: ' + q.id);
+                const e = q.explanation || {};
+                if (!e.correct || !e.pitfalls || !e.tip) warn('Thiếu explanation.correct/pitfalls/tip: ' + q.id);
+            });
+            GAME1_DATA.forEach(q => { if (!q.distractors || q.distractors.length !== 3) warn('Game1 cần đúng 3 distractors: ' + q.id); });
+            GAME2_DATA.forEach(q => {
+                if (!/＿/.test(q.sentence)) warn('Game2 thiếu chỗ trống ＿: ' + q.id);
+                if (!q.options[q.correctIndex]) warn('Game2 correctIndex sai: ' + q.id);
+            });
+            GAME3_DATA.forEach(q => {
+                const texts = q.blocks.map(b => b.text);
+                q.acceptableOrders.forEach(o => o.forEach(t => { if (!texts.includes(t)) warn('Game3 acceptableOrders có khối không tồn tại "' + t + '": ' + q.id); }));
+            });
+            GAME4_DATA.forEach(q => { if (!q.options[q.correctIndex]) warn('Game4 correctIndex sai: ' + q.id); });
+        }
+
+        // State object
+        let gameState = {
+            currentGame: 0,
+            questionCount: 5,
+            difficultyFilter: 'all',
+            questions: [],
+            currentIndex: 0,
+            score: 0,
+            correctCount: 0,
+            streak: 0,
+            maxStreak: 0,
+            hearts: 5,
+            wrongAnswers: [],
+            soundEnabled: true,
+            selectedOptionIndex: null,
+            dragSelectedBlocks: [],
+            dragPoolBlocks: [],
+            isAnswerChecked: false
+        };
+
+        // Web Audio Synthesizer
+        let audioCtx = null;
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playSound(type) {
+            if (!gameState.soundEnabled) return;
+            initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, now);
+                osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.15);
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'wrong') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(180, now);
+                osc.frequency.linearRampToValueAtTime(110, now + 0.25);
+                gain.gain.setValueAtTime(0.25, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'click') {
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(450, now);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                osc.start(now);
+                osc.stop(now + 0.05);
+            }
+        }
+
+        function toggleSound() {
+            gameState.soundEnabled = !gameState.soundEnabled;
+            document.getElementById('btn-sound').innerText = gameState.soundEnabled ? '🔊' : '🔇';
+        }
+
+        function speakJapanese(rawText) {
+            if ('speechSynthesis' in window && rawText) {
+                window.speechSynthesis.cancel();
+                const cleanText = rawText.replace(/<[^>]*>/g, '').replace(/^[0-9]\.\s*/, '').trim();
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.lang = 'ja-JP';
+                utterance.rate = 0.85;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0', 'anim-shake');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0', 'anim-shake');
+                toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+            }, 2000);
+        }
+
+        function recordMistake(question) {
+            try {
+                const mistakes = JSON.parse(safeGet(KEY_MISTAKES) || '{}');
+                const key = question.id || question.answer || question.sentence;
+                mistakes[key] = (mistakes[key] || 0) + 1;
+                safeSet(KEY_MISTAKES, JSON.stringify(mistakes));
+            } catch (e) { console.error("Error saving mistakes", e); }
+        }
+
+        function getMistakesCount() {
+            try {
+                const mistakes = JSON.parse(safeGet(KEY_MISTAKES) || '{}');
+                return Object.keys(mistakes).length;
+            } catch (e) { return 0; }
+        }
+
+        window.addEventListener('load', () => {
+            document.title = LESSON_CONFIG.title;
+            const jl = document.getElementById('modal-jlpt');
+            if (jl) jl.innerText = LESSON_CONFIG.jlpt;
+            validateData();
+            showMainMenu();
+        });
+
+        function showMainMenu() {
+            document.getElementById('top-bar').classList.add('hidden');
+            document.getElementById('bottom-bar').classList.add('hidden');
+            document.getElementById('hearts-modal').classList.add('hidden');
+
+            const container = document.getElementById('game-container');
+            const highScore = safeGet(KEY_HIGH) || 0;
+            const mistakesCount = getMistakesCount();
+
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-4xl py-4 px-2">
+                    <!-- Title Header -->
+                    <div class="text-center mb-6">
+                        <span class="inline-block bg-emerald-100 text-emerald-800 font-extrabold px-4 py-1 rounded-full text-xs md:text-sm mb-2 border border-emerald-300 select-none">
+                            IMEJI JAPANESE CLASS
+                        </span>
+                        <h1 class="text-3xl md:text-5xl font-black text-slate-800 tracking-tight mb-2">
+                            ${LESSON_CONFIG.title}
+                        </h1>
+                        <p class="text-sm md:text-base font-bold text-slate-500">Ths. Nguyễn Thanh Quang - Giảng viên chuyên ngành Nhật Bản học</p>
+                    </div>
+
+                    <!-- Control Bar: Số câu & Bộ lọc độ khó -->
+                    <div class="flex flex-col sm:flex-row flex-wrap items-center justify-between gap-3 mb-6 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 w-full select-none">
+                        <!-- Số câu -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs md:text-sm font-extrabold text-slate-600">Số câu:</span>
+                            <button onclick="setQuestionCount(5)" class="btn-3d text-xs md:text-sm font-black px-3.5 py-1.5 rounded-xl ${gameState.questionCount === 5 ? 'btn-green' : 'btn-gray'}">
+                                5 Câu
+                            </button>
+                            <button onclick="setQuestionCount(10)" class="btn-3d text-xs md:text-sm font-black px-3.5 py-1.5 rounded-xl ${gameState.questionCount === 10 ? 'btn-green' : 'btn-gray'}">
+                                10 Câu
+                            </button>
+                        </div>
+
+                        <!-- Lọc độ khó -->
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-xs md:text-sm font-extrabold text-slate-600">Độ khó:</span>
+                            <button onclick="setDifficulty('all')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'all' ? 'btn-blue' : 'btn-gray'}">Tất cả</button>
+                            <button onclick="setDifficulty('easy')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'easy' ? 'btn-green' : 'btn-gray'}">🟢 Dễ</button>
+                            <button onclick="setDifficulty('medium')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'medium' ? 'btn-amber' : 'btn-gray'}">🟡 Vừa</button>
+                            <button onclick="setDifficulty('hard')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'hard' ? 'btn-purple' : 'btn-gray'}">🔴 Khó</button>
+                        </div>
+
+                        <div class="text-xs md:text-sm font-black text-amber-600 flex items-center gap-1">
+                            🏆 Cao nhất: <span>${highScore}</span>
+                        </div>
+                    </div>
+
+                    <!-- Menu Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                        <!-- Game 1: Từ Vựng (Xanh lá) -->
+                        <div onclick="startGame(1)" class="btn-3d bg-emerald-50 hover:bg-emerald-100 border-2 border-emerald-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-emerald-200 text-emerald-800 p-3 rounded-2xl select-none">🏷️</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-emerald-950">Từ Vựng</h3>
+                                    <span class="text-xs bg-emerald-200 text-emerald-800 px-2 py-0.5 rounded font-black">G1</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-emerald-800 font-semibold mt-0.5">Chọn từ đúng theo ngữ cảnh tiếng Việt</p>
+                            </div>
+                        </div>
+
+                        <!-- Game 2: Ngữ Pháp (Xanh dương) -->
+                        <div onclick="startGame(2)" class="btn-3d bg-sky-50 hover:bg-sky-100 border-2 border-sky-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-sky-200 text-sky-800 p-3 rounded-2xl select-none">✏️</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-sky-950">Ngữ Pháp</h3>
+                                    <span class="text-xs bg-sky-200 text-sky-800 px-2 py-0.5 rounded font-black">G2</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-sky-800 font-semibold mt-0.5">Điền trợ từ / động từ vào chỗ trống</p>
+                            </div>
+                        </div>
+
+                        <!-- Game 3: Xếp Câu (Tím) -->
+                        <div onclick="startGame(3)" class="btn-3d bg-purple-50 hover:bg-purple-100 border-2 border-purple-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-purple-200 text-purple-800 p-3 rounded-2xl select-none">🧩</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-purple-950">Xếp Câu</h3>
+                                    <span class="text-xs bg-purple-200 text-purple-800 px-2 py-0.5 rounded font-black">G3</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-purple-800 font-semibold mt-0.5">Sắp xếp các khối từ thành câu chuẩn</p>
+                            </div>
+                        </div>
+
+                        <!-- Game 4: Hội Thoại (Cam) -->
+                        <div onclick="startGame(4)" class="btn-3d bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-amber-200 text-amber-800 p-3 rounded-2xl select-none">🗣️</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-amber-950">Hội Thoại</h3>
+                                    <span class="text-xs bg-amber-200 text-amber-800 px-2 py-0.5 rounded font-black">G4</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-amber-800 font-semibold mt-0.5">Chọn câu phản hồi tự nhiên nhất</p>
+                            </div>
+                        </div>
+
+                        <!-- Ôn Từ Hay Sai (Đỏ Hồng) -->
+                        <div onclick="startWeakPointsPractice()" class="btn-3d bg-rose-50 hover:bg-rose-100 border-2 border-rose-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left sm:col-span-2 transition-colors">
+                            <div class="text-3xl md:text-4xl bg-rose-200 text-rose-800 p-3 rounded-2xl select-none">📚</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-rose-950">📚 Ôn Từ Hay Sai</h3>
+                                    <span class="text-xs bg-rose-200 text-rose-900 px-2.5 py-0.5 rounded-full font-black">${mistakesCount} mục cần chú ý</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-rose-800 font-semibold mt-0.5">Tự động tổng hợp những câu bạn từng làm sai nhiều lần</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function setQuestionCount(count) {
+            playSound('click');
+            gameState.questionCount = count;
+            showMainMenu();
+        }
+
+        function setDifficulty(diff) {
+            playSound('click');
+            gameState.difficultyFilter = diff;
+            showMainMenu();
+        }
+
+        function retryCurrentGame() {
+            document.getElementById('hearts-modal').classList.add('hidden');
+            startGame(gameState.currentGame);
+        }
+
+        function practiceCurrentWrongList() {
+            document.getElementById('hearts-modal').classList.add('hidden');
+            if (gameState.wrongAnswers.length > 0) {
+                startCustomSession(gameState.wrongAnswers);
+            } else {
+                showMainMenu();
+            }
+        }
+
+        function startWeakPointsPractice() {
+            try {
+                const mistakes = JSON.parse(safeGet(KEY_MISTAKES) || '{}');
+                const wrongKeys = Object.keys(mistakes);
+
+                if (wrongKeys.length === 0) {
+                    showToast("Bạn chưa có từ hay sai nào! Hãy làm bài luyện tập nhé.");
+                    return;
+                }
+
+                const allQuestions = [...GAME1_DATA, ...GAME2_DATA, ...GAME3_DATA, ...GAME4_DATA];
+                const matchedQuestions = allQuestions.filter(q => wrongKeys.includes(q.id || q.answer || q.sentence));
+
+                if (matchedQuestions.length === 0) {
+                    showToast("Chưa có đủ dữ liệu từ hay sai.");
+                    return;
+                }
+
+                startCustomSession(matchedQuestions);
+            } catch (e) {
+                showToast("Chưa thể tải danh sách câu sai.");
+            }
+        }
+
+        function startCustomSession(customList) {
+            playSound('click');
+            gameState.currentGame = 1;
+            gameState.currentIndex = 0;
+            gameState.score = 0;
+            gameState.correctCount = 0;
+            gameState.streak = 0;
+            gameState.maxStreak = 0;
+            gameState.hearts = 5;
+            gameState.wrongAnswers = [];
+
+            gameState.questions = shuffleArray(customList).slice(0, gameState.questionCount).map(prepareQuestion);
+
+            document.getElementById('top-bar').classList.remove('hidden');
+            document.getElementById('bottom-bar').classList.remove('hidden');
+
+            updateHeaderStats();
+            renderQuestion();
+        }
+
+        function startGame(gameId) {
+            playSound('click');
+            gameState.currentGame = gameId;
+            gameState.currentIndex = 0;
+            gameState.score = 0;
+            gameState.correctCount = 0;
+            gameState.streak = 0;
+            gameState.maxStreak = 0;
+            gameState.hearts = 5;
+            gameState.wrongAnswers = [];
+
+            let rawData = [];
+            if (gameId === 1) rawData = GAME1_DATA;
+            else if (gameId === 2) rawData = GAME2_DATA;
+            else if (gameId === 3) rawData = GAME3_DATA;
+            else if (gameId === 4) rawData = GAME4_DATA;
+
+            let filtered = rawData;
+            if (gameState.difficultyFilter !== 'all') {
+                filtered = rawData.filter(q => q.level === gameState.difficultyFilter);
+                if (filtered.length === 0) filtered = rawData;
+            }
+
+            const shuffled = shuffleArray(filtered);
+            gameState.questions = shuffled.slice(0, Math.min(gameState.questionCount, shuffled.length)).map(prepareQuestion);
+
+            document.getElementById('top-bar').classList.remove('hidden');
+            document.getElementById('bottom-bar').classList.remove('hidden');
+
+            updateHeaderStats();
+            renderQuestion();
+        }
+
+        function updateHeaderStats() {
+            const currentNum = gameState.currentIndex + 1;
+            const totalNum = gameState.questions.length;
+            const progress = (gameState.currentIndex / totalNum) * 100;
+
+            const progressInner = document.getElementById('progress-inner');
+            const progressText = document.getElementById('progress-text');
+
+            progressInner.style.width = `${progress}%`;
+
+            if (progress >= 80) {
+                progressInner.className = "h-full rounded-full transition-all duration-300 progress-near-finish";
+                progressText.innerHTML = `Câu ${currentNum} / ${totalNum} <span class="text-amber-500 font-black animate-pulse">🔥 Sắp hoàn thành!</span>`;
+            } else {
+                progressInner.className = "bg-[#58CC02] h-full rounded-full transition-all duration-300";
+                progressText.innerText = `Câu ${currentNum} / ${totalNum}`;
+            }
+
+            document.getElementById('stat-streak').innerText = gameState.streak;
+            document.getElementById('stat-hearts').innerText = gameState.hearts;
+            document.getElementById('stat-score').innerText = gameState.score;
+        }
+
+        function setCheckButtonState(enabled) {
+            const btn = document.getElementById('btn-action');
+            btn.disabled = !enabled;
+        }
+
+        function resetBottomBar() {
+            const bar = document.getElementById('bottom-bar');
+            bar.className = "border-t-2 border-slate-200 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 transition-colors duration-300 bg-white shrink-0";
+            
+            document.getElementById('feedback-icon').classList.add('hidden');
+            document.getElementById('feedback-title').innerText = '';
+            document.getElementById('feedback-diff').innerText = '';
+            document.getElementById('explanation-wrapper').classList.add('hidden');
+            document.getElementById('feedback-explanation').classList.add('hidden');
+            document.getElementById('exp-arrow').innerText = "▼";
+            
+            const btnAction = document.getElementById('btn-action');
+            btnAction.innerText = "KIỂM TRA";
+            btnAction.className = "btn-3d btn-green text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto";
+            btnAction.onclick = handleActionButton;
+            
+            gameState.isAnswerChecked = false;
+            setCheckButtonState(false);
+        }
+
+        function toggleExplanationDetails() {
+            const exp = document.getElementById('feedback-explanation');
+            const arrow = document.getElementById('exp-arrow');
+            if (exp.classList.contains('hidden')) {
+                exp.classList.remove('hidden');
+                arrow.innerText = "▲";
+            } else {
+                exp.classList.add('hidden');
+                arrow.innerText = "▼";
+            }
+        }
+
+        function renderQuestion() {
+            resetBottomBar();
+            gameState.selectedOptionIndex = null;
+            gameState.dragSelectedBlocks = [];
+            gameState.dragPoolBlocks = [];
+
+            const q = gameState.questions[gameState.currentIndex];
+            const container = document.getElementById('game-container');
+
+            const levelBadge = document.getElementById('level-badge');
+            const levelText = (q.level || "easy").toUpperCase();
+            levelBadge.innerText = levelText;
+            levelBadge.className = q.level === 'hard' ? "bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md text-xs uppercase font-black" :
+                                   q.level === 'medium' ? "bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md text-xs uppercase font-black" :
+                                   "bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md text-xs uppercase font-black";
+
+            if (q.context) renderGame1(q, container);
+            else if (q.sentence) renderGame2(q, container);
+            else if (q.acceptableOrders) {
+                gameState.dragPoolBlocks = shuffleArray(q.blocks);
+                gameState.dragSelectedBlocks = [];
+                renderGame3(q, container);
+            }
+            else if (q.question) renderGame4(q, container);
+        }
+
+        function renderGame1(q, container) {
+            if (!q.shuffledOptions || q.shuffledOptions.length === 0) {
+                const options = [
+                    { kana: q.answer, kanji: q.kanji, isCorrect: true },
+                    ...q.distractors.map((d, idx) => ({ kana: d, kanji: q.distractorsKanji[idx], isCorrect: false }))
+                ];
+                q.shuffledOptions = shuffleArray(options);
+            }
+
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+                    <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-2 uppercase tracking-wider">Chọn đáp án đúng</h2>
+                    
+                    <div class="bg-emerald-50 border-2 border-emerald-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-inner">
+                        <p class="text-lg md:text-2xl font-extrabold text-emerald-950">"${q.context}"</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
+                        ${q.shuffledOptions.map((opt, idx) => `
+                            <button id="opt-${idx}" onclick="selectGame1Option(${idx})" class="btn-3d btn-gray p-4 md:p-5 rounded-2xl flex flex-col items-center justify-center text-center border-2 min-h-[90px]">
+                                <div class="jp-text-lg">${opt.kanji}</div>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectGame1Option(idx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            gameState.selectedOptionIndex = idx;
+            const q = gameState.questions[gameState.currentIndex];
+            
+            q.shuffledOptions.forEach((_, i) => {
+                const btn = document.getElementById(`opt-${i}`);
+                if (i === idx) btn.classList.add('selected');
+                else btn.classList.remove('selected');
+            });
+
+            setCheckButtonState(true);
+            speakJapanese(q.shuffledOptions[idx].kana);
+        }
+
+        function renderGame2(q, container) {
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+                    <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-3 uppercase tracking-wider">Điền từ vào chỗ trống</h2>
+
+                    <div class="bg-slate-50 border-2 border-slate-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-sm">
+                        <div id="sentence-display" class="jp-text-xl text-slate-800 leading-relaxed mb-3">
+                            ${q.sentence.replace(/＿+/, '<span id="blank-slot" class="inline-block border-b-4 border-emerald-500 min-w-[90px] px-2 text-emerald-600 font-extrabold">＿＿＿</span>')}
+                        </div>
+
+                        <div>
+                            <button onclick="toggleTranslation()" class="text-xs md:text-sm text-slate-500 underline font-bold hover:text-slate-700 select-none">
+                                👁️ <span id="trans-toggle-text">Hiện bản dịch</span>
+                            </button>
+                            <p id="sentence-translation" class="text-base text-slate-600 font-bold mt-2 hidden italic">"${q.translation}"</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+                        ${q.options.map((opt, idx) => `
+                            <button id="opt-${idx}" onclick="selectGame2Option(${idx})" class="btn-3d btn-gray p-3.5 rounded-2xl flex items-center justify-between border-2 min-h-[64px]">
+                                <span class="bg-slate-100 text-slate-500 rounded-lg px-2 py-1 font-black text-xs">${idx + 1}</span>
+                                <span class="jp-text-lg font-bold text-center flex-1">${opt.kanji}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleTranslation() {
+            const transEl = document.getElementById('sentence-translation');
+            const toggleText = document.getElementById('trans-toggle-text');
+            if (transEl.classList.contains('hidden')) {
+                transEl.classList.remove('hidden');
+                toggleText.innerText = "Ẩn bản dịch";
+            } else {
+                transEl.classList.add('hidden');
+                toggleText.innerText = "Hiện bản dịch";
+            }
+        }
+
+        function selectGame2Option(idx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            gameState.selectedOptionIndex = idx;
+            const q = gameState.questions[gameState.currentIndex];
+            
+            q.options.forEach((_, i) => {
+                const btn = document.getElementById(`opt-${i}`);
+                if (i === idx) btn.classList.add('selected');
+                else btn.classList.remove('selected');
+            });
+
+            const blankSlot = document.getElementById('blank-slot');
+            blankSlot.innerHTML = q.options[idx].kanji;
+            setCheckButtonState(true);
+            speakJapanese(q.options[idx].text);
+        }
+
+        function renderGame3(q, container) {
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+                    <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-2 uppercase tracking-wider">Sắp xếp các khối từ</h2>
+
+                    <div class="bg-purple-50 border-2 border-purple-200 p-4 rounded-2xl mb-5 w-full text-center">
+                        <p class="text-base md:text-xl font-extrabold text-purple-950">"${q.vietnamese}"</p>
+                    </div>
+
+                    <div class="w-full bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl p-4 min-h-[90px] mb-5 flex flex-wrap items-center gap-2.5 justify-center shadow-inner">
+                        ${gameState.dragSelectedBlocks.length === 0 ? '<span class="text-xs md:text-sm font-bold text-slate-400 select-none">Chạm các khối từ ở dưới để chọn...</span>' : ''}
+                        ${gameState.dragSelectedBlocks.map((blk, idx) => `
+                            <button onclick="removeBlockFromAnswer(${idx})" class="btn-3d btn-gray bg-white px-3.5 py-2 rounded-xl border-2 border-slate-300 flex items-center anim-pop">
+                                <span class="jp-text-lg font-bold">${blk.kanji}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <div class="w-full bg-slate-100 p-4 rounded-2xl flex flex-wrap items-center gap-2.5 justify-center border border-slate-200">
+                        ${gameState.dragPoolBlocks.map((blk, idx) => `
+                            <button onclick="addBlockToAnswer(${idx})" class="btn-3d btn-gray bg-white px-4 py-2.5 rounded-xl border-2 border-slate-300 shadow-sm">
+                                <span class="jp-text-lg font-bold">${blk.kanji}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function addBlockToAnswer(poolIdx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            const blk = gameState.dragPoolBlocks.splice(poolIdx, 1)[0];
+            gameState.dragSelectedBlocks.push(blk);
+            speakJapanese(blk.text);
+            
+            setCheckButtonState(gameState.dragSelectedBlocks.length > 0);
+            renderGame3(gameState.questions[gameState.currentIndex], document.getElementById('game-container'));
+        }
+
+        function removeBlockFromAnswer(selectedIdx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            const blk = gameState.dragSelectedBlocks.splice(selectedIdx, 1)[0];
+            gameState.dragPoolBlocks.push(blk);
+            
+            setCheckButtonState(gameState.dragSelectedBlocks.length > 0);
+            renderGame3(gameState.questions[gameState.currentIndex], document.getElementById('game-container'));
+        }
+
+        function renderGame4(q, container) {
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+                    <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-3 uppercase tracking-wider">Chọn câu phản hồi đúng</h2>
+
+                    <div class="flex items-center gap-3 mb-5 w-full">
+                        <div class="text-3xl bg-amber-100 p-3 rounded-2xl border border-amber-300 select-none shrink-0">${q.speaker.split(' ')[0]}</div>
+                        <div class="bg-slate-50 border-2 border-slate-200 p-4 rounded-2xl rounded-tl-none flex-1 flex items-center justify-between shadow-sm">
+                            <div class="jp-text-lg text-slate-800 font-black">${q.question}</div>
+                            <button onclick="speakJapanese('${q.questionAudioText}')" aria-label="Phát âm thanh" class="btn-3d btn-amber min-w-[44px] min-h-[44px] p-2.5 rounded-xl text-lg ml-2 flex items-center justify-center shrink-0 select-none">
+                                🔊
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3 w-full">
+                        ${q.options.map((opt, idx) => `
+                            <button id="opt-${idx}" onclick="selectGame4Option(${idx})" class="btn-3d btn-gray p-3.5 rounded-2xl flex items-center text-left border-2 min-h-[60px]">
+                                <span class="jp-text-lg font-bold text-slate-800">${idx + 1}.${opt.kanji}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            setTimeout(() => speakJapanese(q.questionAudioText), 200);
+        }
+
+        function selectGame4Option(idx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            gameState.selectedOptionIndex = idx;
+            const q = gameState.questions[gameState.currentIndex];
+            
+            q.options.forEach((_, i) => {
+                const btn = document.getElementById(`opt-${i}`);
+                if (i === idx) btn.classList.add('selected');
+                else btn.classList.remove('selected');
+            });
+
+            setCheckButtonState(true);
+            speakJapanese(q.options[idx].text);
+        }
+
+        function handleActionButton() {
+            const q = gameState.questions[gameState.currentIndex];
+
+            if (!gameState.isAnswerChecked) {
+                let isCorrect = false;
+
+                if (q.context) {
+                    if (gameState.selectedOptionIndex === null) { showToast("Vui lòng chọn một đáp án!"); return; }
+                    isCorrect = q.shuffledOptions[gameState.selectedOptionIndex].isCorrect;
+                } else if (q.sentence) {
+                    if (gameState.selectedOptionIndex === null) { showToast("Vui lòng chọn một đáp án!"); return; }
+                    isCorrect = (gameState.selectedOptionIndex === q.correctIndex);
+                } else if (q.acceptableOrders) {
+                    if (gameState.dragSelectedBlocks.length === 0) { showToast("Vui lòng chọn các khối từ!"); return; }
+                    const userOrder = gameState.dragSelectedBlocks.map(b => b.text);
+                    isCorrect = q.acceptableOrders.some(acc => JSON.stringify(acc) === JSON.stringify(userOrder));
+                } else if (q.question) {
+                    if (gameState.selectedOptionIndex === null) { showToast("Vui lòng chọn phản hồi!"); return; }
+                    isCorrect = (gameState.selectedOptionIndex === q.correctIndex);
+                }
+
+                gameState.isAnswerChecked = true;
+
+                const bar = document.getElementById('bottom-bar');
+                const icon = document.getElementById('feedback-icon');
+                const title = document.getElementById('feedback-title');
+                const diff = document.getElementById('feedback-diff');
+                const expWrapper = document.getElementById('explanation-wrapper');
+                const exp = document.getElementById('feedback-explanation');
+                const btnAction = document.getElementById('btn-action');
+
+                icon.classList.remove('hidden');
+                expWrapper.classList.remove('hidden');
+
+                if (isCorrect) {
+                    playSound('correct');
+                    gameState.score += 20;
+                    gameState.correctCount += 1;
+                    gameState.streak += 1;
+                    gameState.maxStreak = Math.max(gameState.maxStreak, gameState.streak);
+
+                    bar.className = "border-t-2 border-emerald-300 bg-emerald-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
+                    icon.innerText = "✅";
+                    title.innerText = "Chính xác!";
+                    title.className = "text-lg md:text-xl font-black text-emerald-800";
+                    diff.innerText = "";
+
+                    exp.innerHTML = `
+                        <p class="text-emerald-900 font-bold mb-1">💡 ${q.explanation.correct}</p>
+                        <p class="text-emerald-800">📌 ${q.explanation.tip}</p>
+                    `;
+
+                    btnAction.innerText = "TIẾP TỤC";
+                    btnAction.className = "btn-3d btn-green text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto";
+                } else {
+                    playSound('wrong');
+                    gameState.streak = 0;
+                    gameState.hearts -= 1;
+                    
+                    recordMistake(q);
+                    if (!gameState.wrongAnswers.includes(q)) {
+                        gameState.wrongAnswers.push(q);
+                    }
+
+                    bar.className = "border-t-2 border-rose-300 bg-rose-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
+                    icon.innerText = "❌";
+                    title.innerText = "Chưa chính xác";
+                    title.className = "text-lg md:text-xl font-black text-rose-800";
+
+                    let correctAnswerText = "";
+                    if (q.context) correctAnswerText = q.kanji;
+                    else if (q.sentence) correctAnswerText = q.options[q.correctIndex].kanji;
+                    else if (q.acceptableOrders) correctAnswerText = q.acceptableOrders[0].join(" ");
+                    else if (q.question) correctAnswerText = q.options[q.correctIndex].kanji;
+
+                    diff.innerHTML = `<span class="text-rose-900">Đáp án đúng:</span> <span class="font-extrabold text-emerald-800">${correctAnswerText}</span>`;
+
+                    exp.innerHTML = `
+                        <div class="mb-2 p-2 bg-white rounded-lg border border-rose-200">
+                            <p class="text-xs font-black text-rose-600 uppercase mb-0.5">📌 Từ/Cấu trúc cần nhớ hôm nay:</p>
+                            <div class="jp-text-lg font-bold text-slate-800">${q.kanji || q.sentence || correctAnswerText}</div>
+                        </div>
+                        <p class="text-rose-900 font-bold mb-1">💡 ${q.explanation.correct}</p>
+                        <p class="text-rose-800">⚠️ ${q.explanation.pitfalls}</p>
+                    `;
+
+                    btnAction.innerText = "ĐÃ HỌC ĐƯỢC";
+                    btnAction.className = "btn-3d btn-amber text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto";
+                }
+
+                updateHeaderStats();
+
+                if (gameState.hearts <= 0) {
+                    setTimeout(() => {
+                        const reviewBtn = document.getElementById('btn-modal-review');
+                        if (gameState.wrongAnswers.length > 0) reviewBtn.classList.remove('hidden');
+                        else reviewBtn.classList.add('hidden');
+
+                        document.getElementById('hearts-modal').classList.remove('hidden');
+                    }, 800);
+                }
+
+            } else {
+                gameState.currentIndex += 1;
+                if (gameState.currentIndex < gameState.questions.length) {
+                    renderQuestion();
+                    updateHeaderStats();
+                } else {
+                    renderSummaryScreen();
+                }
+            }
+        }
+
+        function renderSummaryScreen() {
+            document.getElementById('top-bar').classList.add('hidden');
+            document.getElementById('bottom-bar').classList.add('hidden');
+
+            const container = document.getElementById('game-container');
+            const total = gameState.questions.length;
+            const accuracy = total > 0 ? Math.round((gameState.correctCount / total) * 100) : 0;
+
+            const currentHigh = parseInt(safeGet(KEY_HIGH) || '0');
+            if (gameState.score > currentHigh) {
+                safeSet(KEY_HIGH, gameState.score.toString());
+            }
+
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-xl py-6 px-4 text-center anim-pop">
+                    <div class="text-6xl md:text-7xl mb-3">🎉</div>
+                    <h1 class="text-3xl md:text-4xl font-black text-slate-800 mb-1">Hoàn Thành Bài Tập!</h1>
+                    <p class="text-base md:text-lg font-bold text-slate-500 mb-6">Bạn đã thể hiện rất tuyệt vời hôm nay!</p>
+
+                    <div class="grid grid-cols-2 gap-3.5 w-full mb-6">
+                        <div class="bg-amber-50 border-2 border-amber-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-amber-600 uppercase mb-1">Điểm Số</span>
+                            <span class="text-3xl md:text-4xl font-black text-amber-600">⭐ ${gameState.score}</span>
+                        </div>
+
+                        <div class="bg-emerald-50 border-2 border-emerald-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-emerald-600 uppercase mb-1">Đúng</span>
+                            <span class="text-3xl md:text-4xl font-black text-emerald-600">✅ ${gameState.correctCount}/${total}</span>
+                        </div>
+
+                        <div class="bg-sky-50 border-2 border-sky-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-sky-600 uppercase mb-1">Độ Chính Xác</span>
+                            <span class="text-3xl md:text-4xl font-black text-sky-600">🎯 ${accuracy}%</span>
+                        </div>
+
+                        <div class="bg-orange-50 border-2 border-orange-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-orange-600 uppercase mb-1">Chuỗi Cao Nhất</span>
+                            <span class="text-3xl md:text-4xl font-black text-orange-600">🔥 ${gameState.maxStreak}</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3 w-full">
+                        ${gameState.wrongAnswers.length > 0 ? `
+                            <button onclick="practiceCurrentWrongList()" class="btn-3d btn-purple py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
+                                📌 Ôn lại câu làm sai (${gameState.wrongAnswers.length})
+                            </button>
+                        ` : ''}
+                        <button onclick="startGame(gameState.currentGame)" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
+                            🔄 Luyện Lại Lượt Mới
+                        </button>
+                        <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-slate-700">
+                            🏠 Về Menu Chính
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
