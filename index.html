@@ -564,11 +564,11 @@
         }
         <button id="btnConfig">Cấu Hình Đường Dẫn File</button>
 
-<script>
-const isAdmin = localStorage.getItem("isAdmin") === "true";
 
-if (!isAdmin) {
-    document.getElementById("btnConfig").style.display = "none";
+        const isAdmin = localStorage.getItem("isAdmin") === "true";
+
+          if (!isAdmin) {
+           document.getElementById("btnConfig").style.display = "none";
 }
     </script>
 </body>
