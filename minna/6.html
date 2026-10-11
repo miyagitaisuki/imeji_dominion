@@ -305,8 +305,7 @@
             jlpt: "N5",
             storagePrefix: "mnn_l01"
         };
-
-        const GAME1_DATA = [
+const GAME1_DATA = [
     {
         id: "l06_v001",
         level: "easy",
@@ -616,8 +615,7 @@
         }
     }
 ];
-
-       const GAME2_DATA = [
+        const GAME2_DATA = [
     {
         id: "l06_g001",
         level: "easy",
@@ -979,319 +977,263 @@
         }
     }
 ];
-
-       const GAME3_DATA = [
+        const GAME3_DATA = [
     {
-        id: "l06_v001",
+        id: "l06_s001",
         level: "easy",
-        context: "Hành động giở trang sách, tạp chí hoặc tờ báo ra để theo dõi nội dung bằng mắt.",
-        answer: "よみます",
-        kanji: "{読|よ}みます",
-        distractors: ["みます", "ききます", "かきます"],
-        distractorsKanji: ["{見|み}ます", "{聞|き}きます", "{書|か}きます"],
+        vietnamese: "Tôi đọc sách.",
+        acceptableOrders: [
+            ["わたしは", "ほんを", "よみます"],
+            ["ほんを", "わたしは", "よみます"]
+        ],
+        blocks: [
+            { text: "わたしは", kanji: "{私|わたし}は" },
+            { text: "ほんを", kanji: "{本|ほん}を" },
+            { text: "よみます", kanji: "{読|よ}みます" },
+            { text: "かいます", kanji: "{買|か}います" }
+        ],
         explanation: {
-            correct: "読みます (よみます) nghĩa là đọc.",
-            pitfalls: "Tránh nhầm: 見ます (xem), 聞きます (nghe), 書きます (viết).",
-            tip: "読 (ĐỌC) có bộ Ngôn 言 = dùng lời nói đọc chữ."
+            correct: "Cấu trúc: N1 は N2 を V (Tôi đọc sách).",
+            pitfalls: "Không dùng 買います (mua) vì câu yêu cầu nghĩa 'đọc'.",
+            tip: "Chủ ngữ は + Tân ngữ を + Động từ."
         }
     },
     {
-        id: "l06_v002",
+        id: "l06_s002",
         level: "easy",
-        context: "Hành động dùng tiền đổi lấy món hàng ở cửa hàng hoặc siêu thị.",
-        answer: "かいます",
-        kanji: "{買|か}います",
-        distractors: ["いきます", "かえります", "あいます"],
-        distractorsKanji: ["{行|い}きます", "{帰|かえ}ります", "{会|あ}います"],
+        vietnamese: "Tôi mua báo ở nhà ga.",
+        acceptableOrders: [
+            ["えきで", "しんぶんを", "かいます"],
+            ["しんぶんを", "えきで", "かいます"]
+        ],
+        blocks: [
+            { text: "えきで", kanji: "{駅|えき}で" },
+            { text: "しんぶんを", kanji: "{新聞|しんぶん}を" },
+            { text: "かいます", kanji: "{買|か}います" },
+            { text: "えきに", kanji: "{駅|えき}に" },
+            { text: "よみます", kanji: "{読|よ}みます" }
+        ],
         explanation: {
-            correct: "買います (かいます) nghĩa là mua.",
-            pitfalls: "Tránh nhầm với 行きます (đi), 帰ります (về), 会います (gặp).",
-            tip: "買 (MUA) có bộ Bối 貝 = tiền vỏ sò ngày xưa dùng để mua bán."
+            correct: "Cấu trúc: Địa điểm で + Tân ngữ を + Động từ.",
+            pitfalls: "Tránh nhầm trợ từ で thành に; không chọn 読みます (đọc).",
+            tip: "Nơi diễn ra hành động dùng trợ từ で."
         }
     },
     {
-        id: "l06_v003",
+        id: "l06_s003",
         level: "easy",
-        context: "Thực phẩm làm từ bột mì nướng, thường dùng làm đồ ăn sáng.",
-        answer: "パン",
-        kanji: "パン",
-        distractors: ["たまご", "さかな", "にく"],
-        distractorsKanji: ["{卵|たまご}", "{魚|さかな}", "{肉|にく}"],
+        vietnamese: "Cùng đi Kobe với tôi không?",
+        acceptableOrders: [
+            ["いっしょに", "こうべへ", "いきませんか"],
+            ["こうべへ", "いっしょに", "いきませんか"]
+        ],
+        blocks: [
+            { text: "いっしょに", kanji: "いっしょに" },
+            { text: "こうべへ", kanji: "{神戸|こうべ}へ" },
+            { text: "いきませんか", kanji: "{行|い}きませんか" },
+            { text: "いきましょう", kanji: "{行|い}きましょう" }
+        ],
         explanation: {
-            correct: "パン (gốc tiếng Bồ Đào Nha) nghĩa là bánh mì.",
-            pitfalls: "Tránh nhầm với 卵 (trứng), 魚 (cá), 肉 (thịt).",
-            tip: "Từ ngoại lai mượn tiếng nước ngoài luôn viết bằng Katakana."
+            correct: "Mẫu câu rủ rê lịch sự: いっしょに + N へ V-ませんか.",
+            pitfalls: "Không dùng いきましょう vì đuôi này dùng để chốt/đồng ý, không phải câu hỏi rủ.",
+            tip: "Mời rủ lịch sự dùng đuôi ませんか."
         }
     },
     {
-        id: "l06_v004",
+        id: "l06_s004",
         level: "easy",
-        context: "Đồ uống có cồn truyền thống hoặc thức uống lên men phổ biến ở Nhật Bản.",
-        answer: "おさけ",
-        kanji: "{お酒|おさけ}",
-        distractors: ["こうちゃ", "ジュース", "ぎゅうにゅう"],
-        distractorsKanji: ["{紅茶|こうちゃ}", "ジュース", "{牛乳|ぎゅうにゅう}"],
+        vietnamese: "Hãy nghỉ một chút nào.",
+        acceptableOrders: [
+            ["ちょっと", "やすみましょう"]
+        ],
+        blocks: [
+            { text: "ちょっと", kanji: "ちょっと" },
+            { text: "やすみましょう", kanji: "{休|やす}みましょう" },
+            { text: "やすみませんか", kanji: "{休|やす}みませんか" }
+        ],
         explanation: {
-            correct: "お酒 (おさけ) nghĩa là rượu, rượu sake.",
-            pitfalls: "Tránh nhầm với 紅茶 (hồng trà), ジュース (nước trái cây), 牛乳 (sữa bò).",
-            tip: "酒 (TỬU) có bộ Thủy 三 và dẫu 酒 = chất lỏng lên men."
+            correct: "Đề xuất hoặc kêu gọi cùng làm việc gì: V-ましょう (Nghỉ thôi nào).",
+            pitfalls: "Tránh chọn やすみませんか vì đó là câu hỏi rủ rê.",
+            tip: "Cùng làm thôi = Động từ bỏ ます + ましょう."
         }
     },
     {
-        id: "l06_v005",
+        id: "l06_s005",
         level: "easy",
-        context: "Loại báo printed cập nhật tin tức hằng ngày phát hành buổi sáng hoặc buổi tối.",
-        answer: "しんぶん",
-        kanji: "{新聞|しんぶん}",
-        distractors: ["ざっし", "ほん", "てがみ"],
-        distractorsKanji: ["{雑誌|ざっし}", "{本|ほん}", "{手紙|てがみ}"],
+        vietnamese: "Mỗi sáng bạn ăn cái gì?",
+        acceptableOrders: [
+            ["まいあさ", "なにを", "たべますか"],
+            ["なにを", "まいあさ", "たべますか"]
+        ],
+        blocks: [
+            { text: "まいあさ", kanji: "{毎朝|まいあさ}" },
+            { text: "なにを", kanji: "{何|なに}を" },
+            { text: "たべますか", kanji: "{食|た}べますか" },
+            { text: "のみますか", kanji: "{飲|の}みますか" }
+        ],
         explanation: {
-            correct: "新聞 (しんぶん) nghĩa là tờ báo.",
-            pitfalls: "Tránh nhầm với 雑誌 (tạp chí), 本 (sách), 手紙 (bức thư).",
-            tip: "新 (TÂN: mới) + 聞 (VĂN: nghe) = tin tức mới nghe/đọc được."
+            correct: "Hỏi thức ăn hằng ngày: 毎朝 何を 食べますか.",
+            pitfalls: "Không dùng 飲みますか (uống) khi câu hỏi đề cập đến 'ăn'.",
+            tip: "何を 食べますか = Ăn cái gì?"
         }
     },
     {
-        id: "l06_v006",
-        level: "easy",
-        context: "Hành động cho thức ăn vào miệng, nhai và nuốt vào bụng.",
-        answer: "たべます",
-        kanji: "{食|た}べます",
-        distractors: ["みます", "すいます", "のみます"],
-        distractorsKanji: ["{見|み}ます", "{吸|す}います", "{飲|の}みます"],
-        explanation: {
-            correct: "食べます (たべます) nghĩa là ăn.",
-            pitfalls: "Tránh nhầm với 飲みます (uống), 吸います (hút), 見ます (xem).",
-            tip: "食 (THỰC) = hành động ăn uống."
-        }
-    },
-    {
-        id: "l06_v007",
-        level: "easy",
-        context: "Hành động đưa chất lỏng như nước, sữa, trà vào cơ thể qua đường miệng.",
-        answer: "のみます",
-        kanji: "{飲|の}みます",
-        distractors: ["たべます", "すいます", "みます"],
-        distractorsKanji: ["{食|た}べます", "{吸|す}います", "{見|み}ます"],
-        explanation: {
-            correct: "飲みます (のみます) nghĩa là uống.",
-            pitfalls: "Tránh nhầm với 食べます (ăn), 吸います (hút thuốc).",
-            tip: "飲 (ẨM) có bộ Thực 食 bên trái = ăn uống chất lỏng."
-        }
-    },
-    {
-        id: "l06_v008",
-        level: "easy",
-        context: "Môn thể thao đối kháng dùng vợt đánh quả bóng nhỏ qua lưới.",
-        answer: "テニス",
-        kanji: "テニス",
-        distractors: ["サッカー", "ビデオ", "CD"],
-        distractorsKanji: ["サッカー", "ビデオ", "CD"],
-        explanation: {
-            correct: "テニス nghĩa là môn quần vợt (tennis).",
-            pitfalls: "Tránh nhầm với サッカー (bóng đá), ビデオ (video).",
-            tip: "Môn thể thao gốc phương Tây viết bằng Katakana."
-        }
-    },
-    {
-        id: "l06_v009",
-        level: "easy",
-        context: "Nơi ăn uống tập thể dành cho nhân viên trong công ty hoặc sinh viên trong trường học.",
-        answer: "しょくどう",
-        kanji: "{食堂|しょくどう}",
-        distractors: ["じむしょ", "きょうしつ", "うけつけ"],
-        distractorsKanji: ["{事務所|じむしょ}", "{教室|きょうしつ}", "{受付|うけつけ}"],
-        explanation: {
-            correct: "食堂 (しょくどう) nghĩa là nhà ăn, căng tin.",
-            pitfalls: "Tránh nhầm với 事務所 (văn phòng), 教室 (lớp học), 受付 (quầy lễ tân).",
-            tip: "食 (THỰC: ăn) + 堂 (ĐƯỜNG: tòa nhà) = nhà ăn."
-        }
-    },
-    {
-        id: "l06_v010",
+        id: "l06_s006",
         level: "medium",
-        context: "Hoạt động văn hóa truyền thống thưởng ngoạn hoa anh đào vào mùa xuân tại Nhật Bản.",
-        answer: "おはなみ",
-        kanji: "{お花見|おはなみ}",
-        distractors: ["えいが", "パーティー", "サッカー"],
-        distractorsKanji: ["{映画|えいが}", "パーティー", "サッカー"],
+        vietnamese: "Sáng nay tôi đã không ăn gì cả.",
+        acceptableOrders: [
+            ["けさ", "なにも", "たべませんでした"],
+            ["なにも", "けさ", "たべませんでした"]
+        ],
+        blocks: [
+            { text: "けさ", kanji: "けさ" },
+            { text: "なにも", kanji: "{何|なに}も" },
+            { text: "たべませんでした", kanji: "{食|た}べませんでした" },
+            { text: "たべました", kanji: "{食|た}べました" },
+            { text: "なにを", kanji: "{何|なに}を" }
+        ],
         explanation: {
-            correct: "お花見 (おはなみ) nghĩa là việc ngắm hoa (anh đào).",
-            pitfalls: "Tránh nhầm với 映画 (phim), パーティー (tiệc).",
-            tip: "花 (HOA) + 見 (KIẾN: nhìn/xem) = ngắm hoa."
+            correct: "Phủ định hoàn toàn trong quá khứ: けさ 何も 食べませんでした.",
+            pitfalls: "Tránh dùng なにを đi với phủ định hoặc chia động từ ở dạng khẳng định 食べました.",
+            tip: "Từ nghi vấn + も + Phủ định = Không ... gì cả."
         }
     },
     {
-        id: "l06_v011",
+        id: "l06_s007",
         level: "medium",
-        context: "Thức uống chế biến từ lá trà đã lên men, có nước màu đỏ nâu đặc trưng.",
-        answer: "こうちゃ",
-        kanji: "{紅茶|こうちゃ}",
-        distractors: ["おちゃ", "ジュース", "ぎゅうにゅう"],
-        distractorsKanji: ["{お茶|おちゃ}", "ジュース", "{牛乳|ぎゅうにゅう}"],
+        vietnamese: "Tôi đã học tiếng Nhật. Sau đó tôi đã xem phim.",
+        acceptableOrders: [
+            ["にほんごを", "べんきょうしました", "それから", "えいがを", "みました"]
+        ],
+        blocks: [
+            { text: "にほんごを", kanji: "{日本語|にほんご}を" },
+            { text: "べんきょうしました", kanji: "{勉強|べんきょう}しました" },
+            { text: "それから", kanji: "それから" },
+            { text: "えいがを", kanji: "{映画|えいが}を" },
+            { text: "みました", kanji: "{見|み}ました" },
+            { text: "ききました", kanji: "{聞|き}きました" }
+        ],
         explanation: {
-            correct: "紅茶 (こうちゃ) nghĩa là hồng trà (trà đen).",
-            pitfalls: "Tránh nhầm với お茶 (trà xanh nói chung), 牛乳 (sữa bò).",
-            tip: "紅 (HỒNG: màu đỏ) + 茶 (TRÀ) = hồng trà."
+            correct: "Nối hai hành động nối tiếp nhau bằng liên từ それから.",
+            pitfalls: "Không chọn 聞きました (nghe) vì câu yêu cầu 'xem' phim (見ました).",
+            tip: "Hành động 1. それから Hành động 2."
         }
     },
     {
-        id: "l06_v012",
+        id: "l06_s008",
         level: "medium",
-        context: "Hành động dùng máy ảnh bấm nút để lưu lại hình ảnh của người hoặc cảnh vật.",
-        answer: "とります",
-        kanji: "{撮|と}ります",
-        distractors: ["みます", "かきます", "かいます"],
-        distractorsKanji: ["{見|み}ます", "{書|か}きます", "{買|か}きます"],
+        vietnamese: "Bạn đã mua chiếc cặp đó ở đâu?",
+        acceptableOrders: [
+            ["どこで", "そのかばんを", "かいましたか"],
+            ["そのかばんを", "どこで", "かいましたか"]
+        ],
+        blocks: [
+            { text: "どこで", kanji: "どこで" },
+            { text: "そのかばんを", kanji: "そのかばんを" },
+            { text: "かいましたか", kanji: "{買|か}いましたか" },
+            { text: "どこへ", kanji: "どこへ" },
+            { text: "かいますか", kanji: "{買|か}いますか" }
+        ],
         explanation: {
-            correct: "撮ります (とります) nghĩa là chụp (ảnh). đi với 写真を.",
-            pitfalls: "Tránh nhầm với 見ます (xem), 書きます (viết), 買います (mua).",
-            tip: "撮 (TÁT) có bộ Thủ 手 bên trái = dùng tay bấm máy chụp."
+            correct: "Hỏi nơi mua đồ trong quá khứ: どこで + Tân ngữ + 買いましたか.",
+            pitfalls: "Không dùng どこへ (chỉ hướng đi) và phải chia động từ quá khứ 買いましたか.",
+            tip: "Hỏi nơi thực hiện hành động quá khứ = どこで + V-ましたか."
         }
     },
     {
-        id: "l06_v013",
+        id: "l06_s009",
         level: "medium",
-        context: "Nhiệm vụ hoặc bài tập được giáo viên giao về nhà làm sau buổi học.",
-        answer: "しゅくだい",
-        kanji: "{宿題|しゅくだい}",
-        distractors: ["レポート", "てがみ", "ざっし"],
-        distractorsKanji: ["レポート", "{手紙|てがみ}", "{雑誌|ざっし}"],
+        vietnamese: "Tôi chụp ảnh ở ngoài vườn.",
+        acceptableOrders: [
+            ["にわで", "しゃしんを", "とります"],
+            ["しゃしんを", "にわで", "とります"]
+        ],
+        blocks: [
+            { text: "にわで", kanji: "{庭|にわ}で" },
+            { text: "しゃしんを", kanji: "{写真|しゃしん}を" },
+            { text: "とります", kanji: "{撮|と}ります" },
+            { text: "にわに", kanji: "{庭|にわ}に" },
+            { text: "みます", kanji: "{見|み}ます" }
+        ],
         explanation: {
-            correct: "宿題 (しゅくだい) nghĩa là bài tập về nhà.",
-            pitfalls: "Tránh nhầm với レポート (báo cáo), 手紙 (bức thư).",
-            tip: "宿 (TÚC: trọ/nhà) + 題 (ĐỀ: đề bài) = bài tập làm ở nhà."
+            correct: "Hành động chụp ảnh ở địa điểm: 庭で 写真を 撮ります.",
+            pitfalls: "Không dùng trợ từ に cho hành động; không nhầm 撮ります với 見ます.",
+            tip: "写真を 撮ります (chụp ảnh)."
         }
     },
     {
-        id: "l06_v014",
+        id: "l06_s010",
         level: "medium",
-        context: "Khoảng thời gian buổi sáng của ngày hôm nay.",
-        answer: "けさ",
-        kanji: "けさ",
-        distractors: ["こんばん", "きょう", "あした"],
-        distractorsKanji: ["今晩", "{今日|きょう}", "あした"],
+        vietnamese: "Ngày mai hãy gặp nhau lúc 10 giờ ở ga Osaka.",
+        acceptableOrders: [
+            ["あした", "10じに", "おおさかえきで", "あいましょう"],
+            ["あした", "おおさかえきで", "10じに", "あいましょう"],
+            ["10じに", "あした", "おおさかえきで", "あいましょう"],
+            ["おおさかえきで", "あした", "10じに", "あいましょう"]
+        ],
+        blocks: [
+            { text: "あした", kanji: "あした" },
+            { text: "10じに", kanji: "10{時|じ}に" },
+            { text: "おおさかえきで", kanji: "{大阪駅|おおさかえき}で" },
+            { text: "あいましょう", kanji: "{会|あ}いましょう" },
+            { text: "おおさかえきに", kanji: "{大阪駅|おおさかえき}に" },
+            { text: "あいました", kanji: "{会|あ}いました" }
+        ],
         explanation: {
-            correct: "けさ nghĩa là sáng nay.",
-            pitfalls: "Tránh nhầm với 今晩 (tối nay), 今日 (hôm nay), あした (ngày mai).",
-            tip: "けさ dùng cho thời gian quá khứ của buổi sáng nay."
+            correct: "Hẹn gặp nhau: Thời gian に + Địa điểm で + 会いましょう.",
+            pitfalls: "Nơi gặp mặt dùng で chứ không dùng に; đuôi hẹn làm gì là ～ましょう.",
+            tip: "Địa điểm + で + 会いましょう (Cùng gặp ở...)."
         }
     },
     {
-        id: "l06_v015",
-        level: "medium",
-        context: "Hành động hít hơi/khói (như khói thuốc lá) vào cơ thể.",
-        answer: "すいます",
-        kanji: "{吸|す}います",
-        distractors: ["のみます", "たべます", "ききます"],
-        distractorsKanji: ["{飲|の}みます", "{食|た}べます", "{聞|き}きます"],
-        explanation: {
-            correct: "吸います (すいます) nghĩa là hút (thuốc lá).",
-            pitfalls: "Tránh nhầm với 飲みます (uống), 食べます (ăn). đi cùng たばこを.",
-            tip: "吸 (HẤP) có bộ Khẩu 口 = dùng miệng hít/hút vào."
-        }
-    },
-    {
-        id: "l06_v016",
-        level: "medium",
-        context: "Tấm giấy ghi nội dung lời nhắn gửi có niêm phong trong phong bì gửi qua bưu điện.",
-        answer: "てがみ",
-        kanji: "{手紙|てがみ}",
-        distractors: ["レポート", "しんぶん", "ざっし"],
-        distractorsKanji: ["レポート", "{新聞|しんぶん}", "{雑誌|ざっし}"],
-        explanation: {
-            correct: "手紙 (てがみ) nghĩa là bức thư.",
-            pitfalls: "Tránh nhầm với レポート (báo cáo), 新聞 (tờ báo).",
-            tip: "手 (THỦ: tay) + 紙 (CHỈ: giấy) = giấy viết bằng tay gửi đi."
-        }
-    },
-    {
-        id: "l06_v017",
-        level: "medium",
-        context: "Tác phẩm điện ảnh trình chiếu cho khán giả xem ở rạp chiếu phim.",
-        answer: "えいが",
-        kanji: "{映画|えいが}",
-        distractors: ["ビデオ", "CD", "しゃしん"],
-        distractorsKanji: ["ビデオ", "CD", "{写真|しゃしん}"],
-        explanation: {
-            correct: "映画 (えいが) nghĩa là phim, điện ảnh.",
-            pitfalls: "Tránh nhầm với ビデオ (băng video), 写真 (bức ảnh).",
-            tip: "映 (ÁNH: chiếu) + 画 (HOẠ: bức tranh) = tranh chiếu hình ảnh động."
-        }
-    },
-    {
-        id: "l06_v018",
-        level: "medium",
-        context: "Khoảng đất trống bên cạnh hoặc phía sau nhà dùng để trồng cây cảnh, hoa cỏ.",
-        answer: "にわ",
-        kanji: "{庭|にわ}",
-        distractors: ["へや", "うち", "うけつけ"],
-        distractorsKanji: ["{部屋|へや}", "うち", "{受付|うけつけ}"],
-        explanation: {
-            correct: "庭 (にわ) nghĩa là khu vườn.",
-            pitfalls: "Tránh nhầm với 部屋 (căn phòng), うち (nhà ở).",
-            tip: "庭 (ĐÌNH) = khuôn viên sân vườn quanh nhà."
-        }
-    },
-    {
-        id: "l06_v019",
+        id: "l06_s011",
         level: "hard",
-        context: "Từ dùng đi kèm với dạng phủ định để nhấn mạnh ý 'hoàn toàn không có vật nào / không làm gì cả'.",
-        answer: "なにも",
-        kanji: "{何|なに}も",
-        distractors: ["どこも", "だれも", "なに"],
-        distractorsKanji: ["どこも", "{誰|だれ}も", "{何|なに}"],
+        vietnamese: "Thứ Bảy tôi đã học tiếng Nhật, sau đó đã xem phim cùng bạn.",
+        acceptableOrders: [
+            ["どようび", "にほんごを", "べんきょうしました", "それから", "ともだちと", "えいがを", "みました"],
+            ["どようび", "にほんごを", "べんきょうしました", "それから", "えいがを", "ともだちと", "みました"]
+        ],
+        blocks: [
+            { text: "どようび", kanji: "{土曜日|どようび}" },
+            { text: "にほんごを", kanji: "{日本語|にほんご}を" },
+            { text: "べんきょうしました", kanji: "{勉強|べんきょう}しました" },
+            { text: "それから", kanji: "それから" },
+            { text: "ともだちと", kanji: "{友達|ともだち}と" },
+            { text: "えいがを", kanji: "{映画|えいが}を" },
+            { text: "みました", kanji: "{見|み}ました" },
+            { text: "ともだちに", kanji: "{友達|ともだち}に" }
+        ],
         explanation: {
-            correct: "何も (なにも) nghĩa là không... cái gì cả (đi với phủ định).",
-            pitfalls: "Tránh nhầm: どこも (đâu cũng không), 何 (cái gì - câu hỏi khẳng định).",
-            tip: "Từ nghi vấn 何 + も + Động từ phủ định = phủ định hoàn toàn."
+            correct: "Kết hợp thời gian, liên từ nối và đối tượng đồng hành: 友達と (cùng với bạn).",
+            pitfalls: "Không dùng 友達に khi muốn diễn tả ý 'cùng làm gì với bạn'.",
+            tip: "Người + と = Làm gì cùng với ai."
         }
     },
     {
-        id: "l06_v020",
+        id: "l06_s012",
         level: "hard",
-        context: "Liên từ đứng đầu câu dùng để nối hai hành động diễn ra nối tiếp nhau theo thứ tự ('sau đó').",
-        answer: "それから",
-        kanji: "それから",
-        distractors: ["じゃ", "いつも", "ときどき"],
-        distractorsKanji: ["じゃ", "いつも", "ときどき"],
+        vietnamese: "Ngày mai cùng đi ngắm hoa với bạn không?",
+        acceptableOrders: [
+            ["あした", "ともだちと", "おはなみを", "しませんか"],
+            ["あした", "おはなみを", "ともだちと", "しませんか"],
+            ["ともだちと", "あした", "おはなみを", "しませんか"]
+        ],
+        blocks: [
+            { text: "あした", kanji: "あした" },
+            { text: "ともだちと", kanji: "{友達|ともだち}と" },
+            { text: "おはなみを", kanji: "{お花見|おはなみ}を" },
+            { text: "しませんか", kanji: "しませんか" },
+            { text: "ともだちに", kanji: "{友達|ともだち}に" },
+            { text: "しましょう", kanji: "しましょう" }
+        ],
         explanation: {
-            correct: "それから nghĩa là 'sau đó', 'tiếp theo'.",
-            pitfalls: "Tránh nhầm với じゃ (vậy thì), いつも (luôn luôn), ときどき (thỉnh thoảng).",
-            tip: "Dùng để liên kết chuỗi hành động theo trình tự thời gian."
-        }
-    },
-    {
-        id: "l06_v021",
-        level: "hard",
-        context: "Địa điểm chuyên lưu giữ và trưng bày các tác phẩm nghệ thuật như tranh vẽ, tượng điêu khắc.",
-        answer: "びじゅつかん",
-        kanji: "{美術館|びじゅつかん}",
-        distractors: ["としょかん", "だいがく", "びょういん"],
-        distractorsKanji: ["{図書館|としょかん}", "{大学|だいがく}", "{病院|びょういん}"],
-        explanation: {
-            correct: "美術館 (びじゅつかん) nghĩa là bảo tàng mỹ thuật.",
-            pitfalls: "Tránh nhầm với 図書館 (thư viện), 病院 (bệnh viện).",
-            tip: "美 (MỸ) + 術 (THUẬT) + 館 (QUÁN) = bảo tàng mỹ thuật."
-        }
-    },
-    {
-        id: "l06_v022",
-        level: "hard",
-        context: "Hành động gặp mặt trực tiếp một người nào đó tại một địa điểm (đi với trợ từ に).",
-        answer: "あいます",
-        kanji: "{会|あ}います",
-        distractors: ["いきます", "きます", "かえります"],
-        distractorsKanji: ["{行|い}きます", "{来|き}きます", "{帰|かえ}ります"],
-        explanation: {
-            correct: "会います (あいます) nghĩa là gặp (ai đó). Cấu trúc: N (người) に 会います.",
-            pitfalls: "Tránh nhầm với 行きます (đi), 帰ります (về). Trợ từ chỉ người cần gặp là に.",
-            tip: "会 (HỘI) = hội ngộ, gặp gỡ."
+            correct: "Mời rủ lịch sự kết hợp đồng hành: あした 友達と お花見を しませんか.",
+            pitfalls: "Tránh nhầm 友達に hoặc đuôi しましょう khi đặt câu hỏi rủ rê.",
+            tip: "Rủ rê người khác = V-ませんか."
         }
     }
 ];
-        
-        const GAME4_DATA = [
+    const GAME4_DATA = [
     {
         id: "l06_c001",
         level: "easy",
@@ -1509,6 +1451,7 @@
         }
     }
 ];
+        
         // ===== DATA ZONE END =================================================
 
         // ===== ENGINE =====
