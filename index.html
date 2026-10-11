@@ -325,7 +325,9 @@
         let currentTab = 'all';
         let introPathPattern = localStorage.getItem('introPathPattern') || 'nhap-mon/{id}.html';
         let minnaPathPattern = localStorage.getItem('minnaPathPattern') || 'bai-{id}.html';
-
+        let href = lesson.url ? lesson.url : (isIntro 
+    ? introPathPattern.replace('{id}', lesson.id) 
+    : minnaPathPattern.replace('{id}', lesson.id));
         // Initialize UI
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('introPathPattern').value = introPathPattern;
