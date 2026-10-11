@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ghép Từ Vựng Tiếng Nhật (Romaji ⇄ Hiragana)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif']
+                    },
+                    colors: {
+                        jpRed: '#e63946',
+                        jpDark: '#1d3557',
+                        jpLight: '#f1faee',
+                        jpBlue: '#457b9d',
+                        jpCyan: '#a8dadc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .shake-anim {
+            animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 0, 0); }
+            20%, 80% { transform: translate3d(4px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+            40%, 60% { transform: translate3d(6px, 0, 0); }
+        }
+
+        .pulse-success {
+            animation: pulseGreen 0.5s ease-out;
+        }
+        @keyframes pulseGreen {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .draggable-item {
+            touch-action: none;
+            user-select: none;
+            cursor: grab;
+        }
+        .draggable-item:active {
+            cursor: grabbing;
+        }
+        .drop-target.drag-over {
+            border-color: #3b82f6 !important;
+            background-color: #eff6ff !important;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-jpRed selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-800/90 backdrop-blur border-b border-slate-700 sticky top-0 z-30 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-jpRed text-white flex items-center justify-center font-jp font-black text-xl shadow-md">
+                    日
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-white leading-tight">Game Kéo Thả Từ Vựng Tiếng Nhật</h1>
+                    <p class="text-xs text-slate-400">Nối Romaji (Bên trái) ⇄ Hiragana (Bên phải)</p>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold">
+                <div class="bg-slate-700/60 px-3 py-1.5 rounded-lg border border-slate-600 flex items-center gap-2">
+                    <span class="text-slate-400">Đã ghép:</span>
+                    <span id="groupProgress" class="text-emerald-400 font-bold">0 / 10</span>
+                </div>
+                <div class="bg-slate-700/60 px-3 py-1.5 rounded-lg border border-slate-600 flex items-center gap-2">
+                    <span class="text-slate-400">Tổng điểm:</span>
+                    <span id="totalScore" class="text-amber-400 font-bold">0 / 50</span>
+                </div>
+                <button id="openVocabModalBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded-lg transition font-medium text-xs flex items-center gap-1 shadow">
+                    📖 Tra bảng từ
+                </button>
+            </div>
+        </div>
+
+        <!-- Group Switcher Tabs -->
+        <div class="max-w-6xl mx-auto px-4 pt-1 pb-3 flex items-center gap-2 overflow-x-auto no-scrollbar">
+            <button onclick="switchGroup(0)" id="tab-0" class="group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition border border-transparent">
+                Nhóm 1 (促音 - Âm ngắt)
+            </button>
+            <button onclick="switchGroup(1)" id="tab-1" class="group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition border border-transparent">
+                Nhóm 2 (長音 - Âm trường)
+            </button>
+            <button onclick="switchGroup(2)" id="tab-2" class="group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition border border-transparent">
+                Nhóm 3 (Trường âm & Âm mũi)
+            </button>
+            <button onclick="switchGroup(3)" id="tab-3" class="group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition border border-transparent">
+                Nhóm 4 (拗音 - Âm ghép 1)
+            </button>
+            <button onclick="switchGroup(4)" id="tab-4" class="group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition border border-transparent">
+                Nhóm 5 (拗音 - Âm ghép 2)
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Game Area -->
+    <main class="flex-1 max-w-6xl w-full mx-auto p-4 sm:p-6 flex flex-col gap-6">
+
+        <!-- Group Description Banner -->
+        <div class="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                    <span id="groupBadge" class="bg-jpRed/20 text-jpRed border border-jpRed/40 text-xs font-bold px-2.5 py-0.5 rounded-full">
+                        Nhóm 1
+                    </span>
+                    <h2 id="groupTitle" class="text-base sm:text-lg font-bold text-white">
+                        Âm Ngắt (促音 - っ) & Phát âm cơ bản
+                    </h2>
+                </div>
+                <p id="groupDesc" class="text-xs sm:text-sm text-slate-300">
+                    Kéo từ Romaji ở cột bên trái và thả vào từ Hiragana tương ứng ở cột bên phải (hoặc nhấp chọn lần lượt).
+                </p>
+            </div>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-2 self-end sm:self-auto shrink-0">
+                <button onclick="restartCurrentGroup()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-slate-600">
+                    🔄 Chơi lại
+                </button>
+                <button onclick="speakAllCurrentGroup()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-slate-600" title="Nghe phát âm tất cả các từ">
+                    🔊 Nghe nhóm từ
+                </button>
+            </div>
+        </div>
+
+        <!-- Help Instructions for Touch/Click -->
+        <div class="text-center text-xs text-slate-400 bg-slate-800/40 py-2 px-4 rounded-xl border border-slate-700/50">
+            💡 <strong>Mẹo:</strong> Bạn có thể <span class="text-amber-300">Kéo & Thả</span> hoặc chỉ cần <span class="text-sky-300">Nhấp chọn Romaji rồi nhấp chọn Hiragana</span> để ghép nối!
+        </div>
+
+        <!-- Game Columns Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+
+            <!-- LEFT COLUMN: ROMAJI CARDS -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between px-1">
+                    <h3 class="text-xs font-bold tracking-wider uppercase text-slate-400 flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span>
+                        Cột Romaji (Kéo / Chọn)
+                    </h3>
+                    <span class="text-xs text-slate-500">10 từ</span>
+                </div>
+
+                <div id="romajiList" class="grid grid-cols-1 gap-2.5">
+                    <!-- Romaji cards inserted dynamically -->
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: HIRAGANA DROP SLOTS -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between px-1">
+                    <h3 class="text-xs font-bold tracking-wider uppercase text-slate-400 flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block"></span>
+                        Cột Hiragana (Đích thả)
+                    </h3>
+                    <span class="text-xs text-slate-500">10 từ</span>
+                </div>
+
+                <div id="hiraganaList" class="grid grid-cols-1 gap-2.5">
+                    <!-- Hiragana drop targets inserted dynamically -->
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Vocabulary Modal -->
+    <div id="vocabModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-800 border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="p-5 border-b border-slate-700 flex items-center justify-between bg-slate-800/80 sticky top-0">
+                <div>
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        📖 Danh Sách Từ Vựng Tất Cả 5 Nhóm
+                    </h3>
+                    <p class="text-xs text-slate-400">Xem nghĩa tiếng Việt và bấm biểu tượng loa để nghe phát âm chuẩn tiếng Nhật</p>
+                </div>
+                <button onclick="closeVocabModal()" class="w-8 h-8 rounded-full bg-slate-700 hover:bg-slate-600 text-slate-300 flex items-center justify-center font-bold text-lg transition">
+                    ✕
+                </button>
+            </div>
+
+            <div class="p-5 overflow-y-auto space-y-6 flex-1 text-sm">
+                <!-- Group lists rendered here -->
+                <div id="modalVocabContent" class="space-y-6"></div>
+            </div>
+
+            <div class="p-4 border-t border-slate-700 bg-slate-800/50 text-right">
+                <button onclick="closeVocabModal()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-xl text-xs font-bold transition">
+                    Đóng bảng tra cứu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- DATA STRUCTURE FOR 5 GROUPS (TOTAL 50 WORDS) ---
+        const VOCAB_GROUPS = [
+            {
+                id: 1,
+                title: "Nhóm 1: Âm ngắt (促音 - っ) & Phát âm cơ bản",
+                badge: "Nhóm 1",
+                desc: "Luyện tập phân biệt các từ chứa âm ngắt (Sokuon っ) và các âm ngắn đơn giản.",
+                words: [
+                    { id: "w1_1", romaji: "kekka", hiragana: "けっか", meaning: "Kết quả" },
+                    { id: "w1_2", romaji: "hatsuon", hiragana: "はつおん", meaning: "Phát âm" },
+                    { id: "w1_3", romaji: "nettai", hiragana: "ねったい", meaning: "Nhiệt đới" },
+                    { id: "w1_4", romaji: "atsui", hiragana: "あつい", meaning: "Nóng" },
+                    { id: "w1_5", romaji: "shippai", hiragana: "しっぱい", meaning: "Thất bại" },
+                    { id: "w1_6", romaji: "zasshi", hiragana: "ざっし", meaning: "Tạp chí" },
+                    { id: "w1_7", romaji: "kekkon", hiragana: "けっこん", meaning: "Kết hôn" },
+                    { id: "w1_8", romaji: "kitte", hiragana: "きって", meaning: "Tem thư" },
+                    { id: "w1_9", romaji: "rokusatsu", hiragana: "ろくさつ", meaning: "6 cuốn (sách)" },
+                    { id: "w1_10", romaji: "kesseki", hiragana: "けっせき", meaning: "Vắng mặt" }
+                ]
+            },
+            {
+                id: 2,
+                title: "Nhóm 2: Âm ngắt & Âm trường (長音 - Chōon)",
+                badge: "Nhóm 2",
+                desc: "Luyện tập nhận biết âm kéo dài (oo, uu) và biến âm.",
+                words: [
+                    { id: "w2_1", romaji: "rokusen-en", hiragana: "ろくせんえん", meaning: "6000 yên" },
+                    { id: "w2_2", romaji: "gakki", hiragana: "がっき", meaning: "Nhạc cụ / Học kỳ" },
+                    { id: "w2_3", romaji: "kippu", hiragana: "きっぷ", meaning: "Vé (tàu, xe)" },
+                    { id: "w2_4", romaji: "asatte", hiragana: "あさって", meaning: "Ngày kia" },
+                    { id: "w2_5", romaji: "rokuon", hiragana: "ろくおん", meaning: "Ghi âm" },
+                    { id: "w2_6", romaji: "satoo", hiragana: "さとう", meaning: "Đường ăn" },
+                    { id: "w2_7", romaji: "mado", hiragana: "まど", meaning: "Cửa sổ" },
+                    { id: "w2_8", romaji: "undoo", hiragana: "うんどう", meaning: "Vận động / Thể thao" },
+                    { id: "w2_9", romaji: "bangoo", hiragana: "ばんごう", meaning: "Số thứ tự" },
+                    { id: "w2_10", romaji: "booeki", hiragana: "ぼうえき", meaning: "Thương mại / Mậu dịch" }
+                ]
+            },
+            {
+                id: 3,
+                title: "Nhóm 3: Âm kéo dài (Chōon) & Âm mũi (n)",
+                badge: "Nhóm 3",
+                desc: "Rèn luyện đọc các từ có tổ hợp âm dài oo, ee và biến âm n/m.",
+                words: [
+                    { id: "w3_1", romaji: "sekidoo", hiragana: "せきどう", meaning: "Xích đạo" },
+                    { id: "w3_2", romaji: "booshi", hiragana: "ぼうし", meaning: "Mũ / Nón" },
+                    { id: "w3_3", romaji: "yoochi-en", hiragana: "ようちえん", meaning: "Trường mầm non" },
+                    { id: "w3_4", romaji: "tenkiyoohoo", hiragana: "てんきよほう", meaning: "Dự báo thời tiết" },
+                    { id: "w3_5", romaji: "reizooko", hiragana: "れいぞうこ", meaning: "Tủ lạnh" },
+                    { id: "w3_6", romaji: "keisatsu", hiragana: "けいさつ", meaning: "Cảnh sát" },
+                    { id: "w3_7", romaji: "ondo", hiragana: "おんど", meaning: "Nhiệt độ" },
+                    { id: "w3_8", romaji: "kinoo", hiragana: "きのう", meaning: "Hôm qua" },
+                    { id: "w3_9", romaji: "bumpoo", hiragana: "ぶんぽう", meaning: "Ngữ pháp" },
+                    { id: "w3_10", romaji: "kootsuu", hiragana: "こうつう", meaning: "Giao thông" }
+                ]
+            },
+            {
+                id: 4,
+                title: "Nhóm 4: Âm ghép (拗音 - Yōon - ゃ, ゅ, ょ) Tập 1",
+                badge: "Nhóm 4",
+                desc: "Luyện phát âm các âm ảo ghép (kya, kyu, kyo, sha, shu, sho, gya, gyu, gyo...).",
+                words: [
+                    { id: "w4_1", romaji: "ningyo", hiragana: "にんぎょ", meaning: "Mĩ nhân ngư / Búp búp" },
+                    { id: "w4_2", romaji: "kin-jo", hiragana: "きんじょ", meaning: "Hàng xóm / Lân cận" },
+                    { id: "w4_3", romaji: "toshokan", hiragana: "としょかん", meaning: "Thư viện" },
+                    { id: "w4_4", romaji: "noogyo", hiragana: "のうぎょう", meaning: "Nông nghiệp" },
+                    { id: "w4_5", romaji: "jisho", hiragana: "じしょ", meaning: "Từ điển" },
+                    { id: "w4_6", romaji: "kashu", hiragana: "かしゅ", meaning: "Ca sĩ" },
+                    { id: "w4_7", romaji: "gyuuniku", hiragana: "ぎゅうにく", meaning: "Thịt bò" },
+                    { id: "w4_8", romaji: "kembikyoo", hiragana: "けんびきょう", meaning: "Kính hiển vi" },
+                    { id: "w4_9", romaji: "gekkyuu", hiragana: "げっきゅう", meaning: "Lương tháng" },
+                    { id: "w4_10", romaji: "kyuukoo", hiragana: "きゅうこう", meaning: "Tàu tốc hành" }
+                ]
+            },
+            {
+                id: 5,
+                title: "Nhóm 5: Âm ghép (Yōon) & Từ vựng tổng hợp Tập 2",
+                badge: "Nhóm 5",
+                desc: "Thực hành tổ hợp âm ghép nâng cao và từ vựng thông dụng.",
+                words: [
+                    { id: "w5_1", romaji: "kingyo", hiragana: "きんぎょ", meaning: "Cá vàng" },
+                    { id: "w5_2", romaji: "kyonen", hiragana: "きょねん", meaning: "Năm ngoái" },
+                    { id: "w5_3", romaji: "shokudoo", hiragana: "しょくどう", meaning: "Nhà ăn / Quán ăn" },
+                    { id: "w5_4", romaji: "shooyu", hiragana: "しょうゆ", meaning: "Nước tương" },
+                    { id: "w5_5", romaji: "juusho", hiragana: "じゅうしょ", meaning: "Địa chỉ" },
+                    { id: "w5_6", romaji: "benkyoo", hiragana: "べんきょう", meaning: "Học tập" },
+                    { id: "w5_7", romaji: "gakkoo", hiragana: "がっこう", meaning: "Trường học" },
+                    { id: "w5_8", romaji: "ryokoo", hiragana: "りょこう", meaning: "Du lịch" },
+                    { id: "w5_9", romaji: "shukudai", hiragana: "しゅくだい", meaning: "Bài tập về nhà" },
+                    { id: "w5_10", romaji: "kissaten", hiragana: "きっさてん", meaning: "Quán cà phê" }
+                ]
+            }
+        ];
+
+        // --- APP STATE VARIABLES ---
+        let currentGroupIndex = 0;
+        let selectedRomajiId = null;
+        let matchedPairs = {}; // Map of hiraganaId -> wordObj
+        let groupMatchedCount = [0, 0, 0, 0, 0];
+
+        // Audio synthesizer for sound effects
+        function playTone(type) {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                const ctx = new AudioContext();
+                if (type === 'correct') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+                    osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.08); // E5
+                    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.25);
+                } else if (type === 'wrong') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, ctx.currentTime); // A3
+                    osc.frequency.setValueAtTime(164.81, ctx.currentTime + 0.08); // E3
+                    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.25);
+                } else if (type === 'win') {
+                    const notes = [523.25, 659.25, 783.99, 1046.50];
+                    notes.forEach((freq, idx) => {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.frequency.value = freq;
+                        gain.gain.setValueAtTime(0.15, ctx.currentTime + idx * 0.09);
+                        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + idx * 0.09 + 0.22);
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start(ctx.currentTime + idx * 0.09);
+                        osc.stop(ctx.currentTime + idx * 0.09 + 0.25);
+                    });
+                }
+            } catch (e) {
+                console.error("Audio error:", e);
+            }
+        }
+
+        // Japanese Text-to-Speech Pronunciation
+        function speakJapanese(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ja-JP';
+                utterance.rate = 0.85;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Shuffle utility
+        function shuffleArray(arr) {
+            const newArr = [...arr];
+            for (let i = newArr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+            }
+            return newArr;
+        }
+
+        // Switch active group
+        function switchGroup(index) {
+            currentGroupIndex = index;
+            selectedRomajiId = null;
+            matchedPairs = {};
+            renderHeaderAndTabs();
+            renderGame();
+        }
+
+        function restartCurrentGroup() {
+            selectedRomajiId = null;
+            matchedPairs = {};
+            groupMatchedCount[currentGroupIndex] = 0;
+            renderHeaderAndTabs();
+            renderGame();
+        }
+
+        function renderHeaderAndTabs() {
+            const currentGroup = VOCAB_GROUPS[currentGroupIndex];
+            document.getElementById('groupBadge').innerText = currentGroup.badge;
+            document.getElementById('groupTitle').innerText = currentGroup.title;
+            document.getElementById('groupDesc').innerText = currentGroup.desc;
+
+            // Render Tabs state
+            VOCAB_GROUPS.forEach((g, idx) => {
+                const tabBtn = document.getElementById(`tab-${idx}`);
+                if (idx === currentGroupIndex) {
+                    tabBtn.className = "group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-jpRed text-white shadow-md border border-jpRed";
+                } else {
+                    const isDone = groupMatchedCount[idx] === 10;
+                    tabBtn.className = `group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 ${isDone ? 'border-emerald-500/50 text-emerald-400' : ''}`;
+                }
+            });
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const count = groupMatchedCount[currentGroupIndex];
+            document.getElementById('groupProgress').innerText = `${count} / 10`;
+
+            const total = groupMatchedCount.reduce((a, b) => a + b, 0);
+            document.getElementById('totalScore').innerText = `${total} / 50`;
+        }
+
+        // Render Game Cards & Slots
+        function renderGame() {
+            const currentGroup = VOCAB_GROUPS[currentGroupIndex];
+            const romajiContainer = document.getElementById('romajiList');
+            const hiraganaContainer = document.getElementById('hiraganaList');
+
+            romajiContainer.innerHTML = '';
+            hiraganaContainer.innerHTML = '';
+
+            // Shuffle cards for game randomness
+            const shuffledRomaji = shuffleArray(currentGroup.words);
+            const shuffledHiragana = shuffleArray(currentGroup.words);
+
+            // Render Left Column (Romaji)
+            shuffledRomaji.forEach(item => {
+                const isMatched = Object.values(matchedPairs).some(w => w.id === item.id);
+
+                const card = document.createElement('div');
+                card.id = `romaji-${item.id}`;
+                card.dataset.wordId = item.id;
+                
+                if (isMatched) {
+                    card.className = "p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/50 text-slate-500 font-bold flex items-center justify-between opacity-50 cursor-not-allowed";
+                    card.innerHTML = `
+                        <span class="line-through">${item.romaji}</span>
+                        <span class="text-xs bg-slate-700/50 px-2 py-0.5 rounded text-slate-400 font-normal">Đã ghép</span>
+                    `;
+                } else {
+                    const isSelected = selectedRomajiId === item.id;
+                    card.draggable = true;
+                    card.className = `draggable-item p-3.5 rounded-xl font-bold flex items-center justify-between transition-all duration-150 border shadow-sm ${
+                        isSelected 
+                        ? 'bg-sky-500/20 border-sky-400 text-sky-200 ring-2 ring-sky-400/50 scale-[1.02]' 
+                        : 'bg-slate-800 hover:bg-slate-700/80 border-slate-700 text-slate-100 hover:border-slate-600'
+                    }`;
+                    card.innerHTML = `
+                        <span class="text-base sm:text-lg">${item.romaji}</span>
+                        <span class="text-xs text-slate-400 font-normal flex items-center gap-1">
+                            ✋ Kéo / Chọn
+                        </span>
+                    `;
+
+                    // Click handler for tap selection
+                    card.onclick = () => selectRomaji(item.id);
+
+                    // Drag handlers
+                    card.ondragstart = (e) => {
+                        e.dataTransfer.setData('text/plain', item.id);
+                        selectRomaji(item.id);
+                    };
+                }
+
+                romajiContainer.appendChild(card);
+            });
+
+            // Render Right Column (Hiragana)
+            shuffledHiragana.forEach(item => {
+                const matchedWord = matchedPairs[item.id];
+
+                const slot = document.createElement('div');
+                slot.id = `hiragana-${item.id}`;
+                slot.dataset.targetId = item.id;
+
+                if (matchedWord) {
+                    slot.className = "p-3.5 rounded-xl bg-emerald-950/40 border-2 border-emerald-500/80 text-emerald-100 flex items-center justify-between shadow-md pulse-success";
+                    slot.innerHTML = `
+                        <div class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-xs">✓</span>
+                            <div>
+                                <div class="font-jp font-black text-lg text-emerald-300 leading-none">${item.hiragana}</div>
+                                <div class="text-xs text-emerald-400/80 font-medium mt-1">${matchedWord.romaji} • ${matchedWord.meaning}</div>
+                            </div>
+                        </div>
+                        <button onclick="speakJapanese('${item.hiragana}')" class="p-2 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 text-emerald-300 transition" title="Nghe phát âm">
+                            🔊
+                        </button>
+                    `;
+                } else {
+                    slot.className = "drop-target p-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-800 border-2 border-dashed border-slate-700 hover:border-slate-500 text-slate-100 flex items-center justify-between transition-all cursor-pointer";
+                    slot.innerHTML = `
+                        <span class="font-jp font-bold text-xl text-amber-300 tracking-wide">${item.hiragana}</span>
+                        <span class="text-xs text-slate-400 font-medium bg-slate-700/50 px-2.5 py-1 rounded-lg border border-slate-600/50">
+                            Thả vào đây
+                        </span>
+                    `;
+
+                    // Click handler for matching
+                    slot.onclick = () => attemptMatch(selectedRomajiId, item.id);
+
+                    // Drag Over & Drop Handlers
+                    slot.ondragover = (e) => {
+                        e.preventDefault();
+                        slot.classList.add('drag-over');
+                    };
+                    slot.ondragleave = () => {
+                        slot.classList.remove('drag-over');
+                    };
+                    slot.ondrop = (e) => {
+                        e.preventDefault();
+                        slot.classList.remove('drag-over');
+                        const draggedId = e.dataTransfer.getData('text/plain');
+                        attemptMatch(draggedId, item.id);
+                    };
+                }
+
+                hiraganaContainer.appendChild(slot);
+            });
+        }
+
+        // Selection logic for Romaji
+        function selectRomaji(id) {
+            if (Object.values(matchedPairs).some(w => w.id === id)) return;
+            selectedRomajiId = id;
+            renderGame();
+        }
+
+        // Attempt matching Romaji ID with Hiragana ID
+        function attemptMatch(romajiId, hiraganaTargetId) {
+            if (!romajiId || !hiraganaTargetId) return;
+
+            const currentWords = VOCAB_GROUPS[currentGroupIndex].words;
+            const romajiWord = currentWords.find(w => w.id === romajiId);
+            const targetWord = currentWords.find(w => w.id === hiraganaTargetId);
+
+            if (romajiWord.id === targetWord.id) {
+                // Correct Match!
+                playTone('correct');
+                speakJapanese(targetWord.hiragana);
+
+                matchedPairs[targetWord.id] = romajiWord;
+                selectedRomajiId = null;
+                groupMatchedCount[currentGroupIndex]++;
+
+                updateProgress();
+                renderGame();
+
+                // Check group completion
+                if (groupMatchedCount[currentGroupIndex] === 10) {
+                    setTimeout(() => {
+                        playTone('win');
+                        confetti({
+                            particleCount: 100,
+                            spread: 70,
+                            origin: { y: 0.6 }
+                        });
+                    }, 300);
+                }
+            } else {
+                // Wrong match!
+                playTone('wrong');
+                selectedRomajiId = null;
+
+                const targetSlot = document.getElementById(`hiragana-${hiraganaTargetId}`);
+                if (targetSlot) {
+                    targetSlot.classList.add('shake-anim', 'border-jpRed');
+                    setTimeout(() => {
+                        targetSlot.classList.remove('shake-anim', 'border-jpRed');
+                        renderGame();
+                    }, 400);
+                } else {
+                    renderGame();
+                }
+            }
+        }
+
+        // Read out all words in the current group
+        function speakAllCurrentGroup() {
+            const words = VOCAB_GROUPS[currentGroupIndex].words;
+            let delay = 0;
+            words.forEach(w => {
+                setTimeout(() => {
+                    speakJapanese(w.hiragana);
+                }, delay);
+                delay += 1200;
+            });
+        }
+
+        // --- VOCABULARY LOOKUP MODAL ---
+        function renderVocabModal() {
+            const container = document.getElementById('modalVocabContent');
+            container.innerHTML = '';
+
+            VOCAB_GROUPS.forEach(group => {
+                const groupEl = document.createElement('div');
+                groupEl.className = "space-y-3 bg-slate-900/60 p-4 rounded-2xl border border-slate-700/70";
+
+                let rowsHtml = '';
+                group.words.forEach((w, index) => {
+                    rowsHtml += `
+                        <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/50 transition">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold text-slate-500 w-5">${index + 1}.</span>
+                                <div>
+                                    <span class="font-jp font-bold text-base text-amber-300 mr-2">${w.hiragana}</span>
+                                    <span class="text-xs font-semibold text-sky-300">(${w.romaji})</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-slate-300 font-medium">${w.meaning}</span>
+                                <button onclick="speakJapanese('${w.hiragana}')" class="text-xs p-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-200 transition" title="Nghe">
+                                    🔊
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                groupEl.innerHTML = `
+                    <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                        <h4 class="font-bold text-white text-sm flex items-center gap-2">
+                            <span class="bg-jpRed text-white text-xs px-2 py-0.5 rounded font-bold">${group.badge}</span>
+                            ${group.title}
+                        </h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        ${rowsHtml}
+                    </div>
+                `;
+
+                container.appendChild(groupEl);
+            });
+        }
+
+        document.getElementById('openVocabModalBtn').onclick = () => {
+            renderVocabModal();
+            document.getElementById('vocabModal').classList.remove('hidden');
+        };
+
+        function closeVocabModal() {
+            document.getElementById('vocabModal').classList.add('hidden');
+        }
+
+        // Initialize App on load
+        window.onload = () => {
+            renderHeaderAndTabs();
+            renderGame();
+        };
+    </script>
+</body>
+</html>
