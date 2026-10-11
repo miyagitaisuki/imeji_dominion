@@ -1,32 +1,21 @@
 <!DOCTYPE html>
-<html lang="vi" class="h-full scroll-smooth">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <meta name="theme-color" content="#059669">
-    <title>Học Tiếng Nhật - Minna no Nihongo & Sơ Cấp (Responsive)</title>
-    
-    <!-- Tailwind CSS CDN -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Tiếng Nhật - Minna no Nihongo & Sơ Cấp</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts: Inter & Noto Sans JP -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    
     <script>
         tailwind.config = {
             theme: {
-                screens: {
-                    'xs': '480px',   // Điểm ngắt bổ sung cho điện thoại cỡ vừa
-                    'sm': '640px',   // Máy tính bảng nhỏ
-                    'md': '768px',   // Máy tính bảng dọc
-                    'lg': '1024px',  // Laptop / Máy tính bảng ngang
-                    'xl': '1280px',  // Màn hình Desktop
-                    '2xl': '1536px', // Màn hình rộng Ultra-wide
-                },
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                         jp: ['Noto Sans JP', 'sans-serif'],
                     },
                     colors: {
@@ -36,275 +25,235 @@
                             500: '#10b981',
                             600: '#059669',
                             700: '#047857',
+                        },
+                        jpblue: {
+                            800: '#1e293b',
+                            900: '#0f172a',
                         }
                     }
                 }
             }
         }
     </script>
-    
     <style>
-        /* Tối ưu hóa kích thước viewport linh hoạt cho thiết bị di động */
-        :root {
-            --app-height: 100%;
-        }
-        
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
             color: #1e293b;
-            /* Đảm bảo tương thích notch trên điện thoại tràn viền */
-            padding-left: env(safe-area-inset-left);
-            padding-right: env(safe-area-inset-right);
-            -webkit-tap-highlight-color: transparent;
         }
-
         .japanese-font {
             font-family: 'Noto Sans JP', sans-serif;
         }
-
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
         }
-
         .card-hover {
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        /* Ứng dụng hiệu ứng hover chỉ cho thiết bị hỗ trợ con trỏ chuột (Tránh lỗi dính hover trên cảm ứng) */
-        @media (hover: hover) {
-            .card-hover:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 12px 24px -8px rgba(16, 185, 129, 0.25);
-            }
-        }
-
-        /* Thao tác nhấp phản hồi tức thì cho thiết bị cảm ứng */
-        .card-hover:active {
-            transform: scale(0.98);
-        }
-
-        /* Mẹo ẩn thanh cuộn nhưng vẫn cuộn ngang tốt trên Mobile */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Đảm bảo vùng chạm (Touch targets) đạt chuẩn tối thiểu 44px trên di động */
-        .touch-target {
-            min-height: 44px;
-            min-width: 44px;
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(16, 185, 129, 0.2);
         }
     </style>
 </head>
-<body class="min-h-screen min-h-[100dvh] flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-800">
 
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2">
-            
-            <!-- Logo & Brand Info -->
-            <div class="flex items-center gap-2 sm:gap-3 min-w-0">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-emerald-600 flex-shrink-0 flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-md shadow-emerald-200">
+    <!-- Header Navbar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-emerald-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-emerald-200">
                     日
                 </div>
-                <div class="truncate">
-                    <h1 class="font-bold text-base sm:text-lg leading-tight text-slate-900 truncate">イメージ日本語教室</h1>
-                    <p class="text-[11px] sm:text-xs text-slate-500 truncate">Lớp học Tiếng Nhật IMEJI</p>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-slate-900">イメージ日本語教室</h1>
+                    <p class="text-xs text-slate-500">Lớp học Tiếng Nhật IMEJI</p>
                 </div>
             </div>
 
-            <!-- Header Actions & Responsive Stats -->
-            <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-                <div class="hidden xs:flex items-center gap-1.5 sm:gap-2 bg-emerald-50 border border-emerald-100 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-emerald-700">
+            <!-- Quick Stats Header -->
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-2 bg-emerald-50 border border-emerald-100 px-3 py-1.5 rounded-full text-xs font-semibold text-emerald-700">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <span>Tiến độ: <strong id="headerProgressText">0 / 58</strong> bài</span>
                 </div>
-                
-                <button onclick="toggleSettingsModal()" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-slate-500 hover:text-slate-800 rounded-xl hover:bg-slate-100 active:bg-slate-200 transition touch-target" title="Cấu hình đường dẫn">
-                    <i class="fa-solid fa-gear text-base sm:text-lg"></i>
+                <button id="btnConfig" onclick="showAdminLogin()" class="p-2 text-slate-500 hover:text-slate-800 rounded-lg hover:bg-slate-100 transition" title="Cấu hình đường dẫn">
+                    <i class="fa-solid fa-gear text-lg"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <section class="bg-gradient-to-b from-emerald-600 via-emerald-700 to-emerald-800 text-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 relative overflow-hidden">
-        <!-- Background Pattern Decor -->
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-        
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/15 backdrop-blur-md rounded-full text-[11px] sm:text-xs font-medium tracking-wide uppercase mb-3 sm:mb-4 border border-white/10">
+    <!-- Hero Banner -->
+    <section class="bg-gradient-to-b from-emerald-600 via-emerald-700 to-emerald-800 text-white py-12 px-4 sm:px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium tracking-wide uppercase mb-3">
                 🌿 Lộ trình học Tiếng Nhật từ Zero đến N4
             </span>
-            
-            <h2 class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3 sm:mb-4 japanese-font leading-tight">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 japanese-font">
                 HỌC TIẾNG NHẬT CÙNG QUANG SENSEI
             </h2>
-            
-            <p class="text-emerald-100 text-xs sm:text-sm md:text-base max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8 font-normal leading-relaxed">
-                Thạc sĩ Nguyễn Thanh Quang, Giảng viên chuyên ngành Nhật Bản học.<br class="hidden xs:inline">
-                Trường Đại học Quy Nhơn • nguyenthanhquang@qnu.edu.vn • TEL: 086 860 8647
+            <p class="text-emerald-100 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-normal">
+                Thạc sĩ Nguyễn Thanh Quang, Giảng viên chuyên ngành Nhật Bản học. <br>Trường Đại học Quy Nhơn<br> nguyenthanhquang@qnu.edu.vn <br> TEL: 086 860 8647
             </p>
 
-            <!-- Adaptive Search Bar -->
-            <div class="max-w-2xl mx-auto relative px-1 sm:px-0">
+            <!-- Search & Filter Bar -->
+            <div class="max-w-2xl mx-auto relative">
                 <div class="relative flex items-center">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 sm:left-4 text-slate-400 text-sm sm:text-base pointer-events-none"></i>
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400"></i>
                     <input type="text" id="searchInput" oninput="filterLessons()" 
-                        placeholder="Tìm bài học (vd: 1, 15, nhập môn 2)..." 
-                        class="w-full pl-10 sm:pl-11 pr-10 sm:pr-12 py-3 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white text-slate-800 placeholder-slate-400 font-medium shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-300/50 text-xs sm:text-sm md:text-base border border-emerald-100">
-                    <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 sm:right-4 text-slate-400 hover:text-slate-600 p-1 rounded-lg">
-                        <i class="fa-solid fa-xmark text-base sm:text-lg"></i>
+                        placeholder="Tìm theo số bài (ví dụ: 1, 15, nhập môn 2) hoặc chủ đề..." 
+                        class="w-full pl-11 pr-12 py-3.5 rounded-2xl bg-white text-slate-800 placeholder-slate-400 font-medium shadow-xl focus:outline-none focus:ring-4 focus:ring-emerald-300 text-sm sm:text-base">
+                    <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-4 text-slate-400 hover:text-slate-600">
+                        <i class="fa-solid fa-xmark text-lg"></i>
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8 flex-1 w-full">
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1">
 
-        <!-- Responsive Progress Widget -->
-        <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200/90 shadow-sm mb-6 sm:mb-8">
-            <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-2.5 sm:gap-3 mb-3">
+        <!-- Progress Bar Widget -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                 <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-chart-line text-emerald-600 text-sm sm:text-base"></i>
-                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm">Tiến Độ Hoàn Thành Lộ Trình</h3>
+                    <i class="fa-solid fa-chart-line text-emerald-600"></i>
+                    <h3 class="font-bold text-slate-800 text-sm">Tiến Độ Hoàn Thành Lộ Trình</h3>
                 </div>
-                <div class="text-[11px] sm:text-xs text-slate-500 flex items-center justify-between xs:justify-end gap-3 sm:gap-4 border-t xs:border-0 pt-2 xs:pt-0 border-slate-100">
-                    <span><i class="fa-solid fa-circle text-emerald-500 text-[8px] sm:text-[10px] mr-1"></i>Đã học: <strong id="completedCount" class="text-slate-700">0</strong></span>
-                    <span><i class="fa-solid fa-circle text-slate-200 text-[8px] sm:text-[10px] mr-1"></i>Còn lại: <strong id="remainingCount" class="text-slate-700">58</strong></span>
-                    <button onclick="resetProgress()" class="text-emerald-600 hover:text-emerald-700 active:underline font-medium text-xs ml-1">Đặt lại</button>
+                <div class="text-xs text-slate-500 flex items-center gap-4">
+                    <span><i class="fa-solid fa-circle text-emerald-500 text-[10px] mr-1"></i>Đã học: <strong id="completedCount" class="text-slate-700">0</strong></span>
+                    <span><i class="fa-solid fa-circle text-slate-200 text-[10px] mr-1"></i>Còn lại: <strong id="remainingCount" class="text-slate-700">58</strong></span>
+                    <button onclick="resetProgress()" class="text-emerald-600 hover:underline text-xs font-medium ml-2">Đặt lại</button>
                 </div>
             </div>
-            
-            <div class="w-full bg-slate-100 rounded-full h-2.5 sm:h-3 overflow-hidden">
-                <div id="progressBar" class="bg-gradient-to-r from-emerald-500 to-emerald-600 h-2.5 sm:h-3 rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+            <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
+                <div id="progressBar" class="bg-gradient-to-r from-emerald-500 to-emerald-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
             </div>
         </div>
 
-        <div class="relative mb-6">
-            <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 pt-1 hide-scrollbar -mx-3 px-3 sm:mx-0 sm:px-0 scroll-smooth snap-x">
-                <button onclick="setActiveTab('all')" id="tab-all" class="tab-btn snap-start flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-emerald-600 text-white shadow-sm transition">
-                    Tất cả (58)
-                </button>
-                <button onclick="setActiveTab('intro')" id="tab-intro" class="tab-btn snap-start flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
-                    🌱 8 Bài Nhập Môn
-                </button>
-                <button onclick="setActiveTab('minna1')" id="tab-minna1" class="tab-btn snap-start flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
-                    📘 Minna Sơ Cấp I (1 - 25)
-                </button>
-                <button onclick="setActiveTab('minna2')" id="tab-minna2" class="tab-btn snap-start flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
-                    📙 Minna Sơ Cấp II (26 - 50)
-                </button>
-                <button onclick="setActiveTab('completed')" id="tab-completed" class="tab-btn snap-start flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
-                    ✅ Đã hoàn thành
-                </button>
-            </div>
+        <!-- Filter Navigation Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar border-b border-slate-200">
+            <button onclick="setActiveTab('all')" id="tab-all" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-emerald-600 text-white shadow-sm">
+                Tất cả (58)
+            </button>
+            <button onclick="setActiveTab('intro')" id="tab-intro" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                🌱 8 Bài Nhập Môn
+            </button>
+            <button onclick="setActiveTab('minna1')" id="tab-minna1" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                📘 Minna Sơ Cấp I (Bài 1 - 25)
+            </button>
+            <button onclick="setActiveTab('minna2')" id="tab-minna2" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                📙 Minna Sơ Cấp II (Bài 26 - 50)
+            </button>
+            <button onclick="setActiveTab('completed')" id="tab-completed" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                ✅ Đã hoàn thành
+            </button>
         </div>
 
-        <section id="section-intro" class="mb-8 sm:mb-12">
-            <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-2 mb-4">
+        <!-- Section 1: 8 Bài Nhập Môn -->
+        <section id="section-intro" class="mb-12">
+            <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center gap-2">
-                    <span class="p-1.5 sm:p-2 bg-emerald-100 text-emerald-700 rounded-lg text-xs sm:text-sm flex-shrink-0"><i class="fa-solid fa-seedling"></i></span>
-                    <h3 class="text-base sm:text-xl font-bold text-slate-900 leading-snug">8 Bài Nhập Môn Chữ Cái & Ngữ Pháp Nền Tảng</h3>
+                    <span class="p-2 bg-emerald-100 text-emerald-700 rounded-lg text-sm"><i class="fa-solid fa-seedling"></i></span>
+                    <h3 class="text-xl font-bold text-slate-900">8 Bài Nhập Môn Chữ Cái & Ngữ Pháp Nền Tảng</h3>
                 </div>
-                <span class="self-start xs:self-center text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:py-1 bg-emerald-50 text-emerald-700 border border-emerald-200/80 rounded-full">Kinh nghiệm 0 - N5</span>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full">Kinh nghiệm 0 - N5</span>
             </div>
-            
-            <!-- Grid 1 col (nhỏ) -> 2 cols (mobile vừa) -> 3 cols (tablet) -> 4 cols (desktop) -->
-            <div id="grid-intro" class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
-                <!-- Injected by JS -->
+            <div id="grid-intro" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Javascript will inject intro lesson cards -->
             </div>
         </section>
 
-        <section id="section-minna1" class="mb-8 sm:mb-12">
-            <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-2 mb-4">
+        <!-- Section 2: Minna no Nihongo Sơ Cấp I (1-25) -->
+        <section id="section-minna1" class="mb-12">
+            <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center gap-2">
-                    <span class="p-1.5 sm:p-2 bg-sky-100 text-sky-700 rounded-lg text-xs sm:text-sm flex-shrink-0"><i class="fa-solid fa-book"></i></span>
-                    <h3 class="text-base sm:text-xl font-bold text-slate-900 leading-snug">Minna no Nihongo - Sơ Cấp I (Bài 1 - 25)</h3>
+                    <span class="p-2 bg-sky-100 text-sky-700 rounded-lg text-sm"><i class="fa-solid fa-book"></i></span>
+                    <h3 class="text-xl font-bold text-slate-900">Minna no Nihongo - Sơ Cấp I (Bài 1 đến Bài 25)</h3>
                 </div>
-                <span class="self-start xs:self-center text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:py-1 bg-sky-50 text-sky-700 border border-sky-200/80 rounded-full">Trình độ JLPT N5</span>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-sky-50 text-sky-700 border border-sky-200 rounded-full">Trình độ JLPT N5</span>
             </div>
-            
-            <div id="grid-minna1" class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4">
-                <!-- Injected by JS -->
+            <div id="grid-minna1" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Javascript will inject Minna 1-25 cards -->
             </div>
         </section>
 
-        <section id="section-minna2" class="mb-8 sm:mb-12">
-            <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-2 mb-4">
+        <!-- Section 3: Minna no Nihongo Sơ Cấp II (26-50) -->
+        <section id="section-minna2" class="mb-12">
+            <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center gap-2">
-                    <span class="p-1.5 sm:p-2 bg-indigo-100 text-indigo-700 rounded-lg text-xs sm:text-sm flex-shrink-0"><i class="fa-solid fa-book-bookmark"></i></span>
-                    <h3 class="text-base sm:text-xl font-bold text-slate-900 leading-snug">Minna no Nihongo - Sơ Cấp II (Bài 26 - 50)</h3>
+                    <span class="p-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm"><i class="fa-solid fa-book-bookmark"></i></span>
+                    <h3 class="text-xl font-bold text-slate-900">Minna no Nihongo - Sơ Cấp II (Bài 26 đến Bài 50)</h3>
                 </div>
-                <span class="self-start xs:self-center text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:py-1 bg-indigo-50 text-indigo-700 border border-indigo-200/80 rounded-full">Trình độ JLPT N4</span>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full">Trình độ JLPT N4</span>
             </div>
-            
-            <div id="grid-minna2" class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4">
-                <!-- Injected by JS -->
+            <div id="grid-minna2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Javascript will inject Minna 26-50 cards -->
             </div>
         </section>
 
-        <div id="noResults" class="hidden text-center py-12 sm:py-16 px-4">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-xl sm:text-2xl">
+        <!-- No Results Found State -->
+        <div id="noResults" class="hidden text-center py-16">
+            <div class="w-16 h-16 mx-auto mb-4 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-2xl">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <h4 class="text-base sm:text-lg font-bold text-slate-700 mb-1">Không tìm thấy bài học phù hợp</h4>
-            <p class="text-slate-500 text-xs sm:text-sm">Thử từ khóa khác hoặc chọn lại danh mục bài học.</p>
+            <h4 class="text-lg font-bold text-slate-700 mb-1">Không tìm thấy bài học phù hợp</h4>
+            <p class="text-slate-500 text-sm">Thử từ khóa khác hoặc chuyển sang tab tất cả bài học.</p>
         </div>
 
     </main>
 
-    <div id="settingsModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden transition-opacity duration-200">
-        <div class="bg-white rounded-2xl max-w-md w-full p-5 sm:p-6 shadow-2xl border border-slate-100 max-h-[90vh] overflow-y-auto">
+    <!-- Settings Modal for Custom Link Structure -->
+    <div id="settingsModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="font-bold text-base sm:text-lg text-slate-900 flex items-center gap-2">
-                    <i class="fa-solid fa-gear text-emerald-600"></i> Cấu Hình Đường Dẫn File
-                </h3>
-                <button onclick="toggleSettingsModal()" class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition">
+                <h3 class="font-bold text-lg text-slate-900"><i class="fa-solid fa-gear text-emerald-600 mr-2"></i>Cấu Hình Tên Đường Dẫn File</h3>
+                <button onclick="toggleSettingsModal()" class="text-slate-400 hover:text-slate-600 p-1">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
-            <p class="text-xs text-slate-500 mb-4 leading-relaxed">
-                Tùy chỉnh định dạng đường dẫn liên kết trùng khớp với cấu trúc tệp HTML lưu trên GitHub Repository của bạn.
+            <p class="text-xs text-slate-500 mb-4">
+                Tùy chỉnh định dạng tên tệp tin để trùng khớp với cấu trúc tệp HTML của bạn trên GitHub repository.
             </p>
 
-            <div class="space-y-4 text-xs sm:text-sm">
+            <div class="space-y-4 text-sm">
                 <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Đường dẫn 8 Bài Nhập Môn:</label>
-                    <input type="text" id="introPathPattern" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 font-mono text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none" value="nhap-mon/{id}.html">
-                    <span class="text-[10px] text-slate-400 mt-1 block">Ví dụ: nhap-mon/{id}.html hoặc nhap-mon-{id}.html</span>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Đường dẫn 8 Bài Nhập Môn:</label>
+                    <input type="text" id="introPathPattern" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono focus:ring-2 focus:ring-emerald-500 focus:outline-none" value="nhap-mon/{id}.html">
+                    <span class="text-[10px] text-slate-400">Ví dụ: nhap-mon/1.html hoặc nhap-mon-1.html</span>
                 </div>
                 <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Đường dẫn 50 Bài Minna:</label>
-                    <input type="text" id="minnaPathPattern" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 font-mono text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none" value="bai-{id}.html">
-                    <span class="text-[10px] text-slate-400 mt-1 block">Ví dụ: bai-{id}.html hoặc minna/bai-{id}.html</span>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Đường dẫn 50 Bài Minna:</label>
+                    <input type="text" id="minnaPathPattern" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono focus:ring-2 focus:ring-emerald-500 focus:outline-none" value="bai-{id}.html">
+                    <span class="text-[10px] text-slate-400">Ví dụ: bai-1.html hoặc minna/bai-1.html</span>
                 </div>
             </div>
 
-            <div class="mt-6 flex justify-end gap-2 pt-2 border-t border-slate-100">
-                <button onclick="toggleSettingsModal()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold touch-target">Hủy</button>
-                <button onclick="saveSettings()" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold shadow-sm touch-target">Lưu Cấu Hình</button>
+            <div class="mt-6 flex justify-end gap-2">
+                <button onclick="toggleSettingsModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-medium">Hủy</button>
+                <button onclick="saveSettings()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-medium">Lưu Cấu Hình</button>
             </div>
         </div>
     </div>
 
-    <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 sm:left-auto sm:right-5 sm:translate-x-0 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs sm:text-sm z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none max-w-[90vw]">
-        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-base flex-shrink-0"></i>
-        <span id="toastMsg" class="truncate">Đã cập nhật trạng thái!</span>
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 text-sm z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toastMsg">Đã cập nhật trạng thái!</span>
     </div>
 
-    <footer class="bg-white border-t border-slate-200 py-6 sm:py-8 text-center text-xs text-slate-500 mt-auto">
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
-            <p class="mb-1">🌿 Trang chính quản lý lộ trình học Minna no Nihongo & Sơ Cấp Tiếng Nhật</p>
-            <p class="text-slate-400 text-[11px]">Giao diện tự động tối ưu hóa mọi thiết bị • Lưu trữ trên GitHub Pages</p>
+            <p class="mb-2">🌿 Trang chính quản lý lộ trình học Minna no Nihongo & Sơ Cấp Tiếng Nhật</p>
+            <p class="text-slate-400">Tự do chỉnh sửa và lưu trữ miễn phí trên GitHub Pages</p>
         </div>
     </footer>
 
+    <!-- JavaScript Data & Logic -->
     <script>
         // 8 Bài Sơ Cấp Nhập Môn
         const introLessons = [
@@ -376,8 +325,9 @@
         let currentTab = 'all';
         let introPathPattern = localStorage.getItem('introPathPattern') || 'nhap-mon/{id}.html';
         let minnaPathPattern = localStorage.getItem('minnaPathPattern') || 'bai-{id}.html';
+        let isAdmin = sessionStorage.getItem('isAdmin') === 'true';
         
-        // Dynamic initialization
+        // Initialize UI
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('introPathPattern').value = introPathPattern;
             document.getElementById('minnaPathPattern').value = minnaPathPattern;
@@ -385,41 +335,41 @@
             updateProgressUI();
         });
 
-        // Generate responsive HTML for individual card
         function createCardHtml(lesson, type) {
             const isIntro = type === 'intro';
             const uniqueKey = isIntro ? `intro_${lesson.id}` : `minna_${lesson.id}`;
             const isDone = completedLessons.includes(uniqueKey);
             
+            // Build URL based on pattern
             let href = lesson.url ? lesson.url : (isIntro 
                 ? introPathPattern.replace('{id}', lesson.id) 
                 : minnaPathPattern.replace('{id}', lesson.id));
 
             const badgeColor = isIntro 
-                ? 'bg-emerald-50 text-emerald-700 border-emerald-200/80' 
-                : (lesson.id <= 25 ? 'bg-sky-50 text-sky-700 border-sky-200/80' : 'bg-indigo-50 text-indigo-700 border-indigo-200/80');
+                ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
+                : (lesson.id <= 25 ? 'bg-sky-50 text-sky-700 border-sky-200' : 'bg-indigo-50 text-indigo-700 border-indigo-200');
 
             return `
-                <div class="lesson-card glass-card rounded-2xl border ${isDone ? 'border-emerald-400/80 bg-emerald-50/40' : 'border-slate-200/90'} p-4 sm:p-5 flex flex-col justify-between card-hover relative group transition-all">
+                <div class="lesson-card glass-card rounded-2xl border ${isDone ? 'border-emerald-300 bg-emerald-50/30' : 'border-slate-200'} p-5 flex flex-col justify-between card-hover relative group">
                     <div>
                         <div class="flex items-start justify-between gap-2 mb-2">
-                            <span class="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:py-1 rounded-lg border ${badgeColor}">
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-lg border ${badgeColor}">
                                 ${isIntro ? 'Nhập môn ' + lesson.id : 'Bài ' + lesson.id}
                             </span>
                             <button onclick="toggleComplete('${uniqueKey}', event)" 
-                                class="w-8 h-8 rounded-full flex items-center justify-center transition-all ${isDone ? 'bg-emerald-500 text-white shadow-sm shadow-emerald-200' : 'bg-slate-100 text-slate-300 hover:text-slate-400 hover:bg-slate-200'} active:scale-95"
+                                class="w-8 h-8 rounded-full flex items-center justify-center transition-all ${isDone ? 'bg-emerald-500 text-white shadow-sm shadow-emerald-200' : 'bg-slate-100 text-slate-300 hover:text-slate-400 hover:bg-slate-200'}"
                                 title="${isDone ? 'Đánh dấu chưa học' : 'Đánh dấu đã hoàn thành'}">
-                                <i class="fa-solid fa-check text-xs sm:text-sm"></i>
+                                <i class="fa-solid fa-check text-xs"></i>
                             </button>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm sm:text-base mb-1 group-hover:text-emerald-600 transition-colors leading-snug">
+                        <h4 class="font-bold text-slate-800 text-base mb-1 group-hover:text-emerald-600 transition-colors">
                             ${lesson.title}
                         </h4>
                         <div class="text-xs font-medium text-emerald-600 japanese-font mb-2">${lesson.jp}</div>
                         <p class="text-xs text-slate-500 line-clamp-2 mb-4 leading-relaxed">${lesson.desc}</p>
                     </div>
 
-                    <a href="${href}" class="w-full py-2 sm:py-2.5 px-3 sm:px-4 bg-slate-900 hover:bg-emerald-600 active:bg-emerald-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
+                    <a href="${href}" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-emerald-600 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
                         <span>Học bài này</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </a>
@@ -442,6 +392,9 @@
             const clearBtn = document.getElementById('clearSearchBtn');
             clearBtn.classList.toggle('hidden', query === '');
 
+            let hasResults = false;
+
+            // Search logic for items
             const filterCard = (lesson, type) => {
                 const uniqueKey = type === 'intro' ? `intro_${lesson.id}` : `minna_${lesson.id}`;
                 const isDone = completedLessons.includes(uniqueKey);
@@ -453,10 +406,12 @@
                 return searchTarget.includes(query);
             };
 
+            // Filter each section
             const visibleIntro = introLessons.filter(l => filterCard(l, 'intro'));
             const visibleMinna1 = minnaLessons.slice(0, 25).filter(l => filterCard(l, 'minna'));
             const visibleMinna2 = minnaLessons.slice(25, 50).filter(l => filterCard(l, 'minna'));
 
+            // Section Visibility based on Tab & Search
             const secIntro = document.getElementById('section-intro');
             const secMinna1 = document.getElementById('section-minna1');
             const secMinna2 = document.getElementById('section-minna2');
@@ -473,7 +428,7 @@
             document.getElementById('grid-minna1').innerHTML = visibleMinna1.map(l => createCardHtml(l, 'minna')).join('');
             document.getElementById('grid-minna2').innerHTML = visibleMinna2.map(l => createCardHtml(l, 'minna')).join('');
 
-            const hasResults = showIntro || showMinna1 || showMinna2;
+            hasResults = showIntro || showMinna1 || showMinna2;
             document.getElementById('noResults').classList.toggle('hidden', hasResults);
         }
 
@@ -485,12 +440,12 @@
         function setActiveTab(tab) {
             currentTab = tab;
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = 'tab-btn snap-start flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition';
+                btn.className = 'tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200';
             });
 
             const activeBtn = document.getElementById(`tab-${tab}`);
             if (activeBtn) {
-                activeBtn.className = 'tab-btn snap-start flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap bg-emerald-600 text-white shadow-sm transition';
+                activeBtn.className = 'tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-emerald-600 text-white shadow-sm';
             }
 
             filterLessons();
@@ -503,7 +458,7 @@
             const index = completedLessons.indexOf(key);
             if (index > -1) {
                 completedLessons.splice(index, 1);
-                showToast('Đã đánh dấu chưa hoàn thành');
+                showToast('Đã đánh dấu chưa hoàn thành bài học');
             } else {
                 completedLessons.push(key);
                 showToast('🎉 Tuyệt vời! Đã hoàn thành bài học');
@@ -548,7 +503,7 @@
 
             toggleSettingsModal();
             filterLessons();
-            showToast('Đã lưu cấu hình đường dẫn!');
+            showToast('Đã lưu cài đặt đường dẫn tệp!');
         }
 
         function showToast(msg) {
@@ -562,6 +517,6 @@
                 toast.classList.add('translate-y-20', 'opacity-0');
             }, 2500);
         }
-            </script>
+    </script>
 </body>
 </html>
