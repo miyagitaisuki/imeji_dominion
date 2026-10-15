@@ -1,0 +1,2886 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- MNN TEMPLATE v1.0: chỉ được sửa giữa "DATA ZONE START" và "DATA ZONE END" trong <script>. Mọi thứ khác là KHÓA. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minna no Nihongo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Modern reset & Accessibility */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0F172A;
+            font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+            color: #3C3C3C;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Focus styles for keyboard accessibility */
+        button:focus-visible, a:focus-visible, [tabindex="0"]:focus-visible {
+            outline: 3px solid #1CB0F6 !important;
+            outline-offset: 3px !important;
+        }
+
+        .select-none {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        ruby {
+            ruby-position: over;
+            font-size: inherit;
+        }
+        rt {
+            font-size: 0.55em;
+            font-weight: 700;
+            color: #475569;
+            line-height: 1;
+        }
+
+        /* Responsive typography with clamp */
+        .jp-text-lg {
+            font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .jp-text-xl {
+            font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* 3D Button Effects */
+        .btn-3d {
+            transition: all 0.1s ease;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .btn-3d:active:not(:disabled) {
+            transform: translateY(3px);
+            box-shadow: none !important;
+        }
+        
+        .btn-green {
+            background-color: #58CC02;
+            border-bottom: 4px solid #46A302;
+            color: #FFFFFF;
+        }
+        .btn-green:hover:not(:disabled) {
+            background-color: #61E002;
+        }
+        .btn-green:disabled {
+            background-color: #E5E5E5;
+            border-bottom-color: #CECECE;
+            color: #AFB5C0;
+            cursor: not-allowed;
+        }
+
+        .btn-blue {
+            background-color: #1CB0F6;
+            border-bottom: 4px solid #1899D6;
+            color: #FFFFFF;
+        }
+        .btn-blue:hover:not(:disabled) {
+            background-color: #24BDFF;
+        }
+
+        .btn-purple {
+            background-color: #A855F7;
+            border-bottom: 4px solid #7E22CE;
+            color: #FFFFFF;
+        }
+        .btn-purple:hover:not(:disabled) {
+            background-color: #B666FF;
+        }
+
+        .btn-amber {
+            background-color: #F59E0B;
+            border-bottom: 4px solid #D97706;
+            color: #FFFFFF;
+        }
+        .btn-amber:hover:not(:disabled) {
+            background-color: #FBBF24;
+        }
+
+        .btn-gray {
+            background-color: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-bottom: 4px solid #CBD5E1;
+            color: #334155;
+        }
+        .btn-gray:hover:not(:disabled) {
+            background-color: #F8FAFC;
+        }
+        .btn-gray.selected {
+            background-color: #E0F2FE;
+            border-color: #38BDF8;
+            border-bottom-color: #0284C7;
+            color: #0369A1;
+        }
+
+        /* Feedback states for options */
+        .btn-option-correct {
+            background-color: #D7FFB8 !important;
+            border-color: #58CC02 !important;
+            border-bottom-color: #46A302 !important;
+            color: #2B6600 !important;
+        }
+        .btn-option-wrong {
+            background-color: #FFDFE0 !important;
+            border-color: #FF4B4B !important;
+            border-bottom-color: #EA2B2B !important;
+            color: #A30000 !important;
+        }
+
+        /* Near completion progress bar pulse */
+        @keyframes pulse-gold {
+            0%, 100% { background-color: #F59E0B; }
+            50% { background-color: #FBBF24; }
+        }
+        .progress-near-finish {
+            animation: pulse-gold 1.5s infinite ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+        }
+        .anim-pop { animation: pop 0.25s ease-in-out; }
+        .anim-shake { animation: shake 0.35s ease-in-out; }
+
+        /* Toast notification */
+        #toast {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-800 flex flex-col justify-between min-h-screen">
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-amber-500 text-white font-extrabold px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 text-base md:text-lg opacity-0 pointer-events-none transform -translate-y-4">
+        <span>⚠️</span> <span id="toast-message">Vui lòng chọn đáp án</span>
+    </div>
+
+    <!-- 2. Tích cực hóa Modal Hết Tim -->
+    <div id="hearts-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl border-4 border-amber-200 anim-pop">
+            <div class="text-6xl mb-3">🎯</div>
+            <h2 class="text-2xl md:text-3xl font-black text-amber-600 mb-2">Còn vài điểm cần luyện thêm!</h2>
+            <p class="text-base text-gray-600 font-bold mb-6">Mỗi lần vấp ngã là một bước tiến gần hơn tới JLPT <span id="modal-jlpt">N5</span>. Hãy rèn luyện lại nhé!</p>
+            <div class="flex flex-col gap-3">
+                <button id="btn-modal-review" onclick="practiceCurrentWrongList()" class="btn-3d btn-blue py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider hidden">
+                    🎯 Ôn lại câu vừa sai
+                </button>
+                <button onclick="retryCurrentGame()" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
+                    🔄 Thử lại lượt này
+                </button>
+                <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-gray-700">
+                    🏠 Về Menu chính
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div id="app-root" class="w-full max-w-5xl mx-auto bg-white min-h-screen flex flex-col justify-between shadow-2xl overflow-hidden relative">
+
+        <!-- 10. Header tối ưu hóa cho Mobile -->
+        <header id="top-bar" class="px-4 md:px-8 py-3.5 border-b-2 border-slate-100 flex items-center justify-between bg-white shrink-0 hidden select-none">
+            <!-- Back Button -->
+            <button id="btn-back" onclick="showMainMenu()" aria-label="Quay lại" class="btn-3d min-w-[44px] min-h-[44px] p-2.5 rounded-2xl border-2 border-slate-200 hover:bg-slate-100 flex items-center justify-center text-slate-500 shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Progress Bar with Near Completion Effect (Feature 1) -->
+            <div class="flex-1 max-w-md mx-3 md:mx-6">
+                <div class="flex justify-between items-center mb-1 text-xs md:text-sm font-extrabold text-slate-500">
+                    <span id="progress-text">Câu 1 / 5</span>
+                    <span id="level-badge" class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md text-xs uppercase font-black">N5</span>
+                </div>
+                <div class="w-full bg-slate-100 h-3.5 md:h-4 rounded-full overflow-hidden p-0.5 border border-slate-200">
+                    <div id="progress-inner" class="bg-[#58CC02] h-full rounded-full transition-all duration-300 w-0"></div>
+                </div>
+            </div>
+
+            <!-- Stats Header (Streak ẩn trên mobile để gọn gàng - Feature 10) -->
+            <div class="flex items-center gap-2 md:gap-5 text-base md:text-xl font-black shrink-0">
+                <div class="hidden md:flex items-center gap-1 text-orange-500" title="Chuỗi đúng">
+                    <span>🔥</span>
+                    <span id="stat-streak">0</span>
+                </div>
+                <div class="flex items-center gap-1 text-red-500" title="Số tim còn lại">
+                    <span>❤️</span>
+                    <span id="stat-hearts">5</span>
+                </div>
+                <div class="flex items-center gap-1 text-amber-500" title="Điểm số">
+                    <span>⭐</span>
+                    <span id="stat-score">0</span>
+                </div>
+                <button id="btn-sound" onclick="toggleSound()" aria-label="Âm thanh" class="min-w-[44px] min-h-[44px] p-2 hover:bg-slate-100 rounded-xl text-xl select-none flex items-center justify-center">
+                    🔊
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Game Interactive Content Body -->
+        <main id="game-container" class="flex-1 p-4 md:p-8 flex flex-col items-center justify-center relative bg-white">
+            <!-- Dynamic game screens rendered here -->
+        </main>
+
+        <!-- 5. Bottom Footer Feedback Bar gọn gàng, hỗ trợ [Giải thích ▼] -->
+        <footer id="bottom-bar" class="border-t-2 border-slate-200 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 transition-colors duration-300 bg-white shrink-0 hidden">
+            <!-- Feedback Content Box -->
+            <div id="feedback-content" class="flex flex-col md:flex-row items-start md:items-center gap-3 max-w-3xl w-full">
+                <div class="flex items-center gap-3">
+                    <div id="feedback-icon" class="text-3xl md:text-4xl hidden select-none"></div>
+                    <div>
+                        <div id="feedback-title" class="text-lg md:text-xl font-black"></div>
+                        <div id="feedback-diff" class="text-sm font-bold"></div>
+                    </div>
+                </div>
+
+                <!-- Collapsible explanation toggle -->
+                <div id="explanation-wrapper" class="hidden w-full md:w-auto md:ml-2">
+                    <button id="btn-toggle-exp" onclick="toggleExplanationDetails()" class="text-xs md:text-sm font-extrabold text-slate-600 bg-white/80 hover:bg-white border border-slate-300 px-3 py-1.5 rounded-xl flex items-center gap-1">
+                        💡 Giải thích <span id="exp-arrow">▼</span>
+                    </button>
+                    <div id="feedback-explanation" class="hidden mt-2 p-3 bg-white/90 border border-slate-200 rounded-xl text-xs md:text-sm text-slate-700 font-semibold max-h-36 overflow-y-auto shadow-sm"></div>
+                </div>
+            </div>
+
+            <!-- Action Check / Next Button -->
+            <button id="btn-action" onclick="handleActionButton()" disabled class="btn-3d btn-green text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto">
+                KIỂM TRA
+            </button>
+        </footer>
+
+    </div>
+
+    <script>
+        // Fisher-Yates Shuffle Algorithm
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // =====================================================================
+        // ===== DATA ZONE START — CHỈ ĐƯỢC SỬA TRONG VÙNG NÀY =====================
+        // Quy ước furigana: viết {漢字|かんじ}. Ví dụ: {食|た}べます, {学校|がっこう}で
+        // Trường "text/answer/distractors/questionAudioText/acceptableOrders" = CHỮ THUẦN (kana), KHÔNG dấu {} hay HTML.
+        // Trường "kanji/sentence/question" = chữ hiển thị, có thể dùng {漢字|よみ}.
+        // =====================================================================
+        const LESSON_CONFIG = {
+    lessonNo: 15,
+    title: "Minna no Nihongo – Bài 15",
+    jlpt: "N5",
+    storagePrefix: "mnn_l15"
+};
+
+        // GAME 1 – Từ vựng: context (tiếng Việt) -> chọn từ đúng. distractors: ĐÚNG 3 phần tử.
+        const GAME1_DATA = [
+    {
+        id: "l15_v001", level: "easy",
+        context: "Hành động đặt hoặc để vật gì đó lên bàn hoặc vị trí xác định.",
+        answer: "おきます", kanji: "{置|お}きます",
+        distractors: ["つくりょうり", "うります", "もちます"],
+        distractorsKanji: ["{作|つく}{料理|りょうり}", "{売|う}ります", "{持|も}ちます"],
+        explanation: {
+            correct: "置きます (おきます) nghĩa là đặt, để.",
+            pitfalls: "作ります là làm/chế tạo, 売ります là bán, 持ちます là mang/cầm.",
+            tip: "置 (TRÍ) trong vị trí, bố trí."
+        }
+    },
+    {
+        id: "l15_v002", level: "easy",
+        context: "Hành động tạo ra, chế tạo sản phẩm hay làm ra món ăn từ nguyên liệu.",
+        answer: "つくります", kanji: "{作|つく}ります",
+        distractors: ["おきます", "うります", "かいます"],
+        distractorsKanji: ["{置|お}きます", "{売|う}ります", "{買|か}います"],
+        explanation: {
+            correct: "作ります (つくります) nghĩa là làm, chế tạo, sản xuất.",
+            pitfalls: "置きます là đặt/để, 売ります là bán, 買います là mua.",
+            tip: "作 (TÁC) trong sáng tác, chế tác."
+        }
+    },
+    {
+        id: "l15_v003", level: "easy",
+        context: "Hành động trao hàng hóa cho người khác để nhận lại tiền.",
+        answer: "うります", kanji: "{売|う}ります",
+        distractors: ["かいます", "つくります", "おくります"],
+        distractorsKanji: ["{買|か}います", "{作|つく}ります", "{送|おく}ります"],
+        explanation: {
+            correct: "売ります (うります) nghĩa là bán.",
+            pitfalls: "買います là mua, 作ります là làm, 送ります là gửi.",
+            tip: "売 (MẠI) trong thương mại, bán hàng."
+        }
+    },
+    {
+        id: "l15_v004", level: "easy",
+        context: "Hành động nhận biết, có thông tin về người hay sự việc.",
+        answer: "しります", kanji: "{知|し}ります",
+        distractors: ["すみます", "おもいだします", "けんきゅうします"],
+        distractorsKanji: ["{住|す}みます", "{思|おも}い{出|だ}します", "{研究|けんきゅう}します"],
+        explanation: {
+            correct: "知ります (しります) nghĩa là biết.",
+            pitfalls: "住みます là sống/ở, 思い出します là nhớ lại, 研究します là nghiên cứu.",
+            tip: "知 (TRI) trong tri thức, tri kỷ."
+        }
+    },
+    {
+        id: "l15_v005", level: "easy",
+        context: "Hành động sinh sống, cư trú lâu dài tại một địa điểm.",
+        answer: "すみます", kanji: "{住|す}みます",
+        distractors: ["しります", "おきます", "はたらきます"],
+        distractorsKanji: ["{知|し}ります", "{置|お}きます", "{働|はたら}きます"],
+        explanation: {
+            correct: "住みます (すみます) nghĩa là sống, ở.",
+            pitfalls: "Đi kèm trợ từ に (Địa điểm に 住んでいます).",
+            tip: "住 (TRÚ) trong cư trú, thường trú."
+        }
+    },
+    {
+        id: "l15_v006", level: "easy",
+        context: "Hành động tìm hiểu, điều tra sâu về một chủ đề hay lĩnh vực chuyên môn.",
+        answer: "けんきゅうします", kanji: "{研究|けんきゅう}します",
+        distractors: ["べんきょうします", "おもいだします", "はたらきます"],
+        distractorsKanji: ["{勉強|べんきょう}します", "{思|おも}い{出|だ}します", "{働|はたら}きます"],
+        explanation: {
+            correct: "研究します (けんきゅうします) nghĩa là nghiên cứu.",
+            pitfalls: "勉強します là học tập nói chung, không chuyên sâu như 研究します.",
+            tip: "研 (NGHIÊN) + 究 (CỨU) = nghiên cứu."
+        }
+    },
+    {
+        id: "l15_v007", level: "easy",
+        context: "Các văn bản, giấy tờ cung cấp thông tin phục vụ công việc hay nghiên cứu.",
+        answer: "しりょう", kanji: "{資料|しりょう}",
+        distractors: ["じこくひょう", "カタログ", "せいひん"],
+        distractorsKanji: ["{時刻表|じこくひょう}", "カタログ", "{製品|せいひん}"],
+        explanation: {
+            correct: "資料 (しりょう) nghĩa là tài liệu, tư liệu.",
+            pitfalls: "時刻表 là bảng giờ tàu, カタログ là danh mục sản phẩm.",
+            tip: "資 (TƯ) + 料 (LIỆU) = tư liệu."
+        }
+    },
+    {
+        id: "l15_v008", level: "easy",
+        context: "Cuốn sách hoặc tờ gấp giới thiệu hình ảnh và thông tin chi tiết các sản phẩm.",
+        answer: "カタログ", kanji: "カタログ",
+        distractors: ["しりょう", "じこくひょう", "ソフト"],
+        distractorsKanji: ["{資料|しりょう}", "{時刻表|じこくひょう}", "ソフト"],
+        explanation: {
+            correct: "カタログ là ca-ta-lô, bảng danh mục sản phẩm.",
+            pitfalls: "Mượn từ tiếng Anh 'catalog'.",
+            tip: "Từ ngoại lai viết bằng Katakana: カタログ."
+        }
+    },
+    {
+        id: "l15_v009", level: "easy",
+        context: "Bảng ghi rõ thời gian đi và đến của các chuyến tàu xe.",
+        answer: "じこくひょう", kanji: "{時刻表|じこくひょう}",
+        distractors: ["しりょう", "カタログ", "じしょ"],
+        distractorsKanji: ["{資料|しりょう}", "カタログ", "{辞書|じしょ}"],
+        explanation: {
+            correct: "時刻表 (じこくひょう) nghĩa là bảng giờ tàu xe.",
+            pitfalls: "時 (THỜI) + 刻 (KHẮC) + 表 (BIỂU).",
+            tip: "時刻 (thời khắc, thời gian) + 表 (bảng)."
+        }
+    },
+    {
+        id: "l15_v010", level: "easy",
+        context: "Trang phục, đồ mặc trên người hằng ngày.",
+        answer: "ふく", kanji: "{服|ふく}",
+        distractors: ["くつ", "かさ", "かばん"],
+        distractorsKanji: ["{靴|くつ}", "{傘|かさ}", "かばん"],
+        explanation: {
+            correct: "服 (ふく) nghĩa là quần áo, trang phục.",
+            pitfalls: "靴 là giày, 傘 là ô/dù.",
+            tip: "服 (PHỤC) trong trang phục, y phục."
+        }
+    },
+    {
+        id: "l15_v011", level: "easy",
+        context: "Đồ vật hay hàng hóa được chế tạo, sản xuất ra từ nhà máy.",
+        answer: "せいひん", kanji: "{製品|せいひん}",
+        distractors: ["しりょう", "おみやげ", "ふく"],
+        distractorsKanji: ["{資料|しりょう}", "お{土|み}{産|やげ}", "{服|ふく}"],
+        explanation: {
+            correct: "製品 (せいひん) nghĩa là sản phẩm.",
+            pitfalls: "製 (CHẾ) + 品 (PHẨM) = sản phẩm chế tạo.",
+            tip: "Chế phẩm, hàng hóa sản xuất."
+        }
+    },
+    {
+        id: "l15_v012", level: "easy",
+        context: "Chương trình ứng dụng được cài đặt và vận hành trên máy tính.",
+        answer: "ソフト", kanji: "ソフト",
+        distractors: ["カタログ", "パソコン", "テレビ"],
+        distractorsKanji: ["カタログ", "パソコン", "テレビ"],
+        explanation: {
+            correct: "ソフト là phần mềm (viết tắt của software).",
+            pitfalls: "パソコン là máy tính cá nhân, テレビ là ti-vi.",
+            tip: "Viết tắt tiếng Anh 'software' thành ソフト."
+        }
+    },
+    {
+        id: "l15_v013", level: "easy",
+        context: "Lĩnh vực chuyên sâu mà một người tập trung học tập hoặc làm việc.",
+        answer: "せんもん", kanji: "{専門|せんもん}",
+        distractors: ["しごと", "けんきゅう", "こうこう"],
+        distractorsKanji: ["{仕事|しごと}", "{研究|けんきゅう}", "{高校|こうこう}"],
+        explanation: {
+            correct: "専門 (せんもん) nghĩa là chuyên môn.",
+            pitfalls: "専 (CHUYÊN) + 門 (MÔN) = chuyên môn.",
+            tip: "Ngành học chuyên sâu."
+        }
+    },
+    {
+        id: "l15_v014", level: "easy",
+        context: "Bác sĩ hoặc cơ sở y tế chuyên khám và điều trị các vấn đề về răng.",
+        answer: "はいしゃ", kanji: "{歯医者|はいしゃ}",
+        distractors: ["いしゃ", "とこや", "びょういん"],
+        distractorsKanji: ["{医者|いしゃ}", "{床屋|とこや}", "{病院|びょういん}"],
+        explanation: {
+            correct: "歯医者 (はいしゃ) nghĩa là nha sĩ, phòng khám răng.",
+            pitfalls: "歯 (XỈ = răng) + 医者 (Y GIẢ = bác sĩ).",
+            tip: "Bác sĩ chữa răng."
+        }
+    },
+    {
+        id: "l15_v015", level: "medium",
+        context: "Cơ sở dịch vụ chuyên cắt tỉa tóc và chăm sóc diện mạo cho nam giới.",
+        answer: "とこや", kanji: "{床屋|とこや}",
+        distractors: ["はいしゃ", "びょういん", "みせ"],
+        distractorsKanji: ["{歯医者|はいしゃ}", "{病院|びょういん}", "{店|みせ}"],
+        explanation: {
+            correct: "床屋 (とこや) nghĩa là hiệu cắt tóc (thường cho nam).",
+            pitfalls: "歯医者 là phòng khám răng, 病院 là bệnh viện.",
+            tip: "床 (SÀNG) + 屋 (ỐC) = hiệu cắt tóc."
+        }
+    },
+    {
+        id: "l15_v016", level: "medium",
+        context: "Quầy hoặc đại lý chuyên phân phối vé xem biểu diễn nghệ thuật, thể thao.",
+        answer: "プレイガイド", kanji: "プレイガイド",
+        distractors: ["カタログ", "ソフト", "コーナー"],
+        distractorsKanji: ["カタログ", "ソフト", "コーナー"],
+        explanation: {
+            correct: "プレイガイド là quầy bán vé (xem kịch, thể thao...).",
+            pitfalls: "Mượn từ tiếng Anh 'play guide'.",
+            tip: "Nơi mua vé xem sự kiện."
+        }
+    },
+    {
+        id: "l15_v017", level: "medium",
+        context: "Tình trạng cá nhân chưa lập gia đình, chưa có vợ hoặc chồng.",
+        answer: "どくしん", kanji: "{独身|どくしん}",
+        distractors: ["かぞく", "しゅふ", "がくせい"],
+        distractorsKanji: ["{家族|かぞく}", "{主婦|しゅふ}", "{学生|がくせい}"],
+        explanation: {
+            correct: "独身 (どくしん) nghĩa là độc thân.",
+            pitfalls: "独 (ĐỘC = một mình) + 身 (THÂN = bản thân).",
+            tip: "Chưa kết hôn."
+        }
+    },
+    {
+        id: "l15_v018", level: "medium",
+        context: "Từ dùng để nhấn mạnh mức độ nổi bật vượt trội của một đối tượng trong nhóm.",
+        answer: "とくに", kanji: "{特|とく}に",
+        distractors: ["いつも", "ときどき", "ぜんぜん"],
+        distractorsKanji: ["いつも", "ときどき", "{全然|ぜんぜん}"],
+        explanation: {
+            correct: "特に (とくに) nghĩa là đặc biệt là.",
+            pitfalls: "特 (ĐẶC) trong đặc biệt.",
+            tip: "Trạng từ nhấn mạnh tính nổi bật."
+        }
+    },
+    {
+        id: "l15_v019", level: "medium",
+        context: "Hình thức xưng呼 tôn kính khi hỏi hoặc nhắc tới gia đình của người đối thoại.",
+        answer: "ごかぞく", kanji: "ご{家族|かぞく}",
+        distractors: ["かぞく", "みなさん", "ごしゅじん"],
+        distractorsKanji: ["{家族|かぞく}", "みなさん", "ご{主人|しゅじん}"],
+        explanation: {
+            correct: "ご家族 (ごかぞく) nghĩa là gia đình (người khác).",
+            pitfalls: "Thêm tiền tố ご để thể hiện sự lịch sự tôn kính.",
+            tip: "Gia đình đối phương."
+        }
+    },
+    {
+        id: "l15_v020", level: "medium",
+        context: "Động từ kính ngữ dùng thay thế cho います khi nói về sự có mặt của người khác.",
+        answer: "いらっしゃいます", kanji: "いらっしゃいます",
+        distractors: ["います", "あります", "いきます"],
+        distractorsKanji: ["います", "あります", "{行|い}きます"],
+        explanation: {
+            correct: "いらっしゃいます là kính ngữ của います.",
+            pitfalls: "Dùng khi hỏi lịch sự về người khác (ví dụ: ご家族は いらっしゃいますか).",
+            tip: "Kính ngữ chỉ sự tồn tại/có mặt."
+        }
+    },
+    {
+        id: "l15_v021", level: "medium",
+        context: "Cấp học trung học phổ thông, từ lớp 10 đến lớp 12.",
+        answer: "こうこう", kanji: "{高校|こうこう}",
+        distractors: ["だいがく", "がっこう", "せんもん"],
+        distractorsKanji: ["{大学|だいがく}", "{学校|がっこう}", "{専門|せんもん}"],
+        explanation: {
+            correct: "高校 (こうこう) nghĩa là trường cấp 3 (THPT).",
+            pitfalls: "Viết tắt của 高等学校 (trường trung học cao cấp).",
+            tip: "高 (CAO) + 校 (HIỆU) = trường cấp 3."
+        }
+    },
+    {
+        id: "l15_v022", level: "medium",
+        context: "Hành động bất ngờ nhớ lại một ký ức hay sự việc trong quá khứ.",
+        answer: "おもいだします", kanji: "{思|おも}い{出|だ}します",
+        distractors: ["しります", "けんきゅうします", "わかります"],
+        distractorsKanji: ["{知|し}ります", "{研究|けんきゅう}します", "わかります"],
+        explanation: {
+            correct: "思い出します (おもいだします) nghĩa là nhớ lại, nhớ ra.",
+            pitfalls: "思 (TƯ) + 出 (XUẤT) = suy nghĩ bật ra ký ức.",
+            tip: "Nhớ lại chuyện cũ."
+        }
+    },
+    {
+        id: "l15_v023", level: "medium",
+        context: "Hành động sắp xếp tài liệu gọn gàng trên bàn trước khi bắt đầu cuộc họp.",
+        answer: "おきます", kanji: "{置|お}きます",
+        distractors: ["うります", "かいます", "とります"],
+        distractorsKanji: ["{売|う}ります", "{買|か}います", "{撮|と}ります"],
+        explanation: {
+            correct: "置きます (おきます) nghĩa là đặt, để.",
+            pitfalls: "Thường đi với trợ từ に (Địa điểm に 置きます).",
+            tip: "Đặt đồ vật lên vị trí."
+        }
+    },
+    {
+        id: "l15_v024", level: "medium",
+        context: "Hành động lập trình và tạo ra phần mềm ứng dụng mới.",
+        answer: "つくります", kanji: "{作|つく}ります",
+        distractors: ["うります", "かいます", "おきます"],
+        distractorsKanji: ["{売|う}ります", "{買|か}います", "{置|お}きます"],
+        explanation: {
+            correct: "作ります (つくります) nghĩa là làm, chế tạo, tạo ra.",
+            pitfalls: "Dùng cho cả đồ ăn, phần mềm, sản phẩm công nghiệp.",
+            tip: "Tạo ra sản phẩm mới."
+        }
+    },
+    {
+        id: "l15_v025", level: "medium",
+        context: "Hoạt động kinh doanh phân phối sản phẩm quần áo tại cửa hàng.",
+        answer: "うります", kanji: "{売|う}ります",
+        distractors: ["かいます", "つくります", "もらいます"],
+        distractorsKanji: ["{買|か}います", "{作|つく}ります", "もらいます"],
+        explanation: {
+            correct: "売ります (うります) nghĩa là bán.",
+            pitfalls: "Trái nghĩa với 買います (mua).",
+            tip: "Bán hàng hóa lấy tiền."
+        }
+    },
+    {
+        id: "l15_v026", level: "medium",
+        context: "Nắm được thông tin về địa chỉ hoặc số điện thoại của ai đó.",
+        answer: "しります", kanji: "{知|し}ります",
+        distractors: ["わかります", "おもいだします", "ききます"],
+        distractorsKanji: ["わかります", "{思|おも}い{出|だ}します", "{聞|き}きます"],
+        explanation: {
+            correct: "知ります (しります) nghĩa là biết.",
+            pitfalls: "Dạng phủ định 'không biết' là 知りません (không dùng 知っていません).",
+            tip: "Trạng thái có thông tin: 知っています."
+        }
+    },
+    {
+        id: "l15_v027", level: "medium",
+        context: "An cư và sinh sống tại thành phố Osaka.",
+        answer: "すみます", kanji: "{住|す}みます",
+        distractors: ["いきます", "います", "はたらきます"],
+        distractorsKanji: ["{行|い}きます", "います", "{働|はたら}きます"],
+        explanation: {
+            correct: "住みます (すみます) nghĩa là sống, ở.",
+            pitfalls: "Diễn tả trạng thái kết quả cư trú: 大阪に 住んでいます.",
+            tip: "Sinh sống cố định."
+        }
+    },
+    {
+        id: "l15_v028", level: "medium",
+        context: "Xem xét các bản báo cáo thông số trước khi đưa ra quyết định.",
+        answer: "しりょう", kanji: "{資料|しりょう}",
+        distractors: ["じこくひょう", "てちょう", "ほん"],
+        distractorsKanji: ["{時刻表|じこくひょう}", "{手帳|てちょう}", "{本|ほん}"],
+        explanation: {
+            correct: "資料 (しりょう) nghĩa là tài liệu, tư liệu.",
+            pitfalls: "Dùng trong công việc và học thuật.",
+            tip: "Giấy tờ tài liệu phục vụ công việc."
+        }
+    },
+    {
+        id: "l15_v029", level: "hard",
+        context: "Bảng tra cứu mốc thời gian chuyển động của phương tiện giao thông đường sắt.",
+        answer: "じこくひょう", kanji: "{時刻表|じこくひょう}",
+        distractors: ["しりょう", "カタログ", "カレンダー"],
+        distractorsKanji: ["{資料|しりょう}", "カタログ", "カレンダー"],
+        explanation: {
+            correct: "時刻表 (じこくひょう) nghĩa là bảng giờ tàu xe.",
+            pitfalls: "Không nhầm với カレンダー (lịch) hay 資料 (tài liệu công việc).",
+            tip: "Bảng tra giờ xuất phát của tàu."
+        }
+    },
+    {
+        id: "l15_v030", level: "hard",
+        context: "Các loại máy móc, thiết bị đã hoàn thiện xuất xưởng từ dây chuyền nhà máy.",
+        answer: "せいひん", kanji: "{製品|せいひん}",
+        distractors: ["しりょう", "ふく", "ソフト"],
+        distractorsKanji: ["{資料|しりょう}", "{服|ふく}", "ソフト"],
+        explanation: {
+            correct: "製品 (せいひん) nghĩa là sản phẩm (đã chế tạo xong).",
+            pitfalls: "Chỉ chung các thành phẩm công nghiệp, điện tử.",
+            tip: "Thành phẩm sản xuất."
+        }
+    },
+    {
+        id: "l15_v031", level: "hard",
+        context: "Ngành học hoặc lĩnh vực nghiên cứu nòng cốt tại trường đại học.",
+        answer: "せんもん", kanji: "{専門|せんもん}",
+        distractors: ["けんきゅう", "しごと", "こうこう"],
+        distractorsKanji: ["{研究|けんきゅう}", "{仕事|しごと}", "{高校|こうこう}"],
+        explanation: {
+            correct: "専門 (せんもん) nghĩa là chuyên môn.",
+            pitfalls: "Nói về chuyên ngành học tập/nghiên cứu.",
+            tip: "Lĩnh vực chuyên sâu."
+        }
+    },
+    {
+        id: "l15_v032", level: "hard",
+        context: "Tiệm dịch vụ cạo râu và cắt tỉa tóc gọn gàng.",
+        answer: "とこや", kanji: "{床屋|とこや}",
+        distractors: ["はいしゃ", "びょういん", "みせ"],
+        distractorsKanji: ["{歯医者|はいしゃ}", "{病院|びょういん}", "{店|みせ}"],
+        explanation: {
+            correct: "床屋 (とこや) nghĩa là hiệu cắt tóc.",
+            pitfalls: "Khác với 歯医者 (phòng khám răng).",
+            tip: "Tiệm hớt tóc nam."
+        }
+    },
+    {
+        id: "l15_v033", level: "hard",
+        context: "Trạng thái sống độc lập, chưa đăng ký kết hôn.",
+        answer: "どくしん", kanji: "{独身|どくしん}",
+        distractors: ["ひとり", "かぞく", "しゅふ"],
+        distractorsKanji: ["{一人|ひとり}", "{家族|かぞく}", "{主婦|しゅふ}"],
+        explanation: {
+            correct: "独身 (どくしん) nghĩa là độc thân.",
+            pitfalls: "一人 (một người/một mình) chỉ số lượng, không chỉ tình trạng hôn nhân.",
+            tip: "Người chưa lấy vợ/chồng."
+        }
+    },
+    {
+        id: "l15_v034", level: "hard",
+        context: "Từ lịch sự tôn kính dùng để hỏi thăm tình hình nhà người khác.",
+        answer: "ごかぞく", kanji: "ご{家族|かぞく}",
+        distractors: ["かぞく", "ごしゅじん", "おくさん"],
+        distractorsKanji: ["{家族|かぞく}", "ご{主人|しゅじん}", "{奥|おく}さん"],
+        explanation: {
+            correct: "ご家族 (ごかぞく) nghĩa là gia đình (của người khác).",
+            pitfalls: "Dùng khi giao tiếp lịch sự với đối phương.",
+            tip: "Tôn kính ngữ cho gia đình người nghe."
+        }
+    },
+    {
+        id: "l15_v035", level: "hard",
+        context: "Trạng từ đi cùng câu nhấn mạnh đối tượng yêu thích nhất trong các lựa chọn.",
+        answer: "とくに", kanji: "{特|とく}に",
+        distractors: ["とても", "あまり", "ぜんぜん"],
+        distractorsKanji: ["とても", "あまり", "{全然|ぜんぜん}"],
+        explanation: {
+            correct: "特に (とくに) nghĩa là đặc biệt là.",
+            pitfalls: "Phân biệt với とても (rất) và あまり (không... lắm).",
+            tip: "Trạng từ chỉ sự đặc biệt."
+        }
+    }
+];
+
+        // GAME 2 – Ngữ pháp: sentence có chỗ trống ＿ (1 hay nhiều ＿ đều được). options: 3-4 phần tử, correctIndex = vị trí đáp án đúng.
+        const GAME2_DATA = [
+    {
+        id: "l15_g001", level: "easy",
+        sentence: "{写真|しゃしん}を {撮|と}っ＿ いいですか。",
+        translation: "Tôi chụp ảnh có được không?",
+        options: [
+            { text: "ても", kanji: "ても" },
+            { text: "ては", kanji: "ては" },
+            { text: "て", kanji: "て" },
+            { text: "から", kanji: "から" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "Mẫu câu xin phép thực hiện hành động: V-て + も いいですか.",
+            pitfalls: "ては dùng trong mẫu cấm đoán (V-てはいけません).",
+            tip: "V-て + も いいですか = xin phép làm V."
+        }
+    },
+    {
+        id: "l15_g002", level: "easy",
+        sentence: "ここで {写真|しゃしん}を {撮|と}っ＿ いけません。",
+        translation: "Không được chụp ảnh ở đây.",
+        options: [
+            { text: "ても", kanji: "ても" },
+            { text: "ては", kanji: "ては" },
+            { text: "て", kanji: "て" },
+            { text: "で", kanji: "で" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Mẫu câu cấm đoán: V-て + は いけません (không được làm V).",
+            pitfalls: "ても dùng trong mẫu xin phép (V-てもいいですか).",
+            tip: "V-て + は いけません = cấm đoán."
+        }
+    },
+    {
+        id: "l15_g003", level: "easy",
+        sentence: "わたしは {大阪|おおさか}＿ {住|す}んでいます。",
+        translation: "Tôi đang sống ở Osaka.",
+        options: [
+            { text: "で", kanji: "で" },
+            { text: "へ", kanji: "へ" },
+            { text: "に", kanji: "に" },
+            { text: "を", kanji: "を" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Động từ 住みます chỉ trạng thái cư trú kết quả đi với trợ từ に.",
+            pitfalls: "Không dùng で vì đây là trạng thái cư trú cố định, không phải nơi diễn ra hành động.",
+            tip: "[Địa điểm] に 住んでいます."
+        }
+    },
+    {
+        id: "l15_g004", level: "easy",
+        sentence: "サントスさんは {電子辞書|でんしじしょ}を {持|も}っ＿ います。",
+        translation: "Anh Santos có từ điển điện tử.",
+        options: [
+            { text: "で", kanji: "で" },
+            { text: "も", kanji: "も" },
+            { text: "は", kanji: "は" },
+            { text: "て", kanji: "て" }
+        ],
+        correctIndex: 3,
+        explanation: {
+            correct: "Diễn tả trạng thái sở hữu: V-て + います (持っています).",
+            pitfalls: "持ちます chia sang thể て là 持って.",
+            tip: "持っています = có / đang sở hữu."
+        }
+    },
+    {
+        id: "l15_g005", level: "easy",
+        sentence: "タワポンさんは {独身|どくしん}＿。",
+        translation: "Anh Thawaphon còn độc thân.",
+        options: [
+            { text: "です", kanji: "です" },
+            { text: "います", kanji: "います" },
+            { text: "あります", kanji: "あります" },
+            { text: "します", kanji: "します" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "独身 (độc thân) là danh từ chỉ tình trạng, kết thúc câu bằng です.",
+            pitfalls: "Không dùng います hay あります cho danh từ chỉ tình trạng cá nhân.",
+            tip: "Danh từ + です."
+        }
+    },
+    {
+        id: "l15_g006", level: "easy",
+        sentence: "たばこを {吸|す}っ＿ いいですか。",
+        translation: "Tôi hút thuốc có được không?",
+        options: [
+            { text: "ては", kanji: "ては" },
+            { text: "ても", kanji: "ても" },
+            { text: "てで", kanji: "てで" },
+            { text: "てに", kanji: "てに" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "吸います chia thể て là 吸って + もいいですか.",
+            pitfalls: "ては biểu thị sự cấm đoán, không dùng khi hỏi xin phép.",
+            tip: "吸っても いいですか = hút thuốc được không."
+        }
+    },
+    {
+        id: "l15_g007", level: "easy",
+        sentence: "ここで たばこを {吸|す}っ＿ いけません。",
+        translation: "Không được hút thuốc ở đây.",
+        options: [
+            { text: "て", kanji: "て" },
+            { text: "から", kanji: "から" },
+            { text: "ては", kanji: "ては" },
+            { text: "ても", kanji: "ても" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Biểu thị sự cấm đoán: 吸って + は いけません.",
+            pitfalls: "ても là cho phép/xin phép, không kết hợp với いけません.",
+            tip: "V-ては いけません = không được làm V."
+        }
+    },
+    {
+        id: "l15_g008", level: "easy",
+        sentence: "わたしは IMCの {社員|しゃいん}を {知|し}っ＿ います。",
+        translation: "Tôi biết nhân viên của công ty IMC.",
+        options: [
+            { text: "で", kanji: "で" },
+            { text: "も", kanji: "も" },
+            { text: "は", kanji: "は" },
+            { text: "て", kanji: "て" }
+        ],
+        correctIndex: 3,
+        explanation: {
+            correct: "Trạng thái có thông tin/biết ai đó: 知っています (知ります chia thể て là 知って).",
+            pitfalls: "知ります thuộc nhóm 1, đuôi り đổi thành って.",
+            tip: "知っています = biết."
+        }
+    },
+    {
+        id: "l15_g009", level: "easy",
+        sentence: "テーブルの {上|うえ}に {資料|しりょう}を {置|お}い＿ ください。",
+        translation: "Xin hãy đặt tài liệu lên trên bàn.",
+        options: [
+            { text: "て", kanji: "て" },
+            { text: "で", kanji: "で" },
+            { text: "も", kanji: "も" },
+            { text: "は", kanji: "は" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "置きます chia thể て là 置いて (kết hợp với ください tạo câu yêu cầu).",
+            pitfalls: "Động từ đuôi き đổi thành い + て (置きます -> 置いて).",
+            tip: "置きます -> 置いて."
+        }
+    },
+    {
+        id: "l15_g010", level: "easy",
+        sentence: "サントスさんの ご{家族|かぞく}は どちらに いらっしゃい＿ か。",
+        translation: "Gia đình anh Santos ở đâu ạ?",
+        options: [
+            { text: "ません", kanji: "ません" },
+            { text: "ます", kanji: "ます" },
+            { text: "ました", kanji: "ました" },
+            { text: "ましょう", kanji: "ましょう" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Hỏi nghi vấn hiện tại tôn kính: いらっしゃいますか.",
+            pitfalls: "いらっしゃいませんか là câu hỏi phủ định / rủ rê.",
+            tip: "いらっしゃいます = います (kính ngữ)."
+        }
+    },
+    {
+        id: "l15_g011", level: "easy",
+        sentence: "ここで お{酒|さけ}を {飲|の}ん＿ いいですか。",
+        translation: "Uống rượu ở đây có được không?",
+        options: [
+            { text: "ではい", kanji: "ではい" },
+            { text: "ても", kanji: "ても" },
+            { text: "でも", kanji: "でも" },
+            { text: "ては", kanji: "ては" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "飲みたい/飲んでいます: 飲みます chia thể て là 飲んで + もいいですか (thành でもいいですか).",
+            pitfalls: "Động từ thể て đuôi んで đi với でもいいですか (biến âm từ ても).",
+            tip: "飲んで + も = 飲んでも (đọc là 飲んでも)."
+        }
+    },
+    {
+        id: "l15_g012", level: "easy",
+        sentence: "ここで {車|くるま}を {止|と}め＿ はいけません。",
+        translation: "Không được đỗ xe ở đây.",
+        options: [
+            { text: "で", kanji: "で" },
+            { text: "も", kanji: "も" },
+            { text: "は", kanji: "は" },
+            { text: "て", kanji: "て" }
+        ],
+        correctIndex: 3,
+        explanation: {
+            correct: "止めます (nhóm 2) chia thể て là 止めて + はいけません.",
+            pitfalls: "Động từ nhóm 2 bỏ ます thêm て.",
+            tip: "止めては いけません = không được đỗ xe."
+        }
+    },
+    {
+        id: "l15_g013", level: "medium",
+        sentence: "ミラーさんの {電話番号|でんわばんごう}を {知|し}っていますか。･･･いいえ、＿。",
+        translation: "Bạn có biết số điện thoại của anh Miller không? ...Không, tôi không biết.",
+        options: [
+            { text: "しりません", kanji: "{知|し}りません" },
+            { text: "しっていません", kanji: "{知|し}っていません" },
+            { text: "しりませんでした", kanji: "{知|し}りませんでした" },
+            { text: "わかりませんでした", kanji: "わかりませんでした" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "Phủ định của 知っています (biết) bắt buộc dùng 知りません (không biết).",
+            pitfalls: "Tuyệt đối không dùng 知っていません trong tiếng Nhật chuẩn.",
+            tip: "Khẳng định: 知っています / Phủ định: 知りません."
+        }
+    },
+    {
+        id: "l15_g014", level: "medium",
+        sentence: "ここに カタログを ＿ いいですか。",
+        translation: "Tôi đặt bản ca-ta-lô ở đây có được không?",
+        options: [
+            { text: "おいては", kanji: "{置|お}いては" },
+            { text: "おいても", kanji: "{置|お}いても" },
+            { text: "おきます", kanji: "{置|お}きます" },
+            { text: "おいて", kanji: "{置|お}いて" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "置きます chia thể て thành 置いて + もいいですか.",
+            pitfalls: "置いては dùng cho cấu trúc cấm đoán (置く＋てはいけません).",
+            tip: "置いても いいですか."
+        }
+    },
+    {
+        id: "l15_g015", level: "medium",
+        sentence: "この {部屋|へや}で {写真|しゃしん}を ＿ はいけません。",
+        translation: "Không được chụp ảnh trong phòng này.",
+        options: [
+            { text: "とり", kanji: "{撮|と}り" },
+            { text: "とっても", kanji: "{撮|と}っても" },
+            { text: "とって", kanji: "{撮|と}って" },
+            { text: "とります", kanji: "{撮|と}ります" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "撮ります chia thể て thành 撮って + はいけません.",
+            pitfalls: "撮っても là dạng xin phép, đi với いいですか.",
+            tip: "撮って + は いけません."
+        }
+    },
+    {
+        id: "l15_g016", level: "medium",
+        sentence: "{山田|やまだ}さんは IMCで ソフトを ＿ います。",
+        translation: "Anh Yamada đang làm phần mềm ở công ty IMC.",
+        options: [
+            { text: "つくります", kanji: "{作|つく}ります" },
+            { text: "つくっても", kanji: "{作|つく}っても" },
+            { text: "つくっては", kanji: "{作|つく}っては" },
+            { text: "つくって", kanji: "{作|つく}って" }
+        ],
+        correctIndex: 3,
+        explanation: {
+            correct: "作ります chia thể て thành 作って + います (diễn tả công việc/nghề nghiệp tiếp diễn).",
+            pitfalls: "作ります thuộc nhóm 1, り đổi thành って.",
+            tip: "作っています = đang làm / sản xuất."
+        }
+    },
+    {
+        id: "l15_g017", level: "medium",
+        sentence: "タワポンさんは ＿ に {住|す}んでいますか。",
+        translation: "Anh Thawaphon đang sống ở đâu?",
+        options: [
+            { text: "どこ", kanji: "どこ" },
+            { text: "だれ", kanji: "だれ" },
+            { text: "なん", kanji: "なん" },
+            { text: "いつ", kanji: "いつ" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "Hỏi địa điểm sinh sống đi với trợ từ に: どこに 住んでいますか.",
+            pitfalls: "だれ (ai), なん (gì), いつ (khi nào) không dùng cho địa điểm.",
+            tip: "どこに 住んでいますか."
+        }
+    },
+    {
+        id: "l15_g018", level: "medium",
+        sentence: "シュミットさんは {自動車|じどうしゃ}の {会社|かいしゃ}で ＿ しています。",
+        translation: "Anh Schmidt đang nghiên cứu tại công ty ô tô.",
+        options: [
+            { text: "べんきょう", kanji: "{勉強|べんきょう}" },
+            { text: "けんきゅう", kanji: "{研究|けんきゅう}" },
+            { text: "しごと", kanji: "{仕事|しごと}" },
+            { text: "かいもの", kanji: "{買|か}い{物|もの}" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Danh từ 研究 (nghiên cứu) kết hợp với します thành 研究します.",
+            pitfalls: "勉強します là học tập chung, 研究 します là nghiên cứu chuyên môn.",
+            tip: "研究 しています = đang nghiên cứu."
+        }
+    },
+    {
+        id: "l15_g019", level: "medium",
+        sentence: "ここで ボールペンを ＿ も いいですか。",
+        translation: "Tôi dùng bút bi ở đây có được không?",
+        options: [
+            { text: "つかい", kanji: "{使|つか}い" },
+            { text: "つかっては", kanji: "{使|つか}っては" },
+            { text: "つかって", kanji: "{使|つか}って" },
+            { text: "つかいます", kanji: "{使|つか}います" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "使います (nhóm 1) chia thể て là 使って + もいいですか.",
+            pitfalls: "Chỗ trống đã có も いいですか nên chỉ điền V-て.",
+            tip: "使って + も いいですか."
+        }
+    },
+    {
+        id: "l15_g020", level: "medium",
+        sentence: "あの {店|みせ}で {服|ふく}を ＿ います。",
+        translation: "Cửa hàng đó đang bán quần áo.",
+        options: [
+            { text: "うります", kanji: "{売|う}ります" },
+            { text: "うっても", kanji: "{売|う}っても" },
+            { text: "うっては", kanji: "{売|う}っては" },
+            { text: "うって", kanji: "{売|う}って" }
+        ],
+        correctIndex: 3,
+        explanation: {
+            correct: "売ります chia thể て là 売って + います (diễn tả thói quen/hoạt động buôn bán).",
+            pitfalls: "売ります thuộc nhóm 1, り -> って.",
+            tip: "売っています = có bán."
+        }
+    },
+    {
+        id: "l15_g021", level: "medium",
+        sentence: "ここに {車|くるま}を ＿ はいけません。",
+        translation: "Không được đỗ xe ở đây.",
+        options: [
+            { text: "とめて", kanji: "{止|と}めて" },
+            { text: "とめます", kanji: "{止|と}めます" },
+            { text: "とめても", kanji: "{止|と}めても" },
+            { text: "とめ", kanji: "{止|と}め" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "止めます chia thể て là 止めて + はいけません.",
+            pitfalls: "Chỗ trống đứng trước はいけません nên bắt buộc dùng thể て.",
+            tip: "止めて + はいけません."
+        }
+    },
+    {
+        id: "l15_g022", level: "medium",
+        sentence: "この {雑誌|ざっし}を ＿ も いいですか。",
+        translation: "Tôi đọc cuốn tạp chí này có được không?",
+        options: [
+            { text: "よんでは", kanji: "{読|よ}んでは" },
+            { text: "よんでも", kanji: "{読|よ}んでも" },
+            { text: "よみます", kanji: "{読|よ}みます" },
+            { text: "よんで", kanji: "{読|よ}んで" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "読みます chia thể て là 読んで + もいいですか. Cả cụm 読んでも đi với いいですか.",
+            pitfalls: "Chỗ trống chỉ chứa phần động từ chia thể て (読んで).",
+            tip: "読んで + も いいですか."
+        }
+    },
+    {
+        id: "l15_g023", level: "medium",
+        sentence: "サントスさんの ご{家族|かぞく}は どこに ＿ か。",
+        translation: "Gia đình anh Santos ở đâu ạ?",
+        options: [
+            { text: "います", kanji: "います" },
+            { text: "あります", kanji: "あります" },
+            { text: "いらっしゃいます", kanji: "いらっしゃいます" },
+            { text: "いきます", kanji: "{行|い}きます" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Khi hỏi lịch sự về sự có mặt của gia đình người khác, dùng kính ngữ いらっしゃいます.",
+            pitfalls: "います đúng ngữ pháp cơ bản nhưng không thể hiện mức độ lịch sự tôn kính bằng いらっしゃいます.",
+            tip: "ご家族 + いらっしゃいますか."
+        }
+    },
+    {
+        id: "l15_g024", level: "medium",
+        sentence: "わたしは {高校|こうこう}の {先生|せんせい}を ＿ います。",
+        translation: "Tôi biết giáo viên cấp 3.",
+        options: [
+            { text: "しります", kanji: "{知|し}ります" },
+            { text: "しっても", kanji: "{知|し}っても" },
+            { text: "しっては", kanji: "{知|し}っては" },
+            { text: "しって", kanji: "{知|し}って" }
+        ],
+        correctIndex: 3,
+        explanation: {
+            correct: "Trạng thái có tri thức/thông tin: 知って + います.",
+            pitfalls: "Không dùng dạng đơn 知ります khi diễn tả trạng thái đang biết.",
+            tip: "知っています = biết."
+        }
+    },
+    {
+        id: "l15_g025", level: "hard",
+        sentence: "「{資料|しりょう}を {見|み}＿ いいですか。」「ええ、どうぞ。」",
+        translation: "「Tôi xem tài liệu có được không?」「Vâng, xin mời.」",
+        options: [
+            { text: "ても", kanji: "ても" },
+            { text: "ては", kanji: "ては" },
+            { text: "て", kanji: "て" },
+            { text: "で", kanji: "で" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "見ます nhóm 2 chia thể て là 見て + もいいですか (thành 見てもいいですか).",
+            pitfalls: "ては biểu thị cấm đoán, mâu thuẫn với câu trả lời ええ、どうぞ.",
+            tip: "V-ても いいですか -> ええ、どうぞ."
+        }
+    },
+    {
+        id: "l15_g026", level: "hard",
+        sentence: "「{市役所|しやくしょ}の {電話番号|でんわばんごう}を {知|し}っていますか。」「いいえ、＿。」",
+        translation: "「Bạn có biết số điện thoại của tòa thị chính không?」「Không, tôi không biết.」",
+        options: [
+            { text: "しっていません", kanji: "{知|し}っていません" },
+            { text: "しりません", kanji: "{知|し}りません" },
+            { text: "しりませんでした", kanji: "{知|し}りませんでした" },
+            { text: "わかりません", kanji: "わかりません" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Dạng phủ định của câu hỏi 知っていますか bắt buộc là 知りません.",
+            pitfalls: "Không dùng 知っていません hoặc わかりません khi đáp lại câu hỏi 知っていますか.",
+            tip: "知っていますか -> いいえ、知りません."
+        }
+    },
+    {
+        id: "l15_g027", level: "hard",
+        sentence: "ここに {車|くるま}を ＿ はいけません。あそこに {駐車場|ちゅうしゃじょう}が ありますから。",
+        translation: "Không được đỗ xe ở đây. Vì ở đằng kia có bãi đỗ xe.",
+        options: [
+            { text: "とめても", kanji: "{止|と}めても" },
+            { text: "とめます", kanji: "{止|と}めます" },
+            { text: "とめて", kanji: "{止|と}めて" },
+            { text: "とり", kanji: "{取|と}り" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "止めます -> 止めて + はいけません (thành 止めてはいけません).",
+            pitfalls: "止めても đi với いいですか, không ghép với はいけません.",
+            tip: "止めては いけません = cấm đỗ xe."
+        }
+    },
+    {
+        id: "l15_g028", level: "hard",
+        sentence: "サントスさんは {電子辞書|でんしじしょ}を ＿ いますか。",
+        translation: "Anh Santos có đang mang theo từ điển điện tử không?",
+        options: [
+            { text: "もちます", kanji: "{持|も}ちます" },
+            { text: "もっても", kanji: "{持|も}っても" },
+            { text: "もっては", kanji: "{持|も}っては" },
+            { text: "もって", kanji: "{持|も}って" }
+        ],
+        correctIndex: 3,
+        explanation: {
+            correct: "持ちます (nhóm 1) chia thể て thành 持って + いますか.",
+            pitfalls: "持ちます thuộc nhóm 1, đuôi ち đổi thành って.",
+            tip: "持っていますか = có mang theo không."
+        }
+    },
+    {
+        id: "l15_g029", level: "hard",
+        sentence: "「ここで カタログを もらっ＿ いいですか。」「ええ、どうぞ。」",
+        translation: "「Tôi lấy ca-ta-lô ở đây có được không?」「Vâng, xin mời.」",
+        options: [
+            { text: "ても", kanji: "ても" },
+            { text: "ては", kanji: "ては" },
+            { text: "て", kanji: "て" },
+            { text: "で", kanji: "で" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "もらいます chia thể て là もらって + もいいですか.",
+            pitfalls: "ては đi với いけません (cấm đoán).",
+            tip: "もらっても いいですか = xin lấy / nhận."
+        }
+    },
+    {
+        id: "l15_g030", level: "hard",
+        sentence: "「ご{家族|かぞく}は どこに いらっしゃいますか。」「{日本|にほん}＿ {住|す}んでいます。」",
+        translation: "「Gia đình anh/chị ở đâu ạ?」「Đang sống ở Nhật Bản.」",
+        options: [
+            { text: "で", kanji: "で" },
+            { text: "に", kanji: "に" },
+            { text: "へ", kanji: "へ" },
+            { text: "を", kanji: "を" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Trợ từ に đi kèm động từ chỉ vị trí sinh sống kết quả: 住んでいます.",
+            pitfalls: "Không dùng で vì 住んでいます chỉ trạng thái cư trú cố định.",
+            tip: "[Địa điểm] に 住んでいます."
+        }
+    }
+];
+
+        // GAME 3 – Xếp câu: blocks gồm các khối đúng + 1-2 khối nhiễu. acceptableOrders: mọi thứ tự đúng (dùng "text" của block).
+        const GAME3_DATA = [
+    {
+        id: "l15_s001", level: "easy",
+        vietnamese: "Tôi có thể chụp ảnh được không?",
+        acceptableOrders: [
+            ["しゃしんを", "とっても", "いいですか"]
+        ],
+        blocks: [
+            { text: "しゃしんを", kanji: "{写真|しゃしん}を" },
+            { text: "とっても", kanji: "{撮|と}っても" },
+            { text: "いいですか", kanji: "いいですか" },
+            { text: "ください", kanji: "ください" },
+            { text: "かいても", kanji: "{書|か}いても" }
+        ],
+        explanation: {
+            correct: "Mẫu xin phép: Vても いいですか (Có thể làm... được không?).",
+            pitfalls: "ください dùng trong mẫu Vてください; かいても nghĩa là viết.",
+            tip: "Xin phép: V-て + も いいですか."
+        }
+    },
+    {
+        id: "l15_s002", level: "easy",
+        vietnamese: "Không được chụp ảnh ở đây.",
+        acceptableOrders: [
+            ["ここで", "しゃしんを", "とっては いけません"],
+            ["しゃしんを", "ここで", "とっては いけません"]
+        ],
+        blocks: [
+            { text: "ここで", kanji: "ここで" },
+            { text: "しゃしんを", kanji: "{写真|しゃしん}を" },
+            { text: "とっては いけません", kanji: "{撮|と}っては いけません" },
+            { text: "とっても いいです", kanji: "{撮|と}っても いいです" },
+            { text: "がっこうで", kanji: "{学校|がっこう}で" }
+        ],
+        explanation: {
+            correct: "Mẫu cấm đoán: Vては いけません (Không được...).",
+            pitfalls: "とってもいいです là cho phép; がっこうで là ở trường học.",
+            tip: "Cấm đoán: V-て + は いけません."
+        }
+    },
+    {
+        id: "l15_s003", level: "easy",
+        vietnamese: "Anh Santos có từ điển điện tử.",
+        acceptableOrders: [
+            ["サントスさんは", "でんしじしょを", "もっています"]
+        ],
+        blocks: [
+            { text: "サントスさんは", kanji: "サントスさんは" },
+            { text: "でんしじしょを", kanji: "{電子辞書|でんしじしょ}を" },
+            { text: "もっています", kanji: "{持|も}っています" },
+            { text: "かいました", kanji: "{買|か}いました" },
+            { text: "じしょを", kanji: "{辞書|じしょ}を" }
+        ],
+        explanation: {
+            correct: "Mẫu sở hữu đồ vật: Nを 持っています (Có/sở hữu N).",
+            pitfalls: "かいました nghĩa là đã mua; じしょを thiếu từ 'điện tử' (電子).",
+            tip: "Sở hữu / mang theo: Nを 持っています."
+        }
+    },
+    {
+        id: "l15_s004", level: "easy",
+        vietnamese: "Tôi đang sống ở Osaka.",
+        acceptableOrders: [
+            ["わたしは", "おおさかに", "すんでいます"],
+            ["おおさかに", "わたしは", "すんでいます"]
+        ],
+        blocks: [
+            { text: "わたしは", kanji: "{私|わたし}は" },
+            { text: "おおさかに", kanji: "{大阪|おおさか}に" },
+            { text: "すんでいます", kanji: "{住|す}んでいます" },
+            { text: "で", kanji: "で" },
+            { text: "いきます", kanji: "{行|い}きます" }
+        ],
+        explanation: {
+            correct: "Mẫu nơi cư trú: [Địa điểm] に 住んでいます.",
+            pitfalls: "Động từ 住んでいます đi với trợ từ に, không dùng で.",
+            tip: "Nơi ở + に 住んでいます."
+        }
+    },
+    {
+        id: "l15_s005", level: "easy",
+        vietnamese: "Tôi không biết số điện thoại của anh Miller.",
+        acceptableOrders: [
+            ["ミラーさんの", "でんわばんごうを", "しりません"]
+        ],
+        blocks: [
+            { text: "ミラーさんの", kanji: "ミラーさんの" },
+            { text: "でんわばんごうを", kanji: "{電話番号|でんわばんごう}を" },
+            { text: "しりません", kanji: "{知|し}りません" },
+            { text: "しっていません", kanji: "{知|し}っていません" },
+            { text: "かいました", kanji: "{買|か}いました" }
+        ],
+        explanation: {
+            correct: "Phủ định của 知ります là 知りません (không biết).",
+            pitfalls: "Tuyệt đối không dùng 知っていません để nói 'không biết'.",
+            tip: "Biết = 知っています, không biết = 知りません."
+        }
+    },
+    {
+        id: "l15_s006", level: "easy",
+        vietnamese: "Có thể xem ca-ta-lô này không?",
+        acceptableOrders: [
+            ["この", "カタログを", "みても いいですか"]
+        ],
+        blocks: [
+            { text: "この", kanji: "この" },
+            { text: "カタログを", kanji: "カタログを" },
+            { text: "みても いいですか", kanji: "{見|み}ても いいですか" },
+            { text: "みて ください", kanji: "{見|み}て ください" },
+            { text: "その", kanji: "その" }
+        ],
+        explanation: {
+            correct: "Xin phép xem: この カタログを 見てもいいですか.",
+            pitfalls: "みてください là bảo người khác xem; その nghĩa là 'đó' thay vì 'này'.",
+            tip: "Xin phép làm gì: V-て + も いいですか."
+        }
+    },
+    {
+        id: "l15_s007", level: "easy",
+        vietnamese: "Hãy đặt tài liệu ở đây.",
+        acceptableOrders: [
+            ["ここに", "しりょうを", "おいて ください"],
+            ["しりょうを", "ここに", "おいて ください"]
+        ],
+        blocks: [
+            { text: "ここに", kanji: "ここに" },
+            { text: "しりょうを", kanji: "{資料|しりょう}を" },
+            { text: "おいて ください", kanji: "{置|お}いて ください" },
+            { text: "ここで", kanji: "ここで" },
+            { text: "もってください", kanji: "{持|も}ってください" }
+        ],
+        explanation: {
+            correct: "Đặt/để ở đâu: [Địa điểm] に 置きます; Yêu cầu: Vてください.",
+            pitfalls: "置きます đi với に chỉ vị trí đặt đồ vật, không dùng で.",
+            tip: "Đặt để vào vị trí: Địa điểm + に 置きます."
+        }
+    },
+    {
+        id: "l15_s008", level: "easy",
+        vietnamese: "Công ty IMC sản xuất phần mềm.",
+        acceptableOrders: [
+            ["IMCは", "ソフトを", "つくっています"]
+        ],
+        blocks: [
+            { text: "IMCは", kanji: "IMCは" },
+            { text: "ソフトを", kanji: "ソフトを" },
+            { text: "つくっています", kanji: "{作|つく}っています" },
+            { text: "かっています", kanji: "{買|か}っています" },
+            { text: "うっています", kanji: "{売|う}っています" }
+        ],
+        explanation: {
+            correct: "Diễn tả nghề nghiệp/hoạt động sản xuất: Nを 作っています.",
+            pitfalls: "かっています (mua) và うっています (bán) không mang nghĩa chế tạo.",
+            tip: "Chế tạo / sản xuất: 作っています."
+        }
+    },
+    {
+        id: "l15_s009", level: "medium",
+        vietnamese: "Anh Santos bán sản phẩm ở cửa hàng.",
+        acceptableOrders: [
+            ["サントスさんは", "みせで", "せいひんを", "うっています"],
+            ["サントスさんは", "せいひんを", "みせで", "うっています"]
+        ],
+        blocks: [
+            { text: "サントスさんは", kanji: "サントスさんは" },
+            { text: "みせで", kanji: "{店|みせ}で" },
+            { text: "せいひんを", kanji: "{製品|せいひん}を" },
+            { text: "うっています", kanji: "{売|う}っています" },
+            { text: "みせに", kanji: "{店|みせ}に" },
+            { text: "つくっています", kanji: "{作|つく}っています" }
+        ],
+        explanation: {
+            correct: "Hành động mua bán diễn ra tại địa điểm dùng trợ từ で.",
+            pitfalls: "Nơi diễn ra hành động dùng で, không dùng に.",
+            tip: "Nơi diễn ra hành động: Địa điểm + で."
+        }
+    },
+    {
+        id: "l15_s010", level: "medium",
+        vietnamese: "Anh Gupta đang nghiên cứu chuyên môn tại đại học.",
+        acceptableOrders: [
+            ["グプタさんは", "だいがくで", "せんもんを", "けんきゅうしています"],
+            ["グプタさんは", "せんもんを", "だいがくで", "けんきゅうしています"]
+        ],
+        blocks: [
+            { text: "グプタさんは", kanji: "グプタさんは" },
+            { text: "だいがくで", kanji: "{大学|だいがく}で" },
+            { text: "せんもんを", kanji: "{専門|せんもん}を" },
+            { text: "けんきゅうしています", kanji: "{研究|けんきゅう}しています" },
+            { text: "だいがくに", kanji: "{大学|だいがく}に" },
+            { text: "べんきょうします", kanji: "{勉強|べんきょう}します" }
+        ],
+        explanation: {
+            correct: "Nghiên cứu chuyên môn: 専門を 研究しています tại nơi chốn (で).",
+            pitfalls: "Hành động 研究します thực hiện tại địa điểm dùng で, không dùng に.",
+            tip: "Chuyên môn = 専門; Nơi nghiên cứu + で."
+        }
+    },
+    {
+        id: "l15_s011", level: "medium",
+        vietnamese: "Chị Karina chưa kết hôn, chị ấy còn độc thân.",
+        acceptableOrders: [
+            ["カリナさんは", "けっこんして いません", "どくしんです"]
+        ],
+        blocks: [
+            { text: "カリナさんは", kanji: "カリナさんは" },
+            { text: "けっこんして いません", kanji: "{結婚|けっこん}して いません" },
+            { text: "どくしんです", kanji: "{独身|どくしん}です" },
+            { text: "けっこんして います", kanji: "{結婚|けっこん}して います" },
+            { text: "かぞくです", kanji: "{家族|かぞく}です" }
+        ],
+        explanation: {
+            correct: "Chưa kết hôn dùng 結婚していません; 独身 nghĩa là độc thân.",
+            pitfalls: "けっこんしています là đã kết hôn, trái ngược nghĩa với độc thân.",
+            tip: "Chưa kết hôn: 結婚していません = 独身."
+        }
+    },
+    {
+        id: "l15_s012", level: "medium",
+        vietnamese: "Không được hút thuốc ở bệnh viện.",
+        acceptableOrders: [
+            ["びょういんで", "たばこを", "すっては いけません"],
+            ["たばこを", "びょういんで", "すっては いけません"]
+        ],
+        blocks: [
+            { text: "びょういんで", kanji: "{病院|びょういん}で" },
+            { text: "たばこを", kanji: "たばこを" },
+            { text: "すっては いけません", kanji: "{吸|す}っては いけません" },
+            { text: "びょういんに", kanji: "{病院|びょういん}に" },
+            { text: "すんでも いいです", kanji: "{住|す}んでも いいです" }
+        ],
+        explanation: {
+            correct: "Hành động hút thuốc ở đâu dùng で; Cấm đoán dùng Vてはいけません.",
+            pitfalls: "びょういんに sai trợ từ địa điểm hành động.",
+            tip: "Hành động ở đâu dùng で; Cấm dùng V-ては いけません."
+        }
+    },
+    {
+        id: "l15_s013", level: "medium",
+        vietnamese: "Anh ấy nhớ lại tên của trường trung học phổ thông.",
+        acceptableOrders: [
+            ["かれは", "こうこうの", "なまえを", "おいだしています"]
+        ],
+        blocks: [
+            { text: "かれは", kanji: "{彼|かれ}は" },
+            { text: "こうこうの", kanji: "{高校|こうこう}の" },
+            { text: "なまえを", kanji: "{名前|なまえ}を" },
+            { text: "おいだしています", kanji: "{思|お}い{出|だ}しています" },
+            { text: "しりません", kanji: "{知|し}りません" },
+            { text: "だいがくの", kanji: "{大学|だいがく}の" }
+        ],
+        explanation: {
+            correct: "Nhớ lại: 思い出します; Trường THPT: 高校.",
+            pitfalls: "しりません nghĩa là không biết; だいがくの là trường đại học.",
+            tip: "高校 (THÀNH CAO) = trường cấp 3; 思い出します = nhớ ra."
+        }
+    },
+    {
+        id: "l15_s014", level: "medium",
+        vietnamese: "Bạn có biết bảng giờ tàu xe không?",
+        acceptableOrders: [
+            ["じこくひょうを", "しっていますか"]
+        ],
+        blocks: [
+            { text: "じこくひょうを", kanji: "{時刻表|じこくひょう}を" },
+            { text: "しっていますか", kanji: "{知|し}っていますか" },
+            { text: "しりますか", kanji: "{知|し}りますか" },
+            { text: "しりょうを", kanji: "{資料|しりょう}を" }
+        ],
+        explanation: {
+            correct: "Hỏi trạng thái 'có biết thông tin N không': Nを 知っていますか.",
+            pitfalls: "Không dùng 知りますか để hỏi trạng thái biết.",
+            tip: "Hỏi 'Bạn có biết... không?': 知っていますか."
+        }
+    },
+    {
+        id: "l15_s015", level: "medium",
+        vietnamese: "Đặc biệt là tôi thích sản phẩm của Nhật Bản.",
+        acceptableOrders: [
+            ["とくに", "にほんの", "せいひんが", "すきです"]
+        ],
+        blocks: [
+            { text: "とくに", kanji: "{特|と}くに" },
+            { text: "にほんの", kanji: "{日本|にほん}の" },
+            { text: "せいひんが", kanji: "{製品|せいひん}が" },
+            { text: "すきです", kanji: "{好|す}きです" },
+            { text: "きらいです", kanji: "{嫌|きら}いです" },
+            { text: "ふくが", kanji: "{服|ふく}が" }
+        ],
+        explanation: {
+            correct: "Đặc biệt là: 特に; Sản phẩm: 製品; Thích N: Nが 好きです.",
+            pitfalls: "きらいです là ghét; ふくが là quần áo.",
+            tip: "Phó từ Đặc biệt = 特に; Thích N = Nが 好きです."
+        }
+    },
+    {
+        id: "l15_s016", level: "medium",
+        vietnamese: "Bạn tôi sống ở Tokyo cùng với gia đình.",
+        acceptableOrders: [
+            ["ともだちは", "かぞくと", "とうきょうに", "すんでいます"],
+            ["ともだちは", "とうきょうに", "かぞくと", "すんでいます"]
+        ],
+        blocks: [
+            { text: "ともだちは", kanji: "{友達|ともだち}は" },
+            { text: "かぞくと", kanji: "{家族|かぞく}と" },
+            { text: "とうきょうに", kanji: "{東京|とうきょう}に" },
+            { text: "すんでいます", kanji: "{住|す}んでいます" },
+            { text: "とうきょうで", kanji: "{東京|とうきょう}で" },
+            { text: "ひとりで", kanji: "{一人|ひとり}で" }
+        ],
+        explanation: {
+            correct: "Cùng gia đình: かぞくと; Nơi cư trú đi với trợ từ に: 東京に 住んでいます.",
+            pitfalls: "とうきょうで sai trợ từ với 住んでいます; ひとりで trái nghĩa đi cùng gia đình.",
+            tip: "Cùng ai = と; Sống ở đâu = 地名 + に 住んでいます."
+        }
+    },
+    {
+        id: "l15_s017", level: "hard",
+        vietnamese: "Tôi có thể mượn tài liệu này và xem ở nhà được không?",
+        acceptableOrders: [
+            ["この", "しりょうを", "かりて", "うちで", "みても いいですか"]
+        ],
+        blocks: [
+            { text: "この", kanji: "この" },
+            { text: "しりょうを", kanji: "{資料|しりょう}を" },
+            { text: "かりて", kanji: "{借|か}りて" },
+            { text: "うちで", kanji: "うちで" },
+            { text: "みても いいですか", kanji: "{見|み}ても いいですか" },
+            { text: "かして", kanji: "{貸|か}して" },
+            { text: "うちに", kanji: "うちに" }
+        ],
+        explanation: {
+            correct: "Mượn (借りて) để xem ở nhà (うちで 見てもいいですか).",
+            pitfalls: "かして là cho mượn; うちに sai trợ từ chỉ địa điểm diễn ra hành động xem (で).",
+            tip: "Nối hai hành động bằng thể て; Xem ở nhà = うちで 見ます."
+        }
+    },
+    {
+        id: "l15_s018", level: "hard",
+        vietnamese: "Gia đình của anh Miller đang ở Mỹ phải không?",
+        acceptableOrders: [
+            ["ミラーさんの", "ごかぞくは", "アメリカに", "いらっしゃいますか"]
+        ],
+        blocks: [
+            { text: "ミラーさんの", kanji: "ミラーさんの" },
+            { text: "ごかぞくは", kanji: "{ご家族|ごかぞく}は" },
+            { text: "アメリカに", kanji: "アメリカに" },
+            { text: "いらっしゃいますか", kanji: "いらっしゃいますか" },
+            { text: "かぞくは", kanji: "{家族|かぞく}は" },
+            { text: "いますか", kanji: "いますか" }
+        ],
+        explanation: {
+            correct: "Hỏi về gia đình người khác lịch sự: ご家族 và いらっしゃいます (kính ngữ của います).",
+            pitfalls: "かぞく và います không thể hiện sự tôn kính khi nói về gia đình đối phương.",
+            tip: "Gia đình người khác: ご家族; Kính ngữ của います: いらっしゃいます."
+        }
+    },
+    {
+        id: "l15_s019", level: "hard",
+        vietnamese: "Vì không biết phòng khám răng tốt, tôi đã hỏi bạn.",
+        acceptableOrders: [
+            ["いい", "はいしゃを", "しりませんから", "ともだちに", "ききました"]
+        ],
+        blocks: [
+            { text: "いい", kanji: "いい" },
+            { text: "はいしゃを", kanji: "{歯医者|はいしゃ}を" },
+            { text: "しりませんから", kanji: "{知|し}りませんから" },
+            { text: "ともだちに", kanji: "{友達|ともだち}に" },
+            { text: "ききました", kanji: "{聞|き}きました" },
+            { text: "しっていませんから", kanji: "{知|し}っていませんから" },
+            { text: "とこやに", kanji: "{床屋|とこや}に" }
+        ],
+        explanation: {
+            correct: "Không biết dùng 知りません (không dùng 知っていません); Nha sĩ: 歯医者.",
+            pitfalls: "しっていませんから sai ngữ pháp tuyệt đối; とこや là hiệu cắt tóc.",
+            tip: "Không biết = 知りません; Hỏi ai = Người + に 聞きます."
+        }
+    },
+    {
+        id: "l15_s020", level: "hard",
+        vietnamese: "Anh Miller đang xem bảng giờ tàu xe ở quầy bán vé.",
+        acceptableOrders: [
+            ["ミラーさんは", "プレイガイドで", "じこくひょうを", "みています"],
+            ["ミラーさんは", "じこくひょうを", "プレイガイドで", "みています"]
+        ],
+        blocks: [
+            { text: "ミラーさんは", kanji: "ミラーさんは" },
+            { text: "プレイガイドで", kanji: "プレイガイドで" },
+            { text: "じこくひょうを", kanji: "{時刻表|じこくひょう}を" },
+            { text: "みています", kanji: "{見|み}ています" },
+            { text: "プレイガイドに", kanji: "プレイガイドに" },
+            { text: "しりょうを", kanji: "{資料|しりょう}を" }
+        ],
+        explanation: {
+            correct: "Hành động xem diễn ra tại địa điểm (で); Bảng giờ tàu xe: 時刻表.",
+            pitfalls: "プレイガイドに sai trợ từ vị trí hành động; しりょう là tài liệu.",
+            tip: "Xem ở đâu = 地点 + で 見ます; Bảng giờ tàu = 時刻表."
+        }
+    }
+];
+
+        // GAME 4 – Hội thoại: question + 3 options (KHÔNG ghi số "1." ở đầu), correctIndex = vị trí đúng.
+        const GAME4_DATA = [
+    {
+        id: "l15_c001", level: "easy",
+        speaker: "👤 ミラーさん",
+        question: "「ここで {写真|しゃしん}を {撮|と}っても いいですか。」",
+        questionAudioText: "ここでしゃしんをとってもいいですか",
+        options: [
+            { text: "ええ、どうぞ。いいですよ。", kanji: "ええ、どうぞ。いいですよ。" },
+            { text: "いいえ、とりました。", kanji: "いいえ、{撮|と}りました。" },
+            { text: "はい、とってはいけません。", kanji: "はい、{撮|と}ってはいけません。" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "Đồng ý xin phép dùng ええ、どうぞ / いいですよ.",
+            pitfalls: "とりました chia quá khứ sai ngữ cảnh; はい とってはいけません mâu thuẫn.",
+            tip: "Xin phép ~てもいいですか -> ええ、どうぞ."
+        }
+    },
+    {
+        id: "l15_c002", level: "easy",
+        speaker: "👤 サントスさん",
+        question: "「ここで タバコを {吸|す}っても いいですか。」",
+        questionAudioText: "ここでタバコをすってもいいですか",
+        options: [
+            { text: "はい、すいません。", kanji: "はい、{吸|す}いません。" },
+            { text: "いいえ、すってはいけません。", kanji: "いいえ、{吸|す}ってはいけません。" },
+            { text: "いいえ、すっても いいです。", kanji: "いいえ、{吸|す}っても いいです。" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Cấm đoán dùng mẫu いいえ、~てはいけません.",
+            pitfalls: "すいません không phải dạng cấm; いいえ すってもいいです mâu thuẫn.",
+            tip: "Cấm đoán -> ~てはいけません."
+        }
+    },
+    {
+        id: "l15_c003", level: "easy",
+        speaker: "👤 カリナさん",
+        question: "「サントスさんは どこに {住|す}んでいますか。」",
+        questionAudioText: "サントスさんはどこにすんでいますか",
+        options: [
+            { text: "おおさかで いきます。", kanji: "{大阪|おおさか}で {行|い}きます。" },
+            { text: "おおさかを かいます。", kanji: "{大阪|おおさか}を {買|か}います。" },
+            { text: "おおさかに すんでいます。", kanji: "{大阪|おおさか}に {住|す}んでいます。" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Trả lời nơi cư trú dùng cấu trúc [Địa điểm] に 住んでいます.",
+            pitfalls: "で 行きます và を 買います dùng sai trợ từ và sai ý nghĩa.",
+            tip: "Cư trú: [Địa điểm] に 住んでいます."
+        }
+    },
+    {
+        id: "l15_c004", level: "easy",
+        speaker: "👤 ワンさん",
+        question: "「カタログを {持|も}っていますか。」",
+        questionAudioText: "カタログをもっていますか",
+        options: [
+            { text: "はい、つくります。", kanji: "はい、{作|つく}ります。" },
+            { text: "はい、もっています。", kanji: "はい、{持|も}っています。" },
+            { text: "いいえ、もちました。", kanji: "いいえ、{持|も}ちました。" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Trả lời có sở hữu vật gì dùng はい、持っています.",
+            pitfalls: "つくります là làm/chế tạo; もちました mâu thuẫn với いいえ.",
+            tip: "Sở hữu đồ vật -> 持っています."
+        }
+    },
+    {
+        id: "l15_c005", level: "easy",
+        speaker: "👤 タワポンさん",
+        question: "「IMCの {電話番号|でんわばんごう}を {知|し}っていますか。」",
+        questionAudioText: "IMCのでんわばんごうをしっていますか",
+        options: [
+            { text: "はい、しりません。", kanji: "はい、{知|し}りません。" },
+            { text: "いいえ、しっていません。", kanji: "いいえ、{知|し}っていません。" },
+            { text: "いいえ、しりません。", kanji: "いいえ、{知|し}りません。" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Phủ định của 知っています là 知りません (không dùng 知っていません).",
+            pitfalls: "知っていません sai ngữ pháp; はい 知りません mâu thuẫn.",
+            tip: "Không biết -> 知りません."
+        }
+    },
+    {
+        id: "l15_c006", level: "easy",
+        speaker: "👤 マリアさん",
+        question: "「ご{家族|かぞく}は どこに いらっしゃいますか。」",
+        questionAudioText: "ごかぞくはどこにいらっしゃいますか",
+        options: [
+            { text: "にほんに いらっしゃいます。", kanji: "{日本|にほん}に いらっしゃいます。" },
+            { text: "にほんへ いきました。", kanji: "{日本|にほん}へ {行|い}きました。" },
+            { text: "にほんで はたらきます。", kanji: "{日本|にほん}で {働|はたら}きます。" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "いらっしゃいます là kính ngữ của います (ở/có), chỉ vị trí gia đình.",
+            pitfalls: "行きました là đã đi; 働きます là làm việc, không trả lời vị trí います.",
+            tip: "いらっしゃいます = ở, có (kính ngữ)."
+        }
+    },
+    {
+        id: "l15_c007", level: "easy",
+        speaker: "👤 シュミットさん",
+        question: "「サントスさんは {独身|どくしん}ですか。」",
+        questionAudioText: "サントスさんはどくしんですか",
+        options: [
+            { text: "はい、すんでいます。", kanji: "はい、{住|す}んでいます。" },
+            { text: "いいえ、けっこんしています。", kanji: "いいえ、{結婚|けっこん}しています。" },
+            { text: "いいえ、どくしんです。", kanji: "いいえ、{独身|どくしん}です。" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Hỏi độc thân, nếu không thì trả lời đã kết hôn: いいえ、結婚しています.",
+            pitfalls: "はい 住んでいます sai ngữ cảnh; いいえ 独身です mâu thuẫn.",
+            tip: "Đã kết hôn -> 結婚しています."
+        }
+    },
+    {
+        id: "l15_c008", level: "easy",
+        speaker: "👤 イーさん",
+        question: "「この {製品|せいひん}は どこで {作|つく}っていますか。」",
+        questionAudioText: "このせいひんはどこでつくっていますか",
+        options: [
+            { text: "にほんに すんでいます。", kanji: "{日本|にほん}に {住|す}んでいます。" },
+            { text: "にほんへ いきます。", kanji: "{日本|にほん}へ {行|い}きます。" },
+            { text: "にほんで つくっています。", kanji: "{日本|にほん}で {作|つく}っています。" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Sản xuất ở đâu dùng [Địa điểm] で 作っています.",
+            pitfalls: "に 住んでいます chỉ nơi sống; へ 行きます chỉ nơi đi.",
+            tip: "Nơi sản xuất -> Địa điểm + で 作っています."
+        }
+    },
+    {
+        id: "l15_c009", level: "medium",
+        speaker: "👤 ミラーさん",
+        question: "「イーさんの {専門|せんもん}は {何|なん}ですか。」",
+        questionAudioText: "イーさんのせんもんはなんですか",
+        options: [
+            { text: "ふくを うります。", kanji: "{服|ふく}を {売|う}ります。" },
+            { text: "コンピューターの けんきゅうです。", kanji: "コンピューターの {研究|けんきゅう}です。" },
+            { text: "しりょうを おきます。", kanji: "{資料|しりょう}を {置|お}きます。" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Hỏi chuyên môn (専門) trả lời bằng danh từ lĩnh vực/chuyên ngành + です.",
+            pitfalls: "服を売ります và 資料を置きます là hành động, không trả lời chuyên môn.",
+            tip: "専門 -> danh từ chuyên ngành + です."
+        }
+    },
+    {
+        id: "l15_c010", level: "medium",
+        speaker: "👤 サントスさん",
+        question: "「ここに {資料|しりょう}を {置|お}いても いいですか。」",
+        questionAudioText: "ここにしりょうをおいてもいいですか",
+        options: [
+            { text: "ええ、どうぞ。", kanji: "ええ、どうぞ。" },
+            { text: "いいえ、おきます。", kanji: "いいえ、{置|お}きます。" },
+            { text: "はい、おいてはいけません。", kanji: "はい、{置|お}いてはいけません。" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "Đồng ý cho đặt tài liệu dùng ええ、どうぞ.",
+            pitfalls: "いいえ 置きます và はい 置いてはいけません mâu thuẫn khẳng/phủ định.",
+            tip: "Đồng ý xin phép -> ええ、どうぞ."
+        }
+    },
+    {
+        id: "l15_c011", level: "medium",
+        speaker: "👤 カリナさん",
+        question: "「{時刻表|じこくひょう}を {持|も}っていますか。」",
+        questionAudioText: "じこくひょうをもっていますか",
+        options: [
+            { text: "はい、うりませんでした。", kanji: "はい、{売|う}りませんでした。" },
+            { text: "いいえ、もっていません。", kanji: "いいえ、{持|も}っていません。" },
+            { text: "はい、すんでいます。", kanji: "はい、{住|す}んでいます。" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Không mang/không sở hữu: いいえ、持っていません.",
+            pitfalls: "はい 売りませんでした không liên quan; はい 住んでいます là sống/ở.",
+            tip: "Không có đồ -> 持っていません."
+        }
+    },
+    {
+        id: "l15_c012", level: "medium",
+        speaker: "👤 ワンさん",
+        question: "「どこで チケットを {売|う}っていますか。」",
+        questionAudioText: "どこでチケットをうっていますか",
+        options: [
+            { text: "とこやに すんでいます。", kanji: "{床屋|とこや}に {住|す}んでいます。" },
+            { text: "はいしゃへ いきました。", kanji: "{歯医者|はいしゃ}へ {行|い}きました。" },
+            { text: "プレイガイドで うっています。", kanji: "プレイガイドで {売|う}っています。" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Bán vé ở quầy bán vé dùng プレイガイドで 売っています.",
+            pitfalls: "床屋に住んでいます là ở hiệu cắt tóc; 歯医者へ行きました là đi nha sĩ.",
+            tip: "Quầy bán vé -> プレイガイド."
+        }
+    },
+    {
+        id: "l15_c013", level: "medium",
+        speaker: "👤 タワポンさん",
+        question: "「ワットさんは どこで {日本語|にほんご}を {教|おし}えていますか。」",
+        questionAudioText: "ワットさんはどこでにほんごをおしえていますか",
+        options: [
+            { text: "こうこうで おしえています。", kanji: "{高校|こうこう}で {教|おし}えています。" },
+            { text: "こうこうに すんでいます。", kanji: "{高校|こうこう}に {住|す}んでいます。" },
+            { text: "こうこうへ いきました。", kanji: "{高校|こうこう}へ {行|い}きました。" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "Dạy ở trường cấp 3: 高校で 教えています.",
+            pitfalls: "高校に住んでいます là sống ở cấp 3; 高校へ行きました là đã đi cấp 3.",
+            tip: "Nơi diễn ra hành động dạy -> で 教えています."
+        }
+    },
+    {
+        id: "l15_c014", level: "medium",
+        speaker: "👤 マリアさん",
+        question: "「ここで {写真|しゃしん}を {撮|と}っても いいですか。」",
+        questionAudioText: "ここでしゃしんをとってもいいですか",
+        options: [
+            { text: "はい、とりません。", kanji: "はい、{撮|と}りません。" },
+            { text: "すみません、ここで とってはいけません。", kanji: "すみません、ここで {撮|と}ってはいけません。" },
+            { text: "いいえ、とっても いいです。", kanji: "いいえ、{撮|と}っても いいです。" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Từ chối khéo việc xin phép: すみません、[Địa điểm] で 撮ってはいけません.",
+            pitfalls: "はい とりません và いいえ とってもいいです mâu thuẫn ngữ nghĩa.",
+            tip: "Từ chối cấm đoán -> すみません、~てはいけません."
+        }
+    },
+    {
+        id: "l15_c015", level: "medium",
+        speaker: "👤 シュミットさん",
+        question: "「{佐藤|さとう}さんの ご{家族|かぞく}は どこに いますか。」",
+        questionAudioText: "さとうさんのごかぞくはどこにいますか",
+        options: [
+            { text: "とうきょうに すみません。", kanji: "{東京|とうきょう}に すみません。" },
+            { text: "とうきょうへ かえりました。", kanji: "{東京|とうきょう}へ {帰|かえ}りました。" },
+            { text: "とうきょうに いらっしゃいます。", kanji: "{東京|とうきょう}に いらっしゃいます。" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Gia đình người khác (ご家族) dùng kính ngữ いらっしゃいます thay cho います.",
+            pitfalls: "すみません không phải động từ chỉ vị trí; 帰りました là đã về.",
+            tip: "Nói/hỏi về gia đình người khác -> いらっしゃいます."
+        }
+    },
+    {
+        id: "l15_c016", level: "medium",
+        speaker: "👤 イーさん",
+        question: "「きのう どんな {服|ふく}を {買|か}いましたか。」",
+        questionAudioText: "きのうどんなふくをかいましたか",
+        options: [
+            { text: "おきました。", kanji: "{置|お}きました。" },
+            { text: "とくに なにも かいませんでした。", kanji: "{特|とく}に {何|なに}も {買|か}いませんでした。" },
+            { text: "しりょうを もっています。", kanji: "{資料|しりょう}を {持|も}っています。" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Không mua đồ gì đặc biệt: 特に 何も 買いませんでした.",
+            pitfalls: "置きました và 資料を持っています không liên quan đến việc mua quần áo.",
+            tip: "Không đặc biệt mua gì -> 特に 何も 買いませんでした."
+        }
+    },
+    {
+        id: "l15_c017", level: "hard",
+        speaker: "👤 ミラーさん",
+        question: "「この カタログを もらっても いいですか。」",
+        questionAudioText: "このカタログをもらってもいいですか",
+        options: [
+            { text: "ええ、どうぞ。", kanji: "ええ、どうぞ。" },
+            { text: "はい、もらってはいけません。", kanji: "はい、もらってはいけません。" },
+            { text: "いいえ、あげました。", kanji: "いいえ、あげました。" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "Đồng ý cho nhận ca-ta-lô: ええ、どうぞ.",
+            pitfalls: "はい もらってはいけません mâu thuẫn giữa はい và cấm; あげました sai nghĩa.",
+            tip: "Đồng ý xin phép -> ええ、どうぞ."
+        }
+    },
+    {
+        id: "l15_c018", level: "hard",
+        speaker: "👤 サントスさん",
+        question: "「あの{方|かた}の {名前|なまえ}を {知|し}っていますか。」",
+        questionAudioText: "あのかたのなまえをしっていますか",
+        options: [
+            { text: "いいえ、しっていません。", kanji: "いいえ、{知|し}っていません。" },
+            { text: "いいえ、しりません。", kanji: "いいえ、{知|し}りません。" },
+            { text: "はい、しりません。", kanji: "はい、{知|し}りません。" }
+        ],
+        correctIndex: 1,
+        explanation: {
+            correct: "Dạng phủ định của 知っています bắt buộc dùng 知りません (không dùng 知っていません).",
+            pitfalls: "知っていません sai quy tắc; はい 知りません mâu thuẫn.",
+            tip: "Không biết -> 知りません (không dùng 知っていません)."
+        }
+    },
+    {
+        id: "l15_c019", level: "hard",
+        speaker: "👤 カリナさん",
+        question: "「ミラーさんは どこに {住|す}んでいますか。」",
+        questionAudioText: "ミラーさんはどこにすんでいますか",
+        options: [
+            { text: "おおさかで すんでいます。IMCに けんきゅうしています。", kanji: "{大阪|おおさか}で {住|す}んでいます。IMCに {研究|けんきゅう}しています。" },
+            { text: "おおさかへ すんでいます。IMCを けんきゅうしています。", kanji: "{大阪|おおさか}へ {住|す}んでいます。IMCを {研究|けんきゅう}しています。" },
+            { text: "おおさかに すんでいます。IMCで けんきゅうしています。", kanji: "{大阪|おおさか}に {住|す}んでいます。IMCで {研究|けんきゅう}しています。" }
+        ],
+        correctIndex: 2,
+        explanation: {
+            correct: "Nơi sống đi với に (住んでいます); nơi tiến hành nghiên cứu đi với で (研究しています).",
+            pitfalls: "大阪で 住んでいます và IMCに 研究しています dùng sai trợ từ に/で.",
+            tip: "Cư trú -> に 住んでいます; Nghiên cứu -> で 研究しています."
+        }
+    },
+    {
+        id: "l15_c020", level: "hard",
+        speaker: "👤 ワンさん",
+        question: "「あの {人|ひと}の {名前|なまえ}を {思|おも}い{出|だ}しましたか。」",
+        questionAudioText: "あのひとのなまえをおもいだしましたか",
+        options: [
+            { text: "はい、おもいだしました。", kanji: "はい、{思|おも}い{出|だ}しました。" },
+            { text: "はい、おもいだしません。", kanji: "はい、{思|おも}い{出|だ}しません。" },
+            { text: "いいえ、おもいだしました。", kanji: "いいえ、{思|おも}い{出|だ}しました。" }
+        ],
+        correctIndex: 0,
+        explanation: {
+            correct: "Hỏi quá khứ 思い出しましたか, trả lời khẳng định quá khứ: はい、思い出しました.",
+            pitfalls: "はい 思い出しません và いいえ 思い出しました mâu thuẫn khẳng/phủ định.",
+            tip: "Hỏi quá khứ 思い出しましたか -> Trả lời quá khứ 思い出しました."
+        }
+    }
+];
+        // ===== DATA ZONE END =================================================
+
+        // ===== ENGINE (KHÓA — KHÔNG SỬA TỪ ĐÂY TRỞ XUỐNG) =====
+        const KEY_HIGH = LESSON_CONFIG.storagePrefix + '_highscore';
+        const KEY_MISTAKES = LESSON_CONFIG.storagePrefix + '_mistakes';
+        const _memStore = {};
+        function safeGet(k) { try { return localStorage.getItem(k); } catch (e) { return (k in _memStore) ? _memStore[k] : null; } }
+        function safeSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { _memStore[k] = v; } }
+
+        // {漢字|かんじ} -> <ruby>漢字<rt>かんじ</rt></ruby>
+        function furi(s) {
+            return String(s == null ? '' : s).replace(/\{([^|{}]+)\|([^{}]+)\}/g, '<ruby>$1<rt>$2</rt></ruby>');
+        }
+
+        (function normalizeData() {
+            GAME1_DATA.forEach(q => {
+                q.kanji = furi(q.kanji || q.answer);
+                q.distractorsKanji = q.distractors.map((d, i) => furi((q.distractorsKanji || [])[i] || d));
+            });
+            GAME2_DATA.forEach(q => {
+                q.sentence = furi(q.sentence);
+                q.options.forEach(o => { o.kanji = furi(o.kanji || o.text); });
+            });
+            GAME3_DATA.forEach(q => q.blocks.forEach(b => { b.kanji = furi(b.kanji || b.text); }));
+            GAME4_DATA.forEach(q => {
+                q.question = furi(q.question);
+                q.options.forEach(o => { o.kanji = furi(o.kanji || o.text); });
+            });
+        })();
+
+        // Shuffle đáp án mỗi lượt chơi (Game 1 xáo lại; Game 2 & 4 xáo và tính lại correctIndex)
+        function prepareQuestion(q) {
+            if (q.context) {
+                q.shuffledOptions = null;
+            } else if (q.sentence || q.question) {
+                if (!q._baseOptions) { q._baseOptions = q.options; q._baseCorrect = q.correctIndex; }
+                const correct = q._baseOptions[q._baseCorrect];
+                q.options = shuffleArray(q._baseOptions);
+                q.correctIndex = q.options.indexOf(correct);
+            }
+            return q;
+        }
+
+        // Cảnh báo lỗi dữ liệu trong Console (F12) để dễ kiểm tra
+        function validateData() {
+            const warn = (m) => console.warn('[DATA]', m);
+            const ids = new Set();
+            [...GAME1_DATA, ...GAME2_DATA, ...GAME3_DATA, ...GAME4_DATA].forEach(q => {
+                if (!q.id) warn('Thiếu id');
+                else if (ids.has(q.id)) warn('Trùng id: ' + q.id);
+                ids.add(q.id);
+                if (!['easy', 'medium', 'hard'].includes(q.level)) warn('level sai: ' + q.id);
+                const e = q.explanation || {};
+                if (!e.correct || !e.pitfalls || !e.tip) warn('Thiếu explanation.correct/pitfalls/tip: ' + q.id);
+            });
+            GAME1_DATA.forEach(q => { if (!q.distractors || q.distractors.length !== 3) warn('Game1 cần đúng 3 distractors: ' + q.id); });
+            GAME2_DATA.forEach(q => {
+                if (!/＿/.test(q.sentence)) warn('Game2 thiếu chỗ trống ＿: ' + q.id);
+                if (!q.options[q.correctIndex]) warn('Game2 correctIndex sai: ' + q.id);
+            });
+            GAME3_DATA.forEach(q => {
+                const texts = q.blocks.map(b => b.text);
+                q.acceptableOrders.forEach(o => o.forEach(t => { if (!texts.includes(t)) warn('Game3 acceptableOrders có khối không tồn tại "' + t + '": ' + q.id); }));
+            });
+            GAME4_DATA.forEach(q => { if (!q.options[q.correctIndex]) warn('Game4 correctIndex sai: ' + q.id); });
+        }
+
+        // State object
+        let gameState = {
+            currentGame: 0,
+            questionCount: 5,
+            difficultyFilter: 'all', // 'all', 'easy', 'medium', 'hard' (Feature 8)
+            questions: [],
+            currentIndex: 0,
+            score: 0,
+            correctCount: 0,
+            streak: 0,
+            maxStreak: 0,
+            hearts: 5,
+            wrongAnswers: [], // Stores wrong items in current session
+            soundEnabled: true,
+            selectedOptionIndex: null,
+            dragSelectedBlocks: [],
+            dragPoolBlocks: [],
+            isAnswerChecked: false
+        };
+
+        // Web Audio Synthesizer
+        let audioCtx = null;
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playSound(type) {
+            if (!gameState.soundEnabled) return;
+            initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, now); // C5
+                osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.15); // G5
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'wrong') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(180, now);
+                osc.frequency.linearRampToValueAtTime(110, now + 0.25);
+                gain.gain.setValueAtTime(0.25, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'click') {
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(450, now);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                osc.start(now);
+                osc.stop(now + 0.05);
+            }
+        }
+
+        function toggleSound() {
+            gameState.soundEnabled = !gameState.soundEnabled;
+            document.getElementById('btn-sound').innerText = gameState.soundEnabled ? '🔊' : '🔇';
+        }
+
+        function speakJapanese(rawText) {
+            if ('speechSynthesis' in window && rawText) {
+                window.speechSynthesis.cancel();
+                const cleanText = rawText.replace(/<[^>]*>/g, '').replace(/^[0-9]\.\s*/, '').trim();
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.lang = 'ja-JP';
+                utterance.rate = 0.85;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0', 'anim-shake');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0', 'anim-shake');
+                toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+            }, 2000);
+        }
+
+        // Feature 9: Track mistakes in localStorage
+        function recordMistake(question) {
+            try {
+                const mistakes = JSON.parse(safeGet(KEY_MISTAKES) || '{}');
+                const key = question.id || question.answer || question.sentence;
+                mistakes[key] = (mistakes[key] || 0) + 1;
+                safeSet(KEY_MISTAKES, JSON.stringify(mistakes));
+            } catch (e) { console.error("Error saving mistakes", e); }
+        }
+
+        function getMistakesCount() {
+            try {
+                const mistakes = JSON.parse(safeGet(KEY_MISTAKES) || '{}');
+                return Object.keys(mistakes).length;
+            } catch (e) { return 0; }
+        }
+
+        window.addEventListener('load', () => {
+            document.title = LESSON_CONFIG.title;
+            const jl = document.getElementById('modal-jlpt');
+            if (jl) jl.innerText = LESSON_CONFIG.jlpt;
+            validateData();
+            showMainMenu();
+        });
+
+        // 11. Menu Card phân màu rõ ràng & Hệ thống lọc độ khó (Feature 8 & 11)
+        function showMainMenu() {
+            document.getElementById('top-bar').classList.add('hidden');
+            document.getElementById('bottom-bar').classList.add('hidden');
+            document.getElementById('hearts-modal').classList.add('hidden');
+
+            const container = document.getElementById('game-container');
+            const highScore = safeGet(KEY_HIGH) || 0;
+            const mistakesCount = getMistakesCount();
+
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-4xl py-4 px-2">
+                    <!-- Title Header -->
+                    <div class="text-center mb-6">
+                        <span class="inline-block bg-emerald-100 text-emerald-800 font-extrabold px-4 py-1 rounded-full text-xs md:text-sm mb-2 border border-emerald-300 select-none">
+                            IMEJI JAPANESE CLASS
+                        </span>
+                        <h1 class="text-3xl md:text-5xl font-black text-slate-800 tracking-tight mb-2">
+                            ${LESSON_CONFIG.title}
+                        </h1>
+                        <p class="text-sm md:text-base font-bold text-slate-500">Ths. Nguyễn Thanh Quang - Giảng viên chuyên ngành Nhật Bản học</p>
+                    </div>
+
+                    <!-- 8. Control Bar: Số câu & Bộ lọc độ khó thực sự -->
+                    <div class="flex flex-col sm:flex-row flex-wrap items-center justify-between gap-3 mb-6 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 w-full select-none">
+                        <!-- Số câu -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs md:text-sm font-extrabold text-slate-600">Số câu:</span>
+                            <button onclick="setQuestionCount(5)" class="btn-3d text-xs md:text-sm font-black px-3.5 py-1.5 rounded-xl ${gameState.questionCount === 5 ? 'btn-green' : 'btn-gray'}">
+                                5 Câu
+                            </button>
+                            <button onclick="setQuestionCount(10)" class="btn-3d text-xs md:text-sm font-black px-3.5 py-1.5 rounded-xl ${gameState.questionCount === 10 ? 'btn-green' : 'btn-gray'}">
+                                10 Câu
+                            </button>
+                        </div>
+
+                        <!-- Lọc độ khó (Feature 8) -->
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-xs md:text-sm font-extrabold text-slate-600">Độ khó:</span>
+                            <button onclick="setDifficulty('all')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'all' ? 'btn-blue' : 'btn-gray'}">Tất cả</button>
+                            <button onclick="setDifficulty('easy')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'easy' ? 'btn-green' : 'btn-gray'}">🟢 Dễ</button>
+                            <button onclick="setDifficulty('medium')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'medium' ? 'btn-amber' : 'btn-gray'}">🟡 Vừa</button>
+                            <button onclick="setDifficulty('hard')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'hard' ? 'btn-purple' : 'btn-gray'}">🔴 Khó</button>
+                        </div>
+
+                        <div class="text-xs md:text-sm font-black text-amber-600 flex items-center gap-1">
+                            🏆 Cao nhất: <span>${highScore}</span>
+                        </div>
+                    </div>
+
+                    <!-- 11. Menu Cards với màu chủ đề riêng biệt -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                        <!-- Game 1: Từ Vựng (Xanh lá) -->
+                        <div onclick="startGame(1)" class="btn-3d bg-emerald-50 hover:bg-emerald-100 border-2 border-emerald-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-emerald-200 text-emerald-800 p-3 rounded-2xl select-none">🏷️</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-emerald-950">Từ Vựng</h3>
+                                    <span class="text-xs bg-emerald-200 text-emerald-800 px-2 py-0.5 rounded font-black">G1</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-emerald-800 font-semibold mt-0.5">Chọn từ đúng theo ngữ cảnh tiếng Việt</p>
+                            </div>
+                        </div>
+
+                        <!-- Game 2: Ngữ Pháp (Xanh dương) -->
+                        <div onclick="startGame(2)" class="btn-3d bg-sky-50 hover:bg-sky-100 border-2 border-sky-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-sky-200 text-sky-800 p-3 rounded-2xl select-none">✏️</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-sky-950">Ngữ Pháp</h3>
+                                    <span class="text-xs bg-sky-200 text-sky-800 px-2 py-0.5 rounded font-black">G2</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-sky-800 font-semibold mt-0.5">Điền trợ từ / động từ vào chỗ trống</p>
+                            </div>
+                        </div>
+
+                        <!-- Game 3: Xếp Câu (Tím) -->
+                        <div onclick="startGame(3)" class="btn-3d bg-purple-50 hover:bg-purple-100 border-2 border-purple-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-purple-200 text-purple-800 p-3 rounded-2xl select-none">🧩</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-purple-950">Xếp Câu</h3>
+                                    <span class="text-xs bg-purple-200 text-purple-800 px-2 py-0.5 rounded font-black">G3</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-purple-800 font-semibold mt-0.5">Sắp xếp các khối từ thành câu chuẩn</p>
+                            </div>
+                        </div>
+
+                        <!-- Game 4: Hội Thoại (Cam) -->
+                        <div onclick="startGame(4)" class="btn-3d bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-amber-200 text-amber-800 p-3 rounded-2xl select-none">🗣️</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-amber-950">Hội Thoại</h3>
+                                    <span class="text-xs bg-amber-200 text-amber-800 px-2 py-0.5 rounded font-black">G4</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-amber-800 font-semibold mt-0.5">Chọn câu phản hồi tự nhiên nhất</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 9: Ôn Từ Hay Sai (Đỏ Hồng) -->
+                        <div onclick="startWeakPointsPractice()" class="btn-3d bg-rose-50 hover:bg-rose-100 border-2 border-rose-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left sm:col-span-2 transition-colors">
+                            <div class="text-3xl md:text-4xl bg-rose-200 text-rose-800 p-3 rounded-2xl select-none">📚</div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-black text-rose-950">📚 Ôn Từ Hay Sai</h3>
+                                    <span class="text-xs bg-rose-200 text-rose-900 px-2.5 py-0.5 rounded-full font-black">${mistakesCount} mục cần chú ý</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-rose-800 font-semibold mt-0.5">Tự động tổng hợp những câu bạn từng làm sai nhiều lần</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function setQuestionCount(count) {
+            playSound('click');
+            gameState.questionCount = count;
+            showMainMenu();
+        }
+
+        function setDifficulty(diff) {
+            playSound('click');
+            gameState.difficultyFilter = diff;
+            showMainMenu();
+        }
+
+        function retryCurrentGame() {
+            document.getElementById('hearts-modal').classList.add('hidden');
+            startGame(gameState.currentGame);
+        }
+
+        function practiceCurrentWrongList() {
+            document.getElementById('hearts-modal').classList.add('hidden');
+            if (gameState.wrongAnswers.length > 0) {
+                startCustomSession(gameState.wrongAnswers);
+            } else {
+                showMainMenu();
+            }
+        }
+
+        // Start weak points practice from localStorage (Feature 9)
+        function startWeakPointsPractice() {
+            try {
+                const mistakes = JSON.parse(safeGet(KEY_MISTAKES) || '{}');
+                const wrongKeys = Object.keys(mistakes);
+
+                if (wrongKeys.length === 0) {
+                    showToast("Bạn chưa có từ hay sai nào! Hãy làm bài luyện tập nhé.");
+                    return;
+                }
+
+                // Gather all questions matching wrong keys
+                const allQuestions = [...GAME1_DATA, ...GAME2_DATA, ...GAME3_DATA, ...GAME4_DATA];
+                const matchedQuestions = allQuestions.filter(q => wrongKeys.includes(q.id || q.answer || q.sentence));
+
+                if (matchedQuestions.length === 0) {
+                    showToast("Chưa có đủ dữ liệu từ hay sai.");
+                    return;
+                }
+
+                startCustomSession(matchedQuestions);
+            } catch (e) {
+                showToast("Chưa thể tải danh sách câu sai.");
+            }
+        }
+
+        function startCustomSession(customList) {
+            playSound('click');
+            gameState.currentGame = 1; // Default layout
+            gameState.currentIndex = 0;
+            gameState.score = 0;
+            gameState.correctCount = 0;
+            gameState.streak = 0;
+            gameState.maxStreak = 0;
+            gameState.hearts = 5;
+            gameState.wrongAnswers = [];
+
+            gameState.questions = shuffleArray(customList).slice(0, gameState.questionCount).map(prepareQuestion);
+
+            document.getElementById('top-bar').classList.remove('hidden');
+            document.getElementById('bottom-bar').classList.remove('hidden');
+
+            updateHeaderStats();
+            renderQuestion();
+        }
+
+        function startGame(gameId) {
+            playSound('click');
+            gameState.currentGame = gameId;
+            gameState.currentIndex = 0;
+            gameState.score = 0;
+            gameState.correctCount = 0;
+            gameState.streak = 0;
+            gameState.maxStreak = 0;
+            gameState.hearts = 5;
+            gameState.wrongAnswers = [];
+
+            let rawData = [];
+            if (gameId === 1) rawData = GAME1_DATA;
+            else if (gameId === 2) rawData = GAME2_DATA;
+            else if (gameId === 3) rawData = GAME3_DATA;
+            else if (gameId === 4) rawData = GAME4_DATA;
+
+            // Apply difficulty filter (Feature 8)
+            let filtered = rawData;
+            if (gameState.difficultyFilter !== 'all') {
+                filtered = rawData.filter(q => q.level === gameState.difficultyFilter);
+                if (filtered.length === 0) filtered = rawData; // Fallback if empty
+            }
+
+            const shuffled = shuffleArray(filtered);
+            gameState.questions = shuffled.slice(0, Math.min(gameState.questionCount, shuffled.length)).map(prepareQuestion);
+
+            document.getElementById('top-bar').classList.remove('hidden');
+            document.getElementById('bottom-bar').classList.remove('hidden');
+
+            updateHeaderStats();
+            renderQuestion();
+        }
+
+        // Feature 1: Near completion effect (> 80% progress) & Header Updates
+        function updateHeaderStats() {
+            const currentNum = gameState.currentIndex + 1;
+            const totalNum = gameState.questions.length;
+            const progress = (gameState.currentIndex / totalNum) * 100;
+
+            const progressInner = document.getElementById('progress-inner');
+            const progressText = document.getElementById('progress-text');
+
+            progressInner.style.width = `${progress}%`;
+
+            // Feature 1: Progress > 80% effect
+            if (progress >= 80) {
+                progressInner.className = "h-full rounded-full transition-all duration-300 progress-near-finish";
+                progressText.innerHTML = `Câu ${currentNum} / ${totalNum} <span class="text-amber-500 font-black animate-pulse">🔥 Sắp hoàn thành!</span>`;
+            } else {
+                progressInner.className = "bg-[#58CC02] h-full rounded-full transition-all duration-300";
+                progressText.innerText = `Câu ${currentNum} / ${totalNum}`;
+            }
+
+            document.getElementById('stat-streak').innerText = gameState.streak;
+            document.getElementById('stat-hearts').innerText = gameState.hearts;
+            document.getElementById('stat-score').innerText = gameState.score;
+        }
+
+        function setCheckButtonState(enabled) {
+            const btn = document.getElementById('btn-action');
+            btn.disabled = !enabled;
+        }
+
+        function resetBottomBar() {
+            const bar = document.getElementById('bottom-bar');
+            bar.className = "border-t-2 border-slate-200 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 transition-colors duration-300 bg-white shrink-0";
+            
+            document.getElementById('feedback-icon').classList.add('hidden');
+            document.getElementById('feedback-title').innerText = '';
+            document.getElementById('feedback-diff').innerText = '';
+            document.getElementById('explanation-wrapper').classList.add('hidden');
+            document.getElementById('feedback-explanation').classList.add('hidden');
+            document.getElementById('exp-arrow').innerText = "▼";
+            
+            const btnAction = document.getElementById('btn-action');
+            btnAction.innerText = "KIỂM TRA";
+            btnAction.className = "btn-3d btn-green text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto";
+            btnAction.onclick = handleActionButton;
+            
+            gameState.isAnswerChecked = false;
+            setCheckButtonState(false);
+        }
+
+        // 5. Toggle expandable explanation
+        function toggleExplanationDetails() {
+            const exp = document.getElementById('feedback-explanation');
+            const arrow = document.getElementById('exp-arrow');
+            if (exp.classList.contains('hidden')) {
+                exp.classList.remove('hidden');
+                arrow.innerText = "▲";
+            } else {
+                exp.classList.add('hidden');
+                arrow.innerText = "▼";
+            }
+        }
+
+        function renderQuestion() {
+            resetBottomBar();
+            gameState.selectedOptionIndex = null;
+            gameState.dragSelectedBlocks = [];
+            gameState.dragPoolBlocks = [];
+
+            const q = gameState.questions[gameState.currentIndex];
+            const container = document.getElementById('game-container');
+
+            // Level badge
+            const levelBadge = document.getElementById('level-badge');
+            const levelText = (q.level || "easy").toUpperCase();
+            levelBadge.innerText = levelText;
+            levelBadge.className = q.level === 'hard' ? "bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md text-xs uppercase font-black" :
+                                   q.level === 'medium' ? "bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md text-xs uppercase font-black" :
+                                   "bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md text-xs uppercase font-black";
+
+            if (q.context) renderGame1(q, container);
+            else if (q.sentence) renderGame2(q, container);
+            else if (q.acceptableOrders) {
+                gameState.dragPoolBlocks = shuffleArray(q.blocks);
+                gameState.dragSelectedBlocks = [];
+                renderGame3(q, container);
+            }
+            else if (q.question) renderGame4(q, container);
+        }
+
+        // Game 1: Context -> Vocabulary
+        function renderGame1(q, container) {
+            if (!q.shuffledOptions || q.shuffledOptions.length === 0) {
+                const options = [
+                    { kana: q.answer, kanji: q.kanji, isCorrect: true },
+                    ...q.distractors.map((d, idx) => ({ kana: d, kanji: q.distractorsKanji[idx], isCorrect: false }))
+                ];
+                q.shuffledOptions = shuffleArray(options);
+            }
+
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+                    <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-2 uppercase tracking-wider">Chọn đáp án đúng</h2>
+                    
+                    <div class="bg-emerald-50 border-2 border-emerald-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-inner">
+                        <p class="text-lg md:text-2xl font-extrabold text-emerald-950">"${q.context}"</p>
+                    </div>
+
+                    <!-- 2x2 Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
+                        ${q.shuffledOptions.map((opt, idx) => `
+                            <button id="opt-${idx}" onclick="selectGame1Option(${idx})" class="btn-3d btn-gray p-4 md:p-5 rounded-2xl flex flex-col items-center justify-center text-center border-2 min-h-[90px]">
+                                <div class="jp-text-lg">${opt.kanji}</div>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectGame1Option(idx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            gameState.selectedOptionIndex = idx;
+            const q = gameState.questions[gameState.currentIndex];
+            
+            q.shuffledOptions.forEach((_, i) => {
+                const btn = document.getElementById(`opt-${i}`);
+                if (i === idx) btn.classList.add('selected');
+                else btn.classList.remove('selected');
+            });
+
+            setCheckButtonState(true);
+            speakJapanese(q.shuffledOptions[idx].kana);
+        }
+
+        // 4. Game 2: Grid cols 1 on mobile, 2 on sm screen (giúp từ dài không bị bí chữ)
+        function renderGame2(q, container) {
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+                    <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-3 uppercase tracking-wider">Điền từ vào chỗ trống</h2>
+
+                    <div class="bg-slate-50 border-2 border-slate-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-sm">
+                        <div id="sentence-display" class="jp-text-xl text-slate-800 leading-relaxed mb-3">
+                            ${q.sentence.replace(/＿+/, '<span id="blank-slot" class="inline-block border-b-4 border-emerald-500 min-w-[90px] px-2 text-emerald-600 font-extrabold">＿＿＿</span>')}
+                        </div>
+
+                        <div>
+                            <button onclick="toggleTranslation()" class="text-xs md:text-sm text-slate-500 underline font-bold hover:text-slate-700 select-none">
+                                👁️ <span id="trans-toggle-text">Hiện bản dịch</span>
+                            </button>
+                            <p id="sentence-translation" class="text-base text-slate-600 font-bold mt-2 hidden italic">"${q.translation}"</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. grid-cols-1 sm:grid-cols-2 chống tràn chữ trên 360px -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+                        ${q.options.map((opt, idx) => `
+                            <button id="opt-${idx}" onclick="selectGame2Option(${idx})" class="btn-3d btn-gray p-3.5 rounded-2xl flex items-center justify-between border-2 min-h-[64px]">
+                                <span class="bg-slate-100 text-slate-500 rounded-lg px-2 py-1 font-black text-xs">${idx + 1}</span>
+                                <span class="jp-text-lg font-bold text-center flex-1">${opt.kanji}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleTranslation() {
+            const transEl = document.getElementById('sentence-translation');
+            const toggleText = document.getElementById('trans-toggle-text');
+            if (transEl.classList.contains('hidden')) {
+                transEl.classList.remove('hidden');
+                toggleText.innerText = "Ẩn bản dịch";
+            } else {
+                transEl.classList.add('hidden');
+                toggleText.innerText = "Hiện bản dịch";
+            }
+        }
+
+        function selectGame2Option(idx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            gameState.selectedOptionIndex = idx;
+            const q = gameState.questions[gameState.currentIndex];
+            
+            q.options.forEach((_, i) => {
+                const btn = document.getElementById(`opt-${i}`);
+                if (i === idx) btn.classList.add('selected');
+                else btn.classList.remove('selected');
+            });
+
+            const blankSlot = document.getElementById('blank-slot');
+            blankSlot.innerHTML = q.options[idx].kanji;
+            setCheckButtonState(true);
+            speakJapanese(q.options[idx].text);
+        }
+
+        // Game 3: Sentence Reordering
+        function renderGame3(q, container) {
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+                    <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-2 uppercase tracking-wider">Sắp xếp các khối từ</h2>
+
+                    <div class="bg-purple-50 border-2 border-purple-200 p-4 rounded-2xl mb-5 w-full text-center">
+                        <p class="text-base md:text-xl font-extrabold text-purple-950">"${q.vietnamese}"</p>
+                    </div>
+
+                    <!-- Drop zone -->
+                    <div class="w-full bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl p-4 min-h-[90px] mb-5 flex flex-wrap items-center gap-2.5 justify-center shadow-inner">
+                        ${gameState.dragSelectedBlocks.length === 0 ? '<span class="text-xs md:text-sm font-bold text-slate-400 select-none">Chạm các khối từ ở dưới để chọn...</span>' : ''}
+                        ${gameState.dragSelectedBlocks.map((blk, idx) => `
+                            <button onclick="removeBlockFromAnswer(${idx})" class="btn-3d btn-gray bg-white px-3.5 py-2 rounded-xl border-2 border-slate-300 flex items-center anim-pop">
+                                <span class="jp-text-lg font-bold">${blk.kanji}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <!-- Pool -->
+                    <div class="w-full bg-slate-100 p-4 rounded-2xl flex flex-wrap items-center gap-2.5 justify-center border border-slate-200">
+                        ${gameState.dragPoolBlocks.map((blk, idx) => `
+                            <button onclick="addBlockToAnswer(${idx})" class="btn-3d btn-gray bg-white px-4 py-2.5 rounded-xl border-2 border-slate-300 shadow-sm">
+                                <span class="jp-text-lg font-bold">${blk.kanji}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function addBlockToAnswer(poolIdx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            const blk = gameState.dragPoolBlocks.splice(poolIdx, 1)[0];
+            gameState.dragSelectedBlocks.push(blk);
+            speakJapanese(blk.text);
+            
+            setCheckButtonState(gameState.dragSelectedBlocks.length > 0);
+            renderGame3(gameState.questions[gameState.currentIndex], document.getElementById('game-container'));
+        }
+
+        function removeBlockFromAnswer(selectedIdx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            const blk = gameState.dragSelectedBlocks.splice(selectedIdx, 1)[0];
+            gameState.dragPoolBlocks.push(blk);
+            
+            setCheckButtonState(gameState.dragSelectedBlocks.length > 0);
+            renderGame3(gameState.questions[gameState.currentIndex], document.getElementById('game-container'));
+        }
+
+        // Game 4: Conversation Response (Touch target 48px - Feature 6)
+        function renderGame4(q, container) {
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+                    <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-3 uppercase tracking-wider">Chọn câu phản hồi đúng</h2>
+
+                    <div class="flex items-center gap-3 mb-5 w-full">
+                        <div class="text-3xl bg-amber-100 p-3 rounded-2xl border border-amber-300 select-none shrink-0">${q.speaker.split(' ')[0]}</div>
+                        <div class="bg-slate-50 border-2 border-slate-200 p-4 rounded-2xl rounded-tl-none flex-1 flex items-center justify-between shadow-sm">
+                            <div class="jp-text-lg text-slate-800 font-black">${q.question}</div>
+                            <!-- 6. Nút nghe touch target min-w 44px -->
+                            <button onclick="speakJapanese('${q.questionAudioText}')" aria-label="Phát âm thanh" class="btn-3d btn-amber min-w-[44px] min-h-[44px] p-2.5 rounded-xl text-lg ml-2 flex items-center justify-center shrink-0 select-none">
+                                🔊
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3 w-full">
+                        ${q.options.map((opt, idx) => `
+                            <button id="opt-${idx}" onclick="selectGame4Option(${idx})" class="btn-3d btn-gray p-3.5 rounded-2xl flex items-center text-left border-2 min-h-[60px]">
+                                <span class="jp-text-lg font-bold text-slate-800">${idx + 1}. ${opt.kanji}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            setTimeout(() => speakJapanese(q.questionAudioText), 200);
+        }
+
+        function selectGame4Option(idx) {
+            if (gameState.isAnswerChecked) return;
+            playSound('click');
+            gameState.selectedOptionIndex = idx;
+            const q = gameState.questions[gameState.currentIndex];
+            
+            q.options.forEach((_, i) => {
+                const btn = document.getElementById(`opt-${i}`);
+                if (i === idx) btn.classList.add('selected');
+                else btn.classList.remove('selected');
+            });
+
+            setCheckButtonState(true);
+            speakJapanese(q.options[idx].text);
+        }
+
+        // Action button handler
+        function handleActionButton() {
+            const q = gameState.questions[gameState.currentIndex];
+
+            if (!gameState.isAnswerChecked) {
+                // Check answer logic
+                let isCorrect = false;
+
+                if (q.context) {
+                    if (gameState.selectedOptionIndex === null) { showToast("Vui lòng chọn một đáp án!"); return; }
+                    isCorrect = q.shuffledOptions[gameState.selectedOptionIndex].isCorrect;
+                } else if (q.sentence) {
+                    if (gameState.selectedOptionIndex === null) { showToast("Vui lòng chọn một đáp án!"); return; }
+                    isCorrect = (gameState.selectedOptionIndex === q.correctIndex);
+                } else if (q.acceptableOrders) {
+                    if (gameState.dragSelectedBlocks.length === 0) { showToast("Vui lòng chọn các khối từ!"); return; }
+                    const userOrder = gameState.dragSelectedBlocks.map(b => b.text);
+                    isCorrect = q.acceptableOrders.some(acc => JSON.stringify(acc) === JSON.stringify(userOrder));
+                } else if (q.question) {
+                    if (gameState.selectedOptionIndex === null) { showToast("Vui lòng chọn phản hồi!"); return; }
+                    isCorrect = (gameState.selectedOptionIndex === q.correctIndex);
+                }
+
+                gameState.isAnswerChecked = true;
+
+                // Show Footer Feedback
+                const bar = document.getElementById('bottom-bar');
+                const icon = document.getElementById('feedback-icon');
+                const title = document.getElementById('feedback-title');
+                const diff = document.getElementById('feedback-diff');
+                const expWrapper = document.getElementById('explanation-wrapper');
+                const exp = document.getElementById('feedback-explanation');
+                const btnAction = document.getElementById('btn-action');
+
+                icon.classList.remove('hidden');
+                expWrapper.classList.remove('hidden');
+
+                if (isCorrect) {
+                    playSound('correct');
+                    gameState.score += 20;
+                    gameState.correctCount += 1;
+                    gameState.streak += 1;
+                    gameState.maxStreak = Math.max(gameState.maxStreak, gameState.streak);
+
+                    bar.className = "border-t-2 border-emerald-300 bg-emerald-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
+                    icon.innerText = "✅";
+                    title.innerText = "Chính xác!";
+                    title.className = "text-lg md:text-xl font-black text-emerald-800";
+                    diff.innerText = "";
+
+                    exp.innerHTML = `
+                        <p class="text-emerald-900 font-bold mb-1">💡 ${q.explanation.correct}</p>
+                        <p class="text-emerald-800">📌 ${q.explanation.tip}</p>
+                    `;
+
+                    btnAction.innerText = "TIẾP TỤC";
+                    btnAction.className = "btn-3d btn-green text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto";
+                } else {
+                    playSound('wrong');
+                    gameState.streak = 0;
+                    gameState.hearts -= 1;
+                    
+                    // Track mistake (Feature 9)
+                    recordMistake(q);
+                    if (!gameState.wrongAnswers.includes(q)) {
+                        gameState.wrongAnswers.push(q);
+                    }
+
+                    bar.className = "border-t-2 border-rose-300 bg-rose-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
+                    icon.innerText = "❌";
+                    title.innerText = "Chưa chính xác";
+                    title.className = "text-lg md:text-xl font-black text-rose-800";
+
+                    let correctAnswerText = "";
+                    if (q.context) correctAnswerText = q.kanji;
+                    else if (q.sentence) correctAnswerText = q.options[q.correctIndex].kanji;
+                    else if (q.acceptableOrders) correctAnswerText = q.acceptableOrders[0].join(" ");
+                    else if (q.question) correctAnswerText = q.options[q.correctIndex].kanji;
+
+                    diff.innerHTML = `<span class="text-rose-900">Đáp án đúng:</span> <span class="font-extrabold text-emerald-800">${correctAnswerText}</span>`;
+
+                    // 7. Flashcard sau câu sai
+                    exp.innerHTML = `
+                        <div class="mb-2 p-2 bg-white rounded-lg border border-rose-200">
+                            <p class="text-xs font-black text-rose-600 uppercase mb-0.5">📌 Từ/Cấu trúc cần nhớ hôm nay:</p>
+                            <div class="jp-text-lg font-bold text-slate-800">${q.kanji || q.sentence || correctAnswerText}</div>
+                        </div>
+                        <p class="text-rose-900 font-bold mb-1">💡 ${q.explanation.correct}</p>
+                        <p class="text-rose-800">⚠️ ${q.explanation.pitfalls}</p>
+                    `;
+
+                    btnAction.innerText = "ĐÃ HỌC ĐƯỢC";
+                    btnAction.className = "btn-3d btn-amber text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto";
+                }
+
+                updateHeaderStats();
+
+                // Check heart game over
+                if (gameState.hearts <= 0) {
+                    setTimeout(() => {
+                        const reviewBtn = document.getElementById('btn-modal-review');
+                        if (gameState.wrongAnswers.length > 0) reviewBtn.classList.remove('hidden');
+                        else reviewBtn.classList.add('hidden');
+
+                        document.getElementById('hearts-modal').classList.remove('hidden');
+                    }, 800);
+                }
+
+            } else {
+                // Next question
+                gameState.currentIndex += 1;
+                if (gameState.currentIndex < gameState.questions.length) {
+                    renderQuestion();
+                    updateHeaderStats();
+                } else {
+                    renderSummaryScreen();
+                }
+            }
+        }
+
+        // 3. Màn hình Kết Quả có "Tỷ lệ chính xác"
+        function renderSummaryScreen() {
+            document.getElementById('top-bar').classList.add('hidden');
+            document.getElementById('bottom-bar').classList.add('hidden');
+
+            const container = document.getElementById('game-container');
+            const total = gameState.questions.length;
+            const accuracy = total > 0 ? Math.round((gameState.correctCount / total) * 100) : 0;
+
+            // Update Highscore
+            const currentHigh = parseInt(safeGet(KEY_HIGH) || '0');
+            if (gameState.score > currentHigh) {
+                safeSet(KEY_HIGH, gameState.score.toString());
+            }
+
+            container.innerHTML = `
+                <div class="flex flex-col items-center justify-center w-full max-w-xl py-6 px-4 text-center anim-pop">
+                    <div class="text-6xl md:text-7xl mb-3">🎉</div>
+                    <h1 class="text-3xl md:text-4xl font-black text-slate-800 mb-1">Hoàn Thành Bài Tập!</h1>
+                    <p class="text-base md:text-lg font-bold text-slate-500 mb-6">Bạn đã thể hiện rất tuyệt vời hôm nay!</p>
+
+                    <!-- Stats Grid 4 Ô (Feature 3) -->
+                    <div class="grid grid-cols-2 gap-3.5 w-full mb-6">
+                        <!-- Score -->
+                        <div class="bg-amber-50 border-2 border-amber-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-amber-600 uppercase mb-1">Điểm Số</span>
+                            <span class="text-3xl md:text-4xl font-black text-amber-600">⭐ ${gameState.score}</span>
+                        </div>
+
+                        <!-- Correct -->
+                        <div class="bg-emerald-50 border-2 border-emerald-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-emerald-600 uppercase mb-1">Đúng</span>
+                            <span class="text-3xl md:text-4xl font-black text-emerald-600">✅ ${gameState.correctCount}/${total}</span>
+                        </div>
+
+                        <!-- Feature 3: Độ Chính Xác -->
+                        <div class="bg-sky-50 border-2 border-sky-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-sky-600 uppercase mb-1">Độ Chính Xác</span>
+                            <span class="text-3xl md:text-4xl font-black text-sky-600">🎯 ${accuracy}%</span>
+                        </div>
+
+                        <!-- Streak -->
+                        <div class="bg-orange-50 border-2 border-orange-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-orange-600 uppercase mb-1">Chuỗi Cao Nhất</span>
+                            <span class="text-3xl md:text-4xl font-black text-orange-600">🔥 ${gameState.maxStreak}</span>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex flex-col gap-3 w-full">
+                        ${gameState.wrongAnswers.length > 0 ? `
+                            <button onclick="practiceCurrentWrongList()" class="btn-3d btn-purple py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
+                                📌 Ôn lại câu làm sai (${gameState.wrongAnswers.length})
+                            </button>
+                        ` : ''}
+                        <button onclick="startGame(gameState.currentGame)" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
+                            🔄 Luyện Lại Lượt Mới
+                        </button>
+                        <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-slate-700">
+                            🏠 Về Menu Chính
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
