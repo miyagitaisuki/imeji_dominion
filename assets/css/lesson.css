@@ -1,0 +1,169 @@
+        /* Modern reset & Accessibility */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0F172A;
+            font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+            color: #3C3C3C;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Focus styles for keyboard accessibility */
+        button:focus-visible, a:focus-visible, [tabindex="0"]:focus-visible {
+            outline: 3px solid #1CB0F6 !important;
+            outline-offset: 3px !important;
+        }
+
+        .select-none {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        ruby {
+            ruby-position: over;
+            font-size: inherit;
+        }
+        rt {
+            font-size: 0.55em;
+            font-weight: 700;
+            color: #475569;
+            line-height: 1;
+        }
+
+        /* Responsive typography with clamp */
+        .jp-text-lg {
+            font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .jp-text-xl {
+            font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* 3D Button Effects */
+        .btn-3d {
+            transition: all 0.1s ease;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .btn-3d:active:not(:disabled) {
+            transform: translateY(3px);
+            box-shadow: none !important;
+        }
+        
+        .btn-green {
+            background-color: #58CC02;
+            border-bottom: 4px solid #46A302;
+            color: #FFFFFF;
+        }
+        .btn-green:hover:not(:disabled) {
+            background-color: #61E002;
+        }
+        .btn-green:disabled {
+            background-color: #E5E5E5;
+            border-bottom-color: #CECECE;
+            color: #AFB5C0;
+            cursor: not-allowed;
+        }
+
+        .btn-blue {
+            background-color: #1CB0F6;
+            border-bottom: 4px solid #1899D6;
+            color: #FFFFFF;
+        }
+        .btn-blue:hover:not(:disabled) {
+            background-color: #24BDFF;
+        }
+
+        .btn-purple {
+            background-color: #A855F7;
+            border-bottom: 4px solid #7E22CE;
+            color: #FFFFFF;
+        }
+        .btn-purple:hover:not(:disabled) {
+            background-color: #B666FF;
+        }
+
+        .btn-amber {
+            background-color: #F59E0B;
+            border-bottom: 4px solid #D97706;
+            color: #FFFFFF;
+        }
+        .btn-amber:hover:not(:disabled) {
+            background-color: #FBBF24;
+        }
+
+        .btn-gray {
+            background-color: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-bottom: 4px solid #CBD5E1;
+            color: #334155;
+        }
+        .btn-gray:hover:not(:disabled) {
+            background-color: #F8FAFC;
+        }
+        .btn-gray.selected {
+            background-color: #E0F2FE;
+            border-color: #38BDF8;
+            border-bottom-color: #0284C7;
+            color: #0369A1;
+        }
+
+        /* Feedback states for options */
+        .btn-option-correct {
+            background-color: #D7FFB8 !important;
+            border-color: #58CC02 !important;
+            border-bottom-color: #46A302 !important;
+            color: #2B6600 !important;
+        }
+        .btn-option-wrong {
+            background-color: #FFDFE0 !important;
+            border-color: #FF4B4B !important;
+            border-bottom-color: #EA2B2B !important;
+            color: #A30000 !important;
+        }
+
+        /* Near completion progress bar pulse */
+        @keyframes pulse-gold {
+            0%, 100% { background-color: #F59E0B; }
+            50% { background-color: #FBBF24; }
+        }
+        .progress-near-finish {
+            animation: pulse-gold 1.5s infinite ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+        }
+        .anim-pop { animation: pop 0.25s ease-in-out; }
+        .anim-shake { animation: shake 0.35s ease-in-out; }
+
+        /* Toast notification */
+        #toast {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
