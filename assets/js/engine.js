@@ -1,5 +1,5 @@
 // Shared lesson engine for Minna no Nihongo pages.
-// Loaded after the page's data zone (LESSON_CONFIG, GAME1_DATA..GAME4_DATA).
+// Started by loader.js after the lesson JSON (LESSON_CONFIG, GAME1_DATA..GAME4_DATA) is loaded.
 // Do not put lesson data in this file.
         // Fisher-Yates Shuffle Algorithm
         function shuffleArray(array) {
@@ -188,13 +188,16 @@
             } catch (e) { return 0; }
         }
 
-        window.addEventListener('load', () => {
+        function startLesson() {
             document.title = LESSON_CONFIG.title;
             const jl = document.getElementById('modal-jlpt');
             if (jl) jl.innerText = LESSON_CONFIG.jlpt;
             validateData();
             showMainMenu();
-        });
+        }
+        // loader.js injects this file after the window load event may already have fired
+        if (document.readyState === 'complete') startLesson();
+        else window.addEventListener('load', startLesson);
 
         // 11. Menu Card phân màu rõ ràng & Hệ thống lọc độ khó (Feature 8 & 11)
         function showMainMenu() {
