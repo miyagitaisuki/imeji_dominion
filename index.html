@@ -296,6 +296,12 @@
             { id: 50, title: "Bài 50", jp: "謙譲語 (Khiêm nhường ngữ)", desc: "Kính ngữ hạ thấp hành động bản thân để thể hiện sự khiêm tốn" }
         ];
 
+        // Lessons whose page exists in this repo. Other cards show "Sắp có" and no link.
+        const availableLessons = {
+            intro: [6],
+            minna: Array.from({ length: 21 }, (_, i) => i + 1),
+        };
+
         let completedLessons = JSON.parse(localStorage.getItem('nihongo_completed') || '[]');
         let currentTab = 'all';
         let introPathPattern = localStorage.getItem('introPathPattern') || 'nhap-mon/{id}.html';
@@ -319,6 +325,14 @@
             let href = lesson.url ? lesson.url : (isIntro 
                 ? introPathPattern.replace('{id}', lesson.id) 
                 : minnaPathPattern.replace('{id}', lesson.id));
+
+            const isAvailable = availableLessons[isIntro ? 'intro' : 'minna'].includes(lesson.id);
+            const actionHtml = isAvailable
+                ? `<a href="${href}" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-emerald-600 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
+                        <span>Học bài này</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>`
+                : `<span class="w-full py-2.5 px-4 bg-slate-100 text-slate-400 text-xs font-semibold rounded-xl flex items-center justify-center gap-2">Sắp có</span>`;
 
             const badgeColor = isIntro 
                 ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
@@ -344,10 +358,7 @@
                         <p class="text-xs text-slate-500 line-clamp-2 mb-4 leading-relaxed">${lesson.desc}</p>
                     </div>
 
-                    <a href="${href}" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-emerald-600 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
-                        <span>Học bài này</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
+                    ${actionHtml}
                 </div>
             `;
         }
@@ -471,7 +482,7 @@
 
         function saveSettings() {
             introPathPattern = document.getElementById('introPathPattern').value.trim() || 'nhap-mon/{id}.html';
-            minnaPathPattern = document.getElementById('minnaPathPattern').value.trim() || 'bai-{id}.html';
+            minnaPathPattern = document.getElementById('minnaPathPattern').value.trim() || 'minna/{id}.html';
 
             localStorage.setItem('introPathPattern', introPathPattern);
             localStorage.setItem('minnaPathPattern', minnaPathPattern);
