@@ -1,0 +1,1882 @@
+{
+  "config": {
+    "lessonNo": 4,
+    "title": "Minna no Nihongo – Bài 4",
+    "jlpt": "N5",
+    "storagePrefix": "mnn_l04"
+  },
+  "game1": [
+    {
+      "id": "l04_v001",
+      "level": "easy",
+      "context": "Hành động mở mắt, thức dậy vào buổi sáng để bắt đầu ngày mới.",
+      "answer": "おきます",
+      "kanji": "{起|お}きます",
+      "distractors": [
+        "ねます",
+        "はたらきます",
+        "やすみます"
+      ],
+      "distractorsKanji": [
+        "{寝|ね}ます",
+        "{働|はたら}きます",
+        "{休|やす}みます"
+      ],
+      "explanation": {
+        "correct": "起きます (おきます) nghĩa là thức dậy.",
+        "pitfalls": "Tránh nhầm với 寝ます (ngủ) hay 休みます (nghỉ ngơi).",
+        "tip": "Khởi đầu ngày mới bằng việc 起 (Khởi) dậy."
+      }
+    },
+    {
+      "id": "l04_v002",
+      "level": "easy",
+      "context": "Trạng thái nhắm mắt, chìm vào giấc ngủ ban đêm sau một ngày dài.",
+      "answer": "ねます",
+      "kanji": "{寝|ね}ます",
+      "distractors": [
+        "おきます",
+        "おわります",
+        "べんきょうします"
+      ],
+      "distractorsKanji": [
+        "{起|お}きます",
+        "{終|お}わります",
+        "{勉|べん}{強|きょう}します"
+      ],
+      "explanation": {
+        "correct": "寝ます (ねます) nghĩa là ngủ.",
+        "pitfalls": "Tránh nhầm với 起きます (thức dậy) hay 終わります (kết thúc).",
+        "tip": "Tối đến mệt mỏi thì đi 寝 (Tẩm = ngủ)."
+      }
+    },
+    {
+      "id": "l04_v003",
+      "level": "easy",
+      "context": "Thực hiện công việc chuyên môn hoặc nhiệm vụ tại công ty, cơ quan.",
+      "answer": "はたらきます",
+      "kanji": "{働|はたら}きます",
+      "distractors": [
+        "やすみます",
+        "べんきょうします",
+        "おわります"
+      ],
+      "distractorsKanji": [
+        "{休|やす}みます",
+        "{勉|べん}{強|きょう}します",
+        "{終|お}わります"
+      ],
+      "explanation": {
+        "correct": "働きます (はたらきます) nghĩa là làm việc.",
+        "pitfalls": "Phân biệt với 勉強します (học tập) và 休みます (nghỉ ngơi).",
+        "tip": "働 (ĐỘNG) gồm người (人) lao động dùng sức mạnh (力)."
+      }
+    },
+    {
+      "id": "l04_v004",
+      "level": "easy",
+      "context": "Hoạt động đọc sách, tiếp thu kiến thức hoặc luyện tập bài học.",
+      "answer": "べんきょうします",
+      "kanji": "{勉|べん}{強|きょう}します",
+      "distractors": [
+        "はたらきます",
+        "おわります",
+        "おきます"
+      ],
+      "distractorsKanji": [
+        "{働|はたら}きます",
+        "{終|お}わります",
+        "{起|お}きます"
+      ],
+      "explanation": {
+        "correct": "勉強します (べんきょうします) nghĩa là học, học tập.",
+        "pitfalls": "Đừng nhầm với 働きます (làm việc tại công ty).",
+        "tip": "勉 (MIỄN) + 強 (CƯỜNG) = nỗ lực rèn luyện kiến thức."
+      }
+    },
+    {
+      "id": "l04_v005",
+      "level": "easy",
+      "context": "Địa điểm chuyên thực hiện các giao dịch gửi tiền, rút tiền và tài chính.",
+      "answer": "ぎんこう",
+      "kanji": "{銀|ぎん}{行|こう}",
+      "distractors": [
+        "ゆうびんきょく",
+        "としょかん",
+        "びじゅつかん"
+      ],
+      "distractorsKanji": [
+        "{郵|ゆう}{便|びん}{局|きょく}",
+        "{図|と}{書|しょ}{館|かん}",
+        "{美|び}{術|じゅつ}{館|かん}"
+      ],
+      "explanation": {
+        "correct": "銀行 (ぎんこう) nghĩa là ngân hàng.",
+        "pitfalls": "Phân biệt với 郵便局 (bưu điện) và 図書館 (thư viện).",
+        "tip": "銀 (NGÂN = tiền) + 行 (HÀNH = nơi giao dịch) = Ngân hàng."
+      }
+    },
+    {
+      "id": "l04_v006",
+      "level": "easy",
+      "context": "Cơ quan, tổ chức nơi bạn đến để gửi thư từ, chuyển phát bưu phẩm.",
+      "answer": "ゆうびんきょく",
+      "kanji": "{郵|ゆう}{便|びん}{局|きょく}",
+      "distractors": [
+        "ぎんこう",
+        "デパート",
+        "としょかん"
+      ],
+      "distractorsKanji": [
+        "{銀|ぎん}{行|こう}",
+        "デパート",
+        "{図|と}{書|しょ}{館|かん}"
+      ],
+      "explanation": {
+        "correct": "郵便局 (ゆうびんきょく) nghĩa là bưu điện.",
+        "pitfalls": "Đừng nhầm với 銀行 (ngân hàng).",
+        "tip": "郵 (BƯU) + 便 (TIỆN = thư) + 局 (CỤC = cơ quan)."
+      }
+    },
+    {
+      "id": "l04_v007",
+      "level": "easy",
+      "context": "Nơi lưu trữ rất nhiều sách báo để độc giả đến mượn hoặc ngồi đọc.",
+      "answer": "としょかん",
+      "kanji": "{図|と}{書|しょ}{館|かん}",
+      "distractors": [
+        "びじゅつかん",
+        "デパート",
+        "ぎんこう"
+      ],
+      "distractorsKanji": [
+        "{美|び}{術|じゅつ}{館|かん}",
+        "デパート",
+        "{銀|ぎん}{行|こう}"
+      ],
+      "explanation": {
+        "correct": "図書館 (としょかん) nghĩa là thư viện.",
+        "pitfalls": "Tránh nhầm với 美術館 (bảo tàng mỹ thuật).",
+        "tip": "図 (ĐỒ) + 書 (THƯ = sách) + 館 (QUÁN = tòa nhà)."
+      }
+    },
+    {
+      "id": "l04_v008",
+      "level": "easy",
+      "context": "Tòa nhà trưng bày các tác phẩm nghệ thuật như tranh vẽ, tượng điêu khắc.",
+      "answer": "びじゅつかん",
+      "kanji": "{美|び}{術|じゅつ}{館|かん}",
+      "distractors": [
+        "としょかん",
+        "ぎんこう",
+        "ゆうびんきょく"
+      ],
+      "distractorsKanji": [
+        "{図|と}{書|しょ}{館|かん}",
+        "{銀|ぎん}{行|こう}",
+        "{郵|ゆう}{便|びん}{局|きょく}"
+      ],
+      "explanation": {
+        "correct": "美術館 (びじゅつかん) nghĩa là bảo tàng mỹ thuật.",
+        "pitfalls": "Khác với 図書館 (thư viện đọc sách).",
+        "tip": "美 (MỸ) + 術 (THUẬT) + 館 (QUÁN) = nơi ngắm nghệ thuật."
+      }
+    },
+    {
+      "id": "l04_v009",
+      "level": "medium",
+      "context": "Trung tâm mua sắm lớn nhiều tầng với đủ loại cửa hàng quần áo, đồ dùng.",
+      "answer": "デパート",
+      "kanji": "デパート",
+      "distractors": [
+        "としょかん",
+        "ぎんこう",
+        "びじゅつかん"
+      ],
+      "distractorsKanji": [
+        "{図|と}{書|しょ}{館|かん}",
+        "{銀|ぎん}{行|こう}",
+        "{美|び}{術|じゅつ}{館|かん}"
+      ],
+      "explanation": {
+        "correct": "デパート nghĩa là bách hóa / trung tâm thương mại.",
+        "pitfalls": "Từ Katakana mượn từ Department store trong tiếng Anh.",
+        "tip": "Department store ngắn gọn thành デパート."
+      }
+    },
+    {
+      "id": "l04_v010",
+      "level": "medium",
+      "context": "Khái niệm thời gian chỉ khoảng thời gian hiện tại, thời điểm ngay lúc này.",
+      "answer": "いま",
+      "kanji": "{今|いま}",
+      "distractors": [
+        "あさ",
+        "ひる",
+        "ばん"
+      ],
+      "distractorsKanji": [
+        "{朝|あさ}",
+        "{昼|ひる}",
+        "{晩|ばん}"
+      ],
+      "explanation": {
+        "correct": "今 (いま) nghĩa là bây giờ, hiện tại.",
+        "pitfalls": "Phân biệt với các từ chỉ buổi như 朝 (sáng), 昼 (trưa), 晩 (tối).",
+        "tip": "今 (KIM) = ngay bây giờ."
+      }
+    },
+    {
+      "id": "l04_v011",
+      "level": "medium",
+      "context": "Khoảng thời gian tính từ nửa đêm 0 giờ cho đến 12 giờ trưa.",
+      "answer": "ごぜん",
+      "kanji": "{午|ご}{前|ぜん}",
+      "distractors": [
+        "ごご",
+        "ひる",
+        "ばん"
+      ],
+      "distractorsKanji": [
+        "{午|ご}{後|ご}",
+        "{昼|ひる}",
+        "{晩|ばん}"
+      ],
+      "explanation": {
+        "correct": "午前 (ごぜん) nghĩa là buổi sáng (AM).",
+        "pitfalls": "Tránh nhầm với 午後 (buổi chiều / PM).",
+        "tip": "午 (NGỌ = 12h trưa) + 前 (TIỀN = trước) = trước 12h trưa."
+      }
+    },
+    {
+      "id": "l04_v012",
+      "level": "medium",
+      "context": "Khoảng thời gian tính từ 12 giờ trưa cho đến 12 giờ đêm.",
+      "answer": "ごご",
+      "kanji": "{午|ご}{後|ご}",
+      "distractors": [
+        "ごぜん",
+        "あさ",
+        "けさ"
+      ],
+      "distractorsKanji": [
+        "{午|ご}{前|ぜん}",
+        "{朝|あさ}",
+        "けさ"
+      ],
+      "explanation": {
+        "correct": "午後 (ごご) nghĩa là buổi chiều / tối (PM).",
+        "pitfalls": "Đối lập hoàn toàn với 午前 (AM).",
+        "tip": "午 (NGỌ = 12h trưa) + 後 (HẬU = sau) = sau 12h trưa."
+      }
+    },
+    {
+      "id": "l04_v013",
+      "level": "medium",
+      "context": "Mọi buổi sáng diễn ra đều đặn không bỏ sót ngày nào.",
+      "answer": "まいあさ",
+      "kanji": "{毎|まい}{朝|あさ}",
+      "distractors": [
+        "まいばん",
+        "まいにち",
+        "けさ"
+      ],
+      "distractorsKanji": [
+        "{毎|まい}{晩|ばん}",
+        "{毎|まい}{日|にち}",
+        "けさ"
+      ],
+      "explanation": {
+        "correct": "毎朝 (まいあさ) nghĩa là mỗi sáng / sáng nào cũng.",
+        "pitfalls": "Phân biệt với 毎晩 (mỗi tối) và けさ (sáng nay).",
+        "tip": "毎 (MỖI) + 朝 (TRIỀU = sáng) = mỗi buổi sáng."
+      }
+    },
+    {
+      "id": "l04_v014",
+      "level": "medium",
+      "context": "Mọi buổi tối lặp đi lặp lại đều đặn mỗi ngày.",
+      "answer": "まいばん",
+      "kanji": "{毎|まい}{晩|ばん}",
+      "distractors": [
+        "まいあさ",
+        "まいにち",
+        "こんばん"
+      ],
+      "distractorsKanji": [
+        "{毎|まい}{朝|あさ}",
+        "{毎|まい}{日|にち}",
+        "{今|こん}{晩|ばん}"
+      ],
+      "explanation": {
+        "correct": "毎晩 (まいばん) nghĩa là mỗi tối / tối nào cũng.",
+        "pitfalls": "Khác với 今晩 (tối nay).",
+        "tip": "毎 (MỖI) + 晩 (VÃN = tối) = mỗi buổi tối."
+      }
+    },
+    {
+      "id": "l04_v015",
+      "level": "medium",
+      "context": "Khoảng thời gian nghỉ ngắn giữa ngày làm việc hoặc học tập để ăn trưa.",
+      "answer": "ひるやすみ",
+      "kanji": "{昼|ひる}{休|やす}み",
+      "distractors": [
+        "やすみ",
+        "ひる",
+        "あさ"
+      ],
+      "distractorsKanji": [
+        "{休|やす}み",
+        "{昼|ひる}",
+        "{朝|あさ}"
+      ],
+      "explanation": {
+        "correct": "昼休み (ひるやすみ) nghĩa là nghỉ trưa.",
+        "pitfalls": "Tránh nhầm với 休み (ngày nghỉ / kỳ nghỉ nói chung).",
+        "tip": "昼 (TRƯA) + 休み (NGHỈ) = nghỉ trưa."
+      }
+    },
+    {
+      "id": "l04_v016",
+      "level": "medium",
+      "context": "Từ nghi vấn dùng khi muốn hỏi về một ngày trong tuần (từ Thứ Hai đến Chủ Nhật).",
+      "answer": "なんようび",
+      "kanji": "{何|なん}{曜|よう}{日|び}",
+      "distractors": [
+        "なんじ",
+        "なんぶん",
+        "なんばん"
+      ],
+      "distractorsKanji": [
+        "{何|なん}{時|じ}",
+        "{何|なん}{分|ぶん}",
+        "{何|なん}{番|ばん}"
+      ],
+      "explanation": {
+        "correct": "何曜日 (なんようび) nghĩa là thứ mấy.",
+        "pitfalls": "Phân biệt với 何時 (mấy giờ) hay 何番 (số mấy).",
+        "tip": "何 (MẤY) + 曜日 (THỨ) = thứ mấy."
+      }
+    },
+    {
+      "id": "l04_v017",
+      "level": "hard",
+      "context": "Ngày lùi về trước ngày hôm qua đúng hai ngày.",
+      "answer": "おとtoi",
+      "kanji": "おととい",
+      "distractors": [
+        "きのう",
+        "あした",
+        "あさって"
+      ],
+      "distractorsKanji": [
+        "きのう",
+        "あした",
+        "あさって"
+      ],
+      "explanation": {
+        "correct": "おととい nghĩa là hôm kia (2 ngày trước).",
+        "pitfalls": "Trục thời gian quá khứ: おとtoi (hôm kia) -> きのう (hôm qua) -> きょう (hôm nay).",
+        "tip": "Lùi 2 ngày về quá khứ là おととい."
+      }
+    },
+    {
+      "id": "l04_v018",
+      "level": "hard",
+      "context": "Ngày tiếp theo ngay sau ngày mai (hai ngày tính từ hôm nay).",
+      "answer": "あさって",
+      "kanji": "あさって",
+      "distractors": [
+        "あした",
+        "きのう",
+        "おとtoi"
+      ],
+      "distractorsKanji": [
+        "あした",
+        "きのう",
+        "おととい"
+      ],
+      "explanation": {
+        "correct": "あさって nghĩa là ngày mốt / ngày kia (2 ngày sau).",
+        "pitfalls": "Tránh nhầm với あした (ngày mai).",
+        "tip": "Trục thời gian tương lai: きょう -> あした -> あさって."
+      }
+    },
+    {
+      "id": "l04_v019",
+      "level": "hard",
+      "context": "Cụm từ thể hiện sự cảm thông, chia sẻ khi nghe ai đó làm việc hoặc học tập vất vả.",
+      "answer": "たいへんですね",
+      "kanji": "{大|たい}{変|へん}ですね",
+      "distractors": [
+        "おねがいします",
+        "かしこまりました",
+        "おつかれさまでした"
+      ],
+      "distractorsKanji": [
+        "お{願|ねが}いします",
+        "かしこまりました",
+        "お{疲|つ}れ{様|さま}でした"
+      ],
+      "explanation": {
+        "correct": "大変ですね (たいへんですね) nghĩa là Vất vả nhỉ / Khổ nhỉ.",
+        "pitfalls": "Khác với お疲れ様でした (Anh/chị đã vất vả rồi - dùng khi kết thúc công việc).",
+        "tip": "大 (ĐẠI) + 変 (BIẾN) = vất vả, khó khăn."
+      }
+    },
+    {
+      "id": "l04_v020",
+      "level": "hard",
+      "context": "Khoảng thời gian buổi sáng của chính ngày hôm nay.",
+      "answer": "けさ",
+      "kanji": "けさ",
+      "distractors": [
+        "こんばん",
+        "まいあさ",
+        "あさ"
+      ],
+      "distractorsKanji": [
+        "{今|こん}{晩|ばん}",
+        "{毎|まい}{朝|あさ}",
+        "{朝|あさ}"
+      ],
+      "explanation": {
+        "correct": "けさ (今朝) nghĩa là sáng nay.",
+        "pitfalls": "Phân biệt với 毎朝 (mỗi sáng) và 今晩 (tối nay).",
+        "tip": "けさ = buổi sáng của ngày hôm nay."
+      }
+    }
+  ],
+  "game2": [
+    {
+      "id": "l04_g001",
+      "level": "easy",
+      "sentence": "{今|いま} 7＿です。",
+      "translation": "Bây giờ là 7 giờ.",
+      "options": [
+        {
+          "text": "じ",
+          "kanji": "{時|じ}"
+        },
+        {
+          "text": "ふん",
+          "kanji": "{分|ふん}"
+        },
+        {
+          "text": "はん",
+          "kanji": "{半|はん}"
+        },
+        {
+          "text": "から",
+          "kanji": "から"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "~時 (じ) dùng để chỉ giờ trong tiếng Nhật.",
+        "pitfalls": "Tránh nhầm với 分 (phút) hoặc 半 (rưỡi).",
+        "tip": "Số đếm + 時 (じ) = ~ giờ."
+      }
+    },
+    {
+      "id": "l04_g002",
+      "level": "easy",
+      "sentence": "わたしは {毎朝|まいあさ} 6じ＿ {起|お}きます。",
+      "translation": "Mỗi sáng tôi thức dậy vào lúc 6 giờ.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ に đứng sau mốc thời gian có con số cụ thể để chỉ thời điểm thực hiện hành động.",
+        "pitfalls": "Tránh dùng trợ từ で (chỉ nơi chốn) hay は (chỉ chủ đề) sau con số chỉ giờ.",
+        "tip": "Mốc thời gian con số + に + Động từ."
+      }
+    },
+    {
+      "id": "l04_g003",
+      "level": "easy",
+      "sentence": "{毎日|まいにち} 9じから 5じまで ＿。",
+      "translation": "Hằng ngày tôi làm việc từ 9 giờ đến 5 giờ.",
+      "options": [
+        {
+          "text": "はたらきます",
+          "kanji": "{働|はたら}きます"
+        },
+        {
+          "text": "はたらきました",
+          "kanji": "{働|はたら}きました"
+        },
+        {
+          "text": "はたらきません",
+          "kanji": "{働|はたら}きません"
+        },
+        {
+          "text": "はたらきませんでした",
+          "kanji": "{働|はたら}きませんでした"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "毎日 (hằng ngày) diễn tả thói quen ở hiện tại/tương lai nên dùng dạng khẳng định ~ます.",
+        "pitfalls": "Tránh dùng thể quá khứ ~ました vì 毎日 là hành động lặp đi lặp lại.",
+        "tip": "Thói quen hằng ngày (毎日) -> dùng ~ます."
+      }
+    },
+    {
+      "id": "l04_g004",
+      "level": "easy",
+      "sentence": "きのう {勉強|べんきょう}＿。",
+      "translation": "Hôm qua tôi đã học bài.",
+      "options": [
+        {
+          "text": "しました",
+          "kanji": "しました"
+        },
+        {
+          "text": "します",
+          "kanji": "します"
+        },
+        {
+          "text": "しません",
+          "kanji": "しません"
+        },
+        {
+          "text": "しませんでした",
+          "kanji": "しませんでした"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "きのう (hôm qua) là mốc thời gian quá khứ, câu khẳng định dùng đuôi ~ました.",
+        "pitfalls": "Không dùng ~します (hiện tại/tương lai) khi câu có từ chỉ quá khứ.",
+        "tip": "Quá khứ khẳng định = Động từ đuôi ~ました."
+      }
+    },
+    {
+      "id": "l04_g005",
+      "level": "easy",
+      "sentence": "{銀行|ぎんこう}は 9じ＿ 3じまでです。",
+      "translation": "Ngân hàng mở cửa từ 9 giờ đến 3 giờ.",
+      "options": [
+        {
+          "text": "から",
+          "kanji": "から"
+        },
+        {
+          "text": "まで",
+          "kanji": "まで"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ から chỉ điểm bắt đầu của thời gian (từ ~ giờ).",
+        "pitfalls": "Tránh nhầm với まで (đến ~) là điểm kết thúc.",
+        "tip": "Cặp trợ từ: N1 から N2 まで (từ N1 đến N2)."
+      }
+    },
+    {
+      "id": "l04_g006",
+      "level": "easy",
+      "sentence": "{今|いま} ＿ですか。",
+      "translation": "Bây giờ là mấy giờ?",
+      "options": [
+        {
+          "text": "なんじ",
+          "kanji": "{何時|なんじ}"
+        },
+        {
+          "text": "なんようび",
+          "kanji": "{何曜日|なんようび}"
+        },
+        {
+          "text": "なんばん",
+          "kanji": "{何番|なんばん}"
+        },
+        {
+          "text": "なんぶん",
+          "kanji": "{何分|なんぶん}"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "何時 (なんじ) là từ nghi vấn dùng để hỏi giờ hiện tại.",
+        "pitfalls": "Tránh nhầm với 何曜日 (hỏi thứ) hay 何番 (hỏi số điện thoại).",
+        "tip": "Hỏi giờ = 今 何時ですか (いま なんじですか)."
+      }
+    },
+    {
+      "id": "l04_g007",
+      "level": "easy",
+      "sentence": "{休み|やすみ}は {土曜日|どようび}＿ {日曜日|にちようび}です。",
+      "translation": "Ngày nghỉ là thứ Bảy và Chủ Nhật.",
+      "options": [
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "から",
+          "kanji": "から"
+        },
+        {
+          "text": "まで",
+          "kanji": "まで"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ と dùng để nối hai danh từ (thứ Bảy và Chủ Nhật).",
+        "pitfalls": "Tránh dùng から/まで vì hai thứ này liệt kê song song chứ không phải khoảng thời gian liên tục.",
+        "tip": "N1 と N2 = N1 và N2."
+      }
+    },
+    {
+      "id": "l04_g008",
+      "level": "easy",
+      "sentence": "{昼休み|ひるやす}みは 12じ＿です。",
+      "translation": "Nghỉ trưa là 12 giờ rưỡi.",
+      "options": [
+        {
+          "text": "はん",
+          "kanji": "{半|はん}"
+        },
+        {
+          "text": "ふん",
+          "kanji": "{分|ふん}"
+        },
+        {
+          "text": "じ",
+          "kanji": "{時|じ}"
+        },
+        {
+          "text": "から",
+          "kanji": "から"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "半 (はん) đứng sau con số chỉ giờ mang nghĩa là 30 phút / rưỡi.",
+        "pitfalls": "Không dùng thêm 分 sau 半 (không nói 半分 khi chỉ giờ rưỡi).",
+        "tip": "~時半 (じはん) = ~ giờ rưỡi (30 phút)."
+      }
+    },
+    {
+      "id": "l04_g009",
+      "level": "medium",
+      "sentence": "きのうのばん 11じ＿ {寝|ね}ました。",
+      "translation": "Tối qua tôi đã ngủ lúc 11 giờ.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "から",
+          "kanji": "から"
+        },
+        {
+          "text": "まで",
+          "kanji": "まで"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ に đi kèm mốc con số chỉ thời điểm 11 giờ.",
+        "pitfalls": "Mặc dù có きのうのばん ở đầu câu, nhưng đuôi đi liền con số 11時 nên vẫn phải có に.",
+        "tip": "Có con số cụ thể (11時) -> bắt buộc chọn に."
+      }
+    },
+    {
+      "id": "l04_g010",
+      "level": "medium",
+      "sentence": "きのう {勉強|べんきょう}＿。",
+      "translation": "Hôm qua tôi đã không học bài.",
+      "options": [
+        {
+          "text": "しませんでした",
+          "kanji": "しませんでした"
+        },
+        {
+          "text": "しません",
+          "kanji": "しません"
+        },
+        {
+          "text": "しました",
+          "kanji": "しました"
+        },
+        {
+          "text": "します",
+          "kanji": "します"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "~ませんでした là dạng phủ định của quá khứ (đã không làm).",
+        "pitfalls": "Tránh chọn ~しません (phủ định hiện tại/tương lai).",
+        "tip": "Quá khứ + Không làm = ~ませんでした."
+      }
+    },
+    {
+      "id": "l04_g011",
+      "level": "medium",
+      "sentence": "{図書館|としょかん}の {休み|やすみ}は ＿ですか。",
+      "translation": "Ngày nghỉ của thư viện là thứ mấy?",
+      "options": [
+        {
+          "text": "なんようび",
+          "kanji": "{何曜日|なんようび}"
+        },
+        {
+          "text": "なんじ",
+          "kanji": "{何時|なんじ}"
+        },
+        {
+          "text": "なんばん",
+          "kanji": "{何番|なんばん}"
+        },
+        {
+          "text": "いつ",
+          "kanji": "いつ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "何曜日 (なんようび) hỏi cụ thể về ngày trong tuần (Thứ Hai - Chủ Nhật).",
+        "pitfalls": "Tránh nhầm với 何時 (mấy giờ) hoặc 何番 (số mấy).",
+        "tip": "Hỏi thứ trong tuần = 何曜日 (なんようび)."
+      }
+    },
+    {
+      "id": "l04_g012",
+      "level": "medium",
+      "sentence": "{郵便局|ゆうびんきょく}は 9じから 5じ＿です。",
+      "translation": "Bưu điện mở cửa từ 9 giờ đến 5 giờ.",
+      "options": [
+        {
+          "text": "まで",
+          "kanji": "まで"
+        },
+        {
+          "text": "から",
+          "kanji": "から"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ まで đánh dấu thời điểm kết thúc (đến ~ giờ).",
+        "pitfalls": "Đã có から phía trước thì vị trí sau 5じ phải là まで.",
+        "tip": "~から ~まで (từ ~ đến ~)."
+      }
+    },
+    {
+      "id": "l04_g013",
+      "level": "medium",
+      "sentence": "{今|いま} ＿です。",
+      "translation": "Bây giờ là 4 giờ.",
+      "options": [
+        {
+          "text": "よじ",
+          "kanji": "4{時|じ}"
+        },
+        {
+          "text": "よんじ",
+          "kanji": "4{時|じ} (よんじ)"
+        },
+        {
+          "text": "しじ",
+          "kanji": "4{時|じ} (しじ)"
+        },
+        {
+          "text": "よっじ",
+          "kanji": "4{時|じ} (よっじ)"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "4 giờ đọc là よじ (không đọc là よんじ hay しじ).",
+        "pitfalls": "Học sinh rất dễ đọc sai phát âm đặc biệt của 4 giờ thành よんじ.",
+        "tip": "Phát âm biến thể: 4時 = よじ, 7時 = しちじ, 9時 = くじ."
+      }
+    },
+    {
+      "id": "l04_g014",
+      "level": "medium",
+      "sentence": "{今|いま} 2じ 10＿です。",
+      "translation": "Bây giờ là 2 giờ 10 phút.",
+      "options": [
+        {
+          "text": "ぷん",
+          "kanji": "{分|ぷん}"
+        },
+        {
+          "text": "ふん",
+          "kanji": "{分|ふん}"
+        },
+        {
+          "text": "じ",
+          "kanji": "{時|じ}"
+        },
+        {
+          "text": "はん",
+          "kanji": "{半|はん}"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "10 phút phát âm biến âm âm bật じゅっぷん (bắt đầu bằng âm ぷん).",
+        "pitfalls": "Tránh chọn ふん (10 phút không đọc là じゅうふん).",
+        "tip": "Số đuôi 1, 3, 4, 6, 8, 10 + 分 đọc là ぷん (có bán đục ゜)."
+      }
+    },
+    {
+      "id": "l04_g015",
+      "level": "medium",
+      "sentence": "{毎晩|まいばん} 12じまで {勉強|べんきょう}します。……{大変|たいへん}です＿。",
+      "translation": "Mỗi tối tôi học đến 12 giờ. ...... Vất vả nhỉ.",
+      "options": [
+        {
+          "text": "ね",
+          "kanji": "ね"
+        },
+        {
+          "text": "か",
+          "kanji": "か"
+        },
+        {
+          "text": "よ",
+          "kanji": "よ"
+        },
+        {
+          "text": "の",
+          "kanji": "の"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ ね đứng cuối câu biểu thị thái độ cảm thông, kỳ vọng người nghe đồng tán thành.",
+        "pitfalls": "Không dùng か (hỏi) vì người nói đang bày tỏ sự chia sẻ, không phải nghi vấn.",
+        "tip": "Đồng cảm, cảm thông = ~ですね."
+      }
+    },
+    {
+      "id": "l04_g016",
+      "level": "medium",
+      "sentence": "{銀行|ぎんこう}の {電話番号|でんわばんごう}は ＿ですか。",
+      "translation": "Số điện thoại của ngân hàng là số mấy?",
+      "options": [
+        {
+          "text": "なんばん",
+          "kanji": "{何番|なんばん}"
+        },
+        {
+          "text": "なんじ",
+          "kanji": "{何時|なんじ}"
+        },
+        {
+          "text": "なんようび",
+          "kanji": "{何曜日|なんようび}"
+        },
+        {
+          "text": "なんぶん",
+          "kanji": "{何分|なんぶん}"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "何番 (なんばん) dùng để hỏi số điện thoại hoặc mã số.",
+        "pitfalls": "Tránh nhầm với 何時 (hỏi giờ) hay 何曜日 (hỏi thứ).",
+        "tip": "Hỏi số điện thoại = 電話番号は 何番ですか."
+      }
+    },
+    {
+      "id": "l04_g017",
+      "level": "hard",
+      "sentence": "わたしは おととい {銀行|ぎんこう}で ＿。",
+      "translation": "Hôm kia tôi đã làm việc ở ngân hàng.",
+      "options": [
+        {
+          "text": "はたらきました",
+          "kanji": "{働|はたら}きました"
+        },
+        {
+          "text": "はたらきます",
+          "kanji": "{働|はたら}きます"
+        },
+        {
+          "text": "はたらきません",
+          "kanji": "{働|はたら}きません"
+        },
+        {
+          "text": "はたらきましたか",
+          "kanji": "{働|はたら}きましたか"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "おととい (hôm kia) thuộc quá khứ nên chia động từ sang khẳng định quá khứ ~ました.",
+        "pitfalls": "Không dùng thể hiện tại ~きます và cũng không thêm か ở cuối vì đây là câu kể.",
+        "tip": "Trạng từ おととい (hôm kia) -> Quá khứ ~ました."
+      }
+    },
+    {
+      "id": "l04_g018",
+      "level": "hard",
+      "sentence": "{毎朝|まいあさ} ＿ {勉強|べんきょう}しますか。……7じから 8じまで {勉強|べんきょう}します。",
+      "translation": "Mỗi sáng bạn học từ mấy giờ đến mấy giờ? ...... Tôi học từ 7 giờ đến 8 giờ.",
+      "options": [
+        {
+          "text": "なんじから なんじまで",
+          "kanji": "{何時|なんじ}から {何時|なんじ}まで"
+        },
+        {
+          "text": "なんじに",
+          "kanji": "{何時|なんじ}に"
+        },
+        {
+          "text": "なんようびから",
+          "kanji": "{何曜日|なんようび}から"
+        },
+        {
+          "text": "なんばんまで",
+          "kanji": "{何番|なんばん}まで"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Để hỏi khoảng thời gian, dùng cấu trúc 何時から 何時まで (từ mấy giờ đến mấy giờ).",
+        "pitfalls": "Tránh dùng 何時に (vào lúc mấy giờ - chỉ điểm thời gian đơn lẻ).",
+        "tip": "Trả lời ~から ~まで -> Câu hỏi dùng 何時から 何時まで."
+      }
+    },
+    {
+      "id": "l04_g019",
+      "level": "hard",
+      "sentence": "ミラーさんは けさ 7じはん＿ {起|お}きました。",
+      "translation": "Anh Miller đã thức dậy lúc 7 giờ rưỡi sáng nay.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "から",
+          "kanji": "から"
+        },
+        {
+          "text": "まで",
+          "kanji": "まで"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Dù câu có けさ (không đi với に), nhưng mốc đứng ngay trước vị trí trống là 7時半 (mốc giờ cụ thể) nên bắt buộc đi với に.",
+        "pitfalls": "Thấy けさ ở đầu câu dễ khiến học sinh tưởng không dùng に.",
+        "tip": "Xét vị trí ngay trước ô trống: có con số thời gian cụ thể -> chọn に."
+      }
+    },
+    {
+      "id": "l04_g020",
+      "level": "hard",
+      "sentence": "きのうのばん {勉強|べんきょう}しましたか。……いいえ、＿。",
+      "translation": "Tối qua bạn đã học bài à? ...... Không, tôi đã không học.",
+      "options": [
+        {
+          "text": "べんきょうしませんでした",
+          "kanji": "{勉|べん}{強|きょう}しませんでした"
+        },
+        {
+          "text": "べんきょうしません",
+          "kanji": "{勉|べん}{強|きょう}しません"
+        },
+        {
+          "text": "べんきょうしました",
+          "kanji": "{勉|べん}{強|きょう}しました"
+        },
+        {
+          "text": "べんきょうします",
+          "kanji": "{勉|べん}{強|きょう}します"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời いいえ cho câu hỏi quá khứ ~しましたか phải dùng phủ định quá khứ ~ませんでした.",
+        "pitfalls": "Tránh nhầm giữa いいえ、~しません (phủ định hiện tại) và いいえ、~ませんでした (phủ định quá khứ).",
+        "tip": "Hỏi ましたか + Trả lời いいえ -> ~ませんでした."
+      }
+    }
+  ],
+  "game3": [
+    {
+      "id": "l04_s001",
+      "level": "easy",
+      "vietnamese": "Bây giờ là 4 giờ 5 phút.",
+      "acceptableOrders": [
+        [
+          "いま",
+          "よじ",
+          "ごふんです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "いま",
+          "kanji": "{今|いま}"
+        },
+        {
+          "text": "よじ",
+          "kanji": "4{時|じ}"
+        },
+        {
+          "text": "ごふんです",
+          "kanji": "5{分|ふん}です"
+        },
+        {
+          "text": "なんじです",
+          "kanji": "{何時|なんじ}です"
+        }
+      ],
+      "explanation": {
+        "correct": "Cấu trúc chỉ thời gian hiện tại: 今 [Số giờ]時 [Số phút]分 です.",
+        "pitfalls": "4 giờ đọc đặc biệt là よじ, tránh nhầm với よんじ hay なんじ.",
+        "tip": "4時 = よじ, 5分 = ごふん."
+      }
+    },
+    {
+      "id": "l04_s002",
+      "level": "easy",
+      "vietnamese": "Mỗi sáng tôi thức dậy vào lúc 6 giờ.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "まいあさ",
+          "6じに",
+          "おきます"
+        ],
+        [
+          "まいあさ",
+          "わたしは",
+          "6じに",
+          "おきます"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "{私|わたし}は"
+        },
+        {
+          "text": "まいあさ",
+          "kanji": "{毎朝|まいあさ}"
+        },
+        {
+          "text": "6じに",
+          "kanji": "6{時|じ}に"
+        },
+        {
+          "text": "おきます",
+          "kanji": "{起|お}きます"
+        },
+        {
+          "text": "ねます",
+          "kanji": "{寝|ね}ます"
+        }
+      ],
+      "explanation": {
+        "correct": "Trợ từ に đứng sau con số thời gian cụ thể (6時に) chỉ thời điểm thực hiện hành động.",
+        "pitfalls": "Tránh dùng 寝ます (ngủ) thay cho 起きます (thức dậy).",
+        "tip": "Mốc thời gian con số + に + Động từ."
+      }
+    },
+    {
+      "id": "l04_s003",
+      "level": "easy",
+      "vietnamese": "Tối qua tôi đã học bài.",
+      "acceptableOrders": [
+        [
+          "きのうのばん",
+          "べんきょうしました"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "きのうのばん",
+          "kanji": "きのうの{晩|ばん}"
+        },
+        {
+          "text": "べんきょうしました",
+          "kanji": "{勉|べん}{強|きょう}しました"
+        },
+        {
+          "text": "べんきょうします",
+          "kanji": "{勉|べん}{強|きょう}します"
+        },
+        {
+          "text": "はたらきました",
+          "kanji": "{働|はたら}きました"
+        }
+      ],
+      "explanation": {
+        "correct": "Trạng từ quá khứ (きのうの晩) đi với động từ thể quá khứ khẳng định ~しました.",
+        "pitfalls": "Không dùng thể hiện tại ~します khi thời gian ở quá khứ.",
+        "tip": "Hôm qua (きのう) -> Động từ đuôi ~ました."
+      }
+    },
+    {
+      "id": "l04_s004",
+      "level": "easy",
+      "vietnamese": "Thư viện mở cửa từ 9 giờ đến 6 giờ.",
+      "acceptableOrders": [
+        [
+          "としょかんは",
+          "9じから",
+          "6じまでです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "としょかんは",
+          "kanji": "{図|と}{書|しょ}{館|かん}は"
+        },
+        {
+          "text": "9じから",
+          "kanji": "9{時|じ}から"
+        },
+        {
+          "text": "6じまでです",
+          "kanji": "6{時|じ}までです"
+        },
+        {
+          "text": "ぎんこうは",
+          "kanji": "{銀|ぎん}{行|こう}は"
+        }
+      ],
+      "explanation": {
+        "correct": "Mẫu câu danh từ chỉ khoảng thời gian: N は [Thờigian1]から [Thờigian2]までです.",
+        "pitfalls": "Đề bài yêu cầu 'Thư viện' (図書館), tránh chọn 銀行 (Ngân hàng).",
+        "tip": "~から (từ ~) ... ~まで (đến ~)."
+      }
+    },
+    {
+      "id": "l04_s005",
+      "level": "easy",
+      "vietnamese": "Ngày nghỉ là thứ Bảy và Chủ Nhật.",
+      "acceptableOrders": [
+        [
+          "やすみは",
+          "どようびと",
+          "にちようびです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "やすみは",
+          "kanji": "{休|やす}みは"
+        },
+        {
+          "text": "どようびと",
+          "kanji": "{土曜日|どようび}と"
+        },
+        {
+          "text": "にちようびです",
+          "kanji": "{日曜日|にちようび}です"
+        },
+        {
+          "text": "なんようびです",
+          "kanji": "{何曜日|なんようび}です"
+        }
+      ],
+      "explanation": {
+        "correct": "Trợ từ と dùng để nối hai danh từ chỉ ngày trong tuần (thứ Bảy và Chủ Nhật).",
+        "pitfalls": "Tránh dùng từ nghi vấn 何曜日 trong câu khẳng định.",
+        "tip": "N1 と N2 = N1 và N2."
+      }
+    },
+    {
+      "id": "l04_s006",
+      "level": "medium",
+      "vietnamese": "Hằng ngày bạn học từ mấy giờ đến mấy giờ?",
+      "acceptableOrders": [
+        [
+          "まいにち",
+          "なんじから",
+          "なんじまで",
+          "べんきょうしますか"
+        ],
+        [
+          "なんじから",
+          "なんじまで",
+          "まいにち",
+          "べんきょうしますか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "まいにち",
+          "kanji": "{毎|まい}{日|にち}"
+        },
+        {
+          "text": "なんじから",
+          "kanji": "{何時|なんじ}から"
+        },
+        {
+          "text": "なんじまで",
+          "kanji": "{何時|なんじ}まで"
+        },
+        {
+          "text": "べんきょうしますか",
+          "kanji": "{勉|べん}{強|きょう}しますか"
+        },
+        {
+          "text": "はたらきますか",
+          "kanji": "{働|はたら}きますか"
+        }
+      ],
+      "explanation": {
+        "correct": "Cấu trúc hỏi khoảng thời gian: 何時から 何時まで [Động từ]か.",
+        "pitfalls": "Chú ý động từ học tập (勉強しますか) khác với làm việc (働きますか).",
+        "tip": "Hỏi khoảng thời gian = 何時から 何時まで."
+      }
+    },
+    {
+      "id": "l04_s007",
+      "level": "medium",
+      "vietnamese": "Hôm nay ngân hàng làm việc đến 3 giờ.",
+      "acceptableOrders": [
+        [
+          "きょう",
+          "ぎんこうは",
+          "3じまで",
+          "はたらきます"
+        ],
+        [
+          "ぎんこうは",
+          "きょう",
+          "3じまで",
+          "はたらきます"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "きょう",
+          "kanji": "きょう"
+        },
+        {
+          "text": "ぎんこうは",
+          "kanji": "{銀|ぎん}{行|こう}は"
+        },
+        {
+          "text": "3じまで",
+          "kanji": "3{時|じ}まで"
+        },
+        {
+          "text": "はたらきます",
+          "kanji": "{働|はたら}きます"
+        },
+        {
+          "text": "はたらきました",
+          "kanji": "{働|はたら}きました"
+        }
+      ],
+      "explanation": {
+        "correct": "Trạng từ きょう (hôm nay) đi với động từ thì hiện tại/tương lai ~ます.",
+        "pitfalls": "Tránh dùng đuôi quá khứ ~ました cho hành động của ngày hôm nay.",
+        "tip": "Hôm nay (きょう) -> dùng ~ます."
+      }
+    },
+    {
+      "id": "l04_s008",
+      "level": "medium",
+      "vietnamese": "Bảo tàng mỹ thuật nghỉ vào thứ mấy?",
+      "acceptableOrders": [
+        [
+          "びじゅつかんの",
+          "やすみは",
+          "なんようびですか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "びじゅつかんの",
+          "kanji": "{美|び}{術|じゅつ}{館|かん}の"
+        },
+        {
+          "text": "やすみは",
+          "kanji": "{休|やす}みは"
+        },
+        {
+          "text": "なんようびですか",
+          "kanji": "{何曜日|なんようび}ですか"
+        },
+        {
+          "text": "なんじですか",
+          "kanji": "{何時|なんじ}ですか"
+        }
+      ],
+      "explanation": {
+        "correct": "Dùng の để nối danh từ (Bảo tàng mỹ thuật) với ngày nghỉ (休み) và 何曜日 để hỏi thứ.",
+        "pitfalls": "Tránh chọn 何時ですか (hỏi mấy giờ) vì đề hỏi 'thứ mấy'.",
+        "tip": "N1 の N2 = N2 của N1."
+      }
+    },
+    {
+      "id": "l04_s009",
+      "level": "medium",
+      "vietnamese": "Hôm qua tôi đã không làm việc.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "きのう",
+          "はたらきませんでした"
+        ],
+        [
+          "きのう",
+          "わたしは",
+          "はたらきませんでした"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "{私|わたし}は"
+        },
+        {
+          "text": "きのう",
+          "kanji": "きのう"
+        },
+        {
+          "text": "はたらきませんでした",
+          "kanji": "{働|はたら}きませんでした"
+        },
+        {
+          "text": "はたらきません",
+          "kanji": "{働|はたら}きません"
+        },
+        {
+          "text": "やすみませんでした",
+          "kanji": "{休|やす}みませんでした"
+        }
+      ],
+      "explanation": {
+        "correct": "Chỉ hành động không làm trong quá khứ dùng phủ định quá khứ ~ませんでした.",
+        "pitfalls": "Phân biệt 働きませんでした (đã không làm việc) với 休みませんでした (đã không nghỉ).",
+        "tip": "Quá khứ + Phủ định = ~ませんでした."
+      }
+    },
+    {
+      "id": "l04_s010",
+      "level": "medium",
+      "vietnamese": "Bưu điện làm việc từ 9 giờ sáng đến 5 giờ chiều.",
+      "acceptableOrders": [
+        [
+          "ゆうびんきょくは",
+          "ごぜん9じから",
+          "ごご5じまで",
+          "はたらきます"
+        ],
+        [
+          "ごぜん9じから",
+          "ごご5じまで",
+          "ゆうびんきょくは",
+          "はたらきます"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "ゆうびんきょくは",
+          "kanji": "{郵|ゆう}{便|びん}{局|きょく}は"
+        },
+        {
+          "text": "ごぜん9じから",
+          "kanji": "{午|ご}{前|ぜん}9{時|じ}から"
+        },
+        {
+          "text": "ごご5じまで",
+          "kanji": "{午|ご}{後|ご}5{時|じ}まで"
+        },
+        {
+          "text": "はたらきます",
+          "kanji": "{働|はたら}きます"
+        },
+        {
+          "text": "ごご9じから",
+          "kanji": "{午|ご}{後|ご}9{時|じ}から"
+        }
+      ],
+      "explanation": {
+        "correct": "午前 (sáng - AM) đặt trước 9時 và 午後 (chiều - PM) đặt trước 5時.",
+        "pitfalls": "Tránh nhầm vị trí 午前 (AM) và 午後 (PM).",
+        "tip": "午前 = AM (sáng), 午後 = PM (chiều)."
+      }
+    },
+    {
+      "id": "l04_s011",
+      "level": "hard",
+      "vietnamese": "Mỗi tối tôi học bài đến 12 giờ. Vất vả nhỉ.",
+      "acceptableOrders": [
+        [
+          "まいばん",
+          "12じまで",
+          "べんきょうします",
+          "たいへんですね"
+        ],
+        [
+          "12じまで",
+          "まいばん",
+          "べんきょうします",
+          "たいへんですね"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "まいばん",
+          "kanji": "{毎晩|まいばん}"
+        },
+        {
+          "text": "12じまで",
+          "kanji": "12{時|じ}まで"
+        },
+        {
+          "text": "べんきょうします",
+          "kanji": "{勉|べん}{強|きょう}します"
+        },
+        {
+          "text": "たいへんですね",
+          "kanji": "{大|たい}{変|へん}ですね"
+        },
+        {
+          "text": "まいあさ",
+          "kanji": "{毎朝|まいあさ}"
+        },
+        {
+          "text": "おつかれさまでした",
+          "kanji": "お{疲|つ}れ{様|さま}でした"
+        }
+      ],
+      "explanation": {
+        "correct": "毎晩 (mỗi tối) ghép với 12時まで (đến 12 giờ) và câu cảm thông 大変ですね (Vất vả nhỉ).",
+        "pitfalls": "Tránh nhầm 毎晩 (mỗi tối) với 毎朝 (mỗi sáng) hoặc お疲れ様でした (dùng khi kết thúc công việc).",
+        "tip": "Cảm thông với sự vất vả của đối phương = 大変ですね."
+      }
+    },
+    {
+      "id": "l04_s012",
+      "level": "hard",
+      "vietnamese": "Hôm kia anh Miller đã ngủ lúc 11 giờ rưỡi.",
+      "acceptableOrders": [
+        [
+          "おととい",
+          "ミラーさんは",
+          "11じはんに",
+          "ねました"
+        ],
+        [
+          "ミラーさんは",
+          "おとtoi",
+          "11じはんに",
+          "ねました"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "おとtoi",
+          "kanji": "おととい"
+        },
+        {
+          "text": "ミラーさんは",
+          "kanji": "ミラーさんは"
+        },
+        {
+          "text": "11じはんに",
+          "kanji": "11{時|じ}{半|はん}に"
+        },
+        {
+          "text": "ねました",
+          "kanji": "{寝|ね}ました"
+        },
+        {
+          "text": "あさって",
+          "kanji": "あさって"
+        },
+        {
+          "text": "ねます",
+          "kanji": "{寝|ね}ます"
+        }
+      ],
+      "explanation": {
+        "correct": "Trạng từ おとtoi (hôm kia) đi với động trị quá khứ khẳng định 寝ました.",
+        "pitfalls": "Không dùng あさって (ngày mốt) hoặc động từ thể hiện tại/tương lai 寝ます.",
+        "tip": "Hôm kia (おととい) -> Đã ngủ (寝ました)."
+      }
+    }
+  ],
+  "game4": [
+    {
+      "id": "l04_c001",
+      "level": "easy",
+      "speaker": "👤 ミラーさん",
+      "question": "「すみません、{今|いま} {何時|なんじ}ですか。」",
+      "questionAudioText": "すみません、いま なんじですか。",
+      "options": [
+        {
+          "text": "2じ 10ふんです。",
+          "kanji": "2{時|じ} 10{分|ふん}です。"
+        },
+        {
+          "text": "あしたです。",
+          "kanji": "あしたです。"
+        },
+        {
+          "text": "いいえ、ちがいます。",
+          "kanji": "いいえ、ちがいます。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi giờ dùng 何時ですか (mấy giờ), câu trả lời khớp là chỉ số giờ + phút.",
+        "pitfalls": "Tránh nhầm với từ chỉ ngày (あした) hoặc câu trả lời khẳng định/phủ định.",
+        "tip": "Hỏi 何時ですか → Trả lời [Số giờ]時 [Số phút]分です."
+      }
+    },
+    {
+      "id": "l04_c002",
+      "level": "easy",
+      "speaker": "🏪 {店|みせ}の{人|ひと}",
+      "question": "「はい、アップル{銀行|ぎんこう}です。」",
+      "questionAudioText": "はい、アップルぎんこうです。",
+      "options": [
+        {
+          "text": "すみません。そちらは なんじまでですか。",
+          "kanji": "すみません。そちらは {何時|なんじ}までですか。"
+        },
+        {
+          "text": "いいえ、がくせいじゃ ありません。",
+          "kanji": "いいえ、{学生|がくせい}じゃ ありません。"
+        },
+        {
+          "text": "はじめまして。どうぞ よろしく。",
+          "kanji": "はじめまして。どうぞ よろしく。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi đối phương xưng tên cơ quan/ngân hàng qua điện thoại, câu hỏi tự nhiên tiếp theo là hỏi giờ đóng cửa/mở cửa (そちらは何時までですか).",
+        "pitfalls": "Tránh dùng câu giới thiệu bản thân hoặc phủ định nghề nghiệp không liên quan.",
+        "tip": "Giao tiếp điện thoại: Nhận cuộc gọi → Hỏi thông tin giờ giấc/ngày nghỉ."
+      }
+    },
+    {
+      "id": "l04_c003",
+      "level": "easy",
+      "speaker": "👩 佐藤さん",
+      "question": "「{銀行|ぎんこう}の {休み|やすみ}は {何曜日|なんようび}ですか。」",
+      "questionAudioText": "ぎんこうの やすみは なんようびですか。",
+      "options": [
+        {
+          "text": "どようびと にちようびです。",
+          "kanji": "{土曜日|どようび}と {日曜日|にちようび}です。"
+        },
+        {
+          "text": "9じから 3じまでです。",
+          "kanji": "9{時|じ}から 3{時|じ}までです。"
+        },
+        {
+          "text": "5275の 2725です。",
+          "kanji": "5275の 2725です。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi 何曜日 (thứ mấy) nên đáp án phải trả lời bằng các ngày trong tuần (thứ Bảy và Chủ Nhật).",
+        "pitfalls": "Tránh nhầm với câu trả lời số giờ (9時から3時まで) hay số điện thoại.",
+        "tip": "Hỏi 何曜日ですか → Trả lời tên các thứ (~曜日)."
+      }
+    },
+    {
+      "id": "l04_c004",
+      "level": "easy",
+      "speaker": "👤 ミラーさん",
+      "question": "「{毎晩|まいばん} {何時|なんじ}に {寝|ね}ますか。」",
+      "questionAudioText": "まいばん なんじに ねますか。",
+      "options": [
+        {
+          "text": "11じに ねます。",
+          "kanji": "11{時|じ}に {寝|ね}ます。"
+        },
+        {
+          "text": "きのう ねました。",
+          "kanji": "きのう {寝|ね}ました。"
+        },
+        {
+          "text": "いいえ、ねません。",
+          "kanji": "いいえ、{寝|ね}ません。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi 毎晩 (mỗi tối - thói quen) + 何時に (vào mấy giờ) -> Trả lời con số giờ cụ thể + に 寝ます.",
+        "pitfalls": "Không dùng thì quá khứ (きのう寝ました) vì câu hỏi thói quen hiện tại.",
+        "tip": "Hỏi 何時に寝ますか → Trả lời [Mốc giờ]時に 寝ます."
+      }
+    },
+    {
+      "id": "l04_c005",
+      "level": "easy",
+      "speaker": "👩 佐藤さん",
+      "question": "「あすかの {電話番号|でんわばんごう}は {何番|なんばん}ですか。」",
+      "questionAudioText": "あすかの でんわばんごうは なんばんですか。",
+      "options": [
+        {
+          "text": "5275の 2725です。",
+          "kanji": "5275の 2725です。"
+        },
+        {
+          "text": "9じから 5じまでです。",
+          "kanji": "9{時|じ}から 5{時|じ}までです。"
+        },
+        {
+          "text": "はい、そうです。",
+          "kanji": "はい、そうです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi 電話番号 (số điện thoại) + 何番 (số mấy) -> Trả lời dãy số điện thoại với trợ từ の nối các nhóm số.",
+        "pitfalls": "Tránh nhầm với khoảng thời gian (9時から5時まで).",
+        "tip": "Hỏi 何番ですか → Trả lời dãy số điện thoại."
+      }
+    },
+    {
+      "id": "l04_c006",
+      "level": "medium",
+      "speaker": "👤 ミラーさん",
+      "question": "「{毎日|まいにち} {朝|あさ} 9じから {午後|ごご} 3じまで {勉強|べんきょう}します。」",
+      "questionAudioText": "まいにち あさ 9じから ごご 3じまで べんきょうします。",
+      "options": [
+        {
+          "text": "たいへんですね。",
+          "kanji": "{大|たい}{変|へん}ですね。"
+        },
+        {
+          "text": "おつかれさまでした。",
+          "kanji": "お{疲|つ}れ{様|さま}でした。"
+        },
+        {
+          "text": "どういたしまして。",
+          "kanji": "どういたしまして。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi nghe đối phương trình bày lịch học tập/làm việc dài vất vả, dùng 大変ですね (Vất vả nhỉ) để biểu thị sự cảm thông.",
+        "pitfalls": "Tránh dùng お疲れ様でした (dùng khi kết thúc công việc trong ngày).",
+        "tip": "Bày tỏ sự chia sẻ vất vả = 大変ですね."
+      }
+    },
+    {
+      "id": "l04_c007",
+      "level": "medium",
+      "speaker": "👨 山田さん",
+      "question": "「きのう {勉強|べんきょう}しましたか。」",
+      "questionAudioText": "きのう べんきょうしましたか。",
+      "options": [
+        {
+          "text": "いいえ、べんきょうしませんでした。",
+          "kanji": "いいえ、{勉|べん}{強|きょう}しませんでした。"
+        },
+        {
+          "text": "はい、べんきょうします。",
+          "kanji": "はい、{勉|べん}{強|きょう}します。"
+        },
+        {
+          "text": "いいえ、べんきょうしません。",
+          "kanji": "いいえ、{勉|べん}{強|きょう}しません。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Câu hỏi ở quá khứ (~しましたか), nếu phủ định (いいえ) phải đi với phủ định quá khứ (~ませんでした).",
+        "pitfalls": "Tránh phối hợp sai giữa はい/いいえ và thì động từ hiện tại/quá khứ.",
+        "tip": "Hỏi ましたか → Trả lời はい、~ました / いいえ、~ませんでした."
+      }
+    },
+    {
+      "id": "l04_c008",
+      "level": "medium",
+      "speaker": "👤 ミラーさん",
+      "question": "「デパートは {何時|なんじ}から {何時|なんじ}までですか。」",
+      "questionAudioText": "デパートは なんじから なんじまでですか。",
+      "options": [
+        {
+          "text": "10じから 8じまでです。",
+          "kanji": "10{時|じ}から 8{時|じ}までです。"
+        },
+        {
+          "text": "すいようびです。",
+          "kanji": "{水曜日|すいようび}です。"
+        },
+        {
+          "text": "はい、10じまでです。",
+          "kanji": "はい、10{時|じ}までです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi 何時から 何時まで (từ mấy giờ đến mấy giờ) -> Trả lời khoảng thời gian con số tương ứng.",
+        "pitfalls": "Không trả lời はい/いいえ cho câu hỏi có từ nghi vấn 何時.",
+        "tip": "Câu hỏi có từ nghi vấn (何時) → Không dùng はい/いいえ ở đầu câu."
+      }
+    },
+    {
+      "id": "l04_c009",
+      "level": "medium",
+      "speaker": "👩 佐藤さん",
+      "question": "「{土曜日|どようび} {働|はたら}きますか。」",
+      "questionAudioText": "どようび はたらきますか。",
+      "options": [
+        {
+          "text": "いいえ、はたらきません。",
+          "kanji": "いいえ、{働|はたら}きません。"
+        },
+        {
+          "text": "いいえ、はたらきませんでした。",
+          "kanji": "いいえ、{働|はたら}きませんでした。"
+        },
+        {
+          "text": "はい、はたらきました。",
+          "kanji": "はい、{働|はたら}きました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi thói quen hoặc lịch trình tương lai (働きますか) -> Trả lời phủ định ở hiện tại/tương lai (いいえ、働きません).",
+        "pitfalls": "Tránh chia động từ sang quá khứ 働きました / 働きませんでした vì câu hỏi là 働きますか.",
+        "tip": "Hỏi ~ますか → Trả lời ~ます / ~ません."
+      }
+    },
+    {
+      "id": "l04_c010",
+      "level": "medium",
+      "speaker": "🏪 {店|みせ}の{人|ひと}",
+      "question": "「10じまでです。」",
+      "questionAudioText": "10じまでです。",
+      "options": [
+        {
+          "text": "そちらは なんじまでですか。",
+          "kanji": "そちらは {何時|なんじ}までですか。"
+        },
+        {
+          "text": "なんじに おきますか。",
+          "kanji": "{何時|なんじ}に {起|お}きますか。"
+        },
+        {
+          "text": "でんわばんごうは なんばんですか。",
+          "kanji": "{電話番号|でんわばんごう}は {何番|なんばん}ですか。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Để nhận câu trả lời 'Đến 10 giờ' (10時までです), người hỏi phải đặt câu hỏi về mốc thời gian kết thúc (そちらは何時までですか).",
+        "pitfalls": "Hỏi 何時に起きますか là hỏi giờ thức dậy của cá nhân, không hợp ngữ cảnh cửa hàng.",
+        "tip": "Trả lời ~までです ← Câu hỏi 何時までですか."
+      }
+    },
+    {
+      "id": "l04_c011",
+      "level": "hard",
+      "speaker": "👨 山田さん",
+      "question": "「けさ {何時|なんじ}に {起|お}きましたか。」",
+      "questionAudioText": "けさ なんじに おきましたか。",
+      "options": [
+        {
+          "text": "6じに おきました。",
+          "kanji": "6{時|じ}に {起|お}きました。"
+        },
+        {
+          "text": "6じに おきます。",
+          "kanji": "6{時|じ}に {起|お}きます。"
+        },
+        {
+          "text": "6じから 7じまでです。",
+          "kanji": "6{時|じ}から 7{時|じ}までです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi về hành động sáng nay (けさ) đã xảy ra -> Câu hỏi dùng 起きましたか, trả lời dùng khẳng định quá khứ 6時に 起きました.",
+        "pitfalls": "Dù có に đứng sau số giờ, nhưng cần chọn thì quá khứ 起きました thay vì hiện tại 起きます.",
+        "tip": "Sáng nay (けさ) là mốc đã qua → Động từ dùng ~ました."
+      }
+    },
+    {
+      "id": "l04_c012",
+      "level": "hard",
+      "speaker": "👤 ミラーさん",
+      "question": "「どうも ありがとうございます。」",
+      "questionAudioText": "どうも ありがとうございます。",
+      "options": [
+        {
+          "text": "いいえ、どういたしまして。",
+          "kanji": "いいえ、どういたしまして。"
+        },
+        {
+          "text": "はい、そうです。",
+          "kanji": "はい、そうです。"
+        },
+        {
+          "text": "たいへんですね。",
+          "kanji": "{大|たい}{変|へん}ですね。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Đáp lại lời cảm ơn ありがとうございます là câu đáp lịch sự 'Không có gì' (いいえ、どういたしまして).",
+        "pitfalls": "Tránh dùng はい、そうです (đáp lại câu hỏi khẳng định) hay 大変ですね (cảm thông sự vất vả).",
+        "tip": "Đáp lại Cảm ơn (ありがとうございます) → いいえ、どういたしまして."
+      }
+    }
+  ]
+}
