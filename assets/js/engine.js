@@ -192,7 +192,7 @@
         }
 
         function startLesson() {
-            document.title = LESSON_CONFIG.title;
+            document.title = `${LESSON_CONFIG.title} | Luyện tập IMEJI日本語教室`;
             const jl = document.getElementById('modal-jlpt');
             if (jl) jl.innerText = LESSON_CONFIG.jlpt;
             validateData();

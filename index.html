@@ -37,7 +37,7 @@
                 <a href="https://imejiquynhon.com/" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-primary-700 bg-white/90 hover:bg-white border border-white/60 shadow-sm active:scale-95 transition">🏠 <span>Trang chủ</span></a>
                 <div id="headerStats" class="hidden sm:flex items-center gap-2 bg-primary-50 border border-primary-100 px-3 py-1.5 rounded-full text-xs font-semibold text-primary-700">
                     <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Tiến độ: <strong id="headerProgressText">0 / 58</strong> bài</span>
+                    <span>Tiến độ: <strong id="headerProgressText">0 / 22</strong> bài</span>
                 </div>
                 <a href="https://imejiquynhon.com/#register" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 active:scale-95 transition shadow-sm">Học thử miễn phí</a>
             </div>
@@ -52,7 +52,7 @@
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="p-6 sm:p-9 rounded-3xl border border-white/25 shadow-2xl text-center backdrop-blur-xl bg-slate-900/25">
                 <span class="inline-block px-3.5 py-1.5 bg-primary-50/95 text-primary-700 border border-primary-200/90 rounded-full text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
-                    ☁️ Lộ trình học Tiếng Nhật từ Zero đến N4
+                    ☁️ Lộ trình học tiếng Nhật từ N5 đến N3 ・ Luyện tập Minna N5–N4
                 </span>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
                     HỌC TIẾNG NHẬT CÙNG <span class="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-300 bg-clip-text text-transparent">QUANG SENSEI</span>
@@ -86,11 +86,11 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-chart-line text-primary-600"></i>
-                    <h3 class="font-bold text-slate-800 text-sm">Tiến Độ Hoàn Thành Lộ Trình</h3>
+                    <h3 class="font-bold text-slate-800 text-sm">Tiến độ các bài đã mở <span class="font-medium text-slate-500">(bài "Sắp có" chưa tính)</span></h3>
                 </div>
                 <div class="text-xs text-slate-500 flex items-center gap-4">
                     <span><i class="fa-solid fa-circle text-primary-500 text-[10px] mr-1"></i>Đã học: <strong id="completedCount" class="text-slate-700">0</strong></span>
-                    <span><i class="fa-solid fa-circle text-slate-200 text-[10px] mr-1"></i>Còn lại: <strong id="remainingCount" class="text-slate-700">58</strong></span>
+                    <span><i class="fa-solid fa-circle text-slate-200 text-[10px] mr-1"></i>Còn lại: <strong id="remainingCount" class="text-slate-700">22</strong></span>
                     <button onclick="resetProgress()" class="text-primary-600 hover:underline text-xs font-medium ml-2">Đặt lại</button>
                 </div>
             </div>
@@ -273,6 +273,11 @@
             intro: [6],
             minna: Array.from({ length: 21 }, (_, i) => i + 1),
         };
+        // Tiến độ chỉ tính các bài đã mở; thêm bài vào availableLessons là tổng tự tăng.
+        const availableKeys = new Set([
+            ...availableLessons.intro.map((id) => `intro_${id}`),
+            ...availableLessons.minna.map((id) => `minna_${id}`),
+        ]);
 
         let completedLessons = JSON.parse(localStorage.getItem('nihongo_completed') || '[]');
         let currentTab = 'all';
@@ -314,11 +319,11 @@
                             <span class="text-xs font-bold px-2.5 py-1 rounded-lg border ${badgeColor}">
                                 ${isIntro ? 'Nhập môn ' + lesson.id : 'Bài ' + lesson.id}
                             </span>
-                            <button onclick="toggleComplete('${uniqueKey}', event)" 
+                            ${isAvailable ? `<button onclick="toggleComplete('${uniqueKey}', event)" 
                                 class="w-8 h-8 rounded-full flex items-center justify-center transition-all ${isDone ? 'bg-primary-500 text-white shadow-sm shadow-primary-200' : 'bg-slate-100 text-slate-300 hover:text-slate-400 hover:bg-slate-200'}"
                                 title="${isDone ? 'Đánh dấu chưa học' : 'Đánh dấu đã hoàn thành'}">
                                 <i class="fa-solid fa-check text-xs"></i>
-                            </button>
+                            </button>` : ''}
                         </div>
                         <h4 class="font-bold text-slate-800 text-base mb-1 group-hover:text-primary-600 transition-colors">
                             ${lesson.title}
@@ -425,8 +430,8 @@
         }
 
         function updateProgressUI() {
-            const total = 58;
-            const count = completedLessons.length;
+            const total = availableKeys.size;
+            const count = completedLessons.filter((k) => availableKeys.has(k)).length;
             const percentage = Math.round((count / total) * 100);
 
             document.getElementById('completedCount').innerText = count;

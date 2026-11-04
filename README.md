@@ -71,7 +71,7 @@ Quy ước furigana:
 - Các trường `kanji`, `sentence`, `question` là chữ hiển thị, có thể dùng `{漢字|よみ}`.
 - `game1` cần đúng 3 `distractors`.
 
-Khi thêm bài mới: tạo `data/minna/NN.json`, tạo `minna/NN.html` (copy từ một bài đã có, chỉ đổi `data-lesson` và `<title>`), rồi thêm bài vào `index.html`.
+Khi thêm bài mới: tạo `data/minna/NN.json`, tạo `minna/NN.html` (copy từ một bài đã có, chỉ đổi `data-lesson` và `<title>`), rồi thêm số bài vào `availableLessons` trong `index.html` (thanh tiến độ chỉ tính các bài có trong danh sách này).
 
 ## Trạng thái các trang
 
@@ -89,7 +89,7 @@ Kiểm tra mọi `data/minna/NN.json`: JSON hợp lệ, `lessonNo` và `storageP
 
 ## Điều hướng
 
-- Menu mỗi bài có nút **← Danh sách bài** (`../index.html`) và **🏠 Trang chủ Thầy Quang** (`https://imejiquynhon.com/`, hằng số `SITE_HOME_URL` trong `engine.js`).
+- Menu mỗi bài có nút **← Danh sách bài** (`../index.html`) và **🏠 Trang chủ IMEJI日本語教室** (`https://imejiquynhon.com/`, hằng số `SITE_HOME_URL` trong `engine.js`).
 - Trang chủ (`index.html`) và `nhap-mon/6` cũng có nút về trang chủ imejiquynhon.com.
 
 ## Báo kết quả ra ngoài (để ghi điểm)
