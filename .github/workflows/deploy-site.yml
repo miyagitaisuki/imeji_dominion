@@ -1,7 +1,10 @@
 name: Deploy site after main changes
 
-# Khi main có thay đổi, gọi deploy hook của Render để build lại imeji_newhorizon.
-# Build đó clone imeji_dominion@main và chép vào /luyen-tap/, nên bài mới mới lên site.
+# Khi main có thay đổi:
+# 1. Tự bật nút "Slide bài giảng" cho mọi bài có file slides/minna/NN.html (scripts/sync-slides.mjs),
+#    commit lại lên main nếu có thay đổi.
+# 2. Gọi deploy hook của Render để build lại imeji_newhorizon.
+#    Build đó clone imeji_dominion@main và chép vào /luyen-tap/, nên bài mới mới lên site.
 # Cần secret RENDER_DEPLOY_HOOK_URL trong repo này (lấy từ Render: service imeji_newhorizon-1 > Settings > Deploy Hook).
 
 on:
@@ -13,7 +16,30 @@ permissions:
   contents: read
 
 jobs:
+  sync-slides:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Bật slide theo file trong slides/minna
+        run: node scripts/sync-slides.mjs
+      - name: Commit nếu có thay đổi
+        run: |
+          if git diff --quiet -- data/resources.json; then
+            echo "Không có thay đổi."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/resources.json
+          git commit -m "Tự bật slide bài giảng theo file trong slides/minna"
+          git push origin HEAD:main
+
   trigger-render:
+    needs: sync-slides
     runs-on: ubuntu-latest
     steps:
       - name: Gọi deploy hook của Render
