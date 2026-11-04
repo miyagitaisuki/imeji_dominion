@@ -325,30 +325,30 @@
             { id: 50, title: "Bài 50", jp: "謙譲語 (Khiêm nhường ngữ)", desc: "Kính ngữ hạ thấp hành động bản thân để thể hiện sự khiêm tốn" }
         ];
 
-        // Lessons whose page exists in this repo. Other cards show "Sắp có" and no link.
-        const availableLessons = {
-            intro: [6],
-            minna: [...Array.from({ length: 21 }, (_, i) => i + 1), 26],
-        };
-        // Tiến độ chỉ tính các bài đã mở; thêm bài vào availableLessons là tổng tự tăng.
-        const availableKeys = new Set([
-            ...availableLessons.intro.map((id) => `intro_${id}`),
-            ...availableLessons.minna.map((id) => `minna_${id}`),
-        ]);
-
         let completedLessons = JSON.parse(localStorage.getItem('nihongo_completed') || '[]');
         let currentTab = 'all';
         const introPathPattern = 'nhap-mon/{id}.html';
         const minnaPathPattern = 'minna/{id}.html';
-        
-        // Tài nguyên theo bài (slide, flashcard): data/resources.json. Thiếu file thì coi như chưa có.
-        let lessonResources = { slide: { minna: [] }, flashcard: { minna: [] } };
-        // Nhập môn có game riêng ở nhap-mon/{id}.html cho các bài này (các bài khác chỉ có slide/flashcard nếu có file).
-        const introWithGame = [6];
-        const introGroup = 'nhap-mon';
-        const hasIntroResource = (id) => ['slide', 'flashcard'].some(k => ((lessonResources[k] || {})[introGroup] || []).includes(id));
-        const hasMinnaResource = (id) => ['slide', 'flashcard'].some(k => ((lessonResources[k] || {}).minna || []).includes(id));
-        fetch('data/resources.json').then(r => r.ok ? r.json() : null).then(d => { if (d) { lessonResources = d; renderAllGrids(); } }).catch(() => {});
+
+        // Bài nào có game, slide, flashcard được tự sinh trong data/resources.json (scripts/sync-slides.mjs khi deploy).
+        // Không sửa code này khi thêm bài: chỉ cần thêm file slide/game lên main.
+        let lessonResources = { game: {}, slide: {}, flashcard: {} };
+        const groupOf = (type) => (type === 'intro' ? 'nhap-mon' : 'minna');
+        const listOf = (kind, group) => ((lessonResources[kind] || {})[group] || []);
+        const hasGame = (type, id) => listOf('game', groupOf(type)).includes(id);
+        const hasSlideOrFlash = (type, id) => ['slide', 'flashcard'].some(k => listOf(k, groupOf(type)).includes(id));
+        // Bài đã mở khi có game hoặc có slide/flashcard; các bài khác hiện "Sắp có"
+        const isOpenLesson = (type, id) => hasGame(type, id) || hasSlideOrFlash(type, id);
+        // Tiến độ chỉ tính các bài đã mở
+        function openLessonKeys() {
+            return new Set([
+                ...introLessons.filter(l => isOpenLesson('intro', l.id)).map(l => `intro_${l.id}`),
+                ...minnaLessons.filter(l => isOpenLesson('minna', l.id)).map(l => `minna_${l.id}`),
+            ]);
+        }
+        fetch('data/resources.json').then(r => r.ok ? r.json() : null).then(d => {
+            if (d) { lessonResources = d; renderAllGrids(); updateProgressUI(); }
+        }).catch(() => {});
 
         let lessonMenuTrigger = null;
         function openLessonMenu(id, type = 'minna') {
@@ -356,15 +356,15 @@
             const lesson = (isIntro ? introLessons : minnaLessons).find(l => l.id === id);
             if (!lesson) return;
             const dlg = document.getElementById('lessonMenu');
-            const group = isIntro ? introGroup : 'minna';
+            const group = groupOf(type);
             const has = (kind) => ((lessonResources[kind] || {})[group] || []).includes(id);
             document.getElementById('lessonMenuTitle').textContent = `${lesson.title} ・ ${lesson.jp}`;
             const opts = [
                 { kind: 'slide', icon: 'presentation', tone: 'slide', title: 'Slide bài giảng', desc: 'Xem bài giảng dạng trình chiếu', href: `slides/${group}/${id}.html`, ok: has('slide') },
                 { kind: 'flashcard', icon: 'layers', tone: 'flash', title: 'Flashcard', desc: 'Ôn từ vựng và mẫu câu bằng thẻ', href: `flashcards/${group}/${id}.html`, ok: has('flashcard') },
                 isIntro
-                    ? { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: 'Luyện nối Romaji và Hiragana', href: `nhap-mon/${id}.html`, ok: introWithGame.includes(id) }
-                    : { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: '4 trò chơi luyện từ vựng, ngữ pháp, xếp câu, hội thoại', href: `minna/${id}.html`, ok: availableLessons.minna.includes(id) },
+                    ? { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: 'Luyện nối Romaji và Hiragana', href: `nhap-mon/${id}.html`, ok: hasGame('intro', id) }
+                    : { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: '4 trò chơi luyện từ vựng, ngữ pháp, xếp câu, hội thoại', href: `minna/${id}.html`, ok: hasGame('minna', id) },
             ];
             document.getElementById('lessonMenuList').innerHTML = opts.map(o => o.ok
                 ? `<a href="${o.href}" class="lm-opt lm-opt--${o.tone}">
@@ -407,16 +407,15 @@
                 : minnaPathPattern.replace('{id}', lesson.id));
 
             // Bài Minna mở được khi có trang game hoặc có slide/flashcard trong data/resources.json
-            const isAvailable = availableLessons[isIntro ? 'intro' : 'minna'].includes(lesson.id)
-                || (!isIntro && hasMinnaResource(lesson.id));
+            const isAvailable = isOpenLesson(isIntro ? 'intro' : 'minna', lesson.id);
             // Có slide/flashcard thì mở cửa sổ chọn cách học; nhập môn chỉ có game thì vào thẳng như cũ.
-            const openMenu = isIntro ? hasIntroResource(lesson.id) : isAvailable;
+            const openMenu = isIntro ? hasSlideOrFlash('intro', lesson.id) : isAvailable;
             const actionHtml = openMenu
                 ? `<button type="button" onclick="openLessonMenu(${lesson.id}, '${isIntro ? 'intro' : 'minna'}')" class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
                         <span>Học bài này</span>
                         <i data-icon="arrow-right" class="w-3.5 h-3.5"></i>
                     </button>`
-                : (isIntro ? introWithGame.includes(lesson.id) : isAvailable)
+                : (isIntro ? hasGame('intro', lesson.id) : isAvailable)
                 ? `<a href="${href}" class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
                         <span>Học bài này</span>
                         <i data-icon="arrow-right" class="w-3.5 h-3.5"></i>
@@ -584,8 +583,9 @@
         }
 
         function updateProgressUI() {
-            const total = availableKeys.size;
-            const count = completedLessons.filter((k) => availableKeys.has(k)).length;
+            const keys = openLessonKeys();
+            const total = keys.size;
+            const count = completedLessons.filter((k) => keys.has(k)).length;
             const percentage = Math.round((count / total) * 100);
 
             document.getElementById('completedCount').innerText = count;

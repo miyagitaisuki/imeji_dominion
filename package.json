@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind.input.css -o ./assets/css/tailwind.css --minify",
     "watch:css": "tailwindcss -i ./assets/css/tailwind.input.css -o ./assets/css/tailwind.css --watch",
-    "validate": "node scripts/validate-lessons.mjs && node scripts/check-design.mjs",
+    "validate": "node scripts/sync-slides.mjs && node scripts/validate-lessons.mjs && node scripts/check-design.mjs",
     "brand:check": "node scripts/check-brand.mjs",
     "build:icons": "node scripts/gen-icons.mjs"
   },

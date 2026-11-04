@@ -3,6 +3,8 @@
 //   slides/nhap-mon/NN.html     → slide["nhap-mon"]
 //   flashcards/minna/NN.html    → flashcard.minna
 //   flashcards/nhap-mon/NN.html → flashcard["nhap-mon"]
+//   minna/NN.html               → game.minna        (trang game của bài)
+//   nhap-mon/NN.html            → game["nhap-mon"]
 // Chạy: node scripts/sync-slides.mjs  (ghi đè data/resources.json, giữ nguyên các mục khác)
 // Workflow deploy-site.yml chạy script này trên main trước khi deploy.
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -17,6 +19,7 @@ const resPath = join(root, 'data', 'resources.json');
 const kinds = {
   slide: 'slides',
   flashcard: 'flashcards',
+  game: '', // trang game nằm ngay ở thư mục gốc: minna/NN.html, nhap-mon/NN.html
 };
 const groups = ['minna', 'nhap-mon'];
 
@@ -34,10 +37,10 @@ function lessonsIn(dir) {
 const data = JSON.parse(readFileSync(resPath, 'utf8'));
 let changed = false;
 for (const [kind, base] of Object.entries(kinds)) {
-  const next = { ...(data[kind] ?? {}) };
+  const next = {};
   for (const group of groups) {
     const lessons = lessonsIn(join(base, group));
-    const before = JSON.stringify(next[group] ?? []);
+    const before = JSON.stringify(data[kind]?.[group] ?? []);
     next[group] = lessons;
     if (JSON.stringify(lessons) !== before) {
       changed = true;
