@@ -1,0 +1,2956 @@
+{
+  "config": {
+    "lessonNo": 26,
+    "title": "Minna no Nihongo – Bài 26",
+    "jlpt": "N4",
+    "storagePrefix": "mnn_l26"
+  },
+  "game1": [
+    {
+      "id": "l26_v001",
+      "level": "easy",
+      "context": "Bạn ngồi ở rạp chiếu phim và nhìn lên màn hình để xem phim.",
+      "answer": "みます",
+      "kanji": "{見|み}ます",
+      "distractors": [
+        "ききます",
+        "たべます",
+        "よみます"
+      ],
+      "distractorsKanji": [
+        "{聞|き}きます",
+        "{食|た}べます",
+        "{読|よ}みます"
+      ],
+      "explanation": {
+        "correct": "見ます nghĩa là nhìn, xem bằng mắt; dùng cho xem phim, xem TV.",
+        "pitfalls": "聞きます là nghe, 食べます là ăn, 読みます là đọc; không hợp với việc xem phim.",
+        "tip": "見る là nhìn bằng mắt, còn 聞く là nghe bằng tai."
+      }
+    },
+    {
+      "id": "l26_v002",
+      "level": "easy",
+      "context": "Bạn đến buổi hẹn sau giờ đã hẹn vì tàu đến muộn.",
+      "answer": "おくれます",
+      "kanji": "{遅|おく}れます",
+      "distractors": [
+        "まにあいます",
+        "いそぎます",
+        "やすみます"
+      ],
+      "distractorsKanji": [
+        "{間|ま}に{合|あ}います",
+        "{急|いそ}ぎます",
+        "{休|やす}みます"
+      ],
+      "explanation": {
+        "correct": "遅れます là trễ giờ, đến sau thời điểm đã định.",
+        "pitfalls": "間に合います là kịp giờ (trái nghĩa); 急ぎます là vội, nhanh lên; 休みます là nghỉ.",
+        "tip": "Trễ giờ dùng 時間に 遅れます (に chỉ mốc thời gian)."
+      }
+    },
+    {
+      "id": "l26_v003",
+      "level": "medium",
+      "context": "Bạn chạy nhanh nên vẫn kịp chuyến tàu, không bị lỡ cuộc họp.",
+      "answer": "まにあいます",
+      "kanji": "{間|ま}に{合|あ}います",
+      "distractors": [
+        "おくれます",
+        "わすれます",
+        "はじめます"
+      ],
+      "distractorsKanji": [
+        "{遅|おく}れます",
+        "{忘|わす}れます",
+        "{始|はじ}めます"
+      ],
+      "explanation": {
+        "correct": "間に合います là kịp, đến kịp thời điểm cần thiết.",
+        "pitfalls": "遅れます là trễ (trái nghĩa); 忘れます là quên; 始めます là bắt đầu.",
+        "tip": "Dùng với に: 会議に 間に合います (kịp cuộc họp)."
+      }
+    },
+    {
+      "id": "l26_v004",
+      "level": "easy",
+      "context": "Bạn ngồi bàn làm bài tập về nhà mà thầy cô đã giao.",
+      "answer": "やります",
+      "kanji": "やります",
+      "distractors": [
+        "いきます",
+        "ねます",
+        "よみます"
+      ],
+      "distractorsKanji": [
+        "{行|い}きます",
+        "{寝|ね}ます",
+        "{読|よ}みます"
+      ],
+      "explanation": {
+        "correct": "やります là làm, thường dùng cho việc cá nhân như 宿題を やります (làm bài tập).",
+        "pitfalls": "行きます là đi; 寝ます là ngủ; 読みます là đọc.",
+        "tip": "やります là cách nói thân mật, hay gặp trong 宿題を やります."
+      }
+    },
+    {
+      "id": "l26_v005",
+      "level": "medium",
+      "context": "Trên đường đi học, bạn cúi xuống nhặt rác bị vứt trên vỉa hè.",
+      "answer": "ひろいます",
+      "kanji": "{拾|ひろ}います",
+      "distractors": [
+        "すてます",
+        "あらいます",
+        "つくります"
+      ],
+      "distractorsKanji": [
+        "すてます",
+        "{洗|あら}います",
+        "{作|つく}ります"
+      ],
+      "explanation": {
+        "correct": "拾います là nhặt, lấy đồ từ mặt đất; dùng với ごみを 拾います (nhặt rác).",
+        "pitfalls": "すてます là vứt đi (hành động ngược lại); 洗います là rửa; 作ります là làm, chế tạo.",
+        "tip": "Nhớ 拾う là nhặt, 捨てる là vứt."
+      }
+    },
+    {
+      "id": "l26_v006",
+      "level": "medium",
+      "context": "Bạn báo cho nhà trường biết con bị ốm nên xin nghỉ học hôm nay.",
+      "answer": "れんらくします",
+      "kanji": "{連|れん}{絡|らく}します",
+      "distractors": [
+        "そうだんします",
+        "しょうかいします",
+        "けっこんします"
+      ],
+      "distractorsKanji": [
+        "そうだんします",
+        "しょうかいします",
+        "けっこんします"
+      ],
+      "explanation": {
+        "correct": "連絡します là liên lạc, báo cho ai đó; dùng với 学校に 連絡します.",
+        "pitfalls": "そうだんします là hỏi ý kiến, bàn bạc; しょうかいします là giới thiệu; けっこんします là kết hôn.",
+        "tip": "Liên lạc với ai dùng に: 学校に 連絡します."
+      }
+    },
+    {
+      "id": "l26_v007",
+      "level": "easy",
+      "context": "Sau khi ngủ đủ giấc, bạn thấy trong người thoải mái và vui vẻ.",
+      "answer": "きぶんがいい",
+      "kanji": "{気分|きぶん}がいい",
+      "distractors": [
+        "きぶんがわるい",
+        "さむい",
+        "ねむい"
+      ],
+      "distractorsKanji": [
+        "{気分|きぶん}がわるい",
+        "{寒|さむ}い",
+        "{眠|ねむ}い"
+      ],
+      "explanation": {
+        "correct": "気分がいい là cảm thấy dễ chịu, tâm trạng tốt.",
+        "pitfalls": "気分が悪い là trái nghĩa; 寒い là lạnh; 眠い là buồn ngủ.",
+        "tip": "Hỏi thăm: 気分は どうですか (cảm thấy thế nào)."
+      }
+    },
+    {
+      "id": "l26_v008",
+      "level": "medium",
+      "context": "Bạn thấy buồn nôn, khó chịu trong người nên xin về sớm.",
+      "answer": "きぶんがわるい",
+      "kanji": "{気分|きぶん}が{悪|わる}い",
+      "distractors": [
+        "きぶんがいい",
+        "あつい",
+        "ひくい"
+      ],
+      "distractorsKanji": [
+        "{気分|きぶん}がいい",
+        "{暑|あつ}い",
+        "{低|ひく}い"
+      ],
+      "explanation": {
+        "correct": "気分が悪い là cảm thấy không khỏe, khó chịu trong người.",
+        "pitfalls": "気分がいい là trái nghĩa; 暑い là nóng; 低い là thấp, không nói về cảm giác.",
+        "tip": "Khi xin nghỉ, có thể nói: 気分が悪いです。"
+      }
+    },
+    {
+      "id": "l26_v009",
+      "level": "easy",
+      "context": "Ngày hội thể thao của trường, học sinh thi chạy đua và thi đấu theo lớp.",
+      "answer": "うんどうかい",
+      "kanji": "{運動会|うんどうかい}",
+      "distractors": [
+        "はなみ",
+        "おまつり",
+        "がくげいかい"
+      ],
+      "distractorsKanji": [
+        "{花見|はなみ}",
+        "お{祭|まつ}り",
+        "がくげいかい"
+      ],
+      "explanation": {
+        "correct": "運動会 là hội thi thể thao của trường học.",
+        "pitfalls": "花見 là ngắm hoa anh đào; お祭り là lễ hội nói chung; 学芸会 là hội diễn văn nghệ học đường.",
+        "tip": "Ghép: 運動 (vận động) + 会 (hội)."
+      }
+    },
+    {
+      "id": "l26_v010",
+      "level": "medium",
+      "context": "Vào mùa hè ở Nhật, mọi người nhảy múa quanh tháp gỗ để tưởng nhớ tổ tiên.",
+      "answer": "ぼんおどり",
+      "kanji": "{盆|ぼん}{踊|おど}り",
+      "distractors": [
+        "おまつり",
+        "うんどうかい",
+        "ひなまつり"
+      ],
+      "distractorsKanji": [
+        "お{祭|まつ}り",
+        "{運動会|うんどうかい}",
+        "ひなまつり"
+      ],
+      "explanation": {
+        "correct": "盆踊り là múa vòng quanh trong lễ hội mùa hè (O-Bon).",
+        "pitfalls": "お祭り là lễ hội nói chung; 運動会 là hội thể thao; ひなまつり là lễ búp bê ngày 3 tháng 3.",
+        "tip": "盆踊り là một loại お祭り cụ thể của mùa hè."
+      }
+    },
+    {
+      "id": "l26_v011",
+      "level": "easy",
+      "context": "Cuối tuần, bạn bày đồ cũ không dùng nữa ra bán ở khu đất trống, ai cũng có thể đến mua.",
+      "answer": "フリーマーケット",
+      "kanji": "フリーマーケット",
+      "distractors": [
+        "スーパー",
+        "コンビニ",
+        "デパート"
+      ],
+      "distractorsKanji": [
+        "スーパー",
+        "コンビニ",
+        "デパート"
+      ],
+      "explanation": {
+        "correct": "フリーマーケット là chợ trời, nơi mọi người bán đồ cũ.",
+        "pitfalls": "スーパー là siêu thị; コンビニ là cửa hàng tiện lợi; デパート là trung tâm thương mại; đều là cửa hàng cố định.",
+        "tip": "フリー (tự do) + マーケット (chợ)."
+      }
+    },
+    {
+      "id": "l26_v012",
+      "level": "easy",
+      "context": "Bạn hỏi bạn bè xem buổi tiệc sẽ tổ chức ở đâu.",
+      "answer": "ばしょ",
+      "kanji": "{場所|ばしょ}",
+      "distractors": [
+        "じかん",
+        "ひと",
+        "ものごと"
+      ],
+      "distractorsKanji": [
+        "{時間|じかん}",
+        "{人|ひと}",
+        "{物事|ものごと}"
+      ],
+      "explanation": {
+        "correct": "場所 là nơi chốn, địa điểm.",
+        "pitfalls": "時間 là thời gian; 人 là người; 物事 là sự việc nói chung.",
+        "tip": "Hỏi địa điểm: 場所は どこですか。"
+      }
+    },
+    {
+      "id": "l26_v013",
+      "level": "medium",
+      "context": "Bạn làm việc giúp cộng đồng như dọn dẹp công viên mà không nhận tiền công.",
+      "answer": "ボランティア",
+      "kanji": "ボランティア",
+      "distractors": [
+        "アルバイト",
+        "パート",
+        "スタッフ"
+      ],
+      "distractorsKanji": [
+        "アルバイト",
+        "パート",
+        "スタッフ"
+      ],
+      "explanation": {
+        "correct": "ボランティア là tình nguyện, làm việc không lấy tiền công.",
+        "pitfalls": "アルバイト là làm thêm có lương; パート là làm bán thời gian có lương; スタッフ là nhân viên, thành viên đội.",
+        "tip": "Làm tình nguyện: ボランティアを します。"
+      }
+    },
+    {
+      "id": "l26_v014",
+      "level": "easy",
+      "context": "Vật nhỏ bằng da dùng để đựng tiền và thẻ, thường bỏ trong túi xách.",
+      "answer": "さいふ",
+      "kanji": "{財布|さいふ}",
+      "distractors": [
+        "かばん",
+        "ふくろ",
+        "くつ"
+      ],
+      "distractorsKanji": [
+        "かばん",
+        "ふくろ",
+        "くつ"
+      ],
+      "explanation": {
+        "correct": "財布 là ví tiền.",
+        "pitfalls": "かばん là cặp, túi xách; ふくろ là túi nói chung; くつ là giày.",
+        "tip": "Chữ 財 (tiền) + 布 (vải, da) gợi ý ví."
+      }
+    },
+    {
+      "id": "l26_v015",
+      "level": "medium",
+      "context": "Thứ bạn vứt đi như giấy vụn, vỏ hộp, thức ăn thừa.",
+      "answer": "ごみ",
+      "kanji": "ごみ",
+      "distractors": [
+        "こめ",
+        "ざっし",
+        "みず"
+      ],
+      "distractorsKanji": [
+        "こめ",
+        "{雑誌|ざっし}",
+        "{水|みず}"
+      ],
+      "explanation": {
+        "correct": "ごみ là rác.",
+        "pitfalls": "こめ là gạo (gần âm); 雑誌 là tạp chí; 水 là nước.",
+        "tip": "Dễ nhầm ごみ với こめ, hãy chú ý âm cuối み và め."
+      }
+    },
+    {
+      "id": "l26_v016",
+      "level": "hard",
+      "context": "Ngày trong tuần khi mọi người đi làm hoặc đi học, không phải thứ bảy và chủ nhật.",
+      "answer": "へいじつ",
+      "kanji": "{平日|へいじつ}",
+      "distractors": [
+        "しゅうまつ",
+        "きゅうじつ",
+        "まいにち"
+      ],
+      "distractorsKanji": [
+        "{週末|しゅうまつ}",
+        "{休日|きゅうじつ}",
+        "{毎日|まいにち}"
+      ],
+      "explanation": {
+        "correct": "平日 là ngày thường, ngày trong tuần đi làm đi học.",
+        "pitfalls": "週末 là cuối tuần; 休日 là ngày nghỉ nói chung; 毎日 là mỗi ngày.",
+        "tip": "Đối lập: 平日 ↔ 週末 / 休日."
+      }
+    },
+    {
+      "id": "l26_v017",
+      "level": "hard",
+      "context": "Trong lúc trò chuyện, bạn muốn nói lần sau hai người sẽ cùng đi chơi, không phải hôm nay.",
+      "answer": "こんど",
+      "kanji": "{今度|こんど}",
+      "distractors": [
+        "きのう",
+        "いま",
+        "あした"
+      ],
+      "distractorsKanji": [
+        "{昨日|きのう}",
+        "{今|いま}",
+        "{明日|あした}"
+      ],
+      "explanation": {
+        "correct": "今度 là lần tới, lần sau (trong tương lai gần).",
+        "pitfalls": "昨日 là hôm qua; 今 là bây giờ; 明日 là ngày mai; đều không có nghĩa \"lần tới\".",
+        "tip": "今度 cũng có thể là \"lần này\", tùy ngữ cảnh."
+      }
+    },
+    {
+      "id": "l26_v018",
+      "level": "easy",
+      "context": "Bạn bảo bạn bè cứ gọi cho mình lúc nào cũng được, lúc nào mình cũng rảnh.",
+      "answer": "いつでも",
+      "kanji": "いつでも",
+      "distractors": [
+        "どこでも",
+        "だれでも",
+        "なんでも"
+      ],
+      "distractorsKanji": [
+        "どこでも",
+        "だれでも",
+        "なんでも"
+      ],
+      "explanation": {
+        "correct": "いつでも là bất cứ lúc nào, lúc nào cũng được.",
+        "pitfalls": "どこでも là ở đâu cũng được; だれでも là ai cũng; なんでも là cái gì cũng.",
+        "tip": "Cấu tạo: từ nghi vấn + でも = bất kỳ, nào cũng."
+      }
+    },
+    {
+      "id": "l26_v019",
+      "level": "easy",
+      "context": "Bạn nói có thể ăn ở bất kỳ quán nào, chỗ nào cũng được.",
+      "answer": "どこでも",
+      "kanji": "どこでも",
+      "distractors": [
+        "いつでも",
+        "だれでも",
+        "なんでも"
+      ],
+      "distractorsKanji": [
+        "いつでも",
+        "だれでも",
+        "なんでも"
+      ],
+      "explanation": {
+        "correct": "どこでも là ở đâu cũng được, chỗ nào cũng được.",
+        "pitfalls": "いつでも là lúc nào cũng; だれでも là ai cũng; なんでも là cái gì cũng.",
+        "tip": "どこ + でも: nơi nào cũng."
+      }
+    },
+    {
+      "id": "l26_v020",
+      "level": "easy",
+      "context": "Lớp học mở cho bất kỳ ai muốn học, không giới hạn người tham gia.",
+      "answer": "だれでも",
+      "kanji": "だれでも",
+      "distractors": [
+        "いつでも",
+        "どこでも",
+        "なんでも"
+      ],
+      "distractorsKanji": [
+        "いつでも",
+        "どこでも",
+        "なんでも"
+      ],
+      "explanation": {
+        "correct": "だれでも là ai cũng, bất kỳ ai.",
+        "pitfalls": "いつでも là lúc nào; どこでも là ở đâu; なんでも là cái gì.",
+        "tip": "だれ + でも: ai cũng."
+      }
+    },
+    {
+      "id": "l26_v021",
+      "level": "easy",
+      "context": "Bạn bảo bạn: món gì cũng được, cậu muốn ăn gì tớ cũng ăn.",
+      "answer": "なんでも",
+      "kanji": "なんでも",
+      "distractors": [
+        "いつでも",
+        "どこでも",
+        "だれでも"
+      ],
+      "distractorsKanji": [
+        "いつでも",
+        "どこでも",
+        "だれでも"
+      ],
+      "explanation": {
+        "correct": "なんでも là cái gì cũng, thứ gì cũng được.",
+        "pitfalls": "いつでも là lúc nào; どこでも là ở đâu; だれでも là ai.",
+        "tip": "なに + でも: cái gì cũng."
+      }
+    },
+    {
+      "id": "l26_v022",
+      "level": "medium",
+      "context": "Bạn chỉ vào một chiếc áo ngay trước mặt mình, nó có kiểu dáng như thế này.",
+      "answer": "こんな",
+      "kanji": "こんな",
+      "distractors": [
+        "そんな",
+        "あんな",
+        "どんな"
+      ],
+      "distractorsKanji": [
+        "そんな",
+        "あんな",
+        "どんな"
+      ],
+      "explanation": {
+        "correct": "こんな là kiểu như thế này, chỉ vật gần người nói.",
+        "pitfalls": "そんな là như thế đó (gần người nghe); あんな là như thế kia (xa cả hai); どんな là như thế nào (câu hỏi).",
+        "tip": "Nhóm こ/そ/あ/ど: gần người nói / gần người nghe / xa / nghi vấn."
+      }
+    },
+    {
+      "id": "l26_v023",
+      "level": "medium",
+      "context": "Bạn nói với người đối diện về món đồ họ vừa đưa cho mình, món đồ nằm gần người nghe.",
+      "answer": "そんな",
+      "kanji": "そんな",
+      "distractors": [
+        "こんな",
+        "あんな",
+        "どんな"
+      ],
+      "distractorsKanji": [
+        "こんな",
+        "あんな",
+        "どんな"
+      ],
+      "explanation": {
+        "correct": "そんな là như thế đó, chỉ điều gần người nghe.",
+        "pitfalls": "こんな là như thế này (gần người nói); あんな là như thế kia (xa); どんな là như thế nào.",
+        "tip": "Đối với đồ của người nghe, dùng そんな."
+      }
+    },
+    {
+      "id": "l26_v024",
+      "level": "hard",
+      "context": "Bạn chỉ về một tòa nhà cao phía xa bên kia đường và nói \"tòa nhà kiểu thế kia\".",
+      "answer": "あんな",
+      "kanji": "あんな",
+      "distractors": [
+        "こんな",
+        "そんな",
+        "どんな"
+      ],
+      "distractorsKanji": [
+        "こんな",
+        "そんな",
+        "どんな"
+      ],
+      "explanation": {
+        "correct": "あんな là kiểu như thế kia, chỉ vật ở xa cả người nói lẫn người nghe.",
+        "pitfalls": "こんな là gần người nói; そんな là gần người nghe; どんな là câu hỏi \"như thế nào\".",
+        "tip": "Khi thấy vật ở xa, dùng あんな."
+      }
+    },
+    {
+      "id": "l26_v025",
+      "level": "hard",
+      "context": "Sau khi dọn dẹp, căn phòng trở nên gọn gàng, mọi thứ đã ngăn nắp.",
+      "answer": "かたづきます",
+      "kanji": "{片付|かたづ}きます",
+      "distractors": [
+        "かたづけます",
+        "ならびます",
+        "ねます"
+      ],
+      "distractorsKanji": [
+        "{片付|かたづ}けます",
+        "ならびます",
+        "{寝|ね}ます"
+      ],
+      "explanation": {
+        "correct": "片付きます là được dọn gọn, ngăn nắp (trạng thái, không nêu người làm).",
+        "pitfalls": "片付けます là dọn dẹp (có người làm việc đó); 並びます là xếp hàng; 寝ます là ngủ.",
+        "tip": "Tự động từ 片付く đi với が: 部屋が 片付きます; tha động từ 片付ける đi với を."
+      }
+    },
+    {
+      "id": "l26_v026",
+      "level": "medium",
+      "context": "Bạn mang rác ra chỗ thu gom đúng ngày quy định để đổ rác.",
+      "answer": "だします",
+      "kanji": "{出|だ}します",
+      "distractors": [
+        "おきます",
+        "いれます",
+        "あつめます"
+      ],
+      "distractorsKanji": [
+        "{置|お}きます",
+        "{入|い}れます",
+        "あつめます"
+      ],
+      "explanation": {
+        "correct": "出します là đưa ra, đổ rác, để rác ra nơi quy định.",
+        "pitfalls": "置きます là đặt; 入れます là cho vào; 集めます là gom lại.",
+        "tip": "出す còn dùng cho: 手紙を 出す (gửi thư)."
+      }
+    },
+    {
+      "id": "l26_v027",
+      "level": "medium",
+      "context": "Chai thủy tinh đựng bia hoặc nước ngọt, uống xong phải bỏ vào thùng rác riêng.",
+      "answer": "びん",
+      "kanji": "{瓶|びん}",
+      "distractors": [
+        "かん",
+        "ペットボトル",
+        "かみ"
+      ],
+      "distractorsKanji": [
+        "{缶|かん}",
+        "ペットボトル",
+        "{紙|かみ}"
+      ],
+      "explanation": {
+        "correct": "瓶 là chai thủy tinh.",
+        "pitfalls": "缶 là lon kim loại; ペットボトル là chai nhựa; 紙 là giấy.",
+        "tip": "Phân loại rác theo chất liệu: 瓶 thủy tinh, 缶 kim loại."
+      }
+    },
+    {
+      "id": "l26_v028",
+      "level": "medium",
+      "context": "Vỏ kim loại đựng bia hoặc nước ngọt, sau khi uống phải bỏ vào thùng rác riêng cho kim loại.",
+      "answer": "かん",
+      "kanji": "{缶|かん}",
+      "distractors": [
+        "びん",
+        "ペットボトル",
+        "かみ"
+      ],
+      "distractorsKanji": [
+        "{瓶|びん}",
+        "ペットボトル",
+        "{紙|かみ}"
+      ],
+      "explanation": {
+        "correct": "缶 là lon, hộp kim loại.",
+        "pitfalls": "瓶 là chai thủy tinh; ペットボトル là chai nhựa; 紙 là giấy.",
+        "tip": "Phân biệt bằng chất liệu: 缶 kim loại, 瓶 thủy tinh."
+      }
+    },
+    {
+      "id": "l26_v029",
+      "level": "hard",
+      "context": "Nguồn nhiên liệu dùng để đun nấu. Khi chuyển nhà, bạn phải đăng ký với công ty cung cấp để bắt đầu sử dụng.",
+      "answer": "ガス",
+      "kanji": "ガス",
+      "distractors": [
+        "でんき",
+        "みず",
+        "こおり"
+      ],
+      "distractorsKanji": [
+        "{電気|でんき}",
+        "{水|みず}",
+        "こおり"
+      ],
+      "explanation": {
+        "correct": "ガス là ga, nhiên liệu dùng để nấu ăn.",
+        "pitfalls": "電気 là điện; 水 là nước; こおり là đá, nước đá.",
+        "tip": "ガス会社 là công ty ga, nơi đăng ký khi chuyển nhà."
+      }
+    },
+    {
+      "id": "l26_v030",
+      "level": "easy",
+      "context": "Phương tiện bay ra khoảng không gian, dùng để đưa người lên mặt trăng.",
+      "answer": "うちゅうせん",
+      "kanji": "{宇宙船|うちゅうせん}",
+      "distractors": [
+        "ふね",
+        "ひこうき",
+        "でんしゃ"
+      ],
+      "distractorsKanji": [
+        "{船|ふね}",
+        "{飛行機|ひこうき}",
+        "{電車|でんしゃ}"
+      ],
+      "explanation": {
+        "correct": "宇宙船 là tàu vũ trụ, phương tiện đi trong không gian.",
+        "pitfalls": "船 là thuyền, tàu thủy; 飛行機 là máy bay; 電車 là tàu điện; không bay ra không gian.",
+        "tip": "宇宙 (vũ trụ) + 船 (tàu)."
+      }
+    },
+    {
+      "id": "l26_v031",
+      "level": "easy",
+      "context": "Bạn xem phim ma và cảm thấy sợ hãi, tim đập nhanh.",
+      "answer": "こわい",
+      "kanji": "{怖|こわ}い",
+      "distractors": [
+        "うれしい",
+        "さびしい",
+        "たのしい"
+      ],
+      "distractorsKanji": [
+        "うれしい",
+        "さびしい",
+        "{楽|たの}しい"
+      ],
+      "explanation": {
+        "correct": "怖い là sợ, đáng sợ.",
+        "pitfalls": "うれしい là vui mừng; さびしい là cô đơn, buồn; 楽しい là vui vẻ, thú vị.",
+        "tip": "Tính từ đuôi い: 怖い → 怖くない (phủ định)."
+      }
+    },
+    {
+      "id": "l26_v032",
+      "level": "medium",
+      "context": "Có người gọi nhầm số điện thoại của bạn và hỏi tìm người khác, bạn trả lời rằng đây không phải số đó.",
+      "answer": "ちがいます",
+      "kanji": "{違|ちが}います",
+      "distractors": [
+        "まちがえます",
+        "あいます",
+        "かえります"
+      ],
+      "distractorsKanji": [
+        "まちがえます",
+        "{会|あ}います",
+        "{帰|かえ}ります"
+      ],
+      "explanation": {
+        "correct": "違います là khác, không đúng, không phải.",
+        "pitfalls": "まちがえます là làm nhầm (hành động); 会います là gặp; 帰ります là về.",
+        "tip": "Khi trả lời nhầm số: ちがいます。"
+      }
+    },
+    {
+      "id": "l26_v033",
+      "level": "hard",
+      "context": "Người được huấn luyện để bay lên vũ trụ và làm việc trên trạm không gian.",
+      "answer": "うちゅうひこうし",
+      "kanji": "{宇宙飛行士|うちゅうひこうし}",
+      "distractors": [
+        "うちゅうじん",
+        "はいしゃ",
+        "きょうし"
+      ],
+      "distractorsKanji": [
+        "{宇宙人|うちゅうじん}",
+        "{歯医者|はいしゃ}",
+        "{教師|きょうし}"
+      ],
+      "explanation": {
+        "correct": "宇宙飛行士 là phi hành gia, nhà du hành vũ trụ.",
+        "pitfalls": "宇宙人 là người ngoài hành tinh; 歯医者 là nha sĩ; 教師 là giáo viên.",
+        "tip": "宇宙 + 飛行 (bay) + 士 (người có nghề)."
+      }
+    },
+    {
+      "id": "l26_v034",
+      "level": "medium",
+      "context": "Bạn lên mạng để tìm một quán ăn ngon ở khu này.",
+      "answer": "さがします",
+      "kanji": "{探|さが}します",
+      "distractors": [
+        "みつけます",
+        "ききます",
+        "かいます"
+      ],
+      "distractorsKanji": [
+        "{見|み}つけます",
+        "{聞|き}きます",
+        "{買|か}います"
+      ],
+      "explanation": {
+        "correct": "探します là tìm kiếm, cố gắng tìm, chưa chắc đã thấy.",
+        "pitfalls": "見つけます là tìm thấy (có kết quả); 聞きます là nghe, hỏi; 買います là mua.",
+        "tip": "探す là đi tìm; 見つける là tìm thấy. Đồ bị mất thường viết 捜す (cùng cách đọc さがす)."
+      }
+    },
+    {
+      "id": "l26_v035",
+      "level": "hard",
+      "context": "Trong lớp, bạn ngồi cạnh bạn, ở phía bên cạnh chứ không phải phía trước hay phía sau.",
+      "answer": "よこ",
+      "kanji": "{横|よこ}",
+      "distractors": [
+        "うえ",
+        "した",
+        "まえ"
+      ],
+      "distractorsKanji": [
+        "{上|うえ}",
+        "{下|した}",
+        "{前|まえ}"
+      ],
+      "explanation": {
+        "correct": "横 là bên cạnh, phía bên.",
+        "pitfalls": "上 là trên; 下 là dưới; 前 là phía trước.",
+        "tip": "Vị trí: 前, 後ろ, 横, 上, 下, 中."
+      }
+    }
+  ],
+  "game2": [
+    {
+      "id": "l26_g001",
+      "level": "easy",
+      "sentence": "すみません、この にもつを {持|も}って ＿ ませんか。",
+      "translation": "Xin lỗi, bạn có thể cầm giúp hành lý này được không?",
+      "options": [
+        {
+          "text": "いただけ",
+          "kanji": "いただけ"
+        },
+        {
+          "text": "いただく",
+          "kanji": "いただく"
+        },
+        {
+          "text": "いただいた",
+          "kanji": "いただいた"
+        },
+        {
+          "text": "いただいて",
+          "kanji": "いただいて"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "いただけ + ませんか tạo câu nhờ người khác làm giúp một cách lịch sự.",
+        "pitfalls": "いただく đứng trước ませんか thành câu sai; いただいた là quá khứ; いただいて là thể て, không kết thúc câu.",
+        "tip": "Mẫu: Vて + いただけませんか (lịch sự hơn 〜てください)."
+      }
+    },
+    {
+      "id": "l26_g002",
+      "level": "easy",
+      "sentence": "すみません、もういちど せつめいして ＿ ませんか。",
+      "translation": "Xin lỗi, bạn có thể giải thích lại một lần nữa giúp tôi được không?",
+      "options": [
+        {
+          "text": "いただけ",
+          "kanji": "いただけ"
+        },
+        {
+          "text": "いただか",
+          "kanji": "いただか"
+        },
+        {
+          "text": "いただいて",
+          "kanji": "いただいて"
+        },
+        {
+          "text": "いただいた",
+          "kanji": "いただいた"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "いただけ là dạng khả năng của いただく, đứng trước ませんか để nhờ lịch sự.",
+        "pitfalls": "いただか là gốc chưa biến đổi, không đứng trước ませんか; いただいて và いただいた không đúng cấu trúc nhờ.",
+        "tip": "Trước いただけ luôn là thể て của động từ chính (せつめいして)."
+      }
+    },
+    {
+      "id": "l26_g003",
+      "level": "medium",
+      "sentence": "お{忙|いそが}しい ところ すみませんが、{駅|えき}までの {道|みち}を {教|おし}えて ＿ ませんか。",
+      "translation": "Xin lỗi vì làm phiền khi bạn đang bận, bạn có thể chỉ giúp tôi đường đến ga được không?",
+      "options": [
+        {
+          "text": "いただける",
+          "kanji": "いただける"
+        },
+        {
+          "text": "いただく",
+          "kanji": "いただく"
+        },
+        {
+          "text": "いただいた",
+          "kanji": "いただいた"
+        },
+        {
+          "text": "いただいて",
+          "kanji": "いただいて"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "いただける (thể khả năng) đứng trước ませんか tạo câu nhờ lịch sự; câu này nhờ chỉ đường.",
+        "pitfalls": "いただく đứng trước ませんか sai; いただいた là quá khứ; いただいて không kết thúc câu.",
+        "tip": "Khi nhờ chỉ đường, nói: 道を 教えて いただけませんか。"
+      }
+    },
+    {
+      "id": "l26_g004",
+      "level": "medium",
+      "sentence": "せんせい、この {漢字|かんじ}の よみかたを {教|おし}えて ＿ ませんか。",
+      "translation": "Thầy ơi, thầy có thể dạy em cách đọc chữ Hán này được không ạ?",
+      "options": [
+        {
+          "text": "いただけ",
+          "kanji": "いただけ"
+        },
+        {
+          "text": "いただく",
+          "kanji": "いただく"
+        },
+        {
+          "text": "いただいた",
+          "kanji": "いただいた"
+        },
+        {
+          "text": "いただいて",
+          "kanji": "いただいて"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "いただけ đứng trước ませんか tạo lời nhờ lịch sự với thầy cô.",
+        "pitfalls": "いただく đứng trước ませんか sai; いただいた là quá khứ; いただいて là thể て.",
+        "tip": "先生 hay người trên là đối tượng hợp để dùng mẫu này."
+      }
+    },
+    {
+      "id": "l26_g005",
+      "level": "hard",
+      "sentence": "てんいんさん、この メニューの ないようを せつめいして ＿ ませんか。",
+      "translation": "Xin lỗi, bạn có thể giải thích nội dung món này cho tôi được không?",
+      "options": [
+        {
+          "text": "いただけ",
+          "kanji": "いただけ"
+        },
+        {
+          "text": "いただける",
+          "kanji": "いただける"
+        },
+        {
+          "text": "いただいた",
+          "kanji": "いただいた"
+        },
+        {
+          "text": "いただいて",
+          "kanji": "いただいて"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "いただけ là gốc thể khả năng, đứng trước ませんか; câu có hai dạng khả năng thì sai.",
+        "pitfalls": "いただける trước ませんか lặp dạng, sai; いただいた là quá khứ; いただいて không kết thúc câu.",
+        "tip": "Thể khả năng いただける/いただけ, dạng ませんか ghép với gốc い: いただけませんか."
+      }
+    },
+    {
+      "id": "l26_g006",
+      "level": "hard",
+      "sentence": "すみません、この かばんを あちらの {部屋|へや}まで はこんで ＿ ませんか。",
+      "translation": "Xin lỗi, bạn có thể mang giúp cái cặp này sang phòng bên kia được không?",
+      "options": [
+        {
+          "text": "いただく",
+          "kanji": "いただく"
+        },
+        {
+          "text": "いただいた",
+          "kanji": "いただいた"
+        },
+        {
+          "text": "いただいて",
+          "kanji": "いただいて"
+        },
+        {
+          "text": "いただけ",
+          "kanji": "いただけ"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": "いただけ là thể khả năng của いただく, đứng trước ませんか để nhờ lịch sự.",
+        "pitfalls": "いただく (thể từ điển) không đứng trước ませんか; いただいた là quá khứ; いただいて là thể て.",
+        "tip": "人に 〜して もらう / いただく: người nhờ là mình, người làm là người khác."
+      }
+    },
+    {
+      "id": "l26_g007",
+      "level": "easy",
+      "sentence": "ここから {駅|えき}まで ＿ いいですか。",
+      "translation": "Từ đây đến ga, đi bằng cách nào thì tốt ạ?",
+      "options": [
+        {
+          "text": "どう いったら",
+          "kanji": "どう {行|い}ったら"
+        },
+        {
+          "text": "いつ いったら",
+          "kanji": "いつ {行|い}ったら"
+        },
+        {
+          "text": "だれが いったら",
+          "kanji": "だれが {行|い}ったら"
+        },
+        {
+          "text": "なに いったら",
+          "kanji": "なに {行|い}ったら"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "どう + Vたら いいですか hỏi cách làm thế nào thì tốt.",
+        "pitfalls": "いつ 行ったら hỏi thời điểm; だれが 行ったら hỏi ai; なに 行ったら không đúng ngữ pháp.",
+        "tip": "Từ để hỏi + Vたら いいですか: xin lời khuyên."
+      }
+    },
+    {
+      "id": "l26_g008",
+      "level": "easy",
+      "sentence": "かぜを ひいた {時|とき}は、なにを ＿ いいですか。",
+      "translation": "Khi bị cảm, nên uống gì thì tốt ạ?",
+      "options": [
+        {
+          "text": "のんだら",
+          "kanji": "のんだら"
+        },
+        {
+          "text": "のむ",
+          "kanji": "のむ"
+        },
+        {
+          "text": "のみ",
+          "kanji": "のみ"
+        },
+        {
+          "text": "のんだ",
+          "kanji": "のんだ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "なにを + Vたら いいですか hỏi nên làm gì, ở đây là uống gì.",
+        "pitfalls": "のむ, のみ, のんだ đứng trước いいですか đều không đúng cấu trúc.",
+        "tip": "のんだら là thể た + ら (nếu/khi đã uống)."
+      }
+    },
+    {
+      "id": "l26_g009",
+      "level": "medium",
+      "sentence": "その しょるいは いつ ＿ いいですか。",
+      "translation": "Tài liệu này khi nào nộp thì được ạ?",
+      "options": [
+        {
+          "text": "だしたら",
+          "kanji": "{出|だ}したら"
+        },
+        {
+          "text": "だす",
+          "kanji": "{出|だ}す"
+        },
+        {
+          "text": "だした",
+          "kanji": "{出|だ}した"
+        },
+        {
+          "text": "だします",
+          "kanji": "{出|だ}します"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "いつ + Vたら いいですか hỏi thời điểm nên làm.",
+        "pitfalls": "出す, 出した, 出します đứng trước いいですか đều không đúng cấu trúc hỏi.",
+        "tip": "出す (nộp, đưa ra) hay dùng với 書類."
+      }
+    },
+    {
+      "id": "l26_g010",
+      "level": "medium",
+      "sentence": "この {問題|もんだい}は だれに ＿ いいですか。",
+      "translation": "Vấn đề này nên hỏi ai thì tốt ạ?",
+      "options": [
+        {
+          "text": "そうだんしたら",
+          "kanji": "そうだんしたら"
+        },
+        {
+          "text": "そうだんする",
+          "kanji": "そうだんする"
+        },
+        {
+          "text": "そうだんします",
+          "kanji": "そうだんします"
+        },
+        {
+          "text": "そうだんした",
+          "kanji": "そうだんした"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "だれに + Vたら いいですか hỏi nên nhờ ai đó.",
+        "pitfalls": "そうだんする, そうだんします, そうだんした không đứng trước いいですか đúng nghĩa hỏi lời khuyên.",
+        "tip": "Mẫu này dùng cho câu hỏi xin lời khuyên về người nên tìm."
+      }
+    },
+    {
+      "id": "l26_g011",
+      "level": "medium",
+      "sentence": "えいがの チケットは どこで ＿ いいですか。",
+      "translation": "Vé xem phim thì mua ở đâu thì tốt ạ?",
+      "options": [
+        {
+          "text": "かったら",
+          "kanji": "{買|か}ったら"
+        },
+        {
+          "text": "かう",
+          "kanji": "{買|か}う"
+        },
+        {
+          "text": "かいます",
+          "kanji": "{買|か}います"
+        },
+        {
+          "text": "かいたい",
+          "kanji": "{買|か}いたい"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "どこで + Vたら いいですか hỏi nên làm ở đâu, ở đây là mua ở đâu.",
+        "pitfalls": "買う, 買います, 買いたい không đứng trước いいですか đúng cấu trúc.",
+        "tip": "Chú ý: 買っていいですか là hỏi xin phép, khác nghĩa."
+      }
+    },
+    {
+      "id": "l26_g012",
+      "level": "hard",
+      "sentence": "この カードを なくした {時|とき}、どこに ＿ いいですか。",
+      "translation": "Khi làm mất thẻ này, nên liên lạc đến đâu thì tốt ạ?",
+      "options": [
+        {
+          "text": "れんらくしたら",
+          "kanji": "{連絡|れんらく}したら"
+        },
+        {
+          "text": "れんらくする",
+          "kanji": "{連絡|れんらく}する"
+        },
+        {
+          "text": "れんらくします",
+          "kanji": "{連絡|れんらく}します"
+        },
+        {
+          "text": "れんらくした",
+          "kanji": "{連絡|れんらく}した"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "どこに + Vたら いいですか hỏi nên liên lạc ở đâu, ở đây là liên lạc đến đâu.",
+        "pitfalls": "連絡する, 連絡します, 連絡した đứng trước いいですか không đúng cấu trúc hỏi lời khuyên.",
+        "tip": "連絡 là liên lạc, báo cho nơi chức năng."
+      }
+    },
+    {
+      "id": "l26_g013",
+      "level": "easy",
+      "sentence": "どうして きのう {遅|おく}れた ＿。",
+      "translation": "Tại sao hôm qua bạn lại đến muộn vậy?",
+      "options": [
+        {
+          "text": "んですか",
+          "kanji": "んですか"
+        },
+        {
+          "text": "ですか",
+          "kanji": "ですか"
+        },
+        {
+          "text": "ましたか",
+          "kanji": "ましたか"
+        },
+        {
+          "text": "ますか",
+          "kanji": "ますか"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Thể thường + んですか dùng để hỏi lý do.",
+        "pitfalls": "ですか thiếu ん nên không hỏi lý do; ましたか và ますか là thể lịch sự, không đi sau thể thường.",
+        "tip": "Mẫu: Vた + んですか = \"Sao lại…?\""
+      }
+    },
+    {
+      "id": "l26_g014",
+      "level": "easy",
+      "sentence": "A：どうしたんですか。 B：きのう あめに ぬれた ＿。",
+      "translation": "A: Bạn bị sao vậy? B: Hôm qua tôi bị mưa làm ướt.",
+      "options": [
+        {
+          "text": "んです",
+          "kanji": "んです"
+        },
+        {
+          "text": "です",
+          "kanji": "です"
+        },
+        {
+          "text": "ます",
+          "kanji": "ます"
+        },
+        {
+          "text": "でした",
+          "kanji": "でした"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Thể thường + んです dùng để giải thích nguyên nhân.",
+        "pitfalls": "です, ます, でした là thể lịch sự, không có ん nên không giải thích nguyên nhân theo mẫu này.",
+        "tip": "A hỏi どうしたんですか để yêu cầu lời giải thích."
+      }
+    },
+    {
+      "id": "l26_g015",
+      "level": "easy",
+      "sentence": "A：えいがを みに いきませんか。 B：すみません、きょうは いけない ＿。",
+      "translation": "A: Bạn có muốn đi xem phim không? B: Xin lỗi, hôm nay tôi không đi được.",
+      "options": [
+        {
+          "text": "んです",
+          "kanji": "んです"
+        },
+        {
+          "text": "ません",
+          "kanji": "ません"
+        },
+        {
+          "text": "ませんでした",
+          "kanji": "ませんでした"
+        },
+        {
+          "text": "ませんか",
+          "kanji": "ませんか"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Thể thường いけない + んです để nêu lý do từ chối nhẹ nhàng.",
+        "pitfalls": "ません, ませんでした, ませんか là thể lịch sự, không đi sau thể thường như いけない.",
+        "tip": "Từ chối lịch sự: 〜んです。"
+      }
+    },
+    {
+      "id": "l26_g016",
+      "level": "medium",
+      "sentence": "A：どうして こんなに かったんですか。 B：あした ともだちが ＿ んです。",
+      "translation": "A: Sao bạn mua nhiều thế? B: Ngày mai bạn tôi sẽ đến nên…",
+      "options": [
+        {
+          "text": "くる",
+          "kanji": "くる"
+        },
+        {
+          "text": "きます",
+          "kanji": "きます"
+        },
+        {
+          "text": "きました",
+          "kanji": "きました"
+        },
+        {
+          "text": "こない",
+          "kanji": "こない"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "くる là thể thường của 来ます, đứng trước んです.",
+        "pitfalls": "きます là thể lịch sự, không đứng trước んです; きました là quá khứ lịch sự; こない nghĩa là không đến, trái ý người nói.",
+        "tip": "Thể thường của 来ます là 来る (くる)."
+      }
+    },
+    {
+      "id": "l26_g017",
+      "level": "medium",
+      "sentence": "A：どうして きのうは かいぎに こなかったんですか。 B：ちょっと ＿ んです。",
+      "translation": "A: Hôm qua sao bạn không đến cuộc họp vậy? B: Tôi hơi ngủ quên.",
+      "options": [
+        {
+          "text": "ねすごした",
+          "kanji": "ねすごした"
+        },
+        {
+          "text": "ねすごします",
+          "kanji": "ねすごします"
+        },
+        {
+          "text": "ねすごしました",
+          "kanji": "ねすごしました"
+        },
+        {
+          "text": "ねすごしませんでした",
+          "kanji": "ねすごしませんでした"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "ねすごした là thể thường quá khứ, đứng trước んです để giải thích.",
+        "pitfalls": "ねすごします, ねすごしました, ねすごしませんでした là thể lịch sự, không đứng trước んです.",
+        "tip": "ねすごす là ngủ quên, ngủ quá giờ."
+      }
+    },
+    {
+      "id": "l26_g018",
+      "level": "hard",
+      "sentence": "A：このレストランに よく いきますか。 B：はい、ここの りょうりが ＿ んです。",
+      "translation": "A: Bạn có hay đến nhà hàng này không? B: Vâng, vì món ăn ở đây tôi thích lắm.",
+      "options": [
+        {
+          "text": "すきな",
+          "kanji": "すきな"
+        },
+        {
+          "text": "すき",
+          "kanji": "すき"
+        },
+        {
+          "text": "すきです",
+          "kanji": "すきです"
+        },
+        {
+          "text": "すきでした",
+          "kanji": "すきでした"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Tính từ đuôi な ở thể thường là 好きだ; trước んです phải là 好きな.",
+        "pitfalls": "すき không có な nên không đứng trước んです; すきです và すきでした là thể lịch sự, không đi trước んです.",
+        "tip": "Tính từ đuôi な + なんです: ここの りょうりが 好きなんです。"
+      }
+    },
+    {
+      "id": "l26_g019",
+      "level": "easy",
+      "sentence": "やまださん ＿ すしが {好|す}きです。",
+      "translation": "Anh Yamada thích sushi.",
+      "options": [
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は đưa Yamada lên làm chủ đề, sau đó nói về điều người đó thích.",
+        "pitfalls": "を đánh dấu tân ngữ; に và で không đóng vai trò chủ đề ở đây.",
+        "tip": "Mẫu N は + (好きです/上手です/嫌いです...): N là đối tượng được nêu làm chủ đề."
+      }
+    },
+    {
+      "id": "l26_g020",
+      "level": "easy",
+      "sentence": "わたし ＿ えいごが {上手|じょうず}です。",
+      "translation": "Tôi giỏi tiếng Anh.",
+      "options": [
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は nêu \"tôi\" làm chủ đề, sau đó nói về khả năng 英語が 上手です.",
+        "pitfalls": "を, に, で không đúng vai trò đánh dấu chủ đề.",
+        "tip": "上手です và 下手です thường đi với N は + N が."
+      }
+    },
+    {
+      "id": "l26_g021",
+      "level": "medium",
+      "sentence": "わたし ＿ {料理|りょうり}を {作|つく}るのが {上手|じょうず}です。",
+      "translation": "Tôi giỏi nấu ăn.",
+      "options": [
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "の",
+          "kanji": "の"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は nêu \"tôi\" làm chủ đề; 料理を 作るのが 上手です là nói về việc nấu ăn.",
+        "pitfalls": "を và で không đúng vai trò; の không làm chủ đề với わたし.",
+        "tip": "Chủ đề は + động từ dạng danh từ (〜のが) + 上手です."
+      }
+    },
+    {
+      "id": "l26_g022",
+      "level": "medium",
+      "sentence": "わたし ＿ {映画|えいが}を {見|み}るのが {好|す}きです。",
+      "translation": "Tôi thích xem phim.",
+      "options": [
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は nêu \"tôi\" làm chủ đề; 映画を 見るのが 好きです là thích xem phim.",
+        "pitfalls": "を, で, に không đúng vai trò chủ đề ở đây.",
+        "tip": "〜のが 好きです: thích việc làm gì."
+      }
+    },
+    {
+      "id": "l26_g023",
+      "level": "medium",
+      "sentence": "この {町|まち} ＿ {大|おお}きい {病院|びょういん}が あります。",
+      "translation": "Thành phố này có một bệnh viện lớn.",
+      "options": [
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "の",
+          "kanji": "の"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は nêu thành phố làm chủ đề, sau đó nói có bệnh viện lớn.",
+        "pitfalls": "を không đúng với あります; で không dùng cho sự tồn tại; の không làm chủ đề.",
+        "tip": "Mẫu N は + あります: nói về sự tồn tại của cái gì ở N."
+      }
+    },
+    {
+      "id": "l26_g024",
+      "level": "hard",
+      "sentence": "{大阪|おおさか}に すんで いる {友|とも}だち ＿ {大阪弁|おおさかべん}が 上手です。",
+      "translation": "Người bạn sống ở Osaka thì giỏi tiếng Osaka.",
+      "options": [
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は nêu \"người bạn sống ở Osaka\" làm chủ đề, sau đó nói về 大阪弁 mà bạn ấy giỏi.",
+        "pitfalls": "を, に, で không đúng vai trò chủ đề; câu có mệnh đề bổ nghĩa nên dễ nhầm.",
+        "tip": "Chủ đề có thể dài, は đặt sau cụm danh từ kết thúc."
+      }
+    },
+    {
+      "id": "l26_g025",
+      "level": "easy",
+      "sentence": "パーティーは ＿ {来|き}て いいです。",
+      "translation": "Buổi tiệc này ai cũng có thể đến.",
+      "options": [
+        {
+          "text": "だれでも",
+          "kanji": "だれでも"
+        },
+        {
+          "text": "どこでも",
+          "kanji": "どこでも"
+        },
+        {
+          "text": "いつでも",
+          "kanji": "いつでも"
+        },
+        {
+          "text": "なんでも",
+          "kanji": "なんでも"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "だれでも là ai cũng; phù hợp chủ thể người đến dự tiệc.",
+        "pitfalls": "どこでも là ở đâu; いつでも là lúc nào; なんでも là cái gì; không hợp chủ thể người.",
+        "tip": "だれでも dùng để nói mọi người đều được."
+      }
+    },
+    {
+      "id": "l26_g026",
+      "level": "easy",
+      "sentence": "この {店|みせ}では ＿ {買|か}えます。",
+      "translation": "Ở cửa hàng này có thể mua bất cứ thứ gì.",
+      "options": [
+        {
+          "text": "なんでも",
+          "kanji": "なんでも"
+        },
+        {
+          "text": "だれでも",
+          "kanji": "だれでも"
+        },
+        {
+          "text": "いつでも",
+          "kanji": "いつでも"
+        },
+        {
+          "text": "どこでも",
+          "kanji": "どこでも"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "なんでも là cái gì cũng, phù hợp với vật được mua.",
+        "pitfalls": "だれでも là ai; いつでも là lúc nào; どこでも là ở đâu; không hợp với 買える.",
+        "tip": "なんでも + 買える/食べられる: mua/ăn được bất cứ gì."
+      }
+    },
+    {
+      "id": "l26_g027",
+      "level": "easy",
+      "sentence": "{仕事|しごと}が おわったら、＿ {電話|でんわ}して ください。",
+      "translation": "Khi làm xong việc, hãy gọi cho tôi bất cứ lúc nào nhé.",
+      "options": [
+        {
+          "text": "いつでも",
+          "kanji": "いつでも"
+        },
+        {
+          "text": "どこでも",
+          "kanji": "どこでも"
+        },
+        {
+          "text": "だれでも",
+          "kanji": "だれでも"
+        },
+        {
+          "text": "なんでも",
+          "kanji": "なんでも"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "いつでも là lúc nào cũng, nói rõ việc gọi có thể làm bất cứ lúc nào.",
+        "pitfalls": "どこでも là ở đâu; だれでも là ai; なんでも là cái gì; không hợp với thời điểm gọi.",
+        "tip": "いつでも: bất cứ lúc nào."
+      }
+    },
+    {
+      "id": "l26_g028",
+      "level": "medium",
+      "sentence": "バスなら ＿ {行|い}けます。",
+      "translation": "Nếu đi bằng xe buýt thì đi đâu cũng được.",
+      "options": [
+        {
+          "text": "どこでも",
+          "kanji": "どこでも"
+        },
+        {
+          "text": "いつでも",
+          "kanji": "いつでも"
+        },
+        {
+          "text": "なんでも",
+          "kanji": "なんでも"
+        },
+        {
+          "text": "だれでも",
+          "kanji": "だれでも"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "どこでも là ở đâu cũng được, phù hợp với 行けます (đi được).",
+        "pitfalls": "いつでも là lúc nào; なんでも là cái gì; だれでも là ai; không phù hợp với địa điểm.",
+        "tip": "どこでも + 行ける: đi đâu cũng được."
+      }
+    },
+    {
+      "id": "l26_g029",
+      "level": "medium",
+      "sentence": "この {近|ちか}くの {店|みせ}は ＿ {売|う}って います。",
+      "translation": "Các cửa hàng gần đây bán đủ thứ.",
+      "options": [
+        {
+          "text": "なんでも",
+          "kanji": "なんでも"
+        },
+        {
+          "text": "いつでも",
+          "kanji": "いつでも"
+        },
+        {
+          "text": "どこでも",
+          "kanji": "どこでも"
+        },
+        {
+          "text": "だれでも",
+          "kanji": "だれでも"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "なんでも là cái gì cũng, phù hợp với 売っている (bán).",
+        "pitfalls": "いつでも là lúc nào; どこでも là ở đâu; だれでも là ai; không phù hợp với hàng hóa.",
+        "tip": "なんでも 売っている: bán đủ mọi thứ."
+      }
+    },
+    {
+      "id": "l26_g030",
+      "level": "hard",
+      "sentence": "むこうに {見|み}える ＿ 大きい うちに すみたいです。",
+      "translation": "Tôi muốn sống trong một ngôi nhà to kiểu thế kia (ở phía xa).",
+      "options": [
+        {
+          "text": "こんな",
+          "kanji": "こんな"
+        },
+        {
+          "text": "そんな",
+          "kanji": "そんな"
+        },
+        {
+          "text": "あんな",
+          "kanji": "あんな"
+        },
+        {
+          "text": "どんな",
+          "kanji": "どんな"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "あんな là kiểu như thế kia, chỉ vật ở xa cả người nói lẫn người nghe, như ngôi nhà nhìn thấy phía xa.",
+        "pitfalls": "こんな chỉ vật gần người nói; そんな chỉ vật gần người nghe; どんな là câu hỏi, không đúng nghĩa.",
+        "tip": "Khi chỉ vật ở xa, dùng あ-ngôi (あんな, あの)."
+      }
+    }
+  ],
+  "game3": [
+    {
+      "id": "l26_s001",
+      "level": "easy",
+      "vietnamese": "Bạn có thể mang giúp cái cặp này được không?",
+      "acceptableOrders": [
+        [
+          "このかばんを",
+          "はこんで",
+          "いただけませんか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "このかばんを",
+          "kanji": "このかばんを"
+        },
+        {
+          "text": "はこんで",
+          "kanji": "{運|はこ}んで"
+        },
+        {
+          "text": "いただけませんか",
+          "kanji": "いただけませんか"
+        },
+        {
+          "text": "はこんだ",
+          "kanji": "{運|はこ}んだ"
+        }
+      ],
+      "explanation": {
+        "correct": "Vて + いただけませんか là nhờ người khác làm giúp một cách lịch sự.",
+        "pitfalls": "運んだ là quá khứ, không đứng cuối câu nhờ; đây là khối nhiễu.",
+        "tip": "Vật được mang đứng trước をで, động từ 運んで đứng ngay trước いただけませんか."
+      }
+    },
+    {
+      "id": "l26_s002",
+      "level": "medium",
+      "vietnamese": "Bạn có thể giải thích lại một lần nữa được không?",
+      "acceptableOrders": [
+        [
+          "もういちど",
+          "せつめいして",
+          "いただけませんか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "もういちど",
+          "kanji": "もういちど"
+        },
+        {
+          "text": "せつめいして",
+          "kanji": "せつめいして"
+        },
+        {
+          "text": "いただけませんか",
+          "kanji": "いただけませんか"
+        },
+        {
+          "text": "せつめいした",
+          "kanji": "せつめいした"
+        }
+      ],
+      "explanation": {
+        "correct": "せつめいして là thể て của せつめいする, đứng trước いただけませんか.",
+        "pitfalls": "せつめいした là quá khứ, không thể đứng trước いただけませんか.",
+        "tip": "もういちど (một lần nữa) đứng đầu câu."
+      }
+    },
+    {
+      "id": "l26_s003",
+      "level": "easy",
+      "vietnamese": "Tôi thích sushi.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "すしが",
+          "すきです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "わたしは"
+        },
+        {
+          "text": "すしが",
+          "kanji": "すしが"
+        },
+        {
+          "text": "すきです",
+          "kanji": "すきです"
+        },
+        {
+          "text": "きらいです",
+          "kanji": "きらいです"
+        }
+      ],
+      "explanation": {
+        "correct": "N は/が + 好きです: nói về điều mình thích.",
+        "pitfalls": "きらいです nghĩa là ghét, trái nghĩa với câu cần dịch.",
+        "tip": "わたしは (chủ đề) + すしが (đối tượng của 好き) + 好きです."
+      }
+    },
+    {
+      "id": "l26_s004",
+      "level": "easy",
+      "vietnamese": "Anh Yamada không giỏi nấu ăn.",
+      "acceptableOrders": [
+        [
+          "やまださんは",
+          "りょうりが",
+          "へたです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "やまださんは",
+          "kanji": "やまださんは"
+        },
+        {
+          "text": "りょうりが",
+          "kanji": "りょうりが"
+        },
+        {
+          "text": "へたです",
+          "kanji": "{下手|へた}です"
+        },
+        {
+          "text": "じょうずです",
+          "kanji": "{上手|じょうず}です"
+        }
+      ],
+      "explanation": {
+        "correct": "N は + N が + 下手です: nói về việc không giỏi làm gì.",
+        "pitfalls": "上手です là giỏi, trái nghĩa với câu cần dịch.",
+        "tip": "下手 là kém, không giỏi."
+      }
+    },
+    {
+      "id": "l26_s005",
+      "level": "easy",
+      "vietnamese": "Tôi thích đi du lịch.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "りょこうを するのが",
+          "すきです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "わたしは"
+        },
+        {
+          "text": "りょこうを するのが",
+          "kanji": "{旅行|りょこう}を するのが"
+        },
+        {
+          "text": "すきです",
+          "kanji": "すきです"
+        },
+        {
+          "text": "きらいです",
+          "kanji": "きらいです"
+        }
+      ],
+      "explanation": {
+        "correct": "Động từ thể から 〜のが 好きです: thích việc làm gì.",
+        "pitfalls": "きらいです nghĩa là ghét, trái ý người nói.",
+        "tip": "するのが 好き: thích làm việc đó."
+      }
+    },
+    {
+      "id": "l26_s006",
+      "level": "easy",
+      "vietnamese": "Bạn có thể cho tôi mượn cây bút được không?",
+      "acceptableOrders": [
+        [
+          "ペンを",
+          "かして",
+          "いただけませんか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "ペンを",
+          "kanji": "ペンを"
+        },
+        {
+          "text": "かして",
+          "kanji": "かして"
+        },
+        {
+          "text": "いただけませんか",
+          "kanji": "いただけませんか"
+        },
+        {
+          "text": "かりた",
+          "kanji": "{借|か}りた"
+        }
+      ],
+      "explanation": {
+        "correct": "かして (cho mượn) + いただけませんか là nhờ người khác cho mượn lịch sự.",
+        "pitfalls": "借りた nghĩa là đã mượn (người nhận), không đúng hướng nhờ.",
+        "tip": "かして là thể て của 貸す."
+      }
+    },
+    {
+      "id": "l26_s007",
+      "level": "medium",
+      "vietnamese": "Xin lỗi, bạn có thể đợi tôi một chút được không?",
+      "acceptableOrders": [
+        [
+          "ちょっと",
+          "まって",
+          "いただけませんか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "ちょっと",
+          "kanji": "ちょっと"
+        },
+        {
+          "text": "まって",
+          "kanji": "まって"
+        },
+        {
+          "text": "いただけませんか",
+          "kanji": "いただけませんか"
+        },
+        {
+          "text": "まった",
+          "kanji": "まった"
+        }
+      ],
+      "explanation": {
+        "correct": "まって + いただけませんか là nhờ người khác đợi lịch sự.",
+        "pitfalls": "まった là quá khứ, không đúng cấu trúc nhờ.",
+        "tip": "ちょっと (một chút) đứng đầu câu."
+      }
+    },
+    {
+      "id": "l26_s008",
+      "level": "easy",
+      "vietnamese": "Bạn có thể ghi lại số điện thoại này được không?",
+      "acceptableOrders": [
+        [
+          "このでんわばんごうを",
+          "かいて",
+          "いただけませんか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "このでんわばんごうを",
+          "kanji": "この{電話番号|でんわばんごう}を"
+        },
+        {
+          "text": "かいて",
+          "kanji": "{書|か}いて"
+        },
+        {
+          "text": "いただけませんか",
+          "kanji": "いただけませんか"
+        },
+        {
+          "text": "かいた",
+          "kanji": "{書|か}いた"
+        }
+      ],
+      "explanation": {
+        "correct": "書いて + いただけませんか là nhờ người khác viết giúp lịch sự.",
+        "pitfalls": "書いた là quá khứ, không đứng trước いただけませんか.",
+        "tip": "この 電話番号を: chủ đề của hành động 書く."
+      }
+    },
+    {
+      "id": "l26_s009",
+      "level": "medium",
+      "vietnamese": "Nên hỏi ai về vấn đề này thì tốt?",
+      "acceptableOrders": [
+        [
+          "このもんだいは",
+          "だれに",
+          "そうだんしたら",
+          "いいですか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "このもんだいは",
+          "kanji": "この{問題|もんだい}は"
+        },
+        {
+          "text": "だれに",
+          "kanji": "だれに"
+        },
+        {
+          "text": "そうだんしたら",
+          "kanji": "そうだんしたら"
+        },
+        {
+          "text": "いいですか",
+          "kanji": "いいですか"
+        },
+        {
+          "text": "そうだんする",
+          "kanji": "そうだんする"
+        }
+      ],
+      "explanation": {
+        "correct": "だれに + Vたら いいですか hỏi nên nhờ ai đó tư vấn.",
+        "pitfalls": "そうだんする không có たら nên không đúng cấu trúc hỏi lời khuyên.",
+        "tip": "Từ để hỏi (だれに) + Vたら いいですか."
+      }
+    },
+    {
+      "id": "l26_s010",
+      "level": "medium",
+      "vietnamese": "Tài liệu này khi nào nộp thì được ạ?",
+      "acceptableOrders": [
+        [
+          "このしょるいは",
+          "いつ",
+          "だしたら",
+          "いいですか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "このしょるいは",
+          "kanji": "このしょるいは"
+        },
+        {
+          "text": "いつ",
+          "kanji": "いつ"
+        },
+        {
+          "text": "だしたら",
+          "kanji": "{出|だ}したら"
+        },
+        {
+          "text": "いいですか",
+          "kanji": "いいですか"
+        },
+        {
+          "text": "だす",
+          "kanji": "{出|だ}す"
+        }
+      ],
+      "explanation": {
+        "correct": "いつ + Vたら いいですか hỏi thời điểm nên làm.",
+        "pitfalls": "出す không có たら nên không đúng cấu trúc hỏi lời khuyên.",
+        "tip": "この 書類は いつ 出したら いいですか。"
+      }
+    },
+    {
+      "id": "l26_s011",
+      "level": "medium",
+      "vietnamese": "Khi bị cảm thì nên uống gì?",
+      "acceptableOrders": [
+        [
+          "かぜを ひいたときは",
+          "なにを",
+          "のんだら",
+          "いいですか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "かぜを ひいたときは",
+          "kanji": "かぜを ひいた{時|とき}は"
+        },
+        {
+          "text": "なにを",
+          "kanji": "なにを"
+        },
+        {
+          "text": "のんだら",
+          "kanji": "のんだら"
+        },
+        {
+          "text": "いいですか",
+          "kanji": "いいですか"
+        },
+        {
+          "text": "のむ",
+          "kanji": "のむ"
+        }
+      ],
+      "explanation": {
+        "correct": "なにを + Vたら いいですか hỏi nên làm gì, ở đây là uống gì.",
+        "pitfalls": "のむ không có たら nên không đúng cấu trúc hỏi lời khuyên.",
+        "tip": "かぜを ひいた ときは: mệnh đề thời gian đứng đầu."
+      }
+    },
+    {
+      "id": "l26_s012",
+      "level": "easy",
+      "vietnamese": "Anh Yamada thích xem phim.",
+      "acceptableOrders": [
+        [
+          "やまださんは",
+          "えいがを みるのが",
+          "すきです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "やまださんは",
+          "kanji": "やまださんは"
+        },
+        {
+          "text": "えいがを みるのが",
+          "kanji": "えいがを みるのが"
+        },
+        {
+          "text": "すきです",
+          "kanji": "すきです"
+        },
+        {
+          "text": "きらいです",
+          "kanji": "きらいです"
+        }
+      ],
+      "explanation": {
+        "correct": "N は + 〜のが 好きです: nói về điều người đó thích làm.",
+        "pitfalls": "きらいです nghĩa là ghét, trái ý câu cần dịch.",
+        "tip": "えいがを 見るのが 好きです."
+      }
+    },
+    {
+      "id": "l26_s013",
+      "level": "easy",
+      "vietnamese": "Tôi giỏi tiếng Nhật.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "にほんごが",
+          "じょうずです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "わたしは"
+        },
+        {
+          "text": "にほんごが",
+          "kanji": "にほんごが"
+        },
+        {
+          "text": "じょうずです",
+          "kanji": "{上手|じょうず}です"
+        },
+        {
+          "text": "へたです",
+          "kanji": "{下手|へた}です"
+        }
+      ],
+      "explanation": {
+        "correct": "わたしは + にほんごが + 上手です: nói về năng lực.",
+        "pitfalls": "下手です là kém, trái nghĩa câu cần dịch.",
+        "tip": "上手です là giỏi."
+      }
+    },
+    {
+      "id": "l26_s014",
+      "level": "medium",
+      "vietnamese": "Trong thành phố này có bệnh viện lớn.",
+      "acceptableOrders": [
+        [
+          "このまちには",
+          "おおきい びょういんが",
+          "あります"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "このまちには",
+          "kanji": "このまちには"
+        },
+        {
+          "text": "おおきい びょういんが",
+          "kanji": "おおきい びょういんが"
+        },
+        {
+          "text": "あります",
+          "kanji": "あります"
+        },
+        {
+          "text": "ありません",
+          "kanji": "ありません"
+        }
+      ],
+      "explanation": {
+        "correct": "N には + N が あります: nói về sự tồn tại.",
+        "pitfalls": "ありません là phủ định, trái nghĩa câu cần dịch.",
+        "tip": "この まちには: thành phố làm địa điểm."
+      }
+    },
+    {
+      "id": "l26_s015",
+      "level": "medium",
+      "vietnamese": "Bạn có thể vào bất cứ lúc nào cũng được.",
+      "acceptableOrders": [
+        [
+          "いつでも",
+          "はいって",
+          "いいです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "いつでも",
+          "kanji": "いつでも"
+        },
+        {
+          "text": "はいって",
+          "kanji": "{入|はい}って"
+        },
+        {
+          "text": "いいです",
+          "kanji": "いいです"
+        },
+        {
+          "text": "はいった",
+          "kanji": "{入|はい}った"
+        }
+      ],
+      "explanation": {
+        "correct": "いつでも + Vて いいです: được phép làm bất cứ lúc nào.",
+        "pitfalls": "入った là quá khứ, không đúng nghĩa cho phép.",
+        "tip": "いつでも 入って いいです."
+      }
+    },
+    {
+      "id": "l26_s016",
+      "level": "hard",
+      "vietnamese": "Đi bằng xe buýt thì đi đâu cũng được.",
+      "acceptableOrders": [
+        [
+          "バスなら",
+          "どこでも",
+          "いけます"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "バスなら",
+          "kanji": "バスなら"
+        },
+        {
+          "text": "どこでも",
+          "kanji": "どこでも"
+        },
+        {
+          "text": "いけます",
+          "kanji": "{行|い}けます"
+        },
+        {
+          "text": "いつでも",
+          "kanji": "いつでも"
+        }
+      ],
+      "explanation": {
+        "correct": "どこでも + 行けます: đi đâu cũng được; バスなら nêu điều kiện phương tiện.",
+        "pitfalls": "いつでも là lúc nào, không đúng nghĩa địa điểm.",
+        "tip": "バスなら: nếu đi bằng xe buýt."
+      }
+    },
+    {
+      "id": "l26_s017",
+      "level": "hard",
+      "vietnamese": "Tôi có thể ăn bất cứ món gì.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "なんでも",
+          "たべられます"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "わたしは"
+        },
+        {
+          "text": "なんでも",
+          "kanji": "なんでも"
+        },
+        {
+          "text": "たべられます",
+          "kanji": "{食|た}べられます"
+        },
+        {
+          "text": "だれでも",
+          "kanji": "だれでも"
+        }
+      ],
+      "explanation": {
+        "correct": "なんでも + 食べられます: có thể ăn bất cứ món gì.",
+        "pitfalls": "だれでも là ai, không đúng với món ăn.",
+        "tip": "わたしは なんでも 食べられます."
+      }
+    },
+    {
+      "id": "l26_s018",
+      "level": "hard",
+      "vietnamese": "Tôi muốn sống trong ngôi nhà to kiểu thế kia (ở phía xa).",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "むこうに みえる",
+          "あんな",
+          "おおきい うちに",
+          "すみたいです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "わたしは"
+        },
+        {
+          "text": "むこうに みえる",
+          "kanji": "むこうに {見|み}える"
+        },
+        {
+          "text": "あんな",
+          "kanji": "あんな"
+        },
+        {
+          "text": "おおきい うちに",
+          "kanji": "おおきい うちに"
+        },
+        {
+          "text": "すみたいです",
+          "kanji": "すみたいです"
+        },
+        {
+          "text": "こんな",
+          "kanji": "こんな"
+        }
+      ],
+      "explanation": {
+        "correct": "あんな chỉ vật ở xa; 〜に見える bổ nghĩa cho ngôi nhà.",
+        "pitfalls": "こんな chỉ vật gần người nói, không đúng với ngôi nhà ở xa.",
+        "tip": "わたしは むこうに 見える あんな 大きい うちに すみたいです."
+      }
+    },
+    {
+      "id": "l26_s019",
+      "level": "hard",
+      "vietnamese": "Tại sao hôm qua bạn lại đến muộn vậy?",
+      "acceptableOrders": [
+        [
+          "どうして",
+          "きのう",
+          "おくれた",
+          "んですか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "どうして",
+          "kanji": "どうして"
+        },
+        {
+          "text": "きのう",
+          "kanji": "{昨日|きのう}"
+        },
+        {
+          "text": "おくれた",
+          "kanji": "{遅|おく}れた"
+        },
+        {
+          "text": "んですか",
+          "kanji": "んですか"
+        },
+        {
+          "text": "おくれます",
+          "kanji": "{遅|おく}れます"
+        }
+      ],
+      "explanation": {
+        "correct": "Thể thường (遅れた) + んですか để hỏi lý do.",
+        "pitfalls": "遅れます là thể lịch sự, không đi trước んですか.",
+        "tip": "どうして 昨日 遅れたんですか."
+      }
+    },
+    {
+      "id": "l26_s020",
+      "level": "medium",
+      "vietnamese": "Hôm nay tôi không đi được vì có lý do.",
+      "acceptableOrders": [
+        [
+          "きょうは",
+          "いけない",
+          "んです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "きょうは",
+          "kanji": "きょうは"
+        },
+        {
+          "text": "いけない",
+          "kanji": "{行|い}けない"
+        },
+        {
+          "text": "んです",
+          "kanji": "んです"
+        },
+        {
+          "text": "いけません",
+          "kanji": "いけません"
+        }
+      ],
+      "explanation": {
+        "correct": "Thể thường いけない + んです để nêu lý do.",
+        "pitfalls": "いけません là thể lịch sự, không đứng trước んです.",
+        "tip": "きょうは 行けないんです."
+      }
+    }
+  ],
+  "game4": [
+    {
+      "id": "l26_c001",
+      "level": "easy",
+      "speaker": "🩺 いしゃさん",
+      "question": "「{今日|きょう}は どう しましたか。」",
+      "questionAudioText": "きょうは どう しましたか",
+      "options": [
+        {
+          "text": "えいがを みました。",
+          "kanji": "{映画|えいが}を {見|み}ました。"
+        },
+        {
+          "text": "せきが でて、ねつが あります。",
+          "kanji": "せきが でて、{熱|ねつ}が あります。"
+        },
+        {
+          "text": "えきまで あるきました。",
+          "kanji": "{駅|えき}まで {歩|ある}きました。"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "B",
+        "pitfalls": "á",
+        "tip": "c"
+      }
+    },
+    {
+      "id": "l26_c002",
+      "level": "easy",
+      "speaker": "👩 やまださん",
+      "question": "「{財布|さいふ}を なくしました。どう したら いいですか。」",
+      "questionAudioText": "さいふを なくしましたどう したら いいですか",
+      "options": [
+        {
+          "text": "まずは みせの なかを さがして みて ください。",
+          "kanji": "まずは {店|みせ}の {中|なか}を {捜|さが}して みて ください。"
+        },
+        {
+          "text": "きょうは あついですね。",
+          "kanji": "{今日|きょう}は あついですね。"
+        },
+        {
+          "text": "にほんごが じょうずです。",
+          "kanji": "{日本語|にほんご}が {上手|じょうず}です。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "V",
+        "pitfalls": "て",
+        "tip": "み"
+      }
+    },
+    {
+      "id": "l26_c003",
+      "level": "easy",
+      "speaker": "🧑 ミラーさん",
+      "question": "「あした、{会議|かいぎ}に {間|ま}に{合|あ}いますか。」",
+      "questionAudioText": "あしたかいぎに まにあいますか",
+      "options": [
+        {
+          "text": "はい、いそげば まにあいます。",
+          "kanji": "はい、いそげば {間|ま}に{合|あ}います。"
+        },
+        {
+          "text": "いいえ、えいがを みました。",
+          "kanji": "いいえ、{映画|えいが}を {見|み}ました。"
+        },
+        {
+          "text": "すみません、ちょっと ねむいです。",
+          "kanji": "すみません、ちょっと {眠|ねむ}いです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は",
+        "pitfalls": "い",
+        "tip": " "
+      }
+    },
+    {
+      "id": "l26_c004",
+      "level": "easy",
+      "speaker": "🧑 やまださん",
+      "question": "「きのうは どうして {遅|おく}れたんですか。」",
+      "questionAudioText": "きのうは どうして おくれたんですか",
+      "options": [
+        {
+          "text": "でんしゃが おくれた んです。",
+          "kanji": "{電車|でんしゃ}が {遅|おく}れた んです。"
+        },
+        {
+          "text": "あした やすみです。",
+          "kanji": "あした やすみです。"
+        },
+        {
+          "text": "にほんごが すきです。",
+          "kanji": "{日本語|にほんご}が すきです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "電",
+        "pitfalls": "車",
+        "tip": "が"
+      }
+    },
+    {
+      "id": "l26_c005",
+      "level": "easy",
+      "speaker": "👩 木村さん",
+      "question": "「{燃|も}えるごみは どこに {出|だ}したら いいですか。」",
+      "questionAudioText": "もえるごみは どこに だしたら いいですか",
+      "options": [
+        {
+          "text": "もえるごみは おきばに だして ください。",
+          "kanji": "{燃|も}えるごみは {置|お}き{場|ば}に {出|だ}して ください。"
+        },
+        {
+          "text": "わたしは まいにち がすを つかいます。",
+          "kanji": "わたしは まいにち {ガス|がす}を {使|つか}います。"
+        },
+        {
+          "text": "きょうは へいじつです。",
+          "kanji": "{今日|きょう}は {平日|へいじつ}です。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "置",
+        "pitfalls": "き",
+        "tip": "場"
+      }
+    },
+    {
+      "id": "l26_c006",
+      "level": "easy",
+      "speaker": "👨 店員",
+      "question": "「おきゃくさま、いらっしゃいませ。なにを {探|さが}して いますか。」",
+      "questionAudioText": "おきゃくさまいらっしゃいませなにを さがして いますか",
+      "options": [
+        {
+          "text": "かさを さがして います。",
+          "kanji": "{傘|かさ}を さがして います。"
+        },
+        {
+          "text": "さいふを みます。",
+          "kanji": "{財布|さいふ}を {見|み}ます。"
+        },
+        {
+          "text": "えきまで あるきます。",
+          "kanji": "えきまで あるきます。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "か",
+        "pitfalls": "さ",
+        "tip": "を"
+      }
+    },
+    {
+      "id": "l26_c007",
+      "level": "easy",
+      "speaker": "🧑 やまださん",
+      "question": "「{運動会|うんどうかい}の ボランティアを したいんですが、どう したら いいですか。」",
+      "questionAudioText": "うんどうかいの ボランティアを したいんですがどう したら いいですか",
+      "options": [
+        {
+          "text": "れんらくして みたら いいですよ。",
+          "kanji": "{連絡|れんらく}して みたら いいですよ。"
+        },
+        {
+          "text": "あした あめが ふります。",
+          "kanji": "あした {雨|あめ}が ふります。"
+        },
+        {
+          "text": "きのうは べんきょうしました。",
+          "kanji": "きのうは {勉強|べんきょう}しました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "連",
+        "pitfalls": "絡",
+        "tip": "し"
+      }
+    },
+    {
+      "id": "l26_c008",
+      "level": "easy",
+      "speaker": "🧑 ミラーさん",
+      "question": "「どうしたんですか。」",
+      "questionAudioText": "どうしたんですか",
+      "options": [
+        {
+          "text": "ちょっと きぶんが わるい んです。",
+          "kanji": "ちょっと {気分|きぶん}が {悪|わる}い んです。"
+        },
+        {
+          "text": "いい てんきですね。",
+          "kanji": "いい {天気|てんき}ですね。"
+        },
+        {
+          "text": "わたしは うんどうかいに いきます。",
+          "kanji": "わたしは {運動会|うんどうかい}に いきます。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "ち",
+        "pitfalls": "ょ",
+        "tip": "っ"
+      }
+    },
+    {
+      "id": "l26_c009",
+      "level": "medium",
+      "speaker": "👨 やまださん",
+      "question": "「ごみの {日|ひ}は いつですか。」",
+      "questionAudioText": "ごみの ひは いつですか",
+      "options": [
+        {
+          "text": "かんと びんは かようびです。",
+          "kanji": "かんと びんは かようびです。"
+        },
+        {
+          "text": "あした、でかけます。",
+          "kanji": "{明日|あした}、{出|で}かけます。"
+        },
+        {
+          "text": "せんせいは きのう きませんでした。",
+          "kanji": "せんせいは きのう {来|き}ませんでした。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "か",
+        "pitfalls": "ん",
+        "tip": "と"
+      }
+    },
+    {
+      "id": "l26_c010",
+      "level": "medium",
+      "speaker": "👩 店員",
+      "question": "「お{荷物|にもつ}を お{持|も}ちしましょうか。」",
+      "questionAudioText": "おにもつを おもちしましょうか",
+      "options": [
+        {
+          "text": "はい、おねがいします。",
+          "kanji": "はい、おねがいします。"
+        },
+        {
+          "text": "いいえ、いただきました。",
+          "kanji": "いいえ、いただきました。"
+        },
+        {
+          "text": "そうですね、わたしは みました。",
+          "kanji": "そうですね、わたしは {見|み}ました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は",
+        "pitfalls": "い",
+        "tip": "、"
+      }
+    },
+    {
+      "id": "l26_c011",
+      "level": "medium",
+      "speaker": "🧑 ミラーさん",
+      "question": "「この ちかくに {大|おお}きい {病院|びょういん}は ありますか。」",
+      "questionAudioText": "この ちかくに おおきい びょういんは ありますか",
+      "options": [
+        {
+          "text": "はい、むこうに おおきい びょういんが あります。",
+          "kanji": "はい、むこうに {大|おお}きい {病院|びょういん}が あります。"
+        },
+        {
+          "text": "すみません、にほんごが わかりません。",
+          "kanji": "すみません、{日本語|にほんご}が わかりません。"
+        },
+        {
+          "text": "はい、きのうは えいがを みました。",
+          "kanji": "はい、きのうは {映画|えいが}を {見|み}ました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は",
+        "pitfalls": "い",
+        "tip": "、"
+      }
+    },
+    {
+      "id": "l26_c012",
+      "level": "medium",
+      "speaker": "🧑 やまださん",
+      "question": "「{財布|さいふ}を なくした んですが、どこに {連絡|れんらく}したら いいですか。」",
+      "questionAudioText": "さいふを なくした んですがどこに れんらくしたら いいですか",
+      "options": [
+        {
+          "text": "けいさつか こうばんに れんらくしたら いいですよ。",
+          "kanji": "けいさつか {交番|こうばん}に {連絡|れんらく}したら いいですよ。"
+        },
+        {
+          "text": "あした あめが ふりますよ。",
+          "kanji": "あした {雨|あめ}が ふりますよ。"
+        },
+        {
+          "text": "わたしは にほんごが へたです。",
+          "kanji": "わたしは {日本語|にほんご}が {下手|へた}です。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "警",
+        "pitfalls": "察",
+        "tip": "か"
+      }
+    },
+    {
+      "id": "l26_c013",
+      "level": "medium",
+      "speaker": "🧑 やまださん",
+      "question": "「あしたの {場所|ばしょ}は どこが いいですか。」",
+      "questionAudioText": "あしたの ばしょは どこが いいですか",
+      "options": [
+        {
+          "text": "どこでも いいですよ。",
+          "kanji": "どこでも いいですよ。"
+        },
+        {
+          "text": "あしたは へいじつです。",
+          "kanji": "あしたは {平日|へいじつ}です。"
+        },
+        {
+          "text": "こんど、いっしょに いきましょう。",
+          "kanji": "{今度|こんど}、いっしょに {行|い}きましょう。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "ど",
+        "pitfalls": "こ",
+        "tip": "で"
+      }
+    },
+    {
+      "id": "l26_c014",
+      "level": "medium",
+      "speaker": "👨 木村さん",
+      "question": "「{平日|へいじつ}に {来|こ}られますか。」",
+      "questionAudioText": "へいじつに こられますか",
+      "options": [
+        {
+          "text": "いいえ、へいじつは しごとが あります。",
+          "kanji": "いいえ、{平日|へいじつ}は しごとが あります。"
+        },
+        {
+          "text": "はい、きのう きました。",
+          "kanji": "はい、きのう {来|き}ました。"
+        },
+        {
+          "text": "すみません、にほんごが へたです。",
+          "kanji": "すみません、{日本語|にほんご}が {下手|へた}です。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "い",
+        "pitfalls": "い",
+        "tip": "え"
+      }
+    },
+    {
+      "id": "l26_c015",
+      "level": "medium",
+      "speaker": "👩 やまださん",
+      "question": "「なんでも {食|た}べられますか。」",
+      "questionAudioText": "なんでも たべられますか",
+      "options": [
+        {
+          "text": "はい、なんでも たべられます。",
+          "kanji": "はい、なんでも {食|た}べられます。"
+        },
+        {
+          "text": "いいえ、おおさかべんは わかりません。",
+          "kanji": "いいえ、{大阪弁|おおさかべん}は わかりません。"
+        },
+        {
+          "text": "こんど、いっしょに たべましょう。",
+          "kanji": "{今度|こんど}、いっしょに {食|た}べましょう。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は",
+        "pitfalls": "い",
+        "tip": "、"
+      }
+    },
+    {
+      "id": "l26_c016",
+      "level": "medium",
+      "speaker": "👨 やまださん",
+      "question": "「あんな {大|おお}きい かばん、ほしいですか。」",
+      "questionAudioText": "あんな おおきい かばんほしいですか",
+      "options": [
+        {
+          "text": "はい、すごく ほしいです。",
+          "kanji": "はい、すごく ほしいです。"
+        },
+        {
+          "text": "いいえ、ぜんぶ たべました。",
+          "kanji": "いいえ、ぜんぶ {食|た}べました。"
+        },
+        {
+          "text": "はい、わたしは じょうずです。",
+          "kanji": "はい、わたしは {上手|じょうず}です。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は",
+        "pitfalls": "い",
+        "tip": "、"
+      }
+    },
+    {
+      "id": "l26_c017",
+      "level": "hard",
+      "speaker": "🧑 ミラーさん",
+      "question": "「すみません、この {字|じ}の よみかたを {教|おし}えて いただけませんか。」",
+      "questionAudioText": "すみませんこの じの よみかたを おしえて いただけませんか",
+      "options": [
+        {
+          "text": "はい、いいですよ。",
+          "kanji": "はい、いいですよ。"
+        },
+        {
+          "text": "すみません、きのうは おくれました。",
+          "kanji": "すみません、きのうは {遅|おく}れました。"
+        },
+        {
+          "text": "わたしは うんどうかいが すきです。",
+          "kanji": "わたしは {運動会|うんどうかい}が {好|す}きです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は",
+        "pitfalls": "い",
+        "tip": "、"
+      }
+    },
+    {
+      "id": "l26_c018",
+      "level": "hard",
+      "speaker": "👨 木村さん",
+      "question": "「どうして {今日|きょう}は {来|こ}なかったんですか。」",
+      "questionAudioText": "どうして きょうは こなかったんですか",
+      "options": [
+        {
+          "text": "ちょっと きぶんが わるかった んです。",
+          "kanji": "ちょっと {気分|きぶん}が {悪|わる}かった んです。"
+        },
+        {
+          "text": "あしたは へいじつです。",
+          "kanji": "あしたは {平日|へいじつ}です。"
+        },
+        {
+          "text": "わたしは おおさかべんが すきです。",
+          "kanji": "わたしは {大阪弁|おおさかべん}が {好|す}きです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "ち",
+        "pitfalls": "ょ",
+        "tip": "っ"
+      }
+    },
+    {
+      "id": "l26_c019",
+      "level": "hard",
+      "speaker": "🧑 ミラーさん",
+      "question": "「この カードを なくした {時|とき}、どこに {連絡|れんらく}したら いいですか。」",
+      "questionAudioText": "この カードを なくした ときどこに れんらくしたら いいですか",
+      "options": [
+        {
+          "text": "ちかくの こうばんに れんらくしたら いいですよ。",
+          "kanji": "{近|ちか}くの {交番|こうばん}に {連絡|れんらく}したら いいですよ。"
+        },
+        {
+          "text": "いいえ、あの みせは らいしゅう あきます。",
+          "kanji": "いいえ、あの {店|みせ}は {来週|らいしゅう} {空|あ}きます。"
+        },
+        {
+          "text": "はい、あしたは うんどうかいです。",
+          "kanji": "はい、あしたは {運動会|うんどうかい}です。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "近",
+        "pitfalls": "く",
+        "tip": "の"
+      }
+    },
+    {
+      "id": "l26_c020",
+      "level": "hard",
+      "speaker": "🧑 やまださん",
+      "question": "「{宇宙|うちゅう}の はなしは {好|す}きですか。」",
+      "questionAudioText": "うちゅうの はなしは すきですか",
+      "options": [
+        {
+          "text": "はい、うちゅうひこうしに なりたいです。",
+          "kanji": "はい、{宇宙飛行士|うちゅうひこうし}に なりたいです。"
+        },
+        {
+          "text": "わたしは ボランティアが きらいです。",
+          "kanji": "わたしは ボランティアが きらいです。"
+        },
+        {
+          "text": "きのうは ガスを つかいました。",
+          "kanji": "きのうは ガスを {使|つか}いました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "は",
+        "pitfalls": "い",
+        "tip": "、"
+      }
+    }
+  ]
+}
