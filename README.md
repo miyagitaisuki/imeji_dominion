@@ -94,6 +94,8 @@ Quy ước furigana:
 - Các trường `kanji`, `sentence`, `question` là chữ hiển thị, có thể dùng `{漢字|よみ}`.
 - `game1` cần đúng 3 `distractors`.
 
+Hướng dẫn chi tiết (số câu, độ khó, quy tắc soạn từng trò, câu lệnh mẫu giao cho AI): [docs/huong-dan-tao-bai-moi.md](docs/huong-dan-tao-bai-moi.md).
+
 Khi thêm bài mới: tạo `data/minna/NN.json`, tạo `minna/NN.html` (copy từ một bài đã có, chỉ đổi `data-lesson` và `<title>`), rồi thêm số bài vào `availableLessons` trong `index.html` (thanh tiến độ chỉ tính các bài có trong danh sách này).
 
 ## Trạng thái các trang
