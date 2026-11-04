@@ -103,6 +103,8 @@ Khi thêm bài mới: tạo `data/minna/NN.json`, tạo `minna/NN.html` (copy t�
 
 ## Slide bài giảng và flashcard
 
+Muốn nhờ AI khác (ChatGPT, Gemini…) soạn slide: dùng bộ công cụ trong `ai-slide-kit/` (đọc `00-HUONG-DAN.md`). Bộ này sinh bằng `npm run build:ai-kit` từ tài liệu quy ước; sửa quy ước xong nhớ chạy lại lệnh.
+
 Bấm **Học bài này** trên thẻ bài Minna mở cửa sổ chọn 3 cách học: **Slide bài giảng**, **Flashcard**, **Game học tập** (4 trò chơi như trước). Slide và flashcard chưa có thì hiện "Sắp có".
 
 - Slide là một deck trình chiếu HTML, đặt ở `slides/minna/NN.html` (NN là số bài, không đệm số 0, ví dụ `slides/minna/22.html`), dùng chung `assets/css/slides.css` và `assets/js/slides.js` để giống hệt giao diện luyện tập. Mở cho mọi người xem, không cần đăng nhập. **Quy ước soạn: [docs/quy-uoc-slide-bai-giang.md](docs/quy-uoc-slide-bai-giang.md); bài mẫu đủ thành phần: `slides/minna/_mau.html`.**
