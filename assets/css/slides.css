@@ -1,0 +1,199 @@
+/*
+ * Khung slide bài giảng (deck HTML) của IMEJI日本語教室. Dùng cùng assets/js/slides.js.
+ * Màu, font, bo góc, bóng lấy từ imeji-brand.css (không khai báo màu riêng; không cần build Tailwind).
+ * Quy ước viết nội dung: docs/quy-uoc-slide-bai-giang.md. Bài mẫu đủ mọi thành phần: slides/minna/_mau.html.
+ */
+.deck {
+  margin: 0; min-height: 100vh; min-height: 100dvh; overflow: hidden;
+  font-family: var(--imeji-font-sans); color: #0f172a; line-height: 1.6;
+  background: #0f172a url("../img/clouds.jpg") center / cover fixed;
+  -webkit-font-smoothing: antialiased;
+}
+/* Lớp phủ trên nền mây: sáng ở slide nội dung, tối ở slide mở đầu/kết */
+.deck::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; transition: background .4s ease;
+  background: linear-gradient(rgb(248 250 252 / .55), rgb(248 250 252 / .72));
+}
+.deck.is-dark::before { background: linear-gradient(rgb(15 23 42 / .55), rgb(15 23 42 / .35) 50%, rgb(15 23 42 / .6)); }
+.deck :focus-visible { outline: 3px solid var(--imeji-primary-600); outline-offset: 2px; }
+.deck ruby { ruby-position: over; }
+.deck rt { font-size: .5em; font-weight: 700; color: var(--imeji-slate-500); line-height: 1; }
+.deck .is-dark-slide rt { color: rgb(226 232 240); }
+.jp { font-family: var(--imeji-font-jp); }
+
+/* ---- Thanh trên ---- */
+.deck-top {
+  position: fixed; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: center;
+  justify-content: space-between; gap: 12px; padding: 12px clamp(12px, 3vw, 28px);
+}
+.deck-brand { display: flex; align-items: center; gap: 10px; min-width: 0; text-decoration: none; color: inherit; }
+.deck-brand img { width: 36px; height: 36px; flex: none; filter: drop-shadow(0 2px 4px rgb(15 23 42 / .25)); }
+.deck-brand b { display: block; font-size: .95rem; font-weight: 800; line-height: 1.2; white-space: nowrap; }
+.deck-brand small { display: block; font-size: .75rem; font-weight: 600; color: var(--imeji-primary-700); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.deck.is-dark .deck-brand { color: #fff; }
+.deck.is-dark .deck-brand small { color: var(--imeji-primary-200); }
+.deck-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+.deck-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; min-width: 40px;
+  padding: 0 14px; border-radius: var(--imeji-radius-full); border: 1px solid rgb(226 232 240 / .9);
+  background: rgb(255 255 255 / .9); color: #1e293b; font: 700 .8rem var(--imeji-font-sans);
+  text-decoration: none; cursor: pointer; box-shadow: 0 2px 8px -4px rgb(15 23 42 / .3);
+  transition: background-color .15s ease, transform .1s ease;
+}
+.deck-btn:hover { background: #fff; }
+.deck-btn:active { transform: scale(.97); }
+.deck-btn--primary { background: var(--imeji-primary-600); border-color: var(--imeji-primary-600); color: #fff; }
+.deck-btn--primary:hover { background: var(--imeji-primary-700); }
+.deck-btn[disabled] { opacity: .4; cursor: default; }
+@media (max-width: 640px) { .deck-btn .deck-btn__text { display: none; } .deck-btn { padding: 0 10px; } .deck-brand small { max-width: 38vw; } }
+
+/* ---- Sân khấu và slide ---- */
+.deck-stage { position: fixed; z-index: 10; inset: 64px clamp(10px, 3vw, 40px) 76px; display: flex; }
+.slide {
+  --pad: clamp(18px, 3.4vw, 48px);
+  flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: clamp(12px, 2vh, 22px);
+  padding: var(--pad); overflow-y: auto; border-radius: var(--imeji-radius-xl);
+  background: rgb(255 255 255 / .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border: 1px solid rgb(255 255 255 / .7); box-shadow: var(--imeji-shadow-pop);
+  font-size: clamp(1rem, 1.55vw, 1.3rem);
+}
+.slide[hidden] { display: none; }
+.slide.is-active { animation: slide-in .35s ease both; }
+@keyframes slide-in { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
+.slide--title, .slide--end {
+  align-items: center; text-align: center; color: #fff;
+  background: rgb(15 23 42 / .28); border-color: rgb(255 255 255 / .25);
+}
+.slide--title .s-lead, .slide--end .s-lead { color: rgb(241 245 249); }
+.slide h1 { margin: 0; font-size: clamp(2rem, 5.2vw, 4rem); font-weight: 900; line-height: 1.15; letter-spacing: -.01em; }
+.slide h2 { margin: 0; font-size: clamp(1.45rem, 3.2vw, 2.4rem); font-weight: 800; line-height: 1.25; }
+.slide h3 { margin: 0; font-size: 1.1em; font-weight: 800; }
+.slide p { margin: 0; }
+.s-lead { color: #475569; font-size: 1.05em; max-width: 60ch; }
+.s-eyebrow {
+  align-self: flex-start; display: inline-block; padding: 4px 14px; border-radius: var(--imeji-radius-full);
+  background: var(--imeji-primary-100); color: var(--imeji-primary-800); border: 1px solid var(--imeji-primary-300);
+  font-size: .72em; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+}
+.slide--title .s-eyebrow, .slide--end .s-eyebrow { align-self: center; background: rgb(255 255 255 / .92); }
+.s-meta { font-size: .85em; font-weight: 600; color: #64748b; }
+.slide--title .s-meta { color: rgb(226 232 240); }
+
+/* ---- Bố cục ---- */
+.s-grid { display: grid; gap: clamp(10px, 1.6vw, 18px); }
+.s-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.s-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 720px) { .s-grid--2, .s-grid--3 { grid-template-columns: 1fr; } }
+.s-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.s-list li { display: flex; gap: 12px; align-items: flex-start; }
+.s-list li::before {
+  content: ""; flex: none; width: 10px; height: 10px; margin-top: .6em; border-radius: 9999px;
+  background: var(--imeji-primary-500); box-shadow: 0 0 0 4px var(--imeji-primary-100);
+}
+
+/* ---- Thẻ ---- */
+.s-card {
+  background: rgb(255 255 255 / .92); border: 1px solid #e2e8f0; border-radius: var(--imeji-radius-lg);
+  padding: clamp(12px, 1.8vw, 20px); box-shadow: var(--imeji-shadow-card);
+}
+.s-card--primary { background: var(--imeji-primary-50); border-color: var(--imeji-primary-200); }
+.s-card--success { background: var(--imeji-success-50); border-color: var(--imeji-success-200); }
+.s-card--warning { background: var(--imeji-warning-50); border-color: var(--imeji-warning-200); }
+.s-card--danger { background: var(--imeji-danger-50); border-color: var(--imeji-danger-200); }
+.s-card--accent { background: var(--imeji-accent-50); border-color: var(--imeji-accent-200); }
+
+/* ---- Từ vựng ---- */
+.s-vocab { display: grid; gap: clamp(10px, 1.4vw, 16px); grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+.s-word {
+  display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border-radius: var(--imeji-radius-lg);
+  background: #fff; border: 1px solid #e2e8f0; border-top: 4px solid var(--imeji-primary-500); box-shadow: var(--imeji-shadow-card);
+}
+.s-word__jp { font-family: var(--imeji-font-jp); font-size: 1.5em; font-weight: 800; line-height: 1.5; }
+.s-word__read { font-size: .8em; font-weight: 600; color: var(--imeji-primary-700); }
+.s-word__mean { margin-top: 2px; font-size: .92em; color: #475569; }
+
+/* ---- Mẫu câu ---- */
+.s-pattern {
+  padding: clamp(14px, 2.4vw, 28px); border-radius: var(--imeji-radius-lg); text-align: center; color: #fff;
+  background: linear-gradient(135deg, var(--imeji-primary-600), var(--imeji-primary-800));
+  box-shadow: var(--imeji-shadow-lift); font-family: var(--imeji-font-jp);
+  font-size: clamp(1.4rem, 3.4vw, 2.6rem); font-weight: 800; line-height: 1.5;
+}
+.s-pattern rt { color: var(--imeji-primary-100); }
+.s-pattern small { display: block; margin-top: 6px; font-family: var(--imeji-font-sans); font-size: .42em; font-weight: 600; color: var(--imeji-primary-100); }
+.s-pattern mark { background: rgb(255 255 255 / .2); color: inherit; padding: 0 .3em; border-radius: var(--imeji-radius-sm); }
+.s-example { padding: 10px 16px; border-left: 4px solid var(--imeji-primary-500); background: rgb(255 255 255 / .75); border-radius: 0 var(--imeji-radius-md) var(--imeji-radius-md) 0; }
+.s-example__jp { font-family: var(--imeji-font-jp); font-size: 1.25em; font-weight: 700; line-height: 1.8; }
+.s-example__vi { font-size: .9em; color: #475569; }
+
+/* ---- Hội thoại ---- */
+.s-dialog { display: grid; gap: 12px; }
+.s-line { display: flex; align-items: flex-start; gap: 12px; max-width: 92%; }
+.s-line--right { flex-direction: row-reverse; margin-left: auto; }
+.s-line__who {
+  flex: none; min-width: 44px; height: 44px; padding: 0 12px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap;
+  font-size: .8em; font-weight: 800; background: var(--imeji-primary-100); color: var(--imeji-primary-800); border: 2px solid var(--imeji-primary-300);
+}
+.s-line--right .s-line__who { background: var(--imeji-warning-100); color: var(--imeji-warning-800); border-color: var(--imeji-warning-300); }
+.s-line__bubble { padding: 10px 16px; border-radius: var(--imeji-radius-lg); border-top-left-radius: 4px; background: #fff; border: 1px solid #e2e8f0; box-shadow: var(--imeji-shadow-card); }
+.s-line--right .s-line__bubble { border-top-left-radius: var(--imeji-radius-lg); border-top-right-radius: 4px; }
+.s-line__jp { font-family: var(--imeji-font-jp); font-size: 1.15em; font-weight: 700; line-height: 1.8; }
+.s-line__vi { font-size: .85em; color: #64748b; }
+
+/* ---- Ghi chú ---- */
+.s-note { display: flex; gap: 12px; padding: 12px 16px; border-radius: var(--imeji-radius-lg); border: 1px solid; }
+.s-note__label { flex: none; align-self: flex-start; padding: 2px 10px; border-radius: var(--imeji-radius-full); color: #fff; font-size: .7em; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+.s-note--tip { background: var(--imeji-primary-50); border-color: var(--imeji-primary-200); } .s-note--tip .s-note__label { background: var(--imeji-primary-600); }
+.s-note--ok { background: var(--imeji-success-50); border-color: var(--imeji-success-200); } .s-note--ok .s-note__label { background: var(--imeji-success-600); }
+.s-note--warn { background: var(--imeji-warning-50); border-color: var(--imeji-warning-200); } .s-note--warn .s-note__label { background: var(--imeji-warning-600); }
+.s-note--bad { background: var(--imeji-danger-50); border-color: var(--imeji-danger-200); } .s-note--bad .s-note__label { background: var(--imeji-danger-600); }
+
+/* ---- Bảng ---- */
+.s-table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid #e2e8f0; border-radius: var(--imeji-radius-lg); background: #fff; }
+.s-table th, .s-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+.s-table th { background: var(--imeji-primary-50); color: var(--imeji-primary-800); font-size: .8em; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+.s-table tr:last-child td { border-bottom: 0; }
+.s-table td.jp, .s-table .jp { font-family: var(--imeji-font-jp); font-weight: 700; }
+
+/* ---- Nút trong slide ---- */
+.s-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.s-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: var(--imeji-radius-lg);
+  font: 800 1rem var(--imeji-font-sans); text-decoration: none; color: #fff; background: var(--imeji-primary-600);
+  border-bottom: 4px solid var(--imeji-primary-800); transition: transform .1s ease, background-color .15s ease;
+}
+.s-btn:hover { background: var(--imeji-primary-500); }
+.s-btn:active { transform: translateY(3px); border-bottom-width: 1px; }
+.s-btn--ghost { background: rgb(255 255 255 / .92); color: #1e293b; border: 1px solid #e2e8f0; border-bottom-width: 4px; border-bottom-color: #cbd5e1; }
+.s-btn--ghost:hover { background: #fff; }
+
+/* ---- Hiện dần từng ý (bấm → để hiện tiếp) ---- */
+.s-reveal { transition: opacity .3s ease, transform .3s ease; }
+.s-reveal:not(.is-shown) { opacity: 0; transform: translateY(10px); visibility: hidden; }
+
+/* ---- Thanh dưới ---- */
+.deck-bottom {
+  position: fixed; z-index: 20; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 14px;
+  padding: 12px clamp(12px, 3vw, 40px) calc(12px + env(safe-area-inset-bottom));
+}
+.deck-progress { flex: 1; height: 8px; border-radius: 9999px; background: rgb(255 255 255 / .7); border: 1px solid rgb(226 232 240 / .9); overflow: hidden; }
+.deck-progress i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--imeji-primary-500), var(--imeji-primary-700)); border-radius: 9999px; transition: width .3s ease; }
+.deck-count { min-width: 4.5em; text-align: center; font-size: .85rem; font-weight: 800; padding: 6px 12px; border-radius: 9999px; background: rgb(255 255 255 / .9); border: 1px solid rgb(226 232 240 / .9); }
+
+/* ---- In / xuất PDF: mỗi slide một trang ---- */
+@media print {
+  .deck { overflow: visible; background: #fff; }
+  .deck::before, .deck-top, .deck-bottom { display: none; }
+  .deck-stage { position: static; display: block; }
+  .slide, .slide[hidden] { display: flex !important; page-break-after: always; break-after: page; min-height: 90vh; box-shadow: none; animation: none; background: #fff; color: #0f172a; border: 0; }
+  .slide--title, .slide--end { color: #0f172a; }
+  .s-reveal:not(.is-shown) { opacity: 1; transform: none; visibility: visible; }
+}
+@media (prefers-reduced-motion: reduce) { .slide.is-active, .s-reveal { animation: none; transition: none; } }
+
+/* Kích thước icon (deck không dùng Tailwind) */
+.deck svg.w-4 { width: 1rem; height: 1rem; }
+.deck svg.w-5 { width: 1.25rem; height: 1.25rem; }
+.deck svg.w-6 { width: 1.5rem; height: 1.5rem; }
+.deck svg { flex: none; }
+@media (max-width: 720px) { .s-example__jp, .s-line__jp { font-size: 1.1em; } }

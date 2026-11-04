@@ -16,6 +16,9 @@ assets/css/imeji-brand.css  Bộ quy chuẩn thương hiệu dùng chung 3 repo 
 assets/css/lesson.css  CSS dùng chung cho các bài Minna
 assets/css/tailwind.css  File Tailwind đã build (sinh ra, không sửa tay)
 assets/css/tailwind.input.css  Đầu vào của Tailwind
+slides/minna/NN.html    Slide bài giảng (deck HTML), _mau.html là bài mẫu
+assets/js/slides.js    Điều khiển deck slide (phím, vuốt, tiến độ, furigana)
+assets/css/slides.css  Style chung của deck slide
 tailwind.config.js     Cấu hình Tailwind (màu, font, các file quét class)
 ```
 
@@ -102,7 +105,7 @@ Khi thêm bài mới: tạo `data/minna/NN.json`, tạo `minna/NN.html` (copy t�
 
 Bấm **Học bài này** trên thẻ bài Minna mở cửa sổ chọn 3 cách học: **Slide bài giảng**, **Flashcard**, **Game học tập** (4 trò chơi như trước). Slide và flashcard chưa có thì hiện "Sắp có".
 
-- Slide là một deck trình chiếu HTML tự chứa, đặt ở `slides/minna/NN.html` (NN là số bài, không đệm số 0, ví dụ `slides/minna/22.html`). Mở cho mọi người xem, không cần đăng nhập.
+- Slide là một deck trình chiếu HTML, đặt ở `slides/minna/NN.html` (NN là số bài, không đệm số 0, ví dụ `slides/minna/22.html`), dùng chung `assets/css/slides.css` và `assets/js/slides.js` để giống hệt giao diện luyện tập. Mở cho mọi người xem, không cần đăng nhập. **Quy ước soạn: [docs/quy-uoc-slide-bai-giang.md](docs/quy-uoc-slide-bai-giang.md); bài mẫu đủ thành phần: `slides/minna/_mau.html`.**
 - Flashcard dự kiến ở `flashcards/minna/NN.html` (định dạng sẽ chốt khi có nội dung).
 - Bật nút cho một bài bằng cách thêm số bài vào `data/resources.json`, ví dụ `"slide": { "minna": [22] }`. Không thêm vào thì nút vẫn "Sắp có", nên có thể đẩy file lên trước và bật sau khi duyệt.
 - Bài nhập môn (`nhap-mon/6`) chỉ có game nên vẫn bấm thẳng vào bài.
