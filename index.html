@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luyện tập Minna no Nihongo - IMEJI日本語教室</title>
     <!-- Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/imeji-brand.css">
     <link rel="stylesheet" href="assets/css/tailwind.css">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter & Noto Sans JP -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font thương hiệu: Be Vietnam Pro & Noto Sans JP -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/img/logo.png">
     <meta name="theme-color" content="#2563eb">
     <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="assets/js/icons.js"></script>
     <style>
-        .japanese-font { font-family: 'Noto Sans JP', sans-serif; }
         .card-hover { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(37, 99, 235, 0.25); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: var(--imeji-shadow-lift); }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-japanese-pattern text-slate-800 selection:bg-primary-600 selection:text-white">
@@ -31,32 +32,34 @@
                     <p class="brand-sub text-[11px] text-primary-200 font-medium">Lớp học tiếng Nhật thầy Quang</p>
                 </div>
             </a>
-            <div class="flex items-center gap-3">
-                <a href="https://imejiquynhon.com/" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-primary-700 bg-white/90 hover:bg-white border border-white/60 shadow-sm active:scale-95 transition">🏠 <span>Trang chủ</span></a>
-                <div id="headerStats" class="hidden sm:flex items-center gap-2 bg-primary-50 border border-primary-100 px-3 py-1.5 rounded-full text-xs font-semibold text-primary-700">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Tiến độ: <strong id="headerProgressText">0 / 58</strong> bài</span>
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Thanh chuyển 3 app dùng chung (.imeji-switch trong imeji-brand.css) -->
+                <nav id="ecoSwitch" class="imeji-switch imeji-switch--on-dark" aria-label="IMEJI日本語教室">
+                    <a class="imeji-switch__item" href="https://imejiquynhon.com/" title="Trang chủ"><i data-icon="house" class="w-4 h-4"></i><span class="imeji-switch__label">Trang chủ</span></a>
+                    <a class="imeji-switch__item" href="./" aria-current="page" title="Luyện tập"><i data-icon="gamepad-2" class="w-4 h-4"></i><span class="imeji-switch__label">Luyện tập</span></a>
+                    <a class="imeji-switch__item" href="https://app.imejiquynhon.com/" title="Học viên"><i data-icon="log-in" class="w-4 h-4"></i><span class="imeji-switch__label">Học viên</span></a>
+                </nav>
+                <div id="headerStats" class="hidden lg:flex items-center gap-2 bg-primary-50 border border-primary-100 px-3 py-1.5 rounded-full text-xs font-semibold text-primary-700">
+                    <i data-icon="graduation-cap" class="w-4 h-4"></i>
+                    <span>Tiến độ: <strong id="headerProgressText">0 / 22</strong> bài</span>
                 </div>
-                <a href="https://imejiquynhon.com/#register" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 active:scale-95 transition shadow-sm">Học thử miễn phí</a>
-                <button id="btnConfig" onclick="showAdminLogin()" class="p-2 text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition" title="Cấu hình đường dẫn">
-                    <i class="fa-solid fa-gear text-lg"></i>
-                </button>
+                <a href="https://imejiquynhon.com/#register" class="hidden md:inline-flex shrink-0 whitespace-nowrap items-center justify-center px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 active:scale-95 transition shadow-sm">Học thử miễn phí</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Banner -->
     <section class="relative overflow-hidden text-white pt-28 pb-24 px-4 sm:px-6">
-        <img src="assets/img/clouds-blue.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
+        <img src="assets/img/clouds.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
         <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/20"></div>
         <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-50 to-transparent"></div>
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="p-6 sm:p-9 rounded-3xl border border-white/25 shadow-2xl text-center backdrop-blur-xl bg-slate-900/25">
-                <span class="inline-block px-3.5 py-1.5 bg-blue-50/95 text-primary-700 border border-blue-200/90 rounded-full text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
-                    ☁️ Lộ trình học Tiếng Nhật từ Zero đến N4
+                <span class="inline-block px-3.5 py-1.5 bg-primary-50/95 text-primary-700 border border-primary-200/90 rounded-full text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
+                    Lộ trình học tiếng Nhật từ N5 đến N3 ・ Luyện tập Minna N5–N4
                 </span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 japanese-font">
-                    HỌC TIẾNG NHẬT CÙNG <span class="bg-gradient-to-r from-sky-300 via-primary-400 to-sky-300 bg-clip-text text-transparent">QUANG SENSEI</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+                    HỌC TIẾNG NHẬT CÙNG <span class="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-300 bg-clip-text text-transparent">QUANG SENSEI</span>
                 </h2>
                 <p class="text-slate-100 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-normal">
                     ThS. Nguyễn Thanh Quang<br>Giảng viên Trường Đại học Quy Nhơn (QNU) ・ JLPT N1 Holder<br>
@@ -66,12 +69,12 @@
                 <!-- Search -->
                 <div class="max-w-2xl mx-auto relative">
                     <div class="relative flex items-center">
-                        <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400"></i>
+                        <i data-icon="search" class="absolute left-4 w-5 h-5 text-slate-400"></i>
                         <input type="text" id="searchInput" oninput="filterLessons()"
                             placeholder="Tìm theo số bài (ví dụ: 1, 15, nhập môn 2) hoặc chủ đề..."
                             class="w-full pl-11 pr-12 py-3.5 rounded-2xl bg-white text-slate-800 placeholder-slate-400 font-medium shadow-xl focus:outline-none focus:ring-4 focus:ring-primary-300 text-sm sm:text-base">
                         <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-4 text-slate-400 hover:text-slate-600">
-                            <i class="fa-solid fa-xmark text-lg"></i>
+                            <i data-icon="x" class="w-5 h-5"></i>
                         </button>
                     </div>
                 </div>
@@ -86,12 +89,12 @@
         <div class="glass-panel p-5 rounded-2xl mb-8">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                 <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-chart-line text-primary-600"></i>
-                    <h3 class="font-bold text-slate-800 text-sm">Tiến Độ Hoàn Thành Lộ Trình</h3>
+                    <i data-icon="chart-line" class="w-4 h-4 text-primary-600"></i>
+                    <h3 class="font-bold text-slate-800 text-sm">Tiến độ các bài đã mở <span class="font-medium text-slate-500">(bài "Sắp có" chưa tính)</span></h3>
                 </div>
                 <div class="text-xs text-slate-500 flex items-center gap-4">
-                    <span><i class="fa-solid fa-circle text-primary-500 text-[10px] mr-1"></i>Đã học: <strong id="completedCount" class="text-slate-700">0</strong></span>
-                    <span><i class="fa-solid fa-circle text-slate-200 text-[10px] mr-1"></i>Còn lại: <strong id="remainingCount" class="text-slate-700">58</strong></span>
+                    <span><span class="inline-block w-2 h-2 rounded-full bg-primary-500 mr-1"></span>Đã học: <strong id="completedCount" class="text-slate-700">0</strong></span>
+                    <span><span class="inline-block w-2 h-2 rounded-full bg-slate-200 mr-1"></span>Còn lại: <strong id="remainingCount" class="text-slate-700">22</strong></span>
                     <button onclick="resetProgress()" class="text-primary-600 hover:underline text-xs font-medium ml-2">Đặt lại</button>
                 </div>
             </div>
@@ -106,16 +109,16 @@
                 Tất cả (58)
             </button>
             <button onclick="setActiveTab('intro')" id="tab-intro" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
-                🌱 8 Bài Nhập Môn
+                8 Bài Nhập Môn
             </button>
             <button onclick="setActiveTab('minna1')" id="tab-minna1" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
-                📘 Minna Sơ Cấp I (Bài 1 - 25)
+                Minna Sơ Cấp I (Bài 1 - 25)
             </button>
             <button onclick="setActiveTab('minna2')" id="tab-minna2" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
-                📙 Minna Sơ Cấp II (Bài 26 - 50)
+                Minna Sơ Cấp II (Bài 26 - 50)
             </button>
             <button onclick="setActiveTab('completed')" id="tab-completed" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
-                ✅ Đã hoàn thành
+                Đã hoàn thành
             </button>
         </div>
 
@@ -123,7 +126,7 @@
         <section id="section-intro" class="mb-12">
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center gap-2">
-                    <span class="p-2 bg-primary-100 text-primary-700 rounded-lg text-sm"><i class="fa-solid fa-seedling"></i></span>
+                    <span class="p-2 bg-primary-100 text-primary-700 rounded-lg text-sm"><i data-icon="sprout" class="w-4 h-4"></i></span>
                     <h3 class="text-xl font-bold text-slate-900">8 Bài Nhập Môn Chữ Cái & Ngữ Pháp Nền Tảng</h3>
                 </div>
                 <span class="text-xs font-semibold px-2.5 py-1 bg-primary-50 text-primary-700 border border-primary-200 rounded-full">Kinh nghiệm 0 - N5</span>
@@ -137,10 +140,10 @@
         <section id="section-minna1" class="mb-12">
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center gap-2">
-                    <span class="p-2 bg-sky-100 text-sky-700 rounded-lg text-sm"><i class="fa-solid fa-book"></i></span>
+                    <span class="p-2 bg-primary-100 text-primary-700 rounded-lg text-sm"><i data-icon="book" class="w-4 h-4"></i></span>
                     <h3 class="text-xl font-bold text-slate-900">Minna no Nihongo - Sơ Cấp I (Bài 1 đến Bài 25)</h3>
                 </div>
-                <span class="text-xs font-semibold px-2.5 py-1 bg-sky-50 text-sky-700 border border-sky-200 rounded-full">Trình độ JLPT N5</span>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-primary-50 text-primary-700 border border-primary-200 rounded-full">Trình độ JLPT N5</span>
             </div>
             <div id="grid-minna1" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Javascript will inject Minna 1-25 cards -->
@@ -151,10 +154,10 @@
         <section id="section-minna2" class="mb-12">
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center gap-2">
-                    <span class="p-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm"><i class="fa-solid fa-book-bookmark"></i></span>
+                    <span class="p-2 bg-accent-100 text-accent-700 rounded-lg text-sm"><i data-icon="book-open" class="w-4 h-4"></i></span>
                     <h3 class="text-xl font-bold text-slate-900">Minna no Nihongo - Sơ Cấp II (Bài 26 đến Bài 50)</h3>
                 </div>
-                <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full">Trình độ JLPT N4</span>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-accent-50 text-accent-700 border border-accent-200 rounded-full">Trình độ JLPT N4</span>
             </div>
             <div id="grid-minna2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Javascript will inject Minna 26-50 cards -->
@@ -164,7 +167,7 @@
         <!-- No Results Found State -->
         <div id="noResults" class="hidden text-center py-16">
             <div class="w-16 h-16 mx-auto mb-4 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-2xl">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i data-icon="search" class="w-6 h-6"></i>
             </div>
             <h4 class="text-lg font-bold text-slate-700 mb-1">Không tìm thấy bài học phù hợp</h4>
             <p class="text-slate-500 text-sm">Thử từ khóa khác hoặc chuyển sang tab tất cả bài học.</p>
@@ -172,52 +175,41 @@
 
     </main>
 
-    <!-- Settings Modal for Custom Link Structure -->
-    <div id="settingsModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="font-bold text-lg text-slate-900"><i class="fa-solid fa-gear text-primary-600 mr-2"></i>Cấu Hình Tên Đường Dẫn File</h3>
-                <button onclick="toggleSettingsModal()" class="text-slate-400 hover:text-slate-600 p-1">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-            <p class="text-xs text-slate-500 mb-4">
-                Tùy chỉnh định dạng tên tệp tin để trùng khớp với cấu trúc tệp HTML của bạn trên GitHub repository.
-            </p>
-
-            <div class="space-y-4 text-sm">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">Đường dẫn 8 Bài Nhập Môn:</label>
-                    <input type="text" id="introPathPattern" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono focus:ring-2 focus:ring-primary-500 focus:outline-none" value="nhap-mon/{id}.html">
-                    <span class="text-[10px] text-slate-400">Ví dụ: nhap-mon/1.html hoặc nhap-mon-1.html</span>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">Đường dẫn 50 Bài Minna:</label>
-                    <input type="text" id="minnaPathPattern" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono focus:ring-2 focus:ring-primary-500 focus:outline-none" value="bai-{id}.html">
-                    <span class="text-[10px] text-slate-400">Ví dụ: bai-1.html hoặc minna/bai-1.html</span>
-                </div>
-            </div>
-
-            <div class="mt-6 flex justify-end gap-2">
-                <button onclick="toggleSettingsModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-medium">Hủy</button>
-                <button onclick="saveSettings()" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-xl text-xs font-medium">Lưu Cấu Hình</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Notification Toast -->
     <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 text-sm z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
-        <i id="toastIcon" class="fa-solid fa-circle-check text-primary-400"></i>
+        <i data-icon="circle-check" class="w-4 h-4 text-primary-400"></i>
         <span id="toastMsg">Đã cập nhật trạng thái!</span>
     </div>
 
-    <footer class="bg-white border-t border-slate-200 py-8 text-xs text-slate-500 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center space-y-1.5">
-            <p class="font-semibold text-sm text-slate-800">IMEJI日本語教室</p>
-            <p>Lớp học tiếng Nhật thầy Quang</p>
-            <p><a href="https://imejiquynhon.com/" class="hover:text-primary-600">imejiquynhon.com</a> ・ <a href="https://imejiquynhon.com/#register" class="hover:text-primary-600">Đăng ký học thử miễn phí</a></p>
-            <p>© IMEJI日本語教室. All rights reserved.</p>
+    <!-- Chân trang chung (cùng nội dung với website imejiquynhon.com) -->
+    <footer class="bg-white border-t border-slate-200 py-10 text-xs text-slate-500 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div class="space-y-1.5">
+                <p class="font-semibold text-sm text-slate-800">IMEJI日本語教室</p>
+                <p>Lớp học tiếng Nhật thầy Quang</p>
+                <p>ThS. Nguyễn Thanh Quang</p>
+                <p>80 Võ Mười, P. Quy Nhơn Nam, Gia Lai</p>
+                <p>
+                    <a href="tel:0868608647" class="hover:text-primary-600">086 860 8647</a> ・
+                    <a href="https://zalo.me/0868608647" target="_blank" rel="noreferrer" class="hover:text-primary-600">Zalo</a> ・
+                    <a href="mailto:lienhe@imejiquynhon.com" class="hover:text-primary-600">lienhe@imejiquynhon.com</a>
+                </p>
+            </div>
+            <nav aria-label="IMEJI日本語教室" class="space-y-1.5">
+                <p class="font-semibold text-sm text-slate-800">IMEJI日本語教室</p>
+                <a href="https://imejiquynhon.com/" class="block hover:text-primary-600">Trang chủ</a>
+                <a href="./" class="block hover:text-primary-600">Luyện tập Minna no Nihongo (miễn phí)</a>
+                <a href="https://app.imejiquynhon.com/" class="block hover:text-primary-600">Cổng học viên (điểm danh, học phí, bài tập)</a>
+            </nav>
+            <nav aria-label="Tài nguyên" class="space-y-1.5">
+                <p class="font-semibold text-sm text-slate-800">Tài nguyên</p>
+                <a href="https://imejiquynhon.com/posts/" class="block hover:text-primary-600">Bài viết học tiếng Nhật</a>
+                <a href="https://imejiquynhon.com/#faq" class="block hover:text-primary-600">Câu hỏi thường gặp</a>
+                <a href="https://imejiquynhon.com/#register" class="block hover:text-primary-600">Đăng ký học thử miễn phí</a>
+            </nav>
         </div>
+        <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">© IMEJI日本語教室. All rights reserved.</p>
     </footer>
 
     <script>
@@ -228,6 +220,7 @@
                 var on = window.scrollY > 20;
                 h.className = 'fixed top-0 left-0 right-0 z-40 transition-all duration-300 ' + (on ? 'glass-panel py-2.5 shadow-sm' : 'bg-transparent py-4');
                 n.className = 'font-bold text-sm sm:text-base leading-tight tracking-tight ' + (on ? 'text-slate-900' : 'text-white');
+                document.getElementById('ecoSwitch').classList.toggle('imeji-switch--on-dark', !on);
             }
             window.addEventListener('scroll', f, { passive: true }); f();
         })();
@@ -306,17 +299,19 @@
             intro: [6],
             minna: Array.from({ length: 21 }, (_, i) => i + 1),
         };
+        // Tiến độ chỉ tính các bài đã mở; thêm bài vào availableLessons là tổng tự tăng.
+        const availableKeys = new Set([
+            ...availableLessons.intro.map((id) => `intro_${id}`),
+            ...availableLessons.minna.map((id) => `minna_${id}`),
+        ]);
 
         let completedLessons = JSON.parse(localStorage.getItem('nihongo_completed') || '[]');
         let currentTab = 'all';
-        let introPathPattern = localStorage.getItem('introPathPattern') || 'nhap-mon/{id}.html';
-        let minnaPathPattern = localStorage.getItem('minnaPathPattern') || 'minna/{id}.html';
-        let isAdmin = sessionStorage.getItem('isAdmin') === 'true';
+        const introPathPattern = 'nhap-mon/{id}.html';
+        const minnaPathPattern = 'minna/{id}.html';
         
         // Initialize UI
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('introPathPattern').value = introPathPattern;
-            document.getElementById('minnaPathPattern').value = minnaPathPattern;
             renderAllGrids();
             updateProgressUI();
         });
@@ -335,13 +330,13 @@
             const actionHtml = isAvailable
                 ? `<a href="${href}" class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
                         <span>Học bài này</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        <i data-icon="arrow-right" class="w-3.5 h-3.5"></i>
                     </a>`
                 : `<span class="w-full py-2.5 px-4 bg-slate-100 text-slate-400 text-xs font-semibold rounded-xl flex items-center justify-center gap-2">Sắp có</span>`;
 
             const badgeColor = isIntro 
                 ? 'bg-primary-50 text-primary-700 border-primary-200' 
-                : (lesson.id <= 25 ? 'bg-sky-50 text-sky-700 border-sky-200' : 'bg-indigo-50 text-indigo-700 border-indigo-200');
+                : (lesson.id <= 25 ? 'bg-primary-50 text-primary-700 border-primary-200' : 'bg-accent-50 text-accent-700 border-accent-200');
 
             return `
                 <div class="lesson-card glass-panel rounded-2xl border ${isDone ? 'border-primary-300 bg-primary-50/30' : 'border-slate-200'} p-5 flex flex-col justify-between card-hover relative group">
@@ -350,16 +345,16 @@
                             <span class="text-xs font-bold px-2.5 py-1 rounded-lg border ${badgeColor}">
                                 ${isIntro ? 'Nhập môn ' + lesson.id : 'Bài ' + lesson.id}
                             </span>
-                            <button onclick="toggleComplete('${uniqueKey}', event)" 
+                            ${isAvailable ? `<button onclick="toggleComplete('${uniqueKey}', event)" 
                                 class="w-8 h-8 rounded-full flex items-center justify-center transition-all ${isDone ? 'bg-primary-500 text-white shadow-sm shadow-primary-200' : 'bg-slate-100 text-slate-300 hover:text-slate-400 hover:bg-slate-200'}"
                                 title="${isDone ? 'Đánh dấu chưa học' : 'Đánh dấu đã hoàn thành'}">
-                                <i class="fa-solid fa-check text-xs"></i>
-                            </button>
+                                <i data-icon="check" class="w-3.5 h-3.5"></i>
+                            </button>` : ''}
                         </div>
                         <h4 class="font-bold text-slate-800 text-base mb-1 group-hover:text-primary-600 transition-colors">
                             ${lesson.title}
                         </h4>
-                        <div class="text-xs font-medium text-primary-600 japanese-font mb-2">${lesson.jp}</div>
+                        <div class="text-xs font-medium text-primary-600 font-jp mb-2">${lesson.jp}</div>
                         <p class="text-xs text-slate-500 line-clamp-2 mb-4 leading-relaxed">${lesson.desc}</p>
                     </div>
 
@@ -461,8 +456,8 @@
         }
 
         function updateProgressUI() {
-            const total = 58;
-            const count = completedLessons.length;
+            const total = availableKeys.size;
+            const count = completedLessons.filter((k) => availableKeys.has(k)).length;
             const percentage = Math.round((count / total) * 100);
 
             document.getElementById('completedCount').innerText = count;
@@ -478,23 +473,6 @@
             updateProgressUI();
             filterLessons();
             showToast('Đã đặt lại tiến độ học tập!');
-        }
-
-        function toggleSettingsModal() {
-            const modal = document.getElementById('settingsModal');
-            modal.classList.toggle('hidden');
-        }
-
-        function saveSettings() {
-            introPathPattern = document.getElementById('introPathPattern').value.trim() || 'nhap-mon/{id}.html';
-            minnaPathPattern = document.getElementById('minnaPathPattern').value.trim() || 'minna/{id}.html';
-
-            localStorage.setItem('introPathPattern', introPathPattern);
-            localStorage.setItem('minnaPathPattern', minnaPathPattern);
-
-            toggleSettingsModal();
-            filterLessons();
-            showToast('Đã lưu cài đặt đường dẫn tệp!');
         }
 
         function showToast(msg) {

@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Ghép Từ Vựng Tiếng Nhật (Romaji ⇄ Hiragana)</title>
+    <title>Nhập môn 6: Ghép Romaji ⇄ Hiragana | Luyện tập IMEJI日本語教室</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../assets/css/imeji-brand.css">
     <link rel="stylesheet" href="../assets/css/tailwind.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="../assets/js/icons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         .shake-anim {
@@ -36,20 +40,20 @@
             cursor: grabbing;
         }
         .drop-target.drag-over {
-            border-color: #3b82f6 !important;
-            background-color: #eff6ff !important;
+            border-color: var(--imeji-primary-500) !important;
+            background-color: var(--imeji-primary-50) !important;
             transform: scale(1.02);
         }
     </style>
 <link rel="stylesheet" href="../assets/css/cloud-bg.css">
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-jpRed selection:text-white">
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-primary-600 selection:text-white">
 
     <!-- Header & Navigation -->
     <header class="bg-slate-800/90 backdrop-blur border-b border-slate-700 sticky top-0 z-30 shadow-lg">
         <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-jpRed text-white flex items-center justify-center font-jp font-black text-xl shadow-md">
+                <div class="w-10 h-10 rounded-xl bg-primary-600 text-white flex items-center justify-center font-jp font-black text-xl shadow-md">
                     日
                 </div>
                 <div>
@@ -59,23 +63,27 @@
             </div>
 
             <!-- Điều hướng ra ngoài -->
-            <nav class="flex items-center gap-2 text-xs sm:text-sm font-semibold" aria-label="Điều hướng">
-                <a href="../index.html" class="bg-slate-700/60 hover:bg-slate-600 px-3 py-1.5 rounded-lg border border-slate-600 text-slate-200">← Danh sách bài</a>
-                <a href="https://imejiquynhon.com/" class="bg-primary-600 hover:bg-primary-700 px-3 py-1.5 rounded-lg text-white">🏠 Trang chủ IMEJI日本語教室</a>
-            </nav>
+            <div class="flex items-center gap-2 text-xs sm:text-sm font-semibold">
+                <a href="../index.html" class="bg-slate-700/60 hover:bg-slate-600 px-3 py-1.5 rounded-lg border border-slate-600 text-slate-200 inline-flex items-center gap-1.5"><i data-icon="arrow-left" class="w-4 h-4"></i> Danh sách bài</a>
+                <nav class="imeji-switch imeji-switch--on-dark" aria-label="IMEJI日本語教室">
+                    <a class="imeji-switch__item" href="https://imejiquynhon.com/" title="Trang chủ"><i data-icon="house" class="w-4 h-4"></i><span class="imeji-switch__label">Trang chủ</span></a>
+                    <a class="imeji-switch__item" href="../index.html" aria-current="page" title="Luyện tập"><i data-icon="gamepad-2" class="w-4 h-4"></i><span class="imeji-switch__label">Luyện tập</span></a>
+                    <a class="imeji-switch__item" href="https://app.imejiquynhon.com/" title="Học viên"><i data-icon="log-in" class="w-4 h-4"></i><span class="imeji-switch__label">Học viên</span></a>
+                </nav>
+            </div>
 
             <!-- Stats Bar -->
             <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold">
                 <div class="bg-slate-700/60 px-3 py-1.5 rounded-lg border border-slate-600 flex items-center gap-2">
                     <span class="text-slate-400">Đã ghép:</span>
-                    <span id="groupProgress" class="text-emerald-400 font-bold">0 / 10</span>
+                    <span id="groupProgress" class="text-success-400 font-bold">0 / 10</span>
                 </div>
                 <div class="bg-slate-700/60 px-3 py-1.5 rounded-lg border border-slate-600 flex items-center gap-2">
                     <span class="text-slate-400">Tổng điểm:</span>
-                    <span id="totalScore" class="text-amber-400 font-bold">0 / 50</span>
+                    <span id="totalScore" class="text-warning-400 font-bold">0 / 50</span>
                 </div>
                 <button id="openVocabModalBtn" class="bg-primary-700 hover:bg-primary-600 text-white px-3 py-1.5 rounded-lg transition font-medium text-xs flex items-center gap-1 shadow">
-                    📖 Tra bảng từ
+                    <i data-icon="book-open" class="w-3.5 h-3.5"></i> Tra bảng từ
                 </button>
             </div>
         </div>
@@ -107,7 +115,7 @@
         <div class="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div class="space-y-1">
                 <div class="flex items-center gap-2">
-                    <span id="groupBadge" class="bg-jpRed/20 text-jpRed border border-jpRed/40 text-xs font-bold px-2.5 py-0.5 rounded-full">
+                    <span id="groupBadge" class="bg-primary-600/20 text-primary-600 border border-primary-600/40 text-xs font-bold px-2.5 py-0.5 rounded-full">
                         Nhóm 1
                     </span>
                     <h2 id="groupTitle" class="text-base sm:text-lg font-bold text-white">
@@ -122,17 +130,17 @@
             <!-- Action Controls -->
             <div class="flex items-center gap-2 self-end sm:self-auto shrink-0">
                 <button onclick="restartCurrentGroup()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-slate-600">
-                    🔄 Chơi lại
+                    <i data-icon="rotate-ccw" class="w-3.5 h-3.5"></i> Chơi lại
                 </button>
                 <button onclick="speakAllCurrentGroup()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-slate-600" title="Nghe phát âm tất cả các từ">
-                    🔊 Nghe nhóm từ
+                    <i data-icon="volume-2" class="w-3.5 h-3.5"></i> Nghe nhóm từ
                 </button>
             </div>
         </div>
 
         <!-- Help Instructions for Touch/Click -->
         <div class="text-center text-xs text-slate-400 bg-slate-800/40 py-2 px-4 rounded-xl border border-slate-700/50">
-            💡 <strong>Mẹo:</strong> Bạn có thể <span class="text-amber-300">Kéo & Thả</span> hoặc chỉ cần <span class="text-sky-300">Nhấp chọn Romaji rồi nhấp chọn Hiragana</span> để ghép nối!
+            <i data-icon="lightbulb" class="w-4 h-4 inline -mt-0.5 text-warning-300"></i> <strong>Mẹo:</strong> Bạn có thể <span class="text-warning-300">Kéo & Thả</span> hoặc chỉ cần <span class="text-primary-300">Nhấp chọn Romaji rồi nhấp chọn Hiragana</span> để ghép nối!
         </div>
 
         <!-- Game Columns Container -->
@@ -142,7 +150,7 @@
             <div class="space-y-3">
                 <div class="flex items-center justify-between px-1">
                     <h3 class="text-xs font-bold tracking-wider uppercase text-slate-400 flex items-center gap-1.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-primary-400 inline-block"></span>
                         Cột Romaji (Kéo / Chọn)
                     </h3>
                     <span class="text-xs text-slate-500">10 từ</span>
@@ -157,7 +165,7 @@
             <div class="space-y-3">
                 <div class="flex items-center justify-between px-1">
                     <h3 class="text-xs font-bold tracking-wider uppercase text-slate-400 flex items-center gap-1.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-success-400 inline-block"></span>
                         Cột Hiragana (Đích thả)
                     </h3>
                     <span class="text-xs text-slate-500">10 từ</span>
@@ -178,12 +186,12 @@
             <div class="p-5 border-b border-slate-700 flex items-center justify-between bg-slate-800/80 sticky top-0">
                 <div>
                     <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                        📖 Danh Sách Từ Vựng Tất Cả 5 Nhóm
+                        <i data-icon="book-open" class="w-5 h-5 inline -mt-1"></i> Danh Sách Từ Vựng Tất Cả 5 Nhóm
                     </h3>
                     <p class="text-xs text-slate-400">Xem nghĩa tiếng Việt và bấm biểu tượng loa để nghe phát âm chuẩn tiếng Nhật</p>
                 </div>
                 <button onclick="closeVocabModal()" class="w-8 h-8 rounded-full bg-slate-700 hover:bg-slate-600 text-slate-300 flex items-center justify-center font-bold text-lg transition">
-                    ✕
+                    <i data-icon="x" class="w-5 h-5"></i>
                 </button>
             </div>
 
@@ -399,10 +407,10 @@
             VOCAB_GROUPS.forEach((g, idx) => {
                 const tabBtn = document.getElementById(`tab-${idx}`);
                 if (idx === currentGroupIndex) {
-                    tabBtn.className = "group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-jpRed text-white shadow-md border border-jpRed";
+                    tabBtn.className = "group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-primary-600 text-white shadow-md border border-primary-600";
                 } else {
                     const isDone = groupMatchedCount[idx] === 10;
-                    tabBtn.className = `group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 ${isDone ? 'border-emerald-500/50 text-emerald-400' : ''}`;
+                    tabBtn.className = `group-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 ${isDone ? 'border-success-500/50 text-success-400' : ''}`;
                 }
             });
 
@@ -449,13 +457,13 @@
                     card.draggable = true;
                     card.className = `draggable-item p-3.5 rounded-xl font-bold flex items-center justify-between transition-all duration-150 border shadow-sm ${
                         isSelected 
-                        ? 'bg-sky-500/20 border-sky-400 text-sky-200 ring-2 ring-sky-400/50 scale-[1.02]' 
+                        ? 'bg-primary-500/20 border-primary-400 text-primary-200 ring-2 ring-primary-400/50 scale-[1.02]' 
                         : 'bg-slate-800 hover:bg-slate-700/80 border-slate-700 text-slate-100 hover:border-slate-600'
                     }`;
                     card.innerHTML = `
                         <span class="text-base sm:text-lg">${item.romaji}</span>
                         <span class="text-xs text-slate-400 font-normal flex items-center gap-1">
-                            ✋ Kéo / Chọn
+                            <i data-icon="hand" class="w-3.5 h-3.5 inline -mt-0.5"></i> Kéo / Chọn
                         </span>
                     `;
 
@@ -481,23 +489,23 @@
                 slot.dataset.targetId = item.id;
 
                 if (matchedWord) {
-                    slot.className = "p-3.5 rounded-xl bg-emerald-950/40 border-2 border-emerald-500/80 text-emerald-100 flex items-center justify-between shadow-md pulse-success";
+                    slot.className = "p-3.5 rounded-xl bg-success-950/40 border-2 border-success-500/80 text-success-100 flex items-center justify-between shadow-md pulse-success";
                     slot.innerHTML = `
                         <div class="flex items-center gap-3">
-                            <span class="w-6 h-6 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-xs">✓</span>
+                            <span class="w-6 h-6 rounded-full bg-success-500 text-slate-950 flex items-center justify-center font-black text-xs"><i data-icon="check" class="w-3.5 h-3.5"></i></span>
                             <div>
-                                <div class="font-jp font-black text-lg text-emerald-300 leading-none">${item.hiragana}</div>
-                                <div class="text-xs text-emerald-400/80 font-medium mt-1">${matchedWord.romaji} • ${matchedWord.meaning}</div>
+                                <div class="font-jp font-black text-lg text-success-300 leading-none">${item.hiragana}</div>
+                                <div class="text-xs text-success-400/80 font-medium mt-1">${matchedWord.romaji} • ${matchedWord.meaning}</div>
                             </div>
                         </div>
-                        <button onclick="speakJapanese('${item.hiragana}')" class="p-2 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 text-emerald-300 transition" title="Nghe phát âm">
-                            🔊
+                        <button onclick="speakJapanese('${item.hiragana}')" class="p-2 rounded-lg bg-success-900/60 hover:bg-success-800 text-success-300 transition" title="Nghe phát âm">
+                            <i data-icon="volume-2" class="w-4 h-4"></i>
                         </button>
                     `;
                 } else {
                     slot.className = "drop-target p-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-800 border-2 border-dashed border-slate-700 hover:border-slate-500 text-slate-100 flex items-center justify-between transition-all cursor-pointer";
                     slot.innerHTML = `
-                        <span class="font-jp font-bold text-xl text-amber-300 tracking-wide">${item.hiragana}</span>
+                        <span class="font-jp font-bold text-xl text-warning-300 tracking-wide">${item.hiragana}</span>
                         <span class="text-xs text-slate-400 font-medium bg-slate-700/50 px-2.5 py-1 rounded-lg border border-slate-600/50">
                             Thả vào đây
                         </span>
@@ -571,9 +579,9 @@
 
                 const targetSlot = document.getElementById(`hiragana-${hiraganaTargetId}`);
                 if (targetSlot) {
-                    targetSlot.classList.add('shake-anim', 'border-jpRed');
+                    targetSlot.classList.add('shake-anim', 'border-danger-500');
                     setTimeout(() => {
-                        targetSlot.classList.remove('shake-anim', 'border-jpRed');
+                        targetSlot.classList.remove('shake-anim', 'border-danger-500');
                         renderGame();
                     }, 400);
                 } else {
@@ -610,14 +618,14 @@
                             <div class="flex items-center gap-3">
                                 <span class="text-xs font-bold text-slate-500 w-5">${index + 1}.</span>
                                 <div>
-                                    <span class="font-jp font-bold text-base text-amber-300 mr-2">${w.hiragana}</span>
-                                    <span class="text-xs font-semibold text-sky-300">(${w.romaji})</span>
+                                    <span class="font-jp font-bold text-base text-warning-300 mr-2">${w.hiragana}</span>
+                                    <span class="text-xs font-semibold text-primary-300">(${w.romaji})</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="text-xs text-slate-300 font-medium">${w.meaning}</span>
                                 <button onclick="speakJapanese('${w.hiragana}')" class="text-xs p-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-200 transition" title="Nghe">
-                                    🔊
+                                    <i data-icon="volume-2" class="w-3.5 h-3.5"></i>
                                 </button>
                             </div>
                         </div>
@@ -627,7 +635,7 @@
                 groupEl.innerHTML = `
                     <div class="flex items-center justify-between border-b border-slate-700 pb-2">
                         <h4 class="font-bold text-white text-sm flex items-center gap-2">
-                            <span class="bg-jpRed text-white text-xs px-2 py-0.5 rounded font-bold">${group.badge}</span>
+                            <span class="bg-primary-600 text-white text-xs px-2 py-0.5 rounded font-bold">${group.badge}</span>
                             ${group.title}
                         </h4>
                     </div>

@@ -15,7 +15,6 @@
 
         // ===== ENGINE (KHÓA — KHÔNG SỬA TỪ ĐÂY TRỞ XUỐNG) =====
         // Trang chủ của lớp (nút quay về ở menu bài học)
-        const SITE_HOME_URL = 'https://imejiquynhon.com/';
         const KEY_HIGH = LESSON_CONFIG.storagePrefix + '_highscore';
         const KEY_MISTAKES = LESSON_CONFIG.storagePrefix + '_mistakes';
         const _memStore = {};
@@ -148,7 +147,7 @@
 
         function toggleSound() {
             gameState.soundEnabled = !gameState.soundEnabled;
-            document.getElementById('btn-sound').innerText = gameState.soundEnabled ? '🔊' : '🔇';
+            document.getElementById('btn-sound').innerHTML = imejiIcon(gameState.soundEnabled ? 'volume-2' : 'volume-x', 'w-6 h-6');
         }
 
         function speakJapanese(rawText) {
@@ -191,8 +190,11 @@
             } catch (e) { return 0; }
         }
 
+        // Bài đang được nhúng trong trang khác (iframe), VD cổng học viên eduscan
+        const IS_EMBEDDED = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
+
         function startLesson() {
-            document.title = LESSON_CONFIG.title;
+            document.title = `${LESSON_CONFIG.title} | Luyện tập IMEJI日本語教室`;
             const jl = document.getElementById('modal-jlpt');
             if (jl) jl.innerText = LESSON_CONFIG.jlpt;
             validateData();
@@ -214,11 +216,15 @@
 
             container.innerHTML = `
                 <div class="flex flex-col items-center justify-center w-full max-w-4xl py-4 px-2">
-                    <!-- Điều hướng ra ngoài bài học -->
-                    <nav class="w-full flex flex-wrap items-center justify-between gap-2 mb-4 select-none" aria-label="Điều hướng">
-                        <a href="../index.html" class="btn-3d btn-gray inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">← Danh sách bài</a>
-                        <a href="${SITE_HOME_URL}" class="btn-3d btn-blue inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">🏠 Trang chủ IMEJI日本語教室</a>
-                    </nav>
+                    <!-- Điều hướng ra ngoài bài học; ẩn khi bài được nhúng (VD trong cổng học viên eduscan) -->
+                    ${IS_EMBEDDED ? '' : `<div class="w-full flex flex-wrap items-center justify-between gap-2 mb-4 select-none">
+                        <a href="../index.html" class="btn-3d btn-gray inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl"><i data-icon="arrow-left" class="w-4 h-4"></i> Danh sách bài</a>
+                        <nav class="imeji-switch" aria-label="IMEJI日本語教室">
+                            <a class="imeji-switch__item" href="https://imejiquynhon.com/" title="Trang chủ"><i data-icon="house" class="w-4 h-4"></i><span class="imeji-switch__label">Trang chủ</span></a>
+                            <a class="imeji-switch__item" href="../index.html" aria-current="page" title="Luyện tập"><i data-icon="gamepad-2" class="w-4 h-4"></i><span class="imeji-switch__label">Luyện tập</span></a>
+                            <a class="imeji-switch__item" href="https://app.imejiquynhon.com/" title="Học viên"><i data-icon="log-in" class="w-4 h-4"></i><span class="imeji-switch__label">Học viên</span></a>
+                        </nav>
+                    </div>`}
                     <!-- Title Header -->
                     <div class="text-center mb-6">
                         <span class="inline-block bg-primary-100 text-primary-800 font-extrabold px-4 py-1 rounded-full text-xs md:text-sm mb-2 border border-primary-300 select-none">
@@ -247,75 +253,75 @@
                         <div class="flex items-center gap-1.5">
                             <span class="text-xs md:text-sm font-extrabold text-slate-600">Độ khó:</span>
                             <button onclick="setDifficulty('all')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'all' ? 'btn-blue' : 'btn-gray'}">Tất cả</button>
-                            <button onclick="setDifficulty('easy')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'easy' ? 'btn-green' : 'btn-gray'}">🟢 Dễ</button>
-                            <button onclick="setDifficulty('medium')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'medium' ? 'btn-amber' : 'btn-gray'}">🟡 Vừa</button>
-                            <button onclick="setDifficulty('hard')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'hard' ? 'btn-purple' : 'btn-gray'}">🔴 Khó</button>
+                            <button onclick="setDifficulty('easy')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'easy' ? 'btn-green' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-success-500 mr-1 align-middle"></span>Dễ</button>
+                            <button onclick="setDifficulty('medium')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'medium' ? 'btn-amber' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-warning-500 mr-1 align-middle"></span>Vừa</button>
+                            <button onclick="setDifficulty('hard')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'hard' ? 'btn-purple' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-danger-500 mr-1 align-middle"></span>Khó</button>
                         </div>
 
-                        <div class="text-xs md:text-sm font-black text-amber-600 flex items-center gap-1">
-                            🏆 Cao nhất: <span>${highScore}</span>
+                        <div class="text-xs md:text-sm font-black text-warning-600 flex items-center gap-1">
+                            <i data-icon="trophy" class="w-4 h-4"></i> Cao nhất: <span>${highScore}</span>
                         </div>
                     </div>
 
                     <!-- 11. Menu Cards với màu chủ đề riêng biệt -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                         <!-- Game 1: Từ Vựng (Xanh lá) -->
-                        <div onclick="startGame(1)" class="btn-3d bg-emerald-50 hover:bg-emerald-100 border-2 border-emerald-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
-                            <div class="text-3xl md:text-4xl bg-emerald-200 text-emerald-800 p-3 rounded-2xl select-none">🏷️</div>
+                        <div onclick="startGame(1)" class="btn-3d bg-success-50 hover:bg-success-100 border-2 border-success-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-success-200 text-success-800 p-3 rounded-2xl select-none">🏷️</div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-emerald-950">Từ Vựng</h3>
-                                    <span class="text-xs bg-emerald-200 text-emerald-800 px-2 py-0.5 rounded font-black">G1</span>
+                                    <h3 class="text-lg font-black text-success-950">Từ Vựng</h3>
+                                    <span class="text-xs bg-success-200 text-success-800 px-2 py-0.5 rounded font-black">G1</span>
                                 </div>
-                                <p class="text-xs md:text-sm text-emerald-800 font-semibold mt-0.5">Chọn từ đúng theo ngữ cảnh tiếng Việt</p>
+                                <p class="text-xs md:text-sm text-success-800 font-semibold mt-0.5">Chọn từ đúng theo ngữ cảnh tiếng Việt</p>
                             </div>
                         </div>
 
                         <!-- Game 2: Ngữ Pháp (Xanh dương) -->
-                        <div onclick="startGame(2)" class="btn-3d bg-sky-50 hover:bg-sky-100 border-2 border-sky-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
-                            <div class="text-3xl md:text-4xl bg-sky-200 text-sky-800 p-3 rounded-2xl select-none">✏️</div>
+                        <div onclick="startGame(2)" class="btn-3d bg-primary-50 hover:bg-primary-100 border-2 border-primary-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-primary-200 text-primary-800 p-3 rounded-2xl select-none">✏️</div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-sky-950">Ngữ Pháp</h3>
-                                    <span class="text-xs bg-sky-200 text-sky-800 px-2 py-0.5 rounded font-black">G2</span>
+                                    <h3 class="text-lg font-black text-primary-950">Ngữ Pháp</h3>
+                                    <span class="text-xs bg-primary-200 text-primary-800 px-2 py-0.5 rounded font-black">G2</span>
                                 </div>
-                                <p class="text-xs md:text-sm text-sky-800 font-semibold mt-0.5">Điền trợ từ / động từ vào chỗ trống</p>
+                                <p class="text-xs md:text-sm text-primary-800 font-semibold mt-0.5">Điền trợ từ / động từ vào chỗ trống</p>
                             </div>
                         </div>
 
                         <!-- Game 3: Xếp Câu (Tím) -->
-                        <div onclick="startGame(3)" class="btn-3d bg-purple-50 hover:bg-purple-100 border-2 border-purple-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
-                            <div class="text-3xl md:text-4xl bg-purple-200 text-purple-800 p-3 rounded-2xl select-none">🧩</div>
+                        <div onclick="startGame(3)" class="btn-3d bg-accent-50 hover:bg-accent-100 border-2 border-accent-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-accent-200 text-accent-800 p-3 rounded-2xl select-none">🧩</div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-purple-950">Xếp Câu</h3>
-                                    <span class="text-xs bg-purple-200 text-purple-800 px-2 py-0.5 rounded font-black">G3</span>
+                                    <h3 class="text-lg font-black text-accent-950">Xếp Câu</h3>
+                                    <span class="text-xs bg-accent-200 text-accent-800 px-2 py-0.5 rounded font-black">G3</span>
                                 </div>
-                                <p class="text-xs md:text-sm text-purple-800 font-semibold mt-0.5">Sắp xếp các khối từ thành câu chuẩn</p>
+                                <p class="text-xs md:text-sm text-accent-800 font-semibold mt-0.5">Sắp xếp các khối từ thành câu chuẩn</p>
                             </div>
                         </div>
 
                         <!-- Game 4: Hội Thoại (Cam) -->
-                        <div onclick="startGame(4)" class="btn-3d bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
-                            <div class="text-3xl md:text-4xl bg-amber-200 text-amber-800 p-3 rounded-2xl select-none">🗣️</div>
+                        <div onclick="startGame(4)" class="btn-3d bg-warning-50 hover:bg-warning-100 border-2 border-warning-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
+                            <div class="text-3xl md:text-4xl bg-warning-200 text-warning-800 p-3 rounded-2xl select-none">🗣️</div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-amber-950">Hội Thoại</h3>
-                                    <span class="text-xs bg-amber-200 text-amber-800 px-2 py-0.5 rounded font-black">G4</span>
+                                    <h3 class="text-lg font-black text-warning-950">Hội Thoại</h3>
+                                    <span class="text-xs bg-warning-200 text-warning-800 px-2 py-0.5 rounded font-black">G4</span>
                                 </div>
-                                <p class="text-xs md:text-sm text-amber-800 font-semibold mt-0.5">Chọn câu phản hồi tự nhiên nhất</p>
+                                <p class="text-xs md:text-sm text-warning-800 font-semibold mt-0.5">Chọn câu phản hồi tự nhiên nhất</p>
                             </div>
                         </div>
 
                         <!-- Feature 9: Ôn Từ Hay Sai (Đỏ Hồng) -->
-                        <div onclick="startWeakPointsPractice()" class="btn-3d bg-rose-50 hover:bg-rose-100 border-2 border-rose-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left sm:col-span-2 transition-colors">
-                            <div class="text-3xl md:text-4xl bg-rose-200 text-rose-800 p-3 rounded-2xl select-none">📚</div>
+                        <div onclick="startWeakPointsPractice()" class="btn-3d bg-danger-50 hover:bg-danger-100 border-2 border-danger-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left sm:col-span-2 transition-colors">
+                            <div class="text-3xl md:text-4xl bg-danger-200 text-danger-800 p-3 rounded-2xl select-none">📚</div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-rose-950">📚 Ôn Từ Hay Sai</h3>
-                                    <span class="text-xs bg-rose-200 text-rose-900 px-2.5 py-0.5 rounded-full font-black">${mistakesCount} mục cần chú ý</span>
+                                    <h3 class="text-lg font-black text-danger-950">Ôn Từ Hay Sai</h3>
+                                    <span class="text-xs bg-danger-200 text-danger-900 px-2.5 py-0.5 rounded-full font-black">${mistakesCount} mục cần chú ý</span>
                                 </div>
-                                <p class="text-xs md:text-sm text-rose-800 font-semibold mt-0.5">Tự động tổng hợp những câu bạn từng làm sai nhiều lần</p>
+                                <p class="text-xs md:text-sm text-danger-800 font-semibold mt-0.5">Tự động tổng hợp những câu bạn từng làm sai nhiều lần</p>
                             </div>
                         </div>
                     </div>
@@ -445,9 +451,9 @@
             // Feature 1: Progress > 80% effect
             if (progress >= 80) {
                 progressInner.className = "h-full rounded-full transition-all duration-300 progress-near-finish";
-                progressText.innerHTML = `Câu ${currentNum} / ${totalNum} <span class="text-amber-500 font-black animate-pulse">🔥 Sắp hoàn thành!</span>`;
+                progressText.innerHTML = `Câu ${currentNum} / ${totalNum} <span class="text-warning-500 font-black animate-pulse">🔥 Sắp hoàn thành!</span>`;
             } else {
-                progressInner.className = "bg-[#58CC02] h-full rounded-full transition-all duration-300";
+                progressInner.className = "bg-success-500 h-full rounded-full transition-all duration-300";
                 progressText.innerText = `Câu ${currentNum} / ${totalNum}`;
             }
 
@@ -507,9 +513,9 @@
             const levelBadge = document.getElementById('level-badge');
             const levelText = (q.level || "easy").toUpperCase();
             levelBadge.innerText = levelText;
-            levelBadge.className = q.level === 'hard' ? "bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md text-xs uppercase font-black" :
-                                   q.level === 'medium' ? "bg-amber-100 text-amber-700 px-2 py-0.5 rounded-md text-xs uppercase font-black" :
-                                   "bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md text-xs uppercase font-black";
+            levelBadge.className = q.level === 'hard' ? "bg-accent-100 text-accent-700 px-2 py-0.5 rounded-md text-xs uppercase font-black" :
+                                   q.level === 'medium' ? "bg-warning-100 text-warning-700 px-2 py-0.5 rounded-md text-xs uppercase font-black" :
+                                   "bg-success-100 text-success-700 px-2 py-0.5 rounded-md text-xs uppercase font-black";
 
             if (q.context) renderGame1(q, container);
             else if (q.sentence) renderGame2(q, container);
@@ -535,8 +541,8 @@
                 <div class="flex flex-col items-center justify-center w-full max-w-2xl">
                     <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-2 uppercase tracking-wider">Chọn đáp án đúng</h2>
                     
-                    <div class="bg-emerald-50 border-2 border-emerald-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-inner">
-                        <p class="text-lg md:text-2xl font-extrabold text-emerald-950">"${q.context}"</p>
+                    <div class="bg-success-50 border-2 border-success-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-inner">
+                        <p class="text-lg md:text-2xl font-extrabold text-success-950">"${q.context}"</p>
                     </div>
 
                     <!-- 2x2 Grid -->
@@ -575,12 +581,12 @@
 
                     <div class="bg-slate-50 border-2 border-slate-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-sm">
                         <div id="sentence-display" class="jp-text-xl text-slate-800 leading-relaxed mb-3">
-                            ${q.sentence.replace(/＿+/, '<span id="blank-slot" class="inline-block border-b-4 border-emerald-500 min-w-[90px] px-2 text-emerald-600 font-extrabold">＿＿＿</span>')}
+                            ${q.sentence.replace(/＿+/, '<span id="blank-slot" class="inline-block border-b-4 border-success-500 min-w-[90px] px-2 text-success-600 font-extrabold">＿＿＿</span>')}
                         </div>
 
                         <div>
-                            <button onclick="toggleTranslation()" class="text-xs md:text-sm text-slate-500 underline font-bold hover:text-slate-700 select-none">
-                                👁️ <span id="trans-toggle-text">Hiện bản dịch</span>
+                            <button onclick="toggleTranslation()" class="text-xs md:text-sm text-slate-500 underline font-bold hover:text-slate-700 select-none inline-flex items-center gap-1">
+                                <i data-icon="eye" class="w-4 h-4"></i> <span id="trans-toggle-text">Hiện bản dịch</span>
                             </button>
                             <p id="sentence-translation" class="text-base text-slate-600 font-bold mt-2 hidden italic">"${q.translation}"</p>
                         </div>
@@ -635,8 +641,8 @@
                 <div class="flex flex-col items-center justify-center w-full max-w-2xl">
                     <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-2 uppercase tracking-wider">Sắp xếp các khối từ</h2>
 
-                    <div class="bg-purple-50 border-2 border-purple-200 p-4 rounded-2xl mb-5 w-full text-center">
-                        <p class="text-base md:text-xl font-extrabold text-purple-950">"${q.vietnamese}"</p>
+                    <div class="bg-accent-50 border-2 border-accent-200 p-4 rounded-2xl mb-5 w-full text-center">
+                        <p class="text-base md:text-xl font-extrabold text-accent-950">"${q.vietnamese}"</p>
                     </div>
 
                     <!-- Drop zone -->
@@ -689,12 +695,12 @@
                     <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-3 uppercase tracking-wider">Chọn câu phản hồi đúng</h2>
 
                     <div class="flex items-center gap-3 mb-5 w-full">
-                        <div class="text-3xl bg-amber-100 p-3 rounded-2xl border border-amber-300 select-none shrink-0">${q.speaker.split(' ')[0]}</div>
+                        <div class="text-3xl bg-warning-100 p-3 rounded-2xl border border-warning-300 select-none shrink-0">${q.speaker.split(' ')[0]}</div>
                         <div class="bg-slate-50 border-2 border-slate-200 p-4 rounded-2xl rounded-tl-none flex-1 flex items-center justify-between shadow-sm">
                             <div class="jp-text-lg text-slate-800 font-black">${q.question}</div>
                             <!-- 6. Nút nghe touch target min-w 44px -->
                             <button onclick="speakJapanese('${q.questionAudioText}')" aria-label="Phát âm thanh" class="btn-3d btn-amber min-w-[44px] min-h-[44px] p-2.5 rounded-xl text-lg ml-2 flex items-center justify-center shrink-0 select-none">
-                                🔊
+                                <i data-icon="volume-2" class="w-5 h-5"></i>
                             </button>
                         </div>
                     </div>
@@ -772,15 +778,15 @@
                     gameState.streak += 1;
                     gameState.maxStreak = Math.max(gameState.maxStreak, gameState.streak);
 
-                    bar.className = "border-t-2 border-emerald-300 bg-emerald-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
+                    bar.className = "border-t-2 border-success-300 bg-success-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
                     icon.innerText = "✅";
                     title.innerText = "Chính xác!";
-                    title.className = "text-lg md:text-xl font-black text-emerald-800";
+                    title.className = "text-lg md:text-xl font-black text-success-800";
                     diff.innerText = "";
 
                     exp.innerHTML = `
-                        <p class="text-emerald-900 font-bold mb-1">💡 ${q.explanation.correct}</p>
-                        <p class="text-emerald-800">📌 ${q.explanation.tip}</p>
+                        <p class="text-success-900 font-bold mb-1">💡 ${q.explanation.correct}</p>
+                        <p class="text-success-800">📌 ${q.explanation.tip}</p>
                     `;
 
                     btnAction.innerText = "TIẾP TỤC";
@@ -796,10 +802,10 @@
                         gameState.wrongAnswers.push(q);
                     }
 
-                    bar.className = "border-t-2 border-rose-300 bg-rose-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
+                    bar.className = "border-t-2 border-danger-300 bg-danger-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
                     icon.innerText = "❌";
                     title.innerText = "Chưa chính xác";
-                    title.className = "text-lg md:text-xl font-black text-rose-800";
+                    title.className = "text-lg md:text-xl font-black text-danger-800";
 
                     let correctAnswerText = "";
                     if (q.context) correctAnswerText = q.kanji;
@@ -807,16 +813,16 @@
                     else if (q.acceptableOrders) correctAnswerText = q.acceptableOrders[0].join(" ");
                     else if (q.question) correctAnswerText = q.options[q.correctIndex].kanji;
 
-                    diff.innerHTML = `<span class="text-rose-900">Đáp án đúng:</span> <span class="font-extrabold text-emerald-800">${correctAnswerText}</span>`;
+                    diff.innerHTML = `<span class="text-danger-900">Đáp án đúng:</span> <span class="font-extrabold text-success-800">${correctAnswerText}</span>`;
 
                     // 7. Flashcard sau câu sai
                     exp.innerHTML = `
-                        <div class="mb-2 p-2 bg-white rounded-lg border border-rose-200">
-                            <p class="text-xs font-black text-rose-600 uppercase mb-0.5">📌 Từ/Cấu trúc cần nhớ hôm nay:</p>
+                        <div class="mb-2 p-2 bg-white rounded-lg border border-danger-200">
+                            <p class="text-xs font-black text-danger-600 uppercase mb-0.5">📌 Từ/Cấu trúc cần nhớ hôm nay:</p>
                             <div class="jp-text-lg font-bold text-slate-800">${q.kanji || q.sentence || correctAnswerText}</div>
                         </div>
-                        <p class="text-rose-900 font-bold mb-1">💡 ${q.explanation.correct}</p>
-                        <p class="text-rose-800">⚠️ ${q.explanation.pitfalls}</p>
+                        <p class="text-danger-900 font-bold mb-1">💡 ${q.explanation.correct}</p>
+                        <p class="text-danger-800">⚠️ ${q.explanation.pitfalls}</p>
                     `;
 
                     btnAction.innerText = "ĐÃ HỌC ĐƯỢC";
@@ -902,42 +908,42 @@
                     <!-- Stats Grid 4 Ô (Feature 3) -->
                     <div class="grid grid-cols-2 gap-3.5 w-full mb-6">
                         <!-- Score -->
-                        <div class="bg-amber-50 border-2 border-amber-200 p-4 rounded-2xl flex flex-col items-center">
-                            <span class="text-xs font-black text-amber-600 uppercase mb-1">Điểm Số</span>
-                            <span class="text-3xl md:text-4xl font-black text-amber-600">⭐ ${gameState.score}</span>
+                        <div class="bg-warning-50 border-2 border-warning-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-warning-600 uppercase mb-1">Điểm Số</span>
+                            <span class="text-3xl md:text-4xl font-black text-warning-600">⭐ ${gameState.score}</span>
                         </div>
 
                         <!-- Correct -->
-                        <div class="bg-emerald-50 border-2 border-emerald-200 p-4 rounded-2xl flex flex-col items-center">
-                            <span class="text-xs font-black text-emerald-600 uppercase mb-1">Đúng</span>
-                            <span class="text-3xl md:text-4xl font-black text-emerald-600">✅ ${gameState.correctCount}/${total}</span>
+                        <div class="bg-success-50 border-2 border-success-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-success-600 uppercase mb-1">Đúng</span>
+                            <span class="text-3xl md:text-4xl font-black text-success-600">✅ ${gameState.correctCount}/${total}</span>
                         </div>
 
                         <!-- Feature 3: Độ Chính Xác -->
-                        <div class="bg-sky-50 border-2 border-sky-200 p-4 rounded-2xl flex flex-col items-center">
-                            <span class="text-xs font-black text-sky-600 uppercase mb-1">Độ Chính Xác</span>
-                            <span class="text-3xl md:text-4xl font-black text-sky-600">🎯 ${accuracy}%</span>
+                        <div class="bg-primary-50 border-2 border-primary-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-primary-600 uppercase mb-1">Độ Chính Xác</span>
+                            <span class="text-3xl md:text-4xl font-black text-primary-600">🎯 ${accuracy}%</span>
                         </div>
 
                         <!-- Streak -->
-                        <div class="bg-orange-50 border-2 border-orange-200 p-4 rounded-2xl flex flex-col items-center">
-                            <span class="text-xs font-black text-orange-600 uppercase mb-1">Chuỗi Cao Nhất</span>
-                            <span class="text-3xl md:text-4xl font-black text-orange-600">🔥 ${gameState.maxStreak}</span>
+                        <div class="bg-warning-50 border-2 border-warning-200 p-4 rounded-2xl flex flex-col items-center">
+                            <span class="text-xs font-black text-warning-600 uppercase mb-1">Chuỗi Cao Nhất</span>
+                            <span class="text-3xl md:text-4xl font-black text-warning-600">🔥 ${gameState.maxStreak}</span>
                         </div>
                     </div>
 
                     <!-- Actions -->
                     <div class="flex flex-col gap-3 w-full">
                         ${gameState.wrongAnswers.length > 0 ? `
-                            <button onclick="practiceCurrentWrongList()" class="btn-3d btn-purple py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
-                                📌 Ôn lại câu làm sai (${gameState.wrongAnswers.length})
+                            <button onclick="practiceCurrentWrongList()" class="btn-3d btn-purple py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider flex items-center justify-center gap-2">
+                                <i data-icon="list-checks" class="w-5 h-5"></i> Ôn lại câu làm sai (${gameState.wrongAnswers.length})
                             </button>
                         ` : ''}
-                        <button onclick="startGame(gameState.currentGame)" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
-                            🔄 Luyện Lại Lượt Mới
+                        <button onclick="startGame(gameState.currentGame)" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider flex items-center justify-center gap-2">
+                            <i data-icon="rotate-ccw" class="w-5 h-5"></i> Luyện Lại Lượt Mới
                         </button>
-                        <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-slate-700">
-                            🏠 Về Menu Chính
+                        <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-slate-700 flex items-center justify-center gap-2">
+                            <i data-icon="house" class="w-5 h-5"></i> Về Menu Chính
                         </button>
                     </div>
                 </div>

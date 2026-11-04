@@ -7,7 +7,7 @@
     function showLoadError(err) {
         console.error('[lesson] Không tải được dữ liệu:', err);
         const banner = document.createElement('div');
-        banner.className = 'fixed top-0 inset-x-0 z-50 bg-rose-600 text-white text-sm font-bold px-4 py-3 text-center';
+        banner.className = 'fixed top-0 inset-x-0 z-50 bg-danger-600 text-white text-sm font-bold px-4 py-3 text-center';
         banner.textContent = 'Không tải được dữ liệu bài học. Hãy mở trang qua máy chủ local (xem README).';
         document.body.prepend(banner);
     }

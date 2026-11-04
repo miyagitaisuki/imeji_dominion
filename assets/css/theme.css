@@ -1,35 +1,9 @@
-/* Giao diện chung, đồng bộ với imeji_newhorizon (imejiquynhon.com):
-   tông xanh primary, nền chấm, kính mờ, ảnh biển mây. */
-:root {
-  --primary-50: #eff6ff; --primary-100: #dbeafe; --primary-200: #bfdbfe;
-  --primary-300: #93c5fd; --primary-400: #60a5fa; --primary-500: #3b82f6;
-  --primary-600: #2563eb; --primary-700: #1d4ed8; --primary-800: #1e40af;
-  --primary-900: #1e3a8a; --primary-950: #172554;
-}
-
+/* Riêng trang chủ luyện tập. Màu, font, nền chấm, kính mờ nằm trong imeji-brand.css (dùng chung 3 repo). */
 html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 body { overflow-x: hidden; }
 
-.bg-japanese-pattern {
-  background-color: #f8fafc;
-  background-image: radial-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
-    radial-gradient(rgba(37, 99, 235, 0.04) 1px, #f8fafc 1px);
-  background-size: 24px 24px;
-  background-position: 0 0, 12px 12px;
-}
-
-.glass-panel {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
-}
-
-/* Header trang chủ: chữ phụ và nút chuyển màu khi nền chuyển sang kính mờ */
-#siteHeader.glass-panel .brand-sub { color: var(--primary-600); }
-#siteHeader.glass-panel #btnConfig { color: #64748b; }
-#siteHeader.glass-panel #btnConfig:hover { background: #f1f5f9; color: #1e293b; }
+/* Header trang chủ: chữ phụ chuyển màu khi nền chuyển sang kính mờ */
+#siteHeader.glass-panel .brand-sub { color: var(--imeji-primary-600); }
 
 @media (hover: none) and (pointer: coarse) {
   button:active, a:active { transform: scale(0.97); transition: transform 0.1s ease; }
