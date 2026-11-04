@@ -217,12 +217,12 @@
                     <!-- Điều hướng ra ngoài bài học -->
                     <nav class="w-full flex flex-wrap items-center justify-between gap-2 mb-4 select-none" aria-label="Điều hướng">
                         <a href="../index.html" class="btn-3d btn-gray inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">← Danh sách bài</a>
-                        <a href="${SITE_HOME_URL}" class="btn-3d btn-blue inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">🏠 Trang chủ Thầy Quang</a>
+                        <a href="${SITE_HOME_URL}" class="btn-3d btn-blue inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">🏠 Trang chủ IMEJI日本語教室</a>
                     </nav>
                     <!-- Title Header -->
                     <div class="text-center mb-6">
                         <span class="inline-block bg-primary-100 text-primary-800 font-extrabold px-4 py-1 rounded-full text-xs md:text-sm mb-2 border border-primary-300 select-none">
-                            IMEJI JAPANESE CLASS
+                            IMEJI日本語教室 ・ Lớp học tiếng Nhật thầy Quang
                         </span>
                         <h1 class="text-3xl md:text-5xl font-black text-slate-800 tracking-tight mb-2">
                             ${LESSON_CONFIG.title}
