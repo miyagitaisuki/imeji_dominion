@@ -1,0 +1,27 @@
+name: Deploy site after main changes
+
+# Khi main có thay đổi, gọi deploy hook của Render để build lại imeji_newhorizon.
+# Build đó clone imeji_dominion@main và chép vào /luyen-tap/, nên bài mới mới lên site.
+# Cần secret RENDER_DEPLOY_HOOK_URL trong repo này (lấy từ Render: service imeji_newhorizon-1 > Settings > Deploy Hook).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trigger-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gọi deploy hook của Render
+        env:
+          HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "Thiếu secret RENDER_DEPLOY_HOOK_URL, bỏ qua."
+            exit 1
+          fi
+          curl -sS -X POST "$HOOK_URL" -o /dev/null -w "HTTP %{http_code}\n"
