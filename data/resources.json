@@ -6,9 +6,13 @@
       27,
       28,
       35
+    ],
+    "nhap-mon": [
+      1
     ]
   },
   "flashcard": {
-    "minna": []
+    "minna": [],
+    "nhap-mon": []
   }
 }

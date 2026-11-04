@@ -16,7 +16,8 @@ assets/css/imeji-brand.css  Bộ quy chuẩn thương hiệu dùng chung 3 repo 
 assets/css/lesson.css  CSS dùng chung cho các bài Minna
 assets/css/tailwind.css  File Tailwind đã build (sinh ra, không sửa tay)
 assets/css/tailwind.input.css  Đầu vào của Tailwind
-slides/minna/NN.html    Slide bài giảng (deck HTML), _mau.html là bài mẫu
+slides/minna/NN.html    Slide bài giảng Minna (deck HTML), _mau.html là bài mẫu
+slides/nhap-mon/NN.html Slide bài giảng nhập môn (cùng cấu trúc, tự bật qua data/resources.json)
 assets/js/slides.js    Điều khiển deck slide (phím, vuốt, tiến độ, furigana)
 assets/css/slides.css  Style chung của deck slide
 tailwind.config.js     Cấu hình Tailwind (màu, font, các file quét class)

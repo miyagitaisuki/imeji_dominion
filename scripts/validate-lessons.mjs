@@ -122,17 +122,24 @@ function checkSlides() {
   } catch (e) {
     err(`data/resources.json không đọc được: ${e.message}`);
   }
-  for (const id of res.slide?.minna ?? []) {
-    if (!fs.existsSync(path.join(root, 'slides', 'minna', `${id}.html`))) err(`resources.json: có slide bài ${id} nhưng thiếu slides/minna/${id}.html`);
+  const groups = ['minna', 'nhap-mon'];
+  for (const g of groups) {
+    for (const id of res.slide?.[g] ?? []) {
+      if (!fs.existsSync(path.join(root, 'slides', g, `${id}.html`))) err(`resources.json: có slide ${g} ${id} nhưng thiếu slides/${g}/${id}.html`);
+    }
+    for (const id of res.flashcard?.[g] ?? []) {
+      if (!fs.existsSync(path.join(root, 'flashcards', g, `${id}.html`))) err(`resources.json: có flashcard ${g} ${id} nhưng thiếu flashcards/${g}/${id}.html`);
+    }
   }
-  for (const id of res.flashcard?.minna ?? []) {
-    if (!fs.existsSync(path.join(root, 'flashcards', 'minna', `${id}.html`))) err(`resources.json: có flashcard bài ${id} nhưng thiếu flashcards/minna/${id}.html`);
+  const decks = [];
+  for (const g of groups) {
+    const sdir = path.join(root, 'slides', g);
+    if (!fs.existsSync(sdir)) continue;
+    for (const f of fs.readdirSync(sdir).filter((f) => f.endsWith('.html')).sort()) decks.push([g, f]);
   }
-  const sdir = path.join(root, 'slides', 'minna');
-  const decks = fs.existsSync(sdir) ? fs.readdirSync(sdir).filter((f) => f.endsWith('.html')).sort() : [];
-  for (const f of decks) {
-    const at = `slides/minna/${f}`;
-    const h = fs.readFileSync(path.join(sdir, f), 'utf8');
+  for (const [g, f] of decks) {
+    const at = `slides/${g}/${f}`;
+    const h = fs.readFileSync(path.join(root, 'slides', g, f), 'utf8');
     if (!/assets\/css\/slides\.css/.test(h) || !/assets\/js\/slides\.js/.test(h)) err(`${at}: phải dùng assets/css/slides.css và assets/js/slides.js`);
     if (!/<section class="slide[ "]/.test(h)) err(`${at}: cần ít nhất một <section class="slide">`);
     if (/<style[\s>]/i.test(h)) err(`${at}: không dùng <style> riêng, dùng thành phần có sẵn trong slides.css`);
@@ -145,7 +152,7 @@ function checkSlides() {
     } else if (!f.startsWith('_')) err(`${at}: tên file phải dạng NN.html (hoặc bắt đầu bằng _ nếu là bài mẫu)`);
   }
   errors += problems.length;
-  console.log(`slides + resources: ${problems.length ? 'LỖI' : 'ok'} (${decks.length} file slide)`);
+  console.log(`slides + resources: ${problems.length ? "LỖI" : "ok"} (${decks.length} file slide)`);
   problems.forEach((p) => console.log(`  ✗ ${p}`));
 }
 checkSlides();

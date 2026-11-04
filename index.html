@@ -343,20 +343,27 @@
         
         // Tài nguyên theo bài (slide, flashcard): data/resources.json. Thiếu file thì coi như chưa có.
         let lessonResources = { slide: { minna: [] }, flashcard: { minna: [] } };
-        fetch('data/resources.json').then(r => r.ok ? r.json() : null).then(d => { if (d) lessonResources = d; }).catch(() => {});
+        // Nhập môn có game riêng ở nhap-mon/{id}.html cho các bài này (các bài khác chỉ có slide/flashcard nếu có file).
+        const introWithGame = [6];
+        const introGroup = 'nhap-mon';
+        const hasIntroResource = (id) => ['slide', 'flashcard'].some(k => ((lessonResources[k] || {})[introGroup] || []).includes(id));
+        fetch('data/resources.json').then(r => r.ok ? r.json() : null).then(d => { if (d) { lessonResources = d; renderAllGrids(); } }).catch(() => {});
 
         let lessonMenuTrigger = null;
-        function openLessonMenu(id) {
-            const lesson = minnaLessons.find(l => l.id === id);
+        function openLessonMenu(id, type = 'minna') {
+            const isIntro = type === 'intro';
+            const lesson = (isIntro ? introLessons : minnaLessons).find(l => l.id === id);
             if (!lesson) return;
             const dlg = document.getElementById('lessonMenu');
-            const has = (kind) => ((lessonResources[kind] || {}).minna || []).includes(id);
-            const pad = String(id).padStart(2, '0');
+            const group = isIntro ? introGroup : 'minna';
+            const has = (kind) => ((lessonResources[kind] || {})[group] || []).includes(id);
             document.getElementById('lessonMenuTitle').textContent = `${lesson.title} ・ ${lesson.jp}`;
             const opts = [
-                { kind: 'slide', icon: 'presentation', tone: 'slide', title: 'Slide bài giảng', desc: 'Xem bài giảng dạng trình chiếu', href: `slides/minna/${id}.html`, ok: has('slide') },
-                { kind: 'flashcard', icon: 'layers', tone: 'flash', title: 'Flashcard', desc: 'Ôn từ vựng và mẫu câu bằng thẻ', href: `flashcards/minna/${id}.html`, ok: has('flashcard') },
-                { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: '4 trò chơi luyện từ vựng, ngữ pháp, xếp câu, hội thoại', href: `minna/${id}.html`, ok: true },
+                { kind: 'slide', icon: 'presentation', tone: 'slide', title: 'Slide bài giảng', desc: 'Xem bài giảng dạng trình chiếu', href: `slides/${group}/${id}.html`, ok: has('slide') },
+                { kind: 'flashcard', icon: 'layers', tone: 'flash', title: 'Flashcard', desc: 'Ôn từ vựng và mẫu câu bằng thẻ', href: `flashcards/${group}/${id}.html`, ok: has('flashcard') },
+                isIntro
+                    ? { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: 'Luyện nối Romaji và Hiragana', href: `nhap-mon/${id}.html`, ok: introWithGame.includes(id) }
+                    : { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: '4 trò chơi luyện từ vựng, ngữ pháp, xếp câu, hội thoại', href: `minna/${id}.html`, ok: true },
             ];
             document.getElementById('lessonMenuList').innerHTML = opts.map(o => o.ok
                 ? `<a href="${o.href}" class="lm-opt lm-opt--${o.tone}">
@@ -399,12 +406,14 @@
                 : minnaPathPattern.replace('{id}', lesson.id));
 
             const isAvailable = availableLessons[isIntro ? 'intro' : 'minna'].includes(lesson.id);
-            const actionHtml = isAvailable && !isIntro
-                ? `<button type="button" onclick="openLessonMenu(${lesson.id})" class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
+            // Có slide/flashcard thì mở cửa sổ chọn cách học; nhập môn chỉ có game thì vào thẳng như cũ.
+            const openMenu = isIntro ? hasIntroResource(lesson.id) : isAvailable;
+            const actionHtml = openMenu
+                ? `<button type="button" onclick="openLessonMenu(${lesson.id}, '${isIntro ? 'intro' : 'minna'}')" class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
                         <span>Học bài này</span>
                         <i data-icon="arrow-right" class="w-3.5 h-3.5"></i>
                     </button>`
-                : isAvailable
+                : (isIntro ? introWithGame.includes(lesson.id) : isAvailable)
                 ? `<a href="${href}" class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
                         <span>Học bài này</span>
                         <i data-icon="arrow-right" class="w-3.5 h-3.5"></i>
