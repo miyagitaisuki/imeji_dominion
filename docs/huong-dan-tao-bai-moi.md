@@ -1,6 +1,9 @@
 # Hướng dẫn tạo bài luyện tập mới (Minna no Nihongo)
 
 Tài liệu này dành cho người (hoặc AI như Claude) soạn thêm bài cho trang luyện tập, ví dụ Minna bài 22–50.
+
+**Số bài và tên file lấy theo đầu vào của người nhập** (bảng từ vựng, mẫu câu, số bài ghi trong yêu cầu). Ví dụ đầu vào ghi "bài 26" thì tạo `data/minna/26.json`, `minna/26.html`, `lessonNo: 26`, `jlpt: "N4"`, `storagePrefix: "mnn_l26"`, không mặc định theo số bài trong ví dụ của tài liệu này. Nếu bảng nguồn ghi một số bài mà yêu cầu ghi số khác, hỏi lại người nhập trước khi soạn, và ghi rõ trong PR.
+
 Mỗi bài có sẵn **4 trò chơi** và chế độ **Ôn từ hay sai**, tất cả chạy bằng engine chung `assets/js/engine.js`.
 Người soạn **chỉ cần viết dữ liệu JSON**, không phải sửa giao diện hay code trò chơi.
 
@@ -14,7 +17,7 @@ Phần cuối có [câu lệnh mẫu](#câu-lệnh-mẫu-để-giao-cho-ai) đ�
 |---|---|---|
 | 1 | `data/minna/22.json` | Tạo mới: toàn bộ nội dung bài (mục 2–4) |
 | 2 | `minna/22.html` | Chép từ `minna/21.html`, chỉ đổi 2 chỗ: `<title>` và `data-lesson="../data/minna/22.json"` |
-| 3 | `index.html` | Trong `availableLessons`, đổi `length: 21` thành `length: 22` (thẻ bài 22 chuyển từ "Sắp có" sang "Học bài này") |
+| 3 | `index.html` | Trong `availableLessons.minna`, thêm số bài vừa làm. Nếu các bài trước đã liên tiếp, đổi `length` (ví dụ `length: 22`). Nếu chưa liên tiếp (ví dụ đã có 1–21 rồi làm 26), dùng mảng tường minh: `[...Array.from({ length: 21 }, (_, i) => i + 1), 26]`. Không đặt `length` lớn hơn số bài đã có, nếu không các bài chưa làm sẽ hiện "Học bài này" và trỏ tới trang không tồn tại. |
 | 4 | — | Chạy `npm run validate`, sửa hết lỗi; mở trang qua máy chủ local và chơi thử cả 4 trò (mục 6) |
 
 Không cần sửa `engine.js`, `lesson.css`, `tailwind.css`, và **không sửa** `assets/css/imeji-brand.css`.

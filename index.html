@@ -328,7 +328,7 @@
         // Lessons whose page exists in this repo. Other cards show "Sắp có" and no link.
         const availableLessons = {
             intro: [6],
-            minna: Array.from({ length: 21 }, (_, i) => i + 1),
+            minna: [...Array.from({ length: 21 }, (_, i) => i + 1), 26],
         };
         // Tiến độ chỉ tính các bài đã mở; thêm bài vào availableLessons là tổng tự tăng.
         const availableKeys = new Set([
