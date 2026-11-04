@@ -148,7 +148,7 @@
 
         function toggleSound() {
             gameState.soundEnabled = !gameState.soundEnabled;
-            document.getElementById('btn-sound').innerText = gameState.soundEnabled ? '🔊' : '🔇';
+            document.getElementById('btn-sound').innerHTML = imejiIcon(gameState.soundEnabled ? 'volume-2' : 'volume-x', 'w-6 h-6');
         }
 
         function speakJapanese(rawText) {
@@ -216,8 +216,8 @@
                 <div class="flex flex-col items-center justify-center w-full max-w-4xl py-4 px-2">
                     <!-- Điều hướng ra ngoài bài học -->
                     <nav class="w-full flex flex-wrap items-center justify-between gap-2 mb-4 select-none" aria-label="Điều hướng">
-                        <a href="../index.html" class="btn-3d btn-gray inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">← Danh sách bài</a>
-                        <a href="${SITE_HOME_URL}" class="btn-3d btn-blue inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">🏠 Trang chủ IMEJI日本語教室</a>
+                        <a href="../index.html" class="btn-3d btn-gray inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl"><i data-icon="arrow-left" class="w-4 h-4"></i> Danh sách bài</a>
+                        <a href="${SITE_HOME_URL}" class="btn-3d btn-blue inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl"><i data-icon="house" class="w-4 h-4"></i> Trang chủ IMEJI日本語教室</a>
                     </nav>
                     <!-- Title Header -->
                     <div class="text-center mb-6">
@@ -247,13 +247,13 @@
                         <div class="flex items-center gap-1.5">
                             <span class="text-xs md:text-sm font-extrabold text-slate-600">Độ khó:</span>
                             <button onclick="setDifficulty('all')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'all' ? 'btn-blue' : 'btn-gray'}">Tất cả</button>
-                            <button onclick="setDifficulty('easy')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'easy' ? 'btn-green' : 'btn-gray'}">🟢 Dễ</button>
-                            <button onclick="setDifficulty('medium')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'medium' ? 'btn-amber' : 'btn-gray'}">🟡 Vừa</button>
-                            <button onclick="setDifficulty('hard')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'hard' ? 'btn-purple' : 'btn-gray'}">🔴 Khó</button>
+                            <button onclick="setDifficulty('easy')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'easy' ? 'btn-green' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-success-500 mr-1 align-middle"></span>Dễ</button>
+                            <button onclick="setDifficulty('medium')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'medium' ? 'btn-amber' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-warning-500 mr-1 align-middle"></span>Vừa</button>
+                            <button onclick="setDifficulty('hard')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'hard' ? 'btn-purple' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-danger-500 mr-1 align-middle"></span>Khó</button>
                         </div>
 
                         <div class="text-xs md:text-sm font-black text-warning-600 flex items-center gap-1">
-                            🏆 Cao nhất: <span>${highScore}</span>
+                            <i data-icon="trophy" class="w-4 h-4"></i> Cao nhất: <span>${highScore}</span>
                         </div>
                     </div>
 
@@ -312,7 +312,7 @@
                             <div class="text-3xl md:text-4xl bg-danger-200 text-danger-800 p-3 rounded-2xl select-none">📚</div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-danger-950">📚 Ôn Từ Hay Sai</h3>
+                                    <h3 class="text-lg font-black text-danger-950">Ôn Từ Hay Sai</h3>
                                     <span class="text-xs bg-danger-200 text-danger-900 px-2.5 py-0.5 rounded-full font-black">${mistakesCount} mục cần chú ý</span>
                                 </div>
                                 <p class="text-xs md:text-sm text-danger-800 font-semibold mt-0.5">Tự động tổng hợp những câu bạn từng làm sai nhiều lần</p>
@@ -579,8 +579,8 @@
                         </div>
 
                         <div>
-                            <button onclick="toggleTranslation()" class="text-xs md:text-sm text-slate-500 underline font-bold hover:text-slate-700 select-none">
-                                👁️ <span id="trans-toggle-text">Hiện bản dịch</span>
+                            <button onclick="toggleTranslation()" class="text-xs md:text-sm text-slate-500 underline font-bold hover:text-slate-700 select-none inline-flex items-center gap-1">
+                                <i data-icon="eye" class="w-4 h-4"></i> <span id="trans-toggle-text">Hiện bản dịch</span>
                             </button>
                             <p id="sentence-translation" class="text-base text-slate-600 font-bold mt-2 hidden italic">"${q.translation}"</p>
                         </div>
@@ -694,7 +694,7 @@
                             <div class="jp-text-lg text-slate-800 font-black">${q.question}</div>
                             <!-- 6. Nút nghe touch target min-w 44px -->
                             <button onclick="speakJapanese('${q.questionAudioText}')" aria-label="Phát âm thanh" class="btn-3d btn-amber min-w-[44px] min-h-[44px] p-2.5 rounded-xl text-lg ml-2 flex items-center justify-center shrink-0 select-none">
-                                🔊
+                                <i data-icon="volume-2" class="w-5 h-5"></i>
                             </button>
                         </div>
                     </div>
@@ -929,15 +929,15 @@
                     <!-- Actions -->
                     <div class="flex flex-col gap-3 w-full">
                         ${gameState.wrongAnswers.length > 0 ? `
-                            <button onclick="practiceCurrentWrongList()" class="btn-3d btn-purple py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
-                                📌 Ôn lại câu làm sai (${gameState.wrongAnswers.length})
+                            <button onclick="practiceCurrentWrongList()" class="btn-3d btn-purple py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider flex items-center justify-center gap-2">
+                                <i data-icon="list-checks" class="w-5 h-5"></i> Ôn lại câu làm sai (${gameState.wrongAnswers.length})
                             </button>
                         ` : ''}
-                        <button onclick="startGame(gameState.currentGame)" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
-                            🔄 Luyện Lại Lượt Mới
+                        <button onclick="startGame(gameState.currentGame)" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider flex items-center justify-center gap-2">
+                            <i data-icon="rotate-ccw" class="w-5 h-5"></i> Luyện Lại Lượt Mới
                         </button>
-                        <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-slate-700">
-                            🏠 Về Menu Chính
+                        <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-slate-700 flex items-center justify-center gap-2">
+                            <i data-icon="house" class="w-5 h-5"></i> Về Menu Chính
                         </button>
                     </div>
                 </div>

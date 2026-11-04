@@ -11,6 +11,7 @@ nhap-mon/6.html        Game nhập môn (chưa dùng engine chung)
 data/minna/NN.json     Nội dung bài: config + game1..game4
 assets/js/engine.js    Engine game dùng chung cho các bài Minna
 assets/js/loader.js    Tải JSON của bài rồi khởi động engine
+assets/js/icons.js     Icon lucide nhúng sẵn (sinh bằng npm run build:icons, không sửa tay)
 assets/css/imeji-brand.css  Bộ quy chuẩn thương hiệu dùng chung 3 repo (không sửa riêng ở đây)
 assets/css/lesson.css  CSS dùng chung cho các bài Minna
 assets/css/tailwind.css  File Tailwind đã build (sinh ra, không sửa tay)
@@ -49,6 +50,8 @@ Màu, font, bo góc, bóng, nền chấm và thẻ kính mờ nằm trong `asset
 - Muốn đổi: sửa bản gốc ở imeji_newhorizon, chép y nguyên sang 2 repo kia, rồi chạy `npm run brand:check` để so với bản gốc trên GitHub.
 
 `npm run validate` cũng báo lỗi nếu HTML/JS dùng màu thô.
+
+Icon dùng bộ lucide như website và eduscan, nhúng sẵn trong `assets/js/icons.js` (không tải CDN). Trong HTML viết `<i data-icon="house" class="w-4 h-4"></i>`, trong JS gọi `imejiIcon('house', 'w-4 h-4')`. Thêm icon mới: thêm tên vào danh sách trong `scripts/gen-icons.mjs` rồi chạy `npm run build:icons`. Emoji chỉ dùng cho phần vui của game (🔥 ❤️ ⭐, 🎉, ô minh họa từng game), không dùng trên nút, tab, tiêu đề.
 
 ## Thêm hoặc sửa bài Minna
 
