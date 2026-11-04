@@ -26,10 +26,8 @@ body { overflow-x: hidden; }
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
 }
 
-/* Header trang chủ: chữ phụ và nút chuyển màu khi nền chuyển sang kính mờ */
+/* Header trang chủ: chữ phụ chuyển màu khi nền chuyển sang kính mờ */
 #siteHeader.glass-panel .brand-sub { color: var(--primary-600); }
-#siteHeader.glass-panel #btnConfig { color: #64748b; }
-#siteHeader.glass-panel #btnConfig:hover { background: #f1f5f9; color: #1e293b; }
 
 @media (hover: none) and (pointer: coarse) {
   button:active, a:active { transform: scale(0.97); transition: transform 0.1s ease; }
