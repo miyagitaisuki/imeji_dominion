@@ -14,6 +14,8 @@
         // =====================================================================
 
         // ===== ENGINE (KHÓA — KHÔNG SỬA TỪ ĐÂY TRỞ XUỐNG) =====
+        // Trang chủ của lớp (nút quay về ở menu bài học)
+        const SITE_HOME_URL = 'https://imejiquynhon.com/';
         const KEY_HIGH = LESSON_CONFIG.storagePrefix + '_highscore';
         const KEY_MISTAKES = LESSON_CONFIG.storagePrefix + '_mistakes';
         const _memStore = {};
@@ -81,6 +83,7 @@
         // State object
         let gameState = {
             currentGame: 0,
+            sessionKind: 'game', // 'game' | 'practice'
             questionCount: 5,
             difficultyFilter: 'all', // 'all', 'easy', 'medium', 'hard' (Feature 8)
             questions: [],
@@ -211,6 +214,11 @@
 
             container.innerHTML = `
                 <div class="flex flex-col items-center justify-center w-full max-w-4xl py-4 px-2">
+                    <!-- Điều hướng ra ngoài bài học -->
+                    <nav class="w-full flex flex-wrap items-center justify-between gap-2 mb-4 select-none" aria-label="Điều hướng">
+                        <a href="../index.html" class="btn-3d btn-gray inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">← Danh sách bài</a>
+                        <a href="${SITE_HOME_URL}" class="btn-3d btn-blue inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl">🏠 Trang chủ Thầy Quang</a>
+                    </nav>
                     <!-- Title Header -->
                     <div class="text-center mb-6">
                         <span class="inline-block bg-primary-100 text-primary-800 font-extrabold px-4 py-1 rounded-full text-xs md:text-sm mb-2 border border-primary-300 select-none">
@@ -370,6 +378,7 @@
         function startCustomSession(customList) {
             playSound('click');
             gameState.currentGame = 1; // Default layout
+            gameState.sessionKind = 'practice'; // ôn lại câu sai / điểm yếu
             gameState.currentIndex = 0;
             gameState.score = 0;
             gameState.correctCount = 0;
@@ -390,6 +399,7 @@
         function startGame(gameId) {
             playSound('click');
             gameState.currentGame = gameId;
+            gameState.sessionKind = 'game';
             gameState.currentIndex = 0;
             gameState.score = 0;
             gameState.correctCount = 0;
@@ -839,6 +849,34 @@
         }
 
         // 3. Màn hình Kết Quả có "Tỷ lệ chính xác"
+        // Báo kết quả một lượt chơi ra bên ngoài để có thể ghi điểm (VD eduscan nhúng bài học bằng iframe).
+        // - CustomEvent 'mnn:lesson-complete' trên window (trang tự lắng nghe)
+        // - window.parent.postMessage khi được nhúng trong iframe
+        // Chỉ gồm số liệu bài làm, không có thông tin cá nhân. Bên nhận phải kiểm tra event.origin.
+        function reportLessonResult({ total, accuracy }) {
+            const detail = {
+                type: 'mnn:lesson-complete',
+                lessonNo: LESSON_CONFIG.lessonNo,
+                jlpt: LESSON_CONFIG.jlpt,
+                storagePrefix: LESSON_CONFIG.storagePrefix,
+                game: gameState.currentGame,
+                practice: gameState.sessionKind === 'practice',
+                difficulty: gameState.difficultyFilter,
+                total,
+                correct: gameState.correctCount,
+                accuracy,
+                score: gameState.score,
+                maxStreak: gameState.maxStreak,
+                finishedAt: new Date().toISOString()
+            };
+            try {
+                window.dispatchEvent(new CustomEvent('mnn:lesson-complete', { detail }));
+                if (window.parent && window.parent !== window) window.parent.postMessage(detail, '*');
+            } catch (e) {
+                console.warn('[result] Không gửi được kết quả:', e);
+            }
+        }
+
         function renderSummaryScreen() {
             document.getElementById('top-bar').classList.add('hidden');
             document.getElementById('bottom-bar').classList.add('hidden');
@@ -852,6 +890,8 @@
             if (gameState.score > currentHigh) {
                 safeSet(KEY_HIGH, gameState.score.toString());
             }
+
+            reportLessonResult({ total, accuracy });
 
             container.innerHTML = `
                 <div class="flex flex-col items-center justify-center w-full max-w-xl py-6 px-4 text-center anim-pop">

@@ -1,0 +1,1827 @@
+{
+  "config": {
+    "lessonNo": 8,
+    "title": "Minna no Nihongo – Bài 8",
+    "jlpt": "N5",
+    "storagePrefix": "mnn_l08"
+  },
+  "game1": [
+    {
+      "id": "l08_v001",
+      "level": "easy",
+      "context": "Từ miêu tả ngoại hình nam giới cuốn hút, nam tính và điển trai.",
+      "answer": "ハンサム",
+      "kanji": "ハンサム",
+      "distractors": [
+        "しんせつ",
+        "にぎやか",
+        "ゆうめい"
+      ],
+      "distractorsKanji": [
+        "{親切|しんせつ}",
+        "にぎやか",
+        "{有名|ゆうめい}"
+      ],
+      "explanation": {
+        "correct": "ハンサム nghĩa là đẹp trai (tính từ -na).",
+        "pitfalls": "Tránh nhầm với 親切 (tốt bụng), にぎやか (náo nhiệt) hay 有名 (nổi tiếng).",
+        "tip": "Vay mượn từ tiếng Anh 'handsome'."
+      }
+    },
+    {
+      "id": "l08_v002",
+      "level": "easy",
+      "context": "Từ khen ngợi cảnh quan đẹp đẽ hoặc căn phòng gọn gàng, sạch sẽ.",
+      "answer": "きれい",
+      "kanji": "きれい",
+      "distractors": [
+        "しずか",
+        "ひま",
+        "べんり"
+      ],
+      "distractorsKanji": [
+        "{静|しず}か",
+        "{暇|ひま}",
+        "{便利|べんり}"
+      ],
+      "explanation": {
+        "correct": "きれい nghĩa là đẹp, sạch sẽ (tính từ đuôi -na đặc biệt).",
+        "pitfalls": "Tuy kết thúc bằng âm い nhưng thuộc nhóm tính từ đuôi -na.",
+        "tip": "Nhớ kỹ: きれい là tính từ đuôi -na dạng đặc biệt."
+      }
+    },
+    {
+      "id": "l08_v003",
+      "level": "easy",
+      "context": "Trạng thái không gian yên tĩnh, không có tiếng ồn ào phức tạp.",
+      "answer": "しずか",
+      "kanji": "{静|しず}か",
+      "distractors": [
+        "にぎやか",
+        "げんき",
+        "すてき"
+      ],
+      "distractorsKanji": [
+        "にぎやか",
+        "{元気|げんき}",
+        "すてき"
+      ],
+      "explanation": {
+        "correct": "静か (しずか) nghĩa là yên tĩnh (tính từ -na).",
+        "pitfalls": "Trái nghĩa trực tiếp với にぎやか (nhộn nhịp, náo nhiệt).",
+        "tip": "Hán tự 静 (TĨNH) trong thanh tĩnh, yên tĩnh."
+      }
+    },
+    {
+      "id": "l08_v004",
+      "level": "easy",
+      "context": "Khung cảnh phố xá đông đúc, nhộn nhịp và tràn đầy không khí vui tươi.",
+      "answer": "にぎやか",
+      "kanji": "にぎやか",
+      "distractors": [
+        "しずか",
+        "ひま",
+        "しんせつ"
+      ],
+      "distractorsKanji": [
+        "{静|しず}か",
+        "{暇|ひま}",
+        "{親切|しんせつ}"
+      ],
+      "explanation": {
+        "correct": "にぎやか nghĩa là nhộn nhịp, náo nhiệt (tính từ -na).",
+        "pitfalls": "Tránh nhầm với 静か (yên tĩnh).",
+        "tip": "Phố xá đông người qua lại náo nhiệt gọi là にぎやか."
+      }
+    },
+    {
+      "id": "l08_v005",
+      "level": "easy",
+      "context": "Nói về một nhân vật hay địa danh được nhiều người biết đến rộng rãi.",
+      "answer": "ゆうめい",
+      "kanji": "{有名|ゆうめい}",
+      "distractors": [
+        "しんせつ",
+        "げんき",
+        "べんり"
+      ],
+      "distractorsKanji": [
+        "{親切|しんせつ}",
+        "{元気|げんき}",
+        "{便利|べんり}"
+      ],
+      "explanation": {
+        "correct": "有名 (ゆうめい) nghĩa là nổi tiếng (tính từ -na).",
+        "pitfalls": "Tránh nhầm với 親切 (thân thiện, tốt bụng).",
+        "tip": "有 (HỮU) + 名 (DANH) = có danh tiếng, nổi tiếng."
+      }
+    },
+    {
+      "id": "l08_v006",
+      "level": "easy",
+      "context": "Thái độ đối xử nhiệt tình, tốt bụng và sẵn lòng giúp đỡ người khác.",
+      "answer": "しんせつ",
+      "kanji": "{親切|しんせつ}",
+      "distractors": [
+        "ハンサム",
+        "ゆうめい",
+        "ひま"
+      ],
+      "distractorsKanji": [
+        "ハンサム",
+        "{有名|ゆうめい}",
+        "{暇|ひま}"
+      ],
+      "explanation": {
+        "correct": "親切 (しんせつ) nghĩa là tốt bụng, thân thiện (tính từ -na).",
+        "pitfalls": "Dùng để khen tính cách người khác nhiệt tình chu đáo.",
+        "tip": "親 (THÂN) + 切 (THIẾT) = thân thiết, tốt bụng."
+      }
+    },
+    {
+      "id": "l08_v007",
+      "level": "easy",
+      "context": "Trạng thái cơ thể khỏe mạnh, tràn đầy sức sống và tinh thần phấn chấn.",
+      "answer": "げんき",
+      "kanji": "{元気|げんき}",
+      "distractors": [
+        "いそがしい",
+        "ひま",
+        "わるい"
+      ],
+      "distractorsKanji": [
+        "{忙|いそが}しい",
+        "{暇|ひま}",
+        "{悪|わる}い"
+      ],
+      "explanation": {
+        "correct": "元気 (げんき) nghĩa là khỏe mạnh (tính từ -na).",
+        "pitfalls": "Tránh nhầm với 忙しい (bận rộn) hay 暇 (rảnh rỗi).",
+        "tip": "元 (NGUYÊN) + 気 (KHÍ) = nguyên khí đầy đủ, khỏe mạnh."
+      }
+    },
+    {
+      "id": "l08_v008",
+      "level": "easy",
+      "context": "Thời gian rảnh rỗi, không có việc gì làm hay bận rộn.",
+      "answer": "ひま",
+      "kanji": "{暇|ひま}",
+      "distractors": [
+        "いそがしい",
+        "べんり",
+        "げんき"
+      ],
+      "distractorsKanji": [
+        "{忙|いそが}しい",
+        "{便利|べんり}",
+        "{元気|げんき}"
+      ],
+      "explanation": {
+        "correct": "暇 (ひま) nghĩa là rảnh rỗi (tính từ -na).",
+        "pitfalls": "Trái nghĩa với 忙しい (bận rộn).",
+        "tip": "Hán tự 暇 (HẠ) trong thời gian rảnh rỗi."
+      }
+    },
+    {
+      "id": "l08_v009",
+      "level": "medium",
+      "context": "Đồ dùng hoặc phương tiện giúp giải quyết công việc nhanh chóng, dễ dàng.",
+      "answer": "べんり",
+      "kanji": "{便利|べんり}",
+      "distractors": [
+        "むずかしい",
+        "ふるい",
+        "やさしい"
+      ],
+      "distractorsKanji": [
+        "{難|むずか}しい",
+        "{古|ふる}い",
+        "{易|やす}しい"
+      ],
+      "explanation": {
+        "correct": "便利 (べんり) nghĩa là tiện lợi, thuận tiện (tính từ -na).",
+        "pitfalls": "Tránh nhầm với 易しい (dễ dàng) hay 難しい (khó khăn).",
+        "tip": "便 (TIỆN) + 利 (LỢI) = tiện lợi, có lợi."
+      }
+    },
+    {
+      "id": "l08_v010",
+      "level": "medium",
+      "context": "Chỉ món đồ, phong cách hoặc thiết kế rất tuyệt vời, cuốn hút và thanh lịch.",
+      "answer": "すてき",
+      "kanji": "すてき",
+      "distractors": [
+        "きれい",
+        "ハンサム",
+        "にぎやか"
+      ],
+      "distractorsKanji": [
+        "きれい",
+        "ハンサム",
+        "にぎやか"
+      ],
+      "explanation": {
+        "correct": "すてき nghĩa là đẹp, tuyệt vời, xinh xắn (tính từ -na).",
+        "pitfalls": "Được dùng khen trang phục, món quà hay không gian tinh tế.",
+        "tip": "Khen một món đồ thiết kế đẹp mắt: すてきですね."
+      }
+    },
+    {
+      "id": "l08_v011",
+      "level": "medium",
+      "context": "Kích thước vượt trội hơn hẳn so với mức trung bình.",
+      "answer": "おおきい",
+      "kanji": "{大|おお}きい",
+      "distractors": [
+        "ちいさい",
+        "たかい",
+        "ひくい"
+      ],
+      "distractorsKanji": [
+        "{小|ちい}さい",
+        "{高|たか}い",
+        "{低|ひく}い"
+      ],
+      "explanation": {
+        "correct": "大きい (おおきい) nghĩa là to, lớn (tính từ -i).",
+        "pitfalls": "Trái nghĩa với 小さい (nhỏ, bé).",
+        "tip": "Hán tự 大 (ĐẠI) tượng hình người dang rộng tay chân."
+      }
+    },
+    {
+      "id": "l08_v012",
+      "level": "medium",
+      "context": "Vật dụng mới sản xuất, vừa mua về hoặc chưa qua sử dụng.",
+      "answer": "あたらしい",
+      "kanji": "{新|あたら}しい",
+      "distractors": [
+        "ふるい",
+        "いい",
+        "わるい"
+      ],
+      "distractorsKanji": [
+        "{古|ふる}い",
+        "いい",
+        "{悪|わる}い"
+      ],
+      "explanation": {
+        "correct": "新しい (あたらしい) nghĩa là mới (tính từ -i).",
+        "pitfalls": "Trái nghĩa trực tiếp với 古い (cũ).",
+        "tip": "Hán tự 新 (TÂN) trong tân tiến, mới mẻ."
+      }
+    },
+    {
+      "id": "l08_v013",
+      "level": "medium",
+      "context": "Đồ vật đã qua sử dụng lâu năm, không còn mới nữa.",
+      "answer": "ふるい",
+      "kanji": "{古|ふる}い",
+      "distractors": [
+        "あたらしい",
+        "わるい",
+        "ひくい"
+      ],
+      "distractorsKanji": [
+        "{新|あたら}しい",
+        "{悪|わる}い",
+        "{低|ひく}い"
+      ],
+      "explanation": {
+        "correct": "古い (ふるい) nghĩa là cũ, cổ (tính từ -i).",
+        "pitfalls": "Không dùng 古い cho tuổi người, chỉ dùng cho đồ vật.",
+        "tip": "Hán tự 古 (CỔ) trong cổ kính, lâu đời."
+      }
+    },
+    {
+      "id": "l08_v014",
+      "level": "medium",
+      "context": "Mức nhiệt độ không khí lạnh giá vào mùa đông.",
+      "answer": "さむい",
+      "kanji": "{寒|さむ}い",
+      "distractors": [
+        "つめたい",
+        "あツイ",
+        "わるい"
+      ],
+      "distractorsKanji": [
+        "{冷|つめ}たい",
+        "{熱|あつ}い",
+        "{悪|わる}い"
+      ],
+      "explanation": {
+        "correct": "寒い (さむい) nghĩa là lạnh thời tiết (tính từ -i).",
+        "pitfalls": "Phân biệt 寒い (lạnh thời tiết) với 冷たい (lạnh khi sờ/đồ uống).",
+        "tip": "寒 (HÀN) dùng cho thời tiết, không khí xung quanh."
+      }
+    },
+    {
+      "id": "l08_v015",
+      "level": "medium",
+      "context": "Cảm giác lạnh khi chạm tay vào băng đá hoặc khi uống nước đá.",
+      "answer": "つめたい",
+      "kanji": "{冷|つめ}たい",
+      "distractors": [
+        "さむい",
+        "あツイ",
+        "やさしい"
+      ],
+      "distractorsKanji": [
+        "{寒|さむ}い",
+        "{熱|あつ}い",
+        "{易|やす}しい"
+      ],
+      "explanation": {
+        "correct": "冷たい (つめたい) nghĩa là lạnh về cảm giác/đồ vật/nước uống.",
+        "pitfalls": "Tránh nhầm 寒い (lạnh thời tiết). Nước đá lạnh là 冷たい水.",
+        "tip": "冷 (LÃNH) trong tủ lạnh, đồ uống lạnh."
+      }
+    },
+    {
+      "id": "l08_v016",
+      "level": "medium",
+      "context": "Bài toán phức tạp hoặc đề thi đòi hỏi tư duy cao, không dễ giải.",
+      "answer": "むずかしい",
+      "kanji": "{難|むずか}しい",
+      "distractors": [
+        "やさしい",
+        "たかい",
+        "わるい"
+      ],
+      "distractorsKanji": [
+        "{易|やす}しい",
+        "{高|たか}い",
+        "{悪|わる}い"
+      ],
+      "explanation": {
+        "correct": "難しい (むずかしい) nghĩa là khó (tính từ -i).",
+        "pitfalls": "Trái nghĩa với 易しい (dễ).",
+        "tip": "Hán tự 難 (NAN) trong gian nan, khó khăn."
+      }
+    },
+    {
+      "id": "l08_v017",
+      "level": "hard",
+      "context": "Mức giá tiền cần trả rất cao, đắt đỏ vượt mức mong đợi.",
+      "answer": "たかい",
+      "kanji": "{高|たか}い",
+      "distractors": [
+        "やすい",
+        "ひくい",
+        "おおきい"
+      ],
+      "distractorsKanji": [
+        "{安|やす}い",
+        "{低|ひく}い",
+        "{大|おお}きい"
+      ],
+      "explanation": {
+        "correct": "高い (たかい) nghĩa là đắt (giá cả) hoặc cao (chiều cao).",
+        "pitfalls": "Vừa có nghĩa là đắt (trái nghĩa 安い), vừa có nghĩa là cao (trái nghĩa 低い).",
+        "tip": "Hán tự 高 (CAO) biểu thị ngọn tháp cao vút."
+      }
+    },
+    {
+      "id": "l08_v018",
+      "level": "hard",
+      "context": "Chỉ mức giá hàng hóa bình dân, không tốn nhiều tiền để mua.",
+      "answer": "やすい",
+      "kanji": "{安|やす}い",
+      "distractors": [
+        "たかい",
+        "おもしろい",
+        "おいしい"
+      ],
+      "distractorsKanji": [
+        "{高|たか}い",
+        "おもしろい",
+        "おいしい"
+      ],
+      "explanation": {
+        "correct": "安い (やすい) nghĩa là rẻ (tính từ -i).",
+        "pitfalls": "Trái nghĩa trực tiếp với 高い (đắt).",
+        "tip": "安 (AN) trong an tâm = mua đồ rẻ nên an tâm."
+      }
+    },
+    {
+      "id": "l08_v019",
+      "level": "hard",
+      "context": "Món ăn có hương vị thơm ngon, hợp khẩu vị người ăn.",
+      "answer": "おいしい",
+      "kanji": "おいしい",
+      "distractors": [
+        "おもしろい",
+        "たのしい",
+        "すてき"
+      ],
+      "distractorsKanji": [
+        "おもしろい",
+        "{楽|たの}しい",
+        "すてき"
+      ],
+      "explanation": {
+        "correct": "おいしい nghĩa là ngon (tính từ -i).",
+        "pitfalls": "Tránh nhầm với おもしろい (thú vị) hay 楽しい (vui vẻ).",
+        "tip": "Dùng để khen đồ ăn/thức uống thơm ngon."
+      }
+    },
+    {
+      "id": "l08_v020",
+      "level": "hard",
+      "context": "Địa điểm tập trung nhiều nhà cửa, cửa hàng và người dân sinh sống.",
+      "answer": "まち",
+      "kanji": "{町|まち}",
+      "distractors": [
+        "やま",
+        "ところ",
+        "りょう"
+      ],
+      "distractorsKanji": [
+        "{山|やま}",
+        "{所|ところ}",
+        "{寮|りょう}"
+      ],
+      "explanation": {
+        "correct": "町 (まち) nghĩa là thành phố, thị trấn, con phố (danh từ).",
+        "pitfalls": "Tránh nhầm với 所 (nơi, chỗ) hay 寮 (ký túc xá).",
+        "tip": "Hán tự 町 (ĐINH) gồm bộ Điền và Đinh."
+      }
+    }
+  ],
+  "game2": [
+    {
+      "id": "l08_g001",
+      "level": "easy",
+      "sentence": "{富士山|ふじさん}は {高|たか}い＿。",
+      "translation": "Núi Phú Sĩ cao.",
+      "options": [
+        {
+          "text": "です",
+          "kanji": "です"
+        },
+        {
+          "text": "じゃありません",
+          "kanji": "じゃありません"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "な",
+          "kanji": "な"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Tính từ đuôi -i ở thể khẳng định hiện tại kết hợp trực tiếp với です.",
+        "pitfalls": "Tránh nhầm với じゃありません (dành cho tính từ đuôi -na và danh từ).",
+        "tip": "Cấu trúc: N は [Tính từ -i] + です."
+      }
+    },
+    {
+      "id": "l08_g002",
+      "level": "easy",
+      "sentence": "{桜|さくら}は きれい＿ {花|はな}です。",
+      "translation": "Hoa anh đào là một loài hoa đẹp.",
+      "options": [
+        {
+          "text": "な",
+          "kanji": "な"
+        },
+        {
+          "text": "の",
+          "kanji": "の"
+        },
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Tính từ đuôi -na khi đứng trước bổ nghĩa cho danh từ phải thêm な.",
+        "pitfalls": "Tránh nhầm với の (dùng nối 2 danh từ) hoặc trợ từ は, が.",
+        "tip": "Cấu trúc: [Tính từ -na] + な + [Danh từ]."
+      }
+    },
+    {
+      "id": "l08_g003",
+      "level": "easy",
+      "sentence": "この {町|まち}は {静|しず}か＿ ありません。",
+      "translation": "Thị trấn này không yên tĩnh.",
+      "options": [
+        {
+          "text": "じゃ",
+          "kanji": "じゃ"
+        },
+        {
+          "text": "く",
+          "kanji": "く"
+        },
+        {
+          "text": "な",
+          "kanji": "な"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Phủ định hiện tại của tính từ đuôi -na là じゃ ありません.",
+        "pitfalls": "Không dùng く (dành cho tính từ -i) hay な (dùng bổ nghĩa danh từ).",
+        "tip": "[Tính từ -na] + じゃ ありません = Không..."
+      }
+    },
+    {
+      "id": "l08_g004",
+      "level": "easy",
+      "sentence": "シャンハイは あまり 寒＿ です。",
+      "translation": "Thượng Hải không lạnh lắm.",
+      "options": [
+        {
+          "text": "くない",
+          "kanji": "{寒|さむ}くない"
+        },
+        {
+          "text": "い",
+          "kanji": "{寒|さむ}い"
+        },
+        {
+          "text": "じゃない",
+          "kanji": "{寒|さむ}じゃない"
+        },
+        {
+          "text": "く",
+          "kanji": "{寒|さむ}く"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Phủ định của tính từ đuôi -i là bỏ い thay bằng くないです.",
+        "pitfalls": "Tránh nhầm với じゃない (dùng cho tính từ -na) hay giữ nguyên い.",
+        "tip": "Bỏ い + くないです = Không..."
+      }
+    },
+    {
+      "id": "l08_g005",
+      "level": "easy",
+      "sentence": "この {辞書|じしょ}は あまり ＿ です。",
+      "translation": "Cuốn từ điển này không tốt lắm.",
+      "options": [
+        {
+          "text": "よくない",
+          "kanji": "よくない"
+        },
+        {
+          "text": "いいくない",
+          "kanji": "いいくない"
+        },
+        {
+          "text": "いいじゃない",
+          "kanji": "いいじゃない"
+        },
+        {
+          "text": "よく",
+          "kanji": "よく"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Tính từ いい có dạng phủ định biến đổi đặc biệt là よくないです.",
+        "pitfalls": "Không tồn tại dạng いいくない hay いいじゃない.",
+        "tip": "Biến đổi bất quy tắc: いい → よくない."
+      }
+    },
+    {
+      "id": "l08_g006",
+      "level": "easy",
+      "sentence": "日本 の {生活|せいかつ}は ＿ ですか。",
+      "translation": "Cuộc sống ở Nhật Bản thế nào?",
+      "options": [
+        {
+          "text": "どう",
+          "kanji": "どう"
+        },
+        {
+          "text": "どんな",
+          "kanji": "どんな"
+        },
+        {
+          "text": "どれ",
+          "kanji": "どれ"
+        },
+        {
+          "text": "なに",
+          "kanji": "なに"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Từ nghi vấn どう dùng để hỏi ý kiến, cảm tưởng về một đối tượng.",
+        "pitfalls": "Tránh nhầm với どんな (cần có danh từ phía sau: どんな N).",
+        "tip": "Hỏi cảm tưởng: N は どうですか."
+      }
+    },
+    {
+      "id": "l08_g007",
+      "level": "easy",
+      "sentence": "「{七人|しちにん}の {侍|さむらい}」は ＿ {映画|えいが}ですか。",
+      "translation": "'Bảy samurai' là bộ phim như thế nào?",
+      "options": [
+        {
+          "text": "どんな",
+          "kanji": "どんな"
+        },
+        {
+          "text": "どう",
+          "kanji": "どう"
+        },
+        {
+          "text": "どれ",
+          "kanji": "どれ"
+        },
+        {
+          "text": "なん",
+          "kanji": "なん"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Từ nghi vấn どんな đứng trước danh từ để hỏi về tính chất, đặc điểm.",
+        "pitfalls": "Không dùng どう vì どう đứng độc lập trước ですか.",
+        "tip": "Hỏi đặc điểm danh từ: どんな + Danh từ + ですか."
+      }
+    },
+    {
+      "id": "l08_g008",
+      "level": "easy",
+      "sentence": "ペキンは とても ＿ です。",
+      "translation": "Bắc Kinh rất lạnh.",
+      "options": [
+        {
+          "text": "寒い",
+          "kanji": "{寒|さむ}い"
+        },
+        {
+          "text": "寒くない",
+          "kanji": "{寒|さむ}くない"
+        },
+        {
+          "text": "静かじゃありません",
+          "kanji": "{静|しず}かじゃありません"
+        },
+        {
+          "text": "寒じゃありません",
+          "kanji": "{寒|さむ}じゃありません"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Phó từ とても (rất) đi với dạng khẳng định của tính từ.",
+        "pitfalls": "Tránh chọn dạng phủ định 寒くない hay 静かじゃありません.",
+        "tip": "Cấu trúc: とても + Khẳng định / あまり + Phủ định."
+      }
+    },
+    {
+      "id": "l08_g009",
+      "level": "medium",
+      "sentence": "{大学|だいがく}の {寮|りょう}は {古|ふる}いですが、＿ です。",
+      "translation": "Ký túc xá đại học cũ nhưng tiện lợi.",
+      "options": [
+        {
+          "text": "便利",
+          "kanji": "{便利|べんり}"
+        },
+        {
+          "text": "便利ない",
+          "kanji": "{便利|べんり}ない"
+        },
+        {
+          "text": "便利く",
+          "kanji": "{便利|べんり}く"
+        },
+        {
+          "text": "便利くない",
+          "kanji": "{便利|べんり}くない"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Liên từ が nối 2 vế đối lập; 便利 là tính từ -na đứng trực tiếp trước です.",
+        "pitfalls": "便利 là tính từ đuôi -na nên không chia dạng く/くない như tính từ -i.",
+        "tip": "便利 là tính từ đuôi -na."
+      }
+    },
+    {
+      "id": "l08_g010",
+      "level": "medium",
+      "sentence": "きれいな うちです。＿、{大|おお}きいうちです。",
+      "translation": "Đó là một ngôi nhà đẹp. Và là một ngôi nhà lớn.",
+      "options": [
+        {
+          "text": "そして",
+          "kanji": "そして"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        },
+        {
+          "text": "でも",
+          "kanji": "でも"
+        },
+        {
+          "text": "それから",
+          "kanji": "それから"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Liên từ そして đứng đầu câu để nối và bổ sung thêm ý nghĩa cùng chiều.",
+        "pitfalls": "Tránh dùng が hay でも (dùng để nối câu mang ý nghĩa trái ngược).",
+        "tip": "Nối 2 câu bổ sung ý cùng chiều: そして."
+      }
+    },
+    {
+      "id": "l08_g011",
+      "level": "medium",
+      "sentence": "シャンハイも あまり ＿ です。",
+      "translation": "Thượng Hải cũng không lạnh lắm.",
+      "options": [
+        {
+          "text": "寒くない",
+          "kanji": "{寒|さむ}くない"
+        },
+        {
+          "text": "寒い",
+          "kanji": "{寒|さむ}い"
+        },
+        {
+          "text": "寒いです",
+          "kanji": "{寒|さむ}いです"
+        },
+        {
+          "text": "寒さ",
+          "kanji": "{寒|さむ}さ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Phó từ あまり (không... lắm) luôn đi kèm tính từ dạng phủ định.",
+        "pitfalls": "Tránh chọn khẳng định 寒い vì đã có phó từ あまり ở trước.",
+        "tip": "Cấu trúc: あまり + Tính từ dạng phủ định."
+      }
+    },
+    {
+      "id": "l08_g012",
+      "level": "medium",
+      "sentence": "{富士山|ふじさん}は ＿ {山|やま}です。",
+      "translation": "Núi Phú Sĩ là ngọn núi cao.",
+      "options": [
+        {
+          "text": "高い",
+          "kanji": "{高|たか}い"
+        },
+        {
+          "text": "高いな",
+          "kanji": "{高|たか}いな"
+        },
+        {
+          "text": "高くな",
+          "kanji": "{高|たか}くな"
+        },
+        {
+          "text": "高の",
+          "kanji": "{高|たか}の"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Tính từ đuôi -i bổ nghĩa trực tiếp cho danh từ, giữ nguyên đuôi い.",
+        "pitfalls": "Tuyệt đối không thêm な hay の vào sau tính từ đuôi -i.",
+        "tip": "Cấu trúc: [Tính từ -i] giữ nguyên + [Danh từ]."
+      }
+    },
+    {
+      "id": "l08_g013",
+      "level": "medium",
+      "sentence": "さくら{大学|だいがく}は ＿ ですか。",
+      "translation": "Trường đại học Sakura có nổi tiếng không?",
+      "options": [
+        {
+          "text": "有名",
+          "kanji": "{有名|ゆうめい}"
+        },
+        {
+          "text": "有名な",
+          "kanji": "{有名|ゆうめい}な"
+        },
+        {
+          "text": "有名く",
+          "kanji": "{有名|ゆうめい}く"
+        },
+        {
+          "text": "有名の",
+          "kanji": "{有名|ゆうめい}の"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Tính từ đuôi -na khi đứng ở vị ngữ trước です thì lược bỏ な.",
+        "pitfalls": "Không thêm な khi tính từ đuôi -na làm vị ngữ đứng trước です.",
+        "tip": "Vị ngữ: [Tính từ -na] + です (bỏ な)."
+      }
+    },
+    {
+      "id": "l08_g014",
+      "level": "medium",
+      "sentence": "さくら{大学|だいがく}は {有名|ゆうめい}＿ ありません。",
+      "translation": "Trường Đại học Sakura không nổi tiếng.",
+      "options": [
+        {
+          "text": "じゃ",
+          "kanji": "じゃ"
+        },
+        {
+          "text": "く",
+          "kanji": "く"
+        },
+        {
+          "text": "な",
+          "kanji": "な"
+        },
+        {
+          "text": "の",
+          "kanji": "の"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Dạng phủ định của tính từ -na 有名 là 有名じゃ ありません.",
+        "pitfalls": "Không nhầm chia く (dành cho tính từ -i).",
+        "tip": "有名 là tính từ đuôi -na."
+      }
+    },
+    {
+      "id": "l08_g015",
+      "level": "medium",
+      "sentence": "{仕事|しごと}は {忙|いそが}しいですが、＿ です。",
+      "translation": "Công việc bận rộn nhưng thú vị.",
+      "options": [
+        {
+          "text": "おもしろい",
+          "kanji": "おもしろい"
+        },
+        {
+          "text": "おもしろくない",
+          "kanji": "おもしろくない"
+        },
+        {
+          "text": "おもしろじゃありません",
+          "kanji": "おもしろじゃありません"
+        },
+        {
+          "text": "おもしろく",
+          "kanji": "おもしろく"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ が nối 2 mệnh đề trái ngược: Bận rộn (tiêu cực) nhưng Thú vị (tích cực).",
+        "pitfalls": "Nếu dùng おもしろくない thì 2 vế tiêu cực sẽ không phù hợp với が.",
+        "tip": "Trợ từ が nối 2 vế mang ý nghĩa đối lập."
+      }
+    },
+    {
+      "id": "l08_g016",
+      "level": "medium",
+      "sentence": "ミラーさんの かばんは ＿ ですか。",
+      "translation": "Cặp của anh Miller là cái nào?",
+      "options": [
+        {
+          "text": "どれ",
+          "kanji": "どれ"
+        },
+        {
+          "text": "どんな",
+          "kanji": "どんな"
+        },
+        {
+          "text": "どう",
+          "kanji": "どう"
+        },
+        {
+          "text": "どこ",
+          "kanji": "どこ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Từ nghi vấn どれ dùng để hỏi chọn 'cái nào' trong từ 3 vật trở lên.",
+        "pitfalls": "Tránh nhầm どんな (cần có N đi kèm) hay どう (hỏi cảm tưởng).",
+        "tip": "Hỏi lựa chọn một vật cụ thể: どれですか."
+      }
+    },
+    {
+      "id": "l08_g017",
+      "level": "hard",
+      "sentence": "日本 の {食べ物|たべもの}は おいしいですが、＿ です。",
+      "translation": "Thức ăn Nhật Bản ngon nhưng đắt.",
+      "options": [
+        {
+          "text": "高い",
+          "kanji": "{高|たか}い"
+        },
+        {
+          "text": "高くない",
+          "kanji": "{高|たか}くない"
+        },
+        {
+          "text": "高いな",
+          "kanji": "{高|たか}いな"
+        },
+        {
+          "text": "高じゃありません",
+          "kanji": "{高|たか}じゃありません"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Ngon (tích cực) + が (nhưng) → vế sau là nhược điểm 高い (tiêu cực).",
+        "pitfalls": "Không chọn 高くない vì không tạo thành vế trái ngược với おいしい.",
+        "tip": "Trợ từ が chỉ sự đối lập giữa hai tính chất."
+      }
+    },
+    {
+      "id": "l08_g018",
+      "level": "hard",
+      "sentence": "きのう 松本さんの うち＿ 行きました。",
+      "translation": "Hôm qua tôi đã đến nhà anh Matsumoto.",
+      "options": [
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ へ dùng sau danh từ chỉ địa điểm để chỉ phương hướng di chuyển.",
+        "pitfalls": "Tránh nhầm trợ từ で (nơi diễn ra hành động) hay を (tác động).",
+        "tip": "Cấu trúc: [Địa điểm] + へ + 行きます."
+      }
+    },
+    {
+      "id": "l08_g019",
+      "level": "hard",
+      "sentence": "あそこの きれいな {傘|かさ}は ＿ のですか。",
+      "translation": "Cây dù đẹp ở đằng kia là của ai vậy?",
+      "options": [
+        {
+          "text": "だれ",
+          "kanji": "だれ"
+        },
+        {
+          "text": "どれ",
+          "kanji": "どれ"
+        },
+        {
+          "text": "どんな",
+          "kanji": "どんな"
+        },
+        {
+          "text": "どう",
+          "kanji": "どう"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Mẫu câu だれ + のですか dùng để hỏi quyền sở hữu: của ai.",
+        "pitfalls": "Tránh nhầm với どれ (cái nào) hay どんな (như thế nào).",
+        "tip": "Hỏi quyền sở hữu: だれ + のですか."
+      }
+    },
+    {
+      "id": "l08_g020",
+      "level": "hard",
+      "sentence": "きのう {京都|きょうと}で ＿ {映画|えいが}を 見ました。",
+      "translation": "Hôm qua tôi đã xem một bộ phim hay ở Kyoto.",
+      "options": [
+        {
+          "text": "おもしろい",
+          "kanji": "おもしろい"
+        },
+        {
+          "text": "おもしろいな",
+          "kanji": "おもしろいな"
+        },
+        {
+          "text": "おもしろく",
+          "kanji": "おもしろく"
+        },
+        {
+          "text": "おもしろじゃ",
+          "kanji": "おもしろじゃ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Tính từ đuôi -i おもしろい bổ nghĩa trực tiếp cho danh từ 映画 mà không thêm な.",
+        "pitfalls": "Tuyệt đối không thêm な vào sau tính từ đuôi -i khi đứng trước danh từ.",
+        "tip": "Cấu trúc: [Tính từ -i] giữ nguyên + [Danh từ]."
+      }
+    }
+  ],
+  "game3": [
+    {
+      "id": "l08_s001",
+      "level": "easy",
+      "vietnamese": "Hoa anh đào đẹp.",
+      "acceptableOrders": [
+        [
+          "さくらは",
+          "きれいです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "さくらは",
+          "kanji": "{桜|さくら}は"
+        },
+        {
+          "text": "きれいです",
+          "kanji": "きれいです"
+        },
+        {
+          "text": "たかいです",
+          "kanji": "{高|たか}いです"
+        }
+      ],
+      "explanation": {
+        "correct": "Cấu trúc N は [Tính từ -na] です dùng để mô tả đặc điểm của chủ đề.",
+        "pitfalls": "Tránh chọn たかいです (cao) vì không khớp với nghĩa đề bài yêu cầu.",
+        "tip": "Tính từ đuôi -na ở thể khẳng định khi làm vị ngữ sẽ bỏ な và đứng trước です."
+      }
+    },
+    {
+      "id": "l08_s002",
+      "level": "easy",
+      "vietnamese": "Núi Phú Sĩ cao.",
+      "acceptableOrders": [
+        [
+          "ふじさんは",
+          "たかいです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "ふじさんは",
+          "kanji": "{富士山|ふじさん}は"
+        },
+        {
+          "text": "たかいです",
+          "kanji": "{高|たか}いです"
+        },
+        {
+          "text": "ひくいです",
+          "kanji": "{低|ひく}いです"
+        }
+      ],
+      "explanation": {
+        "correct": "Cấu trúc N は [Tính từ -i] です miêu tả đặc tính của danh từ.",
+        "pitfalls": "Tránh chọn ひくいです (thấp) mang nghĩa trái ngược.",
+        "tip": "Tính từ đuôi -i giữ nguyên đuôi い và đứng trước です."
+      }
+    },
+    {
+      "id": "l08_s003",
+      "level": "easy",
+      "vietnamese": "Thị trấn này nhộn nhịp.",
+      "acceptableOrders": [
+        [
+          "このまちは",
+          "にぎやかです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "このまちは",
+          "kanji": "この{町|まち}は"
+        },
+        {
+          "text": "にぎやかです",
+          "kanji": "にぎやかです"
+        },
+        {
+          "text": "しずかです",
+          "kanji": "{静|しず}かです"
+        }
+      ],
+      "explanation": {
+        "correct": "Cấu trúc N は [Tính từ -na] です với tính từ にぎやか (nhộn nhịp).",
+        "pitfalls": "Tránh nhầm với しずかです (yên tĩnh).",
+        "tip": "にぎやか là tính từ đuôi -na chỉ sự náo nhiệt, nhộn nhịp."
+      }
+    },
+    {
+      "id": "l08_s004",
+      "level": "easy",
+      "vietnamese": "Trường Đại học Sakura không nổi tiếng.",
+      "acceptableOrders": [
+        [
+          "さくらだいがくは",
+          "ゆうめいじゃ",
+          "ありません"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "さくらだいがくは",
+          "kanji": "さくら{大学|だいがく}は"
+        },
+        {
+          "text": "ゆうめいじゃ",
+          "kanji": "{有名|ゆうめい}じゃ"
+        },
+        {
+          "text": "ありません",
+          "kanji": "ありません"
+        },
+        {
+          "text": "です",
+          "kanji": "です"
+        }
+      ],
+      "explanation": {
+        "correct": "Phủ định hiện tại của tính từ đuôi -na là [Tính từ -na] じゃ ありません.",
+        "pitfalls": "Không kết hợp です cùng ありません trong câu phủ định.",
+        "tip": "Tính từ đuôi -na dạng phủ định: Bỏ な + じゃ ありません."
+      }
+    },
+    {
+      "id": "l08_s005",
+      "level": "easy",
+      "vietnamese": "Hôm nay thời tiết không lạnh lắm.",
+      "acceptableOrders": [
+        [
+          "きょうは",
+          "あまり",
+          "さむくないです"
+        ],
+        [
+          "あまり",
+          "きょうは",
+          "さむくないです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "きょうは",
+          "kanji": "{今日|きょう}は"
+        },
+        {
+          "text": "あまり",
+          "kanji": "あまり"
+        },
+        {
+          "text": "さむくないです",
+          "kanji": "{寒|さむ}くないです"
+        },
+        {
+          "text": "とても",
+          "kanji": "とても"
+        }
+      ],
+      "explanation": {
+        "correct": "Phó từ あまり (không... lắm) đi kèm với tính từ ở dạng phủ định.",
+        "pitfalls": "Tránh chọn とても vì とても chỉ đi kèm câu khẳng định.",
+        "tip": "Cấu trúc: あまり + Tính từ dạng phủ định."
+      }
+    },
+    {
+      "id": "l08_s006",
+      "level": "medium",
+      "vietnamese": "Hoa anh đào là một loài hoa đẹp.",
+      "acceptableOrders": [
+        [
+          "さくらは",
+          "きれいな",
+          "はなです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "さくらは",
+          "kanji": "{桜|さくら}は"
+        },
+        {
+          "text": "きれいな",
+          "kanji": "きれいな"
+        },
+        {
+          "text": "はなです",
+          "kanji": "{花|はな}です"
+        },
+        {
+          "text": "きれい",
+          "kanji": "きれい"
+        }
+      ],
+      "explanation": {
+        "correct": "Tính từ đuôi -na khi đứng trước bổ nghĩa cho danh từ phải có đuôi な.",
+        "pitfalls": "Không chọn khối きれい thiếu な khi bổ nghĩa cho danh từ 花.",
+        "tip": "Cấu trúc: [Tính từ -na] + な + [Danh từ]."
+      }
+    },
+    {
+      "id": "l08_s007",
+      "level": "medium",
+      "vietnamese": "Núi Phú Sĩ là một ngọn núi cao.",
+      "acceptableOrders": [
+        [
+          "ふじさんは",
+          "たかい",
+          "やまです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "ふじさんは",
+          "kanji": "{富士山|ふじさん}は"
+        },
+        {
+          "text": "たかい",
+          "kanji": "{高|たか}い"
+        },
+        {
+          "text": "やまです",
+          "kanji": "{山|やま}です"
+        },
+        {
+          "text": "たかいな",
+          "kanji": "{高|たか}いな"
+        }
+      ],
+      "explanation": {
+        "correct": "Tính từ đuôi -i bổ nghĩa trực tiếp cho danh từ, giữ nguyên đuôi い.",
+        "pitfalls": "Tuyệt đối không thêm な vào sau tính từ đuôi -i.",
+        "tip": "Cấu trúc: [Tính từ -i] giữ nguyên + [Danh từ]."
+      }
+    },
+    {
+      "id": "l08_s008",
+      "level": "medium",
+      "vietnamese": "Ký túc xá của trường đại học cũ nhưng tiện lợi.",
+      "acceptableOrders": [
+        [
+          "だいがくの",
+          "りょうは",
+          "ふるいですが、",
+          "べんりです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "だいがくの",
+          "kanji": "{大学|だいがく}の"
+        },
+        {
+          "text": "りょうは",
+          "kanji": "{寮|りょう}は"
+        },
+        {
+          "text": "ふるいですが、",
+          "kanji": "{古|ふる}いですが、"
+        },
+        {
+          "text": "べんりです",
+          "kanji": "{便利|べんり}です"
+        },
+        {
+          "text": "そして、",
+          "kanji": "그리고、"
+        }
+      ],
+      "explanation": {
+        "correct": "Trợ từ が nối 2 vế mang ý nghĩa trái ngược nhau (cũ nhưng tiện lợi).",
+        "pitfalls": "Tránh chọn そして vì そして dùng nối câu mang ý bổ sung cùng chiều.",
+        "tip": "Nối 2 vế tính chất đối lập: S1 が、S2."
+      }
+    },
+    {
+      "id": "l08_s009",
+      "level": "medium",
+      "vietnamese": "Đó là một ngôi nhà đẹp. Và là một ngôi nhà lớn.",
+      "acceptableOrders": [
+        [
+          "きれいな",
+          "うちです。",
+          "そして、",
+          "おおきい",
+          "うちです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "きれいな",
+          "kanji": "きれいな"
+        },
+        {
+          "text": "うちです。",
+          "kanji": "うちです。"
+        },
+        {
+          "text": "そして、",
+          "kanji": "そして、"
+        },
+        {
+          "text": "おおきい",
+          "kanji": "{大|おお}きい"
+        },
+        {
+          "text": "うちです",
+          "kanji": "うちです"
+        },
+        {
+          "text": "ですが、",
+          "kanji": "ですが、"
+        }
+      ],
+      "explanation": {
+        "correct": "Liên từ そして đứng đầu câu thứ hai để bổ sung thêm thông tin cùng chiều tích cực.",
+        "pitfalls": "Không chọn ですが vì 2 đặc điểm (đẹp, to) đều là đánh giá tích cực.",
+        "tip": "Nối 2 câu bổ sung ý cùng chiều: そして."
+      }
+    },
+    {
+      "id": "l08_s010",
+      "level": "medium",
+      "vietnamese": "Cuộc sống ở Nhật Bản thế nào?",
+      "acceptableOrders": [
+        [
+          "にほんの",
+          "せいかつは",
+          "どうですか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "にほんの",
+          "kanji": "{日本|にほん}の"
+        },
+        {
+          "text": "せいかつは",
+          "kanji": "{生活|せいかつ}は"
+        },
+        {
+          "text": "どうですか",
+          "kanji": "どうですか"
+        },
+        {
+          "text": "どんなですか",
+          "kanji": "どんなですか"
+        }
+      ],
+      "explanation": {
+        "correct": "Từ nghi vấn どう đứng độc lập trước ですか để hỏi ấn tượng, cảm tưởng.",
+        "pitfalls": "Tránh dùng どんな đứng một mình trước ですか (đòi hỏi phải có danh từ đi kèm: どんな N).",
+        "tip": "Hỏi cảm tưởng về đối tượng: N は どうですか."
+      }
+    },
+    {
+      "id": "l08_s011",
+      "level": "hard",
+      "vietnamese": "Hôm qua tôi đã xem một bộ phim rất thú vị.",
+      "acceptableOrders": [
+        [
+          "きのう",
+          "とても",
+          "おもしろい",
+          "えいがを",
+          "みました"
+        ],
+        [
+          "とても",
+          "おもしろい",
+          "えいがを",
+          "きのう",
+          "みました"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "きのう",
+          "kanji": "きのう"
+        },
+        {
+          "text": "とても",
+          "kanji": "とても"
+        },
+        {
+          "text": "おもしろい",
+          "kanji": "おもしろい"
+        },
+        {
+          "text": "えいがを",
+          "kanji": "{映画|えいが}を"
+        },
+        {
+          "text": "みました",
+          "kanji": "{見|み}ました"
+        },
+        {
+          "text": "あまり",
+          "kanji": "あまり"
+        }
+      ],
+      "explanation": {
+        "correct": "Phó từ とても (rất) đi cùng tính từ khẳng định おもしろい để bổ nghĩa cho 映画.",
+        "pitfalls": "Không dùng あまり vì あまり chỉ đi với phủ định.",
+        "tip": "Trạng từ chỉ thời gian (きのう) có thể đảo lên đầu câu hoặc đứng sau chủ ngữ."
+      }
+    },
+    {
+      "id": "l08_s012",
+      "level": "hard",
+      "vietnamese": "Công việc bận rộn nhưng rất thú vị.",
+      "acceptableOrders": [
+        [
+          "しごとは",
+          "いそがしいですが、",
+          "とても",
+          "おもしろいです"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "しごとは",
+          "kanji": "{仕事|しごと}は"
+        },
+        {
+          "text": "いそがしいですが、",
+          "kanji": "{忙|いそが}しいですが、"
+        },
+        {
+          "text": "とても",
+          "kanji": "とても"
+        },
+        {
+          "text": "おもしろいです",
+          "kanji": "おもしろいです"
+        },
+        {
+          "text": "そして、",
+          "kanji": "そして、"
+        }
+      ],
+      "explanation": {
+        "correct": "Nối 2 vế tính chất đối lập: Bận rộn (tiêu cực) nhưng Thú vị (tích cực) bằng trợ từ が.",
+        "pitfalls": "Tránh nhầm với そして (nối 2 vế bổ sung ý cùng chiều).",
+        "tip": "Vế 1 (tiêu cực) + が、+ Vế 2 (tích cực)."
+      }
+    }
+  ],
+  "game4": [
+    {
+      "id": "l08_c001",
+      "level": "easy",
+      "speaker": "👤 山田さん",
+      "question": "「マリアさん、日本の生活はどうですか。」",
+      "questionAudioText": "マリアさん、にほんのせいかつはどうですか。",
+      "options": [
+        {
+          "text": "まいにちとてもたのしいです",
+          "kanji": "{毎日|まいにち}とても {楽|たの}しいです。"
+        },
+        {
+          "text": "はい、たのしいです",
+          "kanji": "はい、{楽|たの}しいです。"
+        },
+        {
+          "text": "いいえ、そうじゃありません",
+          "kanji": "いいえ、そうじゃ ありません。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Mẫu câu hỏi cảm tưởng どうですか không trả lời bằng はい/いいえ.",
+        "pitfalls": "Không bắt đầu câu trả lời bằng はい hay いいえ khi đối phương dùng từ nghi vấn どう.",
+        "tip": "Hỏi cảm tưởng: どうですか → Trả lời trực tiếp bằng tính từ đánh giá."
+      }
+    },
+    {
+      "id": "l08_c002",
+      "level": "easy",
+      "speaker": "👤 山田さん",
+      "question": "「サントスさん、お仕事はどうですか。」",
+      "questionAudioText": "サントスさん、おしごとはどうですか。",
+      "options": [
+        {
+          "text": "いそがしいですが、おもしろいです",
+          "kanji": "{忙|いそが}しいですが、おもしろいです。"
+        },
+        {
+          "text": "はい、いそがしいです",
+          "kanji": "はい、{忙|いそが}しいです。"
+        },
+        {
+          "text": "9じから5じまでです",
+          "kanji": "9{時|じ}から 5{時|じ}までです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Đáp lại lời hỏi thăm công việc theo bài hội thoại: 忙しいですが、おもしろいです.",
+        "pitfalls": "Tránh nhầm với câu hỏi thời gian làm việc (何時から何時まで).",
+        "tip": "Nối 2 tính chất ngược chiều bằng trợ từ が (bận rộn nhưng thú vị)."
+      }
+    },
+    {
+      "id": "l08_c003",
+      "level": "easy",
+      "speaker": "👤 山田さん",
+      "question": "「コーヒー、もう一杯いかがですか。」",
+      "questionAudioText": "コーヒー、もういっぱいいかがですか。",
+      "options": [
+        {
+          "text": "いいえ、けっこうです",
+          "kanji": "いいえ、けっこうです。"
+        },
+        {
+          "text": "はい、おいしいです",
+          "kanji": "はい、おいしいです。"
+        },
+        {
+          "text": "いいえ、のみません",
+          "kanji": "いいえ、{飲|の}みません。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi từ chối lời mời dùng bữa/đồ uống một cách lịch sự, dùng いいえ、けっこうです.",
+        "pitfalls": "Không dùng いいえ、飲みません vì mang sắc thái thô lốc khi từ chối lời mời.",
+        "tip": "Từ chối khéo léo, lịch sự: いいえ、けっこうです (Tôi đủ rồi ạ)."
+      }
+    },
+    {
+      "id": "l08_c004",
+      "level": "easy",
+      "speaker": "👤 サントスさん",
+      "question": "「あ、もう６時ですね。そろそろ失礼します。」",
+      "questionAudioText": "あ、もうろくじですね。そろそろしつれいします。",
+      "options": [
+        {
+          "text": "そうですか。またいらっしゃってください",
+          "kanji": "そうですか。また いらっしゃってください。"
+        },
+        {
+          "text": "いいえ、けっこうです",
+          "kanji": "いいえ、けっこうです。"
+        },
+        {
+          "text": "はい、どうぞ",
+          "kanji": "はい、どうぞ。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi khách xin phép về (そろそろ失礼します), chủ nhà đáp lại lịch sự chúc hẹn gặp lại.",
+        "pitfalls": "Tránh chọn いいえ、けっこうです (dùng khi từ chối lời mời món ăn/đồ uống).",
+        "tip": "Khách xin phép về → Chủ nhà: そうですか。またいらっしゃってください."
+      }
+    },
+    {
+      "id": "l08_c005",
+      "level": "easy",
+      "speaker": "👤 マリアさん",
+      "question": "「きょうはどうもありがとうございました。」",
+      "questionAudioText": "きょうはどうもありがとうございました。",
+      "options": [
+        {
+          "text": "いいえ。またいらっしゃってください",
+          "kanji": "いいえ。また いらっしゃってください。"
+        },
+        {
+          "text": "はい、どうもありがとう",
+          "kanji": "はい、どうも ありがとう。"
+        },
+        {
+          "text": "どうぞよろしく",
+          "kanji": "どうぞ よろしく。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi khách cảm ơn trước khi ra về, chủ nhà khiêm tốn đáp いいえ và mời lần sau lại đến.",
+        "pitfalls": "Không đáp lại lời cảm ơn bằng はい.",
+        "tip": "Đáp lại lời cảm ơn giao tiếp: いいえ + câu chào mời/xã giao."
+      }
+    },
+    {
+      "id": "l08_c006",
+      "level": "medium",
+      "speaker": "👤 ミラーさん",
+      "question": "「大阪はにぎやかですか。」",
+      "questionAudioText": "おおさかはにぎやかですか。",
+      "options": [
+        {
+          "text": "はい、にぎやかです",
+          "kanji": "はい、にぎやかです。"
+        },
+        {
+          "text": "はい、にぎやかじゃないです",
+          "kanji": "はい、にぎやかじゃないです。"
+        },
+        {
+          "text": "いいえ、にぎやかです",
+          "kanji": "いいえ、にぎやかです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Câu hỏi Nghi-Vấn-Tuyến (có/không): Trả lời はい đi cùng khẳng định.",
+        "pitfalls": "Không kết hợp はい với phủ định hay いいえ với khẳng định.",
+        "tip": "Quy tắc đồng nhất: はい + Khẳng định / いいえ + Phủ định."
+      }
+    },
+    {
+      "id": "l08_c007",
+      "level": "medium",
+      "speaker": "👤 木村さん",
+      "question": "「さくら大学は有名ですか。」",
+      "questionAudioText": "さくらだいがくはゆうめいですか。",
+      "options": [
+        {
+          "text": "いいえ、有名じゃありません",
+          "kanji": "いいえ、{有名|ゆうめい}じゃ ありません。"
+        },
+        {
+          "text": "いいえ、有名くないです",
+          "kanji": "いいえ、{有名|ゆうめい}くないです。"
+        },
+        {
+          "text": "はい、有名じゃありません",
+          "kanji": "はい、{有名|ゆうめい}じゃ ありません。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "有名 là tính từ đuôi -na, dạng phủ định đúng là 有名じゃ ありません.",
+        "pitfalls": "Không chia tính từ -na thành 有名くない (chia nhầm kiểu tính từ đuôi -i).",
+        "tip": "有名 là tính từ đuôi -na dạng đặc biệt."
+      }
+    },
+    {
+      "id": "l08_c008",
+      "level": "medium",
+      "speaker": "👤 佐藤さん",
+      "question": "「ペキンは今寒いですか。」",
+      "questionAudioText": "ペキンはいまさむいですか。",
+      "options": [
+        {
+          "text": "はい、とても寒いです",
+          "kanji": "はい、とても {寒|さむ}いです。"
+        },
+        {
+          "text": "はい、あまり寒いです",
+          "kanji": "はい、あまり {寒|さむ}いです。"
+        },
+        {
+          "text": "いいえ、とても寒くないです",
+          "kanji": "いいえ、とても {寒|さむ}くないです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Phó từ とても (rất) đi cùng tính từ dạng khẳng định 寒いです.",
+        "pitfalls": "Tránh nhầm phó từ あまり (phải đi với phủ định) hoặc dùng とても đi với phủ định.",
+        "tip": "とても + Khẳng định / あまり + Phủ định."
+      }
+    },
+    {
+      "id": "l08_c009",
+      "level": "medium",
+      "speaker": "👤 カリナさん",
+      "question": "「大学の寮はどうですか。」",
+      "questionAudioText": "だいがくのりょうはどうですか。",
+      "options": [
+        {
+          "text": "ふるいですが、べんりです",
+          "kanji": "{古|ふる}いですが、{便利|べんり}です。"
+        },
+        {
+          "text": "はい、ふるいです",
+          "kanji": "はい、{古|ふる}いです。"
+        },
+        {
+          "text": "いいえ、べんりじゃありません",
+          "kanji": "いいえ、{便利|べんり}じゃ ありません。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Nêu nhận xét đối lập về đối tượng bằng liên từ が (Cũ nhưng tiện lợi).",
+        "pitfalls": "Không bắt đầu bằng はい hay いいえ đối với câu hỏi cảm tưởng どうですか.",
+        "tip": "Hỏi どうですか → Nêu trực tiếp ý kiến/đánh giá."
+      }
+    },
+    {
+      "id": "l08_c010",
+      "level": "medium",
+      "speaker": "👤 ワットさん",
+      "question": "「きのう松本さんのうちへ行きました。どんなうちですか。」",
+      "questionAudioText": "きのうまつもとさんのうちへいきました。どんなうちですか。",
+      "options": [
+        {
+          "text": "きれいなうちです。そして、おおきいうちです",
+          "kanji": "きれいな うちです。そして、{大|おお}きい うちです。"
+        },
+        {
+          "text": "はい、おおきいうちです",
+          "kanji": "はい、{大|おお}きい うちです。"
+        },
+        {
+          "text": "しんおおさかにあります",
+          "kanji": "{新大阪|しんおおさか}に あります。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi đặc điểm bằng どんな + N, bổ sung thêm ý khen cùng chiều bằng そして.",
+        "pitfalls": "Tránh chọn vị trí địa lý (新大阪にあります) khi người hỏi đang muốn biết tính chất/đặc điểm.",
+        "tip": "Nối 2 thuộc tính khen cùng chiều bằng そして."
+      }
+    },
+    {
+      "id": "l08_c011",
+      "level": "hard",
+      "speaker": "👤 山田さん",
+      "question": "「きのうおもしろい映画を見ましたか。」",
+      "questionAudioText": "きのうおもしろいえいがをみましたか。",
+      "options": [
+        {
+          "text": "はい、みました。「しちにんのさむらい」です",
+          "kanji": "はい、{見|み}ました。「{七人|しちにん}の {侍|さむらい}」です。"
+        },
+        {
+          "text": "はい、おもしろいえいがをみませんでした",
+          "kanji": "はい、おもしろい {映画|えいが}を {見|み}ませんでした。"
+        },
+        {
+          "text": "いいえ、みました",
+          "kanji": "いいえ、{見|み}ました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời khẳng định はい、見ました và kể tên bộ phim cụ thể theo bài học.",
+        "pitfalls": "Không kết hợp はい với dạng phủ định 見ませんでした.",
+        "tip": "Xác nhận đã xem phim: はい、見ました."
+      }
+    },
+    {
+      "id": "l08_c012",
+      "level": "hard",
+      "speaker": "👤 テレーザちゃん",
+      "question": "「お元気ですか。」",
+      "questionAudioText": "おげんきですか。",
+      "options": [
+        {
+          "text": "はい、げんきです。ありがとうございます",
+          "kanji": "はい、{元気|げんき}です。ありがとう ございます。"
+        },
+        {
+          "text": "いいえ、げんきです",
+          "kanji": "いいえ、{元気|げんき}です。"
+        },
+        {
+          "text": "はい、げんきじゃありません",
+          "kanji": "はい、{元気|げんき}じゃ ありません。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Đáp lại lời hỏi thăm sức khỏe: はい、元気です kèm câu cảm ơn lịch sự.",
+        "pitfalls": "Không kết hợp いいえ với khẳng định 元気です.",
+        "tip": "Đáp lại lời hỏi thăm sức khỏe chu đáo: はい、元気です。ありがとうございます。"
+      }
+    }
+  ]
+}

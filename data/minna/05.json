@@ -1,0 +1,2088 @@
+{
+  "config": {
+    "lessonNo": 5,
+    "title": "Minna no Nihongo – Bài 5",
+    "jlpt": "N5",
+    "storagePrefix": "mnn_l05"
+  },
+  "game1": [
+    {
+      "id": "l05_v001",
+      "level": "easy",
+      "context": "Di chuyển từ nơi hiện tại đến một địa điểm khác xa hơn.",
+      "answer": "いきます",
+      "kanji": "{行|い}きます",
+      "distractors": [
+        "きます",
+        "かえります",
+        "やすみます"
+      ],
+      "distractorsKanji": [
+        "{来|き}ます",
+        "{帰|かえ}ります",
+        "{休|やす}みます"
+      ],
+      "explanation": {
+        "correct": "行きます (いきます) có nghĩa là đi đến nơi khác.",
+        "pitfalls": "Tránh nhầm với 来ます (đến) hoặc 帰ります (về nhà/nước).",
+        "tip": "行 (HÀNH) trong hành động di chuyển đi."
+      }
+    },
+    {
+      "id": "l05_v002",
+      "level": "easy",
+      "context": "Di chuyển từ nơi khác hướng về vị trí của người nói.",
+      "answer": "きます",
+      "kanji": "{来|き}ます",
+      "distractors": [
+        "いきます",
+        "かえります",
+        "おきます"
+      ],
+      "distractorsKanji": [
+        "{行|い}きます",
+        "{帰|かえ}ります",
+        "{起|お}きます"
+      ],
+      "explanation": {
+        "correct": "来ます (きます) có nghĩa là đến vị trí người nói.",
+        "pitfalls": "Tránh nhầm với 行きます (đi xa khỏi vị trí nói).",
+        "tip": "来 (LAI) trong tương lai, đến nơi."
+      }
+    },
+    {
+      "id": "l05_v003",
+      "level": "easy",
+      "context": "Trở về lại nơi chốn quen thuộc của mình như nhà cửa hay quê hương.",
+      "answer": "かえります",
+      "kanji": "{帰|かえ}ります",
+      "distractors": [
+        "いきます",
+        "きます",
+        "はたらきます"
+      ],
+      "distractorsKanji": [
+        "{行|い}きます",
+        "{来|き}ます",
+        "{働|はたら}きます"
+      ],
+      "explanation": {
+        "correct": "帰ります (かえります) nghĩa là trở về (nhà, nước).",
+        "pitfalls": "Không dùng 帰ります khi đi đến điểm tham quan mới.",
+        "tip": "帰 (QUY) trong quy tụ, trở về nhà."
+      }
+    },
+    {
+      "id": "l05_v004",
+      "level": "easy",
+      "context": "Nơi học sinh, sinh viên đến hằng ngày để học tập cùng thầy cô.",
+      "answer": "がっこう",
+      "kanji": "{学校|がっこう}",
+      "distractors": [
+        "とうきょう",
+        "じむしょ",
+        "きょうしつ"
+      ],
+      "distractorsKanji": [
+        "{東京|とうきょう}",
+        "{事務所|じむしょ}",
+        "{教室|きょうしつ}"
+      ],
+      "explanation": {
+        "correct": "学校 (がっこう) có nghĩa là trường học nói chung.",
+        "pitfalls": "教室 là phòng học cụ thể bên trong trường học.",
+        "tip": "学 (HỌC) + 校 (HIỆU) = trường học."
+      }
+    },
+    {
+      "id": "l05_v005",
+      "level": "easy",
+      "context": "Cửa hàng bán lẻ lớn tự phục vụ các loại thực phẩm và đồ dùng gia đình.",
+      "answer": "スーパー",
+      "kanji": "スーパー",
+      "distractors": [
+        "デパート",
+        "えき",
+        "ぎんこう"
+      ],
+      "distractorsKanji": [
+        "デパート",
+        "{駅|えき}",
+        "{銀行|ぎんこう}"
+      ],
+      "explanation": {
+        "correct": "スーパー là siêu thị.",
+        "pitfalls": "Tránh nhầm với デパート (bách hóa tổng hợp quy mô lớn hơn).",
+        "tip": "Viết bằng Katakana từ chữ Supermarket."
+      }
+    },
+    {
+      "id": "l05_v006",
+      "level": "easy",
+      "context": "Nơi tàu điện dừng lại để hành khách lên xuống xe.",
+      "answer": "えき",
+      "kanji": "{駅|えき}",
+      "distractors": [
+        "がっこう",
+        "びょういん",
+        "ぎんこう"
+      ],
+      "distractorsKanji": [
+        "{学校|がっこう}",
+        "{病院|びょういん}",
+        "{銀行|ぎんこう}"
+      ],
+      "explanation": {
+        "correct": "駅 (えき) có nghĩa là nhà ga tàu.",
+        "pitfalls": "Tránh nhầm với các địa điểm công cộng khác như 病院 (bệnh viện).",
+        "tip": "Hán tự 駅 (DỊCH) nghĩa là trạm dừng ga."
+      }
+    },
+    {
+      "id": "l05_v007",
+      "level": "medium",
+      "context": "Phương tiện giao thông đường hàng không di chuyển giữa các vùng đất xa nhau.",
+      "answer": "ひこうき",
+      "kanji": "{飛行機|ひこうき}",
+      "distractors": [
+        "ふね",
+        "でんしゃ",
+        "じどうしゃ"
+      ],
+      "distractorsKanji": [
+        "{船|ふね}",
+        "{電車|でんしゃ}",
+        "{自動車|じどうしゃ}"
+      ],
+      "explanation": {
+        "correct": "飛行機 (ひこうき) là máy bay.",
+        "pitfalls": "Tránh nhầm với 船 (tàu thủy) hay 電車 (tàu điện).",
+        "tip": "飛 (PHI = bay) + 行 (HÀNH) + 機 (CƠ = máy)."
+      }
+    },
+    {
+      "id": "l05_v008",
+      "level": "easy",
+      "context": "Phương tiện giao thông di chuyển chở người và hàng hóa trên mặt nước.",
+      "answer": "ふね",
+      "kanji": "{船|ふね}",
+      "distractors": [
+        "ひこうき",
+        "バス",
+        "タクシー"
+      ],
+      "distractorsKanji": [
+        "{飛行機|ひこうき}",
+        "バス",
+        "タクシー"
+      ],
+      "explanation": {
+        "correct": "船 (ふね) có nghĩa là thuyền hoặc tàu thủy.",
+        "pitfalls": "Tránh nhầm với 飛行機 (máy bay đi trên không).",
+        "tip": "Hán tự 船 (THUYỀN) chỉ phương tiện thủy."
+      }
+    },
+    {
+      "id": "l05_v009",
+      "level": "easy",
+      "context": "Phương tiện giao thông công cộng chạy trên đường ray bằng năng lượng điện.",
+      "answer": "でんしゃ",
+      "kanji": "{電車|でんしゃ}",
+      "distractors": [
+        "ちかてつ",
+        "しんかんせん",
+        "じてんしゃ"
+      ],
+      "distractorsKanji": [
+        "{地下鉄|ちかてつ}",
+        "{新幹線|しんかんせん}",
+        "{自転車|じてんしゃ}"
+      ],
+      "explanation": {
+        "correct": "電車 (でんしゃ) là tàu điện thông thường.",
+        "pitfalls": "地下鉄 là tàu chạy dưới lòng đất, 新幹線 là tàu siêu tốc.",
+        "tip": "電 (ĐIỆN) + 車 (XA) = xe chạy bằng điện."
+      }
+    },
+    {
+      "id": "l05_v010",
+      "level": "medium",
+      "context": "Hệ thống tàu điện di chuyển trong các đường hầm bên dưới thành phố.",
+      "answer": "ちかてつ",
+      "kanji": "{地下鉄|ちかてつ}",
+      "distractors": [
+        "でんしゃ",
+        "しんかんせん",
+        "バス"
+      ],
+      "distractorsKanji": [
+        "{電車|でんしゃ}",
+        "{新幹線|しんかんせん}",
+        "バス"
+      ],
+      "explanation": {
+        "correct": "地下鉄 (ちかてつ) là tàu điện ngầm.",
+        "pitfalls": "Đừng nhầm với 電車 (tàu điện trên mặt đất).",
+        "tip": "地 (ĐỊA) + 下 (HẠ = dưới đất) + 鉄 (THIẾT = đường sắt)."
+      }
+    },
+    {
+      "id": "l05_v011",
+      "level": "medium",
+      "context": "Tàu điện siêu tốc tốc độ cao kết nối các thành phố lớn ở Nhật Bản.",
+      "answer": "しんかんせん",
+      "kanji": "{新幹線|しんかんせん}",
+      "distractors": [
+        "でんしゃ",
+        "ちかてつ",
+        "ひこうき"
+      ],
+      "distractorsKanji": [
+        "{電車|でんしゃ}",
+        "{地下鉄|ちかてつ}",
+        "{飛行機|ひこうき}"
+      ],
+      "explanation": {
+        "correct": "新幹線 (しんかんせん) là tàu siêu tốc Shinkansen.",
+        "pitfalls": "Tàu này khác với tàu điện thường (電車) và tàu ngầm (地下鉄).",
+        "tip": "新 (TÂN) + 幹 (CÁN) + 線 (TUYẾN)."
+      }
+    },
+    {
+      "id": "l05_v012",
+      "level": "medium",
+      "context": "Phương tiện giao thông hai bánh dùng lực đạp của chân để di chuyển.",
+      "answer": "じてんしゃ",
+      "kanji": "{自転車|じてんしゃ}",
+      "distractors": [
+        "じどうしゃ",
+        "タクシー",
+        "バス"
+      ],
+      "distractorsKanji": [
+        "{自動車|じどうしゃ}",
+        "タクシー",
+        "バス"
+      ],
+      "explanation": {
+        "correct": "自転車 (じてんしゃ) nghĩa là xe đạp.",
+        "pitfalls": "Tránh nhầm với 自動車 (じどうしゃ - xe hơi).",
+        "tip": "自 (TỰ) + 転 (CHUYỂN) + 車 (XA) = xe tự xoay bằng sức người."
+      }
+    },
+    {
+      "id": "l05_v013",
+      "level": "medium",
+      "context": "Tự di chuyển bằng chính đôi chân của mình mà không dùng xe cộ.",
+      "answer": "あるいて",
+      "kanji": "{歩|ある}いて",
+      "distractors": [
+        "ひとりで",
+        "バスで",
+        "じてんしゃで"
+      ],
+      "distractorsKanji": [
+        "{一人|ひとり}で",
+        "バスで",
+        "{自転車|じてんしゃ}で"
+      ],
+      "explanation": {
+        "correct": "歩いて (あるいて) có nghĩa là đi bộ.",
+        "pitfalls": "Đi bộ dùng 歩いて, không thêm trợ từ で ở phía sau.",
+        "tip": "歩 (BỘ = bước đi)."
+      }
+    },
+    {
+      "id": "l05_v014",
+      "level": "easy",
+      "context": "Người quen biết, thân thiết và hay gặp gỡ, trò chuyện cùng mình.",
+      "answer": "ともだち",
+      "kanji": "{友達|ともだち}",
+      "distractors": [
+        "かぞく",
+        "かれ",
+        "かのじょ"
+      ],
+      "distractorsKanji": [
+        "{家族|かぞく}",
+        "{彼|かれ}",
+        "{彼女|かのじょ}"
+      ],
+      "explanation": {
+        "correct": "友達 (ともだち) nghĩa là bạn bè.",
+        "pitfalls": "Tránh nhầm với 家族 (gia đình) hay 彼 (bạn trai).",
+        "tip": "友 (HỮU = bạn) + 達 (ĐẠT = số nhiều/người)."
+      }
+    },
+    {
+      "id": "l05_v015",
+      "level": "medium",
+      "context": "Người phụ nữ/cô gái được nhắc tới, hoặc bạn gái trong tình yêu.",
+      "answer": "かのじょ",
+      "kanji": "{彼女|かのじょ}",
+      "distractors": [
+        "かれ",
+        "ともだち",
+        "かぞく"
+      ],
+      "distractorsKanji": [
+        "{彼|かれ}",
+        "{友達|ともだち}",
+        "{家族|かぞく}"
+      ],
+      "explanation": {
+        "correct": "彼女 (かのじょ) nghĩa là cô ấy hoặc bạn gái.",
+        "pitfalls": "Tránh nhầm với 彼 (anh ấy/bạn trai).",
+        "tip": "彼 (BỈ) + 女 (NỮ) = người phụ nữ đó / cô ấy."
+      }
+    },
+    {
+      "id": "l05_v016",
+      "level": "easy",
+      "context": "Những người cùng huyết thống sống chung dưới một mái nhà như bố, mẹ, anh chị em.",
+      "answer": "かぞく",
+      "kanji": "{家族|かぞく}",
+      "distractors": [
+        "ともだち",
+        "ひと",
+        "かいしゃのひと"
+      ],
+      "distractorsKanji": [
+        "{友達|ともだち}",
+        "{人|ひと}",
+        "{会社|かいしゃ}の{人|ひと}"
+      ],
+      "explanation": {
+        "correct": "家族 (かぞく) nghĩa là gia đình.",
+        "pitfalls": "友達 là bạn bè, không có quan hệ ruột thịt.",
+        "tip": "家 (GIA = nhà) + 族 (TỘC = dòng tộc)."
+      }
+    },
+    {
+      "id": "l05_v017",
+      "level": "medium",
+      "context": "Khoảng thời gian 7 ngày nằm ngay trước tuần hiện tại.",
+      "answer": "せんしゅう",
+      "kanji": "{先週|せんしゅう}",
+      "distractors": [
+        "こんしゅう",
+        "らいしゅう",
+        "せんげつ"
+      ],
+      "distractorsKanji": [
+        "{今週|こんしゅう}",
+        "{来週|らいしゅう}",
+        "{先月|せんげつ}"
+      ],
+      "explanation": {
+        "correct": "先週 (せんしゅう) nghĩa là tuần trước.",
+        "pitfalls": "今週 là tuần này, 来週 là tuần sau, 先月 là tháng trước.",
+        "tip": "先 (TIÊN = trước) + 週 (CHU = tuần)."
+      }
+    },
+    {
+      "id": "l05_v018",
+      "level": "medium",
+      "context": "Khoảng thời gian 7 ngày kế tiếp ngay sau tuần này.",
+      "answer": "らいしゅう",
+      "kanji": "{来週|らいしゅう}",
+      "distractors": [
+        "せんしゅう",
+        "こんしゅう",
+        "らいげつ"
+      ],
+      "distractorsKanji": [
+        "{先週|せんしゅう}",
+        "{今週|こんしゅう}",
+        "{来月|らいげつ}"
+      ],
+      "explanation": {
+        "correct": "来週 (らいしゅう) nghĩa là tuần sau.",
+        "pitfalls": "先週 là tuần trước, 来月 là tháng sau.",
+        "tip": "来 (LAI = sắp đến) + 週 (CHU = tuần)."
+      }
+    },
+    {
+      "id": "l05_v019",
+      "level": "medium",
+      "context": "Tháng hiện tại mà chúng ta đang ở trong đó.",
+      "answer": "こんげつ",
+      "kanji": "{今月|こんげつ}",
+      "distractors": [
+        "せんげつ",
+        "らいげつ",
+        "ことし"
+      ],
+      "distractorsKanji": [
+        "{先月|せんげつ}",
+        "{来月|らいげつ}",
+        "{今年|ことし}"
+      ],
+      "explanation": {
+        "correct": "今月 (こんげつ) nghĩa là tháng này.",
+        "pitfalls": "先月 là tháng trước, 今年 là năm nay.",
+        "tip": "今 (KIM = hiện tại) + 月 (NGUYỆT = tháng)."
+      }
+    },
+    {
+      "id": "l05_v020",
+      "level": "hard",
+      "context": "Khoảng thời gian một năm đã trôi qua ngay trước năm nay.",
+      "answer": "きょねん",
+      "kanji": "{去年|きょねん}",
+      "distractors": [
+        "ことし",
+        "らいねん",
+        "せんげつ"
+      ],
+      "distractorsKanji": [
+        "{今年|ことし}",
+        "{来年|らいねん}",
+        "{先月|せんげつ}"
+      ],
+      "explanation": {
+        "correct": "去年 (きょねん) nghĩa là năm ngoái.",
+        "pitfalls": "今年 (ことし) là năm nay, 来年 (らいねん) là năm sau.",
+        "tip": "去 (KHỨ = đã qua) + 年 (NIÊN = năm)."
+      }
+    },
+    {
+      "id": "l05_v021",
+      "level": "hard",
+      "context": "Mốc thời gian ngày đầu tiên bắt đầu một tháng mới.",
+      "answer": "ついたち",
+      "kanji": "{1日|ついたち}",
+      "distractors": [
+        "ふつか",
+        "みっか",
+        "よっか"
+      ],
+      "distractorsKanji": [
+        "{2日|ふつか}",
+        "{3日|みっか}",
+        "{4日|よっか}"
+      ],
+      "explanation": {
+        "correct": "1日 đọc là ついたち có nghĩa là ngày mồng 1.",
+        "pitfalls": "Đừng nhầm với ふつか (ngày 2) hay みっか (ngày 3).",
+        "tip": "Cách đọc đặc biệt của ngày mồng 1 đầu tháng."
+      }
+    },
+    {
+      "id": "l05_v022",
+      "level": "hard",
+      "context": "Ngày thứ 4 trong tháng hoặc khoảng thời gian dài 4 ngày.",
+      "answer": "よっか",
+      "kanji": "{4日|よっか}",
+      "distractors": [
+        "いつか",
+        "むいか",
+        "なのか"
+      ],
+      "distractorsKanji": [
+        "{5日|いつか}",
+        "{6日|むいか}",
+        "{7日|なのか}"
+      ],
+      "explanation": {
+        "correct": "4日 đọc là よっか (ngày 4/4 ngày).",
+        "pitfalls": "Tránh nhầm âm với いつか (ngày 5) hay ようか (ngày 8).",
+        "tip": "Chú ý biến âm よっか có xúc âm (っ)."
+      }
+    },
+    {
+      "id": "l05_v023",
+      "level": "hard",
+      "context": "Cột mốc ngày thứ 20 trong một tháng.",
+      "answer": "はつか",
+      "kanji": "{20日|はつか}",
+      "distractors": [
+        "とおか",
+        "じゅうよっか",
+        "にじゅうよっか"
+      ],
+      "distractorsKanji": [
+        "{10日|とおか}",
+        "{14日|じゅうよっか}",
+        "{24日|にじゅうよっか}"
+      ],
+      "explanation": {
+        "correct": "20日 có cách đọc đặc biệt là はつか (ngày 20).",
+        "pitfalls": "Không đọc là にじゅうにち.",
+        "tip": "Cách đọc bất quy tắc riêng cho ngày 20 trong tháng."
+      }
+    },
+    {
+      "id": "l05_v024",
+      "level": "medium",
+      "context": "Từ nghi vấn dùng để hỏi về thời điểm xảy ra sự việc nói chung.",
+      "answer": "いつ",
+      "kanji": "いつ",
+      "distractors": [
+        "なんじ",
+        "なんようび",
+        "どこ"
+      ],
+      "distractorsKanji": [
+        "{何時|なんじ}",
+        "{何曜日|なんようび}",
+        "どこ"
+      ],
+      "explanation": {
+        "correct": "いつ nghĩa là khi nào/bao giờ.",
+        "pitfalls": "何時 (mấy giờ) và 何曜日 (thứ mấy) dùng hỏi thời gian cụ thể hơn.",
+        "tip": "Từ nghi vấn hỏi thời gian tổng quát."
+      }
+    },
+    {
+      "id": "l05_v025",
+      "level": "hard",
+      "context": "Mốc thời gian kỷ niệm ngày một người cất tiếng khóc chào đời.",
+      "answer": "たんじょうび",
+      "kanji": "{誕生日|たんじょうび}",
+      "distractors": [
+        "きょう",
+        "あした",
+        "きのう"
+      ],
+      "distractorsKanji": [
+        "{今日|きょう}",
+        "{明日|あした}",
+        "{昨日|きのう}"
+      ],
+      "explanation": {
+        "correct": "誕生日 (たんじょうび) nghĩa là ngày sinh nhật.",
+        "pitfalls": "Tránh nhầm với các từ chỉ thời gian thường nhật như 今日 (hôm nay).",
+        "tip": "誕 (ĐẢN) + 生 (SINH) + 日 (NHẬT)."
+      }
+    }
+  ],
+  "game2": [
+    {
+      "id": "l05_g001",
+      "level": "easy",
+      "sentence": "わたしは {京都|きょうと}＿ {行|い}きます。",
+      "translation": "Tôi đi Kyoto.",
+      "options": [
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ へ chỉ hướng di chuyển đi đến đâu (N địa điểm + へ + 行きます).",
+        "pitfalls": "Tránh dùng で (phương tiện) hay と (người đi cùng).",
+        "tip": "Di chuyển đến điểm nào đó dùng trợ từ へ."
+      }
+    },
+    {
+      "id": "l05_g002",
+      "level": "easy",
+      "sentence": "わたしは タクシー＿ うちへ {帰|かえ}ります。",
+      "translation": "Tôi về nhà bằng xe taxi.",
+      "options": [
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ で chỉ phương tiện giao thông di chuyển (N phương tiện + で).",
+        "pitfalls": "Tránh nhầm với へ (chỉ hướng di chuyển) hay と (cùng với ai).",
+        "tip": "Đi bằng phương tiện gì dùng で."
+      }
+    },
+    {
+      "id": "l05_g003",
+      "level": "easy",
+      "sentence": "わたしは {家族|かぞく}＿ {日本|にほん}へ {来|き}ました。",
+      "translation": "Tôi đã đến Nhật Bản cùng với gia đình.",
+      "options": [
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ と dùng khi thực hiện hành động cùng với người/động vật.",
+        "pitfalls": "Tránh dùng で (chỉ phương tiện giao thông).",
+        "tip": "Làm gì cùng ai dùng N + と."
+      }
+    },
+    {
+      "id": "l05_g004",
+      "level": "easy",
+      "sentence": "あした どこ＿ {行|い}きますか。",
+      "translation": "Ngày mai bạn đi đâu?",
+      "options": [
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Từ nghi vấn どこ đi với trợ từ へ để hỏi địa điểm/hướng di chuyển đến.",
+        "pitfalls": "Không dùng で hay と khi hỏi điểm đến của hành động di chuyển.",
+        "tip": "Hỏi đi đâu dùng どこへ."
+      }
+    },
+    {
+      "id": "l05_g005",
+      "level": "easy",
+      "sentence": "{何|なん}＿ {東京|とうきょう}へ {行|い}きますか。",
+      "translation": "Bạn đi Tokyo bằng phương tiện gì?",
+      "options": [
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "何で (なんで) dùng để hỏi phương tiện di chuyển.",
+        "pitfalls": "Tránh nhầm với 何へ hay 何と.",
+        "tip": "Hỏi đi bằng phương tiện gì: 何で."
+      }
+    },
+    {
+      "id": "l05_g006",
+      "level": "easy",
+      "sentence": "だれ＿ {東京|とうきょう}へ {行|い}きますか。",
+      "translation": "Bạn đi Tokyo cùng với ai?",
+      "options": [
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "だれと dùng để hỏi cùng thực hiện hành động với ai.",
+        "pitfalls": "Tránh dùng だれで hay だれへ khi hỏi đối tượng đi cùng.",
+        "tip": "Hỏi đi với ai dùng だれと."
+      }
+    },
+    {
+      "id": "l05_g007",
+      "level": "easy",
+      "sentence": "3{月|がつ}25{日|にち}＿ {日本|にほん}へ {来|き}ました。",
+      "translation": "Tôi đã đến Nhật Bản vào ngày 25 tháng 3.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Mốc thời gian có con số cụ thể (3月25日) đi với trợ từ に.",
+        "pitfalls": "Tránh dùng へ (địa điểm) hay で (phương tiện).",
+        "tip": "Thời gian có con số cụ thể + に."
+      }
+    },
+    {
+      "id": "l05_g008",
+      "level": "easy",
+      "sentence": "{誕生|たんじょう}{日|び}は ＿ですか。",
+      "translation": "Sinh nhật của bạn là khi nào?",
+      "options": [
+        {
+          "text": "いつ",
+          "kanji": "いつ"
+        },
+        {
+          "text": "どこ",
+          "kanji": "どこ"
+        },
+        {
+          "text": "だれ",
+          "kanji": "だれ"
+        },
+        {
+          "text": "なん",
+          "kanji": "なん"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "いつ là từ nghi vấn dùng để hỏi thời điểm (khi nào).",
+        "pitfalls": "どこ hỏi ở đâu, だれ hỏi ai, なん hỏi cái gì.",
+        "tip": "Hỏi khi nào/bao giờ dùng いつ."
+      }
+    },
+    {
+      "id": "l05_g009",
+      "level": "medium",
+      "sentence": "{日曜日|にちようび} どこ＿ も {行|い}きませんでした。",
+      "translation": "Chủ nhật tôi đã không đi đâu cả.",
+      "options": [
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Mẫu câu phủ định hoàn toàn địa điểm đến: どこ [へ] も + phủ định.",
+        "pitfalls": "Không dùng で, と, に trước も trong mẫu câu phủ định điểm đến này.",
+        "tip": "Từ nghi vấn + へ + も + động từ phủ định."
+      }
+    },
+    {
+      "id": "l05_g010",
+      "level": "medium",
+      "sentence": "わたしは {一人|ひとり}＿ {日本|にほん}へ {来|き}ました。",
+      "translation": "Tôi đã đến Nhật Bản một mình.",
+      "options": [
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi làm gì một mình, dùng cụm 一人で (で là trạng thái, không đi với と).",
+        "pitfalls": "Rất dễ nhầm thành 一人と vì nghĩ là đi cùng người.",
+        "tip": "Làm một mình luôn là 一人で (không dùng と)."
+      }
+    },
+    {
+      "id": "l05_g011",
+      "level": "medium",
+      "sentence": "{駅|えき}まで {歩|ある}いて ＿。",
+      "translation": "Tôi đi bộ đến nhà ga.",
+      "options": [
+        {
+          "text": "いきます",
+          "kanji": "{行|い}きます"
+        },
+        {
+          "text": "かえります",
+          "kanji": "{帰|かえ}ります"
+        },
+        {
+          "text": "きます",
+          "kanji": "{来|き}ます"
+        },
+        {
+          "text": "はたらきます",
+          "kanji": "{働|はたら}きます"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "歩いて 行きます (あるいて いきます) nghĩa là đi bộ đi (đến địa điểm xa).",
+        "pitfalls": "Tránh dùng 帰ります vì nhà ga không phải là nhà hay quê hương.",
+        "tip": "歩いて đi với 行きます/来ます/帰ります."
+      }
+    },
+    {
+      "id": "l05_g012",
+      "level": "medium",
+      "sentence": "いつ {東京|とうきょう}へ {行|い}きます＿。",
+      "translation": "Bao giờ bạn đi Tokyo?",
+      "options": [
+        {
+          "text": "か",
+          "kanji": "か"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Từ nghi vấn いつ hỏi thời gian không dùng trợ từ に, câu hỏi kết thúc bằng か.",
+        "pitfalls": "Không thêm に sau いつ (tránh dùng いつに).",
+        "tip": "Từ nghi vấn いつ không dùng に phía sau."
+      }
+    },
+    {
+      "id": "l05_g013",
+      "level": "medium",
+      "sentence": "{来週|らいしゅう}の {月曜日|げつようび}＿ {韓国|かんこく}へ {行|い}きます。",
+      "translation": "Thứ Hai tuần sau tôi sẽ đi Hàn Quốc.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Tên thứ trong tuần (月曜日) là mốc thời gian rõ ràng nên dùng trợ từ に.",
+        "pitfalls": "Mặc dù 来週 không đi với に, nhưng có 月曜日 cụ thể phía sau nên bắt buộc dùng に.",
+        "tip": "Thứ trong tuần + に."
+      }
+    },
+    {
+      "id": "l05_g014",
+      "level": "medium",
+      "sentence": "きのうの {午後|ごご} どこへ＿ {行|い}きませんでした。",
+      "translation": "Chiều qua tôi đã không đi đâu cả.",
+      "options": [
+        {
+          "text": "も",
+          "kanji": "も"
+        },
+        {
+          "text": "は",
+          "kanji": "は"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        },
+        {
+          "text": "か",
+          "kanji": "か"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Mẫu câu どこへも + phủ định diễn tả ý phủ định toàn bộ.",
+        "pitfalls": "Tránh dùng は hay か khi phủ định tuyệt đối.",
+        "tip": "Từ nghi vấn + へ + も + phủ định."
+      }
+    },
+    {
+      "id": "l05_g015",
+      "level": "medium",
+      "sentence": "サントスさんは {新幹線|しんかんせん}＿ {大阪|おおさか}へ {行|い}きました。",
+      "translation": "Anh Santos đã đi Osaka bằng tàu siêu tốc Shinkansen.",
+      "options": [
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Shinkansen là phương tiện giao thông nên đi với trợ từ で.",
+        "pitfalls": "Tránh dùng に (chỉ thời gian) hay へ (chỉ đích đến) cho phương tiện.",
+        "tip": "Phương tiện di chuyển dùng trợ từ で."
+      }
+    },
+    {
+      "id": "l05_g016",
+      "level": "medium",
+      "sentence": "あした {学校|がっこう}へ ＿。",
+      "translation": "Ngày mai bạn có đi đến trường không?",
+      "options": [
+        {
+          "text": "いきますか",
+          "kanji": "{行|い}きますか"
+        },
+        {
+          "text": "いきましたか",
+          "kanji": "{行|い}きましたか"
+        },
+        {
+          "text": "いきませんでしたか",
+          "kanji": "{行|い}きませんでしたか"
+        },
+        {
+          "text": "いきませんでした",
+          "kanji": "{行|い}きませんでした"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trạng từ あした (ngày mai) dùng thì hiện tại/tương lai khẳng định nghi vấn 行きますか.",
+        "pitfalls": "Không dùng いきましたか hay いきませんでしたか cho hành động ở tương lai.",
+        "tip": "Thời gian tương lai đi với dạng nghi vấn 行きますか."
+      }
+    },
+    {
+      "id": "l05_g017",
+      "level": "hard",
+      "sentence": "{先月|せんげつ} {友達|ともだち}＿ {歩|ある}いて うちへ {帰|かえ}りました。",
+      "translation": "Tháng trước tôi đã đi bộ về nhà cùng với bạn.",
+      "options": [
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Thực hiện hành động cùng với 友達 (bạn) dùng と. Bản thân 歩いて đã mang ý đi bộ, không chia で.",
+        "pitfalls": "Dễ nhầm dùng で sau 友達 vì tưởng là phương thức.",
+        "tip": "Cùng ai đó làm gì dùng N + と."
+      }
+    },
+    {
+      "id": "l05_g018",
+      "level": "hard",
+      "sentence": "{去年|きょねん}の 9{月|がつ}＿ {日本|にほん}へ {来|き}ました。",
+      "translation": "Tôi đã đến Nhật Bản vào tháng 9 năm ngoái.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Mặc dù 去年 không dùng に, nhưng cụm 9月 (tháng 9) có số cụ thể nên phải dùng に.",
+        "pitfalls": "Dễ nhầm bỏ に vì thấy từ 去年 đứng trước.",
+        "tip": "Có con số thời gian cụ thể (9月) bắt buộc dùng に."
+      }
+    },
+    {
+      "id": "l05_g019",
+      "level": "hard",
+      "sentence": "{来年|らいねん}の 12{月|がつ}15{日|にち}＿ {国|くに}へ {帰|かえ}ります。",
+      "translation": "Tôi sẽ về nước vào ngày 15 tháng 12 sang năm.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Mốc ngày tháng rõ ràng (12月15日) yêu cầu trợ từ に đứng sau.",
+        "pitfalls": "Tránh nhầm dùng へ (chỉ dùng sau 国へ) hoặc で.",
+        "tip": "Mốc ngày tháng cụ thể luôn đi với に."
+      }
+    },
+    {
+      "id": "l05_g020",
+      "level": "hard",
+      "sentence": "この {電車|でんしゃ}は {甲子園|こうしえん}＿ {行|い}きますか。",
+      "translation": "Tàu điện này có đi đến Koshien không?",
+      "options": [
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi phương tiện có đến điểm 甲子園 hay không dùng mẫu: N (địa điểm) + へ + 行きますか.",
+        "pitfalls": "Tránh dùng で (dùng cho phương tiện) hoặc に.",
+        "tip": "Điểm đến của chuyển động đi với trợ từ へ."
+      }
+    }
+  ],
+  "game3": [
+    {
+      "id": "l05_s001",
+      "level": "easy",
+      "vietnamese": "Tôi đi Kyoto.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "きょうとへ",
+          "いきます"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "{私|わたし}は"
+        },
+        {
+          "text": "きょうとへ",
+          "kanji": "{京都|きょうと}へ"
+        },
+        {
+          "text": "いきます",
+          "kanji": "{行|い}きます"
+        },
+        {
+          "text": "きます",
+          "kanji": "{来|き}ます"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        }
+      ],
+      "explanation": {
+        "correct": "Trật tự câu di chuyển cơ bản: [Chủ thể] は [Địa điểm] へ 行きます.",
+        "pitfalls": "Không dùng trợ từ で sau địa điểm đến, tránh chọn きます (đến).",
+        "tip": "Đích đến di chuyển đi với trợ từ へ."
+      }
+    },
+    {
+      "id": "l05_s002",
+      "level": "easy",
+      "vietnamese": "Tôi về nhà bằng xe taxi.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "タクシーで",
+          "うちへ",
+          "かえります"
+        ],
+        [
+          "わたしは",
+          "うちへ",
+          "タクシーで",
+          "かえります"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "{私|わたし}は"
+        },
+        {
+          "text": "タクシーで",
+          "kanji": "タクシーで"
+        },
+        {
+          "text": "うちへ",
+          "kanji": "うちへ"
+        },
+        {
+          "text": "かえります",
+          "kanji": "{帰|かえ}ります"
+        },
+        {
+          "text": "へ",
+          "kanji": "へ"
+        },
+        {
+          "text": "いきます",
+          "kanji": "{行|い}きます"
+        }
+      ],
+      "explanation": {
+        "correct": "Phương tiện giao thông + で, điểm đến + へ + 帰ります.",
+        "pitfalls": "Không nhầm 行きます (đi nơi khác) với 帰ります (về nhà/nước).",
+        "tip": "Phương tiện + で, điểm về + へ."
+      }
+    },
+    {
+      "id": "l05_s003",
+      "level": "easy",
+      "vietnamese": "Tôi đã đến Nhật Bản cùng với gia đình.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "かぞくと",
+          "にほんへ",
+          "きました"
+        ],
+        [
+          "わたしは",
+          "にほんへ",
+          "かぞくと",
+          "きました"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "{私|わたし}は"
+        },
+        {
+          "text": "かぞくと",
+          "kanji": "{家族|かぞく}と"
+        },
+        {
+          "text": "にほんへ",
+          "kanji": "{日本|にほん}へ"
+        },
+        {
+          "text": "きました",
+          "kanji": "{来|き}ました"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "いきました",
+          "kanji": "{行|い}きました"
+        }
+      ],
+      "explanation": {
+        "correct": "Đi cùng người khác dùng N (người) + と, quá khứ dùng きました.",
+        "pitfalls": "Tránh dùng で sau người (chỉ dùng で với phương tiện).",
+        "tip": "Cùng ai làm gì: N + と."
+      }
+    },
+    {
+      "id": "l05_s004",
+      "level": "easy",
+      "vietnamese": "Ngày mai bạn sẽ đi đâu?",
+      "acceptableOrders": [
+        [
+          "あした",
+          "どこへ",
+          "いきますか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "あした",
+          "kanji": "あした"
+        },
+        {
+          "text": "どこへ",
+          "kanji": "どこへ"
+        },
+        {
+          "text": "いきますか",
+          "kanji": "{行|い}きますか"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "きましたか",
+          "kanji": "{来|き}ましたか"
+        }
+      ],
+      "explanation": {
+        "correct": "Từ nghi vấn hỏi địa điểm đến: あした + どこへ + 行きますか.",
+        "pitfalls": "あした là thời gian tương lai nên động từ dùng dạng 行きますか.",
+        "tip": "Hỏi đi đâu: どこへ 行きますか."
+      }
+    },
+    {
+      "id": "l05_s005",
+      "level": "easy",
+      "vietnamese": "Bạn đi Tokyo bằng phương tiện gì?",
+      "acceptableOrders": [
+        [
+          "なんで",
+          "とうきょうへ",
+          "いきますか"
+        ],
+        [
+          "とうきょうへ",
+          "なんで",
+          "いきますか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "なんで",
+          "kanji": "{何|なん}で"
+        },
+        {
+          "text": "とうきょうへ",
+          "kanji": "{東京|とうきょう}へ"
+        },
+        {
+          "text": "いきますか",
+          "kanji": "{行|い}きますか"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "だれ",
+          "kanji": "だれ"
+        }
+      ],
+      "explanation": {
+        "correct": "Hỏi phương tiện dùng 何で (なんで).",
+        "pitfalls": "Không dùng だれ (hỏi người) hay と khi hỏi phương tiện.",
+        "tip": "Hỏi đi bằng gì: 何で (なんで)."
+      }
+    },
+    {
+      "id": "l05_s006",
+      "level": "medium",
+      "vietnamese": "Bạn đi Tokyo cùng với ai?",
+      "acceptableOrders": [
+        [
+          "だれと",
+          "とうきょうへ",
+          "いきますか"
+        ],
+        [
+          "とうきょうへ",
+          "だれと",
+          "いきますか"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "だれと",
+          "kanji": "だれと"
+        },
+        {
+          "text": "とうきょうへ",
+          "kanji": "{東京|とうきょう}へ"
+        },
+        {
+          "text": "いきますか",
+          "kanji": "{行|い}きますか"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "なんで",
+          "kanji": "{何|なん}で"
+        }
+      ],
+      "explanation": {
+        "correct": "Hỏi đi cùng ai: だれと + [Điểm đến]へ + 行きますか.",
+        "pitfalls": "Tránh nhầm 何で (phương tiện) với だれと (người đi cùng).",
+        "tip": "Cùng ai: だれと."
+      }
+    },
+    {
+      "id": "l05_s007",
+      "level": "medium",
+      "vietnamese": "Chủ nhật tôi đã không đi đâu cả.",
+      "acceptableOrders": [
+        [
+          "にちようび",
+          "どこへも",
+          "いきませんでした"
+        ],
+        [
+          "どこへも",
+          "にちようび",
+          "いきませんでした"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "にちようび",
+          "kanji": "{日曜日|にちようび}"
+        },
+        {
+          "text": "どこへも",
+          "kanji": "どこへも"
+        },
+        {
+          "text": "いきませんでした",
+          "kanji": "{行|い}きませんでした"
+        },
+        {
+          "text": "いきます",
+          "kanji": "{行|い}きます"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        }
+      ],
+      "explanation": {
+        "correct": "Phủ định hoàn toàn: どこへも + 行きませんでした.",
+        "pitfalls": "Quá khứ phủ định phải dùng 行きませんでした.",
+        "tip": "Phủ định hoàn toàn điểm đến: どこへも."
+      }
+    },
+    {
+      "id": "l05_s008",
+      "level": "medium",
+      "vietnamese": "Tôi đã đến Nhật Bản một mình.",
+      "acceptableOrders": [
+        [
+          "わたしは",
+          "ひとりで",
+          "にほんへ",
+          "きました"
+        ],
+        [
+          "わたしは",
+          "にほんへ",
+          "ひとりで",
+          "きました"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "わたしは",
+          "kanji": "{私|わたし}は"
+        },
+        {
+          "text": "ひとりで",
+          "kanji": "{一人|ひとり}で"
+        },
+        {
+          "text": "にほんへ",
+          "kanji": "{日本|にほん}へ"
+        },
+        {
+          "text": "きました",
+          "kanji": "{来|き}ました"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "いきました",
+          "kanji": "{行|い}きました"
+        }
+      ],
+      "explanation": {
+        "correct": "Đi một mình dùng 一人で (không có と).",
+        "pitfalls": "Không dùng 一人 constraint với と.",
+        "tip": "Một mình: 一人で."
+      }
+    },
+    {
+      "id": "l05_s009",
+      "level": "medium",
+      "vietnamese": "Thứ Hai tuần sau tôi sẽ đi Hàn Quốc.",
+      "acceptableOrders": [
+        [
+          "らいしゅうの",
+          "げつようびに",
+          "かんこくへ",
+          "いきます"
+        ],
+        [
+          "かんこくへ",
+          "らいしゅうの",
+          "げつようびに",
+          "いきます"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "らいしゅうの",
+          "kanji": "{来週|らいしゅう}の"
+        },
+        {
+          "text": "げつようびに",
+          "kanji": "{月曜日|げつようび}に"
+        },
+        {
+          "text": "かんこくへ",
+          "kanji": "{韓国|かんこく}へ"
+        },
+        {
+          "text": "いきます",
+          "kanji": "{行|い}きます"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        }
+      ],
+      "explanation": {
+        "correct": "Thời gian có thứ (月曜日) bắt buộc theo sau bởi trợ từ に.",
+        "pitfalls": "Tránh quên trợ từ に sau 月曜日.",
+        "tip": "Thứ trong tuần + に."
+      }
+    },
+    {
+      "id": "l05_s010",
+      "level": "hard",
+      "vietnamese": "Tháng trước tôi đã đi bộ về nhà cùng với bạn.",
+      "acceptableOrders": [
+        [
+          "せんげつ",
+          "ともだちと",
+          "あるいて",
+          "うちへ",
+          "かえりました"
+        ],
+        [
+          "せんげつ",
+          "あるいて",
+          "ともだちと",
+          "うちへ",
+          "かえりました"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "せんげつ",
+          "kanji": "{先月|せんげつ}"
+        },
+        {
+          "text": "ともだちと",
+          "kanji": "{友達|ともだち}と"
+        },
+        {
+          "text": "あるいて",
+          "kanji": "{歩|ある}いて"
+        },
+        {
+          "text": "うちへ",
+          "kanji": "うちへ"
+        },
+        {
+          "text": "かえりました",
+          "kanji": "{帰|かえ}りました"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        }
+      ],
+      "explanation": {
+        "correct": "Cùng bạn (友達と), đi bộ (歩いて) không thêm で, về nhà (うちへ 帰りました).",
+        "pitfalls": "Bản thân 歩いて đã mang nghĩa đi bộ, không dùng 歩いてで.",
+        "tip": "Đi bộ: 歩いて."
+      }
+    },
+    {
+      "id": "l05_s011",
+      "level": "hard",
+      "vietnamese": "Tôi sẽ về nước vào ngày 15 tháng 12 sang năm.",
+      "acceptableOrders": [
+        [
+          "らいねんの",
+          "12がつ15にちに",
+          "くにへ",
+          "かえります"
+        ],
+        [
+          "くにへ",
+          "らいねんの",
+          "12がつ15にちに",
+          "かえります"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "らいねんの",
+          "kanji": "{来年|らいねん}の"
+        },
+        {
+          "text": "12がつ15にちに",
+          "kanji": "12{月|がつ}15{日|にち}に"
+        },
+        {
+          "text": "くにへ",
+          "kanji": "{国|くに}へ"
+        },
+        {
+          "text": "かえります",
+          "kanji": "{帰|かえ}ります"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        }
+      ],
+      "explanation": {
+        "correct": "Ngày tháng cụ thể (12月15日) đi với trợ từ に.",
+        "pitfalls": "Đừng quên trợ từ に sau mốc ngày tháng cụ thể.",
+        "tip": "Mốc ngày tháng + に."
+      }
+    },
+    {
+      "id": "l05_s012",
+      "level": "hard",
+      "vietnamese": "Anh Santos đã đi Osaka bằng tàu siêu tốc Shinkansen.",
+      "acceptableOrders": [
+        [
+          "サントスさんは",
+          "しんかんせんで",
+          "おおさかへ",
+          "いきました"
+        ],
+        [
+          "サントスさんは",
+          "おおさかへ",
+          "しんかんせんで",
+          "いきました"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "サントスさんは",
+          "kanji": "サントスさんは"
+        },
+        {
+          "text": "しんかんせんで",
+          "kanji": "{新幹線|しんかんせん}で"
+        },
+        {
+          "text": "おおさかへ",
+          "kanji": "{大阪|おおさか}へ"
+        },
+        {
+          "text": "いきました",
+          "kanji": "{行|い}きました"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        }
+      ],
+      "explanation": {
+        "correct": "Chủ thể (サントスさんは) + Phương tiện (新幹線で) + Điểm đến (大阪へ) + Động từ quá khứ (行きました).",
+        "pitfalls": "Không dùng と sau Shinkansen vì Shinkansen là phương tiện.",
+        "tip": "Phương tiện + で."
+      }
+    }
+  ],
+  "game4": [
+    {
+      "id": "l05_c001",
+      "level": "easy",
+      "speaker": "A-san",
+      "question": "あした どこへ {行|い}きますか。",
+      "questionAudioText": "あしたどこへいきますか",
+      "options": [
+        {
+          "text": "{京都|きょうと}へ {行|い}きます。",
+          "kanji": "{京都|きょうと}へ {行|い}きます。"
+        },
+        {
+          "text": "{京都|きょうと}で {行|い}きます。",
+          "kanji": "{京都|きょうと}で {行|い}きます。"
+        },
+        {
+          "text": "{京都|きょうと}と {行|い}きます。",
+          "kanji": "{京都|きょうと}と {行|い}きます。"
+        },
+        {
+          "text": "{京都|きょうと}に {行|い}きました。",
+          "kanji": "{京都|きょうと}に {行|い}きました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời câu hỏi điểm đến: [Địa điểm] + へ + 行きます.",
+        "pitfalls": "Tránh dùng で hay と sau địa điểm đến.",
+        "tip": "Điểm đến luôn đi với trợ từ へ."
+      }
+    },
+    {
+      "id": "l05_c002",
+      "level": "easy",
+      "speaker": "B-san",
+      "question": "{何|なん}で {東京|とうきょう}へ {行|い}きますか。",
+      "questionAudioText": "なんでとうきょうへいきますか",
+      "options": [
+        {
+          "text": "{新幹線|しんかんせん}で {行|い}きます。",
+          "kanji": "{新幹線|しんかんせん}で {行|い}きます。"
+        },
+        {
+          "text": "{新幹線|しんかんせん}へ {行|い}きます。",
+          "kanji": "{新幹線|しんかんせん}へ {行|い}きます。"
+        },
+        {
+          "text": "{新幹線|しんかんせん}と {行|い}きます。",
+          "kanji": "{新幹線|しんかんせん}と {行|い}きます。"
+        },
+        {
+          "text": "{新幹線|しんかんせん}に {行|い}きます。",
+          "kanji": "{新幹線|しんかんせん}に {行|い}きます。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời câu hỏi phương tiện (何で): [Phương tiện] + で + 行きます.",
+        "pitfalls": "Không dùng へ hay と với phương tiện di chuyển.",
+        "tip": "Phương tiện di chuyển + で."
+      }
+    },
+    {
+      "id": "l05_c003",
+      "level": "easy",
+      "speaker": "C-san",
+      "question": "だれと {日本|にほん}へ {来|き}ましたか。",
+      "questionAudioText": "だれとにほんへきましたか",
+      "options": [
+        {
+          "text": "{家族|かぞく}と {来|き}ました。",
+          "kanji": "{家族|かぞく}と {来|き}ました。"
+        },
+        {
+          "text": "{家族|かぞく}で {来|き}ました。",
+          "kanji": "{家族|かぞく}で {来|き}ました。"
+        },
+        {
+          "text": "{家族|かぞく}へ {来|き}ました。",
+          "kanji": "{家族|かぞく}へ {来|き}ました。"
+        },
+        {
+          "text": "{家族|かぞく}に {来|き}ました。",
+          "kanji": "{家族|かぞく}に {来|き}ました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời câu hỏi đi cùng ai (だれと): [Người] + と + きました.",
+        "pitfalls": "Không dùng で (phương tiện) khi trả lời người đi cùng.",
+        "tip": "Đi cùng người khác + と."
+      }
+    },
+    {
+      "id": "l05_c004",
+      "level": "easy",
+      "speaker": "D-san",
+      "question": "いつ {日本|にほん}へ {来|き}ましたか。",
+      "questionAudioText": "いつにほんへきましたか",
+      "options": [
+        {
+          "text": "3{月|がつ}25{日|にち}に {来|き}ました。",
+          "kanji": "3{月|がつ}25{日|にち}に {来|き}ました。"
+        },
+        {
+          "text": "3{月|がつ}25{日|にち}へ {来|き}ました。",
+          "kanji": "3{月|がつ}25{日|にち}へ {来|き}ました。"
+        },
+        {
+          "text": "3{月|がつ}25{日|にち}で {来|き}ました。",
+          "kanji": "3{月|がつ}25{日|にち}で {来|き}ました。"
+        },
+        {
+          "text": "3{月|がつ}25{日|にち}と {来|き}ました。",
+          "kanji": "3{月|がつ}25{日|にち}と {来|き}ました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Mốc thời gian có ngày tháng cụ thể trả lời đi với trợ từ に.",
+        "pitfalls": "Tránh nhầm dùng へ hay で sau mốc ngày tháng.",
+        "tip": "Ngày tháng cụ thể + に."
+      }
+    },
+    {
+      "id": "l05_c005",
+      "level": "medium",
+      "speaker": "E-san",
+      "question": "{日曜日|にちようび} どこへ {行|い}きましたか。",
+      "questionAudioText": "にちようびどこへいきましたか",
+      "options": [
+        {
+          "text": "どこへも {行|い}きませんでした。",
+          "kanji": "どこへも {行|い}きませんでした。"
+        },
+        {
+          "text": "どこでも {行|い}きませんでした。",
+          "kanji": "どこでも {行|い}きませんでした。"
+        },
+        {
+          "text": "どことも {行|い}きませんでした。",
+          "kanji": "どことも {行|い}きませんでした。"
+        },
+        {
+          "text": "どこへも {行|い}きます。",
+          "kanji": "どこへも {行|い}きます。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời không đi đâu cả trong quá khứ: どこへも 行きませんでした.",
+        "pitfalls": "Câu hỏi ở quá khứ (行きましたか) nên câu trả lời phải dùng quá khứ phủ định (行きませんでした).",
+        "tip": "Phủ định quá khứ: どこへも + 行きませんでした."
+      }
+    },
+    {
+      "id": "l05_c006",
+      "level": "medium",
+      "speaker": "F-san",
+      "question": "{一人|ひとり}で {行|い}きますか。",
+      "questionAudioText": "ひとりでいきますか",
+      "options": [
+        {
+          "text": "いいえ、{友達|ともだち}と {行|い}きます。",
+          "kanji": "いいえ、{友達|ともだち}と {行|い}きます。"
+        },
+        {
+          "text": "いいえ、{友達|ともだち}で {行|い}きます。",
+          "kanji": "いいえ、{友達|ともだち}で {行|い}きます。"
+        },
+        {
+          "text": "いいえ、{友達|ともだち}へ {行|い}きます。",
+          "kanji": "いいえ、{友達|ともだち}へ {行|い}きます。"
+        },
+        {
+          "text": "はい、{友達|ともだち}と {行|い}きます。",
+          "kanji": "はい、{友達|ともだち}と {行|い}きます。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Phủ định đi một mình và nêu đối tượng đi cùng: いいえ、[Người] + と + 行きます.",
+        "pitfalls": "Tránh chọn はい khi câu trả lời đổi sang đi với bạn.",
+        "tip": "Từ chối dùng いいえ, nêu người đi cùng dùng と."
+      }
+    },
+    {
+      "id": "l05_c007",
+      "level": "medium",
+      "speaker": "G-san",
+      "question": "{誕生|たんじょう}{日|び}は いつですか。",
+      "questionAudioText": "たんじょうびはいつですか",
+      "options": [
+        {
+          "text": "6{月|がつ}13{日|にち}です。",
+          "kanji": "6{月|がつ}13{日|にち}です。"
+        },
+        {
+          "text": "6{月|がつ}13{日|にち}にです。",
+          "kanji": "6{月|がつ}13{日|にち}にです。"
+        },
+        {
+          "text": "6{月|がつ}13{日|にち}でです。",
+          "kanji": "6{月|がつ}13{日|にち}でです。"
+        },
+        {
+          "text": "6{月|がつ}13{日|にち}へです。",
+          "kanji": "6{月|がつ}13{日|にち}へです。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời trực tiếp sinh nhật là ngày tháng: [Ngày tháng] + です (không gắn thêm に trước です).",
+        "pitfalls": "Không chèn trợ từ に trước động từ tính chất/danh từ kết thúc bằng です.",
+        "tip": "Trả lời N1 は N2 です không chèn に trước です."
+      }
+    },
+    {
+      "id": "l05_c008",
+      "level": "medium",
+      "speaker": "H-san",
+      "question": "{駅|えき}まで {何|なん}で {行|い}きますか。",
+      "questionAudioText": "えきまでなんでいきますか",
+      "options": [
+        {
+          "text": "{歩|ある}いて {行|い}きます。",
+          "kanji": "{歩|ある}いて {行|い}きます。"
+        },
+        {
+          "text": "{歩|ある}いてで {行|い}きます。",
+          "kanji": "{歩|ある}いてで {行|い}きます。"
+        },
+        {
+          "text": "{歩|ある}いてへ {行|い}きます。",
+          "kanji": "{歩|ある}いてへ {行|い}きます。"
+        },
+        {
+          "text": "{歩|ある}いてと {行|い}きます。",
+          "kanji": "{歩|ある}いてと {行|い}きます。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Đi bộ đi dùng cụm 歩いて 行きます (không gắn trợ từ で sau 歩いて).",
+        "pitfalls": "Rất nhiều người nhầm thêm で sau 歩いて.",
+        "tip": "Đi bộ luôn là 歩いて, không dùng 歩いてで."
+      }
+    },
+    {
+      "id": "l05_c009",
+      "level": "hard",
+      "speaker": "I-san",
+      "question": "この {電車|でんしゃ}は {甲子園|こうしえん}へ {行|い}きますか。",
+      "questionAudioText": "このでんしゃはこうしえんへいきますか",
+      "options": [
+        {
+          "text": "いいえ、{行|い}きません。つぎの {普通|ふつう}ですよ。",
+          "kanji": "いいえ、{行|い}きません。つぎの {普通|ふつう}ですよ。"
+        },
+        {
+          "text": "はい、{行|い}きません。つぎの {普通|ふつう}ですよ。",
+          "kanji": "はい、{行|い}きません。つぎの {普通|ふつう}ですよ。"
+        },
+        {
+          "text": "いいえ、{行|い}きます。つぎの {普通|ふつう}ですよ。",
+          "kanji": "いいえ、{行|い}きます。つぎの {普通|ふつう}ですよ。"
+        },
+        {
+          "text": "はい、{行|い}きました。つぎの {普通|ふつう}ですよ。",
+          "kanji": "はい、{行|い}きました。つぎの {普通|ふつう}ですよ。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời tàu không đến: いいえ、行きません (Không, không đi. Tàu thường tiếp theo mới đi).",
+        "pitfalls": "Khớp logic giữa いいえ và dạng phủ định 行きません.",
+        "tip": "Trả lời phủ định: いいえ + 行きません."
+      }
+    },
+    {
+      "id": "l05_c0010",
+      "level": "hard",
+      "speaker": "J-san",
+      "question": "どうも ありがとう ございました。",
+      "questionAudioText": "どうもありがとうございました",
+      "options": [
+        {
+          "text": "どう いたしまして。",
+          "kanji": "どう いたしまして。"
+        },
+        {
+          "text": "はい、そうです。",
+          "kanji": "はい、そうです。"
+        },
+        {
+          "text": "おねがいします。",
+          "kanji": "おねがいします。"
+        },
+        {
+          "text": "すみません。",
+          "kanji": "すみません。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Đáp lại lời cảm ơn cảm kích: どう いたしまして (Không có gì đâu).",
+        "pitfalls": "Tránh nhầm với はい、そうです (vâng, đúng rồi) hay おねがいします (xin nhờ).",
+        "tip": "Đáp lại cảm ơn: どういたしまして."
+      }
+    },
+    {
+      "id": "l05_c011",
+      "level": "hard",
+      "speaker": "K-san",
+      "question": "らいしゅうの {月曜日|げつようび} どこへ {行|い}きますか。",
+      "questionAudioText": "らいしゅうのげつようびどこへいきますか",
+      "options": [
+        {
+          "text": "{韓国|かんこく}へ {行|い}きます。",
+          "kanji": "{韓国|かんこく}へ {行|い}きます。"
+        },
+        {
+          "text": "{韓国|かんこく}で {行|い}きます。",
+          "kanji": "{韓国|かんこく}で {行|い}きます。"
+        },
+        {
+          "text": "{韓国|かんこく}と {行|い}きます。",
+          "kanji": "{韓国|かんこく}と {行|い}きます。"
+        },
+        {
+          "text": "{韓国|かんこく}に {行|い}きました。",
+          "kanji": "{韓国|かんこく}に {行|い}きました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trả lời địa điểm sẽ đi ở tương lai: [Quốc gia] + へ + 行きます.",
+        "pitfalls": "Không dùng thì quá thực (行きました) cho kế hoạch sang tuần (来週).",
+        "tip": "Hành động tương lai dùng 行きます."
+      }
+    },
+    {
+      "id": "l05_c012",
+      "level": "hard",
+      "speaker": "L-san",
+      "question": "{去年|きょねん}の 9{月|がつ}に {日本|にほん}へ {来|き}ましたか。",
+      "questionAudioText": "きょねんのくがつにはにほんへきましたか",
+      "options": [
+        {
+          "text": "はい、{来|き}ました。",
+          "kanji": "はい、{来|き}ました。"
+        },
+        {
+          "text": "はい、{行|い}きました。",
+          "kanji": "はい、{行|い}きました。"
+        },
+        {
+          "text": "いいえ、{来|き}ました。",
+          "kanji": "いいえ、{来|き}ました。"
+        },
+        {
+          "text": "はい、{帰|かえ}りました。",
+          "kanji": "はい、{帰|かえ}りました。"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khẳng định đã đến đúng thời điểm: はい、来ました (Vâng, tôi đã đến).",
+        "pitfalls": "Khi câu hỏi hỏi 来ましたか, câu trả lời đồng ý phải dùng đúng động từ 来ました.",
+        "tip": "Hỏi 来ましたか thì trả lời khẳng định dùng はい、来ました."
+      }
+    }
+  ]
+}
