@@ -12,7 +12,7 @@ body { margin: 0; font-family: 'Inter', 'Noto Sans JP', system-ui, sans-serif; c
 .n2-btn.ghost:hover { background: #f1f5f9; }
 .n2-btn.ok { background: var(--ok); } .n2-btn.bad { background: var(--bad); }
 .n2-btn:disabled { opacity: .45; cursor: default; }
-.n2-panel { background: rgba(255,255,255,.92); border: 1px solid var(--line); border-radius: 18px; padding: 18px; box-shadow: 0 4px 14px -6px rgba(37,99,235,.15); }
+.n2-panel { background: rgba(255,255,255,.68); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.6); border-radius: 18px; padding: 18px; box-shadow: 0 4px 14px -6px rgba(37,99,235,.15); }
 .n2-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
 .n2-lesson { display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: inherit; transition: transform .2s; }
 .n2-lesson:hover { transform: translateY(-3px); }

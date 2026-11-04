@@ -541,8 +541,8 @@
                 <div class="flex flex-col items-center justify-center w-full max-w-2xl">
                     <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-2 uppercase tracking-wider">Chọn đáp án đúng</h2>
                     
-                    <div class="bg-success-50 border-2 border-success-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-inner">
-                        <p class="text-lg md:text-2xl font-extrabold text-success-950">"${q.context}"</p>
+                    <div class="q-card p-5 md:p-6 rounded-2xl mb-5 w-full text-center">
+                        <p class="text-lg md:text-2xl font-extrabold text-slate-900">"${q.context}"</p>
                     </div>
 
                     <!-- 2x2 Grid -->
@@ -579,9 +579,9 @@
                 <div class="flex flex-col items-center justify-center w-full max-w-2xl">
                     <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-3 uppercase tracking-wider">Điền từ vào chỗ trống</h2>
 
-                    <div class="bg-slate-50 border-2 border-slate-200 p-5 md:p-6 rounded-2xl mb-5 w-full text-center shadow-sm">
+                    <div class="q-card p-5 md:p-6 rounded-2xl mb-5 w-full text-center">
                         <div id="sentence-display" class="jp-text-xl text-slate-800 leading-relaxed mb-3">
-                            ${q.sentence.replace(/＿+/, '<span id="blank-slot" class="inline-block border-b-4 border-success-500 min-w-[90px] px-2 text-success-600 font-extrabold">＿＿＿</span>')}
+                            ${q.sentence.replace(/＿+/, '<span id="blank-slot" class="inline-block border-b-4 border-primary-500 min-w-[90px] px-2 text-primary-600 font-extrabold">＿＿＿</span>')}
                         </div>
 
                         <div>
@@ -596,7 +596,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                         ${q.options.map((opt, idx) => `
                             <button id="opt-${idx}" onclick="selectGame2Option(${idx})" class="btn-3d btn-gray p-3.5 rounded-2xl flex items-center justify-between border-2 min-h-[64px]">
-                                <span class="bg-slate-100 text-slate-500 rounded-lg px-2 py-1 font-black text-xs">${idx + 1}</span>
+                                <span class="opt-num rounded-lg px-2 py-1 font-black text-xs">${idx + 1}</span>
                                 <span class="jp-text-lg font-bold text-center flex-1">${opt.kanji}</span>
                             </button>
                         `).join('')}
@@ -641,24 +641,24 @@
                 <div class="flex flex-col items-center justify-center w-full max-w-2xl">
                     <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-2 uppercase tracking-wider">Sắp xếp các khối từ</h2>
 
-                    <div class="bg-accent-50 border-2 border-accent-200 p-4 rounded-2xl mb-5 w-full text-center">
-                        <p class="text-base md:text-xl font-extrabold text-accent-950">"${q.vietnamese}"</p>
+                    <div class="q-card p-4 rounded-2xl mb-5 w-full text-center">
+                        <p class="text-base md:text-xl font-extrabold text-slate-900">"${q.vietnamese}"</p>
                     </div>
 
                     <!-- Drop zone -->
-                    <div class="w-full bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl p-4 min-h-[90px] mb-5 flex flex-wrap items-center gap-2.5 justify-center shadow-inner">
+                    <div class="answer-tray w-full border-2 border-dashed rounded-2xl p-4 min-h-[90px] mb-5 flex flex-wrap items-center gap-2.5 justify-center shadow-inner">
                         ${gameState.dragSelectedBlocks.length === 0 ? '<span class="text-xs md:text-sm font-bold text-slate-400 select-none">Chạm các khối từ ở dưới để chọn...</span>' : ''}
                         ${gameState.dragSelectedBlocks.map((blk, idx) => `
-                            <button onclick="removeBlockFromAnswer(${idx})" class="btn-3d btn-gray bg-white px-3.5 py-2 rounded-xl border-2 border-slate-300 flex items-center anim-pop">
+                            <button onclick="removeBlockFromAnswer(${idx})" class="btn-3d btn-gray is-placed px-3.5 py-2 rounded-xl flex items-center anim-pop">
                                 <span class="jp-text-lg font-bold">${blk.kanji}</span>
                             </button>
                         `).join('')}
                     </div>
 
                     <!-- Pool -->
-                    <div class="w-full bg-slate-100 p-4 rounded-2xl flex flex-wrap items-center gap-2.5 justify-center border border-slate-200">
+                    <div class="block-bank w-full p-4 rounded-2xl flex flex-wrap items-center gap-2.5 justify-center">
                         ${gameState.dragPoolBlocks.map((blk, idx) => `
-                            <button onclick="addBlockToAnswer(${idx})" class="btn-3d btn-gray bg-white px-4 py-2.5 rounded-xl border-2 border-slate-300 shadow-sm">
+                            <button onclick="addBlockToAnswer(${idx})" class="btn-3d btn-gray px-4 py-2.5 rounded-xl">
                                 <span class="jp-text-lg font-bold">${blk.kanji}</span>
                             </button>
                         `).join('')}
@@ -695,8 +695,8 @@
                     <h2 class="text-xs md:text-sm font-extrabold text-slate-400 mb-3 uppercase tracking-wider">Chọn câu phản hồi đúng</h2>
 
                     <div class="flex items-center gap-3 mb-5 w-full">
-                        <div class="text-3xl bg-warning-100 p-3 rounded-2xl border border-warning-300 select-none shrink-0">${q.speaker.split(' ')[0]}</div>
-                        <div class="bg-slate-50 border-2 border-slate-200 p-4 rounded-2xl rounded-tl-none flex-1 flex items-center justify-between shadow-sm">
+                        <div class="text-3xl bg-primary-50 p-3 rounded-2xl border border-primary-200 select-none shrink-0">${q.speaker.split(' ')[0]}</div>
+                        <div class="q-card p-4 rounded-2xl rounded-tl-none flex-1 flex items-center justify-between">
                             <div class="jp-text-lg text-slate-800 font-black">${q.question}</div>
                             <!-- 6. Nút nghe touch target min-w 44px -->
                             <button onclick="speakJapanese('${q.questionAudioText}')" aria-label="Phát âm thanh" class="btn-3d btn-amber min-w-[44px] min-h-[44px] p-2.5 rounded-xl text-lg ml-2 flex items-center justify-center shrink-0 select-none">
@@ -734,6 +734,25 @@
             speakJapanese(q.options[idx].text);
         }
 
+        // Tô màu đáp án sau khi kiểm tra: đáp án đúng xanh lá, lựa chọn sai đỏ, các ô còn lại mờ đi
+        function markOptionResults(q, isCorrect) {
+            if (q.acceptableOrders) {
+                const tray = document.querySelector('#game-container .answer-tray');
+                if (tray) tray.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+                return;
+            }
+            const count = q.shuffledOptions ? q.shuffledOptions.length : (q.options || []).length;
+            const correctIdx = q.context ? q.shuffledOptions.findIndex(o => o.isCorrect) : q.correctIndex;
+            for (let i = 0; i < count; i++) {
+                const btn = document.getElementById(`opt-${i}`);
+                if (!btn) continue;
+                btn.classList.remove('selected');
+                if (i === correctIdx) btn.classList.add('btn-option-correct');
+                else if (i === gameState.selectedOptionIndex) btn.classList.add('btn-option-wrong');
+                else btn.classList.add('is-dim');
+            }
+        }
+
         // Action button handler
         function handleActionButton() {
             const q = gameState.questions[gameState.currentIndex];
@@ -758,6 +777,7 @@
                 }
 
                 gameState.isAnswerChecked = true;
+                markOptionResults(q, isCorrect);
 
                 // Show Footer Feedback
                 const bar = document.getElementById('bottom-bar');
@@ -778,8 +798,8 @@
                     gameState.streak += 1;
                     gameState.maxStreak = Math.max(gameState.maxStreak, gameState.streak);
 
-                    bar.className = "border-t-2 border-success-300 bg-success-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
-                    icon.innerText = "✅";
+                    bar.className = "fb-bar fb-bar--ok border-t-2 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
+                    icon.innerHTML = '<span class="fb-icon fb-icon--ok" aria-hidden="true">✓</span>';
                     title.innerText = "Chính xác!";
                     title.className = "text-lg md:text-xl font-black text-success-800";
                     diff.innerText = "";
@@ -802,8 +822,8 @@
                         gameState.wrongAnswers.push(q);
                     }
 
-                    bar.className = "border-t-2 border-danger-300 bg-danger-100 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
-                    icon.innerText = "❌";
+                    bar.className = "fb-bar fb-bar--bad border-t-2 px-4 md:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 shrink-0";
+                    icon.innerHTML = '<span class="fb-icon fb-icon--bad" aria-hidden="true">✕</span>';
                     title.innerText = "Chưa chính xác";
                     title.className = "text-lg md:text-xl font-black text-danger-800";
 
@@ -826,7 +846,7 @@
                     `;
 
                     btnAction.innerText = "ĐÃ HỌC ĐƯỢC";
-                    btnAction.className = "btn-3d btn-amber text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md w-full md:w-auto ml-auto";
+                    btnAction.className = "btn-3d btn-amber text-lg md:text-xl px-8 py-3.5 rounded-2xl uppercase tracking-wider font-extrabold shadow-md whitespace-nowrap w-full md:w-auto ml-auto";
                 }
 
                 updateHeaderStats();
