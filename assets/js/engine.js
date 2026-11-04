@@ -236,94 +236,59 @@
                         <p class="text-sm md:text-base font-bold text-slate-500">ThS. Nguyễn Thanh Quang ・ Giảng viên Trường Đại học Quy Nhơn (QNU) ・ JLPT N1 Holder</p>
                     </div>
 
-                    <!-- 8. Control Bar: Số câu & Bộ lọc độ khó thực sự -->
-                    <div class="flex flex-col sm:flex-row flex-wrap items-center justify-between gap-3 mb-6 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 w-full select-none">
-                        <!-- Số câu -->
+                    <!-- 8. Thanh chọn: số câu, độ khó (nút gộp kiểu segmented) và điểm cao nhất -->
+                    <div class="menu-controls flex flex-col sm:flex-row flex-wrap items-center justify-between gap-3 mb-6 p-3 rounded-2xl w-full select-none">
                         <div class="flex items-center gap-2">
-                            <span class="text-xs md:text-sm font-extrabold text-slate-600">Số câu:</span>
-                            <button onclick="setQuestionCount(5)" class="btn-3d text-xs md:text-sm font-black px-3.5 py-1.5 rounded-xl ${gameState.questionCount === 5 ? 'btn-green' : 'btn-gray'}">
-                                5 Câu
-                            </button>
-                            <button onclick="setQuestionCount(10)" class="btn-3d text-xs md:text-sm font-black px-3.5 py-1.5 rounded-xl ${gameState.questionCount === 10 ? 'btn-green' : 'btn-gray'}">
-                                10 Câu
-                            </button>
+                            <span class="text-xs md:text-sm font-bold text-slate-500">Số câu</span>
+                            <div class="seg" role="group" aria-label="Số câu">
+                                <button type="button" onclick="setQuestionCount(5)" class="seg-btn" aria-pressed="${gameState.questionCount === 5}">5 câu</button>
+                                <button type="button" onclick="setQuestionCount(10)" class="seg-btn" aria-pressed="${gameState.questionCount === 10}">10 câu</button>
+                            </div>
                         </div>
 
-                        <!-- Lọc độ khó (Feature 8) -->
-                        <div class="flex items-center gap-1.5">
-                            <span class="text-xs md:text-sm font-extrabold text-slate-600">Độ khó:</span>
-                            <button onclick="setDifficulty('all')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'all' ? 'btn-blue' : 'btn-gray'}">Tất cả</button>
-                            <button onclick="setDifficulty('easy')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'easy' ? 'btn-green' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-success-500 mr-1 align-middle"></span>Dễ</button>
-                            <button onclick="setDifficulty('medium')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'medium' ? 'btn-amber' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-warning-500 mr-1 align-middle"></span>Vừa</button>
-                            <button onclick="setDifficulty('hard')" class="btn-3d text-xs font-black px-2.5 py-1.5 rounded-xl ${gameState.difficultyFilter === 'hard' ? 'btn-purple' : 'btn-gray'}"><span class="inline-block w-2 h-2 rounded-full bg-danger-500 mr-1 align-middle"></span>Khó</button>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs md:text-sm font-bold text-slate-500">Độ khó</span>
+                            <div class="seg" role="group" aria-label="Độ khó">
+                                <button type="button" onclick="setDifficulty('all')" class="seg-btn" aria-pressed="${gameState.difficultyFilter === 'all'}">Tất cả</button>
+                                <button type="button" onclick="setDifficulty('easy')" class="seg-btn" aria-pressed="${gameState.difficultyFilter === 'easy'}"><span class="seg-dot bg-success-500"></span>Dễ</button>
+                                <button type="button" onclick="setDifficulty('medium')" class="seg-btn" aria-pressed="${gameState.difficultyFilter === 'medium'}"><span class="seg-dot bg-warning-500"></span>Vừa</button>
+                                <button type="button" onclick="setDifficulty('hard')" class="seg-btn" aria-pressed="${gameState.difficultyFilter === 'hard'}"><span class="seg-dot bg-danger-500"></span>Khó</button>
+                            </div>
                         </div>
 
-                        <div class="text-xs md:text-sm font-black text-warning-600 flex items-center gap-1">
-                            <i data-icon="trophy" class="w-4 h-4"></i> Cao nhất: <span>${highScore}</span>
+                        <div class="hi-score text-xs md:text-sm font-bold flex items-center gap-1.5 px-3 py-1.5 rounded-full">
+                            <i data-icon="trophy" class="w-4 h-4"></i> Cao nhất <span class="font-black">${highScore}</span>
                         </div>
                     </div>
 
-                    <!-- 11. Menu Cards với màu chủ đề riêng biệt -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                        <!-- Game 1: Từ Vựng (Xanh lá) -->
-                        <div onclick="startGame(1)" class="btn-3d bg-success-50 hover:bg-success-100 border-2 border-success-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
-                            <div class="text-3xl md:text-4xl bg-success-200 text-success-800 p-3 rounded-2xl select-none">🏷️</div>
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-success-950">Từ Vựng</h3>
-                                    <span class="text-xs bg-success-200 text-success-800 px-2 py-0.5 rounded font-black">G1</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-success-800 font-semibold mt-0.5">Chọn từ đúng theo ngữ cảnh tiếng Việt</p>
-                            </div>
-                        </div>
+                    <!-- 11. Thẻ trò chơi: nền kính trắng, ô icon màu gradient theo từng trò, mũi tên trượt khi rê chuột -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
+                        ${[
+                            { onclick: 'startGame(1)', tone: 'g1', icon: 'languages', tag: 'Trò 1', title: 'Từ vựng', desc: 'Chọn từ đúng theo ngữ cảnh tiếng Việt' },
+                            { onclick: 'startGame(2)', tone: 'g2', icon: 'pen-line', tag: 'Trò 2', title: 'Ngữ pháp', desc: 'Điền trợ từ / động từ vào chỗ trống' },
+                            { onclick: 'startGame(3)', tone: 'g3', icon: 'puzzle', tag: 'Trò 3', title: 'Xếp câu', desc: 'Sắp xếp các khối từ thành câu chuẩn' },
+                            { onclick: 'startGame(4)', tone: 'g4', icon: 'messages-square', tag: 'Trò 4', title: 'Hội thoại', desc: 'Chọn câu phản hồi tự nhiên nhất' },
+                        ].map(c => `
+                        <button type="button" onclick="${c.onclick}" class="game-card game-card--${c.tone} group">
+                            <span class="game-card__icon"><i data-icon="${c.icon}" class="w-6 h-6 md:w-7 md:h-7"></i></span>
+                            <span class="flex-1 min-w-0">
+                                <span class="game-card__tag">${c.tag}</span>
+                                <span class="game-card__title">${c.title}</span>
+                                <span class="game-card__desc">${c.desc}</span>
+                            </span>
+                            <span class="game-card__go"><i data-icon="chevron-right" class="w-5 h-5"></i></span>
+                        </button>`).join('')}
 
-                        <!-- Game 2: Ngữ Pháp (Xanh dương) -->
-                        <div onclick="startGame(2)" class="btn-3d bg-primary-50 hover:bg-primary-100 border-2 border-primary-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
-                            <div class="text-3xl md:text-4xl bg-primary-200 text-primary-800 p-3 rounded-2xl select-none">✏️</div>
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-primary-950">Ngữ Pháp</h3>
-                                    <span class="text-xs bg-primary-200 text-primary-800 px-2 py-0.5 rounded font-black">G2</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-primary-800 font-semibold mt-0.5">Điền trợ từ / động từ vào chỗ trống</p>
-                            </div>
-                        </div>
-
-                        <!-- Game 3: Xếp Câu (Tím) -->
-                        <div onclick="startGame(3)" class="btn-3d bg-accent-50 hover:bg-accent-100 border-2 border-accent-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
-                            <div class="text-3xl md:text-4xl bg-accent-200 text-accent-800 p-3 rounded-2xl select-none">🧩</div>
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-accent-950">Xếp Câu</h3>
-                                    <span class="text-xs bg-accent-200 text-accent-800 px-2 py-0.5 rounded font-black">G3</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-accent-800 font-semibold mt-0.5">Sắp xếp các khối từ thành câu chuẩn</p>
-                            </div>
-                        </div>
-
-                        <!-- Game 4: Hội Thoại (Cam) -->
-                        <div onclick="startGame(4)" class="btn-3d bg-warning-50 hover:bg-warning-100 border-2 border-warning-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left transition-colors">
-                            <div class="text-3xl md:text-4xl bg-warning-200 text-warning-800 p-3 rounded-2xl select-none">🗣️</div>
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-warning-950">Hội Thoại</h3>
-                                    <span class="text-xs bg-warning-200 text-warning-800 px-2 py-0.5 rounded font-black">G4</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-warning-800 font-semibold mt-0.5">Chọn câu phản hồi tự nhiên nhất</p>
-                            </div>
-                        </div>
-
-                        <!-- Feature 9: Ôn Từ Hay Sai (Đỏ Hồng) -->
-                        <div onclick="startWeakPointsPractice()" class="btn-3d bg-danger-50 hover:bg-danger-100 border-2 border-danger-300 border-b-4 p-4 md:p-5 rounded-2xl flex items-center gap-4 text-left sm:col-span-2 transition-colors">
-                            <div class="text-3xl md:text-4xl bg-danger-200 text-danger-800 p-3 rounded-2xl select-none">📚</div>
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-lg font-black text-danger-950">Ôn Từ Hay Sai</h3>
-                                    <span class="text-xs bg-danger-200 text-danger-900 px-2.5 py-0.5 rounded-full font-black">${mistakesCount} mục cần chú ý</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-danger-800 font-semibold mt-0.5">Tự động tổng hợp những câu bạn từng làm sai nhiều lần</p>
-                            </div>
-                        </div>
+                        <!-- Feature 9: Ôn từ hay sai -->
+                        <button type="button" onclick="startWeakPointsPractice()" class="game-card game-card--review group sm:col-span-2">
+                            <span class="game-card__icon"><i data-icon="repeat" class="w-6 h-6 md:w-7 md:h-7"></i></span>
+                            <span class="flex-1 min-w-0">
+                                <span class="flex items-center gap-2"><span class="game-card__tag">Ôn tập</span><span class="game-card__count ${mistakesCount > 0 ? 'is-active' : ''}">${mistakesCount} mục cần ôn</span></span>
+                                <span class="game-card__title">Ôn từ hay sai</span>
+                                <span class="game-card__desc">Tự động tổng hợp những câu bạn từng làm sai nhiều lần</span>
+                            </span>
+                            <span class="game-card__go"><i data-icon="chevron-right" class="w-5 h-5"></i></span>
+                        </button>
                     </div>
                 </div>
             `;
