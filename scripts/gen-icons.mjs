@@ -14,6 +14,7 @@ const names = [
   "graduation-cap", "hand", "house", "lightbulb", "list-checks", "log-in", "message-circle", "phone", "rotate-ccw",
   "search", "sprout", "target", "triangle-alert", "trophy", "volume-2", "volume-x", "x", "gamepad-2", "map-pin",
   "languages", "pen-line", "puzzle", "messages-square", "repeat", "chevron-right",
+  "presentation", "layers", "maximize", "chevron-left",
 ];
 
 const attrs = (o) => Object.entries(o).filter(([k]) => k !== "key").map(([k, v]) => `${k}="${v}"`).join(" ");

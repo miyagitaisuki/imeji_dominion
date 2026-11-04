@@ -185,6 +185,8 @@ python3 -m http.server 8000
 
 Mở `http://localhost:8000/minna/22.html`, chơi mỗi trò ít nhất một lượt ở từng độ khó, cố ý trả lời sai vài câu để xem phần giải thích và chế độ **Ôn từ hay sai**.
 
+Slide bài giảng của bài (nếu có) soạn riêng theo [quy-uoc-slide-bai-giang.md](quy-uoc-slide-bai-giang.md).
+
 ## 7. Nếu muốn thêm một **loại** trò chơi mới (trò 5)
 
 Đây là việc sửa code, không chỉ soạn dữ liệu. Các chỗ cần đụng trong `assets/js/engine.js`:

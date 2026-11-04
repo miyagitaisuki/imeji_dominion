@@ -110,5 +110,44 @@ function report(file, problems, warns) {
 
 const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort();
 files.forEach(check);
+
+// Slide bài giảng và tài nguyên theo bài (xem docs/quy-uoc-slide-bai-giang.md)
+function checkSlides() {
+  const root = path.resolve(import.meta.dirname, '..');
+  const problems = [];
+  const err = (m) => problems.push(m);
+  let res = { slide: { minna: [] }, flashcard: { minna: [] } };
+  try {
+    res = JSON.parse(fs.readFileSync(path.join(root, 'data', 'resources.json'), 'utf8'));
+  } catch (e) {
+    err(`data/resources.json không đọc được: ${e.message}`);
+  }
+  for (const id of res.slide?.minna ?? []) {
+    if (!fs.existsSync(path.join(root, 'slides', 'minna', `${id}.html`))) err(`resources.json: có slide bài ${id} nhưng thiếu slides/minna/${id}.html`);
+  }
+  for (const id of res.flashcard?.minna ?? []) {
+    if (!fs.existsSync(path.join(root, 'flashcards', 'minna', `${id}.html`))) err(`resources.json: có flashcard bài ${id} nhưng thiếu flashcards/minna/${id}.html`);
+  }
+  const sdir = path.join(root, 'slides', 'minna');
+  const decks = fs.existsSync(sdir) ? fs.readdirSync(sdir).filter((f) => f.endsWith('.html')).sort() : [];
+  for (const f of decks) {
+    const at = `slides/minna/${f}`;
+    const h = fs.readFileSync(path.join(sdir, f), 'utf8');
+    if (!/assets\/css\/slides\.css/.test(h) || !/assets\/js\/slides\.js/.test(h)) err(`${at}: phải dùng assets/css/slides.css và assets/js/slides.js`);
+    if (!/<section class="slide[ "]/.test(h)) err(`${at}: cần ít nhất một <section class="slide">`);
+    if (/<style[\s>]/i.test(h)) err(`${at}: không dùng <style> riêng, dùng thành phần có sẵn trong slides.css`);
+    if (/style="[^"]*(?:color|background|#[0-9a-f]{3})/i.test(h)) err(`${at}: không dùng style có màu`);
+    if (/<ruby/.test(h.replace(/<!--[\s\S]*?-->/g, ''))) err(`${at}: furigana viết dạng {漢字|よみ}, không viết <ruby> bằng tay`);
+    const m = /^(\d+)\.html$/.exec(f);
+    if (m) {
+      const dl = new RegExp(`data-lesson="${m[1]}"`).test(h);
+      if (!dl) err(`${at}: data-lesson phải là ${m[1]}`);
+    } else if (!f.startsWith('_')) err(`${at}: tên file phải dạng NN.html (hoặc bắt đầu bằng _ nếu là bài mẫu)`);
+  }
+  errors += problems.length;
+  console.log(`slides + resources: ${problems.length ? 'LỖI' : 'ok'} (${decks.length} file slide)`);
+  problems.forEach((p) => console.log(`  ✗ ${p}`));
+}
+checkSlides();
 console.log(`\n${files.length} bài, ${errors} lỗi, ${warnings} cảnh báo.${warnings ? ' (VERBOSE=1 để xem cảnh báo)' : ''}`);
 process.exit(errors ? 1 : 0);

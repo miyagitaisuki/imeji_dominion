@@ -28,3 +28,59 @@ main .glass-panel {
   background: rgb(255 255 255 / 0.62);
   border-color: rgb(255 255 255 / 0.6);
 }
+
+/* ---- Cửa sổ chọn cách học của một bài (slide / flashcard / game) ---- */
+.lm-dialog {
+  padding: 0; border: 0; background: transparent; color: inherit;
+  width: min(480px, calc(100vw - 24px)); max-width: none; max-height: calc(100dvh - 24px);
+  margin: auto; overflow: visible;
+}
+.lm-dialog::backdrop { background: rgb(15 23 42 / 0.55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.lm-dialog[open] { animation: lm-pop .22s ease; }
+.lm-dialog[open]::backdrop { animation: lm-fade .22s ease; }
+@keyframes lm-pop { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes lm-fade { from { opacity: 0; } to { opacity: 1; } }
+.lm-panel {
+  background: rgb(255 255 255 / 0.94); border: 1px solid rgb(255 255 255 / 0.7);
+  border-radius: 24px; padding: 20px; box-shadow: 0 30px 60px -20px rgb(15 23 42 / 0.5);
+}
+.lm-close {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 9999px; border: 0; cursor: pointer;
+  background: #F1F5F9; color: #475569; transition: background-color .15s ease;
+}
+.lm-close:hover { background: #E2E8F0; color: #0F172A; }
+.lm-opt {
+  --t1: var(--imeji-primary-500); --t2: var(--imeji-primary-700); --tsoft: var(--imeji-primary-50);
+  display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px;
+  text-decoration: none; background: #FFFFFF; border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+a.lm-opt:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--t1) 45%, white); box-shadow: 0 12px 26px -14px color-mix(in srgb, var(--t1) 60%, transparent); }
+.lm-opt--slide { --t1: #8B5CF6; --t2: #6D28D9; --tsoft: #F5F3FF; }
+.lm-opt--flash { --t1: #F59E0B; --t2: #EA580C; --tsoft: #FFFBEB; }
+.lm-opt--game { --t1: var(--imeji-primary-500); --t2: var(--imeji-primary-700); --tsoft: var(--imeji-primary-50); }
+.lm-opt__icon {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 14px; color: #FFFFFF;
+  background: linear-gradient(135deg, var(--t1), var(--t2));
+  box-shadow: 0 8px 16px -8px var(--t2), inset 0 1px 0 rgb(255 255 255 / 0.35);
+}
+.lm-opt__title { display: block; font-size: 1rem; font-weight: 800; color: #0F172A; line-height: 1.3; }
+.lm-opt__desc { display: block; font-size: 0.8rem; font-weight: 500; color: #64748B; margin-top: 2px; }
+.lm-opt__go { flex: none; color: var(--t2); transition: transform .2s ease; }
+a.lm-opt:hover .lm-opt__go { transform: translateX(3px); }
+.lm-opt--off { background: #F8FAFC; border-style: dashed; box-shadow: none; }
+.lm-opt--off .lm-opt__icon { background: #CBD5E1; box-shadow: none; }
+.lm-opt--off .lm-opt__title { color: #64748B; }
+.lm-opt--off .lm-opt__desc { color: #94A3B8; }
+.lm-opt__soon { flex: none; font-size: 0.7rem; font-weight: 800; padding: 3px 10px; border-radius: 9999px; background: #E2E8F0; color: #64748B; }
+
+/* Điện thoại: khung trượt từ dưới lên */
+@media (max-width: 560px) {
+  .lm-dialog { margin: auto auto 0; width: 100vw; max-height: 92dvh; }
+  .lm-panel { border-radius: 24px 24px 0 0; padding: 20px 16px calc(20px + env(safe-area-inset-bottom)); }
+  .lm-dialog[open] { animation-name: lm-sheet; }
+}
+@keyframes lm-sheet { from { transform: translateY(100%); } to { transform: none; } }

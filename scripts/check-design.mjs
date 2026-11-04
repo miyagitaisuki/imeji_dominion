@@ -7,7 +7,8 @@ import path from "node:path";
 const root = path.resolve(import.meta.dirname, "..");
 const files = ["index.html", "assets/js/engine.js", "assets/js/loader.js"]
   .concat(fs.readdirSync(path.join(root, "minna")).map((f) => `minna/${f}`))
-  .concat(fs.readdirSync(path.join(root, "nhap-mon")).map((f) => `nhap-mon/${f}`));
+  .concat(fs.readdirSync(path.join(root, "nhap-mon")).map((f) => `nhap-mon/${f}`))
+  .concat(fs.existsSync(path.join(root, "slides", "minna")) ? fs.readdirSync(path.join(root, "slides", "minna")).filter((f) => f.endsWith(".html")).map((f) => `slides/minna/${f}`) : []);
 const raw = /\b(?:bg|text|border|ring|from|via|to|shadow|fill|stroke|divide|outline|placeholder|decoration|caret)(?:-[trblxy])?-(?:blue|emerald|amber|rose|red|indigo|purple|green|orange|teal|pink|sky|violet|yellow|cyan|lime|fuchsia|gray)-\d|\b(?:bg|text|border|from|via|to)-\[#/;
 
 const bad = files.flatMap((f) =>
