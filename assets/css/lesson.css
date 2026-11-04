@@ -74,9 +74,9 @@
             background-color: var(--imeji-primary-500);
         }
         .btn-green:disabled {
-            background-color: #E5E5E5;
-            border-bottom-color: #CECECE;
-            color: #AFB5C0;
+            background-color: #E2E8F0;
+            border-bottom-color: #CBD5E1;
+            color: #94A3B8;
             cursor: not-allowed;
         }
 
@@ -107,35 +107,76 @@
             background-color: var(--imeji-warning-400);
         }
 
+        /* Ô đáp án: nền trắng, viền mảnh, đáy dày nhẹ kiểu nút 3D */
         .btn-gray {
             background-color: #FFFFFF;
-            border: 2px solid #E2E8F0;
-            border-bottom: 4px solid #CBD5E1;
-            color: #334155;
+            border: 1.5px solid #E2E8F0 !important;
+            border-bottom-width: 4px !important;
+            border-bottom-color: #CBD5E1 !important;
+            color: #1E293B;
+            box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+            transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease, opacity .2s ease, transform .1s ease;
         }
-        .btn-gray:hover:not(:disabled) {
-            background-color: #F8FAFC;
+        .btn-gray:hover:not(:disabled):not(.selected):not(.btn-option-correct):not(.btn-option-wrong):not(.is-dim) {
+            background-color: var(--imeji-primary-50);
+            border-color: var(--imeji-primary-200) !important;
+            border-bottom-color: var(--imeji-primary-300) !important;
         }
         .btn-gray.selected {
             background-color: var(--imeji-primary-50);
-            border-color: var(--imeji-primary-400);
-            border-bottom-color: var(--imeji-primary-600);
-            color: var(--imeji-primary-700);
+            border-color: var(--imeji-primary-500) !important;
+            border-bottom-color: var(--imeji-primary-600) !important;
+            color: var(--imeji-primary-800);
+            box-shadow: 0 0 0 3px rgb(59 130 246 / 0.18);
         }
+        .opt-num { background-color: #F1F5F9; color: #64748B; }
+        .btn-gray.selected .opt-num { background-color: var(--imeji-primary-600); color: #FFFFFF; }
+        .btn-option-correct .opt-num { background-color: var(--imeji-success-600); color: #FFFFFF; }
+        .btn-option-wrong .opt-num { background-color: var(--imeji-danger-600); color: #FFFFFF; }
 
-        /* Feedback states for options */
+        /* Kết quả sau khi kiểm tra */
         .btn-option-correct {
-            background-color: var(--imeji-success-100) !important;
+            background-color: var(--imeji-success-50) !important;
             border-color: var(--imeji-success-500) !important;
             border-bottom-color: var(--imeji-success-600) !important;
             color: var(--imeji-success-800) !important;
+            box-shadow: 0 0 0 3px rgb(34 197 94 / 0.18) !important;
         }
         .btn-option-wrong {
-            background-color: var(--imeji-danger-100) !important;
-            border-color: var(--imeji-danger-500) !important;
-            border-bottom-color: var(--imeji-danger-600) !important;
-            color: var(--imeji-danger-800) !important;
+            background-color: var(--imeji-danger-50) !important;
+            border-color: var(--imeji-danger-400) !important;
+            border-bottom-color: var(--imeji-danger-500) !important;
+            color: var(--imeji-danger-700) !important;
         }
+        .btn-gray.is-dim { opacity: 0.5; }
+
+        /* Khung câu hỏi thống nhất cho cả 4 trò chơi */
+        .q-card {
+            background: rgb(255 255 255 / 0.92);
+            border: 1.5px solid #E2E8F0;
+            border-top: 4px solid var(--imeji-primary-500);
+            box-shadow: 0 6px 18px -10px rgb(37 99 235 / 0.35);
+        }
+        .q-card.rounded-tl-none { border-top-width: 1.5px; border-left: 4px solid var(--imeji-primary-500); }
+
+        /* Sắp xếp câu: khay đáp án và kho khối từ */
+        .answer-tray { background: rgb(239 246 255 / 0.7); border-color: var(--imeji-primary-200); }
+        .answer-tray.is-correct { background: var(--imeji-success-50); border-color: var(--imeji-success-400); border-style: solid; }
+        .answer-tray.is-wrong { background: var(--imeji-danger-50); border-color: var(--imeji-danger-300); border-style: solid; }
+        .block-bank { background: rgb(241 245 249 / 0.75); border: 1px solid #E2E8F0; }
+        .btn-gray.is-placed { border-color: var(--imeji-primary-300) !important; border-bottom-color: var(--imeji-primary-400) !important; color: var(--imeji-primary-800); }
+
+        /* Thanh phản hồi dưới cùng */
+        #app-root > #bottom-bar { background-color: rgb(255 255 255 / 0.7); }
+        #app-root > #bottom-bar.fb-bar--ok { background-color: var(--imeji-success-50); border-top-color: var(--imeji-success-300); }
+        #app-root > #bottom-bar.fb-bar--bad { background-color: var(--imeji-danger-50); border-top-color: var(--imeji-danger-300); }
+        .fb-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 2.5rem; height: 2.5rem; border-radius: 9999px;
+            font-size: 1.35rem; font-weight: 900; color: #FFFFFF;
+        }
+        .fb-icon--ok { background-color: var(--imeji-success-500); box-shadow: 0 0 0 4px var(--imeji-success-100); }
+        .fb-icon--bad { background-color: var(--imeji-danger-500); box-shadow: 0 0 0 4px var(--imeji-danger-100); }
 
         /* Near completion progress bar pulse */
         @keyframes pulse-gold {
@@ -174,7 +215,9 @@
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
         /* Khung bài học bo góc nổi trên nền mây */
-        #app-root { background: rgba(255,255,255,0.97); }
+        #app-root { background: rgba(255,255,255,0.8); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+        /* Phần đầu và thân bài học trong suốt theo khung để nền mây lộ ra */
+        #app-root > #top-bar, #app-root > #game-container { background-color: transparent; }
         @media (min-width: 768px) {
             #app-root { margin-top: 1.5rem; margin-bottom: 1.5rem; min-height: calc(100vh - 3rem); border-radius: var(--imeji-radius-xl); }
         }

@@ -13,3 +13,18 @@ body { overflow-x: hidden; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.4); border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.6); }
+
+/* Nền mây cố định phía sau trang chủ và trang N2, phủ lớp sáng để chữ dễ đọc (thay nền chấm) */
+body.bg-japanese-pattern {
+  background-color: #e2e8f0;
+  background-image: linear-gradient(rgb(248 250 252 / 0.55), rgb(248 250 252 / 0.72)), url('../img/clouds.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Thẻ kính trong hơn để nền mây lộ ra (chỉ phần nội dung, header giữ nguyên) */
+main .glass-panel {
+  background: rgb(255 255 255 / 0.62);
+  border-color: rgb(255 255 255 / 0.6);
+}
