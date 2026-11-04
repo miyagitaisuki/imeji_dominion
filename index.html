@@ -347,6 +347,7 @@
         const introWithGame = [6];
         const introGroup = 'nhap-mon';
         const hasIntroResource = (id) => ['slide', 'flashcard'].some(k => ((lessonResources[k] || {})[introGroup] || []).includes(id));
+        const hasMinnaResource = (id) => ['slide', 'flashcard'].some(k => ((lessonResources[k] || {}).minna || []).includes(id));
         fetch('data/resources.json').then(r => r.ok ? r.json() : null).then(d => { if (d) { lessonResources = d; renderAllGrids(); } }).catch(() => {});
 
         let lessonMenuTrigger = null;
@@ -363,7 +364,7 @@
                 { kind: 'flashcard', icon: 'layers', tone: 'flash', title: 'Flashcard', desc: 'Ôn từ vựng và mẫu câu bằng thẻ', href: `flashcards/${group}/${id}.html`, ok: has('flashcard') },
                 isIntro
                     ? { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: 'Luyện nối Romaji và Hiragana', href: `nhap-mon/${id}.html`, ok: introWithGame.includes(id) }
-                    : { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: '4 trò chơi luyện từ vựng, ngữ pháp, xếp câu, hội thoại', href: `minna/${id}.html`, ok: true },
+                    : { kind: 'game', icon: 'gamepad-2', tone: 'game', title: 'Game học tập', desc: '4 trò chơi luyện từ vựng, ngữ pháp, xếp câu, hội thoại', href: `minna/${id}.html`, ok: availableLessons.minna.includes(id) },
             ];
             document.getElementById('lessonMenuList').innerHTML = opts.map(o => o.ok
                 ? `<a href="${o.href}" class="lm-opt lm-opt--${o.tone}">
@@ -405,7 +406,9 @@
                 ? introPathPattern.replace('{id}', lesson.id) 
                 : minnaPathPattern.replace('{id}', lesson.id));
 
-            const isAvailable = availableLessons[isIntro ? 'intro' : 'minna'].includes(lesson.id);
+            // Bài Minna mở được khi có trang game hoặc có slide/flashcard trong data/resources.json
+            const isAvailable = availableLessons[isIntro ? 'intro' : 'minna'].includes(lesson.id)
+                || (!isIntro && hasMinnaResource(lesson.id));
             // Có slide/flashcard thì mở cửa sổ chọn cách học; nhập môn chỉ có game thì vào thẳng như cũ.
             const openMenu = isIntro ? hasIntroResource(lesson.id) : isAvailable;
             const actionHtml = openMenu
