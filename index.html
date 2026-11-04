@@ -173,18 +173,8 @@
                 </div>
                 <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full">Trình độ JLPT N2</span>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="glass-panel rounded-2xl border border-slate-200 p-5 flex flex-col justify-between card-hover">
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-base mb-1">Từ vựng N2</h4>
-                        <div class="text-xs font-medium text-primary-600 japanese-font mb-2">単語 N2</div>
-                        <p class="text-xs text-slate-500 mb-4 leading-relaxed">1556 từ chia thành 32 bài, mỗi bài có flashcard (kèm âm thanh, ví dụ) và trắc nghiệm.</p>
-                    </div>
-                    <a href="n2/index.html" class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
-                        <span>Học từ vựng N2</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
+            <div id="grid-n2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Javascript will inject N2 lesson cards from data/n2/index.json -->
             </div>
         </section>
 
@@ -345,6 +335,7 @@
             document.getElementById('introPathPattern').value = introPathPattern;
             document.getElementById('minnaPathPattern').value = minnaPathPattern;
             renderAllGrids();
+            loadN2();
             updateProgressUI();
         });
 
@@ -405,6 +396,38 @@
             minna2Container.innerHTML = minnaLessons.slice(25, 50).map(l => createCardHtml(l, 'minna')).join('');
         }
 
+
+        // ===== Từ vựng N2: 32 bài từ data/n2/index.json, học tại n2/index.html#/{bài} =====
+        let n2Lessons = [];
+        function loadN2() {
+            fetch('data/n2/index.json').then(r => r.json()).then(d => { n2Lessons = d.lessons; renderN2(); })
+                .catch(() => { document.getElementById('grid-n2').innerHTML = '<p class="text-sm text-slate-500">Chưa tải được danh sách bài N2.</p>'; });
+        }
+        function renderN2(query) {
+            const q = (query || '').toLowerCase().trim();
+            let known = {};
+            try { known = JSON.parse(localStorage.getItem('n2_known') || '{}'); } catch (e) {}
+            const list = n2Lessons.filter(l => !q || `bài ${l.no} n2 từ vựng ${l.sample.join(' ')}`.toLowerCase().includes(q));
+            document.getElementById('grid-n2').innerHTML = list.map(l => {
+                let n = 0;
+                for (let i = l.from; i <= l.to; i++) if (known['n2_' + ('000' + i).slice(-4)]) n++;
+                const pct = Math.round(n / l.count * 100);
+                return `
+                <div class="lesson-card glass-panel rounded-2xl border ${pct === 100 ? 'border-primary-300 bg-primary-50/30' : 'border-slate-200'} p-5 flex flex-col justify-between card-hover">
+                    <div>
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-lg border bg-indigo-50 text-indigo-700 border-indigo-200">Bài ${l.no}</span>
+                        <h4 class="font-bold text-slate-800 text-base mt-3 mb-1 japanese-font">${l.sample.slice(0, 3).join('・')}…</h4>
+                        <p class="text-xs text-slate-500 mb-3">Từ ${l.from}–${l.to} · ${l.count} từ · Đã nhớ ${n}/${l.count}</p>
+                        <div class="w-full bg-slate-100 rounded-full overflow-hidden mb-3" style="height:6px"><div class="bg-primary-500" style="height:6px;width:${pct}%"></div></div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="n2/index.html#/${l.no}/flash" class="flex-1 py-2.5 px-2 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center transition-all shadow-sm">🃏 Flashcard</a>
+                        <a href="n2/index.html#/${l.no}/quiz" class="flex-1 py-2.5 px-2 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center transition-all shadow-sm">📝 Trắc nghiệm</a>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
         function filterLessons() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             const clearBtn = document.getElementById('clearSearchBtn');
@@ -447,9 +470,11 @@
             document.getElementById('grid-minna2').innerHTML = visibleMinna2.map(l => createCardHtml(l, 'minna')).join('');
 
             const secN2 = document.getElementById('section-n2');
-            const showN2 = (currentTab === 'all' || currentTab === 'n2') &&
-                (query === '' || 'n2 từ vựng tu vung 単語 flashcard trắc nghiệm'.includes(query));
+            const n2All = 'n2 từ vựng tu vung 単語 flashcard trắc nghiệm';
+            const n2Match = query === '' || n2All.includes(query) || n2Lessons.some(l => `bài ${l.no} ${l.sample.join(' ')}`.toLowerCase().includes(query));
+            const showN2 = (currentTab === 'all' || currentTab === 'n2') && n2Match;
             secN2.style.display = showN2 ? 'block' : 'none';
+            renderN2(n2All.includes(query) ? '' : query);
 
             hasResults = showIntro || showMinna1 || showMinna2 || showN2;
             document.getElementById('noResults').classList.toggle('hidden', hasResults);
