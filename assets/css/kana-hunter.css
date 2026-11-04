@@ -1,0 +1,44 @@
+/* Game Bắt chữ (games/kana-hunter.html). Màu lấy từ bộ quy chuẩn imeji-brand.css. */
+.kh-board {
+  position: relative;
+  height: min(60vh, 460px);
+  min-height: 320px;
+  margin-top: 14px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgb(255 255 255 / .72);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgb(226 232 240);
+  box-shadow: 0 10px 30px rgb(15 23 42 / .12);
+}
+.kh-tile {
+  position: absolute;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  user-select: none;
+  color: #111827;
+  box-shadow: 0 4px 12px rgb(0 0 0 / .08);
+  transition: left .45s ease, top .45s ease, transform .45s ease, background-color .2s ease, color .2s ease;
+  white-space: nowrap;
+}
+.kh-tile--1 { background: #eff6ff; }
+.kh-tile--2 { background: #fef3c7; }
+.kh-tile--3 { background: #dcfce7; }
+.kh-tile--4 { background: #fce7f3; }
+.kh-tile--5 { background: #e0e7ff; }
+.kh-tile--revealed { background: #111827 !important; color: #fff; }
+.kh-tile:focus-visible { outline: 3px solid #0d9488; outline-offset: 2px; }
+.kh-tile--revealed, .kh-tile { z-index: 1; }
+.kh-list { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); margin-top: 14px; }
+.kh-list a { display: block; padding: 16px 18px; border-radius: 16px; background: rgb(255 255 255 / .8); border: 1px solid rgb(226 232 240); color: #0f172a; text-decoration: none; font-weight: 700; }
+.kh-list a:hover { border-color: #0d9488; }
+.kh-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.kh-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 12px; font-weight: 700; font-size: 14px; border: 1px solid #0d9488; background: #0d9488; color: #fff; cursor: pointer; text-decoration: none; }
+.kh-btn--ghost { background: rgb(255 255 255 / .85); color: #0f172a; border-color: rgb(203 213 225); }
+.kh-msg { color: #334155; font-size: 14px; margin-top: 10px; }

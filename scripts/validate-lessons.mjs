@@ -151,6 +151,33 @@ function checkSlides() {
       if (!dl) err(`${at}: data-lesson phải là ${m[1]}`);
     } else if (!f.startsWith('_')) err(`${at}: tên file phải dạng NN.html (hoặc bắt đầu bằng _ nếu là bài mẫu)`);
   }
+
+  // Bộ chữ cho game Bắt chữ (data/kana-sets.json). Slide chỉ trỏ tới khoá, nên khoá phải tồn tại.
+  let kanaSets = {};
+  try {
+    kanaSets = JSON.parse(fs.readFileSync(path.join(root, 'data', 'kana-sets.json'), 'utf8'));
+  } catch (e) {
+    err(`data/kana-sets.json không đọc được: ${e.message}`);
+  }
+  for (const [k, set] of Object.entries(kanaSets)) {
+    if (k.startsWith('_')) continue;
+    const pairs = set?.pairs;
+    if (!set?.title || !Array.isArray(pairs) || pairs.length === 0) {
+      err(`data/kana-sets.json: bộ "${k}" cần title và pairs không rỗng`);
+      continue;
+    }
+    if (!pairs.every((p) => Array.isArray(p) && p.length === 2 && p.every((x) => typeof x === 'string' && x.length > 0))) {
+      err(`data/kana-sets.json: bộ "${k}" có cặp không đúng dạng [chữ, phiên âm]`);
+    }
+  }
+  for (const [g, f] of decks) {
+    const h = fs.readFileSync(path.join(root, 'slides', g, f), 'utf8');
+    for (const m of h.matchAll(/games\/kana-hunter\.html\?set=([\w-]+)/g)) {
+      if (!kanaSets[m[1]]) err(`slides/${g}/${f}: link Bắt chữ trỏ tới bộ "${m[1]}" không có trong data/kana-sets.json`);
+    }
+  }
+  if (!fs.existsSync(path.join(root, 'games', 'kana-hunter.html'))) err('thiếu games/kana-hunter.html');
+
   errors += problems.length;
   console.log(`slides + resources: ${problems.length ? "LỖI" : "ok"} (${decks.length} file slide)`);
   problems.forEach((p) => console.log(`  ✗ ${p}`));

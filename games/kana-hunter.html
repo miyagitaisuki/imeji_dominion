@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Bắt chữ – Hiragana & Katakana | IMEJI日本語教室</title>
+<link rel="icon" href="../assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/imeji-brand.css">
+<link rel="stylesheet" href="../assets/css/cloud-bg.css">
+<link rel="stylesheet" href="../assets/css/kana-hunter.css">
+</head>
+<body>
+<main class="max-w-3xl mx-auto px-4 py-6">
+    <a href="../index.html" class="kh-btn kh-btn--ghost">← Danh sách bài</a>
+    <p class="text-xs font-bold uppercase tracking-wider mt-5" style="color:#0f766e">Game học tập</p>
+    <h1 id="title" class="text-2xl md:text-3xl font-black mt-1" style="color:#0f172a">Bắt chữ</h1>
+    <p id="lead" class="mt-2 text-slate-700">Bấm Bắt đầu, các chữ sẽ chạy khắp màn hình. Bấm vào chữ để xem phiên âm.</p>
+
+    <div id="play" hidden>
+        <div class="kh-actions">
+            <button type="button" id="btn-start" class="kh-btn"><i data-icon="gamepad-2" class="w-4 h-4"></i>Bắt đầu chạy</button>
+            <button type="button" id="btn-stop" class="kh-btn kh-btn--ghost">Dừng lại</button>
+            <button type="button" id="btn-reset" class="kh-btn kh-btn--ghost">Xáo lại</button>
+        </div>
+        <div id="board" class="kh-board" role="group" aria-label="Bảng chữ"></div>
+        <p class="kh-msg">Gợi ý giáo viên: chỉ vào chữ bất kỳ, học viên đọc to. Ai đọc nhanh nhất thắng.</p>
+    </div>
+
+    <div id="pick" hidden>
+        <p class="kh-msg">Chọn bộ chữ để chơi:</p>
+        <div id="list" class="kh-list"></div>
+    </div>
+
+    <p id="error" class="kh-msg" hidden></p>
+</main>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/kana-hunter.js"></script>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const key = new URLSearchParams(location.search).get('set') || '';
+
+  function fail(msg) { $('error').textContent = msg; $('error').hidden = false; }
+
+  fetch('../data/kana-sets.json')
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(sets => {
+      const keys = Object.keys(sets).filter(k => !k.startsWith('_'));
+      const set = sets[key];
+      if (!set) {
+        // Không có hoặc sai khoá: hiện danh sách bộ chữ để chọn.
+        $('pick').hidden = false;
+        if (key) fail('Không tìm thấy bộ chữ "' + key + '".');
+        $('list').innerHTML = keys.map(k => '<a href="?set=' + encodeURIComponent(k) + '">' + sets[k].title + '</a>').join('');
+        return;
+      }
+      $('title').textContent = 'Bắt chữ · ' + set.title;
+      document.title = 'Bắt chữ · ' + set.title + ' | IMEJI日本語教室';
+      $('play').hidden = false;
+      const game = KanaHunter.mount($('board'), set.pairs);
+      $('btn-start').onclick = game.start;
+      $('btn-stop').onclick = game.stop;
+      $('btn-reset').onclick = game.reset;
+    })
+    .catch(e => fail('Không tải được bộ chữ (' + e.message + '). Cần mở trang qua máy chủ, không mở trực tiếp file.'));
+})();
+</script>
+</body>
+</html>
