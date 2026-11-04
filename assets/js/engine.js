@@ -213,13 +213,13 @@
                 <div class="flex flex-col items-center justify-center w-full max-w-4xl py-4 px-2">
                     <!-- Title Header -->
                     <div class="text-center mb-6">
-                        <span class="inline-block bg-emerald-100 text-emerald-800 font-extrabold px-4 py-1 rounded-full text-xs md:text-sm mb-2 border border-emerald-300 select-none">
+                        <span class="inline-block bg-primary-100 text-primary-800 font-extrabold px-4 py-1 rounded-full text-xs md:text-sm mb-2 border border-primary-300 select-none">
                             IMEJI JAPANESE CLASS
                         </span>
                         <h1 class="text-3xl md:text-5xl font-black text-slate-800 tracking-tight mb-2">
                             ${LESSON_CONFIG.title}
                         </h1>
-                        <p class="text-sm md:text-base font-bold text-slate-500">Ths. Nguyễn Thanh Quang - Giảng viên chuyên ngành Nhật Bản học</p>
+                        <p class="text-sm md:text-base font-bold text-slate-500">ThS. Nguyễn Thanh Quang ・ Giảng viên Trường Đại học Quy Nhơn (QNU) ・ JLPT N1 Holder</p>
                     </div>
 
                     <!-- 8. Control Bar: Số câu & Bộ lọc độ khó thực sự -->
