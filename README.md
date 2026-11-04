@@ -92,8 +92,8 @@ Kiểm tra mọi `data/minna/NN.json`: JSON hợp lệ, `lessonNo` và `storageP
 
 ## Điều hướng
 
-- Menu mỗi bài có nút **← Danh sách bài** (`../index.html`) và **🏠 Trang chủ IMEJI日本語教室** (`https://imejiquynhon.com/`, hằng số `SITE_HOME_URL` trong `engine.js`).
-- Trang chủ (`index.html`) và `nhap-mon/6` cũng có nút về trang chủ imejiquynhon.com.
+- Trang chủ luyện tập, menu mỗi bài và `nhap-mon/6` có **thanh chuyển 3 app** dùng chung với website và eduscan: Trang chủ (`https://imejiquynhon.com/`) · Luyện tập (mục đang chọn) · Học viên (`https://app.imejiquynhon.com/`). Kiểu dáng là `.imeji-switch` trong `imeji-brand.css`.
+- Menu mỗi bài có thêm nút **← Danh sách bài** (`../index.html`). Khi bài được nhúng trong trang khác (iframe, VD cổng học viên) thì ẩn phần điều hướng này.
 
 ## Báo kết quả ra ngoài (để ghi điểm)
 

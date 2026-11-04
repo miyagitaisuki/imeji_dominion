@@ -15,7 +15,6 @@
 
         // ===== ENGINE (KHÓA — KHÔNG SỬA TỪ ĐÂY TRỞ XUỐNG) =====
         // Trang chủ của lớp (nút quay về ở menu bài học)
-        const SITE_HOME_URL = 'https://imejiquynhon.com/';
         const KEY_HIGH = LESSON_CONFIG.storagePrefix + '_highscore';
         const KEY_MISTAKES = LESSON_CONFIG.storagePrefix + '_mistakes';
         const _memStore = {};
@@ -191,6 +190,9 @@
             } catch (e) { return 0; }
         }
 
+        // Bài đang được nhúng trong trang khác (iframe), VD cổng học viên eduscan
+        const IS_EMBEDDED = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
+
         function startLesson() {
             document.title = `${LESSON_CONFIG.title} | Luyện tập IMEJI日本語教室`;
             const jl = document.getElementById('modal-jlpt');
@@ -214,11 +216,15 @@
 
             container.innerHTML = `
                 <div class="flex flex-col items-center justify-center w-full max-w-4xl py-4 px-2">
-                    <!-- Điều hướng ra ngoài bài học -->
-                    <nav class="w-full flex flex-wrap items-center justify-between gap-2 mb-4 select-none" aria-label="Điều hướng">
+                    <!-- Điều hướng ra ngoài bài học; ẩn khi bài được nhúng (VD trong cổng học viên eduscan) -->
+                    ${IS_EMBEDDED ? '' : `<div class="w-full flex flex-wrap items-center justify-between gap-2 mb-4 select-none">
                         <a href="../index.html" class="btn-3d btn-gray inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl"><i data-icon="arrow-left" class="w-4 h-4"></i> Danh sách bài</a>
-                        <a href="${SITE_HOME_URL}" class="btn-3d btn-blue inline-flex items-center gap-1.5 text-xs md:text-sm font-black px-3.5 py-2 rounded-xl"><i data-icon="house" class="w-4 h-4"></i> Trang chủ IMEJI日本語教室</a>
-                    </nav>
+                        <nav class="imeji-switch" aria-label="IMEJI日本語教室">
+                            <a class="imeji-switch__item" href="https://imejiquynhon.com/" title="Trang chủ"><i data-icon="house" class="w-4 h-4"></i><span class="imeji-switch__label">Trang chủ</span></a>
+                            <a class="imeji-switch__item" href="../index.html" aria-current="page" title="Luyện tập"><i data-icon="gamepad-2" class="w-4 h-4"></i><span class="imeji-switch__label">Luyện tập</span></a>
+                            <a class="imeji-switch__item" href="https://app.imejiquynhon.com/" title="Học viên"><i data-icon="log-in" class="w-4 h-4"></i><span class="imeji-switch__label">Học viên</span></a>
+                        </nav>
+                    </div>`}
                     <!-- Title Header -->
                     <div class="text-center mb-6">
                         <span class="inline-block bg-primary-100 text-primary-800 font-extrabold px-4 py-1 rounded-full text-xs md:text-sm mb-2 border border-primary-300 select-none">

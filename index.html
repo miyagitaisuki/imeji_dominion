@@ -32,13 +32,18 @@
                     <p class="brand-sub text-[11px] text-primary-200 font-medium">Lớp học tiếng Nhật thầy Quang</p>
                 </div>
             </a>
-            <div class="flex items-center gap-3">
-                <a href="https://imejiquynhon.com/" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-primary-700 bg-white/90 hover:bg-white border border-white/60 shadow-sm active:scale-95 transition"><i data-icon="house" class="w-4 h-4"></i><span>Trang chủ</span></a>
-                <div id="headerStats" class="hidden sm:flex items-center gap-2 bg-primary-50 border border-primary-100 px-3 py-1.5 rounded-full text-xs font-semibold text-primary-700">
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Thanh chuyển 3 app dùng chung (.imeji-switch trong imeji-brand.css) -->
+                <nav id="ecoSwitch" class="imeji-switch imeji-switch--on-dark" aria-label="IMEJI日本語教室">
+                    <a class="imeji-switch__item" href="https://imejiquynhon.com/" title="Trang chủ"><i data-icon="house" class="w-4 h-4"></i><span class="imeji-switch__label">Trang chủ</span></a>
+                    <a class="imeji-switch__item" href="./" aria-current="page" title="Luyện tập"><i data-icon="gamepad-2" class="w-4 h-4"></i><span class="imeji-switch__label">Luyện tập</span></a>
+                    <a class="imeji-switch__item" href="https://app.imejiquynhon.com/" title="Học viên"><i data-icon="log-in" class="w-4 h-4"></i><span class="imeji-switch__label">Học viên</span></a>
+                </nav>
+                <div id="headerStats" class="hidden lg:flex items-center gap-2 bg-primary-50 border border-primary-100 px-3 py-1.5 rounded-full text-xs font-semibold text-primary-700">
                     <i data-icon="graduation-cap" class="w-4 h-4"></i>
                     <span>Tiến độ: <strong id="headerProgressText">0 / 22</strong> bài</span>
                 </div>
-                <a href="https://imejiquynhon.com/#register" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 active:scale-95 transition shadow-sm">Học thử miễn phí</a>
+                <a href="https://imejiquynhon.com/#register" class="hidden md:inline-flex shrink-0 whitespace-nowrap items-center justify-center px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 active:scale-95 transition shadow-sm">Học thử miễn phí</a>
             </div>
         </div>
     </header>
@@ -177,13 +182,34 @@
         <span id="toastMsg">Đã cập nhật trạng thái!</span>
     </div>
 
-    <footer class="bg-white border-t border-slate-200 py-8 text-xs text-slate-500 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center space-y-1.5">
-            <p class="font-semibold text-sm text-slate-800">IMEJI日本語教室</p>
-            <p>Lớp học tiếng Nhật thầy Quang</p>
-            <p><a href="https://imejiquynhon.com/" class="hover:text-primary-600">imejiquynhon.com</a> ・ <a href="https://imejiquynhon.com/#register" class="hover:text-primary-600">Đăng ký học thử miễn phí</a></p>
-            <p>© IMEJI日本語教室. All rights reserved.</p>
+    <!-- Chân trang chung (cùng nội dung với website imejiquynhon.com) -->
+    <footer class="bg-white border-t border-slate-200 py-10 text-xs text-slate-500 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div class="space-y-1.5">
+                <p class="font-semibold text-sm text-slate-800">IMEJI日本語教室</p>
+                <p>Lớp học tiếng Nhật thầy Quang</p>
+                <p>ThS. Nguyễn Thanh Quang</p>
+                <p>80 Võ Mười, P. Quy Nhơn Nam, Gia Lai</p>
+                <p>
+                    <a href="tel:0868608647" class="hover:text-primary-600">086 860 8647</a> ・
+                    <a href="https://zalo.me/0868608647" target="_blank" rel="noreferrer" class="hover:text-primary-600">Zalo</a> ・
+                    <a href="mailto:lienhe@imejiquynhon.com" class="hover:text-primary-600">lienhe@imejiquynhon.com</a>
+                </p>
+            </div>
+            <nav aria-label="IMEJI日本語教室" class="space-y-1.5">
+                <p class="font-semibold text-sm text-slate-800">IMEJI日本語教室</p>
+                <a href="https://imejiquynhon.com/" class="block hover:text-primary-600">Trang chủ</a>
+                <a href="./" class="block hover:text-primary-600">Luyện tập Minna no Nihongo (miễn phí)</a>
+                <a href="https://app.imejiquynhon.com/" class="block hover:text-primary-600">Cổng học viên (điểm danh, học phí, bài tập)</a>
+            </nav>
+            <nav aria-label="Tài nguyên" class="space-y-1.5">
+                <p class="font-semibold text-sm text-slate-800">Tài nguyên</p>
+                <a href="https://imejiquynhon.com/posts/" class="block hover:text-primary-600">Bài viết học tiếng Nhật</a>
+                <a href="https://imejiquynhon.com/#faq" class="block hover:text-primary-600">Câu hỏi thường gặp</a>
+                <a href="https://imejiquynhon.com/#register" class="block hover:text-primary-600">Đăng ký học thử miễn phí</a>
+            </nav>
         </div>
+        <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">© IMEJI日本語教室. All rights reserved.</p>
     </footer>
 
     <script>
@@ -194,6 +220,7 @@
                 var on = window.scrollY > 20;
                 h.className = 'fixed top-0 left-0 right-0 z-40 transition-all duration-300 ' + (on ? 'glass-panel py-2.5 shadow-sm' : 'bg-transparent py-4');
                 n.className = 'font-bold text-sm sm:text-base leading-tight tracking-tight ' + (on ? 'text-slate-900' : 'text-white');
+                document.getElementById('ecoSwitch').classList.toggle('imeji-switch--on-dark', !on);
             }
             window.addEventListener('scroll', f, { passive: true }); f();
         })();
