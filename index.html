@@ -114,6 +114,9 @@
             <button onclick="setActiveTab('minna2')" id="tab-minna2" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
                 📙 Minna Sơ Cấp II (Bài 26 - 50)
             </button>
+            <button onclick="setActiveTab('n2')" id="tab-n2" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                📕 Từ vựng N2 (1556 từ)
+            </button>
             <button onclick="setActiveTab('completed')" id="tab-completed" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
                 ✅ Đã hoàn thành
             </button>
@@ -158,6 +161,30 @@
             </div>
             <div id="grid-minna2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Javascript will inject Minna 26-50 cards -->
+            </div>
+        </section>
+
+        <!-- Section 4: Từ vựng N2 (data/n2, trang n2/index.html) -->
+        <section id="section-n2" class="mb-12">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm"><i class="fa-solid fa-book-bookmark"></i></span>
+                    <h3 class="text-xl font-bold text-slate-900">Từ vựng N2 - Flashcard &amp; Trắc nghiệm</h3>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full">Trình độ JLPT N2</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="glass-panel rounded-2xl border border-slate-200 p-5 flex flex-col justify-between card-hover">
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-base mb-1">Từ vựng N2</h4>
+                        <div class="text-xs font-medium text-primary-600 japanese-font mb-2">単語 N2</div>
+                        <p class="text-xs text-slate-500 mb-4 leading-relaxed">1556 từ chia thành 32 bài, mỗi bài có flashcard (kèm âm thanh, ví dụ) và trắc nghiệm.</p>
+                    </div>
+                    <a href="n2/index.html" class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
+                        <span>Học từ vựng N2</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -419,7 +446,12 @@
             document.getElementById('grid-minna1').innerHTML = visibleMinna1.map(l => createCardHtml(l, 'minna')).join('');
             document.getElementById('grid-minna2').innerHTML = visibleMinna2.map(l => createCardHtml(l, 'minna')).join('');
 
-            hasResults = showIntro || showMinna1 || showMinna2;
+            const secN2 = document.getElementById('section-n2');
+            const showN2 = (currentTab === 'all' || currentTab === 'n2') &&
+                (query === '' || 'n2 từ vựng tu vung 単語 flashcard trắc nghiệm'.includes(query));
+            secN2.style.display = showN2 ? 'block' : 'none';
+
+            hasResults = showIntro || showMinna1 || showMinna2 || showN2;
             document.getElementById('noResults').classList.toggle('hidden', hasResults);
         }
 
