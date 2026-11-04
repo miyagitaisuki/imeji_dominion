@@ -19,6 +19,26 @@ assets/css/tailwind.input.css  Đầu vào của Tailwind
 tailwind.config.js     Cấu hình Tailwind (màu, font, các file quét class)
 ```
 
+## Từ vựng N2 (Anki)
+
+```
+n2/index.html          Trang N2: danh sách 32 bài, flashcard, trắc nghiệm (route bằng #/3, #/3/flash, #/3/quiz)
+data/n2/NN.json        50 từ mỗi bài, data/n2/index.json là mục lục (sinh tự động, không sửa tay)
+assets/js/n2.js        Logic trang N2
+assets/css/n2.css      CSS riêng, không cần build Tailwind
+assets/n2/media/       mp3 và jpg của bộ thẻ (tên file giữ nguyên như trong Anki)
+scripts/import-anki.py Đọc file .apkg rồi sinh data/n2 (và chép media nếu thêm --media)
+```
+
+Cập nhật dữ liệu hoặc media từ bộ Anki mới:
+
+```bash
+pip install zstandard
+python3 scripts/import-anki.py N2.apkg --media
+```
+
+Nếu thiếu file mp3 thì nút 🔊 dùng giọng đọc tiếng Nhật của trình duyệt; thiếu ảnh thì thẻ tự ẩn ảnh.
+
 ## Chạy local
 
 Trang đọc JSON bằng `fetch`, nên phải mở qua máy chủ HTTP, không mở trực tiếp bằng `file://`.

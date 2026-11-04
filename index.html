@@ -117,6 +117,9 @@
             <button onclick="setActiveTab('minna2')" id="tab-minna2" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
                 Minna Sơ Cấp II (Bài 26 - 50)
             </button>
+            <button onclick="setActiveTab('n2')" id="tab-n2" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
+                📕 Từ vựng N2 (1556 từ)
+            </button>
             <button onclick="setActiveTab('completed')" id="tab-completed" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200">
                 Đã hoàn thành
             </button>
@@ -161,6 +164,20 @@
             </div>
             <div id="grid-minna2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Javascript will inject Minna 26-50 cards -->
+            </div>
+        </section>
+
+        <!-- Section 4: Từ vựng N2 (data/n2, trang n2/index.html) -->
+        <section id="section-n2" class="mb-12">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="p-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm"><i class="fa-solid fa-book-bookmark"></i></span>
+                    <h3 class="text-xl font-bold text-slate-900">Từ vựng N2 - Flashcard &amp; Trắc nghiệm</h3>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full">Trình độ JLPT N2</span>
+            </div>
+            <div id="grid-n2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Javascript will inject N2 lesson cards from data/n2/index.json -->
             </div>
         </section>
 
@@ -313,6 +330,7 @@
         // Initialize UI
         document.addEventListener('DOMContentLoaded', () => {
             renderAllGrids();
+            loadN2();
             updateProgressUI();
         });
 
@@ -373,6 +391,38 @@
             minna2Container.innerHTML = minnaLessons.slice(25, 50).map(l => createCardHtml(l, 'minna')).join('');
         }
 
+
+        // ===== Từ vựng N2: 32 bài từ data/n2/index.json, học tại n2/index.html#/{bài} =====
+        let n2Lessons = [];
+        function loadN2() {
+            fetch('data/n2/index.json').then(r => r.json()).then(d => { n2Lessons = d.lessons; renderN2(); })
+                .catch(() => { document.getElementById('grid-n2').innerHTML = '<p class="text-sm text-slate-500">Chưa tải được danh sách bài N2.</p>'; });
+        }
+        function renderN2(query) {
+            const q = (query || '').toLowerCase().trim();
+            let known = {};
+            try { known = JSON.parse(localStorage.getItem('n2_known') || '{}'); } catch (e) {}
+            const list = n2Lessons.filter(l => !q || `bài ${l.no} n2 từ vựng ${l.sample.join(' ')}`.toLowerCase().includes(q));
+            document.getElementById('grid-n2').innerHTML = list.map(l => {
+                let n = 0;
+                for (let i = l.from; i <= l.to; i++) if (known['n2_' + ('000' + i).slice(-4)]) n++;
+                const pct = Math.round(n / l.count * 100);
+                return `
+                <div class="lesson-card glass-panel rounded-2xl border ${pct === 100 ? 'border-primary-300 bg-primary-50/30' : 'border-slate-200'} p-5 flex flex-col justify-between card-hover">
+                    <div>
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-lg border bg-indigo-50 text-indigo-700 border-indigo-200">Bài ${l.no}</span>
+                        <h4 class="font-bold text-slate-800 text-base mt-3 mb-1 japanese-font">${l.sample.slice(0, 3).join('・')}…</h4>
+                        <p class="text-xs text-slate-500 mb-3">Từ ${l.from}–${l.to} · ${l.count} từ · Đã nhớ ${n}/${l.count}</p>
+                        <div class="w-full bg-slate-100 rounded-full overflow-hidden mb-3" style="height:6px"><div class="bg-primary-500" style="height:6px;width:${pct}%"></div></div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="n2/index.html#/${l.no}/flash" class="flex-1 py-2.5 px-2 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center transition-all shadow-sm">🃏 Flashcard</a>
+                        <a href="n2/index.html#/${l.no}/quiz" class="flex-1 py-2.5 px-2 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center transition-all shadow-sm">📝 Trắc nghiệm</a>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
         function filterLessons() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             const clearBtn = document.getElementById('clearSearchBtn');
@@ -414,7 +464,14 @@
             document.getElementById('grid-minna1').innerHTML = visibleMinna1.map(l => createCardHtml(l, 'minna')).join('');
             document.getElementById('grid-minna2').innerHTML = visibleMinna2.map(l => createCardHtml(l, 'minna')).join('');
 
-            hasResults = showIntro || showMinna1 || showMinna2;
+            const secN2 = document.getElementById('section-n2');
+            const n2All = 'n2 từ vựng tu vung 単語 flashcard trắc nghiệm';
+            const n2Match = query === '' || n2All.includes(query) || n2Lessons.some(l => `bài ${l.no} ${l.sample.join(' ')}`.toLowerCase().includes(query));
+            const showN2 = (currentTab === 'all' || currentTab === 'n2') && n2Match;
+            secN2.style.display = showN2 ? 'block' : 'none';
+            renderN2(n2All.includes(query) ? '' : query);
+
+            hasResults = showIntro || showMinna1 || showMinna2 || showN2;
             document.getElementById('noResults').classList.toggle('hidden', hasResults);
         }
 
