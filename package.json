@@ -6,7 +6,8 @@
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind.input.css -o ./assets/css/tailwind.css --minify",
     "watch:css": "tailwindcss -i ./assets/css/tailwind.input.css -o ./assets/css/tailwind.css --watch",
-    "validate": "node scripts/validate-lessons.mjs"
+    "validate": "node scripts/validate-lessons.mjs && node scripts/check-design.mjs",
+    "brand:check": "node scripts/check-brand.mjs"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17"

@@ -11,6 +11,7 @@ nhap-mon/6.html        Game nhập môn (chưa dùng engine chung)
 data/minna/NN.json     Nội dung bài: config + game1..game4
 assets/js/engine.js    Engine game dùng chung cho các bài Minna
 assets/js/loader.js    Tải JSON của bài rồi khởi động engine
+assets/css/imeji-brand.css  Bộ quy chuẩn thương hiệu dùng chung 3 repo (không sửa riêng ở đây)
 assets/css/lesson.css  CSS dùng chung cho các bài Minna
 assets/css/tailwind.css  File Tailwind đã build (sinh ra, không sửa tay)
 assets/css/tailwind.input.css  Đầu vào của Tailwind
@@ -37,7 +38,17 @@ Sau khi thêm hoặc đổi class Tailwind trong HTML hoặc JS, chạy lại:
 npm run build:css
 ```
 
-Đổi màu hoặc font chung thì sửa `tailwind.config.js`. Lớp chỉ dùng trong chuỗi ghép động (ví dụ `btn-${color}`) phải được ghi đầy đủ ở đâu đó trong file quét, nếu không Tailwind sẽ không sinh CSS cho nó.
+Màu, font, bo góc và bóng lấy từ `assets/css/imeji-brand.css` (xem mục Bộ quy chuẩn thương hiệu); `tailwind.config.js` chỉ nối các giá trị đó vào Tailwind. Lớp chỉ dùng trong chuỗi ghép động (ví dụ `btn-${color}`) phải được ghi đầy đủ ở đâu đó trong file quét, nếu không Tailwind sẽ không sinh CSS cho nó.
+
+## Bộ quy chuẩn thương hiệu
+
+Màu, font, bo góc, bóng, nền chấm và thẻ kính mờ nằm trong `assets/css/imeji-brand.css`, **giống hệt nhau** ở 3 repo: imeji_newhorizon (website, giữ bản gốc), imeji_dominion (luyện tập) và eduscan (cổng học viên). Quy ước dùng ghi ở đầu file đó.
+
+- Màu theo ý nghĩa: `primary` (thương hiệu, #2563eb), `success`, `warning`, `danger`, `accent`, cùng `slate` cho trung tính. Không dùng tên màu thô như `blue-600`, `emerald-500`, `bg-[#...]`.
+- Font: Be Vietnam Pro, chữ Nhật dùng Noto Sans JP (`font-jp`).
+- Muốn đổi: sửa bản gốc ở imeji_newhorizon, chép y nguyên sang 2 repo kia, rồi chạy `npm run brand:check` để so với bản gốc trên GitHub.
+
+`npm run validate` cũng báo lỗi nếu HTML/JS dùng màu thô.
 
 ## Thêm hoặc sửa bài Minna
 

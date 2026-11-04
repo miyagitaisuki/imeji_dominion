@@ -7,23 +7,24 @@
     <title>Minna no Nihongo – Bài 13</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/imeji-brand.css">
     <link rel="stylesheet" href="../assets/css/tailwind.css">
     <link rel="stylesheet" href="../assets/css/lesson.css">
 </head>
 <body class="bg-slate-900 text-slate-800 flex flex-col justify-between min-h-screen">
 
     <!-- Toast Notification Container -->
-    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-amber-500 text-white font-extrabold px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 text-base md:text-lg opacity-0 pointer-events-none transform -translate-y-4">
+    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-warning-500 text-white font-extrabold px-6 py-3 rounded-2xl shadow-xl flex items-center gap-2 text-base md:text-lg opacity-0 pointer-events-none transform -translate-y-4">
         <span>⚠️</span> <span id="toast-message">Vui lòng chọn đáp án</span>
     </div>
 
     <!-- 2. Tích cực hóa Modal Hết Tim -->
     <div id="hearts-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl border-4 border-amber-200 anim-pop">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl border-4 border-warning-200 anim-pop">
             <div class="text-6xl mb-3">🎯</div>
-            <h2 class="text-2xl md:text-3xl font-black text-amber-600 mb-2">Còn vài điểm cần luyện thêm!</h2>
-            <p class="text-base text-gray-600 font-bold mb-6">Mỗi lần vấp ngã là một bước tiến gần hơn tới JLPT <span id="modal-jlpt">N5</span>. Hãy rèn luyện lại nhé!</p>
+            <h2 class="text-2xl md:text-3xl font-black text-warning-600 mb-2">Còn vài điểm cần luyện thêm!</h2>
+            <p class="text-base text-slate-600 font-bold mb-6">Mỗi lần vấp ngã là một bước tiến gần hơn tới JLPT <span id="modal-jlpt">N5</span>. Hãy rèn luyện lại nhé!</p>
             <div class="flex flex-col gap-3">
                 <button id="btn-modal-review" onclick="practiceCurrentWrongList()" class="btn-3d btn-blue py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider hidden">
                     🎯 Ôn lại câu vừa sai
@@ -31,7 +32,7 @@
                 <button onclick="retryCurrentGame()" class="btn-3d btn-green py-3.5 rounded-2xl font-black text-lg uppercase tracking-wider">
                     🔄 Thử lại lượt này
                 </button>
-                <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-gray-700">
+                <button onclick="showMainMenu()" class="btn-3d btn-gray py-3.5 rounded-2xl font-black text-lg text-slate-700">
                     🏠 Về Menu chính
                 </button>
             </div>
@@ -54,24 +55,24 @@
             <div class="flex-1 max-w-md mx-3 md:mx-6">
                 <div class="flex justify-between items-center mb-1 text-xs md:text-sm font-extrabold text-slate-500">
                     <span id="progress-text">Câu 1 / 5</span>
-                    <span id="level-badge" class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md text-xs uppercase font-black">N5</span>
+                    <span id="level-badge" class="bg-primary-100 text-primary-700 px-2 py-0.5 rounded-md text-xs uppercase font-black">N5</span>
                 </div>
                 <div class="w-full bg-slate-100 h-3.5 md:h-4 rounded-full overflow-hidden p-0.5 border border-slate-200">
-                    <div id="progress-inner" class="bg-[#58CC02] h-full rounded-full transition-all duration-300 w-0"></div>
+                    <div id="progress-inner" class="bg-primary-600 h-full rounded-full transition-all duration-300 w-0"></div>
                 </div>
             </div>
 
             <!-- Stats Header (Streak ẩn trên mobile để gọn gàng - Feature 10) -->
             <div class="flex items-center gap-2 md:gap-5 text-base md:text-xl font-black shrink-0">
-                <div class="hidden md:flex items-center gap-1 text-orange-500" title="Chuỗi đúng">
+                <div class="hidden md:flex items-center gap-1 text-warning-500" title="Chuỗi đúng">
                     <span>🔥</span>
                     <span id="stat-streak">0</span>
                 </div>
-                <div class="flex items-center gap-1 text-red-500" title="Số tim còn lại">
+                <div class="flex items-center gap-1 text-danger-500" title="Số tim còn lại">
                     <span>❤️</span>
                     <span id="stat-hearts">5</span>
                 </div>
-                <div class="flex items-center gap-1 text-amber-500" title="Điểm số">
+                <div class="flex items-center gap-1 text-warning-500" title="Điểm số">
                     <span>⭐</span>
                     <span id="stat-score">0</span>
                 </div>

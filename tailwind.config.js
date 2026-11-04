@@ -1,3 +1,17 @@
+// Màu, font, bo góc, bóng lấy từ bộ quy chuẩn thương hiệu dùng chung (assets/css/imeji-brand.css).
+// Màu đọc giá trị hex trực tiếp từ file đó để Tailwind 3 tạo được biến thể độ trong (VD bg-primary-50/30).
+const fs = require('fs');
+const path = require('path');
+
+const brandCss = fs.readFileSync(path.join(__dirname, 'assets/css/imeji-brand.css'), 'utf8');
+const token = (name) => {
+  const m = brandCss.match(new RegExp(`--imeji-${name}:\\s*(#[0-9a-fA-F]{6})`));
+  if (!m) throw new Error(`Thiếu --imeji-${name} trong imeji-brand.css`);
+  return m[1];
+};
+const scale = (group) =>
+  Object.fromEntries([50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((s) => [s, token(`${group}-${s}`)]));
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,30 +23,27 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        jp: ['Noto Sans JP', 'sans-serif'],
+        sans: ['var(--imeji-font-sans)'],
+        jp: ['var(--imeji-font-jp)'],
       },
       colors: {
-        primary: {
-          50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
-          500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a', 950: '#172554',
-        },
-        leaf: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',
-        },
-        jpblue: {
-          800: '#1e293b',
-          900: '#0f172a',
-        },
-        jpRed: '#e63946',
-        jpDark: '#1d3557',
-        jpLight: '#f1faee',
-        jpBlue: '#457b9d',
-        jpCyan: '#a8dadc',
+        primary: scale('primary'),
+        success: scale('success'),
+        warning: scale('warning'),
+        danger: scale('danger'),
+        accent: scale('accent'),
+        slate: { 500: token('slate-500') },
+      },
+      borderRadius: {
+        lg: 'var(--imeji-radius-sm)',
+        xl: 'var(--imeji-radius-md)',
+        '2xl': 'var(--imeji-radius-lg)',
+        '3xl': 'var(--imeji-radius-xl)',
+      },
+      boxShadow: {
+        card: 'var(--imeji-shadow-card)',
+        lift: 'var(--imeji-shadow-lift)',
+        pop: 'var(--imeji-shadow-pop)',
       },
     },
   },
