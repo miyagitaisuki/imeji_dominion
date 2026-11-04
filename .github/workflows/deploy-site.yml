@@ -1,7 +1,7 @@
 name: Deploy site after main changes
 
 # Khi main có thay đổi:
-# 1. Tự bật nút "Slide bài giảng" cho mọi bài có file slides/minna/NN.html (scripts/sync-slides.mjs),
+# 1. Tự bật nút "Slide bài giảng" và "Flashcard" cho mọi bài có file slides/minna/NN.html hoặc flashcards/minna/NN.html (scripts/sync-slides.mjs),
 #    commit lại lên main nếu có thay đổi.
 # 2. Gọi deploy hook của Render để build lại imeji_newhorizon.
 #    Build đó clone imeji_dominion@main và chép vào /luyen-tap/, nên bài mới mới lên site.
@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Bật slide theo file trong slides/minna
+      - name: Bật slide và flashcard theo file
         run: node scripts/sync-slides.mjs
       - name: Commit nếu có thay đổi
         run: |
@@ -35,7 +35,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/resources.json
-          git commit -m "Tự bật slide bài giảng theo file trong slides/minna"
+          git commit -m "Tự bật slide và flashcard theo file"
           git push origin HEAD:main
 
   trigger-render:

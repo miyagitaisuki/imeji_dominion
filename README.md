@@ -106,8 +106,8 @@ Khi thêm bài mới: tạo `data/minna/NN.json`, tạo `minna/NN.html` (copy t�
 Bấm **Học bài này** trên thẻ bài Minna mở cửa sổ chọn 3 cách học: **Slide bài giảng**, **Flashcard**, **Game học tập** (4 trò chơi như trước). Slide và flashcard chưa có thì hiện "Sắp có".
 
 - Slide là một deck trình chiếu HTML, đặt ở `slides/minna/NN.html` (NN là số bài, không đệm số 0, ví dụ `slides/minna/22.html`), dùng chung `assets/css/slides.css` và `assets/js/slides.js` để giống hệt giao diện luyện tập. Mở cho mọi người xem, không cần đăng nhập. **Quy ước soạn: [docs/quy-uoc-slide-bai-giang.md](docs/quy-uoc-slide-bai-giang.md); bài mẫu đủ thành phần: `slides/minna/_mau.html`.**
-- Flashcard dự kiến ở `flashcards/minna/NN.html` (định dạng sẽ chốt khi có nội dung).
-- Bật nút cho một bài bằng cách thêm số bài vào `data/resources.json`, ví dụ `"slide": { "minna": [22] }`. Không thêm vào thì nút vẫn "Sắp có", nên có thể đẩy file lên trước và bật sau khi duyệt.
+- Flashcard đặt ở `flashcards/minna/NN.html` (định dạng sẽ chốt khi có nội dung). Có file là tự bật, không cần sửa `data/resources.json`.
+- Nút cho một bài tự bật khi file `slides/minna/NN.html` (hoặc `flashcards/minna/NN.html`) có trên `main`: `scripts/sync-slides.mjs` chạy trong deploy và ghi số bài vào `data/resources.json`. Muốn đẩy file lên trước rồi bật sau thì đợi duyệt xong mới merge vào `main`.
 - Bài nhập môn (`nhap-mon/6`) chỉ có game nên vẫn bấm thẳng vào bài.
 
 ## Trạng thái các trang
