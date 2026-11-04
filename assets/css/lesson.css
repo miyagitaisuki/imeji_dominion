@@ -7,6 +7,10 @@
             margin: 0;
             padding: 0;
             background-color: #0F172A;
+            background-image: linear-gradient(rgba(15,23,42,0.45), rgba(15,23,42,0.25)), url('../img/clouds-blue.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Nunito', 'Noto Sans JP', sans-serif;
             color: #3C3C3C;
             min-height: 100vh;
@@ -16,7 +20,7 @@
 
         /* Focus styles for keyboard accessibility */
         button:focus-visible, a:focus-visible, [tabindex="0"]:focus-visible {
-            outline: 3px solid #1CB0F6 !important;
+            outline: 3px solid #2563EB !important;
             outline-offset: 3px !important;
         }
 
@@ -61,12 +65,12 @@
         }
         
         .btn-green {
-            background-color: #58CC02;
-            border-bottom: 4px solid #46A302;
+            background-color: #2563EB;
+            border-bottom: 4px solid #1D4ED8;
             color: #FFFFFF;
         }
         .btn-green:hover:not(:disabled) {
-            background-color: #61E002;
+            background-color: #3B82F6;
         }
         .btn-green:disabled {
             background-color: #E5E5E5;
@@ -76,12 +80,12 @@
         }
 
         .btn-blue {
-            background-color: #1CB0F6;
-            border-bottom: 4px solid #1899D6;
+            background-color: #2563EB;
+            border-bottom: 4px solid #1D4ED8;
             color: #FFFFFF;
         }
         .btn-blue:hover:not(:disabled) {
-            background-color: #24BDFF;
+            background-color: #3B82F6;
         }
 
         .btn-purple {
@@ -167,3 +171,10 @@
         ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 6px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Đồng bộ với trang chủ: thanh tiến độ xanh primary, khung bài học bo góc nổi trên nền mây */
+        #progress-inner { background-color: #2563EB !important; }
+        #app-root { background: rgba(255,255,255,0.97); }
+        @media (min-width: 768px) {
+            #app-root { margin-top: 1.5rem; margin-bottom: 1.5rem; min-height: calc(100vh - 3rem); border-radius: 1.5rem; }
+        }
