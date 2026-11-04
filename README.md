@@ -98,6 +98,15 @@ Hướng dẫn chi tiết (số câu, độ khó, quy tắc soạn từng trò, 
 
 Khi thêm bài mới: tạo `data/minna/NN.json`, tạo `minna/NN.html` (copy từ một bài đã có, chỉ đổi `data-lesson` và `<title>`), rồi thêm số bài vào `availableLessons` trong `index.html` (thanh tiến độ chỉ tính các bài có trong danh sách này).
 
+## Slide bài giảng và flashcard
+
+Bấm **Học bài này** trên thẻ bài Minna mở cửa sổ chọn 3 cách học: **Slide bài giảng**, **Flashcard**, **Game học tập** (4 trò chơi như trước). Slide và flashcard chưa có thì hiện "Sắp có".
+
+- Slide là một deck trình chiếu HTML tự chứa, đặt ở `slides/minna/NN.html` (NN là số bài, không đệm số 0, ví dụ `slides/minna/22.html`). Mở cho mọi người xem, không cần đăng nhập.
+- Flashcard dự kiến ở `flashcards/minna/NN.html` (định dạng sẽ chốt khi có nội dung).
+- Bật nút cho một bài bằng cách thêm số bài vào `data/resources.json`, ví dụ `"slide": { "minna": [22] }`. Không thêm vào thì nút vẫn "Sắp có", nên có thể đẩy file lên trước và bật sau khi duyệt.
+- Bài nhập môn (`nhap-mon/6`) chỉ có game nên vẫn bấm thẳng vào bài.
+
 ## Trạng thái các trang
 
 Tất cả 21 bài Minna (`minna/1`–`21`) dùng engine chung `assets/js/engine.js` và dữ liệu `data/minna/NN.json`. Mỗi trang chỉ là khung HTML mỏng (~8KB) trỏ tới file JSON của bài. Khóa lưu tiến độ trong trình duyệt (`mnn_lNN_highscore`, `mnn_lNN_mistakes`) giữ nguyên nên người học không mất điểm cao và danh sách câu hay sai.

@@ -1,0 +1,5 @@
+{
+  "_ghi_chu": "Bài nào có slide / flashcard thì thêm số bài vào mảng tương ứng. File slide: slides/minna/NN.html. Chưa có thì cửa sổ chọn hiện 'Sắp có'.",
+  "slide": { "minna": [] },
+  "flashcard": { "minna": [] }
+}
