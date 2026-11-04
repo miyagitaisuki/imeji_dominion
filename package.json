@@ -5,7 +5,8 @@
   "description": "Static Japanese study pages (Minna no Nihongo lessons and intro quizzes).",
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind.input.css -o ./assets/css/tailwind.css --minify",
-    "watch:css": "tailwindcss -i ./assets/css/tailwind.input.css -o ./assets/css/tailwind.css --watch"
+    "watch:css": "tailwindcss -i ./assets/css/tailwind.input.css -o ./assets/css/tailwind.css --watch",
+    "validate": "node scripts/validate-lessons.mjs"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17"

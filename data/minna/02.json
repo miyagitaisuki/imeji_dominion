@@ -1,0 +1,1725 @@
+{
+  "config": {
+    "lessonNo": 2,
+    "title": "Minna no Nihongo – Bài 2",
+    "jlpt": "N5",
+    "storagePrefix": "mnn_l02"
+  },
+  "game1": [
+    {
+      "id": "l02_v001",
+      "level": "easy",
+      "context": "Cuốn sách dùng để tra cứu nghĩa và cách dùng của từ ngữ.",
+      "answer": "じしょ",
+      "kanji": "{辞書|じしょ}",
+      "distractors": [
+        "ざっし",
+        "しんぶん",
+        "ほん"
+      ],
+      "distractorsKanji": [
+        "{雑誌|ざっし}",
+        "{新聞|しんぶん}",
+        "{本|ほん}"
+      ],
+      "explanation": {
+        "correct": "辞書 (じしょ) nghĩa là từ điển.",
+        "pitfalls": "Tránh nhầm với 雑誌 (tạp chí) hay 新聞 (tờ báo).",
+        "tip": "辞 (TỪ) + 書 (THƯ) = sách tra từ."
+      }
+    },
+    {
+      "id": "l02_v002",
+      "level": "easy",
+      "context": "Ấn phẩm hình ảnh đẹp, xuất bản định kỳ theo tuần hoặc tháng.",
+      "answer": "ざっし",
+      "kanji": "{雑誌|ざっし}",
+      "distractors": [
+        "ほん",
+        "じしょ",
+        "ノート"
+      ],
+      "distractorsKanji": [
+        "{本|ほん}",
+        "{辞書|じしょ}",
+        "ノート"
+      ],
+      "explanation": {
+        "correct": "雑誌 (ざっし) nghĩa là tạp chí.",
+        "pitfalls": "Tránh nhầm với 本 (sách nói chung) hay ノート (vở ghi).",
+        "tip": "雑 (TẠP) + 誌 (CHÍ) = tạp chí."
+      }
+    },
+    {
+      "id": "l02_v003",
+      "level": "easy",
+      "context": "Ấn phẩm in giấy lớn cập nhật tin tức hằng ngày.",
+      "answer": "しんぶん",
+      "kanji": "{新聞|しんぶん}",
+      "distractors": [
+        "ざっし",
+        "じしょ",
+        "てちょう"
+      ],
+      "distractorsKanji": [
+        "{雑誌|ざっし}",
+        "{辞書|じしょ}",
+        "{手帳|てちょう}"
+      ],
+      "explanation": {
+        "correct": "新聞 (しんぶん) nghĩa là tờ báo.",
+        "pitfalls": "Tránh nhầm với 雑誌 (tạp chí) hay 手帳 (sổ tay).",
+        "tip": "新 (TÂN) + 聞 (VĂN) = tin tức mới nghe được."
+      }
+    },
+    {
+      "id": "l02_v004",
+      "level": "easy",
+      "context": "Cuốn sổ nhỏ bỏ túi dùng để ghi chép lịch trình, công việc cá nhân.",
+      "answer": "てちょう",
+      "kanji": "{手帳|てちょう}",
+      "distractors": [
+        "ノート",
+        "ほん",
+        "めいし"
+      ],
+      "distractorsKanji": [
+        "ノート",
+        "{本|ほん}",
+        "{名刺|めいし}"
+      ],
+      "explanation": {
+        "correct": "手帳 (てちょう) nghĩa là sổ tay.",
+        "pitfalls": "Tránh nhầm với ノート (vở học sinh) hay 名刺 (danh thiếp).",
+        "tip": "手 (THỦ) + 帳 (TRƯỚNG) = sổ cầm trên tay."
+      }
+    },
+    {
+      "id": "l02_v005",
+      "level": "easy",
+      "context": "Tấm thiếp nhỏ in tên, chức vụ và số điện thoại dùng khi giao tiếp công việc.",
+      "answer": "めいし",
+      "kanji": "{名刺|めいし}",
+      "distractors": [
+        "カード",
+        "てちょう",
+        "かぎ"
+      ],
+      "distractorsKanji": [
+        "カード",
+        "{手帳|てちょう}",
+        "かぎ"
+      ],
+      "explanation": {
+        "correct": "名刺 (めいし) nghĩa là danh thiếp.",
+        "pitfalls": "Tránh nhầm với カード (thẻ ngân hàng/thẻ từ).",
+        "tip": "名 (DANH) + 刺 (THÍCH) = thẻ ghi tên."
+      }
+    },
+    {
+      "id": "l02_v006",
+      "level": "easy",
+      "context": "Dụng cụ dùng để viết hoặc vẽ, có ruột bằng than chì.",
+      "answer": "えんぴつ",
+      "kanji": "{鉛筆|えんぴつ}",
+      "distractors": [
+        "ボールペン",
+        "シャープペンシル",
+        "かぎ"
+      ],
+      "distractorsKanji": [
+        "ボールペン",
+        "シャープペンシル",
+        "かぎ"
+      ],
+      "explanation": {
+        "correct": "鉛筆 (えんぴつ) nghĩa là bút chì.",
+        "pitfalls": "Tránh nhầm với ボールペン (bút bi) hay シャープペンシル (bút chì bấm).",
+        "tip": "鉛 (DIÊN) + 筆 (BÚT) = bút làm bằng chì."
+      }
+    },
+    {
+      "id": "l02_v007",
+      "level": "easy",
+      "context": "Vật dụng dùng để che mưa hoặc che nắng khi đi ra ngoài.",
+      "answer": "かさ",
+      "kanji": "{傘|かさ}",
+      "distractors": [
+        "かばん",
+        "かぎ",
+        "とけい"
+      ],
+      "distractorsKanji": [
+        "かばん",
+        "かぎ",
+        "{時計|とけい}"
+      ],
+      "explanation": {
+        "correct": "傘 (かさ) nghĩa là cái ô, dù.",
+        "pitfalls": "Tránh nhầm với かばん (cặp/túi) hay かぎ (chìa khóa).",
+        "tip": "Chữ Hán 傘 có hình dáng giống cây ô mở ra."
+      }
+    },
+    {
+      "id": "l02_v008",
+      "level": "easy",
+      "context": "Thiết bị dùng để xem giờ giấc, đeo ở tay hoặc treo trên tường.",
+      "answer": "とけい",
+      "kanji": "{時計|とけい}",
+      "distractors": [
+        "テレビ",
+        "ラジオ",
+        "カメラ"
+      ],
+      "distractorsKanji": [
+        "テレビ",
+        "ラジオ",
+        "カメラ"
+      ],
+      "explanation": {
+        "correct": "時計 (とけい) nghĩa là đồng hồ.",
+        "pitfalls": "Tránh nhầm với các thiết bị điện tử như テレビ (tivi) hay カメラ (máy ảnh).",
+        "tip": "時 (THỜI) + 計 (KẾ) = đo đạc thời gian."
+      }
+    },
+    {
+      "id": "l02_v009",
+      "level": "medium",
+      "context": "Phương tiện giao thông đường bộ có bốn bánh, chạy bằng động cơ.",
+      "answer": "くるま",
+      "kanji": "{車|くるま}",
+      "distractors": [
+        "つくえ",
+        "いす",
+        "テレビ"
+      ],
+      "distractorsKanji": [
+        "{机|つくえ}",
+        "いす",
+        "テレビ"
+      ],
+      "explanation": {
+        "correct": "車 (くるま) nghĩa là ô tô, xe hơi.",
+        "pitfalls": "Tránh nhầm với đồ dùng nội thất như 机 (bàn) hay いす (ghế).",
+        "tip": "Chữ 車 hình bánh xe lăn."
+      }
+    },
+    {
+      "id": "l02_v010",
+      "level": "medium",
+      "context": "Mặt phẳng có chân dùng để đặt sách vở, làm việc hoặc học tập.",
+      "answer": "つくえ",
+      "kanji": "{机|つくえ}",
+      "distractors": [
+        "いす",
+        "くるま",
+        "テレビ"
+      ],
+      "distractorsKanji": [
+        "いす",
+        "{車|くるま}",
+        "テレビ"
+      ],
+      "explanation": {
+        "correct": "机 (つくえ) nghĩa là cái bàn.",
+        "pitfalls": "Tránh nhầm với いす (cái ghế) - vật để ngồi lên.",
+        "tip": "机 có bộ Mộc (木) vì bàn làm bằng gỗ."
+      }
+    },
+    {
+      "id": "l02_v011",
+      "level": "medium",
+      "context": "Đồ nội thất dùng để ngồi làm việc hoặc nghỉ ngơi.",
+      "answer": "いす",
+      "kanji": "いす",
+      "distractors": [
+        "つくえ",
+        "くるま",
+        "かばん"
+      ],
+      "distractorsKanji": [
+        "{机|つくえ}",
+        "{車|くるま}",
+        "かばん"
+      ],
+      "explanation": {
+        "correct": "いす nghĩa là cái ghế.",
+        "pitfalls": "Tránh nhầm với 机 (bàn) - vật đặt đồ đạc lên trên.",
+        "tip": "いす đi kèm với 机 (bàn ghế học tập)."
+      }
+    },
+    {
+      "id": "l02_v012",
+      "level": "medium",
+      "context": "Vật nhỏ bằng kim loại dùng để mở hoặc khóa cửa.",
+      "answer": "かぎ",
+      "kanji": "かぎ",
+      "distractors": [
+        "かさ",
+        "カード",
+        "とけい"
+      ],
+      "distractorsKanji": [
+        "{傘|かさ}",
+        "カード",
+        "{時計|とけい}"
+      ],
+      "explanation": {
+        "correct": "かぎ nghĩa là chìa khóa.",
+        "pitfalls": "Tránh nhầm với 傘 (ô/dù) hay カード (thẻ).",
+        "tip": "かぎ mở cửa ra vào."
+      }
+    },
+    {
+      "id": "l02_v013",
+      "level": "medium",
+      "context": "Vật dụng dùng để đựng sách vở, đồ đạc khi đi học hoặc đi làm.",
+      "answer": "かばん",
+      "kanji": "かばん",
+      "distractors": [
+        "かさ",
+        "てちょう",
+        "めいし"
+      ],
+      "distractorsKanji": [
+        "{傘|かさ}",
+        "{手帳|てちょう}",
+        "{名刺|めいし}"
+      ],
+      "explanation": {
+        "correct": "かばん nghĩa là cặp, túi xách.",
+        "pitfalls": "Tránh nhầm với 手帳 (sổ tay nhỏ bỏ túi).",
+        "tip": "かばん mang đồ đạc đi khắp nơi."
+      }
+    },
+    {
+      "id": "l02_v014",
+      "level": "medium",
+      "context": "Món quà đặc sản mua mang về tặng người thân sau chuyến đi xa.",
+      "answer": "おみやげ",
+      "kanji": "お{土産|みやげ}",
+      "distractors": [
+        "チョコレート",
+        "コーヒー",
+        "テレホンカード"
+      ],
+      "distractorsKanji": [
+        "チョコレート",
+        "コーヒー",
+        "テレホンカード"
+      ],
+      "explanation": {
+        "correct": "お土産 (おみやげ) nghĩa là quà lưu niệm/đặc sản.",
+        "pitfalls": "Tránh nhầm với đồ ăn cụ thể như チョコレート (sô-cô-la).",
+        "tip": "土 (THỔ) + 産 (SẢN) = sản vật địa phương làm quà."
+      }
+    },
+    {
+      "id": "l02_v015",
+      "level": "medium",
+      "context": "Ngôn ngữ quốc tế phổ biến được sử dụng rộng rãi trên thế giới.",
+      "answer": "えいご",
+      "kanji": "{英語|えいご}",
+      "distractors": [
+        "にほんご",
+        "じしょ",
+        "ほん"
+      ],
+      "distractorsKanji": [
+        "{日本語|にほんご}",
+        "{辞書|じしょ}",
+        "{本|ほん}"
+      ],
+      "explanation": {
+        "correct": "英語 (えいご) nghĩa là tiếng Anh.",
+        "pitfalls": "Tránh nhầm với 日本語 (tiếng Nhật) hay 辞書 (từ điển).",
+        "tip": "英 (ANH) + 語 (NGỮ) = tiếng Anh."
+      }
+    },
+    {
+      "id": "l02_v016",
+      "level": "medium",
+      "context": "Động từ dùng để phủ định lời người khác, mang nghĩa 'nhầm rồi / không đúng'.",
+      "answer": "ちがいます",
+      "kanji": "{違|ちが}います",
+      "distractors": [
+        "そうです",
+        "わかりました",
+        "おねがいします"
+      ],
+      "distractorsKanji": [
+        "そうです",
+        "わかりました",
+        "おねがいします"
+      ],
+      "explanation": {
+        "correct": "違います (ちがいます) nghĩa là không phải/nhầm rồi.",
+        "pitfalls": "Tránh nhầm với そうです (đúng vậy) dùng để khẳng định.",
+        "tip": "いいえ、違います = Không, nhầm rồi."
+      }
+    },
+    {
+      "id": "l02_v017",
+      "level": "hard",
+      "context": "Đại từ chỉ định dùng cho vật ở gần người nói.",
+      "answer": "これ",
+      "kanji": "これ",
+      "distractors": [
+        "それ",
+        "あれ",
+        "この"
+      ],
+      "distractorsKanji": [
+        "それ",
+        "あれ",
+        "この"
+      ],
+      "explanation": {
+        "correct": "これ chỉ vật gần người nói.",
+        "pitfalls": "Tránh nhầm: それ (gần người nghe), あれ (xa cả hai), この (phải đi cùng danh từ).",
+        "tip": "これ đứng độc lập làm chủ ngữ."
+      }
+    },
+    {
+      "id": "l02_v018",
+      "level": "hard",
+      "context": "Đại từ chỉ định dùng cho vật ở gần người nghe.",
+      "answer": "それ",
+      "kanji": "それ",
+      "distractors": [
+        "これ",
+        "あれ",
+        "その"
+      ],
+      "distractorsKanji": [
+        "これ",
+        "あれ",
+        "その"
+      ],
+      "explanation": {
+        "correct": "それ chỉ vật ở gần người nghe.",
+        "pitfalls": "Tránh nhầm: これ (gần người nói), あれ (xa cả hai), その (đi kèm danh từ).",
+        "tip": "Vật ở gần người nghe dùng それ."
+      }
+    },
+    {
+      "id": "l02_v019",
+      "level": "hard",
+      "context": "Định từ chỉ định đi liền trước danh từ, chỉ vật hoặc người ở xa cả người nói và người nghe.",
+      "answer": "あの",
+      "kanji": "あの",
+      "distractors": [
+        "あれ",
+        "この",
+        "その"
+      ],
+      "distractorsKanji": [
+        "あれ",
+        "この",
+        "その"
+      ],
+      "explanation": {
+        "correct": "あの + N chỉ vật/người ở xa cả hai người.",
+        "pitfalls": "Tránh nhầm: あれ đứng độc lập; この/その chỉ vị trí gần người nói/nghe.",
+        "tip": "あの + Danh từ (ví dụ: あの人, あの本)."
+      }
+    },
+    {
+      "id": "l02_v020",
+      "level": "hard",
+      "context": "Thiết bị điện tử gia dụng dùng để xem các chương trình truyền hình.",
+      "answer": "テレビ",
+      "kanji": "テレビ",
+      "distractors": [
+        "ラジオ",
+        "カメラ",
+        "コンピューター"
+      ],
+      "distractorsKanji": [
+        "ラジオ",
+        "カメラ",
+        "コンピューター"
+      ],
+      "explanation": {
+        "correct": "テレビ nghĩa là tivi/máy truyền hình.",
+        "pitfalls": "Tránh nhầm với ラジオ (đài phát thanh) hay コンピューター (máy tính).",
+        "tip": "テレビ xuất phát từ Television."
+      }
+    }
+  ],
+  "game2": [
+    {
+      "id": "l02_g001",
+      "level": "easy",
+      "sentence": "これ＿ {辞書|じしょ}です。",
+      "translation": "Đây là từ điển.",
+      "options": [
+        {
+          "text": "は"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "も"
+        },
+        {
+          "text": "か"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ は đứng sau đại từ chỉ định これ để chỉ chủ đề của câu.",
+        "pitfalls": "Trợ từ の biểu thị sở hữu; も nghĩa là 'cũng'; か dùng ở cuối câu hỏi.",
+        "tip": "Cấu trúc khẳng định cơ bản: [Chủ đề] は [Danh từ] です."
+      }
+    },
+    {
+      "id": "l02_g002",
+      "level": "easy",
+      "sentence": "それは わたし＿ {傘|かさ}です。",
+      "translation": "Đó là cái ô của tôi.",
+      "options": [
+        {
+          "text": "の"
+        },
+        {
+          "text": "は"
+        },
+        {
+          "text": "も"
+        },
+        {
+          "text": "か"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ の nối hai danh từ biểu thị mối quan hệ sở hữu: N1 の N2 (N2 của N1).",
+        "pitfalls": "Trợ từ は chỉ chủ đề; も nghĩa là 'cũng'; か tạo câu hỏi.",
+        "tip": "N1 の N2 = N2 của N1."
+      }
+    },
+    {
+      "id": "l02_g003",
+      "level": "easy",
+      "sentence": "この {本|ほん}は わたし＿です。",
+      "translation": "Cuốn sách này là của tôi.",
+      "options": [
+        {
+          "text": "の"
+        },
+        {
+          "text": "は"
+        },
+        {
+          "text": "も"
+        },
+        {
+          "text": "か"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ の thay thế cho danh từ N2 (本) đã được đề cập trước đó.",
+        "pitfalls": "Không đặt は hay も trực tiếp trước です trong trường hợp biểu thị sở hữu này.",
+        "tip": "[Danh từ] + の = cái của [Danh từ]."
+      }
+    },
+    {
+      "id": "l02_g004",
+      "level": "easy",
+      "sentence": "＿は {辞書|じしょ}です。",
+      "translation": "Đây là từ điển.",
+      "options": [
+        {
+          "text": "これ",
+          "kanji": "これ"
+        },
+        {
+          "text": "この",
+          "kanji": "この"
+        },
+        {
+          "text": "それ",
+          "kanji": "それ"
+        },
+        {
+          "text": "その",
+          "kanji": "その"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "これ là đại từ chỉ định đứng độc lập làm chủ ngữ, chỉ vật ở gần người nói.",
+        "pitfalls": "この/その phải đi liền trước danh từ (ví dụ: この本), không đi trực tiếp với は.",
+        "tip": "これ/それ/あれ đứng độc lập làm chủ ngữ trước は."
+      }
+    },
+    {
+      "id": "l02_g005",
+      "level": "easy",
+      "sentence": "＿ {本|ほん}は わたしのです。",
+      "translation": "Cuốn sách này là của tôi.",
+      "options": [
+        {
+          "text": "この",
+          "kanji": "この"
+        },
+        {
+          "text": "これ",
+          "kanji": "これ"
+        },
+        {
+          "text": "その",
+          "kanji": "その"
+        },
+        {
+          "text": "それ",
+          "kanji": "それ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "この là định từ chỉ định đi liền trước danh từ (この + N), chỉ vật ở gần người nói.",
+        "pitfalls": "これ là đại từ độc lập, không bổ nghĩa trực tiếp cho danh từ đằng sau.",
+        "tip": "この / その / あの + Danh từ."
+      }
+    },
+    {
+      "id": "l02_g006",
+      "level": "easy",
+      "sentence": "「これは ボールペンですか。」「はい、＿です。」",
+      "translation": "「Đây là bút bi phải không?」「Vâng, đúng vậy.」",
+      "options": [
+        {
+          "text": "そう"
+        },
+        {
+          "text": "これ"
+        },
+        {
+          "text": "それ"
+        },
+        {
+          "text": "なん",
+          "kanji": "{何|なん}"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Cụm 「はい、そうです」 dùng để xác nhận câu hỏi danh từ là đúng.",
+        "pitfalls": "Không trả lời 'はい、これです' khi muốn nói 'đúng rồi'.",
+        "tip": "Xác nhận đúng thông tin: はい、そうです."
+      }
+    },
+    {
+      "id": "l02_g007",
+      "level": "easy",
+      "sentence": "あれは ＿の かばんですか。",
+      "translation": "Kìa là cái cặp của ai?",
+      "options": [
+        {
+          "text": "だれ"
+        },
+        {
+          "text": "なん",
+          "kanji": "{何|なん}"
+        },
+        {
+          "text": "どれ"
+        },
+        {
+          "text": "どこ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Từ nghi vấn だれ (ai) kết hợp với の dùng để hỏi về người sở hữu.",
+        "pitfalls": "何 (cái gì) hỏi vật; どこ (ở đâu) hỏi địa điểm.",
+        "tip": "だれ の N = N của ai."
+      }
+    },
+    {
+      "id": "l02_g008",
+      "level": "easy",
+      "sentence": "それは ＿の {雑誌|ざっし}ですか。",
+      "translation": "Đó là tạp chí về cái gì?",
+      "options": [
+        {
+          "text": "なん",
+          "kanji": "{何|なん}"
+        },
+        {
+          "text": "だれ"
+        },
+        {
+          "text": "どれ"
+        },
+        {
+          "text": "どこ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Từ nghi vấn 何 (なん) trong cấu trúc 「何の N」 dùng để hỏi về chủ đề/nội dung của N.",
+        "pitfalls": "だれ hỏi người sở hữu; どこ hỏi xuất xứ/nơi chốn.",
+        "tip": "何 の N = N về nội dung/chủ đề gì."
+      }
+    },
+    {
+      "id": "l02_g009",
+      "level": "medium",
+      "sentence": "「それは ノートですか。」「いいえ、＿。」",
+      "translation": "「Đó là cuốn vở phải không?」「Không, nhầm rồi.」",
+      "options": [
+        {
+          "text": "ちがいます",
+          "kanji": "{違|ちが}います"
+        },
+        {
+          "text": "そうです"
+        },
+        {
+          "text": "そうじゃありませんです"
+        },
+        {
+          "text": "ちがいたいです"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Cụm 「いいえ、違います」 dùng để phủ định trực tiếp thông tin trong câu hỏi danh từ.",
+        "pitfalls": "Tránh nhầm với そうです (dùng để khẳng định). Không có dạng 'そうじゃありませんです'.",
+        "tip": "Phủ định ngắn gọn và tự nhiên: いいえ、違います."
+      }
+    },
+    {
+      "id": "l02_g010",
+      "level": "medium",
+      "sentence": "A:「＿は {何|なん}ですか。」 B:「名刺です。」（vật A hỏi đang ở gần tay B）",
+      "translation": "A: 「Cái đó là cái gì?」 B: 「Là danh thiếp.」",
+      "options": [
+        {
+          "text": "それ"
+        },
+        {
+          "text": "これ"
+        },
+        {
+          "text": "あれ"
+        },
+        {
+          "text": "その"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi vật ở gần người nghe (B), người nói (A) dùng Đại từ それ để hỏi.",
+        "pitfalls": "Không dùng これ vì vật ở xa người nói A.",
+        "tip": "Vật ở gần người nghe -> người nói dùng それ."
+      }
+    },
+    {
+      "id": "l02_g011",
+      "level": "medium",
+      "sentence": "＿ {時計|とけい}は {田中|たなか}さんのです。（vật ở xa cả 2 người）",
+      "translation": "Cái đồng hồ kìa là của anh Tanaka.",
+      "options": [
+        {
+          "text": "あの"
+        },
+        {
+          "text": "あれ"
+        },
+        {
+          "text": "その"
+        },
+        {
+          "text": "それ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Định từ あの đi liền trước danh từ (あの + N) để chỉ vật ở xa cả người nói và người nghe.",
+        "pitfalls": "あれ là đại từ đứng độc lập, không đi trực tiếp trước danh từ 時計.",
+        "tip": "あの + Danh từ (chỉ vật ở xa cả hai người)."
+      }
+    },
+    {
+      "id": "l02_g012",
+      "level": "medium",
+      "sentence": "「これは 『9』ですか、『7』ですか。」「＿」",
+      "translation": "「Đây là số 9 hay số 7?」「Là số 9.」",
+      "options": [
+        {
+          "text": "「9」です"
+        },
+        {
+          "text": "はい、「9」です"
+        },
+        {
+          "text": "いいえ、「9」です"
+        },
+        {
+          "text": "そうです、「9」です"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Câu hỏi lựa chọn (N1ですか、N2ですか) trả lời thẳng vào lựa chọn, không dùng はい hay いいえ.",
+        "pitfalls": "Không thêm はい hoặc いいえ ở đầu câu trả lời lựa chọn.",
+        "tip": "Câu hỏi lựa chọn: Bỏ はい/いいえ, trả lời thẳng lựa chọn."
+      }
+    },
+    {
+      "id": "l02_g013",
+      "level": "medium",
+      "sentence": "「これは ミラーさんのですか。」「いいえ、わたし＿じゃ ありません。」",
+      "translation": "「Đây là cái của anh Miller phải không?」「Không, không phải cái của tôi.」",
+      "options": [
+        {
+          "text": "の"
+        },
+        {
+          "text": "は"
+        },
+        {
+          "text": "も"
+        },
+        {
+          "text": "か"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Cụm 「わたし の」 (cái của tôi) + じゃ ありません tạo thành câu phủ định sở hữu.",
+        "pitfalls": "Nếu chỉ điền は sẽ thành 'わたしじゃ ありません' (tôi không phải là...), sai nghĩa.",
+        "tip": "N の + じゃ ありません = Không phải cái của N."
+      }
+    },
+    {
+      "id": "l02_g014",
+      "level": "medium",
+      "sentence": "これは コンピューター＿ {雑誌|ざっし}です。",
+      "translation": "Đây là tạp chí về máy tính.",
+      "options": [
+        {
+          "text": "の"
+        },
+        {
+          "text": "は"
+        },
+        {
+          "text": "も"
+        },
+        {
+          "text": "か"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Trợ từ の dùng để nối hai danh từ, trong đó N1 (コンピューター) biểu thị nội dung/chủ đề của N2 (雑誌).",
+        "pitfalls": "Tránh nhầm trợ từ の biểu thị nội dung với の biểu thị sở hữu.",
+        "tip": "N1 (nội dung) + の + N2 (loại sách/báo)."
+      }
+    },
+    {
+      "id": "l02_g015",
+      "level": "medium",
+      "sentence": "A:「＿は わたしのかぎです。」（A đang cầm trên tay） B:「そうですか。」",
+      "translation": "A: 「Đây là chìa khóa của tôi.」 B: 「Thế à.」",
+      "options": [
+        {
+          "text": "これ"
+        },
+        {
+          "text": "それ"
+        },
+        {
+          "text": "あれ"
+        },
+        {
+          "text": "この"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Đại từ これ dùng để chỉ vật ở gần người nói A.",
+        "pitfalls": "Không dùng この vì đằng sau là trợ từ は, không có danh từ.",
+        "tip": "Vật gần người nói -> dùng これ làm chủ ngữ."
+      }
+    },
+    {
+      "id": "l02_g016",
+      "level": "medium",
+      "sentence": "この かぎは ＿ですか。……わたしのです。",
+      "translation": "Chìa khóa này là của ai? ……Là của tôi.",
+      "options": [
+        {
+          "text": "だれの"
+        },
+        {
+          "text": "だれ"
+        },
+        {
+          "text": "なんの",
+          "kanji": "{何|なん}の"
+        },
+        {
+          "text": "どれの"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Cấu trúc 「N は だれの ですか」 dùng để hỏi N thuộc sở hữu của ai.",
+        "pitfalls": "Nếu chỉ chọn だれ thì câu thành 'chìa khóa này là ai?', sai nghĩa.",
+        "tip": "Hỏi chủ sở hữu: [Danh từ] は だれの ですか."
+      }
+    },
+    {
+      "id": "l02_g017",
+      "level": "hard",
+      "sentence": "「ミラーさんは IMCの {社員|しゃいん}ですか。」「はい、IMCの ＿です。」",
+      "translation": "「Anh Miller là nhân viên công ty IMC phải không?」「Vâng, là nhân viên IMC.」",
+      "options": [
+        {
+          "text": "しゃいん",
+          "kanji": "{社員|しゃいん}"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "ひと",
+          "kanji": "{人|ひと}"
+        },
+        {
+          "text": "もの",
+          "kanji": "{物|もの}"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi N2 là danh từ chỉ người (社員), KHÔNG được lược bỏ N2 thành 'IMC のです' mà phải giữ nguyên N2.",
+        "pitfalls": "Tuyệt đối không dùng の thay thế danh từ khi N2 chỉ người.",
+        "tip": "N2 chỉ người -> KHÔNG rút gọn thành N1の."
+      }
+    },
+    {
+      "id": "l02_g018",
+      "level": "hard",
+      "sentence": "「これから お{世話|せわ}に なります。」「＿ よろしく お{願|ねが}いします。」",
+      "translation": "「Từ nay mong được giúp đỡ.」「Chính tôi mới mong được giúp đỡ.」",
+      "options": [
+        {
+          "text": "こちらこそ"
+        },
+        {
+          "text": "どうぞ"
+        },
+        {
+          "text": "はじめまして"
+        },
+        {
+          "text": "どうも"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Cụm 「こちらこそ」 (chính tôi mới là người...) dùng để đáp lại lời chào hỏi giao tiếp lịch sự.",
+        "pitfalls": "Tránh nhầm với どうぞ (xin mời) hay はじめまして (chào lần đầu).",
+        "tip": "Đáp lại lời chào/nhờ vả lịch sự: こちらこそ."
+      }
+    },
+    {
+      "id": "l02_g019",
+      "level": "hard",
+      "sentence": "A:「＿ {本|ほん}は あなたのですか。」（A chỉ cuốn sách ở bàn B） B:「いいえ、わたしのではありません。」",
+      "translation": "A: 「Cuốn sách đó là của bạn phải không?」 B: 「Không, không phải của tôi.」",
+      "options": [
+        {
+          "text": "その"
+        },
+        {
+          "text": "この"
+        },
+        {
+          "text": "それ"
+        },
+        {
+          "text": "これ"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Cuốn sách nằm ở bàn người B (xa A, gần B) nên A dùng Định từ その đi liền trước danh từ 本.",
+        "pitfalls": "Không dùng それ vì có danh từ 本 đi ngay sau.",
+        "tip": "Gần người nghe + Danh từ -> dùng その + N."
+      }
+    },
+    {
+      "id": "l02_g020",
+      "level": "hard",
+      "sentence": "それは わたし＿ {日本語|にほんご}の {本|ほん}です。",
+      "translation": "Đó là cuốn sách tiếng Nhật của tôi.",
+      "options": [
+        {
+          "text": "の"
+        },
+        {
+          "text": "は"
+        },
+        {
+          "text": "も"
+        },
+        {
+          "text": "か"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Có thể dùng nhiều trợ từ の để ghép các danh từ bổ nghĩa: わたし の 日本語 の 本 (sách tiếng Nhật của tôi).",
+        "pitfalls": "Không chèn は vào giữa chuỗi danh từ bổ nghĩa.",
+        "tip": "Nối chuỗi danh từ bổ nghĩa: N1 の N2 の N3."
+      }
+    }
+  ],
+  "game3": [
+    {
+      "id": "l02_s001",
+      "level": "easy",
+      "vietnamese": "Cái này là từ điển.",
+      "acceptableOrders": [
+        [
+          "これ は",
+          "じしょ です"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "これ は",
+          "kanji": "これ は"
+        },
+        {
+          "text": "じしょ です",
+          "kanji": "{辞書|じしょ} です"
+        },
+        {
+          "text": "それ は",
+          "kanji": "それ は"
+        }
+      ],
+      "explanation": {
+        "correct": "Chủ ngữ chỉ vật ở gần người nói là これ は, kết hợp với vị ngữ 辞書 です.",
+        "pitfalls": "Không dùng それ は vì đề bài chỉ 'Cái này' (vật gần người nói).",
+        "tip": "Cái này = これ, Cái đó = それ, Cái kìa = あれ."
+      }
+    },
+    {
+      "id": "l02_s002",
+      "level": "easy",
+      "vietnamese": "Cái đó là cái ô của tôi.",
+      "acceptableOrders": [
+        [
+          "それ は",
+          "わたし の",
+          "かさ です"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "それ は",
+          "kanji": "それ は"
+        },
+        {
+          "text": "わたし の",
+          "kanji": "わたし の"
+        },
+        {
+          "text": "かさ です",
+          "kanji": "{傘|かさ} です"
+        },
+        {
+          "text": "これ は",
+          "kanji": "これ は"
+        }
+      ],
+      "explanation": {
+        "correct": "Trật tự câu: [Đại từ chỉ định] は + [Người sở hữu] の + [Vật] です.",
+        "pitfalls": "Không nhầm それ (cái đó) với これ (cái này).",
+        "tip": "N1 の N2 = N2 của N1 (わたし の 傘 = ô của tôi)."
+      }
+    },
+    {
+      "id": "l02_s003",
+      "level": "easy",
+      "vietnamese": "Cuốn sách này là của tôi.",
+      "acceptableOrders": [
+        [
+          "この ほん は",
+          "わたし の です"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "この ほん は",
+          "kanji": "この {本|ほん} は"
+        },
+        {
+          "text": "わたし の です",
+          "kanji": "わたし の です"
+        },
+        {
+          "text": "これ ほん は",
+          "kanji": "これ {本|ほん} は"
+        }
+      ],
+      "explanation": {
+        "correct": "Định từ この phải đi liền trước danh từ (この 本 は), đằng sau lược bỏ danh từ thành わたし の です.",
+        "pitfalls": "Không ghép 'これ 本', phải dùng 'この 本'.",
+        "tip": "この + Danh từ = [Danh từ] này."
+      }
+    },
+    {
+      "id": "l02_s004",
+      "level": "easy",
+      "vietnamese": "Cái kìa là chìa khóa.",
+      "acceptableOrders": [
+        [
+          "あれ は",
+          "かぎ です"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "あれ は",
+          "kanji": "あれ は"
+        },
+        {
+          "text": "かぎ です",
+          "kanji": "かぎ です"
+        },
+        {
+          "text": "あの は",
+          "kanji": "あの は"
+        }
+      ],
+      "explanation": {
+        "correct": "Đại từ chỉ định あれ đứng độc lập chỉ vật ở xa cả người nói và người nghe.",
+        "pitfalls": "Tránh nhầm あの (định từ đi với danh từ) với あれ (đại từ đứng độc lập).",
+        "tip": "あれ đứng trước trợ từ は."
+      }
+    },
+    {
+      "id": "l02_s005",
+      "level": "easy",
+      "vietnamese": "Cái đó là danh thiếp.",
+      "acceptableOrders": [
+        [
+          "それ は",
+          "めいし です"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "それ は",
+          "kanji": "それ は"
+        },
+        {
+          "text": "めいし です",
+          "kanji": "{名刺|めいし} です"
+        },
+        {
+          "text": "てちょう です",
+          "kanji": "{手帳|てちょう} です"
+        }
+      ],
+      "explanation": {
+        "correct": "Cấu trúc: それ は + 名刺 です (Đó là danh thiếp).",
+        "pitfalls": "Không chọn 手帳 (sổ tay) vì đề bài yêu cầu 'danh thiếp'.",
+        "tip": "名刺 (めいし) = danh thiếp."
+      }
+    },
+    {
+      "id": "l02_s006",
+      "level": "medium",
+      "vietnamese": "Kia là cái cặp của ai?",
+      "acceptableOrders": [
+        [
+          "あれ は",
+          "だれ の",
+          "かばん です か"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "あれ は",
+          "kanji": "あれ は"
+        },
+        {
+          "text": "だれ の",
+          "kanji": "だれ の"
+        },
+        {
+          "text": "かばん です か",
+          "kanji": "かばん です か"
+        },
+        {
+          "text": "なん の",
+          "kanji": "{何|なん} の"
+        }
+      ],
+      "explanation": {
+        "correct": "Từ nghi vấn だれ (ai) kết hợp với の để hỏi về quyền sở hữu (của ai).",
+        "pitfalls": "Tránh chọn 何 の (về cái gì) làm sai nghĩa câu hỏi người sở hữu.",
+        "tip": "だれ の N = N của ai."
+      }
+    },
+    {
+      "id": "l02_s007",
+      "level": "medium",
+      "vietnamese": "Đó là tạp chí về cái gì?",
+      "acceptableOrders": [
+        [
+          "それ は",
+          "なん の",
+          "ざっし です か"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "それ は",
+          "kanji": "それ は"
+        },
+        {
+          "text": "なん の",
+          "kanji": "{何|なん} の"
+        },
+        {
+          "text": "ざっし です か",
+          "kanji": "{雑誌|ざっし} です か"
+        },
+        {
+          "text": "だれ の",
+          "kanji": "だれ の"
+        }
+      ],
+      "explanation": {
+        "correct": "Cụm 何 の + N dùng để hỏi về nội dung hoặc chủ đề của danh từ.",
+        "pitfalls": "Tránh nhầm với だれ の (hỏi về người sở hữu).",
+        "tip": "何 の 雑誌 = tạp chí (nội dung) gì."
+      }
+    },
+    {
+      "id": "l02_s008",
+      "level": "medium",
+      "vietnamese": "Chìa khóa này là của ai?",
+      "acceptableOrders": [
+        [
+          "この かぎ は",
+          "だれ の",
+          "です か"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "この かぎ は",
+          "kanji": "この かぎ は"
+        },
+        {
+          "text": "だれ の",
+          "kanji": "だれ の"
+        },
+        {
+          "text": "です か",
+          "kanji": "です か"
+        },
+        {
+          "text": "これ かぎ は",
+          "kanji": "これ かぎ は"
+        }
+      ],
+      "explanation": {
+        "correct": "Trật tự câu hỏi sở hữu rút gọn: [Định từ + N] は だれ の です か.",
+        "pitfalls": "Không dùng 'これ かぎ は', phải dùng 'この かぎ は'.",
+        "tip": "N は だれ の ですか = N là của ai?"
+      }
+    },
+    {
+      "id": "l02_s009",
+      "level": "medium",
+      "vietnamese": "Cái này là số '9' hay số '7'?",
+      "acceptableOrders": [
+        [
+          "これ は",
+          "「9」です か、",
+          "「7」です か"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "これ は",
+          "kanji": "これ は"
+        },
+        {
+          "text": "「9」です か、",
+          "kanji": "「9」です か、"
+        },
+        {
+          "text": "「7」です か",
+          "kanji": "「7」です か"
+        },
+        {
+          "text": "それ は",
+          "kanji": "それ は"
+        }
+      ],
+      "explanation": {
+        "correct": "Câu hỏi lựa chọn ghép hai câu hỏi đơn lại với nhau: N1 ですか、N2 ですか.",
+        "pitfalls": "Không đặt はい/いいえ khi trả lời loại câu hỏi lựa chọn này.",
+        "tip": "Câu hỏi lựa chọn: [A] ですか、[B] ですか."
+      }
+    },
+    {
+      "id": "l02_s010",
+      "level": "medium",
+      "vietnamese": "Cái đó là tạp chí máy tính.",
+      "acceptableOrders": [
+        [
+          "それ は",
+          "コンピューター の",
+          "ざっし です"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "それ は",
+          "kanji": "それ は"
+        },
+        {
+          "text": "コンピューター の",
+          "kanji": "コンピューター の"
+        },
+        {
+          "text": "ざっし です",
+          "kanji": "{雑誌|ざっし} です"
+        },
+        {
+          "text": "カメラ の",
+          "kanji": "カメラ の"
+        }
+      ],
+      "explanation": {
+        "correct": "Trợ từ の nối danh từ chỉ chủ đề/nội dung (コンピューター) với danh từ chính (雑誌).",
+        "pitfalls": "Tránh chọn カメラ (máy ảnh) vì sai nghĩa chủ đề đề bài yêu cầu.",
+        "tip": "N1 (chủ đề) の N2 (loại sách/tạp chí)."
+      }
+    },
+    {
+      "id": "l02_s011",
+      "level": "hard",
+      "vietnamese": "Chiếc chìa khóa này không phải của tôi.",
+      "acceptableOrders": [
+        [
+          "この かぎ は",
+          "わたし の",
+          "じゃ ありません"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "この かぎ は",
+          "kanji": "この かぎ は"
+        },
+        {
+          "text": "わたし の",
+          "kanji": "わたし の"
+        },
+        {
+          "text": "じゃ ありません",
+          "kanji": "じゃ ありません"
+        },
+        {
+          "text": "です",
+          "kanji": "です"
+        },
+        {
+          "text": "これ かぎ は",
+          "kanji": "これ かぎ は"
+        }
+      ],
+      "explanation": {
+        "correct": "Phủ định của N の です (cái của N) là N の じゃ ありません.",
+        "pitfalls": "Không dùng です trong câu phủ định (dùng じゃ ありません).",
+        "tip": "Phủ định sở hữu: N の じゃ ありません."
+      }
+    },
+    {
+      "id": "l02_s012",
+      "level": "hard",
+      "vietnamese": "Đó là cuốn sách tiếng Anh của tôi.",
+      "acceptableOrders": [
+        [
+          "それ は",
+          "わたし の",
+          "えいご の",
+          "ほん です"
+        ]
+      ],
+      "blocks": [
+        {
+          "text": "それ は",
+          "kanji": "それ は"
+        },
+        {
+          "text": "わたし の",
+          "kanji": "わたし の"
+        },
+        {
+          "text": "えいご の",
+          "kanji": "{英語|えいご} の"
+        },
+        {
+          "text": "ほん です",
+          "kanji": "{本|ほん} です"
+        },
+        {
+          "text": "この",
+          "kanji": "この"
+        }
+      ],
+      "explanation": {
+        "correct": "Có thể dùng liên tiếp nhiều trợ từ の để bổ nghĩa: [Người] の [Chủ đề] の [Sách].",
+        "pitfalls": "Chú ý thứ tự: わたし の (của tôi) trước, えいご の (tiếng Anh) sau.",
+        "tip": "Xâu chuỗi bổ nghĩa: N1 の N2 の N3."
+      }
+    }
+  ],
+  "game4": [
+    {
+      "id": "l02_c001",
+      "level": "easy",
+      "speaker": "👤 山田さん",
+      "question": "「はい。どなたですか。」",
+      "questionAudioText": "はい。どなたですか。",
+      "options": [
+        {
+          "text": "408の サントスです",
+          "kanji": "408の サントスです"
+        },
+        {
+          "text": "これから お世話になります",
+          "kanji": "これから お{世話|せわ}に なります"
+        },
+        {
+          "text": "いいえ、違います",
+          "kanji": "いいえ、{違|ちが}います"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi chủ nhà hỏi 'Ai đấy?', người gọi cửa cần xưng phòng và tên mình (408の サントスです).",
+        "pitfalls": "Tránh dùng ngay câu chào 'これから お世話になります' khi chủ nhà chưa mở cửa/chưa biết là ai.",
+        "tip": "Trả lời khi gõ cửa: [Số phòng] の [Tên] です."
+      }
+    },
+    {
+      "id": "l02_c002",
+      "level": "easy",
+      "speaker": "👤 サントスさん",
+      "question": "「こんにちは。サントスです。これから お{世話|せわ}に なります。」",
+      "questionAudioText": "こんにちは。サントスです。これから おせわになります。",
+      "options": [
+        {
+          "text": "こちらこそ よろしく お願いします",
+          "kanji": "こちらこそ よろしく お{願|ねが}い します"
+        },
+        {
+          "text": "はい、そうです",
+          "kanji": "はい、そうです"
+        },
+        {
+          "text": "どうも ありがとうございます",
+          "kanji": "どうも ありがとうございます"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Đáp lại lời chào hàng xóm mới 'Từ nay mong được giúp đỡ' bằng 'Chính tôi mới mong được anh giúp đỡ'.",
+        "pitfalls": "Không dùng 'はい、そうです' (Đúng vậy) vì đây không phải câu hỏi xác nhận.",
+        "tip": "Đáp lại お世話になります -> こちらこそ よろしく."
+      }
+    },
+    {
+      "id": "l02_c003",
+      "level": "easy",
+      "speaker": "👤 サントスさん",
+      "question": "「あのう、これ、コーヒーです。どうぞ。」",
+      "questionAudioText": "あのう、これ、コーヒーです。どうぞ。",
+      "options": [
+        {
+          "text": "どうも ありがとうございます",
+          "kanji": "どうも ありがとうございます"
+        },
+        {
+          "text": "いいえ、違います",
+          "kanji": "いいえ、{違|ちが}います"
+        },
+        {
+          "text": "こちらこそ よろしく",
+          "kanji": "こちらこそ よろしく"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi đối phương tặng quà và nói 'Xin mời' (どうぞ), đáp lại lịch sự bằng câu cảm ơn.",
+        "pitfalls": "Tránh dùng 'いいえ、違います' (Không, nhầm rồi) gây bất lịch sự khi nhận quà.",
+        "tip": "Nhận quà -> Cảm ơn: どうも ありがとうございます."
+      }
+    },
+    {
+      "id": "l02_c004",
+      "level": "easy",
+      "speaker": "👤 佐藤さん",
+      "question": "「これは ボールペンですか。」",
+      "questionAudioText": "これは ボールペンですか。",
+      "options": [
+        {
+          "text": "はい、そうです",
+          "kanji": "はい、そうです"
+        },
+        {
+          "text": "はい、違います",
+          "kanji": "はい、{違|ちが}います"
+        },
+        {
+          "text": "いいえ、そうです",
+          "kanji": "いいえ、そうです"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi thông tin câu hỏi danh từ là đúng, trả lời đồng nhất 'はい、そうです' (Vâng, đúng vậy).",
+        "pitfalls": "Tuyệt đối không kết hợp 'はい' với '違います' hoặc 'いいえ' với 'そうです'.",
+        "tip": "Khẳng định: はい、そうです."
+      }
+    },
+    {
+      "id": "l02_c005",
+      "level": "easy",
+      "speaker": "👤 佐藤さん",
+      "question": "「それは ノートですか。」",
+      "questionAudioText": "それは ノートですか。",
+      "options": [
+        {
+          "text": "いいえ、手帳です",
+          "kanji": "いいえ、{手帳|てちょう}です"
+        },
+        {
+          "text": "はい、そうです",
+          "kanji": "はい、そうです"
+        },
+        {
+          "text": "いいえ、ノートです",
+          "kanji": "いいえ、ノートです"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi phủ định (đó không phải vở mà là sổ tay), trả lời 'いいえ' kèm danh từ đúng (手帳です).",
+        "pitfalls": "Tránh trả lời 'いいえ、ノートです' vì câu này mâu thuẫn (vừa phủ định vừa bảo là vở).",
+        "tip": "Phủ định và đính chính: いいえ、[Tên vật đúng] です."
+      }
+    },
+    {
+      "id": "l02_c006",
+      "level": "medium",
+      "speaker": "👤 ミラーさん",
+      "question": "「それは {何|なん}ですか。」",
+      "questionAudioText": "それは なんですか。",
+      "options": [
+        {
+          "text": "名刺です",
+          "kanji": "{名刺|めいし}です"
+        },
+        {
+          "text": "はい、そうです",
+          "kanji": "はい、そうです"
+        },
+        {
+          "text": "いいえ、違います",
+          "kanji": "いいえ、{違|ちが}います"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Câu hỏi có từ nghi vấn 何 (cái gì) phải trả lời trực tiếp bằng danh từ, KHÔNG dùng はい/いいえ.",
+        "pitfalls": "Không bắt đầu bằng はい hay いいえ khi đối phương hỏi 'Cái gì?'.",
+        "tip": "Câu hỏi 何 (cái gì) -> Trả lời thẳng tên vật."
+      }
+    },
+    {
+      "id": "l02_c007",
+      "level": "medium",
+      "speaker": "👤 ワットさん",
+      "question": "「それは {何|なん}の {雑誌|ざっし}ですか。」",
+      "questionAudioText": "それは なんの ざっしですか。",
+      "options": [
+        {
+          "text": "コンピューターの 雑誌です",
+          "kanji": "コンピューターの {雑誌|ざっし}です"
+        },
+        {
+          "text": "わたしのです",
+          "kanji": "わたしのです"
+        },
+        {
+          "text": "佐藤さんのです",
+          "kanji": "{佐藤|さとう}さんのです"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi 「何の 雑誌」 (tạp chí về cái gì) phải trả lời về chủ đề/nội dung (コンピューターの 雑誌).",
+        "pitfalls": "Tránh chọn 'わたしのです' hay '佐藤さんのです' vì đó là câu trả lời cho câu hỏi chủ sở hữu (だれの).",
+        "tip": "何の N -> Trả lời [Nội dung] の N."
+      }
+    },
+    {
+      "id": "l02_c008",
+      "level": "medium",
+      "speaker": "👤 カリナさん",
+      "question": "「あれは だれの かばんですか。」",
+      "questionAudioText": "あれは だれの かばんですか。",
+      "options": [
+        {
+          "text": "佐藤さんの かばんです",
+          "kanji": "{佐藤|さとう}さんの かばんです"
+        },
+        {
+          "text": "カメラの かばんです",
+          "kanji": "カメラの かばんです"
+        },
+        {
+          "text": "はい、佐藤さんのです",
+          "kanji": "はい、{佐藤|さとう}さんのです"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi 「だれの」 (của ai) trả lời bằng tên người + さんの (佐藤さんの かばんです).",
+        "pitfalls": "Không trả lời bằng はい/いいえ vì câu hỏi có từ nghi vấn だれ.",
+        "tip": "だれの N -> Trả lời [Tên người] さんの N."
+      }
+    },
+    {
+      "id": "l02_c009",
+      "level": "medium",
+      "speaker": "👤 山田さん",
+      "question": "「これは ミラーさんのですか。」",
+      "questionAudioText": "これは ミラーさんのですか。",
+      "options": [
+        {
+          "text": "いいえ、わたしのじゃ ありません",
+          "kanji": "いいえ、わたしのじゃ ありません"
+        },
+        {
+          "text": "いいえ、ミラーさんじゃ ありません",
+          "kanji": "いいえ、ミラーさんじゃ ありません"
+        },
+        {
+          "text": "はい、ミラーさんです",
+          "kanji": "はい、ミラーさんです"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Phủ định câu hỏi sở hữu: 'Không, không phải cái của tôi' (いいえ、わたしのじゃ ありません).",
+        "pitfalls": "Tránh chọn 'ミラーさんじゃ ありません' (Không phải là anh Miller) vì sai đối tượng (đang hỏi cái vật, không hỏi người).",
+        "tip": "Phủ định sở hữu: [Người] の じゃ ありません."
+      }
+    },
+    {
+      "id": "l02_c010",
+      "level": "medium",
+      "speaker": "👤 ワンさん",
+      "question": "「この かぎは だれのですか。」",
+      "questionAudioText": "この かぎは だれのですか。",
+      "options": [
+        {
+          "text": "わたしのです",
+          "kanji": "わたしのです"
+        },
+        {
+          "text": "車のかぎです",
+          "kanji": "{車|くるま}のかぎです"
+        },
+        {
+          "text": "いいえ、違います",
+          "kanji": "いいえ、{違|ちが}います"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Hỏi 'Chìa khóa này là của ai?', trả lời dạng rút gọn bằng tên người + のです (わたしのです).",
+        "pitfalls": "Tránh nhầm với câu hỏi công dụng/loại chìa khóa (車のかぎです).",
+        "tip": "だれのですか -> [Người] のです."
+      }
+    },
+    {
+      "id": "l02_c011",
+      "level": "hard",
+      "speaker": "👤 先生",
+      "question": "「これは 『9』ですか、『7』ですか。」",
+      "questionAudioText": "これは 9ですか、7ですか。",
+      "options": [
+        {
+          "text": "「9」です",
+          "kanji": "「9」です"
+        },
+        {
+          "text": "はい、「9」です",
+          "kanji": "はい、「9」です"
+        },
+        {
+          "text": "いいえ、「7」です",
+          "kanji": "いいえ、「7」です"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Câu hỏi lựa chọn [A]ですか、[B]ですか phải chọn thẳng 1 trong 2 phương án, KHÔNG dùng はい/いいえ.",
+        "pitfalls": "Tuyệt đối không chèn はい hay いいえ ở đầu câu trả lời lựa chọn.",
+        "tip": "Câu hỏi lựa chọn: Bỏ はい/いいえ, trả lời thẳng lựa chọn."
+      }
+    },
+    {
+      "id": "l02_c012",
+      "level": "hard",
+      "speaker": "👤 友達",
+      "question": "「これは {英語|えいご}の {本|ほん}ですよ。」",
+      "questionAudioText": "これは えいごの ほんですよ。",
+      "options": [
+        {
+          "text": "そうですか",
+          "kanji": "そうですか"
+        },
+        {
+          "text": "はい、そうですか",
+          "kanji": "はい、そうですか"
+        },
+        {
+          "text": "いいえ、違いますか",
+          "kanji": "いいえ、{違|ちが}いますか"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "Khi đối phương cung cấp thông tin mới (có trợ từ よ ở cuối), tiếp nhận thông tin bằng 'Thế à / Vậy sao' (そうですか).",
+        "pitfalls": "Không nói 'はい、そうですか' hay 'いいえ、違いますか' vì thừa từ/sai ngữ pháp tiếp nhận.",
+        "tip": "Tiếp nhận thông tin mới: そうですか (xuống giọng)."
+      }
+    }
+  ]
+}

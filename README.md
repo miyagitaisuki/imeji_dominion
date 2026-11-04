@@ -64,11 +64,28 @@ Khi thêm bài mới: tạo `data/minna/NN.json`, tạo `minna/NN.html` (copy t�
 
 ## Trạng thái các trang
 
-Đã dùng engine và dữ liệu JSON chung: `minna/3`, `9`, `11`–`21`.
+Tất cả 21 bài Minna (`minna/1`–`21`) dùng engine chung `assets/js/engine.js` và dữ liệu `data/minna/NN.json`. Mỗi trang chỉ là khung HTML mỏng (~8KB) trỏ tới file JSON của bài. Khóa lưu tiến độ trong trình duyệt (`mnn_lNN_highscore`, `mnn_lNN_mistakes`) giữ nguyên nên người học không mất điểm cao và danh sách câu hay sai.
 
-Chưa chuyển, vì engine khác nhau (cần quyết định trước khi gộp):
+Ngoại lệ: `nhap-mon/6` là game nối Romaji ⇄ Hiragana, khác hẳn kiểu bài của Minna nên giữ riêng.
 
-- `minna/1`, `2`, `4`, `6`: engine cũ hơn, khác vài tính năng.
-- `minna/5`: không có vùng dữ liệu theo mẫu, cấu trúc khác.
-- `minna/7`, `8`, `10`: engine khác hẳn.
-- `nhap-mon/6`: game nối chữ nhập môn, không dùng engine Minna.
+## Kiểm tra dữ liệu bài học
+
+```bash
+npm run validate          # VERBOSE=1 để xem cả cảnh báo
+```
+
+Kiểm tra mọi `data/minna/NN.json`: JSON hợp lệ, `lessonNo` và `storagePrefix` khớp tên file, id duy nhất trong cả bài, `level` hợp lệ, đủ 3 `distractors` ở game 1, có chỗ trống `＿` ở game 2, `acceptableOrders` ở game 3 chỉ dùng các khối có thật, `correctIndex` đúng ở game 2 và 4, trường kana thuần không chứa `{}`, `|` hay HTML. Nên chạy trước khi commit bài mới hoặc sửa nội dung bài.
+
+## Điều hướng
+
+- Menu mỗi bài có nút **← Danh sách bài** (`../index.html`) và **🏠 Trang chủ Thầy Quang** (`https://imejiquynhon.com/`, hằng số `SITE_HOME_URL` trong `engine.js`).
+- Trang chủ (`index.html`) và `nhap-mon/6` cũng có nút về trang chủ imejiquynhon.com.
+
+## Báo kết quả ra ngoài (để ghi điểm)
+
+Khi người học hoàn thành một lượt (màn hình tổng kết), engine phát sự kiện `mnn:lesson-complete`:
+
+- `window.dispatchEvent(new CustomEvent('mnn:lesson-complete', { detail }))` để trang tự lắng nghe;
+- `window.parent.postMessage(detail, '*')` khi bài được nhúng trong iframe (ví dụ trong eduscan).
+
+`detail` gồm: `type` (`"mnn:lesson-complete"`), `lessonNo`, `jlpt`, `storagePrefix`, `game` (1 từ vựng, 2 ngữ pháp, 3 xếp câu, 4 hội thoại), `practice` (`true` khi ôn câu sai/điểm yếu), `difficulty`, `total`, `correct`, `accuracy` (%), `score`, `maxStreak`, `finishedAt` (ISO). Không có thông tin cá nhân. **Bên nhận phải kiểm tra `event.origin`** vì nguồn gửi là `'*'`. Lượt chơi bị dừng giữa chừng (hết tim, thoát) không phát sự kiện.
