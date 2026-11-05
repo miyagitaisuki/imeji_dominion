@@ -128,6 +128,19 @@ Gõ lệnh trong phiên Claude Code để Claude làm đúng theo tài liệu t�
 
 Tài liệu gốc luôn là nguồn chuẩn: khi quy ước trong file thay đổi, lệnh làm theo bản mới nhất.
 
+### Tự merge bài và slide mới
+
+PR chỉ thêm bài Minna hoặc slide (`data/minna/NN.json`, `minna/NN.html`, `slides/minna/NN.html`, `data/resources.json` do script sinh) được bật auto-merge vào `main` ngay khi kiểm tra đạt, không cần người duyệt. Các PR khác (sửa engine, CSS, script, tài liệu) vẫn cần người duyệt.
+
+Điều kiện để auto-merge:
+
+- `npm run validate` đạt (0 lỗi) trên commit của PR.
+- Chỉ đổi các file thuộc danh sách trên.
+
+Merge vào `main` sẽ deploy ngay lên trang luyện tập, nên mọi thay đổi nội dung phải đã qua `validate` và chạy thử trước khi mở PR.
+
+> Lưu ý: hiện chưa có workflow kiểm tra trên PR. Trước khi bật auto-merge trong GitHub, cần thêm workflow chạy `npm run validate` và đặt nó làm required check của `main`; nếu không, PR sẽ được merge mà không có bước kiểm tra nào.
+
 ## Kiểm tra dữ liệu bài học
 
 ```bash
