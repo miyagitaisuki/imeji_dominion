@@ -2434,9 +2434,9 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "correct": "B",
-        "pitfalls": "á",
-        "tip": "c"
+        "correct": "Bác sĩ hỏi bạn bị sao; đáp án nêu triệu chứng: ho và sốt.",
+        "pitfalls": "Xem phim và đi bộ tới ga không nói về triệu chứng bệnh.",
+        "tip": "Hỏi triệu chứng: どうしましたか / どうしたんですか."
       }
     },
     {
@@ -2461,9 +2461,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "V",
-        "pitfalls": "て",
-        "tip": "み"
+        "correct": "Mất ví, hỏi nên làm gì; đáp án gợi ý tìm trong cửa hàng.",
+        "pitfalls": "Thời tiết và tiếng Nhật không trả lời việc nên làm khi mất đồ.",
+        "tip": "まずは〜て みて ください: hãy thử làm trước tiên."
       }
     },
     {
@@ -2488,9 +2488,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "は",
-        "pitfalls": "い",
-        "tip": " "
+        "correct": "Hỏi có kịp họp không; đáp án khẳng định có kịp nếu nhanh.",
+        "pitfalls": "Xem phim là việc đã làm, không trả lời có kịp hay không; buồn ngủ không liên quan.",
+        "tip": "いそげば まにあいます: nếu nhanh thì kịp."
       }
     },
     {
@@ -2515,9 +2515,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "電",
-        "pitfalls": "車",
-        "tip": "が"
+        "correct": "Hỏi lý do đến muộn; đáp án nêu nguyên nhân là tàu điện bị trễ.",
+        "pitfalls": "Ngày nghỉ và tiếng Nhật không phải lý do đến muộn.",
+        "tip": "Hỏi lý do: どうして ... Vたんですか; trả lời: 〜んです."
       }
     },
     {
@@ -2542,9 +2542,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "置",
-        "pitfalls": "き",
-        "tip": "場"
+        "correct": "Hỏi đổ rác cháy được ở đâu; đáp án chỉ bãi rác (おきば).",
+        "pitfalls": "Dùng ga và mua gas không trả lời nơi đổ rác; ngày thường không phải địa điểm.",
+        "tip": "〜は どこに 出したら いいですか: hỏi nên làm ở đâu."
       }
     },
     {
@@ -2569,9 +2569,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "か",
-        "pitfalls": "さ",
-        "tip": "を"
+        "correct": "Nhân viên hỏi đang tìm gì; đáp án nêu đồ cần tìm là cái ô.",
+        "pitfalls": "Ví tiền và đi bộ không phải thứ đang tìm.",
+        "tip": "Nを 探しています: đang tìm N."
       }
     },
     {
@@ -2596,9 +2596,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "連",
-        "pitfalls": "絡",
-        "tip": "し"
+        "correct": "Hỏi nên làm sao để tham gia tình nguyện; đáp án gợi ý liên lạc thử.",
+        "pitfalls": "Trời mưa và học hôm qua không trả lời việc nên làm.",
+        "tip": "〜て みたら いいですよ: nên thử làm."
       }
     },
     {
@@ -2623,9 +2623,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "ち",
-        "pitfalls": "ょ",
-        "tip": "っ"
+        "correct": "Hỏi có chuyện gì; đáp án nêu lý do: không khỏe.",
+        "pitfalls": "Thời tiết đẹp và đi hội thể thao không giải thích việc hỏi.",
+        "tip": "ちょっと 気分が 悪いんです: giải thích lý do bằng んです."
       }
     },
     {
@@ -2650,9 +2650,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "か",
-        "pitfalls": "ん",
-        "tip": "と"
+        "correct": "Hỏi lịch đổ rác; đáp án nêu lon và chai đổ vào thứ ba.",
+        "pitfalls": "Đi chơi ngày mai và giáo viên không trả lời ngày đổ rác.",
+        "tip": "〜の日は いつですか: hỏi ngày nào."
       }
     },
     {
@@ -2677,9 +2677,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "は",
-        "pitfalls": "い",
-        "tip": "、"
+        "correct": "Nhân viên đề nghị giúp mang hành lý; đáp án nhận lời.",
+        "pitfalls": "いただきました là đã nhận; みました là đã xem, không đúng ngữ cảnh đề nghị.",
+        "tip": "お持ちしましょうか: đề nghị giúp làm việc gì."
       }
     },
     {
@@ -2704,9 +2704,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "は",
-        "pitfalls": "い",
-        "tip": "、"
+        "correct": "Hỏi gần đây có bệnh viện lớn không; đáp án khẳng định và chỉ hướng.",
+        "pitfalls": "Không hiểu tiếng Nhật và xem phim không trả lời câu hỏi về nơi chốn.",
+        "tip": "〜は ありますか: hỏi có N không."
       }
     },
     {
@@ -2731,9 +2731,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "警",
-        "pitfalls": "察",
-        "tip": "か"
+        "correct": "Mất ví, hỏi liên lạc ở đâu; đáp án nêu đồn cảnh sát hoặc bốt cảnh sát.",
+        "pitfalls": "Mưa ngày mai và tiếng Nhật kém không trả lời nơi liên lạc.",
+        "tip": "〜に 連絡したら いいですか: nên liên lạc với ai/ở đâu."
       }
     },
     {
@@ -2758,9 +2758,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "ど",
-        "pitfalls": "こ",
-        "tip": "で"
+        "correct": "Hỏi địa điểm nào phù hợp; đáp án chọn bất kỳ đâu cũng được.",
+        "pitfalls": "Ngày thường là thời điểm, không phải địa điểm; hẹn đi chung là lời hẹn khác.",
+        "tip": "どこでも いいですよ: chỗ nào cũng được."
       }
     },
     {
@@ -2785,9 +2785,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "い",
-        "pitfalls": "い",
-        "tip": "え"
+        "correct": "Hỏi ngày thường có đến được không; đáp án từ chối vì bận đi làm.",
+        "pitfalls": "Hôm qua đã đến không trả lời câu hỏi tương lai; tiếng Nhật kém không liên quan.",
+        "tip": "いいえ、〜は 仕事が あります: lý do từ chối."
       }
     },
     {
@@ -2812,9 +2812,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "は",
-        "pitfalls": "い",
-        "tip": "、"
+        "correct": "Hỏi có ăn được mọi thứ không; đáp án khẳng định là ăn được tất cả.",
+        "pitfalls": "Phương ngữ Osaka không liên quan đến việc ăn; rủ đi ăn sau không trả lời.",
+        "tip": "なんでも 食べられます: ăn được mọi thứ."
       }
     },
     {
@@ -2839,9 +2839,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "は",
-        "pitfalls": "い",
-        "tip": "、"
+        "correct": "Hỏi có muốn cái cặp lớn không; đáp án khẳng định là rất muốn.",
+        "pitfalls": "Đã ăn hết là hành động khác; giỏi tiếng Nhật không trả lời câu hỏi muốn hay không.",
+        "tip": "〜ほしいです: muốn có."
       }
     },
     {
@@ -2866,9 +2866,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "は",
-        "pitfalls": "い",
-        "tip": "、"
+        "correct": "Nhờ chỉ cách đọc chữ; đáp án đồng ý giúp.",
+        "pitfalls": "Đến muộn hôm qua và thích thể thao không trả lời yêu cầu.",
+        "tip": "〜て いただけませんか: nhờ ai làm gì một cách lịch sự."
       }
     },
     {
@@ -2893,9 +2893,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "ち",
-        "pitfalls": "ょ",
-        "tip": "っ"
+        "correct": "Hỏi vì sao hôm nay không đến; đáp án nêu lý do: khó chịu trong người.",
+        "pitfalls": "Ngày thường và phương ngữ không giải thích việc vắng mặt.",
+        "tip": "どうして ... 来なかったんですか: hỏi lý do; trả lời bằng んです."
       }
     },
     {
@@ -2920,9 +2920,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "近",
-        "pitfalls": "く",
-        "tip": "の"
+        "correct": "Hỏi mất thẻ thì liên lạc ở đâu; đáp án chỉ bốt cảnh sát gần nhất.",
+        "pitfalls": "Cửa hàng mở tuần sau và ngày mai có hội thể thao không trả lời nơi liên lạc.",
+        "tip": "〜時、〜たら いいですか: khi (làm gì) thì nên làm gì."
       }
     },
     {
@@ -2947,9 +2947,9 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "は",
-        "pitfalls": "い",
-        "tip": "、"
+        "correct": "Hỏi có thích chuyện vũ trụ không; đáp án khẳng định và nêu ước mơ làm phi hành gia.",
+        "pitfalls": "Ghét tình nguyện và dùng gas không trả lời câu hỏi có thích hay không.",
+        "tip": "〜に なりたいです: muốn trở thành."
       }
     }
   ]
