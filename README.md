@@ -117,6 +117,17 @@ Tất cả 21 bài Minna (`minna/1`–`21`) dùng engine chung `assets/js/engine
 
 Ngoại lệ: `nhap-mon/6` là game nối Romaji ⇄ Hiragana, khác hẳn kiểu bài của Minna nên giữ riêng.
 
+## Lệnh soạn bài
+
+Gõ lệnh trong phiên Claude Code để Claude làm đúng theo tài liệu tương ứng:
+
+| Lệnh | Việc Claude làm |
+|---|---|
+| `/taogame` | Đọc [docs/huong-dan-tao-bai-moi.md](docs/huong-dan-tao-bai-moi.md) rồi thực thi: soạn `data/minna/NN.json`, tạo `minna/NN.html`, đăng ký bài, chạy `npm run validate` và kiểm tra trên trình duyệt. |
+| `/taoslide` | Đọc [docs/quy-uoc-slide-bai-giang.md](docs/quy-uoc-slide-bai-giang.md) rồi thực thi: soạn `slides/minna/NN.html` theo quy ước, chạy kiểm tra slide. |
+
+Tài liệu gốc luôn là nguồn chuẩn: khi quy ước trong file thay đổi, lệnh làm theo bản mới nhất.
+
 ## Kiểm tra dữ liệu bài học
 
 ```bash
