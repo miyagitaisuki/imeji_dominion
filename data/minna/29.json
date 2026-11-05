@@ -1955,7 +1955,7 @@
         ]
       ],
       "explanation": {
-        "correct": "どこかで たなかさんに あいました.",
+        "correct": "Câu đúng là どこかで たなかさんに あいました: 会います đi với trợ từ に (gặp ai đó).",
         "pitfalls": "たなかさんを sai trợ từ với 会う (đi với に).",
         "tip": "会います đi với に: gặp ai đó."
       }
@@ -2355,7 +2355,7 @@
         ]
       ],
       "explanation": {
-        "correct": "うちに しょるいを わすれて しまいました.",
+        "correct": "Câu đúng là うちに しょるいを わすれて しまいました: lỡ quên tài liệu ở nhà.",
         "pitfalls": "ふいて là lau, không liên quan.",
         "tip": "忘れてしまいました: lỡ quên."
       }
@@ -2395,7 +2395,7 @@
         ]
       ],
       "explanation": {
-        "correct": "じしんで コップが われて しまいました.",
+        "correct": "Câu đúng là じしんで コップが われて しまいました: cái cốc vỡ vì động đất.",
         "pitfalls": "ふいて là lau, không đúng nghĩa.",
         "tip": "地震でコップが割れてしまいました."
       }

@@ -78,6 +78,12 @@ Mỗi câu của cả 4 trò đều có `explanation` gồm 3 câu tiếng Việ
 
 Người học xem phần này khi bấm **Giải thích** sau khi trả lời, và khi làm sai thì thẻ "Từ/Cấu trúc cần nhớ" hiện ra.
 
+Quy định cho từng trường (validator kiểm tra, sai là **lỗi**, không chỉ cảnh báo):
+- `correct` và `pitfalls`: câu tiếng Việt thật, ít nhất 2 từ tiếng Việt và 8 ký tự. Không được chỉ là ký hiệu, ký tự đơn (`B`, `á`) hay công thức không có nghĩa.
+- `tip`: tối thiểu 4 ký tự. Có thể là công thức ngắn như `N も N です = N cũng là N.`
+- Viết bằng tiếng Việt. Chỉ dùng tiếng Nhật khi trích ví dụ (ví dụ: `Vて + いただけませんか`).
+- Trước khi nộp, đọc lại từng giải thích: nếu chỉ là một ký tự hay một dòng tiếng Nhật thì phải viết lại.
+
 ### Trò 1 – Từ vựng (`game1`): đọc mô tả tiếng Việt, chọn từ tiếng Nhật đúng
 
 ```json
@@ -166,6 +172,7 @@ Người học xem phần này khi bấm **Giải thích** sau khi trả lời, 
 - [ ] Không dùng từ hoặc ngữ pháp của bài sau.
 - [ ] Furigana đủ cho mọi chữ Hán; trường kana thuần không có `{}`.
 - [ ] Phần giải thích nói được **vì sao lựa chọn sai là sai**, không chỉ nhắc lại đáp án.
+- [ ] Mọi `correct`, `pitfalls`, `tip` đều là tiếng Việt đọc được, không có ký tự rời (như `B`, `á`, `み`).
 - [ ] Không có hai câu gần như giống hệt nhau (cùng câu, chỉ đổi một chữ).
 - [ ] Đủ số câu và đúng tỉ lệ độ khó ở bảng mục 2.
 
@@ -177,7 +184,7 @@ npm run validate
 ```
 
 `validate` kiểm tra: JSON hợp lệ, `lessonNo`/`storagePrefix` khớp tên file, id không trùng, `level` hợp lệ, đủ 3 `distractors`, có `＿` ở trò 2,
-`acceptableOrders` chỉ dùng khối có thật, `correctIndex` hợp lệ, trường kana không có markup. Phải ra **0 lỗi**.
+`acceptableOrders` chỉ dùng khối có thật, `correctIndex` hợp lệ, trường kana không có markup, và giải thích đủ nghĩa (quy tắc ở mục 4). Phải ra **0 lỗi**.
 (Dòng cảnh báo "màu thô" trong `index.html` là lỗi cũ, không liên quan đến bài mới.)
 
 Chạy thử (trang đọc JSON bằng `fetch`, nên không mở trực tiếp bằng `file://`):
