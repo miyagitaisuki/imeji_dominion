@@ -2424,7 +2424,7 @@
         }
       ],
       "explanation": {
-        "correct": "ぶちょうは + まいにち + ねる まえに + にっきを かきます.",
+        "correct": "ぶちょうは 毎日 寝る前に 日記を かきます: trưởng phòng viết nhật ký mỗi ngày trước khi ngủ.",
         "pitfalls": "しゃちょうは là giám đốc, sai chủ ngữ so với 'trưởng phòng'.",
         "tip": "ぶちょう = trưởng phòng; しゃちょう = giám đốc."
       }

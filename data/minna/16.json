@@ -1643,7 +1643,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "correct": "Mẫu V1てから V2: 押します -> 押して -> 押してから.",
+        "correct": "Mẫu V1てから V2: làm V1 xong rồi mới làm V2 (押します → 押して → 押してから).",
         "pitfalls": "Không dùng thể ます hay thể た trước から trong mẫu câu này.",
         "tip": "Vて + から."
       }

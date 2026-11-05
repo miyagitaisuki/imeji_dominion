@@ -1583,7 +1583,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "correct": "止めます -> 止めて + はいけません (thành 止めてはいけません).",
+        "correct": "止めます đổi thành 止めて rồi thêm はいけません: không được ngừng làm việc đó.",
         "pitfalls": "止めても đi với いいですか, không ghép với はいけません.",
         "tip": "止めては いけません = cấm đỗ xe."
       }

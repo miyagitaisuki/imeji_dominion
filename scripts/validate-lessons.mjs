@@ -7,6 +7,18 @@ const dir = path.resolve(import.meta.dirname, '..', 'data', 'minna');
 const LEVELS = ['easy', 'medium', 'hard'];
 const HAS_MARKUP = /[{}|<>]/; // trường kana thuần: không furigana {漢字|よみ}, không HTML
 
+// correct/pitfalls phải là câu tiếng Việt thật: ít nhất 2 từ chữ Latin (có dấu) và 8 ký tự.
+// Chặn các lỗi như explanation.correct = "B" hoặc "á".
+function isRealSentence(v) {
+  const words = v.match(/[A-Za-zÀ-ỹ]{2,}/g) ?? [];
+  return words.length >= 2 && v.trim().length >= 8;
+}
+
+// Mẹo (tip) có thể ngắn như "N も N です = N cũng là N.", nhưng không được chỉ là một ký tự (B, á, c...).
+function isShortNote(v) {
+  return v.trim().length >= 4;
+}
+
 let errors = 0;
 let warnings = 0;
 
@@ -46,7 +58,12 @@ function check(file) {
     else ids.add(q.id);
     if (!LEVELS.includes(q.level)) err(`${at}: level sai "${q.level}"`);
     const e = q.explanation ?? {};
-    if (!e.correct || !e.pitfalls || !e.tip) warn(`${at}: thiếu explanation.correct/pitfalls/tip`);
+    for (const k of ['correct', 'pitfalls', 'tip']) {
+      const v = e[k];
+      if (typeof v !== 'string' || !v.trim()) err(`${at}: thiếu explanation.${k}`);
+      else if (k !== 'tip' && !isRealSentence(v)) err(`${at}: explanation.${k} phải là câu tiếng Việt đủ nghĩa (≥2 từ tiếng Việt, ≥8 ký tự): "${v}"`);
+      else if (k === 'tip' && !isShortNote(v)) err(`${at}: explanation.tip quá ngắn hoặc vô nghĩa (cần ≥4 ký tự): "${v}"`);
+    }
     return at;
   };
   const kana = (v, at, field) => {
