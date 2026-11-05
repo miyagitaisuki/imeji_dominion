@@ -1,0 +1,2946 @@
+{
+  "config": {
+    "lessonNo": 29,
+    "title": "Minna no Nihongo – Bài 29",
+    "jlpt": "N4",
+    "storagePrefix": "mnn_l29"
+  },
+  "game1": [
+    {
+      "id": "l29_v001",
+      "level": "easy",
+      "context": "Đúng 9 giờ sáng, cửa hàng bắt đầu đón khách và cửa ra vào được mở ra.",
+      "answer": "あきます",
+      "kanji": "{開|あ}きます",
+      "distractors": [
+        "しまります",
+        "はずれます",
+        "とまります"
+      ],
+      "distractorsKanji": [
+        "{閉|し}まります",
+        "{外|はず}れます",
+        "{止|と}まります"
+      ],
+      "explanation": {
+        "correct": "開きます (tự động từ) nghĩa là mở, cửa tự mở ra.",
+        "pitfalls": "閉まります là đóng (trái nghĩa); 外れます là tuột, bung ra; 止まります là dừng lại.",
+        "tip": "Cặp: 開きます (cửa mở) ↔ 閉まります (cửa đóng)."
+      }
+    },
+    {
+      "id": "l29_v002",
+      "level": "easy",
+      "context": "Gió thổi mạnh làm cánh cửa tự khép lại và đóng kín.",
+      "answer": "しまります",
+      "kanji": "{閉|し}まります",
+      "distractors": [
+        "あきます",
+        "つきます",
+        "きえます"
+      ],
+      "distractorsKanji": [
+        "{開|あ}きます",
+        "{点|つ}きます",
+        "{消|き}えます"
+      ],
+      "explanation": {
+        "correct": "閉まります (tự động từ) là đóng, cửa tự đóng.",
+        "pitfalls": "開きます là mở; 点きます là đèn sáng; 消えます là tắt.",
+        "tip": "Tha động từ: 閉めます (đóng cửa bằng tay)."
+      }
+    },
+    {
+      "id": "l29_v003",
+      "level": "easy",
+      "context": "Bạn bấm công tắc và đèn trong phòng sáng lên.",
+      "answer": "つきます",
+      "kanji": "{点|つ}きます",
+      "distractors": [
+        "きえます",
+        "こわれます",
+        "ふきます"
+      ],
+      "distractorsKanji": [
+        "{消|き}えます",
+        "{壊|こわ}れます",
+        "{拭|ふ}きます"
+      ],
+      "explanation": {
+        "correct": "点きます (tự động từ) là đèn bật, sáng lên.",
+        "pitfalls": "消えます là tắt; 壊れます là hỏng; 拭きます là lau.",
+        "tip": "Tha động từ: 電気を点けます (bật đèn). つきます còn có nghĩa khác (着く, 付く), cần xem ngữ cảnh."
+      }
+    },
+    {
+      "id": "l29_v004",
+      "level": "easy",
+      "context": "Đèn trong phòng tự tắt vì mất điện.",
+      "answer": "きえます",
+      "kanji": "{消|き}えます",
+      "distractors": [
+        "つきます",
+        "おれます",
+        "やぶれます"
+      ],
+      "distractorsKanji": [
+        "{点|つ}きます",
+        "{折|お}れます",
+        "{破|やぶ}れます"
+      ],
+      "explanation": {
+        "correct": "消えます (tự động từ) là tắt, biến mất.",
+        "pitfalls": "点きます là bật sáng (trái nghĩa); 折れます là gãy; 破れます là rách.",
+        "tip": "電気が消えます (đèn tắt); 電気を消します (tắt đèn, tha động từ)."
+      }
+    },
+    {
+      "id": "l29_v005",
+      "level": "medium",
+      "context": "Giờ tan tầm, tàu điện chật cứng người.",
+      "answer": "こみます",
+      "kanji": "{込|こ}みます",
+      "distractors": [
+        "すきます",
+        "とまります",
+        "かたづけます"
+      ],
+      "distractorsKanji": [
+        "{空|す}きます",
+        "{止|と}まります",
+        "{片付|かたづ}けます"
+      ],
+      "explanation": {
+        "correct": "込みます (tự động từ) là đông, chật người.",
+        "pitfalls": "空きます là vắng, trống; 止まります là dừng; 片付けます là dọn dẹp.",
+        "tip": "電車が込んでいます: tàu đông người."
+      }
+    },
+    {
+      "id": "l29_v006",
+      "level": "medium",
+      "context": "Đêm khuya, đường phố vắng tanh, hầu như không có người đi lại.",
+      "answer": "すきます",
+      "kanji": "{空|す}きます",
+      "distractors": [
+        "こみます",
+        "つきます",
+        "はずれます"
+      ],
+      "distractorsKanji": [
+        "{込|こ}みます",
+        "{点|つ}きます",
+        "{外|はず}れます"
+      ],
+      "explanation": {
+        "correct": "空きます (tự động từ) là vắng, trống, thưa người.",
+        "pitfalls": "込みます là đông; 点きます là sáng; 外れます là tuột.",
+        "tip": "道が空いています: đường vắng."
+      }
+    },
+    {
+      "id": "l29_v007",
+      "level": "hard",
+      "context": "Chiếc ghế bị gãy chân, không ngồi được nữa.",
+      "answer": "こわれます",
+      "kanji": "{壊|こわ}れます",
+      "distractors": [
+        "われます",
+        "おれます",
+        "よごれます"
+      ],
+      "distractorsKanji": [
+        "{割|わ}れます",
+        "{折|お}れます",
+        "{汚|よご}れます"
+      ],
+      "explanation": {
+        "correct": "壊れます (tự động từ) là hỏng, hư, dùng cho máy móc và đồ đạc.",
+        "pitfalls": "割れます là vỡ vật mỏng như cốc, kính; 折れます là gãy cành, xương; 汚れます là bẩn.",
+        "tip": "壊れます dùng cho đồ đạc/máy; 割れます dùng cho vật mỏng và cứng."
+      }
+    },
+    {
+      "id": "l29_v008",
+      "level": "hard",
+      "context": "Chiếc cốc rơi xuống sàn nhà và vỡ tan.",
+      "answer": "われます",
+      "kanji": "{割|わ}れます",
+      "distractors": [
+        "こわれます",
+        "おれます",
+        "やぶれます"
+      ],
+      "distractorsKanji": [
+        "{壊|こわ}れます",
+        "{折|お}れます",
+        "{破|やぶ}れます"
+      ],
+      "explanation": {
+        "correct": "割れます (tự động từ) là vỡ, nứt, dùng cho vật mỏng và cứng: cốc, bát, kính.",
+        "pitfalls": "壊れます là hỏng máy móc; 折れます là gãy; 破れます là rách giấy, vải.",
+        "tip": "お皿が割れています: đĩa vỡ rồi."
+      }
+    },
+    {
+      "id": "l29_v009",
+      "level": "hard",
+      "context": "Cành cây bị gãy vì cơn bão mạnh.",
+      "answer": "おれます",
+      "kanji": "{折|お}れます",
+      "distractors": [
+        "やぶれます",
+        "よごれます",
+        "こわれます"
+      ],
+      "distractorsKanji": [
+        "{破|やぶ}れます",
+        "{汚|よご}れます",
+        "{壊|こわ}れます"
+      ],
+      "explanation": {
+        "correct": "折れます (tự động từ) là gãy: cành cây, cánh, xương.",
+        "pitfalls": "破れます là rách; 汚れます là bẩn; 壊れます là hỏng.",
+        "tip": "枝が折れます: cành gãy."
+      }
+    },
+    {
+      "id": "l29_v010",
+      "level": "easy",
+      "context": "Trang giấy bị rách khi bạn lật quá mạnh.",
+      "answer": "やぶれます",
+      "kanji": "{破|やぶ}れます",
+      "distractors": [
+        "おれます",
+        "よごれます",
+        "はずれます"
+      ],
+      "distractorsKanji": [
+        "{折|お}れます",
+        "{汚|よご}れます",
+        "{外|はず}れます"
+      ],
+      "explanation": {
+        "correct": "破れます (tự động từ) là rách, dùng cho giấy, vải.",
+        "pitfalls": "折れます là gãy; 汚れます là bẩn; 外れます là tuột.",
+        "tip": "紙が破れます: giấy rách."
+      }
+    },
+    {
+      "id": "l29_v011",
+      "level": "easy",
+      "context": "Sau khi làm vườn, tay bạn dính đầy đất bẩn.",
+      "answer": "よごれます",
+      "kanji": "{汚|よご}れます",
+      "distractors": [
+        "やぶれます",
+        "こわれます",
+        "はずれます"
+      ],
+      "distractorsKanji": [
+        "{破|やぶ}れます",
+        "{壊|こわ}れます",
+        "{外|はず}れます"
+      ],
+      "explanation": {
+        "correct": "汚れます (tự động từ) là bẩn, dơ.",
+        "pitfalls": "破れます là rách; 壊れます là hỏng; 外れます là tuột.",
+        "tip": "手が汚れます: tay bẩn. 汚します là làm bẩn (tha động từ)."
+      }
+    },
+    {
+      "id": "l29_v012",
+      "level": "hard",
+      "context": "Nút áo sơ mi bị tuột ra, không còn gắn vào áo nữa.",
+      "answer": "はずれます",
+      "kanji": "{外|はず}れます",
+      "distractors": [
+        "よごれます",
+        "とまります",
+        "やぶれます"
+      ],
+      "distractorsKanji": [
+        "{汚|よご}れます",
+        "{止|と}まります",
+        "{破|やぶ}れます"
+      ],
+      "explanation": {
+        "correct": "外れます (tự động từ) là tuột, rời ra, bung ra.",
+        "pitfalls": "汚れます là bẩn; 止まります là dừng; 破れます là rách.",
+        "tip": "ボタンが外れます: nút bị tuột."
+      }
+    },
+    {
+      "id": "l29_v013",
+      "level": "medium",
+      "context": "Xe buýt tới trạm và dừng lại để đón khách.",
+      "answer": "とまります",
+      "kanji": "{止|と}まります",
+      "distractors": [
+        "はずれます",
+        "すきます",
+        "たおれます"
+      ],
+      "distractorsKanji": [
+        "{外|はず}れます",
+        "{空|す}きます",
+        "{倒|たお}れます"
+      ],
+      "explanation": {
+        "correct": "止まります (tự động từ) là dừng lại.",
+        "pitfalls": "外れます là tuột; 空きます là vắng; 倒れます là đổ.",
+        "tip": "バスが止まります; 止めます là dừng (tha động từ)."
+      }
+    },
+    {
+      "id": "l29_v014",
+      "level": "easy",
+      "context": "Bạn ghi nhầm số điện thoại của bạn bè.",
+      "answer": "まちがえます",
+      "kanji": "{間違|まちが}えます",
+      "distractors": [
+        "おとします",
+        "ふきます",
+        "かたづけます"
+      ],
+      "distractorsKanji": [
+        "{落|お}とします",
+        "{拭|ふ}きます",
+        "{片付|かたづ}けます"
+      ],
+      "explanation": {
+        "correct": "間違えます (tha động từ) là nhầm lẫn, làm sai.",
+        "pitfalls": "落とします là làm rơi; 拭きます là lau; 片付けます là dọn dẹp.",
+        "tip": "番号を間違えます: ghi nhầm số."
+      }
+    },
+    {
+      "id": "l29_v015",
+      "level": "easy",
+      "context": "Bạn cầm cốc không chắc nên làm rơi xuống đất.",
+      "answer": "おとします",
+      "kanji": "{落|お}とします",
+      "distractors": [
+        "まちがえます",
+        "ふきます",
+        "とりかえます"
+      ],
+      "distractorsKanji": [
+        "{間違|まちが}えます",
+        "{拭|ふ}きます",
+        "{取|と}り{替|か}えます"
+      ],
+      "explanation": {
+        "correct": "落とします (tha động từ) là làm rơi.",
+        "pitfalls": "間違えます là nhầm; 拭きます là lau; 取り替えます là thay.",
+        "tip": "物を落とします: làm rơi đồ. 落ちます là đồ rơi (tự động từ)."
+      }
+    },
+    {
+      "id": "l29_v016",
+      "level": "easy",
+      "context": "Bạn dùng khăn lau cửa kính cho sạch.",
+      "answer": "ふきます",
+      "kanji": "{拭|ふ}きます",
+      "distractors": [
+        "とりかえます",
+        "かたづけます",
+        "おとします"
+      ],
+      "distractorsKanji": [
+        "{取|と}り{替|か}えます",
+        "{片付|かたづ}けます",
+        "{落|お}とします"
+      ],
+      "explanation": {
+        "correct": "拭きます (tha động từ) là lau.",
+        "pitfalls": "取り替えます là thay; 片付けます là dọn dẹp; 落とします là làm rơi.",
+        "tip": "ガラスを拭きます: lau kính."
+      }
+    },
+    {
+      "id": "l29_v017",
+      "level": "medium",
+      "context": "Pin đồng hồ đã hết, bạn mua pin mới để thay vào.",
+      "answer": "とりかえます",
+      "kanji": "{取|と}り{替|か}えます",
+      "distractors": [
+        "ふきます",
+        "かたづけます",
+        "まちがえます"
+      ],
+      "distractorsKanji": [
+        "{拭|ふ}きます",
+        "{片付|かたづ}けます",
+        "{間違|まちが}えます"
+      ],
+      "explanation": {
+        "correct": "取り替えます (tha động từ) là thay, đổi cái mới.",
+        "pitfalls": "拭きます là lau; 片付けます là dọn; 間違えます là nhầm.",
+        "tip": "電池を取り替えます: thay pin."
+      }
+    },
+    {
+      "id": "l29_v018",
+      "level": "medium",
+      "context": "Ăn xong, bạn thu dọn bát đĩa và xếp gọn lại.",
+      "answer": "かたづけます",
+      "kanji": "{片付|かたづ}けます",
+      "distractors": [
+        "ふきます",
+        "とりかえます",
+        "おとします"
+      ],
+      "distractorsKanji": [
+        "{拭|ふ}きます",
+        "{取|と}り{替|か}えます",
+        "{落|お}とします"
+      ],
+      "explanation": {
+        "correct": "片付けます (tha động từ) là dọn dẹp, sắp xếp gọn gàng.",
+        "pitfalls": "拭きます là lau; 取り替えます là thay; 落とします là làm rơi.",
+        "tip": "部屋を片付けます: dọn phòng."
+      }
+    },
+    {
+      "id": "l29_v019",
+      "level": "hard",
+      "context": "Giấy bắt lửa và cháy rụi trong lò.",
+      "answer": "もえます",
+      "kanji": "{燃|も}えます",
+      "distractors": [
+        "きえます",
+        "こみます",
+        "たおれます"
+      ],
+      "distractorsKanji": [
+        "{消|き}えます",
+        "{込|こ}みます",
+        "{倒|たお}れます"
+      ],
+      "explanation": {
+        "correct": "燃えます (tự động từ) là cháy.",
+        "pitfalls": "消えます là tắt; 込みます là đông; 倒れます là đổ.",
+        "tip": "火が燃えます: lửa cháy. 燃やします là đốt (tha động từ)."
+      }
+    },
+    {
+      "id": "l29_v020",
+      "level": "easy",
+      "context": "Đồ đựng hình tròn, dẹt, dùng để bày thức ăn lên bàn.",
+      "answer": "さら",
+      "kanji": "{皿|さら}",
+      "distractors": [
+        "ちゃわん",
+        "コップ",
+        "ふくろ"
+      ],
+      "distractorsKanji": [
+        "{茶碗|ちゃわん}",
+        "コップ",
+        "{袋|ふくろ}"
+      ],
+      "explanation": {
+        "correct": "皿 là cái đĩa.",
+        "pitfalls": "茶碗 là bát ăn cơm; コップ là cốc; 袋 là túi.",
+        "tip": "お皿: cách nói lịch sự."
+      }
+    },
+    {
+      "id": "l29_v021",
+      "level": "easy",
+      "context": "Bát nhỏ dùng để đựng cơm và canh.",
+      "answer": "ちゃわん",
+      "kanji": "{茶碗|ちゃわん}",
+      "distractors": [
+        "さら",
+        "ガラス",
+        "しょるい"
+      ],
+      "distractorsKanji": [
+        "{皿|さら}",
+        "ガラス",
+        "{書類|しょるい}"
+      ],
+      "explanation": {
+        "correct": "茶碗 là bát đựng cơm.",
+        "pitfalls": "皿 là đĩa; ガラス là thủy tinh; 書類 là giấy tờ.",
+        "tip": "お茶碗: cách nói lịch sự."
+      }
+    },
+    {
+      "id": "l29_v022",
+      "level": "easy",
+      "context": "Vật dùng để uống nước, thân hình trụ và miệng rộng.",
+      "answer": "コップ",
+      "kanji": "コップ",
+      "distractors": [
+        "さら",
+        "ふくろ",
+        "えだ"
+      ],
+      "distractorsKanji": [
+        "{皿|さら}",
+        "{袋|ふくろ}",
+        "{枝|えだ}"
+      ],
+      "explanation": {
+        "correct": "コップ là cốc uống nước.",
+        "pitfalls": "皿 là đĩa; 袋 là túi; 枝 là cành cây.",
+        "tip": "Từ mượn tiếng Anh cup, viết bằng katakana."
+      }
+    },
+    {
+      "id": "l29_v023",
+      "level": "medium",
+      "context": "Vật liệu trong suốt dùng làm cửa sổ, dễ vỡ khi va đập mạnh.",
+      "answer": "ガラス",
+      "kanji": "ガラス",
+      "distractors": [
+        "かべ",
+        "はり",
+        "ふくろ"
+      ],
+      "distractorsKanji": [
+        "{壁|かべ}",
+        "{針|はり}",
+        "{袋|ふくろ}"
+      ],
+      "explanation": {
+        "correct": "ガラス là thủy tinh, kính.",
+        "pitfalls": "壁 là tường; 針 là kim; 袋 là túi.",
+        "tip": "Từ mượn tiếng Anh glass, viết bằng katakana."
+      }
+    },
+    {
+      "id": "l29_v024",
+      "level": "easy",
+      "context": "Đồ để đựng hàng khi bạn đi mua sắm ở siêu thị.",
+      "answer": "ふくろ",
+      "kanji": "{袋|ふくろ}",
+      "distractors": [
+        "ポケット",
+        "さら",
+        "しょるい"
+      ],
+      "distractorsKanji": [
+        "ポケット",
+        "{皿|さら}",
+        "{書類|しょるい}"
+      ],
+      "explanation": {
+        "correct": "袋 là túi, bao.",
+        "pitfalls": "ポケット là túi áo gắn trên quần áo; 皿 là đĩa; 書類 là giấy tờ.",
+        "tip": "買い物袋: túi đi mua sắm."
+      }
+    },
+    {
+      "id": "l29_v025",
+      "level": "medium",
+      "context": "Tập giấy tờ quan trọng bạn cần nộp cho công ty.",
+      "answer": "しょるい",
+      "kanji": "{書類|しょるい}",
+      "distractors": [
+        "ふくろ",
+        "えだ",
+        "ポケット"
+      ],
+      "distractorsKanji": [
+        "{袋|ふくろ}",
+        "{枝|えだ}",
+        "ポケット"
+      ],
+      "explanation": {
+        "correct": "書類 là giấy tờ, hồ sơ.",
+        "pitfalls": "袋 là túi; 枝 là cành; ポケット là túi áo.",
+        "tip": "書類を出す: nộp hồ sơ."
+      }
+    },
+    {
+      "id": "l29_v026",
+      "level": "medium",
+      "context": "Phần nhánh mọc ra từ thân cây.",
+      "answer": "えだ",
+      "kanji": "{枝|えだ}",
+      "distractors": [
+        "はり",
+        "かべ",
+        "ふくろ"
+      ],
+      "distractorsKanji": [
+        "{針|はり}",
+        "{壁|かべ}",
+        "{袋|ふくろ}"
+      ],
+      "explanation": {
+        "correct": "枝 là cành cây.",
+        "pitfalls": "針 là kim; 壁 là tường; 袋 là túi.",
+        "tip": "木の枝: cành cây."
+      }
+    },
+    {
+      "id": "l29_v027",
+      "level": "hard",
+      "context": "Người làm việc ở nhà ga, giúp hành khách khi họ cần hỏi đường hay trình báo mất đồ.",
+      "answer": "えきいん",
+      "kanji": "{駅員|えきいん}",
+      "distractors": [
+        "こうばん",
+        "えきまえ",
+        "にしのほう"
+      ],
+      "distractorsKanji": [
+        "{交番|こうばん}",
+        "{駅前|えきまえ}",
+        "{西|にし}の{方|ほう}"
+      ],
+      "explanation": {
+        "correct": "駅員 là nhân viên nhà ga.",
+        "pitfalls": "交番 là đồn cảnh sát (nơi chứ không phải người); 駅前 là trước ga; 西の方 là phía tây.",
+        "tip": "駅員さん: nhân viên nhà ga, cách gọi lịch sự."
+      }
+    },
+    {
+      "id": "l29_v028",
+      "level": "medium",
+      "context": "Nơi cảnh sát đóng, người dân đến trình báo khi bị mất đồ.",
+      "answer": "こうばん",
+      "kanji": "{交番|こうばん}",
+      "distractors": [
+        "えきいん",
+        "えきまえ",
+        "にしのほう"
+      ],
+      "distractorsKanji": [
+        "{駅員|えきいん}",
+        "{駅前|えきまえ}",
+        "{西|にし}の{方|ほう}"
+      ],
+      "explanation": {
+        "correct": "交番 là đồn cảnh sát nhỏ, bốt cảnh sát.",
+        "pitfalls": "駅員 là nhân viên ga (người); 駅前 là trước ga; 西の方 là phía tây.",
+        "tip": "交番に行く: đi đến đồn cảnh sát."
+      }
+    },
+    {
+      "id": "l29_v029",
+      "level": "medium",
+      "context": "Khi có người gọi bạn, bạn đáp lại bằng lời nói.",
+      "answer": "へんじ",
+      "kanji": "{返事|へんじ}",
+      "distractors": [
+        "スピーチ",
+        "ポケット",
+        "わすれもの"
+      ],
+      "distractorsKanji": [
+        "スピーチ",
+        "ポケット",
+        "{忘|わす}れ{物|もの}"
+      ],
+      "explanation": {
+        "correct": "返事 là trả lời, đáp lại.",
+        "pitfalls": "スピーチ là diễn văn; ポケット là túi áo; 忘れ物 là đồ bỏ quên.",
+        "tip": "返事をします: trả lời."
+      }
+    },
+    {
+      "id": "l29_v030",
+      "level": "medium",
+      "context": "Chiếc ô bạn để quên trên tàu điện, sau đó nhân viên đã tìm lại được.",
+      "answer": "わすれもの",
+      "kanji": "{忘|わす}れ{物|もの}",
+      "distractors": [
+        "へんじ",
+        "かべ",
+        "ふくろ"
+      ],
+      "distractorsKanji": [
+        "{返事|へんじ}",
+        "{壁|かべ}",
+        "{袋|ふくろ}"
+      ],
+      "explanation": {
+        "correct": "忘れ物 là đồ bị bỏ quên.",
+        "pitfalls": "返事 là trả lời; 壁 là tường; 袋 là túi.",
+        "tip": "忘れ物をします: để quên đồ."
+      }
+    },
+    {
+      "id": "l29_v031",
+      "level": "medium",
+      "context": "Trên toa tàu, nơi bạn đặt hành lý lên phía trên đầu ghế.",
+      "answer": "あみだな",
+      "kanji": "{網棚|あみだな}",
+      "distractors": [
+        "ポケット",
+        "えだ",
+        "かべ"
+      ],
+      "distractorsKanji": [
+        "ポケット",
+        "{枝|えだ}",
+        "{壁|かべ}"
+      ],
+      "explanation": {
+        "correct": "網棚 là giá để hành lý trên tàu.",
+        "pitfalls": "ポケット là túi; 枝 là cành; 壁 là tường.",
+        "tip": "網棚に置く: để lên giá hành lý."
+      }
+    },
+    {
+      "id": "l29_v032",
+      "level": "medium",
+      "context": "Mặt đất rung chuyển mạnh, đồ trên kệ rơi xuống.",
+      "answer": "じしん",
+      "kanji": "{地震|じしん}",
+      "distractors": [
+        "へんじ",
+        "スピーチ",
+        "わすれもの"
+      ],
+      "distractorsKanji": [
+        "{返事|へんじ}",
+        "スピーチ",
+        "{忘|わす}れ{物|もの}"
+      ],
+      "explanation": {
+        "correct": "地震 là động đất.",
+        "pitfalls": "返事 là trả lời; スピーチ là diễn văn; 忘れ物 là đồ bỏ quên.",
+        "tip": "地震が起きる: động đất xảy ra."
+      }
+    },
+    {
+      "id": "l29_v033",
+      "level": "easy",
+      "context": "Phần chắn ở bốn phía của căn phòng.",
+      "answer": "かべ",
+      "kanji": "{壁|かべ}",
+      "distractors": [
+        "はり",
+        "えだ",
+        "ふくろ"
+      ],
+      "distractorsKanji": [
+        "{針|はり}",
+        "{枝|えだ}",
+        "{袋|ふくろ}"
+      ],
+      "explanation": {
+        "correct": "壁 là bức tường.",
+        "pitfalls": "針 là kim; 枝 là cành; 袋 là túi.",
+        "tip": "壁にかける: treo lên tường."
+      }
+    },
+    {
+      "id": "l29_v034",
+      "level": "medium",
+      "context": "Kim chỉ giờ và kim chỉ phút trên mặt đồng hồ.",
+      "answer": "はり",
+      "kanji": "{針|はり}",
+      "distractors": [
+        "かべ",
+        "えだ",
+        "ふくろ"
+      ],
+      "distractorsKanji": [
+        "{壁|かべ}",
+        "{枝|えだ}",
+        "{袋|ふくろ}"
+      ],
+      "explanation": {
+        "correct": "針 là kim (đồng hồ, may vá).",
+        "pitfalls": "壁 là tường; 枝 là cành; 袋 là túi.",
+        "tip": "時計の針: kim đồng hồ."
+      }
+    },
+    {
+      "id": "l29_v035",
+      "level": "hard",
+      "context": "Khu vực ngay trước cửa nhà ga.",
+      "answer": "えきまえ",
+      "kanji": "{駅前|えきまえ}",
+      "distractors": [
+        "こうばん",
+        "にしのほう",
+        "えきいん"
+      ],
+      "distractorsKanji": [
+        "{交番|こうばん}",
+        "{西|にし}の{方|ほう}",
+        "{駅員|えきいん}"
+      ],
+      "explanation": {
+        "correct": "駅前 là khu vực trước ga.",
+        "pitfalls": "交番 là đồn cảnh sát; 西の方 là phía tây; 駅員 là nhân viên ga.",
+        "tip": "駅前に〜があります: có ... trước ga."
+      }
+    }
+  ],
+  "game2": [
+    {
+      "id": "l29_g001",
+      "level": "easy",
+      "sentence": "まどが ＿ います。",
+      "translation": "Cửa sổ đang mở.",
+      "options": [
+        {
+          "text": "あいた",
+          "kanji": "あいた"
+        },
+        {
+          "text": "あける",
+          "kanji": "あける"
+        },
+        {
+          "text": "あけて",
+          "kanji": "あけて"
+        },
+        {
+          "text": "あいて",
+          "kanji": "あいて"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": "あいて là thể て của 開きます (tự động từ); 〜ています chỉ trạng thái cửa đang mở.",
+        "pitfalls": "あけて là tha động từ, cần người mở; あける là dạng từ điển; あいた là quá khứ.",
+        "tip": "自動詞 + ています = trạng thái."
+      }
+    },
+    {
+      "id": "l29_g002",
+      "level": "easy",
+      "sentence": "でんきが ＿ います。",
+      "translation": "Đèn đang sáng.",
+      "options": [
+        {
+          "text": "ついた",
+          "kanji": "ついた"
+        },
+        {
+          "text": "つけて",
+          "kanji": "つけて"
+        },
+        {
+          "text": "つける",
+          "kanji": "つける"
+        },
+        {
+          "text": "ついて",
+          "kanji": "ついて"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": "ついて là thể て của 点きます (tự động từ), chỉ đèn đang sáng.",
+        "pitfalls": "つけて là tha động từ (bật đèn bằng tay); つける là dạng từ điển; ついた là quá khứ.",
+        "tip": "電気が ついています: đèn đang sáng."
+      }
+    },
+    {
+      "id": "l29_g003",
+      "level": "easy",
+      "sentence": "さらを ＿ しまいました。",
+      "translation": "Tôi lỡ làm vỡ đĩa rồi.",
+      "options": [
+        {
+          "text": "わる",
+          "kanji": "わる"
+        },
+        {
+          "text": "わって",
+          "kanji": "わって"
+        },
+        {
+          "text": "われて",
+          "kanji": "われて"
+        },
+        {
+          "text": "わり",
+          "kanji": "わり"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "わって là thể て của 割ります (tha động từ), đi với を; 〜てしまいました diễn tả việc đã lỡ xảy ra.",
+        "pitfalls": "われて là tự động từ, không đi với を; わる là dạng từ điển; わり là dạng ghép.",
+        "tip": "皿を割ってしまいました: lỡ làm vỡ đĩa."
+      }
+    },
+    {
+      "id": "l29_g004",
+      "level": "easy",
+      "sentence": "さいふを ＿ しまいました。",
+      "translation": "Tôi lỡ làm rơi ví rồi.",
+      "options": [
+        {
+          "text": "おとす",
+          "kanji": "おとす"
+        },
+        {
+          "text": "おちて",
+          "kanji": "おちて"
+        },
+        {
+          "text": "おとした",
+          "kanji": "おとした"
+        },
+        {
+          "text": "おとして",
+          "kanji": "おとして"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": "おとして là thể て của 落とします (tha động từ), đi với を.",
+        "pitfalls": "おちて là tự động từ, không đi với を; おとす là dạng từ điển; おとした là quá khứ.",
+        "tip": "財布を落としてしまいました: lỡ làm rơi ví."
+      }
+    },
+    {
+      "id": "l29_g005",
+      "level": "easy",
+      "sentence": "ドアが ＿ います。",
+      "translation": "Cửa đang đóng.",
+      "options": [
+        {
+          "text": "しまる",
+          "kanji": "しまる"
+        },
+        {
+          "text": "しまって",
+          "kanji": "しまって"
+        },
+        {
+          "text": "しめた",
+          "kanji": "しめた"
+        },
+        {
+          "text": "しめて",
+          "kanji": "しめて"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "しまって là thể て của 閉まります (tự động từ), chỉ trạng thái cửa đang đóng.",
+        "pitfalls": "しめて là tha động từ; しまる là dạng từ điển; しめた là quá khứ tha động từ.",
+        "tip": "ドアが閉まっています: cửa đang đóng."
+      }
+    },
+    {
+      "id": "l29_g006",
+      "level": "easy",
+      "sentence": "かぎを どこか ＿ おきました。",
+      "translation": "Tôi đã để chìa khóa ở đâu đó.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "に chỉ địa điểm đặt/để đồ vật; どこかに là 'ở đâu đó'.",
+        "pitfalls": "で chỉ nơi xảy ra hành động, không dùng cho chỗ đặt đồ; を không chỉ địa điểm; が không hợp.",
+        "tip": "どこかに おきました: đã để ở đâu đó."
+      }
+    },
+    {
+      "id": "l29_g007",
+      "level": "easy",
+      "sentence": "どこか ＿ たなかさんに あいました。",
+      "translation": "Tôi đã gặp anh Tanaka ở đâu đó.",
+      "options": [
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "で chỉ nơi xảy ra sự việc; どこかで là 'ở đâu đó (nơi xảy ra)'.",
+        "pitfalls": "に không dùng cho nơi xảy ra gặp gỡ; を và が không chỉ địa điểm.",
+        "tip": "どこかで会いました: gặp ở đâu đó."
+      }
+    },
+    {
+      "id": "l29_g008",
+      "level": "easy",
+      "sentence": "ふくろが ＿ います。",
+      "translation": "Cái túi bị rách rồi.",
+      "options": [
+        {
+          "text": "やぶれて",
+          "kanji": "やぶれて"
+        },
+        {
+          "text": "やぶれる",
+          "kanji": "やぶれる"
+        },
+        {
+          "text": "やぶる",
+          "kanji": "やぶる"
+        },
+        {
+          "text": "やぶって",
+          "kanji": "やぶって"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "やぶれて là thể て của 破れます (tự động từ), chỉ trạng thái bị rách.",
+        "pitfalls": "やぶって là tha động từ; やぶれる và やぶる là dạng từ điển.",
+        "tip": "袋が破れています: túi bị rách."
+      }
+    },
+    {
+      "id": "l29_g009",
+      "level": "easy",
+      "sentence": "ボタンが ＿ います。",
+      "translation": "Cúc áo đang bị tuột.",
+      "options": [
+        {
+          "text": "はずれて",
+          "kanji": "はずれて"
+        },
+        {
+          "text": "はずす",
+          "kanji": "はずす"
+        },
+        {
+          "text": "はずれる",
+          "kanji": "はずれる"
+        },
+        {
+          "text": "はずして",
+          "kanji": "はずして"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "はずれて là thể て của 外れます (tự động từ), chỉ trạng thái đã tuột.",
+        "pitfalls": "はずして là tha động từ; はずれる và はずす là dạng từ điển.",
+        "tip": "ボタンが外れています: nút bị tuột."
+      }
+    },
+    {
+      "id": "l29_g010",
+      "level": "easy",
+      "sentence": "えだが ＿ います。",
+      "translation": "Cành cây đang bị gãy.",
+      "options": [
+        {
+          "text": "おる",
+          "kanji": "おる"
+        },
+        {
+          "text": "おれて",
+          "kanji": "おれて"
+        },
+        {
+          "text": "おって",
+          "kanji": "おって"
+        },
+        {
+          "text": "おれる",
+          "kanji": "おれる"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "おれて là thể て của 折れます (tự động từ), chỉ trạng thái cành bị gãy.",
+        "pitfalls": "おって là tha động từ (bẻ gãy bằng tay); おれる và おる là dạng từ điển.",
+        "tip": "枝が折れています: cành đang gãy."
+      }
+    },
+    {
+      "id": "l29_g011",
+      "level": "easy",
+      "sentence": "ちゃわんを ＿ しまいました。",
+      "translation": "Tôi lỡ làm vỡ cái bát rồi.",
+      "options": [
+        {
+          "text": "われる",
+          "kanji": "われる"
+        },
+        {
+          "text": "わって",
+          "kanji": "わって"
+        },
+        {
+          "text": "われて",
+          "kanji": "われて"
+        },
+        {
+          "text": "われ",
+          "kanji": "われ"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "わって là thể て của 割ります (tha động từ), đi với を.",
+        "pitfalls": "われて là tự động từ, không đi với を; われる và われ không phải thể て.",
+        "tip": "茶碗を割ってしまいました: lỡ làm vỡ bát."
+      }
+    },
+    {
+      "id": "l29_g012",
+      "level": "easy",
+      "sentence": "みせは ＿ います。",
+      "translation": "Cửa hàng đã đóng cửa.",
+      "options": [
+        {
+          "text": "しまって",
+          "kanji": "しまって"
+        },
+        {
+          "text": "しめた",
+          "kanji": "しめた"
+        },
+        {
+          "text": "しめて",
+          "kanji": "しめて"
+        },
+        {
+          "text": "しまる",
+          "kanji": "しまる"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "しまって là thể て của 閉まります, dùng với は để nói về trạng thái của cửa hàng.",
+        "pitfalls": "しめて là tha động từ; しまる là dạng từ điển; しめた là quá khứ tha động từ.",
+        "tip": "店は閉まっています: cửa hàng đóng cửa."
+      }
+    },
+    {
+      "id": "l29_g013",
+      "level": "medium",
+      "sentence": "まどは ＿ いますか。",
+      "translation": "Cửa sổ có đang mở không?",
+      "options": [
+        {
+          "text": "あけて",
+          "kanji": "あけて"
+        },
+        {
+          "text": "あいて",
+          "kanji": "あいて"
+        },
+        {
+          "text": "あける",
+          "kanji": "あける"
+        },
+        {
+          "text": "あいた",
+          "kanji": "あいた"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "あいて là thể て của 開きます; まどは 〜ていますか hỏi về trạng thái.",
+        "pitfalls": "あけて là tha động từ; あける là dạng từ điển; あいた là quá khứ.",
+        "tip": "窓は開いていますか: cửa sổ có đang mở không?"
+      }
+    },
+    {
+      "id": "l29_g014",
+      "level": "medium",
+      "sentence": "みちを ＿ しまいました。",
+      "translation": "Tôi lỡ đi nhầm đường rồi.",
+      "options": [
+        {
+          "text": "まちがえた",
+          "kanji": "まちがえた"
+        },
+        {
+          "text": "まちがって",
+          "kanji": "まちがって"
+        },
+        {
+          "text": "まちがえて",
+          "kanji": "まちがえて"
+        },
+        {
+          "text": "まちがう",
+          "kanji": "まちがう"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "まちがえて là thể て của 間違えます (tha động từ), đi với を.",
+        "pitfalls": "まちがって là sai cách chia; まちがう là dạng từ điển; まちがえた là quá khứ không đúng cấu trúc.",
+        "tip": "道を間違えてしまいました: lỡ đi nhầm đường."
+      }
+    },
+    {
+      "id": "l29_g015",
+      "level": "medium",
+      "sentence": "でんしゃは ＿ います。",
+      "translation": "Tàu điện đang đông người.",
+      "options": [
+        {
+          "text": "こんで",
+          "kanji": "こんで"
+        },
+        {
+          "text": "こみ",
+          "kanji": "こみ"
+        },
+        {
+          "text": "こむ",
+          "kanji": "こむ"
+        },
+        {
+          "text": "こめて",
+          "kanji": "こめて"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "こんで là thể て của 込みます (tự động từ), chỉ trạng thái đông người.",
+        "pitfalls": "こめて là tha động từ; こむ là dạng từ điển; こみ là dạng ghép.",
+        "tip": "電車が込んでいます: tàu đông."
+      }
+    },
+    {
+      "id": "l29_g016",
+      "level": "medium",
+      "sentence": "ガラスが ＿ います。",
+      "translation": "Kính đã bị vỡ.",
+      "options": [
+        {
+          "text": "われ",
+          "kanji": "われ"
+        },
+        {
+          "text": "わって",
+          "kanji": "わって"
+        },
+        {
+          "text": "われる",
+          "kanji": "われる"
+        },
+        {
+          "text": "われて",
+          "kanji": "われて"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": "われて là thể て của 割れます (tự động từ), chỉ trạng thái đã vỡ.",
+        "pitfalls": "わって là tha động từ; われる và われ không đúng thể.",
+        "tip": "ガラスが割れています: kính đã vỡ."
+      }
+    },
+    {
+      "id": "l29_g017",
+      "level": "medium",
+      "sentence": "いすが ＿ います。",
+      "translation": "Cái ghế bị hỏng.",
+      "options": [
+        {
+          "text": "こわれて",
+          "kanji": "こわれて"
+        },
+        {
+          "text": "こわれる",
+          "kanji": "こわれる"
+        },
+        {
+          "text": "こわす",
+          "kanji": "こわす"
+        },
+        {
+          "text": "こわして",
+          "kanji": "こわして"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "こわれて là thể て của 壊れます (tự động từ), chỉ trạng thái hỏng.",
+        "pitfalls": "こわして là tha động từ; こわれる và こわす là dạng từ điển.",
+        "tip": "椅子が壊れています: ghế bị hỏng."
+      }
+    },
+    {
+      "id": "l29_g018",
+      "level": "medium",
+      "sentence": "わたしは どこか ＿ さいふを おとしました。",
+      "translation": "Tôi đã làm rơi ví ở đâu đó.",
+      "options": [
+        {
+          "text": "を",
+          "kanji": "を"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "で chỉ nơi xảy ra hành động 落とす; どこかで là 'ở đâu đó'.",
+        "pitfalls": "に không dùng cho nơi xảy ra hành động; を và が không đúng vai trò.",
+        "tip": "どこかで財布を落としました."
+      }
+    },
+    {
+      "id": "l29_g019",
+      "level": "medium",
+      "sentence": "かさが どこか ＿ ありました。",
+      "translation": "Có cái dù ở đâu đó.",
+      "options": [
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "と",
+          "kanji": "と"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "に chỉ vị trí tồn tại của đồ vật với あります; どこかに là 'ở đâu đó'.",
+        "pitfalls": "で không dùng với あります để chỉ tồn tại; を và と không đúng.",
+        "tip": "どこかに あります: có ở đâu đó."
+      }
+    },
+    {
+      "id": "l29_g020",
+      "level": "medium",
+      "sentence": "へやの でんきは ＿ います。",
+      "translation": "Đèn trong phòng đang sáng.",
+      "options": [
+        {
+          "text": "つけて",
+          "kanji": "つけて"
+        },
+        {
+          "text": "ついた",
+          "kanji": "ついた"
+        },
+        {
+          "text": "ついて",
+          "kanji": "ついて"
+        },
+        {
+          "text": "つける",
+          "kanji": "つける"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "ついて là thể て của 点きます, dùng với は khi nói về trạng thái đèn.",
+        "pitfalls": "つけて là tha động từ; つける là dạng từ điển; ついた là quá khứ.",
+        "tip": "電気は点いています: đèn đang sáng."
+      }
+    },
+    {
+      "id": "l29_g021",
+      "level": "medium",
+      "sentence": "うちに しょるいを ＿ しまいました。",
+      "translation": "Tôi lỡ quên tài liệu ở nhà rồi.",
+      "options": [
+        {
+          "text": "わすれる",
+          "kanji": "わすれる"
+        },
+        {
+          "text": "わすれて",
+          "kanji": "わすれて"
+        },
+        {
+          "text": "わすれ",
+          "kanji": "わすれ"
+        },
+        {
+          "text": "わすれた",
+          "kanji": "わすれた"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "わすれて là thể て của 忘れます, dùng với 〜てしまいました.",
+        "pitfalls": "わすれ là gốc động từ, không dùng được; わすれる là dạng từ điển; わすれた là quá khứ.",
+        "tip": "書類を忘れてしまいました: lỡ quên tài liệu."
+      }
+    },
+    {
+      "id": "l29_g022",
+      "level": "medium",
+      "sentence": "まどが ＿ 、かぜが はいって きます。",
+      "translation": "Cửa sổ mở nên gió thổi vào.",
+      "options": [
+        {
+          "text": "あける",
+          "kanji": "あける"
+        },
+        {
+          "text": "あけて",
+          "kanji": "あけて"
+        },
+        {
+          "text": "あいて",
+          "kanji": "あいて"
+        },
+        {
+          "text": "あいた",
+          "kanji": "あいた"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "あいて là thể て của 開きます, nối hai mệnh đề bằng 〜て.",
+        "pitfalls": "あけて là tha động từ; あける là dạng từ điển; あいた là quá khứ.",
+        "tip": "窓が開いて、風が入ってきます."
+      }
+    },
+    {
+      "id": "l29_g023",
+      "level": "medium",
+      "sentence": "えだが ＿ しまいました。",
+      "translation": "Cành cây lỡ bị gãy rồi.",
+      "options": [
+        {
+          "text": "おって",
+          "kanji": "おって"
+        },
+        {
+          "text": "おれる",
+          "kanji": "おれる"
+        },
+        {
+          "text": "おった",
+          "kanji": "おった"
+        },
+        {
+          "text": "おれて",
+          "kanji": "おれて"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": "おれて là thể て của 折れます (tự động từ), đi với 〜てしまいました.",
+        "pitfalls": "おって là tha động từ, cần có người bẻ; おれる và おった không đúng.",
+        "tip": "枝が折れてしまいました."
+      }
+    },
+    {
+      "id": "l29_g024",
+      "level": "medium",
+      "sentence": "てが ＿ しまいました。",
+      "translation": "Tay tôi lỡ bị bẩn rồi.",
+      "options": [
+        {
+          "text": "よごして",
+          "kanji": "よごして"
+        },
+        {
+          "text": "よごす",
+          "kanji": "よごす"
+        },
+        {
+          "text": "よごれて",
+          "kanji": "よごれて"
+        },
+        {
+          "text": "よごれる",
+          "kanji": "よごれる"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "よごれて là thể て của 汚れます (tự động từ), đi với 〜てしまいました.",
+        "pitfalls": "よごして là tha động từ; よごれる và よごす là dạng từ điển.",
+        "tip": "手が汚れてしまいました."
+      }
+    },
+    {
+      "id": "l29_g025",
+      "level": "hard",
+      "sentence": "じしんで、コップが ＿ しまいました。",
+      "translation": "Vì động đất nên cái cốc đã vỡ mất rồi.",
+      "options": [
+        {
+          "text": "わって",
+          "kanji": "わって"
+        },
+        {
+          "text": "われる",
+          "kanji": "われる"
+        },
+        {
+          "text": "われ",
+          "kanji": "われ"
+        },
+        {
+          "text": "われて",
+          "kanji": "われて"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": "われて là thể て của 割れます (tự động từ), dùng cho cốc bị vỡ.",
+        "pitfalls": "わって là tha động từ (cần người làm vỡ); われる và われ không đúng thể.",
+        "tip": "コップが割れてしまいました."
+      }
+    },
+    {
+      "id": "l29_g026",
+      "level": "hard",
+      "sentence": "えきまえの みせは ＿ います。",
+      "translation": "Cửa hàng trước ga đã đóng cửa.",
+      "options": [
+        {
+          "text": "しまる",
+          "kanji": "しまる"
+        },
+        {
+          "text": "しめた",
+          "kanji": "しめた"
+        },
+        {
+          "text": "しまって",
+          "kanji": "しまって"
+        },
+        {
+          "text": "しめて",
+          "kanji": "しめて"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "しまって là thể て của 閉まります, dùng để nói trạng thái cửa hàng đã đóng.",
+        "pitfalls": "しめて là tha động từ; しまる là dạng từ điển; しめた là quá khứ tha động từ.",
+        "tip": "駅前の店は閉まっています."
+      }
+    },
+    {
+      "id": "l29_g027",
+      "level": "hard",
+      "sentence": "わたしは どこか ＿ でんわを わすれて しまいました。",
+      "translation": "Tôi đã quên điện thoại ở đâu đó rồi.",
+      "options": [
+        {
+          "text": "に",
+          "kanji": "に"
+        },
+        {
+          "text": "が",
+          "kanji": "が"
+        },
+        {
+          "text": "で",
+          "kanji": "で"
+        },
+        {
+          "text": "を",
+          "kanji": "を"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "で chỉ nơi xảy ra hành động 忘れる; どこかで là 'ở đâu đó'.",
+        "pitfalls": "に không đúng với nơi xảy ra hành động; を và が không đúng vai trò.",
+        "tip": "どこかで電話を忘れてしまいました."
+      }
+    },
+    {
+      "id": "l29_g028",
+      "level": "hard",
+      "sentence": "しょくどうの いすが ＿ いるので、すわれません。",
+      "translation": "Ghế nhà ăn bị hỏng nên không ngồi được.",
+      "options": [
+        {
+          "text": "こわして",
+          "kanji": "こわして"
+        },
+        {
+          "text": "こわす",
+          "kanji": "こわす"
+        },
+        {
+          "text": "こわれる",
+          "kanji": "こわれる"
+        },
+        {
+          "text": "こわれて",
+          "kanji": "こわれて"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": "こわれて là thể て của 壊れます, chỉ trạng thái hỏng; すわれません là không ngồi được.",
+        "pitfalls": "こわして là tha động từ; こわれる và こわす là dạng từ điển.",
+        "tip": "椅子が壊れているので、座れません."
+      }
+    },
+    {
+      "id": "l29_g029",
+      "level": "hard",
+      "sentence": "その でんしゃは ＿ いて、のれません。",
+      "translation": "Chuyến tàu đó đông quá nên không lên được.",
+      "options": [
+        {
+          "text": "こみ",
+          "kanji": "こみ"
+        },
+        {
+          "text": "こんで",
+          "kanji": "こんで"
+        },
+        {
+          "text": "こめて",
+          "kanji": "こめて"
+        },
+        {
+          "text": "こむ",
+          "kanji": "こむ"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "こんで là thể て của 込みます, chỉ trạng thái đông người.",
+        "pitfalls": "こめて là tha động từ; こむ là dạng từ điển; こみ không đúng thể.",
+        "tip": "電車が込んでいて、乗れません."
+      }
+    },
+    {
+      "id": "l29_g030",
+      "level": "hard",
+      "sentence": "その さらは ＿ いるので、つかいません。",
+      "translation": "Cái đĩa đó bị vỡ nên không dùng nữa.",
+      "options": [
+        {
+          "text": "われ",
+          "kanji": "われ"
+        },
+        {
+          "text": "われる",
+          "kanji": "われる"
+        },
+        {
+          "text": "われて",
+          "kanji": "われて"
+        },
+        {
+          "text": "わって",
+          "kanji": "わって"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "われて là thể て của 割れます, chỉ trạng thái đã vỡ.",
+        "pitfalls": "わって là tha động từ; われる và われ không đúng thể.",
+        "tip": "皿が割れているので、使いません."
+      }
+    }
+  ],
+  "game3": [
+    {
+      "id": "l29_s001",
+      "level": "easy",
+      "vietnamese": "Đèn đang sáng.",
+      "blocks": [
+        {
+          "text": "います",
+          "kanji": "います"
+        },
+        {
+          "text": "けして",
+          "kanji": "{消|け}して"
+        },
+        {
+          "text": "でんきが",
+          "kanji": "{電気|でんき}が"
+        },
+        {
+          "text": "ついて",
+          "kanji": "{点|つ}いて"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "でんきが",
+          "ついて",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "でんきが ついています: đèn đang sáng.",
+        "pitfalls": "けして (tha động từ 消す: tắt) sai nghĩa.",
+        "tip": "Tự động từ + ています = trạng thái."
+      }
+    },
+    {
+      "id": "l29_s002",
+      "level": "easy",
+      "vietnamese": "Cửa sổ đang đóng.",
+      "blocks": [
+        {
+          "text": "あけて",
+          "kanji": "{開|あ}けて"
+        },
+        {
+          "text": "います",
+          "kanji": "います"
+        },
+        {
+          "text": "まどが",
+          "kanji": "{窓|まど}が"
+        },
+        {
+          "text": "しまって",
+          "kanji": "{閉|し}まって"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "まどが",
+          "しまって",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "まどが しまっています: cửa sổ đang đóng.",
+        "pitfalls": "あけて là tha động từ, không đúng với trạng thái đóng.",
+        "tip": "閉まっています: đang đóng."
+      }
+    },
+    {
+      "id": "l29_s003",
+      "level": "easy",
+      "vietnamese": "Tôi lỡ làm rơi chìa khóa rồi.",
+      "blocks": [
+        {
+          "text": "しまいました",
+          "kanji": "しまいました"
+        },
+        {
+          "text": "かぎを",
+          "kanji": "{鍵|かぎ}を"
+        },
+        {
+          "text": "おとします",
+          "kanji": "{落|お}とします"
+        },
+        {
+          "text": "おとして",
+          "kanji": "{落|お}として"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "かぎを",
+          "おとして",
+          "しまいました"
+        ]
+      ],
+      "explanation": {
+        "correct": "かぎを おとして しまいました: lỡ làm rơi chìa khóa.",
+        "pitfalls": "おとします là dạng từ điển, không đứng trước しまいました.",
+        "tip": "〜てしまいました: lỡ làm gì đó."
+      }
+    },
+    {
+      "id": "l29_s004",
+      "level": "easy",
+      "vietnamese": "Cái bát bị vỡ rồi.",
+      "blocks": [
+        {
+          "text": "われて",
+          "kanji": "{割|わ}れて"
+        },
+        {
+          "text": "わって",
+          "kanji": "{割|わ}って"
+        },
+        {
+          "text": "います",
+          "kanji": "います"
+        },
+        {
+          "text": "ちゃわんが",
+          "kanji": "{茶碗|ちゃわん}が"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "ちゃわんが",
+          "われて",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "ちゃわんが われています: bát đã vỡ.",
+        "pitfalls": "わって là tha động từ, cần を và người làm.",
+        "tip": "割れています: trạng thái vỡ."
+      }
+    },
+    {
+      "id": "l29_s005",
+      "level": "easy",
+      "vietnamese": "Cửa hàng đang mở cửa.",
+      "blocks": [
+        {
+          "text": "あけて",
+          "kanji": "{開|あ}けて"
+        },
+        {
+          "text": "みせは",
+          "kanji": "{店|みせ}は"
+        },
+        {
+          "text": "あいて",
+          "kanji": "{開|あ}いて"
+        },
+        {
+          "text": "います",
+          "kanji": "います"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "みせは",
+          "あいて",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "みせは あいています: cửa hàng đang mở.",
+        "pitfalls": "あけて là tha động từ, không hợp với trạng thái mở.",
+        "tip": "開いています: đang mở."
+      }
+    },
+    {
+      "id": "l29_s006",
+      "level": "easy",
+      "vietnamese": "Tôi lỡ làm vỡ cái cốc rồi.",
+      "blocks": [
+        {
+          "text": "しまいました",
+          "kanji": "しまいました"
+        },
+        {
+          "text": "わって",
+          "kanji": "{割|わ}って"
+        },
+        {
+          "text": "コップを",
+          "kanji": "コップを"
+        },
+        {
+          "text": "われて",
+          "kanji": "{割|わ}れて"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "コップを",
+          "わって",
+          "しまいました"
+        ]
+      ],
+      "explanation": {
+        "correct": "コップを わって しまいました: lỡ làm vỡ cốc.",
+        "pitfalls": "われて là tự động từ, không đi với を.",
+        "tip": "割ってしまいました: lỡ làm vỡ."
+      }
+    },
+    {
+      "id": "l29_s007",
+      "level": "easy",
+      "vietnamese": "Tôi lỡ đi nhầm đường rồi.",
+      "blocks": [
+        {
+          "text": "しまいました",
+          "kanji": "しまいました"
+        },
+        {
+          "text": "みちを",
+          "kanji": "{道|みち}を"
+        },
+        {
+          "text": "まちがえて",
+          "kanji": "{間違|まちが}えて"
+        },
+        {
+          "text": "とまって",
+          "kanji": "{止|と}まって"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "みちを",
+          "まちがえて",
+          "しまいました"
+        ]
+      ],
+      "explanation": {
+        "correct": "みちを まちがえて しまいました: lỡ đi nhầm đường.",
+        "pitfalls": "とまって là 'dừng lại', không liên quan.",
+        "tip": "道を間違えてしまいました."
+      }
+    },
+    {
+      "id": "l29_s008",
+      "level": "easy",
+      "vietnamese": "Tôi đã gặp anh Tanaka ở đâu đó.",
+      "blocks": [
+        {
+          "text": "たなかさんを",
+          "kanji": "{田中|たなか}さんを"
+        },
+        {
+          "text": "どこかで",
+          "kanji": "どこかで"
+        },
+        {
+          "text": "たなかさんに",
+          "kanji": "{田中|たなか}さんに"
+        },
+        {
+          "text": "あいました",
+          "kanji": "{会|あ}いました"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "どこかで",
+          "たなかさんに",
+          "あいました"
+        ]
+      ],
+      "explanation": {
+        "correct": "どこかで たなかさんに あいました.",
+        "pitfalls": "たなかさんを sai trợ từ với 会う (đi với に).",
+        "tip": "会います đi với に: gặp ai đó."
+      }
+    },
+    {
+      "id": "l29_s009",
+      "level": "medium",
+      "vietnamese": "Tàu điện đang đông người.",
+      "blocks": [
+        {
+          "text": "います",
+          "kanji": "います"
+        },
+        {
+          "text": "こんで",
+          "kanji": "{込|こ}んで"
+        },
+        {
+          "text": "でんしゃは",
+          "kanji": "{電車|でんしゃ}は"
+        },
+        {
+          "text": "すいて",
+          "kanji": "{空|す}いて"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "でんしゃは",
+          "こんで",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "でんしゃは こんでいます: tàu đông người.",
+        "pitfalls": "すいて (vắng) trái nghĩa với ý đông.",
+        "tip": "込んでいます: đông người."
+      }
+    },
+    {
+      "id": "l29_s010",
+      "level": "medium",
+      "vietnamese": "Đường vắng người vào ban đêm.",
+      "blocks": [
+        {
+          "text": "すいて",
+          "kanji": "{空|す}いて"
+        },
+        {
+          "text": "みちは",
+          "kanji": "{道|みち}は"
+        },
+        {
+          "text": "よるの",
+          "kanji": "{夜|よる}の"
+        },
+        {
+          "text": "こんで",
+          "kanji": "{込|こ}んで"
+        },
+        {
+          "text": "います",
+          "kanji": "います"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "よるの",
+          "みちは",
+          "すいて",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "よるの みちは すいています: đường vắng vào ban đêm.",
+        "pitfalls": "こんで (đông) trái nghĩa.",
+        "tip": "空いています: vắng, trống."
+      }
+    },
+    {
+      "id": "l29_s011",
+      "level": "medium",
+      "vietnamese": "Cái ghế bị hỏng.",
+      "blocks": [
+        {
+          "text": "こわれて",
+          "kanji": "{壊|こわ}れて"
+        },
+        {
+          "text": "います",
+          "kanji": "います"
+        },
+        {
+          "text": "いすが",
+          "kanji": "{椅子|いす}が"
+        },
+        {
+          "text": "こわして",
+          "kanji": "{壊|こわ}して"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "いすが",
+          "こわれて",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "いすが こわれています: ghế bị hỏng.",
+        "pitfalls": "こわして là tha động từ, sai trạng thái.",
+        "tip": "壊れています: đang hỏng."
+      }
+    },
+    {
+      "id": "l29_s012",
+      "level": "medium",
+      "vietnamese": "Tay tôi lỡ bị bẩn rồi.",
+      "blocks": [
+        {
+          "text": "てが",
+          "kanji": "{手|て}が"
+        },
+        {
+          "text": "しまいました",
+          "kanji": "しまいました"
+        },
+        {
+          "text": "ふいて",
+          "kanji": "{拭|ふ}いて"
+        },
+        {
+          "text": "よごれて",
+          "kanji": "{汚|よご}れて"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "てが",
+          "よごれて",
+          "しまいました"
+        ]
+      ],
+      "explanation": {
+        "correct": "てが よごれて しまいました: tay lỡ bị bẩn.",
+        "pitfalls": "ふいて là lau, sai nghĩa.",
+        "tip": "汚れてしまいました."
+      }
+    },
+    {
+      "id": "l29_s013",
+      "level": "medium",
+      "vietnamese": "Trên giá hành lý có một cái túi.",
+      "blocks": [
+        {
+          "text": "ふくろが",
+          "kanji": "{袋|ふくろ}が"
+        },
+        {
+          "text": "あみだなに",
+          "kanji": "{網棚|あみだな}に"
+        },
+        {
+          "text": "あります",
+          "kanji": "あります"
+        },
+        {
+          "text": "ふくろを",
+          "kanji": "{袋|ふくろ}を"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "あみだなに",
+          "ふくろが",
+          "あります"
+        ]
+      ],
+      "explanation": {
+        "correct": "あみだなに ふくろが あります: trên giá có túi.",
+        "pitfalls": "ふくろを đi với động từ tác động, không dùng với あります.",
+        "tip": "に chỉ nơi tồn tại của vật."
+      }
+    },
+    {
+      "id": "l29_s014",
+      "level": "medium",
+      "vietnamese": "Cái túi đã bị rách.",
+      "blocks": [
+        {
+          "text": "はずれて",
+          "kanji": "{外|はず}れて"
+        },
+        {
+          "text": "やぶれて",
+          "kanji": "{破|やぶ}れて"
+        },
+        {
+          "text": "ふくろが",
+          "kanji": "{袋|ふくろ}が"
+        },
+        {
+          "text": "います",
+          "kanji": "います"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "ふくろが",
+          "やぶれて",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "ふくろが やぶれています: túi bị rách.",
+        "pitfalls": "はずれて nghĩa là tuột, không phải rách.",
+        "tip": "破れています: đang rách."
+      }
+    },
+    {
+      "id": "l29_s015",
+      "level": "medium",
+      "vietnamese": "Cành cây đã gãy rồi.",
+      "blocks": [
+        {
+          "text": "しまいました",
+          "kanji": "しまいました"
+        },
+        {
+          "text": "おって",
+          "kanji": "{折|お}って"
+        },
+        {
+          "text": "おれて",
+          "kanji": "{折|お}れて"
+        },
+        {
+          "text": "えだが",
+          "kanji": "{枝|えだ}が"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "えだが",
+          "おれて",
+          "しまいました"
+        ]
+      ],
+      "explanation": {
+        "correct": "えだが おれて しまいました: cành đã gãy.",
+        "pitfalls": "おって là tha động từ, cần người bẻ.",
+        "tip": "折れてしまいました."
+      }
+    },
+    {
+      "id": "l29_s016",
+      "level": "medium",
+      "vietnamese": "Trước nhà ga có đồn cảnh sát.",
+      "blocks": [
+        {
+          "text": "あります",
+          "kanji": "あります"
+        },
+        {
+          "text": "えきまえに",
+          "kanji": "{駅前|えきまえ}に"
+        },
+        {
+          "text": "えきいんを",
+          "kanji": "{駅員|えきいん}を"
+        },
+        {
+          "text": "こうばんが",
+          "kanji": "{交番|こうばん}が"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "えきまえに",
+          "こうばんが",
+          "あります"
+        ]
+      ],
+      "explanation": {
+        "correct": "えきまえに こうばんが あります: trước ga có đồn cảnh sát.",
+        "pitfalls": "えきいんを đi với động từ tác động, không hợp với あります.",
+        "tip": "駅前に交番があります."
+      }
+    },
+    {
+      "id": "l29_s017",
+      "level": "hard",
+      "vietnamese": "Trên tường có một cái đồng hồ.",
+      "blocks": [
+        {
+          "text": "とけいが",
+          "kanji": "{時計|とけい}が"
+        },
+        {
+          "text": "とけいを",
+          "kanji": "{時計|とけい}を"
+        },
+        {
+          "text": "かべに",
+          "kanji": "{壁|かべ}に"
+        },
+        {
+          "text": "あります",
+          "kanji": "あります"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "かべに",
+          "とけいが",
+          "あります"
+        ]
+      ],
+      "explanation": {
+        "correct": "かべに とけいが あります: trên tường có đồng hồ.",
+        "pitfalls": "とけいを sai trợ từ với あります.",
+        "tip": "壁に時計があります."
+      }
+    },
+    {
+      "id": "l29_s018",
+      "level": "hard",
+      "vietnamese": "Kim đồng hồ đã dừng lại.",
+      "blocks": [
+        {
+          "text": "とまって",
+          "kanji": "{止|と}まって"
+        },
+        {
+          "text": "はりが",
+          "kanji": "{針|はり}が"
+        },
+        {
+          "text": "おれて",
+          "kanji": "{折|お}れて"
+        },
+        {
+          "text": "います",
+          "kanji": "います"
+        },
+        {
+          "text": "とけいの",
+          "kanji": "{時計|とけい}の"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "とけいの",
+          "はりが",
+          "とまって",
+          "います"
+        ]
+      ],
+      "explanation": {
+        "correct": "とけいの はりが とまっています: kim đồng hồ đã dừng.",
+        "pitfalls": "おれて nghĩa là gãy, không đúng.",
+        "tip": "止まっています: đang dừng."
+      }
+    },
+    {
+      "id": "l29_s019",
+      "level": "hard",
+      "vietnamese": "Tôi lỡ quên tài liệu ở nhà.",
+      "blocks": [
+        {
+          "text": "ふいて",
+          "kanji": "{拭|ふ}いて"
+        },
+        {
+          "text": "しょるいを",
+          "kanji": "{書類|しょるい}を"
+        },
+        {
+          "text": "しまいました",
+          "kanji": "しまいました"
+        },
+        {
+          "text": "うちに",
+          "kanji": "{家|うち}に"
+        },
+        {
+          "text": "わすれて",
+          "kanji": "{忘|わす}れて"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "うちに",
+          "しょるいを",
+          "わすれて",
+          "しまいました"
+        ]
+      ],
+      "explanation": {
+        "correct": "うちに しょるいを わすれて しまいました.",
+        "pitfalls": "ふいて là lau, không liên quan.",
+        "tip": "忘れてしまいました: lỡ quên."
+      }
+    },
+    {
+      "id": "l29_s020",
+      "level": "hard",
+      "vietnamese": "Vì động đất nên cái cốc đã vỡ rồi.",
+      "blocks": [
+        {
+          "text": "ふいて",
+          "kanji": "{拭|ふ}いて"
+        },
+        {
+          "text": "しまいました",
+          "kanji": "しまいました"
+        },
+        {
+          "text": "じしんで",
+          "kanji": "{地震|じしん}で"
+        },
+        {
+          "text": "われて",
+          "kanji": "{割|わ}れて"
+        },
+        {
+          "text": "コップが",
+          "kanji": "コップが"
+        }
+      ],
+      "acceptableOrders": [
+        [
+          "じしんで",
+          "コップが",
+          "われて",
+          "しまいました"
+        ]
+      ],
+      "explanation": {
+        "correct": "じしんで コップが われて しまいました.",
+        "pitfalls": "ふいて là lau, không đúng nghĩa.",
+        "tip": "地震でコップが割れてしまいました."
+      }
+    }
+  ],
+  "game4": [
+    {
+      "id": "l29_c001",
+      "level": "easy",
+      "speaker": "👤 ミラーさん",
+      "question": "「まどが{開|あ}いて いますね」",
+      "questionAudioText": "まどがあいていますね",
+      "options": [
+        {
+          "text": "はい、きのう かいました",
+          "kanji": "はい、きのう{買|か}いました"
+        },
+        {
+          "text": "いいえ、でんしゃで きました",
+          "kanji": "いいえ、{電車|でんしゃ}で きました"
+        },
+        {
+          "text": "ええ、わたしが あけました",
+          "kanji": "ええ、わたしが{開|あ}けました"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "あけました: tôi đã mở, đáp đúng về việc cửa được mở.",
+        "pitfalls": "かいました là mua; でんしゃで きました là đi tàu, lạc đề.",
+        "tip": "〜ていますね: nhận xét trạng thái."
+      }
+    },
+    {
+      "id": "l29_c002",
+      "level": "easy",
+      "speaker": "👤 やまださん",
+      "question": "「へやの{電気|でんき}が{点|つ}いて いますよ」",
+      "questionAudioText": "へやのでんきがついていますよ",
+      "options": [
+        {
+          "text": "はい、わたしは がくせいです",
+          "kanji": "はい、わたしは{学生|がくせい}です"
+        },
+        {
+          "text": "ああ、すみません。けします",
+          "kanji": "ああ、すみません。{消|け}します"
+        },
+        {
+          "text": "ええ、あしたは やすみです",
+          "kanji": "ええ、あしたは{休|やす}みです"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "けします: tôi sẽ tắt đèn, đáp hợp lý khi được nhắc.",
+        "pitfalls": "がくせいです và やすみです là lạc đề.",
+        "tip": "ああ、すみません: phản ứng khi được báo lỗi."
+      }
+    },
+    {
+      "id": "l29_c003",
+      "level": "easy",
+      "speaker": "🧑‍🍳 てんいん",
+      "question": "「お{皿|さら}が{割|わ}れて いますよ」",
+      "questionAudioText": "おさらがわれていますよ",
+      "options": [
+        {
+          "text": "あ、すみません。わって しまいました",
+          "kanji": "あ、すみません。{割|わ}って しまいました"
+        },
+        {
+          "text": "いいえ、おいしかったです",
+          "kanji": "いいえ、おいしかったです"
+        },
+        {
+          "text": "はい、まいにち あらいます",
+          "kanji": "はい、まいにち{洗|あら}います"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "わって しまいました: xin lỗi, lỡ làm vỡ rồi.",
+        "pitfalls": "まいにち あらいます và おいしかったです không liên quan.",
+        "tip": "〜てしまいました dùng khi nhận lỗi."
+      }
+    },
+    {
+      "id": "l29_c004",
+      "level": "easy",
+      "speaker": "👤 ミラーさん",
+      "question": "「{鍵|かぎ}が ありませんね」",
+      "questionAudioText": "かぎがありませんね",
+      "options": [
+        {
+          "text": "はい、きのう かいました",
+          "kanji": "はい、きのう{買|か}いました"
+        },
+        {
+          "text": "いいえ、わたしは がくせいです",
+          "kanji": "いいえ、わたしは{学生|がくせい}です"
+        },
+        {
+          "text": "あ、どこかで おとして しまいました",
+          "kanji": "あ、どこかで{落|お}として しまいました"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "どこかで おとして しまいました: lỡ làm rơi ở đâu đó.",
+        "pitfalls": "かいました và がくせいです lạc đề.",
+        "tip": "どこかで: ở đâu đó (nơi xảy ra việc)."
+      }
+    },
+    {
+      "id": "l29_c005",
+      "level": "easy",
+      "speaker": "👩 さとうさん",
+      "question": "「その{袋|ふくろ}、{破|やぶ}れて いますよ」",
+      "questionAudioText": "そのふくろやぶれていますよ",
+      "options": [
+        {
+          "text": "えっ、ほんとうですか。ありがとう ございます",
+          "kanji": "えっ、ほんとうですか。ありがとうございます"
+        },
+        {
+          "text": "いいえ、まだ たべて いません",
+          "kanji": "いいえ、まだ{食|た}べて いません"
+        },
+        {
+          "text": "はい、わたしは にほんに すんで います",
+          "kanji": "はい、わたしは{日本|にほん}に{住|す}んで います"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "えっ、ほんとうですか。ありがとう: cảm ơn vì được báo.",
+        "pitfalls": "にほんに すんでいます và たべていません lạc đề.",
+        "tip": "やぶれて: trạng thái rách."
+      }
+    },
+    {
+      "id": "l29_c006",
+      "level": "easy",
+      "speaker": "👤 木村さん",
+      "question": "「{電車|でんしゃ}、{込|こ}んで いますね」",
+      "questionAudioText": "でんしゃこんでいますね",
+      "options": [
+        {
+          "text": "ええ、わたしは まいにち あるきます",
+          "kanji": "ええ、わたしは まいにち{歩|ある}きます"
+        },
+        {
+          "text": "ええ、いつも すいて いますね",
+          "kanji": "ええ、いつも{空|す}いて いますね"
+        },
+        {
+          "text": "ええ、あさは いつも こんで いますね",
+          "kanji": "ええ、あさは いつも{込|こ}んで いますね"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "あさは いつも こんで いますね: đúng với nhận xét đông người.",
+        "pitfalls": "すいて (vắng) trái nghĩa; あるきます lạc đề.",
+        "tip": "込んでいます: đông người."
+      }
+    },
+    {
+      "id": "l29_c007",
+      "level": "easy",
+      "speaker": "👤 ミラーさん",
+      "question": "「{電車|でんしゃ}に{忘|わす}れ{物|もの}を しましたか」",
+      "questionAudioText": "でんしゃにわすれものをしましたか",
+      "options": [
+        {
+          "text": "はい、ふくろは ふたつ あります",
+          "kanji": "はい、{袋|ふくろ}は ふたつ あります"
+        },
+        {
+          "text": "はい、でんしゃの あみだなに おいて しまいました",
+          "kanji": "はい、{電車|でんしゃ}の{網棚|あみだな}に{置|お}いて しまいました"
+        },
+        {
+          "text": "いいえ、ここは えきです",
+          "kanji": "いいえ、ここは{駅|えき}です"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "あみだなに おいて しまいました: để trên giá và lỡ quên.",
+        "pitfalls": "ここは えきです lạc đề; ふくろは ふたつ không trả lời.",
+        "tip": "網棚: giá để hành lý trên tàu."
+      }
+    },
+    {
+      "id": "l29_c008",
+      "level": "easy",
+      "speaker": "🧑 やまださん",
+      "question": "「あ、ガラスが{割|わ}れて いますよ！」",
+      "questionAudioText": "あガラスがわれていますよ",
+      "options": [
+        {
+          "text": "いいえ、まどは あいて いません",
+          "kanji": "いいえ、まどは{開|あ}いて いません"
+        },
+        {
+          "text": "はい、きれいな ガラスですね",
+          "kanji": "はい、きれいな ガラスですね"
+        },
+        {
+          "text": "わあ、ほんとうだ。どうしよう",
+          "kanji": "わあ、ほんとうだ。どうしよう"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "わあ、ほんとうだ。どうしよう: phản ứng tự nhiên khi thấy vỡ.",
+        "pitfalls": "きれいですね và まどは あいて いません không hợp ngữ cảnh.",
+        "tip": "割れています: trạng thái vỡ."
+      }
+    },
+    {
+      "id": "l29_c009",
+      "level": "medium",
+      "speaker": "🧑 やまださん",
+      "question": "「すみません、{駅前|えきまえ}に{交番|こうばん}は ありますか」",
+      "questionAudioText": "すみませんえきまえにこうばんはありますか",
+      "options": [
+        {
+          "text": "いいえ、わたしは ここに すんで います",
+          "kanji": "いいえ、わたしは ここに{住|す}んで います"
+        },
+        {
+          "text": "はい、えきの なかに コップが あります",
+          "kanji": "はい、えきの なかに コップが あります"
+        },
+        {
+          "text": "はい、あそこに あります",
+          "kanji": "はい、あそこに あります"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "はい、あそこに あります: chỉ đường đến đồn cảnh sát.",
+        "pitfalls": "すんでいます lạc đề; コップが あります không trả lời.",
+        "tip": "えきまえに 〜が あります: có ... trước ga."
+      }
+    },
+    {
+      "id": "l29_c010",
+      "level": "medium",
+      "speaker": "👤 ミラーさん",
+      "question": "「{財布|さいふ}を{落|お}として しまいました。どうしましょう」",
+      "questionAudioText": "さいふをおとしてしまいましたどうしましょう",
+      "options": [
+        {
+          "text": "ええ、わたしも おちゃを のみます",
+          "kanji": "ええ、わたしも おちゃを{飲|の}みます"
+        },
+        {
+          "text": "はい、ふくろを かいましょう",
+          "kanji": "はい、{袋|ふくろ}を{買|か}いましょう"
+        },
+        {
+          "text": "まず、えきいんさんに 聞いて みましょう",
+          "kanji": "まず、{駅員|えきいん}さんに{聞|き}いて みましょう"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "まず、えきいんさんに 聞いて みましょう: đề nghị hỏi nhân viên ga.",
+        "pitfalls": "おちゃを のむ và ふくろを かう không giải quyết việc mất ví.",
+        "tip": "〜てみましょう: thử làm gì đó."
+      }
+    },
+    {
+      "id": "l29_c011",
+      "level": "medium",
+      "speaker": "🧑 やまださん",
+      "question": "「その ボタン、{外|はず}れて いますよ」",
+      "questionAudioText": "そのボタンはずれていますよ",
+      "options": [
+        {
+          "text": "ありがとう。あとで つけて おきます",
+          "kanji": "ありがとう。あとで{付|つ}けて おきます"
+        },
+        {
+          "text": "いいえ、ボタンは かいません",
+          "kanji": "いいえ、ボタンは{買|か}いません"
+        },
+        {
+          "text": "はい、ボタンは ふたつ あります",
+          "kanji": "はい、ボタンは ふたつ あります"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "ありがとう。あとで つけて おきます: cảm ơn, tôi sẽ gắn lại sau.",
+        "pitfalls": "ふたつ あります và かいません không đáp đúng.",
+        "tip": "ボタンが外れています: nút bị tuột."
+      }
+    },
+    {
+      "id": "l29_c012",
+      "level": "medium",
+      "speaker": "👤 木村さん",
+      "question": "「ごめんなさい、おそく なりました。{電車|でんしゃ}が{止|と}まって いて」",
+      "questionAudioText": "ごめんなさいおそくなりましたでんしゃがとまっていて",
+      "options": [
+        {
+          "text": "はい、わたしは あした いきます",
+          "kanji": "はい、わたしは あした いきます"
+        },
+        {
+          "text": "ええ、きのう かえりました",
+          "kanji": "ええ、きのう{帰|かえ}りました"
+        },
+        {
+          "text": "いいえ、だいじょうぶです。わたしも いま きたところです",
+          "kanji": "いいえ、だいじょうぶです。わたしも いま きたところです"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "だいじょうぶです。いま きたところです: không sao, tôi cũng vừa đến.",
+        "pitfalls": "あした いきます và きのう かえりました lạc đề.",
+        "tip": "止まっています: tàu đang dừng."
+      }
+    },
+    {
+      "id": "l29_c013",
+      "level": "medium",
+      "speaker": "🧑 やまださん",
+      "question": "「ごめんなさい、お{皿|さら}を{割|わ}って しまいました」",
+      "questionAudioText": "ごめんなさいおさらをわってしまいました",
+      "options": [
+        {
+          "text": "はい、わたしは がくせいです",
+          "kanji": "はい、わたしは{学生|がくせい}です"
+        },
+        {
+          "text": "いいえ、だいじょうぶですよ。けがは ありませんか",
+          "kanji": "いいえ、だいじょうぶですよ。けがは ありませんか"
+        },
+        {
+          "text": "ええ、あしたは やすみです",
+          "kanji": "ええ、あしたは{休|やす}みです"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "けがは ありませんか: có bị thương không? Phản ứng quan tâm đúng.",
+        "pitfalls": "がくせいです và やすみです lạc đề.",
+        "tip": "〜てしまいました: lỡ làm gì đó (xin lỗi)."
+      }
+    },
+    {
+      "id": "l29_c014",
+      "level": "medium",
+      "speaker": "👤 ミラーさん",
+      "question": "「{窓|まど}を{開|あ}けても いいですか」",
+      "questionAudioText": "まどをあけてもいいですか",
+      "options": [
+        {
+          "text": "いいえ、あしたは ねません",
+          "kanji": "いいえ、あしたは ねません"
+        },
+        {
+          "text": "ええ、どうぞ。あけて ください",
+          "kanji": "ええ、どうぞ。{開|あ}けて ください"
+        },
+        {
+          "text": "はい、でんしゃは こんで いました",
+          "kanji": "はい、{電車|でんしゃ}は{込|こ}んで いました"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": "どうぞ。あけて ください: đồng ý cho mở cửa sổ.",
+        "pitfalls": "ねません và でんしゃは こんで いました không trả lời đúng.",
+        "tip": "〜てもいいですか: xin phép."
+      }
+    },
+    {
+      "id": "l29_c015",
+      "level": "medium",
+      "speaker": "🧑 やまださん",
+      "question": "「その{椅子|いす}、{壊|こわ}れて いますよ」",
+      "questionAudioText": "そのいすこわれていますよ",
+      "options": [
+        {
+          "text": "ほんとうですか。じゃあ、ほかの いすに すわります",
+          "kanji": "ほんとうですか。じゃあ、ほかの{椅子|いす}に{座|すわ}ります"
+        },
+        {
+          "text": "はい、いすは よっつ あります",
+          "kanji": "はい、{椅子|いす}は よっつ あります"
+        },
+        {
+          "text": "いいえ、わたしは まいにち ねません",
+          "kanji": "いいえ、わたしは まいにち ねません"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "ほかの いすに すわります: đồng ý và chọn ghế khác.",
+        "pitfalls": "いすは よっつ あります và まいにち ねません lạc đề.",
+        "tip": "壊れています: đang hỏng."
+      }
+    },
+    {
+      "id": "l29_c016",
+      "level": "medium",
+      "speaker": "👤 木村さん",
+      "question": "「{電気|でんき}が{消|き}えて いますね」",
+      "questionAudioText": "でんきがきえていますね",
+      "options": [
+        {
+          "text": "はい、わたしは もう ねました",
+          "kanji": "はい、わたしは もう ねました"
+        },
+        {
+          "text": "いいえ、まだ ほんを よんで います",
+          "kanji": "いいえ、まだ ほんを よんで います"
+        },
+        {
+          "text": "ああ、でんきを つけましょう",
+          "kanji": "ああ、{電気|でんき}を{点|つ}けましょう"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "でんきを つけましょう: đề nghị bật đèn.",
+        "pitfalls": "ねました và よんで います không liên quan.",
+        "tip": "消えています: đèn đang tắt."
+      }
+    },
+    {
+      "id": "l29_c017",
+      "level": "hard",
+      "speaker": "👤 ミラーさん",
+      "question": "「かばんが ありません。どこかに{置|お}きましたか」",
+      "questionAudioText": "かばんがありませんどこかにおきましたか",
+      "options": [
+        {
+          "text": "いいえ、どこかで わすれて しまいました。こうばんに いきます",
+          "kanji": "いいえ、どこかで{忘|わす}れて しまいました。{交番|こうばん}に いきます"
+        },
+        {
+          "text": "いいえ、わたしは いつも バスで きます",
+          "kanji": "いいえ、わたしは いつもバスで きます"
+        },
+        {
+          "text": "はい、ふくろに いれました",
+          "kanji": "はい、{袋|ふくろ}に{入|い}れました"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "どこかで わすれて しまいました。こうばんに いきます: lỡ quên ở đâu đó nên đi đồn cảnh sát.",
+        "pitfalls": "いれました và バスで きます không đúng ngữ cảnh.",
+        "tip": "どこかで・どこかに: phân biệt nơi xảy ra và nơi đặt."
+      }
+    },
+    {
+      "id": "l29_c018",
+      "level": "hard",
+      "speaker": "🧑 やまださん",
+      "question": "「まどが{開|あ}いて いますね。さむいですね」",
+      "questionAudioText": "まどがあいていますねさむいですね",
+      "options": [
+        {
+          "text": "いいえ、まどは しまって います",
+          "kanji": "いいえ、まどは しまって います"
+        },
+        {
+          "text": "はい、ボタンが はずれて います",
+          "kanji": "はい、ボタンが{外|はず}れて います"
+        },
+        {
+          "text": "はい、さむいですから、しめましょう",
+          "kanji": "はい、さむいですから、{閉|し}めましょう"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": "しめましょう: đề nghị đóng cửa vì trời lạnh.",
+        "pitfalls": "しまって います mâu thuẫn với cửa đang mở; ボタン lạc đề.",
+        "tip": "閉めましょう: tha động từ dùng để đề nghị."
+      }
+    },
+    {
+      "id": "l29_c019",
+      "level": "hard",
+      "speaker": "👩 さとうさん",
+      "question": "「{電車|でんしゃ}の なかに{傘|かさ}が ありましたよ」",
+      "questionAudioText": "でんしゃのなかにかさがありましたよ",
+      "options": [
+        {
+          "text": "ああ、よかった。ありがとう ございます",
+          "kanji": "ああ、よかった。ありがとうございます"
+        },
+        {
+          "text": "いいえ、でんしゃは こんで いません",
+          "kanji": "いいえ、{電車|でんしゃ}は{込|こ}んで いません"
+        },
+        {
+          "text": "はい、かさは ふたつ ありました",
+          "kanji": "はい、{傘|かさ}は ふたつ ありました"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "ああ、よかった。ありがとう: nhẹ lòng khi tìm thấy đồ.",
+        "pitfalls": "ふたつ あります và こんで いません không đáp đúng.",
+        "tip": "ああ、よかった: cụm cảm thán."
+      }
+    },
+    {
+      "id": "l29_c020",
+      "level": "hard",
+      "speaker": "🧑 やまださん",
+      "question": "「{茶碗|ちゃわん}を{割|わ}って しまいました」",
+      "questionAudioText": "ちゃわんをわってしまいました",
+      "options": [
+        {
+          "text": "だいじょうぶです。あした かいに いきましょう",
+          "kanji": "だいじょうぶです。あした{買|か}いに いきましょう"
+        },
+        {
+          "text": "はい、ちゃわんは あらって ありません",
+          "kanji": "はい、{茶碗|ちゃわん}は{洗|あら}って ありません"
+        },
+        {
+          "text": "いいえ、わたしは がくせいでは ありません",
+          "kanji": "いいえ、わたしは{学生|がくせい}では ありません"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": "だいじょうぶです。あした かいに いきましょう: không sao, mai mình đi mua lại.",
+        "pitfalls": "あらって ありません và がくせいでは ありません lạc đề.",
+        "tip": "〜てしまいました: lỡ làm gì đó."
+      }
+    }
+  ]
+}
